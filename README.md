@@ -10,6 +10,12 @@ Fordele ved OVA Løsning:
 Ulemper:
 * Størrelse 20GB da den indeholder et helt operativsystem plus ekstra plads så du ikke løber tør (n4s fylder < 70MB)
 
+# Eksempel på rapportering
+Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter.
+Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)
+* [Eksempel kontokort](https://drive.google.com/file/d/1d_se9vbtTHx38qCeMm4gSxC0gy9byxez/view?usp=sharing)
+* [Eksempel saldobalance](https://drive.google.com/file/d/1WAlPO73OykvF5-wUCh9-XDIikK_8SoBU/view?usp=sharing)
+
 # Kom hurtigt i gang
 Hvis du vil hurtigt i gang og have en introduktion kan du booke et zoom-møde til favorabel intro-pris.
 Det forventes at du har downloadet vores OVA samt Virtualbox med Extension Pack, og at du har Zoom installeret
