@@ -10,6 +10,20 @@ Fordele ved OVA Løsning:
 Ulemper:
 * Størrelse 20GB da den indeholder et helt operativsystem plus ekstra plads så du ikke løber tør (n4s fylder < 70MB)
 
+# Kom hurtigt i gang
+Hvis du vil hurtigt i gang og have en introduktion kan du booke et zoom-møde til favorabel intro-pris.
+Det forventes at du har downloadet vores OVA samt Virtualbox med Extension Pack, og at du har Zoom installeret
+Det forventes at du er nogenlunde teknisk kyndig.
+Vi vil vise dig hvordan du:
+* Opretter regnskaber
+* Indtaster transaktioner
+* Importerer bank CSV filer
+* Genererer balancer og kontokort
+
+samt besvare evt. spørgsmål du måtte have.
+
+[Book din tid her](https://n4s-linux-regnskab.youcanbook.me)
+
 # Frit regnskabssystem
 Vi mener der skal være et lynhurtigt og sikkert bogføringssystem som kan køre lokalt på enhver computer (eller telefon/ipad/brødrister, – linux kan køre på næsten alt) til de nye iværksættere / små selvstændige. Det skal også kunne køre på f.eks. en linode 5$ server og betjenes af flere samtidige brugere.
 
