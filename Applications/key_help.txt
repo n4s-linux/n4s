@@ -1,0 +1,6 @@
+ol - list collections
+no - new collection
+olh - edit collection display headers
+eh - edit help
+lp - set ledger parameters
+sr - switch regnskab

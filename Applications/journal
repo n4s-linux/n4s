@@ -1,0 +1,47 @@
+a=$(echo -n $(cat ~/.lastdate))
+b=$(date +%s%N)
+diff=$((b-a))
+seconds=$(printf "%s.%s" "${diff:0: -9}" "${diff: -9:3}")
+minutes=$(echo "$seconds/60"|bc)
+act=$(
+	(
+		(echo "View specific Journal";echo "View Journal";echo "Edit Journal";echo "Edit Activities";echo "New Activity")
+		(cat ~/Activities.dat|grep -i "$1")
+		)|fzf --tac
+);
+if [ "$act" == "New activity" ]; then
+	echo -n "Ny Aktivitet: "
+	read new
+	echo $new >> ~/Activities.dat
+	$act = $new
+fi
+if [ "$act" == "Edit Journal" ]; then
+	vi ~/.journal
+	exit
+fi
+if [ "$act" == "Edit Activities" ]; then
+	vi ~/Activities.dat
+	exit
+fi
+if [ "$act" == "View specific Journal" ]; then
+	echo -n "Indtast dato: "
+	read specific
+	grep $(echo -n $(date +%Y-%m-%d -d "$specific")) ~/.journal|column -s '\t'|less
+	exit
+fi
+if [ "$act" == "View Journal" ]; then
+	grep $(echo -n $(date +%Y-%m-%d)) ~/.journal|column -s '\t'|less
+	exit
+fi
+echo -n "Indtast evt. kommentar: "
+read kommentar
+echo -e $(date +%Y-%m-%dT%H:%M)"\t+$minutes min\t"$act"\t"$kommentar > ~/.journal.entry;cat ~/.journal.entry ~/.journal > ~/.journal.new;mv ~/.journal.new ~/.journal
+echo "\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] ($act)> " > ~/.ps1
+date +%s%N > ~/.lastdate
+
+head -n 10 ~/.journal
+echo -n "Rediger? (j/n)"
+read jn
+if [ "$jn" == "j" ]; then
+vi ~/.journal
+fi

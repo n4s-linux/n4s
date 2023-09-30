@@ -1,0 +1,10 @@
+SVNROOT=/svn/svnroot/
+cd $SVNROOT
+git add .
+git commit . -m "Autocommit"
+git push
+regnskaber=/data/regnskaber
+cd $regnskaber
+git add .
+git commit . -m "Autocommit"
+git push

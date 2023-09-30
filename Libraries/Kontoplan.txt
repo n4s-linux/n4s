@@ -1,0 +1,99 @@
+Aktiver:Anlægsaktiver:Driftsmidler:Primo
+Aktiver:Anlægsaktiver:Driftsmidler:Tilgang
+Aktiver:Anlægsaktiver:Driftsmidler:Årets afskrivninger
+Aktiver:Anlægsaktiver:Indretning:Primo
+Aktiver:Anlægsaktiver:Indretning:Tilgang
+Aktiver:Forudbetalte omkostninger:Diverse
+Aktiver:Likvider:Bambora
+Aktiver:Likvider:Bank
+Aktiver:Likvider:Kasse
+Aktiver:Likvider:LunarBank
+Aktiver:Likvider:Mobilepay
+Aktiver:Likvider:RevolutDKK
+Aktiver:Likvider:Shipmondo
+Aktiver:Likvider:Stripe
+Aktiver:Lån:0lsen
+Aktiver:Lån:Joo
+Aktiver:Mellemregning med holding
+Aktiver:Omsætningsaktiver:Debitorer:Diverse
+Aktiver:Omsætningsaktiver:Igangværende arbejder
+Aktiver:Omsætningsaktiver:Varelager
+Aktiver:Periodeafgrænsningsposter
+Aktiver:Tilgode skat
+Aktiver:Udvikling
+Egenkapital:Overført resultat
+Egenkapital:Overkurs
+Egenkapital:Periodens resultat
+Egenkapital:Reserve udvikling
+Egenkapital:Selskabskapital
+Fejl/Analyse:Uhåndterede debitorbetalinger
+Fejl/Analyse:Uhåndterede kreditorbetalinger
+Indtægter:Reg. Igangværende arbejder
+Indtægter:Salg m.moms
+Passiver:Ansatte:A-skat
+Passiver:Ansatte:ATP
+Passiver:Ansatte:Feriepenge
+Passiver:Ansatte:Løn
+Passiver:Gældsstyrelsen
+Passiver:Kreditorer:Div
+Passiver:Mellemregning med anpartshaver
+Passiver:Mellemregning med holding
+Passiver:Moms:Købsmoms
+Passiver:Moms:Købsmoms:IV
+Passiver:Moms:Købsmoms:IY
+Passiver:Moms:Moms af varekøb udland
+Passiver:Moms:Moms af ydelser udland
+Passiver:Moms:Momsafregning
+Passiver:Moms:Primo
+Passiver:Moms:Salgsmoms
+Passiver:Skattekontoen
+Passiver:Skyldig selskabsskat
+Passiver:Skyldige omkostninger
+Udgifter:Administration:Advokat
+Udgifter:Administration:Bøder
+Udgifter:Administration:Edb
+Udgifter:Administration:Faglitteratur
+Udgifter:Administration:Forsikring
+Udgifter:Administration:Gebyrer
+Udgifter:Administration:Internet
+Udgifter:Administration:Konsulenter
+Udgifter:Administration:Kontingenter
+Udgifter:Administration:Kontorartikler
+Udgifter:Administration:Mindre anskaffelser
+Udgifter:Administration:Tab
+Udgifter:Administration:Telefoni
+Udgifter:Administration:Webhosting
+Udgifter:Direkte omkostninger:Fragt
+Udgifter:Direkte omkostninger:Told
+Udgifter:Direkte omkostninger:Ukategoriseret
+Udgifter:Direkte omkostninger:Diverse
+Udgifter:Ekstraordinære poster
+Udgifter:Lagerregulering
+Udgifter:Lokaleomkostninger:El, vand og varme
+Udgifter:Lokaleomkostninger:Husleje
+Udgifter:Lokaleomkostninger:Rengøring
+Udgifter:Lokaleomkostninger:Vedligeholdelse
+Udgifter:Løn:ATP
+Udgifter:Løn:Atp
+Udgifter:Personaleomkostninger:AER
+Udgifter:Personaleomkostninger:ATP
+Udgifter:Personaleomkostninger:Diverse
+Udgifter:Personaleomkostninger:Feriepenge
+Udgifter:Personaleomkostninger:Fremmed arbejde
+Udgifter:Personaleomkostninger:KM-Penge
+Udgifter:Personaleomkostninger:Løn:AER
+Udgifter:Personaleomkostninger:Løn:ATP
+Udgifter:Personaleomkostninger:Løn:A-indkomst
+Udgifter:Personaleomkostninger:Diverse:Mad
+Udgifter:Personaleomkostninger:Sygedagpenge
+Udgifter:Personaleomkostninger:Refusioner
+Udgifter:Reklame & Markedsføring:Annoncer & Reklamer
+Udgifter:Reklame & Markedsføring:Rejseomkostninger
+Udgifter:Reklame & Markedsføring:Repræsentation
+Udgifter:Renteudgifter:Div
+Udgifter:Renteudgifter:Bank
+Udgifter:Renteudgifter:Skattestyrelsen
+Udgifter:Renteudgifter:Mellemregning med anpartshaver
+Udgifter:Renteudgifter:Mellemregning med holding
+Udgifter:Selskabsskat
+Udgifter:Udviklingsomkostninger

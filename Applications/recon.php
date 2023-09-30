@@ -1,0 +1,185 @@
+<?php
+$showempty = false;
+$tpath = getenv("tpath");
+if ($tpath == "") die("no tpath for recon.php\n");
+require_once("whoami.php");
+$op = whoami();
+
+$end = getenv("LEDGER_END");
+$cmd = "noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=$end ledger -f $tpath/curl accounts > /home/$op/tmp/.laccounts.list";
+system ($cmd);
+require_once("fzf.php");
+$account = fzf(file_get_contents("/home/$op/tmp/.laccounts.list"),"vælg konto");
+$recondir = "rc" .  md5($account);
+$account = str_replace(" ", "\\ ",$account);
+$cmd = "noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=$end nopopup=1 php /svn/svnroot/Applications/key.php ledger csv ^$account > /home/$op/tmp/outprec.tmp";
+if (stristr($account,"likvider") || stristr($account,"skattekonto")) {
+	require_once("proc_open.php");
+	$svar = fzf("Ja\nNej","Vil du redigere sammenligningsfil for konto ?");
+	if ($svar == "Ja") {
+		exec_app("nano $tpath/$account" . ".csv");
+		$cmd = "reconciliation=1 $cmd";
+	}
+}
+echo $cmd . "\n";
+system("$cmd");
+while (true) {
+	$sumz = array();
+	$total = 0;
+	$fh = fopen("/home/$op/tmp/outprec.tmp","r");
+	$curline=-1;
+	$linecount = count(explode("\n",file_get_contents("/home/$op/tmp/outprec.tmp")));
+	$transactions = array();
+	while($line = fgets($fh)) {
+		$curline++;
+		$header = "--header='$curline / $linecount'";
+	    $data = str_getcsv($line);
+		$date = $data[0];
+		$bilag = $data[1];
+		$tekst = $data[2];
+		$konto = $data[3];
+		$belob = $data[5];
+		$uid = date("Y-m-d",strtotime($date)) . md5(json_encode($data));
+		$sum = getsum($uid,$data,$header);
+		error_reporting(0);
+		$sumz[$sum] += $belob;
+		if (!isset($transactions[$sum]))$transactions[$sum] = array();
+
+		if (isset($data[7]))
+			$tags = explode("\\n",$data[7]);
+		else
+			$tags = "";
+		array_push($transactions[$sum],array('sum'=>$sum,'date'=>$date,'bilag'=>$bilag,'tekst'=>$tekst,'konto'=>$konto,'belob'=>$belob,'uid'=>$uid,'tags'=>$tags));
+		error_reporting(E_ALL);
+		$total += $belob;
+	}
+	$fzf = "";
+	$total = 0;
+	foreach ($sumz as $key => $val) {
+		$total += $val;
+		if (intval($val) == 0 && !$showempty) continue;
+		$val = number_format($val,2,",",".");
+		$val = str_pad($val,10," ", STR_PAD_LEFT);
+		$fzf .= "$key\t🐧" . "$val" . "🐧\n";
+	}
+	$total = number_format($total,2,",",".");
+	if ($showempty == false)
+		$fzf .= "VIS TOMME\n";
+	else
+		$fzf .= "SKJUL TOMME\n";
+	$fzf .= "TOTAL\t🐧" . "$total " . "🐧\n";
+	$period = trim(explode("🐧",fzf($fzf,"vælg udligning"," -e --tac --ansi",true))[0]);
+	if ($period == "") die("Afbrudt\n");
+	if ($period == "VIS TOMME") {
+		$showempty=true;continue;		
+	}
+	else if ($period == "SKJUL TOMME" ) {
+		$showempty=false;continue;	
+	}
+	$t = showperiod($transactions[$period],$period);
+	if ($t == "") continue;
+	system("clear");
+	$newsum = getrecons($t);
+	while ($newsum == "NY" || $newsum == "") {
+                        echo "Indtast udligning: ";
+                        $fd = fopen("PHP://stdin","r");
+                        $newsum = trim(fgets($fd));
+                        fclose($fd);
+	}
+	$t = explode("\n",$t);
+	foreach ($t as $curline) {
+		$x = explode("🐧",$curline);
+		$fn = "$tpath/.$recondir/" . $x[1];
+		file_put_contents($fn,$newsum);
+
+	}
+}
+
+function showperiod($t,$period) {
+	require_once("ansi-color.php");
+	$fzf = "";
+	$saldo = 0;
+	foreach ($t as $cur) {
+		$saldo += $cur["belob"];
+		if ($cur["belob"] < 0) { $debet = "";$credit = $cur['belob']; }
+		if ($cur["belob"] > 0) { $credit="";$debet = $cur['belob']; }
+		error_reporting(0);
+		$debet = set(str_pad(number_format($debet,2,",","."),10," ",STR_PAD_LEFT),"green_bg");
+		$credit = set(str_pad(number_format($credit,2,",","."),10," ",STR_PAD_LEFT),"red_bg");
+		$nicesaldo = str_pad(number_format($saldo,2,",","."),10," ",STR_PAD_LEFT);
+		error_reporting(E_ALL);
+		$cur['tekst'] = str_replace("'","",$cur['tekst']);
+		$cur['tekst'] = str_replace("\"","",$cur['tekst']);
+		$cur['bilag'] = str_replace("'","",$cur['bilag']);
+		$cur['bilag'] = str_replace("\"","",$cur['bilag']);
+		$fzf .= "$cur[date]\t$cur[bilag]\t$cur[tekst]\t$debet\t$credit\t$nicesaldo\t$period\t🐧" . "$cur[uid]\n";
+	}
+	return fzf($fzf,"vælg udligning $period","-e --tac --multi --ansi",true);
+}
+function getsum($uid,$data,$header) {
+	global $tpath;
+	global $recondir;
+	global $account;
+	system("mkdir -p $tpath/.$recondir/");
+	system("echo $account > $tpath/.$recondir/accname;");
+	if (file_exists("$tpath/.$recondir/$uid"))
+		return file_get_contents("$tpath/.$recondir/$uid");
+	else {
+		$str = magicperiod($data);
+		file_put_contents("$tpath/.$recondir/$uid",$str);
+		system("chmod 777 $tpath/.$recondir/$uid");
+		return $str;
+		
+	}
+}
+function magicperiod($data) {
+	$account = $data[3]; 
+	$amount = $data[5];
+	$date = $data[0];
+	$desc = $data[2];
+	$tags = $data[7];
+	if (stristr($account,"a-skat")||stristr($account,"a-skat") || stristr($account,"ferie")) {
+		if ($amount > 0) return date("Y-m",strtotime($date) -86400*30);
+		else return date("Y-m",strtotime($date));
+	}
+	else if (stristr($account,"atp"))
+		return getquarter($amount,$date);
+	else
+		return "usorteret";
+}
+function getquarter($amount,$date) {	
+	$dt = strtotime($date);
+	if ($amount > 0) $dt -= 86400 *90;
+	$month = date("m",$dt);
+	$year = date("Y",$dt);
+	$month = str_pad($month, 2, '0', STR_PAD_LEFT);
+	$quarter = ceil($month/3);
+	return $year . "Q" . $quarter;
+
+	
+}
+function getrecons($data,$header = "") {
+	$used = array();
+	global $tpath;
+	global $recondir;
+	$dir = "$tpath/.$recondir/";
+	global $account;
+	system("mkdir -p $tpath/.$recondir/");
+	system("echo $account > $tpath/.$recondir/accname");
+	$files = scandir($dir);
+	$retval = "NY\n";
+	foreach ($files as $file) {
+		if ($file == "." ||$file=="..") continue;
+		$value = trim(file_get_contents("$tpath/.$recondir/$file")) ;
+		if (!isset($used[$value])) {
+			$used[$value] = true;
+			$retval .= $value . "\n";
+		}
+	}
+	$rv = "";
+	system("clear");print_r($data);
+	$rv = fzf($retval,"vælg udligning","-e --height=15 $header --ansi");
+	return $rv;
+
+}
+?>

@@ -1,0 +1,97 @@
+match yourhighlightgroup /✔/
+hi myhighlightgroup guibg=#00FF00
+
+"execute pathogen#infect()
+"syntax enable "(syntax on also works)  Note that quotes are a comment in .vimrc
+"highlight Folded ctermbg=Black ctermfg=Green
+set ignorecase
+
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+
+
+set relativenumber!
+set number
+
+"set foldmethod=indent
+set foldminlines=0
+
+set path=/home/joo/regnskaber/transactions_stuff/.tags/
+map <C-X> <ESC>:wq<CR>
+imap <C-X> <ESC>:wq<CR>
+syntax off
+if $DISPLAY =~ '\(\(cos\|scs\)\d\+nai\d\+\)\|\(spkpc\d\+\)\|\(tc-garyjohn\)' 
+set clipboard=autoselect,exclude:.* 
+endif 
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %H:%M\t")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%dT %H:%M\t")<CR>
+":map <F3> :1<CR>9<Down>5w3dwi
+:map <F4> :1<CR>15<Down>5wdwi
+nnoremap <F1> :w<CR>:bn<CR>
+nnoremap <F2> :w<CR>:bp<CR>
+:imap <F5> <esc>:quit!<cr>
+:map <F5> :quit<cr>
+noremap - /": "<cr>ww
+nnoremap t /Transactions<cr>
+nnoremap + /Transactions<cr>/}\n<cr>a,<cr><tab>{<cr><tab><tab>"Account": "",<cr><tab><tab>"Func":"",<cr><tab><tab>"Amount": 0 <cr><tab>}<esc>
+nnoremap å dt"i
+nnoremap <F8> <home>/│<cr>n vt y:!vim <C-r>"<cr><home>aEDIT<del><del><del><del><esc>
+nnoremap <F6> <esc>:0<cr>a"USEFILE":"1",<esc>
+nnoremap <F9> <home>/│<cr>n vt y:!rm <C-r>"<cr><home>aDEL<del><del><del><esc>
+nnoremap <F10> <home>/Fejl<cr>dt"iMellemregning<esc>
+nnoremap <F9> <home>/Fejl<cr>dt"iBrugtkøb<esc>
+"nnoremap <F7> <home>4wv<End>hy:!vim $tpath/<C-r>"<cr>
+nnoremap <F3> /Fejl<cr>dt"i
+nnoremap <F7> 75i-<esc>
+inoremap <F7> <esc>75i-<esc>i
+nnoremap Q :q!<cr>
+nnoremap W :wq!<cr>
+nnoremap <C-o> /Fejl<cr>dt"irevi-salg<esc>/Func<cr>wwau<esc>:w<CR>:bp<CR>
+nnoremap <C-i> /Fejl<cr>dt"iitsalg<esc>/Func<cr>wwau<esc>:w<CR>:bp<CR>
+nnoremap <C-p> /Fejl<cr>dt"imellemregning<esc>:w<CR>:bp<CR>
+nnoremap <C-e> /Fejl<cr>dt"iedb<esc>/Func<cr>wwa
+nnoremap <C-d> /Fejl<cr>dt"idm<esc>/Func<cr>wwa
+nnoremap <C-u> /Fejl<cr>dt"i
+nnoremap <C-c> <esc>/CSV<CR>dt"i
+nnoremap <C-y> /\c
+nnoremap <C-u> :!bash $tpath/.menu.bash tags <c-r><c-w><CR><CR>
+inoremap <C-d> ⌫
+
+
+:set laststatus=2
+set statusline=%!StatusLine()
+function! StatusLine()
+    if &ft == 'help'
+        let l:status = "%#error#[HELP]%*"
+    else
+        let l:status = "Q = Quit, + = New Trans, å = replace inside quotes, F8 = Edit file, F9 = Delete file, F12 View vimrc  - %F"
+    endif
+    let &l:statusline = l:status
+endfunction
+"nnoremap <F10> <home>4wy$:!vim /home/joo/Customers/"<C-r>""<cr>
+nnoremap <F11> <home>4wd$<esc>:!ls /home/joo/Customers\|fzf > /home/joo/cust<cr>:read !cat /home/joo/cust<cr>i<backspace><backspace><backspace><backspace><esc>
+nnoremap <F12> :!vim /home/joo/.vimrc<cr><cr>
+set dictionary=/tmp/filelist
+set complete+=k
+:inoremap <F12> <C-X><C-U>
+function! MyCompleteFunc(findstart, base)
+  if (a:findstart == 1)
+    normal b
+    return col(".") - 1
+  else
+    " Hardcoded path to dictionary. You could tweak this to use
+    " whatever dictionary you have set with `set dictionary=`
+let name = input('Search term: ')
+silent exec "grep -hi" name "/tmp/filelist > /tmp/filelist.filtered"
+    let l:data = readfile("/tmp/filelist.filtered")
+    let a = filter(l:data, 'v:val =~ ".*' . a:base . '.*"')
+return a
+  endif
+endfunction
+
+set completefunc=MyCompleteFunc

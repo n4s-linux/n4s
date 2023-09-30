@@ -1,0 +1,20 @@
+if (!function_exists("rule_contains")) {
+function rule_contains($string,$newacc,$newfunc = "",$appendtext = "") {
+	global $simplesearch;
+	array_push($simplesearch,array($string => array('Account'=>$newacc,'Func'=>$newfunc)));
+}
+}
+$simplesearch = array();
+rule_contains("49794","Udgifter:Administration:Edb","i","Uniconta");
+
+if ($t1['Account'] == "Aktiver:Likvider:Bank") {
+	if (stristr($t2['Account'],"Fejl")) {
+		foreach ($simplesearch as $current => $setto) {
+			if (stristr($data['Description'],$current)) { 
+				foreach ($setto as $set => $to) {
+					$t2[$set] = $to;
+				}
+			}
+		}
+	}
+}

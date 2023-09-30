@@ -1,0 +1,259 @@
+Kontonr.	Kontonavn	Type	Moms	Afd.	Sum fra	Sum til
+	R E S U L T A T O P G Ø R E L S E	Tekst				
+						
+	OMSÆTNING	Tekst				
+1000	Salg m/moms	Status	S25			
+1010	Salg m/moms	Drift				
+1020	Varesalg	Drift	S25			
+1030	Slag u/moms	Drift				
+1035	Periodisering af salg	Drift				
+1050	Reg igangværende arbejder	Drift				
+1275	Kassedifference	Drift				
+1277	Revisionsdifference	Drift				
+*	Omsætning i alt	Sum			1000	1295
+						
+	DRIFTSOMKOSTNINGER	Tekst				
+						
+	VAREFORBRUG	Tekst				
+1300	Varekøb	Drift	K25			
+1310	Materialekøb	Drift	K25			
+1400	Leje materiel	Drift	K25			
+1505	Andre mestre	Drift	K25			
+1510	Underentreprenører	Drift	K25			
+1910	Hjælpematerialer	Drift	K25			
+*	Vareforbrug i alt	Sum			1300	1994
+						
+*	DÆKNINGSBIDRAG 1	Sum			1000	1995
+						
+	PERSONALEUDGIFTER	Tekst				
+	Lønninger	Tekst				
+2201	Løn Multidata	Drift				
+2210	Løn Manuel	Drift				
+2230	Arbejdsskadeforsikring	Drift				
+2231	AES	Drift				
+2232	Arbejdsmiljøafgift	Drift				
+2275	A contoløn	Drift				
+2290	AM-bidrag	Drift				
+2295	Løntilskud	Drift				
+2300	Kørepenge medarbejdere	Drift				
+2510	Gager	Drift				
+*	Lønninger i alt	Sum			1999	2598
+						
+	Sociale ydelser	Tekst				
+2620	Refusion sygeløn	Drift				
+2623	ATP-bidrag	Drift				
+2624	ATP-FIB bidrag	Drift				
+2626	ATP kompensation	Drift				
+2682	Dagpengeforsikring	Drift				
+2685	Arbejdsgiver elevrefusion	Drift				
+*	Sociale ydelser i alt	Sum			2599	2688
+						
+	Øvrige personale udgifter	Tekst				
+2690	Kursusudgifter	Drift	K25			
+2695	Arbejdstøj	Drift	K25			
+2702	Personaleudgifter i øvrigt	Drift				
+*	Øvrige personaleudgifter i alt	Sum			2689	2746
+*	Personaleudgifter i alt	Sum			1999	2747
+						
+*	DÆKNINGSBIDRAG 2	Sum			1000	2748
+						
+	REPRÆSENTATION	Tekst				
+2751	Restaurantbesøg	Drift				
+2754	Gaver, blomster	Drift				
+2770	Rejseudgifter	Drift				
+*	Repræsentation i alt	Sum			2749	2798
+						
+	SALGSOMKOSTNINGER	Tekst				
+2800	Annoncer	Drift	K25			
+2802	Sponsorudgifter	Drift				
+2804	Dekoration og skilte	Drift	K25			
+2807	Tryksager, brochurer o.l.	Drift	K25			
+2814	Overnatning m/moms	Drift	K25			
+2815	Fortæring	Drift				
+2819	Marketing og PR	Drift	K25			
+*	Salgsomkostninger i alt	Sum			2799	2898
+						
+	AUTODRIFT	Tekst				
+2900	Brændstof	Drift	K25			
+2902	Vægtafgift	Drift				
+2903	Forsikringer	Drift				
+2904	Vedligeholdelse	Drift	K25			
+2906	Vej og broafgifter	Drift	K25			
+2907	Leje/leasing	Drift	K25			
+2908	Redningskorps	Drift	K25			
+2909	Taxa	Drift				
+2910	Refusion biludgifter privatbil	Drift				
+*	Autodrift i alt	Sum			2900	2911
+						
+	ANDRE DRIFTSOMKOSTNINGER	Tekst				
+3204	Vedligeholdelse driftmidler	Drift	K25			
+3216	Køb småinventar u/moms	Drift				
+3217	Småanskaffelser under skattegrænse	Drift	K25			
+*	Andre driftsomkostninger i alt	Sum			3199	3248
+*	DRIFTSOMKOSTNINGER I ALT	Sum			1300	3249
+						
+	KAPACITETSOMKOSTNINGER	Tekst				
+	Ejendommens drift	Tekst				
+3330	Ejendomsskatter m.v.	Drift				
+*	Ejendommens drift i alt	Sum			3300	3399
+						
+	Lokaleomkostninger	Tekst				
+3408	Rengøring	Drift	K25			
+3425	El og gas	Drift	K25			
+3427	Vedligeholdelse	Drift	K25			
+3428	Rengøring/renovation	Drift	K25			
+*	Lokaleomkostninger i alt	Sum			3399	3498
+						
+	Administrationsomkostninger	Tekst				
+3600	Kontorartikler/tryksager	Drift	K25			
+3604	Edb	Drift				
+3617	Kontorinventar under skattemæssig grænse	Drift	K25			
+3620	Telefon	Drift	K25			
+3621	Privat andel	Drift	K25			
+3622	Mobiltelefon	Drift	K25			
+3628	Frimærker porto	Drift				
+3630	Omkostninger dataløn	Drift	K25			
+3635	Tab check/Dankort	Drift				
+3636	Revisordifference	Drift				
+3640	Revisorhonorar	Drift	K25			
+3642	Advokathonorar	Drift	K25			
+3650	Forsikringer	Drift				
+3659	Bladhold	Drift				
+3663	Kontingenter	Drift				
+3665	Gebyrer m/moms	Drift	K25			
+3666	Gebyrer u/moms	Drift				
+3670	Falck-abbonnement	Drift				
+3675	Bankgebyrer	Drift				
+3676	Godtgørelse T & S	Drift				
+3699	Andre udgifter	Drift	K25			
+*	Administrationsomkostninger i alt	Sum			3599	3700
+*	KAPACITETSOMKOSTNINGER I ALT	Sum			3399	3701
+						
+*	RESULTAT FØR RENTER OG AFSKRIVNINGER	Sum			1000	3702
+						
+	AFSKRIVNINGER	Tekst				
+3900	Driftsmidler	Drift				
+3940	Afskrivning bygninger	Drift				
+*	Afskrivninger i alt	Sum			3899	3999
+						
+	FINANSIERINGSINDTÆGTER	Tekst				
+4320	Renter, pengeinstitutter	Drift				
+4330	Renter girokonto	Drift				
+4370	Renter debitorer	Drift				
+*	Finansieringsindtægter i alt	Sum			4300	4399
+						
+	FINANSIERINGSOMKOSTNINGER	Tekst				
+4450	Øreafrunding	Drift				
+4470	Renter kassekredit	Drift				
+4471	Renter girokonto	Drift				
+4472	Renter pengeinstitutter	Drift				
+4490	Låneomkostninger	Drift				
+4493	Renter kreditorer	Drift				
+4497	Låneomkostniner u 2 år	Drift				
+4520	Renter/omkomstninger ej fradragberet.	Drift				
+4528	Renter/gebyr, ej skattemæssigt fradrag	Drift				
+*	Finansieringsomkostninger i alt	Sum			4400	4599
+*	RESULTAT FØR EKSTRAORDINÆRE POSTER	Sum			1000	4600
+						
+	Ekstraordinære poster	Tekst				
+4940	Modtagne sygedagpenge	Drift				
+*	Ekstraordinære poster i alt	Sum			4900	4950
+						
+*	ÅRETS RESULTAT TIL DATO	Sum			1000	4999
+	[Manuelt sideskift]					
+						
+	B A L A N C E	Tekst				
+						
+	A K T I V E R	Tekst				
+						
+	MATERIELLE ANLÆGSAKTIVER	Tekst				
+	Ejendomme	Tekst				
+5101	Tilgang bygning i årets løb	Status				
+5108	Årets af-/nedskrivning	Status				
+5110	Ombygning værksted	Status	K25			
+5112	Afskrivning ombygning	Status				
+*	Ejendomme i alt	Sum			5100	5199
+						
+	Driftsmidler	Tekst				
+5240	Saldo værdi primo	Status				
+5241	Tilgang i årets løb	Status	K25			
+5242	Afgang i årets løb	Status				
+5248	Årets af-/nedskrivninger	Status				
+*	Driftsmidler i alt	Sum			5239	5298
+5325	Immaterialle anlægsaktiver	Status				
+5350	Varelager	Status				
+*	MATERIELLE ANLÆGSAKTIVER I ALT	Sum			5008	5399
+						
+	Tilgodehavender	Tekst				
+5600	Debitorer	Status				
+5650	Andre tilgodehavender	Status				
+5660	For meget udbetalt løn	Status				
+5670	Igangværende arbejder	Status				
+5690	Periodisering	Status				
+*	Tilgodehavender i alt	Sum			5599	5699
+						
+	Likvide beholdninger	Tekst				
+5800	Kassebeholdning	Status				
+5810	Girokonto	Status				
+5815	Kortbetalinger mv	Status				
+5820	Bank	Status				
+*	Likvide beholdninger i alt	Sum			5799	5899
+						
+*	AKTIVER I ALT	Sum			5000	5999
+						
+	P A S S I V E R	Tekst				
+						
+	EGENKAPITAL	Tekst				
+6100	Egenkapital primo	Status				
+6101	Korrektion egenkapital primo	Status				
+6102	Årets resultat	Status				
+6104	Årets øvrige indskud	Status				
+6105	Årets hævning kontant	Status				
+6106	Mellemregning	Status				
+6110	Mellemregning indehaver	Status				
+6111	Selskabskapital	Status				
+6117	Privat andel telefon	Status				
+6130	Overført resultat	Status				
+6150	Ej fradragsberettiget låneomkostninger	Status				
+*	Egenkapital i alt	Sum			6099	6199
+						
+6610	Skyldig selskabsskat	Status				
+	KORTFRISTET GÆLD	Tekst				
+	Pengeinstitutter	Tekst				
+6750	Kassekredit	Status				
+6766	Lån pengeinstitut	Status				
+*	Pengeinstitutter i alt	Sum			6749	6798
+						
+	Kreditorer	Tekst				
+6800	Kreditorer	Status				
+6805	Skattekonto	Status				
+6830	Anden gæld	Status				
+6860	Mellemregning med anpartshaver	Status				
+6870	Skyldige omkostninger	Status				
+6880	Afsat revisor	Status				
+*	Kreditorer i alt	Sum			6800	6898
+						
+	Momsopgørelse	Tekst				
+6900	Moms primo	Status				
+6901	Salgsmoms	Status				
+6902	Købsmoms	Status				
+6904	El afgift	Status				
+6918	Momsafregning	Status				
+						
+	Skyldig skat, løn, ATP m.v.	Tekst				
+6920	Skyldig A-skat	Status				
+6921	Skyldig ATP	Status				
+6922	Skyldig AM Bidrag	Status				
+6923	Skyldige feriepenge	Status				
+6925	Løntilbageholdelse	Status				
+6935	Skyldig løn	Status				
+*	Skyldig skat, løn, m.v. i alt	Sum			6919	6939
+*	KORTFRISTET GÆLD I ALT	Sum			6748	6997
+						
+*	PASSIVER I ALT	Sum			6000	6998
+						
+*	BALANCE	Sum			5000	6999
+9900	Fejlkonto debitor	Status				
+9901	Fejlkonto kreditor	Status				
+*	Balancekontrol	Sum			1	99999
+

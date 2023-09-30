@@ -1,0 +1,138 @@
+# switch windows alt+number
+bind-key -n M-1 select-window -t 1
+bind-key -n M-2 select-window -t 2
+bind-key -n M-3 select-window -t 3
+bind-key -n M-4 select-window -t 4
+bind-key -n M-5 select-window -t 5
+bind-key -n M-6 select-window -t 6
+bind-key -n M-7 select-window -t 7
+bind-key -n M-8 select-window -t 8
+bind-key -n M-9 select-window -t 9
+
+set -g status 2 ; set -g status-format[1] "Waiting for line2 (src tmux.conf)"
+# emoticons
+	bind -T root C-u switch-client -T unicodes
+	bind -T unicodes p send-keys 🍅 #pomodor indicating around 20 minutes of time
+	bind -T unicodes u send-keys 😬 #something that is not a sure thing
+	bind -T unicodes h send-keys ♨️  #something that is hot
+	bind -T unicodes v send-keys 💦  #water or something that is wet
+	bind -T unicodes c send-keys ✔  #checkmark tjek
+
+
+#n4s bindings 
+	bind -T root C-a switch-client -T n4s	#Menuknap
+	bind -T n4s p capture-pane -b temp-capture-buffer -S - \; save-buffer -b temp-capture-buffer ~/tmp/screenshot \; delete-buffer -b capture-buffer
+	bind -T n4s s send-keys sr Enter	#Skift regnskab
+	bind -T n4s v send-keys "l print -S payee>"'$tpath'"/.hl\;hledger-ui -T -f "'$tpath'"/.hl" Enter	# viser regnskab for perioden
+	bind -T n4s V send-keys "ll print -S payee>"'$tpath'"/.hl\;hledger-ui -T -f "'$tpath'"/.hl" Enter	# viser regnskab for perioden
+
+	bind -T n4s c send-keys "bash /svn/svnroot/Applications/key_export_csv.bash" 	#Eksporter til csv
+	bind -T n4s i send-keys "bash /svn/svnroot/Applications/key_review_unsure.bash" Enter 	# Review unsure stuff
+	bind -T n4s ? send-keys "bash /svn/svnroot/Applications/key_help.bash" Enter	#Viser hjælpeskærme
+	bind -T n4s t new-window "bash /svn/svnroot/Applications/start.bash igangv"
+	bind -T n4s y new-window "select_regnskab=1 bash /svn/svnroot/Applications/start.bash igangv"
+
+	bind -T n4s T new-window "bash /svn/svnroot/Applications/start.bash igangvbal"
+	bind -T n4s i popup "tmux attach -t popup || tmux new -s popup"
+	bind-key    -T n4s          c                    display-popup -h 19 -w 95 "tmux attach -t calc || tmux new -s calc"
+
+	bind -T n4s Z new-window "bash /svn/svnroot/Applications/start.bash stuff"
+	bind -T n4s z new-window "bash /svn/svnroot/Applications/start.bash stuffbal"
+	bind -T n4s w new-window "bash /svn/svnroot/Applications/start.bash watch"
+	bind -T n4s p new-window "bash /svn/svnroot/Applications/bfb.bash"
+	bind -T n4s P join-pane
+	bind -T n4s p capture-pane -b temp-capture-buffer -S - \; save-buffer -b temp-capture-buffer ~/tmp/screenshot \; delete-buffer -b capture-buffer
+	bind-key -T n4s p command-prompt -p 'Angiv navn for skærmdump:' -I '/data/screens/' 'capture-pane -S -32768 ; save-buffer %1 ; delete-buffer'
+
+bind -T n4s < split-window -p20 "bash /svn/svnroot/Applications/inputtag.bash"
+bind -T n4s > split-window "vi /home/joo/regnskaber/stuff/.tags/inputtag.bash"
+	bind -T n4s ! split-window "screen -x"
+	bind -T n4s % run-shell "screen -D"
+
+
+	bind -T n4s a new-window "bash /svn/svnroot/Applications/start.bash anyentry"
+	bind -T n4s U split-window "uuidgen |IFS='-' awk -F '-' '{print $1}';read"
+	
+
+	bind -T root C-Y switch-client -T tagz_newwin
+	bind -T tagz_newwin 1 new-window bash /svn/svnroot/Applications/start.bash tag idag
+	bind -T tagz_newwin ½ new-window bash /svn/svnroot/Applications/start.bash tag quicknotes
+	bind -T root F1 run -b "tpath=\$tpath php /svn/svnroot/Applications/tmux/menu.php"
+	bind -T root F2 new-window bash /svn/svnroot/Applications/start.bash business
+	bind -T root C-F2 split-window bash /svn/svnroot/Applications/start.bash business
+	bind -T root S-F2 split-window -h bash /svn/svnroot/Applications/start.bash business
+	bind -T root F3 run -b "tpath=\$tpath php /svn/svnroot/Applications/tmux/menu.php history"
+	bind -T root F4 new-window bash /svn/svnroot/Applications/start.bash regnskab
+	bind -T root F5 new-window bash /svn/svnroot/Applications/start.bash mine
+	bind -T root F6 new-window bash /svn/svnroot/Applications/start.bash grepsearchtag
+	bind -T root F7  new-window bash /svn/svnroot/Applications/start.bash shell
+
+# set color for status bar
+set-option -g status-style bg=colour235,fg=yellow,dim
+
+# set window title list colors
+set-window-option -g window-status-style fg=brightblue,bg=colour236,dim
+
+# a)))ctive window title colors
+set-window-option -g window-status-current-style fg=brightred,bg=colour236,bright
+
+
+set -g base-index 1
+setw -g pane-base-index 1
+#set-option status-style fg=white,bg=black
+
+
+bind-key S capture-pane -b temp-capture-buffer -S - \; save-buffer -b temp-capture-buffer ~/tmp/screenshot \; delete-buffer -b capture-buffer
+bind-key -n C-S-Left swap-window -t -1
+bind-key -n C-S-Right swap-window -t +1
+bind-key -n F8 new-window "$tpath/.menu.bash tags"
+
+
+# statusbar
+set -g status-position bottom
+set -g status-justify left
+set -g status-left '(#S) '
+set -g status-right '#[fg=black,bg=white] %Y-%m-%d %h:%m #[fg=colour233,bg=colour8] %H:%M:%S   - #{t/f/%%%%F %%%%T:session_created}'
+
+set -g status-right-length 50
+set -g status-left-length 20
+set -g mouse on
+
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'sainnhe/tmux-fzf'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'github_username/plugin_name#branch'
+# set -g @plugin 'git@github.com:user/plugin'
+# set -g @plugin 'git@bitbucket.com:user/plugin'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+# set prefix key to ctrl+q
+bind -n F8 source ~/.tmux.conf
+set -g pane-active-border-style bg=yellow,fg=magenta
+set -g pane-border-style fg=blue,bg=gray
+
+set -g pane-border-status bottom
+
+set -g pane-border-format "#{pane_index} #{pane_current_command}"
+
+bind -N 'find pane by title / current command' c-f {
+  command-prompt -p '#[fg=red]Find pane by title:#[default]' {
+  run -C "menu -x0 -yS -T '[ Matches for #[fg=red]%1#[default] ]' --\
+  #{S:#{W:#{P:#{?#{||:#{m:*%1*,#{pane_title}},#{m:*%1*,#{pane_current_command}}},\
+  '#[reverse]#{p17:#{=/-14/..:  #{session_name}:#{window_index}.#{pane_index}}}#[default]\
+ #{p20:#{pane_current_command}} #[reverse] #{s/#{l:$HOME}/~/:#{pane_current_path}}\
+ ' '' 'switch-client -t #{pane_id}',}}}}"
+  }
+}
+
+set-window-option -g mode-keys vi
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+

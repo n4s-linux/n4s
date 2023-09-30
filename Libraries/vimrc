@@ -1,0 +1,363 @@
+filetype plugin on
+set mouse=a
+
+let LEDGER_DEPTH=99
+ let LEDGER_BALANCE_FORMAT="%(display_total)\t%(account)\n "
+ let LEDGER_REGISTER_FORMAT="<tr><td>%(date)</td><td>%(payee)</td><td>%(display_amount></td><td>%(display_total)</td></tr>\n"
+ let LEDGER_PAYEE_WIDTH="15"
+ let LEDGER_ACCOUNT_WIDTH="15"
+set ignorecase
+function! GitStatus() 
+	  let [a,m,r] = GitGutterGetHunkSummary()
+	    return printf('+%d ~%d -%d', a, m, r)
+    endfunction
+    set statusline+=%{GitStatus()}
+
+nnoremap <Space> :cnext<cr>
+
+set hlsearch
+nnoremap <C-q> :call <sid>numbertog()<cr>
+function! s:numbertog()
+	  if &number
+		      set relativenumber!
+		        endif
+			    set number!
+		    endfunction
+
+		    
+"set number
+
+set relativenumber!
+
+"nnoremap <C-g> :call matchadd('ErrorMsg', printf('\%%%dl', line('.')),printf('\%%%dl',line('.')))<CR>
+"nnoremap <C-g> :call TogLineMark()<CR>
+
+function TogLineMark() abort
+	let lnum = line('.')
+	let w:marked_lines = get(w:, 'marked_lines', {})
+
+	if has_key(w:marked_lines, lnum)
+		call matchdelete(w:marked_lines[lnum], winnr())
+		unlet w:marked_lines[lnum]
+	else
+		let w:marked_lines[lnum] = matchadd('ErrorMsg', printf('\%%%dl', lnum))
+	endif
+endfunction
+
+
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
+
+let tpath = $tpath
+nnoremap I Go<C-R>=strftime("%Y-%m-%dT%H:%M\t")<CR>
+nnoremap <C-c> :vimgrep /<C-r><C-w>/g %<cr>:cwindow<cr>
+nnoremap <C-c> :vimgrep /<C-R>=strftime("%Y-%m-%d")<cr>/g %<cr>:cwindow<cr>
+nnoremap <C-u> :!bash $tpath/.menu.bash tags <c-r><c-w><CR><CR>
+nnoremap <C-u> :terminal ++close bash $tpath/.menu.bash tags <c-r><c-w><CR>
+"nnoremap <C-i> :exe "vertical ter ++close bash " . $tpath . "/.menu.bash tags <c-r><c-w>"
+nnoremap <C-u> :exe "ter ++close bash " . $tpath . "/.menu.bash tags <c-r><c-w>"
+nnoremap <C-p> :!tmux new-window "notitle=1 bash /svn/svnroot/Applications/start.bash tag <c-r><c-w>"<CR><CR>
+nnoremap <C-t> :silent let f = system("tmux split-window -h 'bash /svn/svnroot/Applications/showrt.bash <c-r><c-w>'")<CR>
+" :silent let f = system('ls *.vim')
+nnoremap <C-o> :!tmux new-window bash /svn/svnroot/Applications/start.bash search $tpath <c-r><c-w><CR><CR>
+" :!tmux new-window bash /svn/svnroot/Applications/start.bash igangv
+
+nnoremap <C-j> /#<CR>
+
+inoremap <C-n> ✓ @
+inoremap 📝 <ESC>:%s/📝//g<CR>gi📝
+inoremap <C-w> ⏳
+inoremap <C-g> <ESC>:.!php /svn/svnroot/Applications/key.php ledger 
+inoremap <C-f> <esc><cmd>s/$/\=printf(" ✔ %s @ %s", system("whoami")->trim(),system('date')->trim())/<CR>
+inoremap <C-d> <esc><cmd>s/$/\=printf(" ✕ %s @ %s", system("whoami")->trim(),system('date')->trim())/<CR>
+
+nnoremap <C-f> <esc>$a✔ @ <C-R>=printf("%s (%s) ",strftime("%Y-%m-%dT%H:%M"),$USER)<CR>
+nnoremap <C-d> <esc>$a✕ @ <C-R>=printf("%s (%s) ",strftime("%Y-%m-%dT%H:%M"),$USER)<CR>
+
+
+inoremap <C-G> <ESC>:.!LEDGER_END=2099/12/31 LEDGER_BEGIN=1970/01/01 LEDGER_PAYEE_WIDTH=40 LEDGER_ACCOUNT_WIDTH=16  ledger -f $tpath/curl 
+nnoremap <C-g> :.! LEDGER_PAYEE_WIDTH=40 LEDGER_ACCOUNT_WIDTH=16 ledger -f $tpath/curl 
+
+
+set path=/home/joo/regnskaber/transactions_stuff/.tags/
+nnoremap <C-e> :grep! <C-r><C-w> $tpath/.tags/*<cr>:cwindow<cr>
+
+
+" nnoremap <C-u> :!bash $tpath/.menu.bash tags <c-r><c-w><CR><CR>
+
+map <C-X> <ESC>:wq<CR>
+imap <C-X> <ESC>:wq<CR>
+if $DISPLAY =~ '\(\(cos\|scs\)\d\+nai\d\+\)\|\(spkpc\d\+\)\|\(tc-garyjohn\)' 
+set clipboard=autoselect,exclude:.* 
+endif 
+
+nmap <F10> i<C-R>=strftime("%Y-%m-%dT%H:%M\t")<CR><Esc>
+
+nmap <F9> i<C-R>=strftime("%Y-%m-%d")<CR><Esc>
+imap <F10> <C-R>=strftime("%Y-%m-%dT%H:%M\t")<CR>
+imap <F10> <C-R>=printf("%s %s\t", strftime("%Y-%m-%dT%H:%M"), $USER)<CR>
+imap <F9> <C-R>=strftime("%Y-%m-%d")<CR>
+
+
+nnoremap <C-l> :w<CR>:bn<CR>
+nnoremap <C-L> :w<CR>:bp<CR>
+map <F5> :'<,'>!awk '{ sum += $1; print; } END { printf("Total:\n----------\n\%.2f\n----------\n", sum) }'<cr>
+
+
+nnoremap å dt"i
+
+nnoremap Q :qa!<cr>
+nnoremap W :wqa!<cr>
+
+nnoremap <C-s> :'<,'>w !awk '{ sum += $1 } END { print sum }'
+
+
+
+
+:set laststatus=2
+set statusline=%!StatusLine()
+function! StatusLine()
+    if &ft == 'help'
+        let l:status = "%#error#[HELP]%*"
+    else
+        let l:status = "n4s - %F"
+    endif
+    let &l:statusline = l:status
+endfunction
+"nnoremap <F10> <home>4wy$:!vim /home/joo/Customers/"<C-r>""<cr>
+nnoremap <F11> <home>4wd$<esc>:!ls /home/joo/Customers\|fzf > /home/joo/cust<cr>:read !cat /home/joo/cust<cr>i<backspace><backspace><backspace><backspace><esc>
+nnoremap <F12> :!vim /home/joo/.vimrc<cr><cr>
+set dictionary=$tpath/.tags/.filelist
+set complete+=k
+:inoremap <F12> <C-X><C-U>
+function! MyCompleteFunc(findstart, base)
+  if (a:findstart == 1)
+    normal b
+    return col(".") - 1
+  else
+    " Hardcoded path to dictionary. You could tweak this to use
+    " whatever dictionary you have set with `set dictionary=`
+let name = input('Search term: ')
+silent exec "grep -hi" name "/tmp/filelist > /tmp/filelist.filtered"
+    let l:data = readfile("/tmp/filelist.filtered")
+    let a = filter(l:data, 'v:val =~ ".*' . a:base . '.*"')
+return a
+  endif
+endfunction
+
+set completefunc=MyCompleteFunc
+set belloff=all
+
+
+
+
+highlight Cursor guifg=white guibg=black
+highlight iCursor guifg=white guibg=steelblue
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
+
+	hi Search cterm=NONE ctermfg=grey ctermbg=brown
+	syn match subheader /\v.*##.*/
+	highlight subheader ctermfg=black ctermbg=white cterm=bold
+
+
+
+	syn match sporg /\v.*spørg.*/
+	highlight sporg ctermfg=black ctermbg=blue cterm=bold
+
+	syn match beginht /\v^#\ .*/
+	highlight beginht ctermfg=black ctermbg=white cterm=bold
+
+	syn match fyi /\v.*#fyi.*/
+	highlight fyi ctermfg=black ctermbg=gray cterm=bold
+
+	syn match working /\v.*📝.*/
+	highlight working ctermfg=70 ctermbg=20 cterm=italic
+
+
+
+
+
+        exe "syn match Today /.*".strftime("%Y-%m-%d").".*$/"      
+        exe "syn match Today /.*".strftime("%Y%m%d").".*$/"
+	highlight Today ctermfg=black ctermbg=cyan cterm=bold
+
+
+
+
+
+
+
+
+	syn match husk /\v.*husk.*/
+	highlight husk ctermfg=black ctermbg=yellow cterm=bold
+
+
+
+	syn match vente /\v.*vente.*/
+	highlight vente ctermfg=black ctermbg=yellow cterm=bold
+	syn match haster /\v.*haster.*/
+	highlight haster ctermfg=black ctermbg=red cterm=bold
+
+
+
+	syn match smallone /\v.*✓.*/
+	highlight smallone ctermfg=yellow ctermbg=black
+
+	syn match reject /\v.*✕.*/
+	highlight reject ctermfg=black ctermbg=yellow cterm=bold
+	syn match bigcheck /\v.*✔.*/
+	highlight bigcheck ctermfg=black ctermbg=green cterm=bold
+
+
+
+	nnoremap <F8> :UndotreeToggle<CR>
+
+if has("persistent_undo")
+		let target_path = expand('~/.undodir')
+	if !isdirectory(target_path)
+		call mkdir(target_path, "p", 0700)
+	endif
+	let &undodir=target_path
+	       set undofile
+endif
+
+let g:runtimer = 0
+func MyHandler(timer)
+	let g:runtimer += 1
+	echo g:runtimer / 60 . "min"
+endfunc
+let timer = timer_start(50000,'MyHandler',
+			\ {'repeat': -1 })
+set number
+let g:markdown_folding = 1
+set ft=markdown
+set foldmethod=expr
+set foldexpr=MarkdownLevel()
+
+function! MarkdownLevel()
+    if getline(v:lnum) =~ '^# .*$'
+        return ">1"
+    endif
+    if getline(v:lnum) =~ '^## .*$'
+        return ">2"
+    endif
+    if getline(v:lnum) =~ '^### .*$'
+        return ">3"
+    endif
+    if getline(v:lnum) =~ '^#### .*$'
+        return ">4"
+    endif
+    if getline(v:lnum) =~ '^##### .*$'
+        return ">5"
+    endif
+    if getline(v:lnum) =~ '^###### .*$'
+        return ">6"
+    endif
+    return "=" 
+endfunction
+au BufEnter *.md setlocal foldexpr=MarkdownLevel()  
+au BufEnter *.md setlocal foldmethod=expr     
+
+hi Normal guibg=#300A24
+
+
+
+
+function! s:ShowMaps()
+  let old_reg = getreg("a")          " save the current content of register a
+  let old_reg_type = getregtype("a") " save the type of the register as well
+try
+  redir @a                           " redirect output to register a
+  " Get the list of all key mappings silently, satisfy "Press ENTER to continue"
+  silent map | call feedkeys("\<CR>")    
+  redir END                          " end output redirection
+  vnew                               " new buffer in vertical window
+  put a                              " put content of register
+  " Sort on 4th character column which is the key(s)
+  %!sort -k1.4,1.4
+finally                              " Execute even if exception is raised
+  call setreg("a", old_reg, old_reg_type) " restore register a
+endtry
+endfunction
+com! ShowMaps call s:ShowMaps()      " Enable :ShowMaps to call the function
+
+nnoremap \m :ShowMaps<CR>            " Map keys to call the function
+
+
+" Function to source only if file exists {
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+" }
+call SourceIfExists("~/.vim/custom.vim")
+set nonumber
+
+
+
+vmap <silent> ,y y:new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
+nmap <silent> ,y :new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
+map <silent> ,p :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>p
+
+map <silent> ,P :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>P
+set clipboard=unnamedplus
+
+
+set autoread
+augroup checktime
+    au!
+    if !has("gui_running")
+        "silent! necessary otherwise throws errors when using command
+        "line window.
+        autocmd BufEnter        * silent! checktime
+        autocmd CursorHold      * silent! checktime
+        autocmd CursorHoldI     * silent! checktime
+        "these two _may_ slow things down. Remove if they do.
+        autocmd CursorMoved     * silent! checktime
+        autocmd CursorMovedI    * silent! checktime
+    endif
+augroup END
+vmap <C-c> <Plug>OSCYankVisual
+packloadall
+
+function! s:isAtStartOfLine(mapping)
+  let text_before_cursor = getline('.')[0 : col('.')-1]
+  let mapping_pattern = '\V' . escape(a:mapping, '\')
+  let comment_pattern = '\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
+  return (text_before_cursor =~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
+endfunction
+
+inoreabbrev <expr> <bar><bar>
+          \ <SID>isAtStartOfLine('\|\|') ?
+          \ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
+inoreabbrev <expr> __
+          \ <SID>isAtStartOfLine('__') ?
+          \ '<c-o>:silent! TableModeDisable<cr>' : '__'
+vmap y :w! ~/tmp/vitmp<CR>                                                                   
+vmap x :w! ~/tmp/vitmp<CR>d
+nnoremap p :r! cat ~/tmp/vitmp<CR>
+nnoremap X ^v$:w! ~/tmp/vitmp<CR>
+nnoremap X ^v$:w! ~/tmp/vitmp<CR>dd
+
+function RunCommandWithStdin()
+let cmd = "less"
+let stdin_lines = getline(".")
+  let l:stdin = shellescape(join(stdin_lines, "\\n"), 1)
+  execute '!echo -e' l:stdin '|' cmd
+endfunction
+
+nnoremap X <esc>:.w !/svn/svnroot/Applications/cal.bash<cr>
+if exists("TableModeEnable")
+	call TableModeEnable()
+endif
+
+let php_folding = 1        "Set PHP folding of classes and functions.
+let php_htmlInStrings = 1  "Syntax highlight HTML code inside PHP strings.
+let php_sql_query = 1      "Syntax highlight SQL code inside PHP strings.
+let php_noShortTags = 1    "Disable PHP short tags.
+
+source /svn/svnroot/Libraries/adam/transplant.vim

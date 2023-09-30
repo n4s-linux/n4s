@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$2" = "o" ]; then
+rt ls "(Status = 'new' or Status = 'open' or Status = 'stalled') and CF.{Kundenr} like '$1'" -f Subject
+else
+rt ls "CF.{Kundenr} like '$1'" -f Subject
+fi

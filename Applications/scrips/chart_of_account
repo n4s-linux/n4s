@@ -1,0 +1,93 @@
+{
+    "Aktiver": {
+        "Anl\u00e6gsaktiver": {
+            "Huslejedepositum": []
+        },
+        "Depositum": [],
+        "Likvider": {
+            "Bank": [],
+            "Dankort": [],
+            "Kasse": []
+        },
+        "likvider": {
+            "Kasse": []
+        },
+        "Varelager": []
+    },
+    "Egenkapital": {
+        "\u00c5rets h\u00e6vninger": [],
+        "Overf\u00f8rt resultat": [],
+        "Periodens resultat": [],
+        "\u00c5rets indskud": []
+    },
+    "Fejl\/analyse": {
+        "Uh\u00e5ndterede debitorbetalinger": [],
+        "Uh\u00e5ndterede kreditorbetalinger": []
+    },
+    "Indt\u00e6gter": {
+        "Oms\u00e6tning m\/moms": [],
+        "Salg m\/moms": []
+    },
+    "Passiver": {
+        "Kreditorer": {
+            "Manuel": [],
+            "2019": []
+        },
+        "Moms": {
+            "K\u00f8bsmoms": [],
+            "Salgsmoms": [],
+            "Momsafregning": []
+        },
+        "Skattekontoen": [],
+        "Ansatte + Feriepenge": [],
+        "Ansatte + L\u00f8n": [],
+        "Ansatte + Skat": [],
+        "Ansatte +Skat": [],
+        "Ansatte+Skat": [],
+        "Ansatte + ATP": [],
+        "Ansatte": {
+            "A-skat": [],
+            "ATP": [],
+            "Feriepenge": [],
+            "L\u00f8n": []
+        }
+    },
+    "Udgifter": {
+        "Administration": {
+            "Edb": [],
+            "Kontorartikler": [],
+            "Mindre anskaffelser": [],
+            "Gebyrer": [],
+            "Revisor": [],
+            "Kontingenter": [],
+            "Webhosting": []
+        },
+        "Autodrift": [],
+        "Direkte omk": [],
+        "Lokaleomkostninger": {
+            "El": [],
+            "Gas": [],
+            "Husleje": [],
+            "vedligeholdelse": []
+        },
+        "Personaleomk": {
+            "ATP": [],
+            "Feriepenge": [],
+            "AER": [],
+            "L\u00f8n": []
+        },
+        "direkte omkostning": [],
+        "Renter": {
+            "Skat": []
+        },
+        "Personaleomkostninger": {
+            "AER": []
+        }
+    },
+    "Resultatdisponering": {
+        "Overf\u00f8rt til egenkapital": []
+    },
+    "Assets": {
+        "Andre tilgodehavender": []
+    }
+}

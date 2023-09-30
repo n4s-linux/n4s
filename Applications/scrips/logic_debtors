@@ -1,0 +1,22 @@
+$tpath =getenv("tpath"); //DELETE ME
+$fn_debtors = "$tpath/.debtors" . date("Y-m-d-g-i");
+if (!file_exists($fn_debtors)) {
+	$cmd = "LEDGER_DEPTH=999 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 ledger --no-pager -f $tpath/curl b Aktiver:Omsætningsaktiver:Debitorer --flat --no-total --balance-format=\"%(amount)\\t%(account)\\n\" > $fn_debtors";
+	system($cmd);
+}
+$debtors = file_get_contents("$fn_debtors");
+$debtors = explode("\n",$debtors);
+foreach ($debtors as $debtor) {
+	$x = explode("\t",$debtor);
+	if (!isset($x[1])) continue;
+	$amount = $x[0]; 
+	$account = $x[1];
+	//$t2 ...
+	if (!stristr($t2['Account'],"fejl")) break;
+	$inv = (explode(":",$account));
+	$inv=end($inv);
+	if ($t2['Amount'] == $amount *-1 && stristr($data['Description'],$inv)) {
+		echo("logic_debtors found a match, woohoo: $account, $amount\n");
+		$t2['Account'] = $account;
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"name": "om/icalparser",
+	"license": "BSD-3-Clause",
+	"description": "Simple ical parser",
+	"keywords": [
+		"ical",
+		"calendar",
+		"parser"
+	],
+	"authors": [
+		{
+			"name": "Roman Ožana",
+			"email": "roman@ozana.cz"
+		}
+	],
+	"require": {
+		"php": ">=7.4.0"
+	},
+	"suggest": {
+		"ext-dom": "for timezone tool"
+	},
+	"autoload": {
+		"classmap": [
+			"src/"
+		]
+	},
+	"scripts": {
+		"test": "tester tests -s -p php"
+	},
+	"require-dev": {
+		"nette/tester": "^2.4"
+	}
+}

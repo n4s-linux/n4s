@@ -1,0 +1,205 @@
+Nr.	Navn	Type	Moms	Sumfra
+1000	RESULTATOPGØRELSE	Overskrift		
+1001	Omsætning	Overskrift		
+1010	Salg af varer/ydelser m/moms	Drift	U25  	
+1020	Salg af varer til udland	Drift	Abr  	
+1021	Salg af ydelser til udland	Drift	Abr  	
+1025	Salg af varer til EU	Drift	UEUV 	
+1026	Salg af ydelser til EU	Drift	UY0  	
+1030	Salg til kunder u/moms	Drift		
+1099	Omsætning i alt	Sumfra		1001
+1300	Direkte omkostninger	Overskrift		
+1310	Direkte omkostninger m/moms	Drift	I25  	
+1320	Direkte omkostninger varer u/moms indenfor EU	Drift	IV25 	
+1321	Direkte omkostninger ydelser u/moms indenfor EU	Drift	IY25 	
+1324	Direkte omkostninger varer u/moms 3. lande	Drift	IV25 	
+1325	Direkte omkostninger ydelser u/moms 3. lande	Drift	IY25 	
+1326	Lønninger, afsluttede projekter (projekt)	Drift		
+1327	Omkostninger, afsluttede projekter (projekt)	Drift		
+1330	Vareforbrug (lagermodul)	Drift		
+1399	Direkte omkostninger i alt	Sumfra		1300
+2000	Dækningsbidrag	Sumfra		1000
+2200	Lønninger	Overskrift		
+2210	Lønninger	Drift		
+2211	Feriepenge & SH	Drift		
+2212	Sygedagpenge mv.	Drift		
+2213	B-honorar	Drift		
+2214	Personalegoder og multimedier	Drift		
+2215	Pensioner, arbejdsgiver	Drift		
+2222	AER (Samlet betaling)	Drift		
+2223	ATP	Drift		
+2224	DA-barsel	Drift		
+2230	KM-penge	Drift		
+2241	Personaleudgifter	Drift		
+2242	Projektførte lønninger (projekt)	Drift		
+2280	Feriepengeforpligtelse, reg.	Drift		
+2299	Lønninger i alt	Sumfra		2200
+2500	Kapacitetsomkostninger	Overskrift		
+2700	Salgs- og rejseomkostninger	Overskrift		
+2750	Restaurationsbesøg	Drift	REP  	
+2754	Gaver og blomster	Drift		
+2770	Rejseudgifter	Drift		
+2800	Annoncer og reklame	Drift	I25  	
+2811	Fragt m/moms	Drift	I25  	
+2899	Salgs- og rejseomkostninger i alt	Sumfra		2700
+3100	Autodrift - personbiler	Overskrift		
+3110	Brændstof	Drift		
+3120	Bilforsikring	Drift		
+3130	Vægtafgift	Drift		
+3140	Reparation/vedligeholdelse	Drift		
+3199	Autodrift - personbiler i alt	Sumfra		3100
+3400	Lokaleomkostninger	Overskrift		
+3410	Husleje m/moms	Drift	I25  	
+3411	Husleje u/moms	Drift		
+3420	El, vand og gas	Drift	I25  	
+3430	Vedligeholdelse og rengøring	Drift	I25  	
+3450	Forsikringer (lokale)	Drift		
+3499	Lokaleomkostninger i alt	Sumfra		3400
+3500	Administrationsomkostninger	Overskrift		
+3600	Kontorartikler og tryksager	Drift	I25  	
+3601	Avishold	Drift		
+3604	Edb-udgifter / software	Drift	I25  	
+3610	Rep./vedligeholdelse af inventar	Drift	I25  	
+3617	Mindre anskaffelser	Drift	I25  	
+3618	Mindre anskaffelser, omvendt betalingspligt	Drift	OBPK 	
+3620	Telefon 	Drift	I25  	
+3621	Internetforbindelse	Drift	I25  	
+3628	Porto og gebyrer	Drift		
+3640	Revisor	Drift	I25  	
+3645	Advokat	Drift	I25  	
+3650	Forsikringer	Drift		
+3660	Faglitteratur m/moms	Drift	I25  	
+3661	Faglitteratur u/moms	Drift		
+3662	Kontingenter m/moms	Drift	I25  	
+3663	Kontingenter u/moms	Drift		
+3664	Web-hotel og domænenavne	Drift	I25  	
+3670	Leje/leasing af driftsmidler	Drift	I25  	
+3720	Tab på debitorer	Drift		
+3770	Kassedifferencer mv.	Drift		
+3780	Ej fradragsberettigede omkostninger	Drift		
+3799	Administrationsomkostninger i alt	Sumfra		3500
+3800	Resultat før afskrivninger	Sumfra		1000
+3900	Afskrivninger	Overskrift		
+3910	Afskrivning, indretning lejede lokaler	Drift		
+3940	Afskrivning, driftsmidler og inventar	Drift		
+3950	Afskrivning, edb	Drift		
+3999	Afskrivninger i alt	Sumfra		3900
+4000	Resultat før renter	Sumfra		1000
+4300	Renteindtægter	Overskrift		
+4310	Renteindtægt, bank	Drift		
+4360	Renteindtægt, debitorer	Drift		
+4365	Rykkergebyr, debitorer	Drift		
+4380	Valutakursdifference, debitorer gevinst	Drift		
+4381	Valutakursdifference, kreditorer gevinst	Drift		
+4399	Renteindtægter i alt	Sumfra		4300
+4400	Renteudgifter	Overskrift		
+4410	Renteudgift, bank	Drift		
+4450	Låneomkostninger	Drift		
+4460	Renteudgift, kreditorer	Drift		
+4465	Renteudgift, Told & Skat	Drift		
+4470	Finansieringstillæg, selskabsskat	Drift		
+4480	Valutakursdifference, debitorer tab	Drift		
+4481	Valutakursdifference, kreditorer tab	Drift		
+4499	Renteudgifter i alt	Sumfra		4400
+4500	Resultat før ekstraordinære poster	Sumfra		1000
+4600	Ekstraordinære poster	Overskrift		
+4610	Ekstraordinære indtægter m/moms	Drift	U25  	
+4620	Ekstraordinære indtægter u/moms	Drift		
+4630	Ekstraordinære udgifter m/moms	Drift	I25  	
+4640	Ekstraordinære udgifter u/moms	Drift		
+4699	Ekstraordinære poster i alt	Sumfra		4600
+4700	Resultat før skat	Sumfra		1000
+4800	Selskabsskat	Overskrift		
+4810	Selskabsskat, aktuel	Drift		
+4820	Reg. af udskudt skat	Drift		
+4899	Selskabsskat i alt	Sumfra		4800
+4990	RESULTAT EFTER SKAT	Sumfra		1000
+5000	AKTIVER	Overskrift Start		
+5010	Anlægsaktiver	Overskrift		
+5110	Indretning af lejede lokaler	Overskrift		
+5111	Indretning, anskaffelse primo	Balance		
+5112	Indretning, årets tilgang	Balance	I25  	
+5113	Indretning, årets afgang	Balance		
+5116	Indretning, afskrivning primo	Balance		
+5117	Indretning, årets afskrivninger	Balance		
+5119	Indretning af lejede lokaler i alt	Sumfra		5110
+5220	Driftsmidler & inventar	Overskrift		
+5221	Driftsmidler, anskaffelse primo	Balance		
+5222	Driftsmidler, årets tilgang	Balance	I25  	
+5223	Driftsmidler, årets afgang	Balance		
+5226	Driftsmidler, afskrivning primo	Balance		
+5227	Driftsmidler, årets afskrivninger	Balance		
+5229	Driftsmidler & inventar i alt	Sumfra		5220
+5230	Edb-anlæg	Overskrift		
+5231	Edb-anlæg, anskaffelse primo	Balance		
+5232	Edb-anlæg, årets tilgang	Balance	I25  	
+5233	Edb-anlæg, årets afgang	Balance		
+5236	Edb-anlæg, afskrivning primo	Balance		
+5237	Edb-anlæg, årets afskrivninger	Balance		
+5239	Edb-anlæg i alt	Sumfra		5230
+5310	Deposita	Overskrift		
+5312	Huslejedepositum m/moms	Balance	I25  	
+5313	Huslejedepositum u/moms	Balance		
+5322	Leasingdepositum	Balance	I25  	
+5329	Deposita i alt	Sumfra		5310
+5499	Anlægsaktiver i alt	Sumfra		5010
+5500	Omsætningsaktiver	Overskrift		
+5520	Varelager	Balance		
+5600	Debitorer	Balance		
+5650	Andre tilgodehavender	Balance		
+5654	Igangværende arbejder - aktiviteter (projekt)	Balance		
+5655	Igangværende arbejder - omkostninger (projekt)	Balance		
+5660	Forudbetalte poster	Balance		
+5665	Personaletilgodehavender	Balance		
+5810	Kassebeholdning	Balance		
+5820	Bankkonto	Balance		
+5980	Omsætningsaktiver i alt	Sumfra		5500
+5990	AKTIVER I ALT	Sumfra		5000
+6000	PASSIVER	Overskrift Start		
+6100	EGENKAPITAL	Overskrift		
+6110	Anpartskapital	Balance		
+6120	Overkursfond	Balance		
+6130	Overført resultat tidligere år	Balance		
+6131	Øvrige hævninger /indskud	Balance		
+6138	B-skat	Balance		
+6140	Periodens resultat efter skat	Suminterval		1000..4990
+6199	EGENKAPITAL I ALT	Suminterval		1000..4990;6100..6199
+6300	HENSÆTTELSER	Overskrift		
+6310	Udskudt skat	Balance		
+6320	Øvrige hensættelser	Balance		
+6399	HENSÆTTELSER I ALT	Sumfra		6300
+6600	GÆLD	Overskrift		
+6610	Skyldig selskabsskat	Balance		
+6750	Kassekredit	Balance		
+6800	Kreditorer	Balance		
+6805	Skattekonto	Balance		
+6830	Skyldige omkostninger	Balance		
+6835	Skyldige medarbejderudlæg	Balance		
+6860	Mellemregning med anpartshaver	Balance		
+6900	Moms og afgifter	Overskrift		
+6901	Skyldig moms, primo	Balance		
+6902	Udgående (salg) moms	Balance		
+6903	Indgående (køb) moms	Balance		
+6906	Erhvervelsesmoms (køb i udland)	Balance		
+6907	Erhvervelsesmoms (modkonto)	Balance		
+6910	Olieafgift	Balance		
+6911	Elafgift	Balance		
+6914	CO2-afgift	Balance		
+6917	Betalt moms	Balance		
+6918	Moms og afgifter i alt	Sumfra		6900
+6919	Anden gæld	Overskrift		
+6920	Skyldig A-skat	Balance		
+6921	Skyldig ATP	Balance		
+6922	Skyldig pension	Balance		
+6923	Skyldige feriepenge & SH	Balance		
+6924	Skyldig DA-barsel	Balance		
+6930	Skyldig AM-bidrag	Balance		
+6940	Skyldige lønninger	Balance		
+6945	Andre skyldige løn poster	Balance		
+6946	Hensat feriepengeforpligtelse	Balance		
+6999	Anden gæld i alt	Sumfra		6919
+7999	GÆLD I ALT	Sumfra		6600
+8999	PASSIVER I ALT	Suminterval		1000..4990;6000..8999
+9900	Analyse/fejlkonto	Balance		
+9990	Nulkontrol	Sumfra		1000
+

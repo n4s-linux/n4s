@@ -1,0 +1,10 @@
+{
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "om/icalparser": "^3.0",
+        "benjaminhoegh/parsedown-toc": "^1.4",
+        "kunalvarma05/dropbox-php-sdk": "^0.4.2",
+        "league/commonmark": "^2.4",
+        "cebe/markdown": "~1.2.0"
+    }
+}

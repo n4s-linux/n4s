@@ -1,0 +1,909 @@
+function h() {
+l r $@|head
+}
+function t() {
+l r $@|tail
+}
+function kd() {
+	cd ~/Dropbox/"$(ls ~/Dropbox|fzf)"
+}
+function i() {
+	cd Bilag/Incoming
+}
+
+alias v="bash /svn/svnroot/Applications/viewpdf.bash $@"
+alias 111="tmux send-keys 'l b ^Indtægter: ^Udgifter' Enter"
+alias 320="tmux send-keys 'l b ^Indtægter:' Enter"
+alias 115="tmux send-keys ' l b ^ind ^ud --depth=2' Enter 'python' Enter"
+alias 325="tmux send-keys ' l b ^ind ^ud --depth=2' Enter 'python' Enter "
+alias 326="tmux send-keys 'l b afskrivning' Enter"
+alias 327="tmux send-keys ' l b ^ind ^ud --depth=2' Enter "
+alias 123="tmux send-keys 'period=yearly ppivot Egenkapital:' Enter"
+alias 331="tmux send-keys 'period=yearly ppivot Egenkapital:' Enter"
+alias 124="tmux send-keys 'period=yearly ppivot Aktiver:' Enter"
+alias 332="tmux send-keys 'period=yearly ppivot Aktiver:' Enter"
+alias 356="tmux send-keys 'period=yearly ppivot Udgifter:Administration:Mindre' Enter"
+alias 638="tmux send-keys 'period=yearly ppivot Passiver:Moms:' Enter"
+alias aktiver="tmux send-keys 'period=yearly ppivot ^Aktiver:' Enter"
+alias passiver="tmux send-keys 'period=yearly ppivot ^Passiver:' Enter"
+alias udgifter="tmux send-keys 'period=yearly ppivot ^Udgifter:' Enter"
+alias indtægter="tmux send-keys 'period=yearly ppivot ^Indtægter:' Enter"
+alias egenkapital="tmux send-keys 'period=yearly ppivot ^Egenkapital:' Enter"
+
+export LEDGER_SORT=date
+alias pivot="bash /svn/svnroot/Applications/hpivot.bash $@"
+alias ppivot="LEDGER_BEGIN=1970/1/1 LEGDER_END=2099/12/31 bash /svn/svnroot/Applications/hpivot.bash $@"
+
+mkdir -p ~/tmp/tmux-sockets/
+export TMUX_TMPDIR=~/tmp/tmux-sockets
+alias budget="bash /svn/svnroot/Applications/budget.bash"
+transfer() {
+    curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
+}
+export termcmd=terminal
+function changetermcmd() {
+	export termcmd=$(echo -e "display-popup -E\nterminal\nnew-window\nsplit-window -h\nsplit-window -v"|fzf --exact --height=9 --header="Vælg output")
+}
+export LEDGER_PAYEE_WIDTH=34
+export LEDGER_ACCOUNT_WIDTH=36
+export LEDGER_AMOUNT_WIDTH=12
+export LEDGER_TOTAL_WIDTH=12
+
+alias reconcile="php /svn/svnroot/Applications/recon.php"
+alias debtorreport="/svn/svnroot/Applications/browsedebitors.bash"
+function dp() {
+	php /svn/svnroot/Applications/datepick.php
+	source ~/tmp/.datepick
+}
+function ds() {
+	php /svn/svnroot/Applications/sortpick.php
+	source ~/tmp/.sortpick
+}
+function m() {
+	if [ "$tpath" != "" ]; then
+		php /svn/svnroot/Applications/tmux/menu.php rmenu
+
+	else
+		echo "Kan ikke åbne menu før valg af regnskab. Skriv 'sr' for at vælge regnskab"
+		return
+	fi
+}
+function lm() {
+
+	if [ "$tpath" != "" ]; then
+		php /svn/svnroot/Applications/tmux/menu.php Ledger
+		tmux display-popup -w 55 -h 12 -E "whiptail --inputbox Konto 7 50 > ~/tmp/whiptail.out"
+		tmux send-keys "'$(echo -n $(cat ~/tmp/whiptail.out))' Enter"
+
+	else
+		echo "Kan ikke åbne menu før valg af regnskab. Skriv 'sr' for at vælge regnskab"
+		return
+	fi
+}
+bind '"\em":"m\n"' 2>/dev/null
+bind '"\eå":"lm\n"' 2>/dev/null
+bind '"\er":"r\n"' 2>/dev/null
+bind '"\ep":"dp\n"' 2>/dev/null
+bind '"\es":"ds\n"' 2>/dev/null
+bind '"\eq":"changetermcmd\n"' 2>/dev/null
+shopt -s histappend
+mkdir -p ~/tmp/ /svn/svnroot/tmp/
+LEDGER_DEPTH=5
+
+export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
+alias sync="bash /svn/svnroot/Applications/unison_sync.bash"
+function ti() {
+	time=$(date +"%H:%m")
+	#tmux set -g status-right "#[fg=white]# $time: $1"
+}
+function ww() {
+tmux select-window -t $(tmux list-windows|fzf|awk '{print $1}'|sed 's/://g') 
+}
+logfile_o="/var/log/olsen"
+
+source /svn/svnroot/Applications/key_tas.bash
+function r() {
+	konto=$(ledger -f $tpath/curl accounts|fzf --header="v-lg konto")
+	#konto=$(whiptail --inputbox "Konto" 10 30 3>&1 1>&2 2>&3)
+	tmux send-keys "l r ^$konto" Enter
+}
+function x() {
+if [ "$STY" != "" ]; then
+	echo du er allerede i en STY $STY
+	return
+fi
+session=$((screen -ls|grep -v There" are"|grep -v Sockets;echo "NY")|fzf|awk '{print $1}')
+if [ "$session" == "NY" ] || [ "$session" == "ny" ]; then
+	#echo -n "Indtast ny aktivitets navn: "
+	#read name
+	tag=$(ls /home/joo/regnskaber/transactions_stuff/.tags/|fzf)
+	#source /home/joo/regnskaber/transactions_stuff/.tags.bash
+	#tag=$(tpath=/home/joo/regnskaber/transactions_stuff gettags|fzf)
+	if [ "$tag" == "noter" ]; then
+		screen -c $screenrc -S "noter" vi ~/Noter.txt
+	else
+		screen -c $screenrc -S "$tag" 
+	fi
+else
+	if [[ "$session" =~ *"noter"* ]]; then
+		screen -c $screenrc. -x $session 
+	else
+		screen -c $screenrc -x $session 
+	fi
+fi
+
+}
+
+
+
+function oll() {
+(grep -i "$1" ~/t/*/1000" - "*
+grep -i "$1" ~/pr/*/1000" - "*
+grep -i "$1" ~/companies/*/1000" - "*
+grep -i "$1" ~/p/*/1000" - "*
+)|while read i; do 
+	b=$(basename "$i"); 
+	fn=$(echo -n "$i"|sed "s/$b//g"; echo -n "100000 - History")
+	if [ -f "$fn" ]; then
+		echo "### $fn ###"
+		cat "$fn"
+	fi
+done|less
+}
+alias ta="task add" 
+current_year=$(date +%Y)
+next_year=$(date +%Y --date="next year")
+function jan() {
+	export LEDGER_BEGIN=$current_year"-01-01"
+	export LEDGER_END=$current_year-"02-01"
+}
+function feb() {
+	export LEDGER_BEGIN=$current_year"-02-01"
+	export LEDGER_END=$current_year-"03-01"
+}
+function mar() {
+	export LEDGER_BEGIN=$current_year"-03-01"
+	export LEDGER_END=$current_year-"04-01"
+}
+function apr() {
+	export LEDGER_BEGIN=$current_year"-04-01"
+	export LEDGER_END=$current_year-"05-01"
+}
+function maj() {
+	export LEDGER_BEGIN=$current_year"-05-01"
+	export LEDGER_END=$current_year-"06-01"
+}
+function jun() {
+	export LEDGER_BEGIN=$current_year"-06-01"
+	export LEDGER_END=$current_year-"07-01"
+}
+function jul() {
+	export LEDGER_BEGIN=$current_year"-07-01"
+	export LEDGER_END=$current_year-"08-01"
+}
+function aug() {
+	export LEDGER_BEGIN=$current_year"-08-01"
+	export LEDGER_END=$current_year-"09-01"
+}
+function sep() {
+	export LEDGER_BEGIN=$current_year"-09-01"
+	export LEDGER_END=$current_year-"10-01"
+}
+function okt() {
+	export LEDGER_BEGIN=$current_year"-10-01"
+	export LEDGER_END=$current_year-"11-01"
+}
+function nov() {
+	export LEDGER_BEGIN=$current_year"-11-01"
+	export LEDGER_END=$current_year-"12-01"
+}
+function dec() {
+	export LEDGER_BEGIN=$current_year"-12-01"
+	export LEDGER_END=$next_year"-01-01"
+}
+function q4() {
+	export LEDGER_BEGIN=$current_year"-10-01"
+	export LEDGER_END=$next_year"-01-01"
+}
+function q3() {
+	export LEDGER_BEGIN=$current_year"-07-01"
+	export LEDGER_END=$current_year-"10-01"
+}
+function q2() {
+	export LEDGER_BEGIN=$current_year"-04-01"
+	export LEDGER_END=$current_year-"07-01"
+}
+function q1() {
+	export LEDGER_BEGIN=$current_year"-01-01"
+	export LEDGER_END=$current_year-"04-01"
+}
+
+
+
+
+export TMPDIR=~/.gittmp
+alias viewer="evince /svn/svnroot/tmp/cur.pdf 2>/dev/null & "
+function ubig() {
+mv "$tpath/vouchers/$(echo -n $(cat /tmp/curfn))" "$tpath/vouchers/ignored_$(echo -n $(cat /tmp/curfn))"
+}
+alias ub="bash /svn/svnroot/Applications/unused_vouchers.bash"
+mkdir -p ~/.gittmp
+function schedule() {
+php /svn/svnroot/Applications/ol_time.php >/tmp/oltime.html;w3m /tmp/oltime.html -dump|less
+}
+function visbilag(){
+ls *.trans|while read i; do 
+	(
+		jq .Reference "$i"
+		jq .Ref "$i"
+	)|grep -v CSV|grep -vi null|sed 's/"//g'; done|sort -n|less
+}
+function eh {
+vim /svn/svnroot/Applications/key_help.txt
+}
+alias arkiverbilag="bash /svn/svnroot/Applications/arkiverbilag.bash"
+function fb {
+	bash /svn/svnroot/Applications/key_bilag.bash
+}
+function srb()
+{
+	export dbpath="$(find ~/Dropbox/*/Bilag/Incoming/ -type d|fzf --header 'FIND KUNDEMAPPE' )"
+}
+
+alias csv="php /svn/svnroot/Applications/key_csv.php load"
+alias pro="ol pr"
+function olh() {
+	opath=$(select_db)
+headers=""
+rm -rf ~/.curheader
+cat ~/"$opath"/template/.headers|while read i
+do
+	echo -n "$i - " >> ~/.curheader
+done
+curheader=$(echo -n $(cat ~/.curheader)) 2>/dev/null
+(ls ~/"$opath"/*/*" - "*|while read i; do basename "$i"; done|sort|uniq|opath=$opath fzf --reverse --multi --preview-window=down:1 --preview="echo Current: $curheader"|while read i; do 
+	echo "$i"|awk '{print $1}'; 
+done) > ~/"$opath/template/.headers"
+}
+function customers() {
+ls ~/c|grep -v template|grep -v completed|while read i; do echo -n "$i - "; echo -n $(cat ~/c/$i/"1000 - "*);echo|head -n1; done|sort -n
+}
+alias olc="ol companies"
+alias olp="ol p"
+alias olt="ol t"
+alias olst="ol st"
+alias olj="ol j"
+function select_db() {
+(
+ls /dropbox/ol/*/template -d|while read y
+	do 
+		lw=$(echo -n $(echo "$y"|sed 's/\/template//g'))"/.viewed"
+		if [ -f "$lw" ]; then
+			echo -n $(stat -c "%y" "$lw")
+			echo -e "\t$y"|head -n2
+		else
+			touch "$lw"
+                        echo -n $(stat -c "%y" "$lw")
+                        echo -e "\t$y"|head -n2
+		fi
+ 	done
+
+)|sort --reverse|awk '{print $4}'|sed 's/\/template//g' > ~/.listfolders
+cat ~/.listfolders|while read i 
+	do
+	basename "$i" >> ~/.listfolders.2
+done 
+cp ~/.listfolders.2 ~/.listfolders
+rm ~/.listfolders.2
+cat ~/.listfolders|while read i
+do 
+#	echo "link"
+#else
+	echo "$i"
+done|fzf --cycle --no-mouse|awk '{print $1}' > ~/.select
+db=$(cat ~/.select)
+rm ~/.select
+touch ~/"$db"/.viewed
+echo "$db"
+export tpath="$db"
+}
+
+
+
+
+
+
+
+
+
+function po_latex() { #// print offer
+if [ "$2" == "" ];  then
+opath=$(select_db)
+else
+opath="$2"
+fi
+#return
+echo "<meta charset=utf8><p align=right><img src='https://olsensrevision.dk/wp-content/uploads/elementor/thumbs/olsens-onf38ivvwko6z6ujk7ubpjc3t0n8teweq5uwfuvuhs.png'></p><p align=center><h3>Status på din sag hos Olsens Revision ApS</h3></p>" > /tmp/currap.html
+echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">' >> /tmp/currap.html
+#cat ~/$opath/$1/5000" -"* >> /tmp/currap.html
+echo "<table class=table-striped valign=top><tr vlign=top><td valign=top>" >> /tmp/currap.html;
+pushd . >/dev/null
+cd ~/$opath/$1
+y=0
+ls|grep -v History|sort -n|while read i;do
+	echo "i: '$i'" >> /tmp/debug.log
+	if [ "$y" = "12" ]; then
+		newrow="1"
+		y=0;
+	else
+		newrow="0"
+		y=$((y+1))
+	fi
+	if [[ ! -s "$i" ]]; then
+		continue
+	fi
+	echo "<table class=table border=1 width=100%><tr valign=top>" >> /tmp/currap.html
+	if [ "$i" == "6000 - Behovsliste" ] ; then
+		yellow_begin="bgcolor=yellow "
+		pre_yellow=" style='background-color:yellow' "
+	else
+		yellow_begin=""
+		pre_yellow=""
+	fi
+	translated_i=$(translate "$i")
+	(echo "<td valign=top width=350  $yellow_begin><div style='width: 350'>$translated_i</div></td><td valign=top style='width: 550px' with=550 $yellow_begin><div style='width: 550'><pre $pre_yellow>";cat "$i"|sed 's/^/  /'; echo " </pre></div></td>") >> /tmp/currap.html
+	echo "</tr></table>" >> /tmp/currap.html;
+	if [[ "$newrow" == "1" ]]; then
+		echo "</td><td valign=top>" >> /tmp/currap.html
+	fi
+done
+popd > /dev/null
+echo "</td></tr></table>" >> /tmp/currap.html;
+echo '<hr><center>Olsens Revision ApS, Fortunstræde 1, 2., 1065 København K, Tlf. 2586 4573</center><P style="page-break-before: always">' >> /tmp/currap.html
+#cat ~/$opath/$1/"100000 - History" >> /tmp/currap.html
+w3m -dump /tmp/currap.html|less
+output=/tmp/currap.html
+md=$(cat /tmp/currap.html|md5sum|awk '{print $1'})
+fn="$opath-$md.pdf"
+fnpng="$opath-$md.png"
+outputpdf="/svn/svnroot/tmp/$fn"
+wkhtmltopdf --images --enable-internal-links toc "$output" "$outputpdf" 
+dato=$(date +%Y-%m-%d)
+echo -e "<h1><u>Status dags dato på sag vedr. " > /tmp/msg
+cat ~/$opath/$1/5000" -"* >> /tmp/msg
+echo "</u></h1>" >> /tmp/msg
+cat /tmp/currap.html >> /tmp/msg
+behov=~/"$opath/$1/6000 - Behovsliste"
+skridt=~/"$opath/$1/7250 - Næste skridt"
+if [ -s "$behov" ]; then
+	echo "<table border=1 width=700><tr><td>" >> /tmp/msg
+	echo "<h3>Aktuelle behov <u>du</u> skal være opmærksom på:</h3><br>" >> /tmp/msg
+	echo "<pre style='background-color: yellow'>" >> /tmp/msg
+	cat "$behov" >> /tmp/msg
+	echo "</pre>" >> /tmp/msg
+	echo "</td></tr></table>" >> /tmp/msg
+fi
+if [ -s "$skridt" ]; then
+	echo "<table border=1 width=700><tr><td>" >> /tmp/msg
+	echo "<h3>Vores næste skridt i sagen</h3>" >> /tmp/msg
+	echo "<pre style='background-color: green'><i>" >> /tmp/msg
+	cat "$skridt" >> /tmp/msg
+	echo "</i></pre>" >> /tmp/msg
+	echo "</td></tr></table>" >> /tmp/msg
+fi
+echo "<br><i>...For flere detaljer - se vedlagte PDF</i><br><br><br><b>Med venlig hilsen<b><br>Jørgen Olsen<br><br>Olsens Revision ApS<br>Fortunstræde 1, 2.<br>1065 København K<br>Tlf. 2586 4573" >> /tmp/msg
+filepdf="$(echo -n $(date +%Y-%m-%d))-$fn"
+filepng="$(echo -n $(date +%Y-%m-%d))-$fnpng"
+cp "$outputpdf" "$filepdf"
+cp /tmp/msg /tmp/status.html
+cp "$filepdf" /tmp/status.pdf
+php /svn/svnroot/Applications/phpmailer.php
+rm /tmp/msg
+rm -rf *.jpeg
+rm -rf *.pdf
+}
+
+uriencode() {
+  s="${1//'%'/%25}"
+  s="${s//' '/%20}"
+  s="${s//'"'/%22}"
+  s="${s//'#'/%23}"
+  s="${s//'$'/%24}"
+  s="${s//'&'/%26}"
+  s="${s//'+'/%2B}"
+  s="${s//','/%2C}"
+  s="${s//'/'/%2F}"
+  s="${s//':'/%3A}"
+  s="${s//';'/%3B}"
+  s="${s//'='/%3D}"
+  s="${s//'?'/%3F}"
+  s="${s//'@'/%40}"
+  s="${s//'['/%5B}"
+  s="${s//']'/%5D}"
+  printf %s "$s"
+}
+alias csv="php /svn/svnroot/Applications/key_csv.php load"
+function cvr() {
+	php /svn/svnroot/Applications/cvr.php "$@"|less
+}
+function gsp (){
+return
+	#git diff "$tpath"
+	#echo -n "Indtast kommentar til gemning: "
+	#read kommentar </dev/tty
+	#kommentar=autogem
+	#pushd . >/dev/null;cd "$tpath";git add .;git commit -m "Gemt: $kommentar" -q . &&git push ;popd >/dev/null
+}
+alias rule="php /svn/svnroot/Applications/key_condgen.php"
+function rule_copy() {
+	cp $(ls ~/regnskaber/*/logic*|fzf -e --no-mouse --cycle) "$tpath"
+}
+function html2() {
+	begin=$LEDGER_BEGIN
+	end=$LEDGER_END
+	bn=$(basename "$tpath")
+	php /svn/svnroot/Applications/htmlreport.php > ~/tmp/out.html
+	pushd . 2>/dev/null
+	cd ~/tmp/
+	google-chrome-stable --headless --disable-gpu --print-to-pdf out.html
+	mv output.pdf Saldobalance-$bn-$begin-$end.pdf
+	google-chrome-stable --headless --disable-gpu --print-to-pdf kontokort.html
+	mv output.pdf kontokort-$bn-$begin-$end.pdf
+	popd 2>/dev/null
+}
+function html() {
+	html2
+	return
+
+	echo brug  html2 nu
+	return
+	mkdir -p /svn/svnroot/tmp 2>/dev/null
+	output=~/tmp/htmloutput.html
+	outputpdf=~/tmp/htmloutput.pdf
+	echo generating html
+	php /svn/svnroot/Applications/key_multiperiod.php $@ > "$output"
+	#wkhtmltopdf --enable-internal-links toc "$output" "$outputpdf" 
+	#echo generating pdf
+	#(chromium --headless --disable-gpu --print-to-pdf="$outoutpdf" "file://$output") > /dev/null 2>/dev/null
+	#cp "output.pdf" /svn/svnroot/Preview.pdf
+	#mv "output.pdf" "$outputpdf"
+	#evince "$outputpdf"
+	bn=$(echo -n $(basename "$tpath"))
+	begin=$LEDGER_BEGIN
+	end=$LEDGER_END
+	if [ -f "$tpath/.companyname.txt" ]; then
+		cn="$(cat $tpath/.companyname.txt)"
+		bn="$cn"
+	fi
+	id="$bn - Periode $begin - $end"
+	if [ "$1" == "spec" ]; then
+		id="$id (m-specs)"
+	fi
+	#echo id="$id"
+	cp "$output" ~/tmp/"Resultat & Balance - $id.html"
+	if [ -f ~/.svnrooturl ]; then
+		url="$(cat ~/.svnrooturl)"
+	else
+		echo -n "indtast svnroot url (spørger kun 1 gang, tryk ENTER for offline): "
+		read url
+		if [ "$url" == "" ]; then
+		echo "file:///svn/svnroot/" > ~/.svnrooturl
+		else
+		echo "$url" > ~/.svnrooturl
+		fi
+	fi
+	echo "se $url/tmp/Resultat & Balance $id.html"
+}
+alias li="bash /svn/svnroot/Applications/key_massupdate.bash"
+export simple=1
+source /svn/svnroot/Applications/nicebal.bash
+alias plot="bash /svn/svnroot/Applications/key_plot.bash"
+alias plotg="png='set terminal png' bash /svn/svnroot/Applications/key_plot.bash $@ > /svn/svnroot/tmp/plotg.png"
+alias se="php /svn/svnroot/Applications/key.php search_expression"
+alias inv="bash /svn/svnroot/Applications/key_inv.bash"
+alias inv="ol inv"
+source /svn/svnroot/Applications/code.bash
+function c() {
+	start=$(date +%s)
+	bash /svn/svnroot/Applications/start.bash code
+	end=$(date +%s)
+	min=$(echo "scale=2;($end-$start)/60/60*2"|bc -l) #*2 = fordobling af minutter brugt, til tænketid og research 2023-03-21T17:02 joo	tænker det er et fornuftigt skøn
+	ts=$(date "+%Y-%m-%dT%H:%M")
+	mkdir -p /data/regnskaber
+	fn=$(cat ~/tmp/.editcode)
+	rm -rf ~/tmp/.editcode
+	fn=$(echo "$fn"|sed 's/\/svn\/svnroot\///g')
+	echo -e "$ts\t#n4s:#code:$fn\t$min" >> /data/regnskaber/stats/$(whoami).stats
+}
+function push() {
+	bash /svn/svnroot/Applications/backup_key.bash $(basename $tpath)
+}
+function lp() {
+fn="$tpath/config.bash"
+env|grep LEDGER
+echo Changing ledger parameters
+echo -n "Begin: "
+read begin
+if [ "$begin" != "" ]; then 
+	export LEDGER_BEGIN=$begin
+fi
+echo -n "End: "
+read end
+if [ "$end" != "" ] ; then
+	export LEDGER_END=$end
+fi
+echo -n "Depth: "
+read depth
+if [ "$depth" != "" ]; then
+	export LEDGER_DEPTH=$depth
+fi
+echo -n "Simple (periodisering): "
+read s
+export simple="$s"
+
+
+echo -n "Reconciliation (skriv 1 for ja): "
+read s
+export reconciliation="$s"
+
+echo -n "Missing vouchers (1 for at filtrere): "
+read s
+export LEDGER_MISSING_VOUCHERS="$s"
+echo "export simple=$simple" > $fn
+echo "export LEDGER_MISSING_VOUCHERS=$missing_vouchers" >> $fn
+(env|grep LEDGER|while read i; do echo -n export" "; echo $i; done ) >> "$fn"
+#chmod 777 "$fn"
+php /svn/svnroot/Applications/key.php ledger b foobarbidity
+}
+
+
+
+#alias dl="sort /revi/deadlines > /revi/deadlines.tmp;mv /revi/deadlines.tmp /revi/deadlines;vi /revi/deadlines;git commit /revi/deadlines -v"
+#source /svn/svnroot/Applications/la.bash
+#bind '"\C-p": shell-backward-kill-word'
+
+
+
+### LEDGER IN PDF STUFF
+#export LEDGER_BEGIN=$(date --date="$(date +%Y-%m-%d) -1 month" +%Y-%m-%d)
+#export LEDGER_END=$(date +%Y-%m-%d --date="+1 day")
+#alias ledger="ledger -B --sort date --date-format %Y-%m-%d --payee-width 40 --account-width 50 --amount-width 13 --recursive-aliases"
+alias ep="bash /svn/svnroot/Applications/editpdfmeta.bash" #EDIT PDF
+#export LEDGER_FILE=~/curl/cur.ledger
+function epb {
+#Henter posteringer
+(cat aliases.ledger *.ledger;ls -t *.pdf|while read i; do ep "$i" cat;done)>~/curl.ledger
+cat ~/curl.ledger
+}
+function epi {
+#Henter dem der Ingen kontering har
+ls -t *.pdf|while read i; do  ep "$i" cat $1;done |grep Ingen
+}
+function epu {
+#Henter dem der Ingen kontering har
+ls -t *.pdf|while read i; do  ep "$i" unaccounted ;done |grep Ingen
+}
+
+
+function epm { ###Viser unmappede accounts
+epb|ledger -B bal --depth 1|grep -v Aktiver|grep -v Passiver|grep -v "                   0"|grep -v "\-\-\-"|grep -v Egenkapital|while read i
+do
+echo -n "alias "
+echo -n $(echo "$i"|awk '{print $2" "$3" "$4" "$5" "$6" "$7}')
+echo "="
+done
+}
+
+### ENDDD LLEDGER I PDF STUFF
+###Underskrift af dokumenter i gimp
+alias underskriv="gimp ~/Dropbox/Jørgen\ Olsen/Signature.xcf $1"
+###SLUT Underskrift
+###RT CLI
+alias +s="php /svn/svnroot/Applications/rt_cli/main.php search"
+alias +f="vi /svn/svnroot/tmp/filter_$(whoami)"
+alias +l="vi /svn/svnroot/tmp/limit_$(whoami)"
+alias +o="vi /svn/svnroot/tmp/sort_$(whoami)"
+alias +q="vi /svn/svnroot/tmp/query_$(whoami)"
+alias +v="php /svn/svnroot/Applications/rt_cli/main.php show $1"
+
+alias +h="echo +s=search;echo +f=filter;echo +l=limit;echo +o=sort;echo +q=query;echo +h=help;echo +v=view"
+
+##RT CLI END
+
+#alias ti="python /svn/svnroot/Applications/ti.py"
+alias tii="python /svn/svnroot/Applications/ti.py f;python /svn/svnroot/Applications/ti.py o"
+bash /svn/svnroot/Applications/require_detach.bash
+basename=$(basename "$PWD")
+#alias log="less +G \"$logfile_o\""
+export LC_ALL=da_DK.UTF-8
+export LANG=$LC_ALL
+export LANGUAGE=$LC_ALL
+alias python="ipython3 --no-banner"
+#(python2 /svn/svnroot/Applications/dropbox.py start >/dev/null&)>/dev/null &
+function getenv() {
+	env|grep LEDGER|grep -v "=$"|grep -v LEDGER_SORT|grep -v LEDGER_DEPTH|while read i
+do
+
+	echo -n "$i "
+done
+	bn=$(basename "$tpath");
+	echo -n "$bn"
+}
+# update tmux pane title found here: https://stackoverflow.com/questions/14356857/how-to-show-current-command-in-tmux-pane-title
+function update_title {
+export TMUX_PANE_TITLE="$1"
+ printf "\033]2;%s\033\\" "${1:-$TMUX_PANE_TITLE}"; }
+# it is done here
+
+prompt_function () {
+cmd=$(fc -ln -0)
+#env=$(getenv|sed 's/LEDGER_//g')
+bn=$(basename "$tpath");
+update_title "#[bg=yellow]$cmd #[bg=blue]$LEDGER_BEGIN - $LEDGER_END"
+env=
+if [ "$tpath" != "" ]; then
+	showpath="#[fg=black,bg=white]$(basename "$tpath")"
+else
+	showpath=n4s
+fi
+tmux set -g pane-border-format "#[fg=black,bg=gray]$env$showpath#[fg=black,bg=orange]#T"
+
+
+#cmd=$(history|tail -n1|awk '{print $4}')
+bnpwd=$(basename "$PWD")
+echo "$(whoami) $(date '+%Y-%m-%dT%H:%m') $bnpwd : $cmd" >> /data/regnskaber/.log
+BPWD="$(basename "$PWD")"
+#tmux rename-window "💻$BPWD|$cmd" # virker ikke så godt hvis der er flere panes... ?
+	oms=$(tail -n1 ~/tmp/.oms 2>/dev/null)
+	op=$(whoami)
+	oms=
+	timers=
+	if [ "$op" == "joo" ] || [ "$op" == "mim" ] || [ "$op" == "cas" ]; then
+		budget=280000
+		mkdir -p /data/regnskaber/transactions_igangv
+		if [ ! -f /data/regnskaber/transactions_igangv/curl ]; then
+			touch /data/regnskaber/transactions_igangv/curl
+		fi
+		omsf=$(echo $(LEDGER_BEGIN=$(date +%Y-%m-%d --date="4 months ago") LEDGER_END=$(date +%Y-%m-%d --date=tomorrow) LEDGER_DEPTH=5 ledger -f /data/regnskaber/transactions_igangv/curl --begin=$(date +%Y-%m-%d --date="4 months ago") --end=$(date +%Y-%m-%d --date=tomorrow) b Fakturaer|tail -n1) |bc 2>/dev/null)
+		omsr=$(echo $(LEDGER_BEGIN=$(date +%Y-%m-%d --date="4 months ago") LEDGER_END=$(date +%Y-%m-%d --date=tomorrow) LEDGER_DEPTH=5 ledger -f /data/regnskaber/transactions_igangv/curl --begin=$(date +%Y-%m-%d --date="4 months ago") --end=$(date +%Y-%m-%d --date=tomorrow) b indtægter|tail -n1) "*-1"|bc 2>/dev/null)
+		min=$(echo -e "$omsf\n$omsr"|sort|head -n1)
+		min=$(echo "$min * 1"|bc 2>/dev/null)
+		percent=$(echo "(85* $min / $budget)"|bc 2>/dev/null)
+		(timers=$(find /data/otimers/$(whoami)/ -type f|grep -v .log|while read i; do echo -n "$(basename $i):" ;echo -n $(echo "($(stat -c %Y "$i")-$(date +%s))/-60"|bc 2>/dev/null)"⌛"; done) )2>/dev/null
+		oms="#budget $percent%"
+	fi
+	rand=$(shuf -i 40-41 -n1)
+	#tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "☰ F1 Menu $timers" 2>/dev/null
+	dosha=$(php /svn/svnroot/Applications/curdosha.php);
+	differ=$(grep $(date +%Y-%m-%d) ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
+	diff2=$(grep $(date +%Y-%m-%d --date=yesterday) ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
+	diff3=$(grep $(date +%Y-%m-%d --date="-2 days") ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
+	oms=$(cat /data/regnskaber/transactions_crm/.månedsoms)
+	omsk=$(cat /data/regnskaber/transactions_crm/.kvartalsoms)
+	omsar=$(cat /data/regnskaber/transactions_crm/.årsoms)
+	oms=$(echo "$oms/-1000"|bc)
+	omsk=$(echo "$omsk/-1000/3"|bc)
+	omsar=$(echo "$omsar/-1000/12"|bc)
+	regnskaber=$(pushd . >/dev/null;cd /data/regnskaber/;ls -t|grep -v log|grep -v chart_of_account|grep -v NY|grep -v igang|grep -v crm|grep -v regnska|sed 's/transactions_//g'|sed 's/_//g'|head -n5|while read i; do echo -n "$i"|cut -c1-10;echo -n " "; done;popd >/dev/null)
+	regnskaber=
+	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=colour70,bg=colour25]$dosha#[fg=colour50,bg=colour95]✎#differ <3 dage $differ $diff2 $diff3 #[fg=colour60,bg=colour85]oms m/k/å: $oms/$omsk/$omsar #[fg=colour20,bg=colour30]$regnskaber" 2>/dev/null
+	tmux set -g status 2 2>/dev/null; tmux set -g stgatus-format[1] "" 2>/dev/null
+	tmux set-option status-right "#[fg=black,bg=white] $params %Y-%m-%dT%H:%M #[fg=colour233,bg=colour8]n4s"
+	pushd . >/dev/null
+	cd "$tpath"
+	popd >/dev/null
+if [ "$tpath" != "" ]; then
+	if [ "$tpath" == "$PWD" ]; then
+		PS1="\[\e[1;32m\]$(echo $lenv)$(basename '$tpath')]\$\[\e[0m "
+	else
+		PS1="\[\e[1;32m\]$(echo $lenv)$(basename $tpath) / \W]\$\[\e[0m "
+	fi
+fi
+}
+PROMPT_COMMAND=prompt_function
+
+if [[ -z $SVNROOT ]];then
+    export SVNROOT=/svn/svnroot # default
+fi
+# Set the title string at the top of your current terminal window or terminal window tab
+cd $SVNROOT;
+function bulk() {
+	if [ "$1" == "" ]; then
+		echo "s kræver søgefrase, f.eks. 's 2022-01 løn'"
+		return
+	fi
+	echo "bulksearching for $@  in $LEDGER_BEGIN - $LEDGER_END - use ss for searching in all time"
+	php /svn/svnroot/Applications/key.php bulk $LEDGER_BEGIN $LEDGER_END "$@"
+}
+function s() {
+	if [ "$1" == "" ]; then
+		echo "s kræver søgefrase, f.eks. 's 2022-01 løn'"
+		return
+	fi
+	echo "searching for $@  in $LEDGER_BEGIN - $LEDGER_END - use ss for searching in all time"
+	php /svn/svnroot/Applications/key.php search $LEDGER_BEGIN $LEDGER_END "$@"
+}
+function ss() {
+	if [ "$1" == "" ]; then
+		echo "s kræver søgefrase, f.eks. 's 2022-01 løn'"
+		return
+	fi
+	echo "searching for $@  in 1970-01-01 - 2019-12-31 - use s for searching only in $LEDGER_BEGIN - $LEDGER_END"
+	php /svn/svnroot/Applications/key.php search 1970-01-01 2099-12-31 "$@" 
+}
+alias e="php /svn/svnroot/Applications/key.php entry"
+alias eu="php /svn/svnroot/Applications/key.php entry bilag"
+
+unalias l 2>/dev/null #ubuntu default alias
+function l() {
+	LEDGER_CACHE=$LEDGER_CACHE php /svn/svnroot/Applications/key.php ledger $@
+	cat "$tpath/notes" 2>/dev/null
+}
+function lll() {
+noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31  php /svn/svnroot/Applications/key.php ledger $@
+	cat "$tpath/notes" 2>/dev/null
+}
+unalias ll 2>/dev/null #ubuntu default alias
+function ll() {
+	noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=$(echo -n $(date +%Y-%m-%d -d "tomorrow"))  php /svn/svnroot/Applications/key.php ledger $@
+	cat "$tpath/notes" 2>/dev/null
+}
+function lc() {
+	ledger --no-color --no-pager -f $tpath/curl $@
+}
+function llc() {
+	noend=1  LEDGER_BEGIN=1970/1/1 LEDGER_END=$(echo -n $(date +%Y-%m-%d -d "tomorrow")) ledger --no-pager --no-color --f $tpath/curl $@
+}
+function lllc() {
+	noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 ledger --no-pager ---no-color -f $tpath/curl $@
+}
+alias rc="php /svn/svnroot/Applications/key.php ledger register \"Uhåndterede kreditorbetalinger\""
+alias rd="php /svn/svnroot/Applications/key.php ledger register \"Uhåndterede debitorbetalinger\""
+alias b="bash /svn/svnroot/Applications/csvdatakey.bash"
+function hb() {
+	hledger-ui --theme=terminal --watch -f $tpath/curl -T --begin=$LEDGER_BEGIN --end=$LEDGER_END $@
+}
+
+alias bb="(noend=1 LEDGER_BEGIN=1970/01/01 LEDGER_END=2099/12/31 nicebal|less);" #php /svn/svnroot/Applications/key.php ledger bal"
+
+function logic() {
+
+if [ "$tpath" = "" ]; then
+	echo "no tpath set..."
+else
+	pushd . >/dev/null
+	cd $tpath
+	php /svn/svnroot/Applications/editclass_key.php $tpath/*.trans
+	popd >/dev/null
+fi
+}
+function logicG() {
+if [ "$tpath" = "" ]; then
+	echo "no tpath set..."
+else
+	scriptscope=global php /svn/svnroot/Applications/editclass_key.php $tpath/*.trans
+fi
+}
+
+function backup() {
+echo "Indtast kommentar: "
+read kommentar < /dev/tty
+tar czvf $tpath/.backup-$(date +%s)_$kommentar.tgz $tpath
+}
+function nr() {
+	pushd . 2>/dev/null
+	cd /data/regnskaber
+	echo -n "Indtast navn på nyt regnskab: "
+	read regnskab
+	source /svn/svnroot/Libraries/File/sanitize_file_name.bash
+	regnskab=$(sanitize_file_name "$regnskab")
+	regnskab=${regnskab// /_}
+	mkdir $regnskab
+	cd ~/regnskaber
+	ln -s /data/regnskaber/$regnskab 
+	popd 2>/dev/null
+	sr $regnskab
+}
+function scrips() {
+		ls -a /svn/svnroot/Applications/scrips/|fzf --multi --header="Vælg plugins"|while read choice
+		do
+			ln -s "/svn/svnroot/Applications/scrips/$choice" "$tpath"	
+			php $choice kopieret - venligst kør dette script manuelt før du fortsætter hvis scriptet kræver konfiguration
+			bash "$tpath/$choice"
+			echo "Kørt $choice"
+		done
+}
+function sr() {
+if [ -z "$1" ] ; then
+	export tpath=~/regnskaber/$((echo NY;ls -t ~/regnskaber)|fzf --no-mouse --cycle)
+else
+	export tpath=~/regnskaber/"$1"
+fi
+bn=$(basename "$tpath")
+if [ "$bn" == "NY" ]; then
+	echo -n "Nyt regnskab - Navn: "
+	read navn < /dev/tty
+	navn=$(echo "$navn"| tr -cd '[:alnum:]._-'|sed 's/\ /_/g')
+	if [ "$navn" != "" ]; then
+		if [ ! -f "/svn/svnroot/pubserver" ]; then
+			newfolder=/data/regnskaber/"$navn"
+		else
+			newfolder=~/regnskaber/"$navn"
+Qe
+		fi
+			mkdir -p "$newfolder"
+			tpath="$newfolder"
+			bn=$(basename "$tpath")
+		ln -s "$tpath" ~/regnskaber/"$bn"
+		#scrips
+
+	fi
+fi
+bn=$(basename "$tpath")
+if [ "$nochange" != "1" ]; then
+	tmux rename-window "#[bg=darkblue]$bn" 
+fi
+cd $tpath
+
+if [ ! -f "curl" ]; then touch curl; fi
+if [ $? -eq 0 ]; then
+    sleep 0.01
+else
+    echo FAILED entering $tpath
+	return 1
+fi
+sync
+if [ -f "$tpath/config.bash" ] ; then
+	source "$tpath/config.bash"
+fi
+if [ -f "$tpath/.init.bash" ]; then
+	source "$tpath/.init.bash"
+fi
+#echo Åbnet $(basename "$tpath") ....
+clear
+#asciinema rec -i1 /data/recordings/$(whoami)_"$bn"_$(date +%s).cast # problematisk at den starte et nyt shell, så kan man ikke sr() ind i et regnskab (uendeligtloop)
+echo -e "\e[42mÅbnet $(basename "$tpath") OK - Tryk Alt-m eller skriv 'm' [Enter] for Menu !\e[0m"
+}
+function saveconf() {
+	if [ "$tpath" == "" ]; then
+		#echo saveconf error tpath=$tpath - error
+		return
+	fi
+    fn="$tpath/config.bash";
+    echo "simple=$simple" > $fn;
+	env|grep LEDGER_|while read ldg
+	do
+	echo "$ldg" >> $fn
+	done
+	#chmod 777 "$fn"
+
+}
+
+
+bar_size=40
+bar_char_done="#"
+bar_char_todo="-"
+bar_percentage_scale=1
+
+function show_progress {
+    current="$1"
+    total="$2"
+    tekst="$3"
+    # calculate the progress in percentage 
+    percent=$(bc <<< "scale=$bar_percentage_scale; 100 * $current / $total" )
+    # The number of done and todo characters
+    done=$(bc <<< "scale=0; $bar_size * $percent / 100" )
+    todo=$(bc <<< "scale=0; $bar_size - $done" )
+
+    # build the done and todo sub-bars
+    done_sub_bar=$(printf "%${done}s" | tr " " "${bar_char_done}")
+    todo_sub_bar=$(printf "%${todo}s" | tr " " "${bar_char_todo}")
+
+    # output the bar
+    echo -ne "\r$tekst: [${done_sub_bar}${todo_sub_bar}] ${percent}%"
+
+    if [ $total -eq $current ]; then
+        echo -e "\nDONE"
+    fi
+}
+

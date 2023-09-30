@@ -1,0 +1,38 @@
+{
+        "Sumfra": {
+            "1999": 1,
+            "2799": 2700,
+            "3699": 3600,
+            "4999": 1000,
+            "5899": 5800,
+            "5999": 5000,
+            "6918": 6900,
+            "9899": 6000
+        },
+        "kontoplan": {
+            "1010": "Omsætning m\/moms",
+            "1020": "Salg uden moms",
+            "1999": "Omsætning i alt",
+            "2770": "Rejseomkostninger",
+            "2799": "Salgsomkostninger",
+            "3604": "Edb-omkostninger",
+            "3620": "Telefoni",
+            "3621": "Internet",
+            "3699": "Administrationsomkostninger",
+            "4999": "Periodens resultat",
+            "5600": "Debitorer",
+            "5810": "Kassebeholdning",
+            "5816": "Dankort",
+            "5820": "Bank",
+            "5899": "Likvide beholdninger",
+            "5999": "Aktiver i alt",
+            "6802": "Skattekonto",
+            "6902": "Udgående moms",
+            "6903": "Indgående moms",
+	    "6906": "Varekøb i udlandet, indgående", "6907":"Varekøb i udlandet, udgående",
+            "6908": "Ydelseskøb i udlandet, indgående", "6909":"Ydelseskøb i udlandet, udgående",
+            "6918": "Skyldig moms",
+            "9899": "Passiver i alt",
+            "9901": "Bankposteringer ej konteret"
+        }
+    }

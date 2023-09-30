@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>LedgerWeb{if $pagetitle} - {$pagetitle}{/if}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<style>
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+    body {
+        margin-bottom: 60px; /* Margin bottom by footer height */
+    }
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px; /* Set the fixed height of the footer here */
+        line-height: 60px; /* Vertically center the text there */
+        background-color: #f5f5f5;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">LedgerWeb</a>
+                </div>
+
+            <ul class="nav navbar-nav navbar-right">
+            {foreach name=loop loop=$menu}
+                {if $menu[$loop.index].items}
+                    {if $menu[$loop.index].active} <li class="dropdown active"> {else} <li class="dropdown"> {/if}
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            {$menu[$loop.index].label}
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                {foreach name=loop2 loop=$menu[$loop.index].items}
+                                <li> <a href="{$menu[$loop.index].items[$loop2.index].url}">
+                                    {$menu[$loop.index].items[$loop2.index].label}</a> </li>
+                                {/foreach}
+                            </ul>
+                    </li>
+                {elseif $menu[$loop.index].label != ""}
+                    {if $menu[$loop.index].active} <li class="active"> {else} <li> {/if}
+                    <a href="{$menu[$loop.index].url}">{$menu[$loop.index].label}</a></li>
+                {/if}
+            {/foreach} 
+            </ul>
+            </div>
+        </nav>
+    </header>
+ 
+    <main role="main" class="container">
+        <div class="container">
+            
+            {if $pagetitle}<h3>{$pagetitle}</h3>{/if}</title>

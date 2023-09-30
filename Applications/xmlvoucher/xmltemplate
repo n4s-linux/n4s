@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmlvoucher>
+<vouchers>
+</vouchers>
+<aliases>
+</aliases>
+  <kontonavne>
+    <kontonavn navn="Salg af varer/ydelser m/moms" nr="1010"/>
+    <kontonavn navn="Fragtindt&#xE6;gter m/moms" nr="1011"/>
+    <kontonavn navn="Kreditgebyrer m/moms" nr="1012"/>
+    <kontonavn navn="Kassedifferencer m/moms" nr="1015"/>
+    <kontonavn navn="Salg af varer u/moms" nr="1020"/>
+    <kontonavn navn="Kortgebyrer u/moms" nr="1021"/>
+    <kontonavn navn="Portoindt&#xE6;gter u/moms" nr="1022"/>
+    <kontonavn navn="Salg udenfor EU u/moms" nr="1030"/>
+    <kontonavn navn="Serviceydelser m/moms" nr="1050"/>
+    <kontonavn navn="Salgskommision m/moms" nr="1060"/>
+    <kontonavn navn="Bitcoinshandel" nr="1070"/>
+    <kontonavn navn="Direkte omkostninger m/moms" nr="1310"/>
+    <kontonavn navn="Fragtudgifter m/moms" nr="1311"/>
+    <kontonavn navn="Kreditudgifter m/moms" nr="1312"/>
+    <kontonavn navn="Direkte omkostninger u/moms" nr="1320"/>
+    <kontonavn navn="Kortgebyrer u/moms" nr="1321"/>
+    <kontonavn navn="Portoudgifter u/moms" nr="1322"/>
+    <kontonavn navn="Moms, brugtmomsordningen" nr="1330"/>
+    <kontonavn navn="Moms af avance p&#xE5; porto" nr="1335"/>
+    <kontonavn navn="IKKE I BRUG" nr="1350"/>
+    <kontonavn navn="IKKE I BRUG" nr="1360"/>
+    <kontonavn navn="Defekte varer til evt. kreditering" nr="1365"/>
+    <kontonavn navn="Registreret svind" nr="1366"/>
+    <kontonavn navn="L&#xF8;nninger" nr="2210"/>
+    <kontonavn navn="Feriepenge &amp; SH" nr="2211"/>
+    <kontonavn navn="Sygedagpenge mv." nr="2212"/>
+    <kontonavn navn="B-honorar / Fri telefon" nr="2213"/>
+    <kontonavn navn="Personalegoder" nr="2214"/>
+    <kontonavn navn="Pensioner, arbejdsgiver" nr="2215"/>
+    <kontonavn navn="AER" nr="2222"/>
+    <kontonavn navn="ATP" nr="2223"/>
+    <kontonavn navn="DA-barsel" nr="2224"/>
+    <kontonavn navn="KM-penge" nr="2230"/>
+    <kontonavn navn="Personaleudgifter" nr="2241"/>
+    <kontonavn navn="Mentor-ordning" nr="2250"/>
+    <kontonavn navn="Feriepengeforpligtelse, reg." nr="2280"/>
+    <kontonavn navn="Fremmed arbejde" nr="2295"/>
+    <kontonavn navn="Fremmed arbejde mgl spec" nr="2296"/>
+    <kontonavn navn="Restaurationsbes&#xF8;g" nr="2750"/>
+    <kontonavn navn="Gaver og blomster" nr="2754"/>
+    <kontonavn navn="Rejseudgifter" nr="2770"/>
+    <kontonavn navn="Annoncer og reklame" nr="2800"/>
+    <kontonavn navn="Velg&#xF8;renhed" nr="2801"/>
+    <kontonavn navn="Partist&#xF8;tte LA" nr="2802"/>
+    <kontonavn navn="Fragt m/moms" nr="2811"/>
+    <kontonavn navn="Br&#xE6;ndstof" nr="3110"/>
+    <kontonavn navn="Bilforsikring" nr="3120"/>
+    <kontonavn navn="V&#xE6;gtafgift" nr="3130"/>
+    <kontonavn navn="Reparation/vedligeholdelse" nr="3140"/>
+    <kontonavn navn="Husleje m/moms" nr="3410"/>
+    <kontonavn navn="Husleje u/moms" nr="3411"/>
+    <kontonavn navn="El, vand og gas" nr="3420"/>
+    <kontonavn navn="Vedligeholdelse og reng&#xF8;ring" nr="3430"/>
+    <kontonavn navn="Forsikringer (lokale)" nr="3450"/>
+    <kontonavn navn="Huslejeindt&#xE6;gt m/moms" nr="3460"/>
+    <kontonavn navn="F&#xE6;llesudgiftindt&#xE6;gter m/moms" nr="3465"/>
+    <kontonavn navn="Kontorartikler og tryksager" nr="3600"/>
+    <kontonavn navn="Avishold" nr="3601"/>
+    <kontonavn navn="Edb-udgifter / software" nr="3604"/>
+    <kontonavn navn="Rep./vedligeholdelse af inventar" nr="3610"/>
+    <kontonavn navn="Mindre anskaffelser" nr="3617"/>
+    <kontonavn navn="Telefon " nr="3620"/>
+    <kontonavn navn="Internetforbindelse" nr="3621"/>
+    <kontonavn navn="Telefonpasning" nr="3625"/>
+    <kontonavn navn="Gebyrer" nr="3628"/>
+    <kontonavn navn="Revisor / Bogholder" nr="3640"/>
+    <kontonavn navn="Advokat" nr="3645"/>
+    <kontonavn navn="Forsikringer" nr="3650"/>
+    <kontonavn navn="Faglitteratur m/moms" nr="3660"/>
+    <kontonavn navn="Faglitteratur u/moms" nr="3661"/>
+    <kontonavn navn="Kontingenter m/moms" nr="3662"/>
+    <kontonavn navn="Kontingenter u/moms" nr="3663"/>
+    <kontonavn navn="Web-hotel og dom&#xE6;nenavne" nr="3664"/>
+    <kontonavn navn="Leje/leasing af driftsmidler" nr="3670"/>
+    <kontonavn navn="Tab p&#xE5; debitorer" nr="3720"/>
+    <kontonavn navn="Velg&#xF8;renhed" nr="3770"/>
+    <kontonavn navn="Ej fradragsberettigede omkostninger" nr="3780"/>
+    <kontonavn navn="Afskrivning, indretning lejede lokaler" nr="3910"/>
+    <kontonavn navn="Afskrivning imm.anl&#xE6;gsaktiver" nr="3940"/>
+    <kontonavn navn="Afskrivning, edb" nr="3950"/>
+    <kontonavn navn="Renteindt&#xE6;gt, bank" nr="4310"/>
+    <kontonavn navn="Renteindt&#xE6;gt, debitorer" nr="4360"/>
+    <kontonavn navn="Rykkergebyr, debitorer" nr="4365"/>
+    <kontonavn navn="Renteudgift, bank" nr="4410"/>
+    <kontonavn navn="L&#xE5;neomkostninger" nr="4450"/>
+    <kontonavn navn="Renteudgift, kreditorer" nr="4460"/>
+    <kontonavn navn="Renteudgift, Told &amp; Skat" nr="4465"/>
+    <kontonavn navn="Finansieringstill&#xE6;g, selskabsskat" nr="4470"/>
+    <kontonavn navn="Valutakursdifference, debitorer" nr="4480"/>
+    <kontonavn navn="Valutakursdifference, kreditorer" nr="4481"/>
+    <kontonavn navn="Ekstraordin&#xE6;re indt&#xE6;gter m/moms" nr="4610"/>
+    <kontonavn navn="Ekstraordin&#xE6;re indt&#xE6;gter u/moms" nr="4620"/>
+    <kontonavn navn="Ekstraordin&#xE6;re udgifter m/moms" nr="4630"/>
+    <kontonavn navn="Ekstraordin&#xE6;re udgifter u/moms" nr="4640"/>
+    <kontonavn navn="Selskabsskat, aktuel" nr="4810"/>
+    <kontonavn navn="Reg. af udskudt skat" nr="4820"/>
+    <kontonavn navn="Indretning, anskaffelse primo" nr="5111"/>
+    <kontonavn navn="Indretning, &#xE5;rets tilgang" nr="5112"/>
+    <kontonavn navn="Indretning, &#xE5;rets afgang" nr="5113"/>
+    <kontonavn navn="Indretning, afskrivning primo" nr="5116"/>
+    <kontonavn navn="Indretning, &#xE5;rets afskrivninger" nr="5117"/>
+    <kontonavn navn="Driftsmidler, anskaffelse primo" nr="5221"/>
+    <kontonavn navn="Driftsmidler, &#xE5;rets tilgang" nr="5222"/>
+    <kontonavn navn="Driftsmidler, &#xE5;rets afgang" nr="5223"/>
+    <kontonavn navn="Driftsmidler, afskrivning primo" nr="5226"/>
+    <kontonavn navn="Driftsmidler, &#xE5;rets afskrivninger" nr="5227"/>
+    <kontonavn navn="Immaterielle anl&#xE6;gsaktiver, anskaffelse primo" nr="5231"/>
+    <kontonavn navn="Immaterielle anl&#xE6;gsaktiver, &#xE5;rets tilgang" nr="5232"/>
+    <kontonavn navn="Immaterielle anl&#xE6;gsaktiver, &#xE5;rets afgang" nr="5233"/>
+    <kontonavn navn="Immaterielle anl&#xE6;gsaktiver, afskrivning primo" nr="5236"/>
+    <kontonavn navn="Immaterielle anl&#xE6;gsaktiver, &#xE5;rets afskrivninger" nr="5237"/>
+    <kontonavn navn="Huslejedepositum m/moms (eget)" nr="5312"/>
+    <kontonavn navn="Huslejedepositum m/moms (lejetager)" nr="5313"/>
+    <kontonavn navn="Leasingdepositum" nr="5322"/>
+    <kontonavn navn="Varelager" nr="5520"/>
+    <kontonavn navn="IKKE I BRUG" nr="5521"/>
+    <kontonavn navn="Varelager brugte varer (sk&#xF8;n)" nr="5525"/>
+    <kontonavn navn="Debitorer" nr="5600"/>
+    <kontonavn navn="Manuelle debitorer" nr="5601"/>
+    <kontonavn navn="Tvivlsomme debitorer" nr="5625"/>
+    <kontonavn navn="Andre tilgodehavender" nr="5650"/>
+    <kontonavn navn="Igangv&#xE6;rende arbejder" nr="5651"/>
+    <kontonavn navn="GAMMEL PERIODISERINGSKONTO" nr="5652"/>
+    <kontonavn navn="Periodisering af ikke-h&#xE5;ndterede ordrer, herunder restordre" nr="5653"/>
+    <kontonavn navn="Skatteaktiv" nr="5655"/>
+    <kontonavn navn="Forudbetalte poster (Periodiseringskonto)" nr="5660"/>
+    <kontonavn navn="Personaletilgodehavender" nr="5665"/>
+    <kontonavn navn="Kassebeholdning2" nr="5800"/>
+    <kontonavn navn="Kassebeholdning" nr="5810"/>
+    <kontonavn navn="Varer til samlefakturering" nr="5811"/>
+    <kontonavn navn="Portobeholdning" nr="5812"/>
+    <kontonavn navn="Kreditkortbetalinger" nr="5815"/>
+    <kontonavn navn="Dankort, www.olsens-it.dk" nr="5816"/>
+    <kontonavn navn="Dankort, DKFLX" nr="5817"/>
+    <kontonavn navn="Forudbetaling bank, mellemregningskonto" nr="5818"/>
+    <kontonavn navn="Forudbetaling Paypal, mellemregningskonto" nr="5819"/>
+    <kontonavn navn="Bankkonto" nr="5820"/>
+    <kontonavn navn="Paypal info@olsens-it.dk" nr="5821"/>
+    <kontonavn navn="Bank mellemregningskonto" nr="5822"/>
+    <kontonavn navn="Forudbetalingskonto" nr="5824"/>
+    <kontonavn navn="PBS sikringskonto" nr="5825"/>
+    <kontonavn navn="FI-konto" nr="5826"/>
+    <kontonavn navn="Walletbit info@olsens-it.dk" nr="5830"/>
+    <kontonavn navn="Bitcoinbeholdning indk&#xF8;bspris" nr="5840"/>
+    <kontonavn navn="Anpartskapital" nr="6110"/>
+    <kontonavn navn="L&#xE5;n J&#xF8;rgen" nr="6111"/>
+    <kontonavn navn="L&#xE5;n Poul" nr="6112"/>
+    <kontonavn navn="L&#xE5;n Peter" nr="6113"/>
+    <kontonavn navn="G&#xE6;ld til anpartshavere for leverancer" nr="6115"/>
+    <kontonavn navn="Overkursfond" nr="6120"/>
+    <kontonavn navn="Overf&#xF8;rt resultat tidligere &#xE5;r" nr="6130"/>
+    <kontonavn navn="Udskudt skat" nr="6310"/>
+    <kontonavn navn="&#xD8;vrige hens&#xE6;ttelser" nr="6320"/>
+    <kontonavn navn="Skyldig selskabsskat" nr="6610"/>
+    <kontonavn navn="Kassekredit" nr="6750"/>
+    <kontonavn navn="En god sag" nr="6775"/>
+    <kontonavn navn="Kreditorer" nr="6800"/>
+    <kontonavn navn="Manuelle kreditorer" nr="6801"/>
+    <kontonavn navn="Nyholms bogholderi" nr="6802"/>
+    <kontonavn navn="Forudbetalinger, kunder" nr="6830"/>
+    <kontonavn navn="Skyldige medarbejderudl&#xE6;g" nr="6835"/>
+    <kontonavn navn="Mellemregning med anpartshaver" nr="6860"/>
+    <kontonavn navn="Laan Peter Vitting" nr="6865"/>
+    <kontonavn navn="L&#xE5;n Mingyan" nr="6866"/>
+    <kontonavn navn="Mellemregning Olsens Revision ApS" nr="6875"/>
+    <kontonavn navn="Skyldig moms, primo" nr="6901"/>
+    <kontonavn navn="Udg&#xE5;ende (salg) moms" nr="6902"/>
+    <kontonavn navn="Indg&#xE5;ende (k&#xF8;b) moms" nr="6903"/>
+    <kontonavn navn="Tysk moms tilgodehavende" nr="6905"/>
+    <kontonavn navn="Erhvervelsesmoms/byggeydelse (k&#xF8;b i udland)" nr="6906"/>
+    <kontonavn navn="Erhvervelsesmoms/byggeydelse (modkonto)" nr="6907"/>
+    <kontonavn navn="Engelsk moms tilgode" nr="6910"/>
+    <kontonavn navn="Elafgift" nr="6911"/>
+    <kontonavn navn="CO2-afgift" nr="6914"/>
+    <kontonavn navn="Budgetteret likviditetsm&#xE6;ssig momsfordel" nr="6916"/>
+    <kontonavn navn="Betalt moms" nr="6917"/>
+    <kontonavn navn="Skyldig A-skat" nr="6920"/>
+    <kontonavn navn="Skyldig ATP" nr="6921"/>
+    <kontonavn navn="Skyldig pension" nr="6922"/>
+    <kontonavn navn="Skyldige feriepenge" nr="6923"/>
+    <kontonavn navn="Skyldig DA-barsel" nr="6924"/>
+    <kontonavn navn="Skyldig AM-bidrag" nr="6930"/>
+    <kontonavn navn="Skyldige l&#xF8;nninger" nr="6940"/>
+    <kontonavn navn="Hensat feriepengeforpligtelse" nr="6946"/>
+    <kontonavn navn="Analyse/fejlkonto" nr="9900"/>
+    <kontonavn navn="Analyse/fejlkonto 2" nr="9901"/>
+    <kontonavn navn="Nulkontrol" nr="0"/>
+  </kontonavne>
+  <summeringer>
+    <summering navn="Oms&#xE6;tning i alt" nr_fra="1001" nr_til="1098" nr_sum="1099"/>
+    <summering navn="Direkte omkostninger i alt" nr_fra="1300" nr_til="1398" nr_sum="1399"/>
+    <summering navn="D&#xE6;kningsbidrag" nr_fra="1000" nr_til="1999" nr_sum="2000"/>
+    <summering navn="L&#xF8;nninger i alt" nr_fra="2200" nr_til="2298" nr_sum="2299"/>
+    <summering navn="Salgs- og rejseomkostninger i alt" nr_fra="2700" nr_til="2898" nr_sum="2899"/>
+    <summering navn="Autodrift - personbiler i alt" nr_fra="3100" nr_til="3198" nr_sum="3199"/>
+    <summering navn="Lokaleomkostninger i alt" nr_fra="3400" nr_til="3498" nr_sum="3499"/>
+    <summering navn="Administrationsomkostninger i alt" nr_fra="3500" nr_til="3798" nr_sum="3799"/>
+    <summering navn="Resultat f&#xF8;r afskrivninger" nr_fra="1000" nr_til="3799" nr_sum="3800"/>
+    <summering navn="Afskrivninger i alt" nr_fra="3900" nr_til="3998" nr_sum="3999"/>
+    <summering navn="Resultat f&#xF8;r renter" nr_fra="1000" nr_til="3999" nr_sum="4000"/>
+    <summering navn="Renteindt&#xE6;gter i alt" nr_fra="4300" nr_til="4398" nr_sum="4399"/>
+    <summering navn="Renteudgifter i alt" nr_fra="4400" nr_til="4498" nr_sum="4499"/>
+    <summering navn="Resultat f&#xF8;r ekstraordin&#xE6;re poster" nr_fra="1000" nr_til="4499" nr_sum="4500"/>
+    <summering navn="Ekstraordin&#xE6;re poster i alt" nr_fra="4600" nr_til="4698" nr_sum="4699"/>
+    <summering navn="Resultat f&#xF8;r skat" nr_fra="1000" nr_til="4699" nr_sum="4700"/>
+    <summering navn="Selskabsskat i alt" nr_fra="4800" nr_til="4898" nr_sum="4899"/>
+    <summering navn="RESULTAT EFTER SKAT" nr_fra="1000" nr_til="4989" nr_sum="4990"/>
+    <summering navn="Indretning af lejede lokaler i alt" nr_fra="5110" nr_til="5118" nr_sum="5119"/>
+    <summering navn="Driftsmidler &amp; inventar i alt" nr_fra="5220" nr_til="5228" nr_sum="5229"/>
+    <summering navn="Immaterielle anl&#xE6;gsaktiver i alt" nr_fra="5230" nr_til="5238" nr_sum="5239"/>
+    <summering navn="Anl&#xE6;gsaktiver i alt" nr_fra="5010" nr_til="5498" nr_sum="5499"/>
+    <summering navn="Varelager i alt" nr_fra="5520" nr_til="5529" nr_sum="5530"/>
+    <summering navn="Oms&#xE6;tningsaktiver i alt" nr_fra="5500" nr_til="5979" nr_sum="5980"/>
+    <summering navn="AKTIVER I ALT" nr_fra="5000" nr_til="5989" nr_sum="5990"/>
+    <summering navn="HENS&#xC6;TTELSER I ALT" nr_fra="6300" nr_til="6398" nr_sum="6399"/>
+    <summering navn="Moms og afgifter i alt" nr_fra="6900" nr_til="6917" nr_sum="6918"/>
+    <summering navn="Anden g&#xE6;ld i alt" nr_fra="6919" nr_til="6998" nr_sum="6999"/>
+    <summering navn="G&#xC6;LD I ALT" nr_fra="6600" nr_til="7998" nr_sum="7999"/>
+    <summering navn="Nulkontrol" nr_fra="1000" nr_til="9989" nr_sum="9990"/>
+  </summeringer>
+</xmlvoucher>

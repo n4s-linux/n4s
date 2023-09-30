@@ -1,0 +1,305 @@
+1010		Salg af varer og ydelser 
+1050		Salg af varer udland, EU
+1100		Salg af varer udland, ikke-EU
+1150		Salg af ydelser udland, EU
+1200		Salg af ydelser udland, ikke-EU
+1300		Regulering igangværende arbejder
+1350		Værdireguleringer af investeringsejendomme
+1410		Varelagerregulering på lagre af færdigvarer og varer under fremstilling
+1430		Nedskrivning på lagre af færdigvarer og varer under fremstilling
+1460		Øvrige ændringer på lagre af færdigvarer og varer under fremstilling
+1510		Gevinst ved salg af immaterielle anlægsaktiver
+1530		Gevinst ved salg af materielle anlægsaktiver
+1540		Gevinst ved salg af finansielle anlægsaktiver
+1550		Øvrige andre driftsindtægter
+1610		Varekøb
+1630		Varekøb udland, EU
+1650		Varekøb udland, ikke-EU
+1660		Ydelseskøb
+1710		Ydelseskøb udland, EU
+1740		Ydelseskøb, udland, ikke-EU
+1770		Varelagerregulering på lagre af råvarer og hjælpematerialer
+1800		Nedskrivning på varelager
+1830		Fragtomkostninger
+1850		Annoncering og reklame
+1870		Udstillinger og dekoration
+1890		Restaurationsbesøg
+1910		Repræsentationsomkostninger, skattemæssigt begrænset fradrag
+1930		Repræsentationsomkostninger, fuld fradragsret skattemæssigt
+1950		Andre salgsomkostninger
+1970		Aviser og blade
+1990		Gaver og blomster
+2030		Husleje, ekskl. el, vand og varme
+2050		El
+2060		Elafgift
+2070		Vand
+2080		Varme
+2090		Vandafgift
+2100		Olie- og flaskegasafgift
+2110		Kulafgift
+2120		Naturgas- og bygasafgift
+2130		Co2-afgift
+2140		Øvrige afgifter
+2150		Rengøring og renovation (affaldshåndtering)
+2160		Reparation og vedligeholdelse
+2170		Reparation og vedligeholdelse, ejendom skattemæssigt afskrivningsberettiget, bygning 1
+2180		Forsikringer
+2190		Ejendomsskatter
+2200		Andre lokaleomkostninger
+2230		Småanskaffelser under skattemæssig grænse for småaktiver
+2240		Småanskaffelser over skattemæssig grænse for småaktiver
+2250		Underleverandører
+2260		Forsknings- og udviklingsomkostninger
+2270		Øvrige produktionsomkostninger
+2280		Konstaterede tab på tilgodehavender fra salg og tjenesteydelser
+2290		Regulering af nedskrivning på tilgodehavender fra salg og tjenesteydelser
+2300		Regulering af tilgodehavender fra tilknyttede virksomheder og associerede virksomheder
+2310		It-udstyr mv.
+2330		Skattefri rejse- og befordringsgodtgørelse 
+2350		Kantineudgifter
+2370		Kontingenter
+2380		Faglitteratur
+2390		Porto og gebyrer
+2410		Telefon og internet mv. (kun virksomhed)
+2420		Telefon og internet mv. (delvist privat)
+2450		Kontorartikler
+2460		Leje og operationelle leasingydelser (ekskl. husleje)
+2470		Rejseudgifter
+2480		Vikarassistance
+2510		Konsulentydelser
+2520		Kursusudgifter
+2530		Leasingomkostninger, personbiler
+2540		Driftsomkostninger, personbiler
+2560		Driftsomkostninger, varebiler
+2620		Parkeringsudgifter
+2630		Biludgifter efter statens takster
+2640		Fri bil
+2650		Arbejdsskadeforsikring
+2660		Offentlige gebyrer og bøder (ej fradragsberettiget skattemæssigt)
+2670		Revision og regnskabsmæssig assistance
+2680		Advokatmæssig assistance
+2690		Øvrige rådgivningshonorarer
+2700		Ej skattemæssigt fradragsberettigede rådgivningshonorarer
+2710		Administrationsvederlag/management fee
+2720		Øreafrunding/kassedifferencer
+2810		Andre eksterne omkostninger
+2850		Lønninger
+2860		Feriepengeforpligtelse
+2870		Jubilæumsgratiale og fratrædelsesgodtgørelse 
+2880		Bestyrelseshonorar
+2890		AM Bidragspligtig A-Indkomst
+2900		AM Bidragsfri A-Indkomst
+2910		Pensioner
+2920		Vederlag til afløsning af pensionstilsagn 
+2930		Omkostninger til social sikring
+2940		AER/ AUB
+2950		ATP
+2960		Andre personaleomkostninger
+2965		Personalegoder 
+2968		Lønrefusioner
+2970		Udbetalte skattefrie godtgørelser i form af kørepenge og diæter
+2980		Lønsumsafgift
+3000		Af- og nedskrivninger af erhvervede immaterielle anlægsaktiver
+3010		Af- og nedskrivninger af goodwill
+3020		Af- og nedskrivninger af grunde og bygninger
+3030		Af- og nedskrivninger af produktionsanlæg og maskiner
+3040		Af- og nedskrivninger af indretning af lejede lokaler
+3050		Af- og nedskrivninger af andre anlæg, driftsmateriel og inventar
+3060		Af- og nedskrivninger af software
+3070		Af- og nedskrivninger af finansielt leasede grunde og bygninger
+3080		Af- og nedskrivninger af finansielt leasede produktionsanlæg og maskiner
+3090		Af- og nedskrivninger af finansielt leasede andre anlæg, driftsmateriel og inventar
+3130		Nedskrivninger af omsætningsaktiver, som overstiger normale nedskrivninger
+3160		Tab ved salg af immaterielle anlægsaktiver
+3170		Tab ved salg af materielle anlægsaktiver
+3180		Øvrige andre driftsomkostninger
+3200		Indtægter af kapitalandele i tilknyttede virksomheder
+3230		Indtægter af kapitalandele i kapitalinteresser
+3380		Udbytte fra unoterede porteføljeaktier (bruttoudbytte)
+3400		Øvrige indtægter af andre kapitalandele, værdipapirer og tilgodehavender, der er anlægsaktiver
+3440		Andre finansielle indtægter fra tilknyttede virksomheder
+3470		Renter fra banker
+3490		Renter vedr. tilgodehavende fra salg af varer og tjenesteydelser
+3510		Rentetillæg mv. fra det offentlige (ej skattepligtig)
+3530		Øvrige finansielle indtægter
+3560		Nedskrivning af finansielle aktiver
+3590		Finansielle omkostninger, der hidrører fra tilknyttede virksomheder
+3610		Valutakursreguleringer
+3620		Valutakursreguleringer, udenlandske dattervirksomheder
+3630		Kurstab på likvider, bankgæld og prioritetsgæld
+3640		Renter på finansiel leasinggæld 
+3650		Renter vedr. leverandører af varer og tjenesteydelser
+3670		Renter til banker og realkreditinstitutter
+3675		Renter til det offentlige (ej fradragsberettiget skattemæssigt)
+3680		Værdireguleringer af investeringsejendomme
+3690		Andre finansielle omkostninger
+3740		Aktuel skat
+3760		Ændring af udskudt skat
+3780		Regulering vedrørende tidligere år
+3810		Andre skatter
+5010		Goodwill, bogført værdi primo
+5020		Goodwill, årets tilgange
+5030		Goodwill, årets afgange
+5040		Goodwill, øvrige værdireguleringer
+5050		Goodwill, årets af- og nedskrivninger
+5060		Goodwill, tilbageførte af- og nedskrivninger
+5080		Erhvervede immaterielle anlægsaktiver, bogført værdi primo
+5090		Erhvervede immaterielle anlægsaktiver, årets tilgange
+5100		Erhvervede immaterielle anlægsaktiver, årets afgange
+5110		Erhvervede immaterielle anlægsaktiver, øvrige værdireguleringer
+5120		Erhvervede immaterielle anlægsaktiver, årets af- og nedskrivninger
+5130		Erhvervede immaterielle anlægsaktiver, tilbageførte af- og nedskrivninger
+5160		Investeringsejendomme, bogført værdi primo
+5170		Investeringsejendomme, årets tilgange 
+5180		Investeringsejendomme, årets afgange 
+5190		Investeringsejendomme, årets forbedringer
+5200		Investeringsejendomme, øvrige værdireguleringer
+5210		Investeringsejendomme, årets af- og nedskrivninger
+5220		Investeringsejendomme, tilbageførte af- og nedskrivninger
+5240		Investeringsejendomme under opførelse, bogført værdi primo
+5250		Investeringsejendomme under opførelse, årets tilgange 
+5260		Investeringsejendomme under opførelse, årets afgange 
+5270		Investeringsejendomme under opførelse, årets forbedringer
+5280		Investeringsejendomme under opførelse, øvrige værdireguleringer
+5290		Investeringsejendomme under opførelse, årets nedskrivninger
+5300		Investeringsejendomme under opførelse, tilbageførte nedskrivninger
+5320		Grunde og bygninger, bogført værdi primo
+5330		Grunde og bygninger, årets tilgange 
+5340		Grunde og bygninger, årets afgange 
+5350		Grunde og bygninger, årets forbedringer
+5370		Grunde og bygninger, øvrige værdireguleringer
+5390		Grunde og bygninger, årets af- og nedskrivninger
+5400		Grunde og bygninger, tilbageførte af- og nedskrivninger
+5420		Produktionsanlæg og maskiner, bogført værdi primo
+5430		Produktionsanlæg og maskiner, årets tilgange
+5440		Produktionsanlæg og maskiner, årets afgange
+5450		Produktionsanlæg og maskiner, øvrige værdireguleringer
+5470		Produktionsanlæg og maskiner, årets af- og nedskrivninger
+5480		Produktionsanlæg og maskiner, tilbageførte af- og nedskrivninger
+5500		Indretning af lejede lokaler, bogført værdi primo
+5510		Indretning af lejede lokaler, årets tilgange
+5520		Indretning af lejede lokaler, årets afgange
+5530		Indretning af lejede lokaler, øvrige værdireguleringer
+5540		Indretning af lejede lokaler, årets af- og nedskrivninger
+5550		Indretning af lejede lokaler, tilbageførte af- og nedskrivninger
+5570		Andre anlæg, driftsmateriel og inventar, bogført værdi primo
+5580		Andre anlæg, driftsmateriel og inventar, årets tilgange
+5590		Andre anlæg, driftsmateriel og inventar, årets afgange
+5600		Andre anlæg, driftsmateriel og inventar, øvrige værdireguleringer
+5610		Andre anlæg, driftsmateriel og inventar, årets af- og nedskrivninger
+5620		Andre anlæg, driftsmateriel og inventar, tilbageførte af- og nedskrivninger
+5640		Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, bogført værdi primo
+5650		Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, årets tilgange
+5660		Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, årets afgange
+5670		Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, øvrige værdireguleringer
+5680		Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, årets nedskrivninger
+5690		Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, tilbageførte nedskrivninger
+5710		Finansielt leasede aktiver, bogført værdi primo
+5720		Finansielt leasede aktiver, årets tilgange
+5730		Finansielt leasede aktiver, årets afgange
+5740		Finansielt leasede aktiver, øvrige værdireguleringer
+5750		Finansielt leasede aktiver, årets af- og nedskrivninger
+5760		Finansielt leasede aktiver, tilbageførte af- og nedskrivninger
+5800		Kapitalandele i tilknyttede virksomheder, bogført værdi primo
+5810		Kapitalandele i tilknyttede virksomheder, årets tilgange
+5820		Kapitalandele i tilknyttede virksomheder, årets afgange
+5830		Kapitalandele i tilknyttede virksomheder, øvrige værdireguleringer
+5840		Kapitalandele i tilknyttede virksomheder, årets nedskrivninger
+5850		Kapitalandele i tilknyttede virksomheder, tilbageførte nedskrivninger
+5870		Langfristede tilgodehavender hos tilknyttede virksomheder
+5880		Nedskrivning på langfristede tilgodehavender hos tilknyttede virksomheder
+5900		Kapitalandele i kapitalinteresser, bogført værdi primo
+5910		Kapitalandele i kapitalinteresser, årets tilgange
+5920		Kapitalandele i kapitalinteresser, årets afgange
+5930		Kapitalandele i kapitalinteresser, øvrige værdireguleringer
+5940		Kapitalandele i kapitalinteresser, årets nedskrivninger
+5950		Kapitalandele i kapitalinteresser, bogført værdi primo, tilbageførte nedskrivninger
+5970		Langfristede tilgodehavender hos kapitalinteresser
+5980		Nedskrivning på langfristede tilgodehavender hos kapitalinteresser
+6000		Andre værdipapirer og kapitalandele
+6020		Udskudte skatteaktiver
+6030		Øvrige (langfristede) tilgodehavender
+6040		Deposita
+6060		Tilgodehavender hos virksomhedsdeltagere og ledelse
+6080		Råvarer og hjælpematerialer
+6090		Nedskrivning på råvarer og hjælpematerialer
+6110		Varer under fremstilling
+6120		Nedskrivning på varer under fremstilling
+6140		Fremstillede varer og handelsvarer
+6150		Nedskrivning på fremstillede varer og handelsvarer
+6170		Forudbetalinger for varer
+6190		Tilgodehavender fra salg og tjenesteydelser
+6200		Akkumulerede nedskrivninger til tab på tilgodehavender fra salg og tjenesteydelser
+6220		Kortfristede tilgodehavender hos tilknyttede virksomheder
+6230		Akkumulerede nedskrivninger til tab på tilgodehavender fra tilknyttede virksomheder
+6240		Kortfristede tilgodehavender hos kapitalinteresser
+6250		Akkumulerede nedskrivninger til tab på tilgodehavender fra kapitalinteresser
+6270		Igangværende arbejder for fremmed regning
+6290		Udskudte skatteaktiver
+6300		Tilgodehavende selskabsskat (kortfristet)
+6310		Tilgodehavende kildeskat
+6320		Tilgodehavende moms (kortfristet)
+6330		Øvrige tilgodehavender (kortfristede)
+6350		Krav på indbetaling af virksomhedskapital og overkurs
+6370		Kortfristede tilgodehavender hos virksomhedsdeltagere og ledelse
+6390		Periodeafgrænsningsposter, der kan opretholdes skattemæssigt
+6400		Periodeafgrænsningsposter, der ikke kan opretholdes skattemæssigt
+6420		Kapitalandele i tilknyttede virksomheder
+6450		Andre værdipapirer og kapitalandele
+6470		Likvide beholdninger
+6480		Bankkonto
+6510		Registreret kapital mv.
+6520		Indbetalt registreret kapital mv.
+6540		Overkurs ved emission
+6560		Reserve for opskrivninger
+6580		Reserve for nettoopskrivning efter den indre værdis metode
+6810		Reserve for udlån og sikkerhedsstillelse
+6830		Reserve for ikke indbetalt virksomhedskapital og overkurs
+6870		Øvrige lovpligtige reserver
+6890		Vedtægtsmæssige reserver
+6910		Øvrige reserver
+6940		Overført resultat
+6960		Foreslået udbytte indregnet under egenkapitalen
+7010		Hensættelser til udskudt skat
+7020		Hensættelser til pensioner og lignende forpligtelser
+7040		Andre hensatte forpligtelser
+7110		Gæld til kreditinstitutter - langfristet gæld
+7120		Gæld til banker - langfristet gæld
+7160		Gæld til tilknyttede virksomheder - langfristet gæld
+7170		Gæld til kapitalinteresser - langfristet gæld
+7190		Anden gæld - langfristet
+7210		Gæld til selskabsdeltagere og ledelse - langfristet gæld
+7230		Deposita - langfristet gæld
+7240		Leasingforpligtelse - langfristet gæld
+7250		Selskabsskat - langfristet gæld
+7310		Gæld til kreditinstitutter - kortfristet gæld
+7330		Gæld til banker - kortfristet gæld
+7350		Kreditinstitutter i øvrigt
+7410		Modtagne forudbetalinger fra kunder
+7440		Leverandører af varer og tjenesteydelser
+7510		Gæld til tilknyttede virksomheder - kortfristet gæld
+7520		Gæld til kapitalinteresser - kortfristet gæld
+7590		Gæld til selskabsdeltagere og ledelse - kortfristet gæld
+7610		Deposita - kortfristet gæld
+7630		Leasingforpligtelse - kortfristet
+7680		Salgsmoms
+7700		Moms af varekøb udland, EU og ikke-EU
+7720		Moms af ydelseskøb udland, EU og ikke-EU
+7740		Købsmoms
+7760		Olie- og flaskegasafgift
+7780		Elafgift
+7800		Naturgas- og bygasafgift
+7810		Kulafgift
+7820		Vandafgift
+7830		Co2-afgift
+7840		Skyldig moms
+7860		Skyldig løn og gager
+7880		Skyldig bonus og tantieme
+7900		Skyldige feriepenge
+7920		Skyldig A-skat
+7940		Skyldigt AM-bidrag
+7960		Skyldigt ATP-bidrag
+7980		Skyldigt AMP-bidrag
+8000		Anden skyldig pension
+8040		Øvrig anden gæld
+8070		Periodeafgrænsningsposter

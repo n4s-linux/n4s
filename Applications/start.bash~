@@ -1,0 +1,97 @@
+#!/bin/bash
+startTime=$(date +%s);
+
+tmux rename-window start.bash
+source /svn/svnroot/aliases
+if [ "$1" == "igangv" ]; then
+	sr
+	echo ready to enter transaction
+	php /svn/svnroot/Applications/key.php entry
+	export LEDGER_ADD_TIME_TO_PAYEE=1
+       	l b&
+elif [ "$1" == "igangvbal" ]; then
+	sr "igangv"
+	1d
+	LEDGER_ADDTIME_TO_PAYEE=1 l print -S payee>$tpath/.hl
+	hledger-ui --theme=terminal -T -f $tpath/.hl
+elif [ "$1" == "anyentry" ]; then
+	sr
+	php /svn/svnroot/Applications/key.php entry
+elif [ "$1" == "stuffbal" ]; then
+	sr "stuff"
+	1d
+	l print -S payee>$tpath/.hl
+	hledger-ui --theme=terminal -T -f $tpath/.hl
+elif [ "$1" == "stuff" ]; then
+	sr "stuff"
+	1d
+	l print -S payee>$tpath/.hl
+	php /svn/svnroot/Applications/key.php entry
+elif [ "$1" == "watch" ]; then
+	sr "stuff"
+	clear
+	tmux rename-window watch
+	1d
+	while true
+	do
+		clear
+		./.watch.bash 
+		sleep 360
+	done
+elif [ "$1" == "tag" ]; then
+	pushd .>/dev/null
+	sr stuff
+	cd $tpath
+	tag="$2"
+	$tpath/.menu.bash tags "$tag"
+	popd 2>/dev/null
+	stty sane
+elif [ "$1" == "mine" ]; then
+	pushd .>/dev/null
+	sr $db
+	mine
+	sleep 50
+	stty sane
+elif [ "$1" == "business" ]; then
+	pushd .>/dev/null
+	db=$(ls ~/regnskaber/*/.tags -d|sed 's/\/.tags//g'|while read full ; do basename "$full"; done|fzf -1 --header="Vælg DB")
+	sr $db
+	tag="$2"
+	echo tag=$tag
+	$tpath/.menu.bash tags "$tag"
+	popd 2>/dev/null
+	stty sane
+elif [ "$1" == "code" ]; then
+	if [ "$2" == "" ]; then
+		fn=$(find ~ /svn/svnroot/ -type f|fzf --no-mouse --cycle);
+	else
+		fn=$(find ~/svn/svnroot/ -type f|grep -i "$2"|fzf --no-mouse --cycle);
+	fi;
+	bn=$(basename "$fn")
+	tmux rename-window "code $bn"
+	vi "$fn"
+	endTime=$(date +%s);
+	totalTime=$(($endTime-$startTime));
+	minutes=$(echo "$totalTime/60"|bc)
+	dato=$(date +"%Y-%m-%d %H:%M")
+	bn=$(basename "$fn")
+	echo -e "$dato\t#"$minutes"min #udvikling #$bn" >> ~/regnskaber/transactions_stuff/.tags/udvikling_auto
+elif [ "$1" == "shell" ]; then
+	tmux rename-window sh
+	bash
+elif [ "$1" == "cal" ]; then
+	tmux rename-window kalender
+	khal interactive
+elif [ "$1" == "regnskab" ]; then
+	bash --rcfile <(echo '. ~/.bashrc; sr')
+else
+	echo dont know what "$1" is - so sad - press ENTER
+	sleep 5
+fi
+
+endTime=$(date +%s);
+totalTime=$(($endTime-$startTime));
+minutes=$(echo "$totalTime/60"|bc)
+exit
+clear;screenfetch
+cat /svn/svnroot/Libraries/Mario.txt

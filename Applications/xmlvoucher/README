@@ -1,0 +1,5 @@
+Dependencies:
+ncurses for php, debian instructions:
+	apt-get install php5-dev libncursesw5-dev php-pear
+	pecl install ncurses
+	go to "Dynamic extensions" section of /etc/php5/cli/php.ini and add: "extension=ncurses.o"

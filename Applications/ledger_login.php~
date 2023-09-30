@@ -1,0 +1,4 @@
+<?php
+include("./modules/ledger_login/ledger_login.php");
+$auth->login();
+?>

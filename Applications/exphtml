@@ -1,0 +1,15 @@
+#!/bin/bash
+php /svn/svnroot/Applications/key.php ledger bal XXXXXXXXXXXXXXXXXXXXXX >/dev/null
+fn=$(echo -n $(basename $tpath)-$(date|md5sum).html|sed 's/ //g')
+url=https://jodb.mikjaer.com/svnroot/tmp/$fn
+rm /tmp/comments 2>/dev/null
+vi /tmp/comments
+ld=$ld export.bash > /svn/svnroot/tmp/"$fn"
+
+#(echo -e "<pre><meta charset=utf8>regnskab:\t$(basename $tpath)<br>Startdato:\t$LEDGER_BEGIN<br>Slutdato:\t$LEDGER_END<br><h3>Balance</h3><pre>";l b ^Resultatdisponering ^Indtægter: ^Udgifter: ^Aktiver: ^Passiver: ^Egenkapital:;echo "<h3>Posteringer</h3>"; echo -e "Indtægter\nUdgifter:\nResultatdisponering\nAktiver:\nPassiver:\nEgenkapital:"|while read i; do echo "$i<br></pre><table border=1 width=800>";LEDGER_ACCOUNT_WIDTH=90 LEDGER_PAYEE_WIDTH=50 LEDGER_SORT=account,date l r "^$i" --register-format="<tr><td>%(date)</td><td>%(code)</td><td>%(payee)</td><td>%(amount)</td><td>%(total)</td></tr>\n";echo "</table>"; done) > /svn/svnroot/tmp/"$fn"
+
+output=/svn/svnroot/tmp/"$fn"
+outputpdf=/svn/svnroot/tmp/"$fn.pdf"
+wkhtmltopdf --enable-internal-links toc "$output" "$outputpdf" 
+echo "$url"
+echo "$url.pdf"

@@ -1,0 +1,5 @@
+credentials.json
+*.swm
+*.swl
+bank.json
+key_html_dev.log

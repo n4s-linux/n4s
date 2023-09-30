@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="xmlvoucher">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="vouchers">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="voucher" minOccurs="0" >
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" name="entry">
+                      <xsd:complexType>
+                        <xsd:attribute name="kontering" type="xsd:string" use="required" />
+                        <xsd:attribute name="beløb" type="xsd:decimal" use="required" />
+                        <xsd:attribute type="xsd:string" name="momskode" use="optional"/>
+                        <xsd:attribute type="xsd:string" name="tekst" use="optional"/>
+                        <xsd:attribute type="xsd:string" name="kode" use="optional"/>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="entrytime" type="xsd:string" use="required" />
+                  <xsd:attribute name="operator" type="xsd:string" use="required" />
+                  <xsd:attribute name="id" type="xsd:int" use="required" />
+                  <xsd:attribute name="bilagsdato" type="xsd:date" use="required" />
+                  <xsd:attribute name="bilagsnr" type="xsd:int" use="required" />
+                  <xsd:attribute name="tekst" type="xsd:string" use="optional" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="aliases">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="kontoalias" minOccurs="0" >
+                <xsd:complexType>
+                  <xsd:attribute name="aliasnavn" type="xsd:string" use="required" />
+                  <xsd:attribute name="kontonr" type="xsd:int" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="kontonavne">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="kontonavn" minOccurs="0" >
+                <xsd:complexType>
+                  <xsd:attribute name="navn" type="xsd:string" use="required" />
+                  <xsd:attribute name="nr" type="xsd:int" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+	<xsd:element name="summeringer">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="summering" minOccurs="0" >
+                <xsd:complexType>
+                  <xsd:attribute name="navn" type="xsd:string" use="required" />
+                  <xsd:attribute name="nr_fra" type="xsd:int" use="required" />
+		  <xsd:attribute name="nr_til" type="xsd:int" use="required" />
+		  <xsd:attribute name="nr_sum" type="xsd:int" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

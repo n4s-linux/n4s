@@ -1,0 +1,3 @@
+acc=$(LEDGER_DEPTH=999 LEDGER_CACHE=$LEDGER_CACHE php /svn/svnroot/Applications/key.php ledger accounts|fzf|sed 's;/;\\/;g')
+LEDGER_CACHE=$LEDGER_CACHE php /svn/svnroot/Applications/key.php ledger csv "$acc"|xclip -selection clipboard
+echo copied...
