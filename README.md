@@ -1,7 +1,7 @@
 ![n4s](demo.gif)
 # TLDR - Lad mig downloade din OVA
-Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/)
-
+* Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/)
+* Link til [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (husk at få Extension Pack også)
 # Frit regnskabssystem
 Vi mener der skal være et lynhurtigt og sikkert bogføringssystem som kan køre lokalt på enhver computer (eller telefon/ipad/brødrister, – linux kan køre på næsten alt) til de nye iværksættere / små selvstændige. Det skal også kunne køre på f.eks. en linode 5$ server og betjenes af flere samtidige brugere.
 
