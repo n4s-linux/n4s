@@ -10,6 +10,12 @@ Fordele ved OVA Løsning:
 Ulemper:
 * Størrelse 20GB da den indeholder et helt operativsystem plus ekstra plads så du ikke løber tør (n4s fylder < 70MB)
 
+# Du er ikke stavsnbundet til et økonomisystem
+Når man starter et nyt økonomisystem lader man typisk de gamle posteringer være i det gamle system og indtaster en åbningsbalance i det nye system.
+Man kan også vælge at indlæse samtlige historiske poster i det nye system.
+N4s understøtter CSV filformatet for lynhurtig og enkel import/eksport af posteringer.
+Skulle du senere ønske at benytte et andet system er det derfor let at eksportere data i et kendt filformat (CSV)
+
 # Eksempel på rapportering
 Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter.
 Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)
