@@ -8,17 +8,18 @@ Vi mener der skal være et lynhurtigt og sikkert bogføringssystem som kan køre
 Systemet er klar til den nye bogføringslov som specialudviklet system.
 
 # Produktsammenligning
-| Regnskabssystem    | Pris / år         | Offline/Online | Sværhedsgrad | Tilpasningsmuligheder     | API           |
-|---------------------|-------------------|----------------|--------------|---------------------------|---------------|
-| n4s                 | Gratis (Fri Software) | Online/Offline        | Hardcore     | Omfattende (Fri Software) | Nej           |
-| e-conomic           | Medium            | Online         | Medium       | Begrænsede                | Ja (Funktionel) |
-| Dinero              | Medium            | Online         | Let          | Begrænsede                | Ja (Begrænset) |
-| Billy's Billing     | Lav               | Online         | Let          | Begrænsede                | Ja (Begrænset) |
-| Saldi               | Lav               | Offline        | Medium       | Omfattende (Fri Software) | Nej           |
-| Summasummarum       | Lav               | Offline        | Medium       | Begrænsede                | Nej           |
-| Uniconta            | Medium            | Online         | Medium       | Begrænsede                | Ja (Begrænset) |
-| C5                  | Medium            | Offline        | Medium       | Begrænsede                | Nej           |
-| Winfinans           | Lav               | Offline        | Medium       | Begrænsede                | Ved ikke?     |
+| Regnskabssystem    | Pris / år         | Sværhedsgrad | Tilpasningsmuligheder     | API           |
+|---------------------|-------------------|--------------|---------------------------|---------------|
+| n4s                 | Gratis (Fri Software) | Hardcore     | Omfattende (Fri Software) | Nej           |
+| e-conomic           | Medium            | Medium       | Begrænsede                | Ja (Funktionel) |
+| Dinero              | Medium            | Let          | Begrænsede                | Ja (Begrænset) |
+| Billy's Billing     | Lav               | Let          | Begrænsede                | Ja (Begrænset) |
+| Saldi               | Lav               | Medium       | Omfattende (Fri Software) | Nej           |
+| Summasummarum       | Lav               | Medium       | Begrænsede                | Nej           |
+| Uniconta            | Medium            | Medium       | Begrænsede                | Ja (Begrænset) |
+| C5                  | Medium            | Medium       | Begrænsede                | Nej           |
+| Winfinans           | Lav               | Medium       | Begrænsede                | Ved ikke?     |
+
 
 # Support
 Der ydes foreløbig *gratis* support til brug af den virtuelle maskine. Kontakt herom på email olsenit@gmail.com
