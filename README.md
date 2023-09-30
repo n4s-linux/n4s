@@ -50,7 +50,7 @@ Systemet er klar til den nye bogføringslov som specialudviklet system.
 # Produktsammenligning
 | Regnskabssystem    | Pris / år         | Sværhedsgrad | Tilpasningsmuligheder     | API           |
 |---------------------|-------------------|--------------|---------------------------|---------------|
-| n4s                 | Gratis (Fri Software) | Hardcore     | Omfattende (Fri Software) | Nej           |
+| n4s                 | Gratis (Fri Software) | Hardcore     | Omfattende (Fri Software) | Nej          *1 |
 | e-conomic           | Medium            | Medium       | Begrænsede                | Ja (Funktionel) |
 | Dinero              | Medium            | Let          | Begrænsede                | Ja (Begrænset) |
 | Billy's Billing     | Lav               | Let          | Begrænsede                | Ja (Begrænset) |
@@ -60,6 +60,7 @@ Systemet er klar til den nye bogføringslov som specialudviklet system.
 | C5                  | Medium            | Medium       | Begrænsede                | Nej           |
 | Winfinans           | Lav               | Medium       | Begrænsede                | Ved ikke?     |
 
+* 1 Der er ikke nogen API, men da det er open source er det meget nemt at lave addons eller patches således at det passer til dit behov. Hvis du udvikler en ny funktionalitet kan du også lave en pull request på github og give din ændring tilbage til andre brugere (kræver godkendelse)
 
 # Support
 Der ydes foreløbig *gratis* support til brug af den virtuelle maskine. Kontakt herom på email olsenit@gmail.com
