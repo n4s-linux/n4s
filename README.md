@@ -29,6 +29,12 @@ Vi mener der skal være et lynhurtigt og sikkert bogføringssystem som kan køre
 
 Systemet er klar til den nye bogføringslov som specialudviklet system.
 
+
+# Hvad kan vi IKKE
+* Dokumenthåndtering ikke implementeret - du kan nummere dine bilag i en Cloud løsning fx Dropbox
+* Fakturering - du kan skrive dine fakturaer i Word eller et andet program
+* Bankintegration (kan nemt implementeres for din virksomhed såfremt det ønskes, via Tink API)
+
 # Produktsammenligning
 | Regnskabssystem    | Pris / år         | Sværhedsgrad | Tilpasningsmuligheder     | API           |
 |---------------------|-------------------|--------------|---------------------------|---------------|
