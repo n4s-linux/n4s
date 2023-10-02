@@ -1,4 +1,4 @@
-exit
+startdate=2023-10-01
 months=12
 function momsdato() {
 	dato=$1
@@ -26,8 +26,8 @@ function momsdato() {
 	fi
 }
 function hvermåned() {
-seq 1 $months|while read i; do 
-	dato=$(date --date="+$i months" +%Y-%m-01)
+seq 0 $months|while read i; do 
+	dato=$(date --date="$startdate +$i months" +%Y-%m-01)
 	ts=$(date +%s --date="$dato")
 	begints=$(date --date="$6" +%s)
 	endts=$(date --date="$7" +%s)
@@ -43,7 +43,7 @@ seq 1 $months|while read i; do
 		echo -e "$dato ⏲ $txt\n\t$konto  $belob\n\t$mk\n\n";
 	else
 		belob=$(echo "0.8*$belob"|bc -l)
-		moms=$(echo "-0.25*$belob"|bc -l)
+		moms=$(echo "-0.2*$belob"|bc -l)
 		if [[ "$konto" == *"Udgift"* ]]; then
 			momskonto="Købsmoms"
 		else
@@ -51,18 +51,13 @@ seq 1 $months|while read i; do
 		fi
 		echo -e "$dato ⏲ $txt\n\t$konto  $belob\n\tPassiver:Moms:$momskonto  $moms\n\t$mk\n\n";
 		momsdato=$(momsdato "$dato")
-		echo "$dato = $momsdato"
-		echo -e "$momsdato ⏲ $txt (momsbetaling $dato)\n\tAktiver:Likvider:Bank  $moms\n\tPassiver:Moms:Momsafregning\n\n";
+		echo -e "$momsdato ⏲ $txt (momsbetaling $dato)\n\tAktiver:Likvider:RevolutDKK  $moms\n\tPassiver:Moms:Momsafregning\n\n";
 	fi
 done
 }
-mkdir -p $tpath/.bnew/
-if [ ! -f $tpath/.bnew/.monthly ] ; then
-#	echo "# hvermåned Husleje 12000 1 "
-fi
-hvermåned Husleje 11844 0 Udgifter:Lokaleomkostninger:Husleje Aktiver:Likvider:Bank 2023-07-01 2099-12-31
-hvermåned Revi-Salg -87500 1 Indtægter:Revi-salg Aktiver:Likvider:Bank 2023-07-01 2099-12-31
-hvermåned Administration 3000 1 Udgifter:Administration:Diverse Aktiver:Likvider:Bank 2023-07-01 2099-12-31
-hvermåned Direkte\ omkostninger 1500 1 Udgifter:Direkte omkostninger Aktiver:Likvider:Bank 2023-07-01 2099-12-31
-hvermåned Renter 2000 0 Udgifter:Renteudgifter:Budgetteret Aktiver:Likvider:Bank 2023-07-01 2099-12-31
-hvermåned Løn 30000 0 Udgifter:Personaleomkostninger:Budgetteret Aktiver:Likvider:Bank 2023-07-01 2099-12-31
+hvermåned Husleje 11844 0 Udgifter:Lokaleomkostninger:Husleje Aktiver:Likvider:"RevolutDKK" 2023-07-01 2099-12-31
+hvermåned Revi-Salg -75000 1 Indtægter:Revi-salg Aktiver:Likvider:"RevolutDKK" 2023-07-01 2099-12-31
+hvermåned Administration 3000 1 Udgifter:Administration:Diverse Aktiver:Likvider:"RevolutDKK" 2023-07-01 2099-12-31
+hvermåned Direkte\ omkostninger 1500 1 Udgifter:Direkte omkostninger Aktiver:Likvider:"RevolutDKK" 2023-07-01 2099-12-31
+hvermåned Renter 2000 0 Udgifter:Renteudgifter:Budgetteret Aktiver:Likvider:"RevolutDKK" 2023-07-01 2099-12-31
+hvermåned Løn 30000 0 Udgifter:Personaleomkostninger:Budgetteret Aktiver:Likvider:"RevolutDKK" 2023-07-01 2099-12-31
