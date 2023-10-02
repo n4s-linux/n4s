@@ -73,8 +73,6 @@ En frisk installation af debian, ubuntu eller en anden debian-baseret distributi
 Kan også installeres på andre distributioner, programafhængigheder kan findes i Libraries/Dependencies_Debian.txt
 Den nemmeste måde at installere det på er ved at downloade være prækonfigurerede Virtualbox Appliance, instruktioner nedenfor
 
-Certainly! Here's the guide in Danish, including instructions on how to run the application within the virtual machine:
-
 # Guide til Import og Kørsel af en OVA-fil i VirtualBox
 
 I denne vejledning vil vi guide dig gennem trinnene til at importere og køre en OVA-fil (Open Virtualization Appliance) i VirtualBox. En OVA-fil indeholder typisk et komplet operativsystem, og VirtualBox er en populær virtualiseringssoftware til at køre virtuelle maskiner.
