@@ -11,7 +11,7 @@ $notecount = 0;
 $sectionsres = array('Indtægter','Udgifter','Resultatdisponering');
 $sectionsbal = array('Aktiver','Egenkapital','Passiver','Fejlkonto');
 $darray = getdata($begin,$end);
-if (hasfejl($darray)) showfejlkonto();
+//if (hasfejl($darray)) showfejlkonto();
 echo "<center><h2>Resultatopgørelse $begin - $realend</center></h2><br>";
 foreach ($sectionsres as $cursect) 
 	printsection($darray,$cursect);
