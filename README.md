@@ -10,11 +10,9 @@ Fordele ved OVA Løsning:
 Ulemper:
 * Størrelse 20GB da den indeholder et helt operativsystem plus ekstra plads så du ikke løber tør (n4s fylder < 70MB)
 
-# Du er ikke stavsnbundet til et økonomisystem
-Når man starter et nyt økonomisystem lader man typisk de gamle posteringer være i det gamle system og indtaster en åbningsbalance i det nye system.
-Man kan også vælge at indlæse samtlige historiske poster i det nye system.
-N4s understøtter CSV filformatet for lynhurtig og enkel import/eksport af posteringer.
-Skulle du senere ønske at benytte et andet system er det derfor let at eksportere data i et kendt filformat (CSV)
+# Import / Export
+	n4s understøtter import/eksport af CSV-filer
+	Særligt nyttigt hvis man vil indlæse et kontoudtog fra bank eller lign.
 
 # Eksempel på rapportering
 Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter.
@@ -39,28 +37,6 @@ samt besvare evt. spørgsmål du måtte have.
 # Frit regnskabssystem
 Vi mener der skal være et lynhurtigt og sikkert bogføringssystem som kan køre lokalt på enhver computer (eller telefon/ipad/brødrister, – linux kan køre på næsten alt) til de nye iværksættere / små selvstændige. Det skal også kunne køre på f.eks. en linode 5$ server og betjenes af flere samtidige brugere.
 
-Systemet er klar til den nye bogføringslov som specialudviklet system.
-
-
-# Hvad kan vi IKKE
-* Dokumenthåndtering ikke implementeret - du kan nummere dine bilag i en Cloud løsning fx Dropbox
-* Fakturering - du kan skrive dine fakturaer i Word eller et andet program
-* Bankintegration (kan nemt implementeres for din virksomhed såfremt det ønskes, via Tink API)
-
-# Produktsammenligning
-| Regnskabssystem    | Pris / år         | Sværhedsgrad | Tilpasningsmuligheder     | API           |
-|---------------------|-------------------|--------------|---------------------------|---------------|
-| n4s                 | Gratis (Fri Software) | Hardcore     | Omfattende (Fri Software) | Nej          *1 |
-| e-conomic           | Medium            | Medium       | Begrænsede                | Ja (Funktionel) |
-| Dinero              | Medium            | Let          | Begrænsede                | Ja (Begrænset) |
-| Billy's Billing     | Lav               | Let          | Begrænsede                | Ja (Begrænset) |
-| Saldi               | Lav               | Medium       | Omfattende (Fri Software) | Nej           |
-| Summasummarum       | Lav               | Medium       | Begrænsede                | Nej           |
-| Uniconta            | Medium            | Medium       | Begrænsede                | Ja (Begrænset) |
-| C5                  | Medium            | Medium       | Begrænsede                | Nej           |
-| Winfinans           | Lav               | Medium       | Begrænsede                | Ved ikke?     |
-
-* 1 Der er ikke nogen API, men da det er open source er det meget nemt at lave addons eller patches således at det passer til dit behov. Hvis du udvikler en ny funktionalitet kan du også lave en pull request på github og give din ændring tilbage til andre brugere (kræver godkendelse)
 
 # Support
 Der ydes foreløbig *gratis* support til brug af den virtuelle maskine. Kontakt herom på email olsenit@gmail.com
