@@ -452,7 +452,7 @@ function html2() {
 	popd 2>/dev/null
 }
 function html() {
-	html2
+	html2 2>/dev/null
 	return
 
 	echo brug  html2 nu
