@@ -70,6 +70,7 @@
 	Du kan dog også vælge at beholde Windows / Mac ...
 		I så fald kan du downloade vores virtualbox pakke.
 	Der er fuld funktionalitet uanset operativsystem
+	*Vigtigt for optimal performance bør du også installere Virtualbox Extension Pack*
 
 # Sikkerhed
 	Af sikkerhedsmæssige årsager anbefales det ikke at have systemet kørende på internettet.
