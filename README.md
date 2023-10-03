@@ -1,3 +1,4 @@
+![n4s - 2nd brain & accounting](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/30bdcc4a1e46da33a502dfcde0548823f8445054/png/Color%20logo%20-%20no%20background.png)
 ![n4s](demo.gif)
 # TLDR - Lad mig downloade din OVA
 * Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/)
