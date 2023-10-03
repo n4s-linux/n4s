@@ -1,4 +1,6 @@
 #!/bin/bash
+# installationsskript skal skrives om - manuel installation indtil videre
+exit
 echo installerer git
 sudo apt-get install -y git
 mkdir -p ~/.n4s-install
