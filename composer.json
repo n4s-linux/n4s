@@ -1,7 +1,0 @@
-{
-    "require": {
-        "bramus/ansi-php": "~3.1",
-        "erusev/parsedown": "^1.7",
-        "league/commonmark": "^2.3"
-    }
-}
