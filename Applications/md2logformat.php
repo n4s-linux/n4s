@@ -7,6 +7,7 @@
 		$curline = trim($curline);
 		if (substr($curline,0,1) == "#" && substr($curline,0,2) != "##") {
 			$curheading = trim(substr($curline,1));
+			$cursubheading="";
 			continue;
 		}
 		else if (substr($curline,0,2) == "##") {
