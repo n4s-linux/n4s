@@ -1,7 +1,8 @@
 ![n4s - 2nd brain & accounting](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/30bdcc4a1e46da33a502dfcde0548823f8445054/png/Color%20logo%20-%20no%20background.png)
 
-![n4s](demo.gif)
 # Demo Video - Kontering af simpelt regnskab?
+![n4s](demo.gif)
+
 Vil du gerne se hvordan systemet betjenes i det daglige ?
 
 [Video Tutorial / Demonstration - hvordan konteres et simpelt regnskab i n4s](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/view?usp=sharing)
