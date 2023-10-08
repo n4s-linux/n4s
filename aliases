@@ -675,7 +675,7 @@ BPWD="$(basename "$PWD")"
 	fi
 	rand=$(shuf -i 40-41 -n1)
 	#tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "☰ F1 Menu $timers" 2>/dev/null
-	dosha=$(fortune);
+	dosha=$(fortune -n80 -a);
 	differ="" #$(grep $(date +%Y-%m-%d) ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
 	diff2=$(grep $(date +%Y-%m-%d --date=yesterday) ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
 	diff3=$(grep $(date +%Y-%m-%d --date="-2 days") ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
