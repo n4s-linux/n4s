@@ -8,7 +8,7 @@
 	$end = null;
 	require_once("fzf.php");
 	$fzf = "";
-	for ($år = date("Y") -5; $år <= date("Y") +5;$år++) { // HVERT ÅR i $år
+	for ($år = date("Y") -15; $år <= date("Y") +5;$år++) { // HVERT ÅR i $år
 		for ($i = 1;$i<13;$i++) {
 			$fzf .= "$år" . "-" . nicem($i) . "\n";;		
 		}
