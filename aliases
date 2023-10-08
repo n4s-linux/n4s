@@ -675,8 +675,8 @@ BPWD="$(basename "$PWD")"
 	fi
 	rand=$(shuf -i 40-41 -n1)
 	#tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "☰ F1 Menu $timers" 2>/dev/null
-	dosha=$(php /svn/svnroot/Applications/curdosha.php);
-	differ=$(grep $(date +%Y-%m-%d) ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
+	dosha=$(fortune);
+	differ="" #$(grep $(date +%Y-%m-%d) ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
 	diff2=$(grep $(date +%Y-%m-%d --date=yesterday) ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
 	diff3=$(grep $(date +%Y-%m-%d --date="-2 days") ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
 	oms=$(cat /data/regnskaber/transactions_crm/.månedsoms)
@@ -687,7 +687,7 @@ BPWD="$(basename "$PWD")"
 	omsar=$(echo "$omsar/-1000/12"|bc)
 	regnskaber=$(pushd . >/dev/null;cd /data/regnskaber/;ls -t|grep -v log|grep -v chart_of_account|grep -v NY|grep -v igang|grep -v crm|grep -v regnska|sed 's/transactions_//g'|sed 's/_//g'|head -n5|while read i; do echo -n "$i"|cut -c1-10;echo -n " "; done;popd >/dev/null)
 	regnskaber=
-	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=colour70,bg=colour25]$dosha#[fg=colour50,bg=colour95]✎#differ <3 dage $differ $diff2 $diff3 #[fg=colour60,bg=colour85]oms m/k/å: $oms/$omsk/$omsar #[fg=colour20,bg=colour30]$regnskaber" 2>/dev/null
+	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=colour70,bg=colour25]$dosha#[fg=colour50,bg=colour95]" 2>/dev/null
 	tmux set -g status 2 2>/dev/null; tmux set -g stgatus-format[1] "" 2>/dev/null
 	tmux set-option status-right "#[fg=black,bg=white] $params %Y-%m-%dT%H:%M #[fg=colour233,bg=colour8]n4s"
 	pushd . >/dev/null
