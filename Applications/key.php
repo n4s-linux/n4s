@@ -223,6 +223,8 @@ else if (isset($argv[1]) && $argv[1] == "search_exTrykion") {
 		exec_app("$editor $results");
 }
 else if (isset($argv[1]) && ($argv[1] == "search" || $argv[1] == "bulk" )) {
+	if (!isset($argv[2]) || !isset($argv[3]))
+		die("Søgning kræver du har sat periode - skriv 'dp' eller tryk Alt-p\n");
 	$search_begin = strtotime($argv[2]);
 	$search_end = strtotime($argv[3]);
   $results = "";
