@@ -1,3 +1,4 @@
+git pull 2>/dev/null >/dev/null&
 function h() {
 l r $@|head
 }
