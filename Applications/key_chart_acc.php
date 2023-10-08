@@ -31,10 +31,11 @@ global $path;
 										'Autodrift'=>array('Brændstof'=>[],'Vægtafgift'=>[],'Vedligeholdelse'=>[],'Forsikring'=>[]),
                   'Direkte omkostninger'=>[],
                    'Personaleomkostninger'=>array('Løn'=>[],'ATP'=>[],'AER'=>[],'Barsel'=>[],'Diverse'=>[]),
+                   'Autodrift'=>array('Brændstof'=>[],'Vægtafgift'=>[],'Vedligeholdelse'=>[],'Forsikring'=>[]),
                     'Administration'=>array('Ej fradragsberettigede omk','Kontingenter'=>[],'Avishold'=>[],'Kontorartikler'=>[],'Gebyrer'=>[],'Mindre anskaffelser'=>[],'Revisor'=>[],'Advokat'=>[],'Edb'=>[],'Webhosting'=>[],'Telefoni'=>[],'Internet'=>[]),
 										'Reklame & Markedsføring'=>array('Rejseomkostninger'=>[],'Repræsentation'=>[],'Annoncer & Reklamer'=>[],'Gaver'=>[],'Diverse'=>[])
                    ),
-	'Egenkapital'=>array('Reserve'=>[],'Overført resultat'=>[],'Primo'=>[],'Overført resultat'=>[],'Selskabskapital'=>[],'Årets indskud'=>[],'Overkurs'=>[],'Årets hævninger'=>[],'Mellemregning'=>[],'Øvrige hævninger'=>[])
+	'Egenkapital'=>array('Årets indskud'=>[],'Øvrige hævninger'=>[],'Årets hævninger'=>[],'Reserve'=>[],'Overført resultat'=>[],'Primo'=>[],'Overført resultat'=>[],'Selskabskapital'=>[],'Årets indskud'=>[],'Overkurs'=>[],'Årets hævninger'=>[],'Mellemregning'=>[],'Øvrige hævninger'=>[])
 );
 if (getenv("igv") == "1") {
 $accounts = array("Igangværende arbejder"=>[],'Udført arbejde'=>[]);	
