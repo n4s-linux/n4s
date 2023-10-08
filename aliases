@@ -837,6 +837,7 @@ Qe
 			bn=$(basename "$tpath")
 		ln -s "$tpath" ~/regnskaber/"$bn"
 		#scrips
+		cp /svn/svnroot/Applications/999_Periodresult.bash ~/regnskaber/"$bn"/
 
 	fi
 fi
