@@ -1,5 +1,8 @@
 ![n4s - 2nd brain & accounting](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/30bdcc4a1e46da33a502dfcde0548823f8445054/png/Color%20logo%20-%20no%20background.png)
+
 ![n4s](demo.gif)
+
+[Video Tutorial / Demonstration - hvordan konteres et simpelt regnskab i n4s](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/view?usp=sharing)
 # TLDR - Lad mig downloade din OVA
 * Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/)
 * Link til [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (husk at få Extension Pack også)
