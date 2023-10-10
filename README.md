@@ -18,6 +18,8 @@ Så hvorfor vente? Start din rejse mod økonomisk succes i dag med N4S. Lad ikke
 
 # Demo Video - Kontering af simpelt regnskab?
 ![n4s](demo.gif)
+[![n4s demo](demo.gif 'n4s demo')](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/)
+
 
 Vil du gerne se hvordan systemet betjenes i det daglige ?
 
