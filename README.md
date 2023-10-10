@@ -85,23 +85,6 @@ Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)
 * [Eksempel saldobalance](https://drive.google.com/file/d/1WAlPO73OykvF5-wUCh9-XDIikK_8SoBU/view?usp=sharing)
 * [Eksempel kontokort](https://drive.google.com/file/d/1d_se9vbtTHx38qCeMm4gSxC0gy9byxez/view?usp=sharing)
 
-# Kom hurtigt i gang
-Hvis du vil hurtigt i gang og have en introduktion kan du booke et zoom-møde til favorabel intro-pris.
-Det forventes at du har downloadet vores OVA samt Virtualbox med Extension Pack, og at du har Zoom installeret
-Det forventes at du er nogenlunde teknisk kyndig.
-Vi vil vise dig hvordan du:
-* Opretter regnskaber
-* Indtaster transaktioner
-* Importerer bank CSV filer
-* Genererer balancer og kontokort
-
-samt besvare evt. spørgsmål du måtte have.
-
-[Book din tid her](https://n4s-linux-regnskab.youcanbook.me)
-
-# Frit regnskabssystem
-Vi mener der skal være et lynhurtigt og sikkert bogføringssystem som kan køre lokalt på enhver computer (eller telefon/ipad/brødrister, – linux kan køre på næsten alt) til de nye iværksættere / små selvstændige. Det skal også kunne køre på f.eks. en linode 5$ server og betjenes af flere samtidige brugere.
-
 
 # Support
 Der ydes foreløbig *gratis* support til brug af den virtuelle maskine. Kontakt herom på email olsenit@gmail.com
@@ -312,3 +295,17 @@ Når opdateringen er færdig, skal du lukke din terminal.
 Nu har du succesfuldt opdateret n4s til den nyeste bleeding edge-version fra GitHub.
 
 Husk at have de nødvendige tilladelser og rettigheder til at opdatere n4s, og udvis forsigtighed, når du arbejder med kommandolinjeværktøjer.
+
+# Kom hurtigt i gang
+Hvis du vil hurtigt i gang og have en introduktion kan du booke et zoom-møde til favorabel intro-pris.
+Det forventes at du har downloadet vores OVA samt Virtualbox med Extension Pack, og at du har Zoom installeret
+Det forventes at du er nogenlunde teknisk kyndig.
+Vi vil vise dig hvordan du:
+* Opretter regnskaber
+* Indtaster transaktioner
+* Importerer bank CSV filer
+* Genererer balancer og kontokort
+
+samt besvare evt. spørgsmål du måtte have.
+
+[Book din tid her](https://n4s-linux-regnskab.youcanbook.me)
