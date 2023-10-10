@@ -241,6 +241,7 @@ Hvis du vil eksportere dine transaktioner til en CSV-fil i Linux-terminalen, kan
 
 ```bash
 l csv > ~/tmp/[ønsket_filnavn].csv
+```
 
 Herefter vil du kunne finde filen i mappen tmp som er bogmærket i filmanageren der kan åbnes i venstre side af skærmen
 
@@ -249,7 +250,7 @@ n4s har også et wikisystem hvor man kan holde styr på kunderer, varer, reserve
 Det er klar til brug - hvis du vil hjælpe med at udvikle dokumentationen vil vi gerne lære dig at bruge det.
 
 # Genvejstaster terminal multiplexer - tmux - terminalvinduehåndteringen
-Navigering i vinduer
+## Navigering i vinduer
 
 | Tastaturgenvej    | Handling                    |
 | ----------------- | ----------------------------|
@@ -265,7 +266,7 @@ Navigering i vinduer
 | Alt+Venstre Pil   | Skift til foregående vindue |
 | Alt+Højre Pil     | Skift til næste vindue      |
 
-Hovedmenu
+## Hovedmenu
 
 | Tastaturgenvej    | Handling                   |
 | ----------------- | -------------------------- |
@@ -278,14 +279,14 @@ Hovedmenu
 | m                 | Åbn Manual                |
 | C                 | Åbn Lommeregner (Python)  |
 
-Journaler (Sager)
+## Journaler (Sager)
 
 | Tastaturgenvej    | Handling                           |
 | ----------------- | ---------------------------------- |
 | c                 | Åbn Journaler (Sager)              |
 | m                 | Åbn Materialeindkaldelse-menuen   |
 
-Regnskab
+## Regnskab
 
 | Tastaturgenvej    | Handling                           |
 | ----------------- | ---------------------------------- |
@@ -294,7 +295,7 @@ Regnskab
 | u                 | Åbn Udskrift-menuen for konti     |
 | c                 | Åbn CSV-menuen for en specifik konto |
 
-Terminal
+## Terminal
 
 | Tastaturgenvej    | Handling                           |
 | ----------------- | ---------------------------------- |
@@ -302,7 +303,7 @@ Terminal
 | s                 | Tag et screenshot af det aktuelle vindue |
 | S                 | Se tidligere screenshots          |
 
-Manual
+## Manual
 
 | Tastaturgenvej    | Handling                           |
 | ----------------- | ---------------------------------- |
