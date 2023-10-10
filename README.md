@@ -221,7 +221,7 @@ Datastruktur:
 	* Hvert bilag er en fil med en række transaktioner (typisk 2-benede).
 	* Konkrete ændringer i bilagsregistreringer logføres med navn, tidspunkt og præcise ændringer.
 
-# Kom i gang
+
 # Før du går i gang
 Se hvordan vi bogfører et simpelt regnskab i vores [demo video](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/view?usp=sharing) - der kan du også se hvilke taster vi trykker for at tilgå de fleste funktioner
 
