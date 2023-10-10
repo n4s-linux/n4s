@@ -189,20 +189,99 @@ Datastruktur:
 	* Konkrete ændringer i bilagsregistreringer logføres med navn, tidspunkt og præcise ændringer.
 
 # Kom i gang
-	Når vi skal lave vores første regnskab skal vi have lavet en mappe.
+# Før du går i gang
+Se hvordan vi bogfører et simpelt regnskab i vores [demo video](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/view?usp=sharing) - der kan du også se hvilke taster vi trykker for at tilgå de fleste funktioner
+
+# Hovedmenu
+Hovedmenu tilgås på F1
+
+# Regnskabsmenu (virker kun når du har åbnet et regnskab)
+Regnskabsmenu med diverse funktioner kan tilgås med Alt-m når du har åbnet et regnskab
+
 # Opret nyt regnskab / regnskabsmappe
-	Tryk F4. 
-		Vælg NY, 
-		Skriv et navn på dit regnskab
-# Åbn et regnskab
+* Tryk F4. 
+* Vælg NY, 
+* Skriv et navn på dit regnskab
+
+# Åbn et eksisterende regnskab
 	Tryk F4
 	Vælg det ønskede regnskab
-# Din første transaktion
-	Tryk 'e'
-	Følg guiden på skærmen
-# Søg en transaktion frem
-	Hvordan søger man
 
+# Din første transaktion
+*Tryk 'e'
+* Følg guiden på skærmen
+# Søg en transaktion frem
+* Søg med 's' Enter for at søge i den aktuelle periode (ændres med Alt-p)
+* Søg med 'ss' Enter for at søge i alle perioder
+
+# Hvordan eksporterer man rapporteringen
+Indstil først periode med Alt-p som du ønsker at rapportere for
+skriv herefter 'html' Enter
+Den vil spørge efter firmanavn som skal indtastes første gang - det er til tekst på forsiden af rapporten - der kan evt. medtages andre noter
+Herefter vil saldobalance og kontokort ligger i tmp-mappen som kan åbne i filmanageren i venstre side
 
 # Sagsstyring / stamdatakartotek / wikisystem
 n4s har også et wikisystem hvor man kan holde styr på kunderer, varer, reservedele, viden e.t.c.
+
+# Genvejstaster terminal multiplexer - tmux - terminalvinduehåndteringen
+## Navigering i vinduer
+
+| Tastaturgenvej    | Handling                    |
+| ----------------- | ----------------------------|
+| Alt+1             | Skift til vindue 1          |
+| Alt+2             | Skift til vindue 2          |
+| Alt+3             | Skift til vindue 3          |
+| Alt+4             | Skift til vindue 4          |
+| Alt+5             | Skift til vindue 5          |
+| Alt+6             | Skift til vindue 6          |
+| Alt+7             | Skift til vindue 7          |
+| Alt+8             | Skift til vindue 8          |
+| Alt+9             | Skift til vindue 9          |
+| Alt+Venstre Pil   | Skift til foregående vindue |
+| Alt+Højre Pil     | Skift til næste vindue      |
+
+## Hovedmenu
+
+| Tastaturgenvej    | Handling                   |
+| ----------------- | -------------------------- |
+| c                 | Åbn Journaler (Sager)     |
+| r                 | Åbn Regnskab              |
+| T                 | Åbn Terminal              |
+| K                 | Åbn Kommunikation         |
+| t                 | Åbn Tid                   |
+| s                 | Åbn Statistik             |
+| m                 | Åbn Manual                |
+| C                 | Åbn Lommeregner (Python)  |
+
+## Journaler (Sager)
+
+| Tastaturgenvej    | Handling                           |
+| ----------------- | ---------------------------------- |
+| c                 | Åbn Journaler (Sager)              |
+| m                 | Åbn Materialeindkaldelse-menuen   |
+
+## Regnskab
+
+| Tastaturgenvej    | Handling                           |
+| ----------------- | ---------------------------------- |
+| r                 | Åbn Rapportering-menuen           |
+| R                 | Åbn Kontokort-menuen for aktuel periode |
+| u                 | Åbn Udskrift-menuen for konti     |
+| c                 | Åbn CSV-menuen for en specifik konto |
+
+# Terminal
+
+| Tastaturgenvej    | Handling                           |
+| ----------------- | ---------------------------------- |
+| T                 | Åbn en ny terminalvindue          |
+| s                 | Tag et screenshot af det aktuelle vindue |
+| S                 | Se tidligere screenshots          |
+
+# Manual
+
+| Tastaturgenvej    | Handling                           |
+| ----------------- | ---------------------------------- |
+| m                 | Åbn LICENS-siden                  |
+| t                 | Åbn n4s - Bogføringssystem (tmux-vinduessystem) |
+| v                 | Åbn Vim - Editor-siden            |
+| u                 | Åbn tmux - Vinduesystem-siden     |
