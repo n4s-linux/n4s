@@ -1,3 +1,5 @@
+![n4s - 2nd brain & accounting](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/30bdcc4a1e46da33a502dfcde0548823f8445054/png/Black%20logo%20-%20no%20background.png)
+
 n4s - dit frie regnskabsprogram
 =================
 
@@ -20,22 +22,19 @@ n4s - dit frie regnskabsprogram
    * [Start maskinen](#start-maskinen)
    * [Start et regnskab](#start-et-regnskab)
    * [Din første transaktion](#din-første-transaktion)
-* [Hovedmenu](#hovedmenu)
-* [Regnskabsmenu (virker kun når du har åbnet et regnskab)](#regnskabsmenu-virker-kun-når-du-har-åbnet-et-regnskab)
-* [Søg en transaktion frem](#søg-en-transaktion-frem)
-* [Hvordan eksporterer man rapporteringen - saldobalancer og kontokort PDF](#hvordan-eksporterer-man-rapporteringen---saldobalancer-og-kontokort-pdf)
-* [Sådan eksporteres transaktioner til CSV-filformat](#sådan-eksporteres-transaktioner-til-csv-filformat)
-* [Sagsstyring / stamdatakartotek / wikisystem](#sagsstyring--stamdatakartotek--wikisystem)
-* [Genvejstaster terminal multiplexer - tmux - terminalvinduehåndteringen](#genvejstaster-terminal-multiplexer---tmux---terminalvinduehåndteringen)
-   * [Navigering i vinduer](#navigering-i-vinduer)
-* [Redigering af Transaktioner med Vim](#redigering-af-transaktioner-med-vim)
-* [Opdatering af N4S](#opdatering-af-n4s)
+   * [Hovedmenu](#hovedmenu)
+   * [Regnskabsmenu (virker kun når du har åbnet et regnskab)](#regnskabsmenu-virker-kun-når-du-har-åbnet-et-regnskab)
+   * [Søg en transaktion frem](#søg-en-transaktion-frem)
+   * [Hvordan eksporterer man rapporteringen - saldobalancer og kontokort PDF](#hvordan-eksporterer-man-rapporteringen---saldobalancer-og-kontokort-pdf)
+   * [CSV Export](#csv-export)
+   * [Genvejstaster terminal multiplexer - tmux - terminalvinduehåndteringen](#genvejstaster-terminal-multiplexer---tmux---terminalvinduehåndteringen)
+      * [Navigering i vinduer](#navigering-i-vinduer)
+   * [Redigering af Transaktioner med Vim](#redigering-af-transaktioner-med-vim)
+   * [Opdatering af N4S](#opdatering-af-n4s)
 * [Kom hurtigt i gang](#kom-hurtigt-i-gang)
 * [Table of Contents](#table-of-contents)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-
-![n4s - 2nd brain & accounting](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/30bdcc4a1e46da33a502dfcde0548823f8445054/png/Black%20logo%20-%20no%20background.png)
 
 # Savner du de gode gamle DOS-dage uden så meget gas eller dyre abonnementer ?
 I dag, hvor teknologi og computere konstant udvikler sig 🚀, kan det være fristende at kigge tilbage på de gode gamle dage i 1990'erne 🕰️, da DOS-operativsystemet og de tidlige regnskabssystemer var dominerende 💾. Der er noget nostalgisk ved den tid, hvor computere og software fungerede på en enklere måde, og brugeroplevelsen havde sine egne charmerende kvaliteter.
@@ -232,23 +231,23 @@ Inden du begynder, skal du sørge for at have følgende:
 * Vælg Ingen funktion (momskode) på modkonto [ENTER]
 * Såfremt du har lavet en fejl eller ønsker at kontrollere transaktionen kan du nu trykke 'e' for at redigere den i vim eller enter for at fortsætte.
 
-# Hovedmenu
+## Hovedmenu
 Hovedmenu tilgås på F1
 
-# Regnskabsmenu (virker kun når du har åbnet et regnskab)
+## Regnskabsmenu (virker kun når du har åbnet et regnskab)
 Regnskabsmenu med diverse funktioner kan tilgås med Alt-m når du har åbnet et regnskab
 
-# Søg en transaktion frem
+## Søg en transaktion frem
 * Søg med 's' Enter for at søge i den aktuelle periode (ændres med Alt-p)
 * Søg med 'ss' Enter for at søge i alle perioder
 
-# Hvordan eksporterer man rapporteringen - saldobalancer og kontokort PDF
+## Hvordan eksporterer man rapporteringen - saldobalancer og kontokort PDF
 Indstil først periode med Alt-p som du ønsker at rapportere for
 skriv herefter 'html' Enter
 Den vil spørge efter firmanavn som skal indtastes første gang - det er til tekst på forsiden af rapporten - der kan evt. medtages andre noter
 Herefter vil saldobalance og kontokort ligger i tmp-mappen som kan åbne i filmanageren i venstre side
 
-# Sådan eksporteres transaktioner til CSV-filformat
+## CSV Export
 
 Hvis du vil eksportere dine transaktioner til en CSV-fil i Linux-terminalen, kan du følge disse trin:
 
@@ -263,12 +262,8 @@ l csv > ~/tmp/[ønsket_filnavn].csv
 
 Herefter vil du kunne finde filen i mappen tmp som er bogmærket i filmanageren der kan åbnes i venstre side af skærmen
 
-# Sagsstyring / stamdatakartotek / wikisystem
-n4s har også et wikisystem hvor man kan holde styr på kunderer, varer, reservedele, viden e.t.c.
-Det er klar til brug - hvis du vil hjælpe med at udvikle dokumentationen vil jeg gerne lære dig at bruge det.
-
-# Genvejstaster terminal multiplexer - tmux - terminalvinduehåndteringen
-## Navigering i vinduer
+## Genvejstaster terminal multiplexer - tmux - terminalvinduehåndteringen
+### Navigering i vinduer
 
 | Tastaturgenvej    | Handling                    |
 | ----------------- | ----------------------------|
@@ -284,7 +279,7 @@ Det er klar til brug - hvis du vil hjælpe med at udvikle dokumentationen vil je
 | Alt+Venstre Pil   | Skift til foregående vindue |
 | Alt+Højre Pil     | Skift til næste vindue      |
 
-# Redigering af Transaktioner med Vim
+## Redigering af Transaktioner med Vim
 
 I vores arbejde med at håndtere transaktioner anvender vi den kraftfulde editor Vim. Vim er kendt som en af de mest effektive og fleksible tekstredigeringsværktøjer, der findes. Her er nogle grundlæggende instruktioner, der hjælper dig med at navigere og redigere tekst i Vim:
 
@@ -321,7 +316,7 @@ Vim er ikke kun en teksteditor, det er en kraftfuld arbejdshest, der giver dig f
 
 Så kom i gang med at bruge Vim til at redigere transaktioner og oplev, hvorfor det er et uundværligt værktøj for tekstredigering og datahåndtering.
 
-# Opdatering af N4S
+## Opdatering af N4S
 Opdater din lokale kopi af n4s ved at trække ændringer fra GitHub ved hjælp af følgende kommando:
 ```bash
 cd /svn/svnroot/
@@ -345,5 +340,4 @@ Jeg vil vise dig hvordan du:
 
 samt besvare evt. spørgsmål du måtte have.
 
-[Book din tid her](https://n4s-linux-regnskab.youcanbook.me)
 
