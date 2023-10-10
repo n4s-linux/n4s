@@ -314,52 +314,6 @@ Det er klar til brug - hvis du vil hjælpe med at udvikle dokumentationen vil vi
 | Alt+Venstre Pil   | Skift til foregående vindue |
 | Alt+Højre Pil     | Skift til næste vindue      |
 
-## Hovedmenu
-
-| Tastaturgenvej    | Handling                   |
-| ----------------- | -------------------------- |
-| c                 | Åbn Journaler (Sager)     |
-| r                 | Åbn Regnskab              |
-| T                 | Åbn Terminal              |
-| K                 | Åbn Kommunikation         |
-| t                 | Åbn Tid                   |
-| s                 | Åbn Statistik             |
-| m                 | Åbn Manual                |
-| C                 | Åbn Lommeregner (Python)  |
-
-## Journaler (Sager)
-
-| Tastaturgenvej    | Handling                           |
-| ----------------- | ---------------------------------- |
-| c                 | Åbn Journaler (Sager)              |
-| m                 | Åbn Materialeindkaldelse-menuen   |
-
-## Regnskab
-
-| Tastaturgenvej    | Handling                           |
-| ----------------- | ---------------------------------- |
-| r                 | Åbn Rapportering-menuen           |
-| R                 | Åbn Kontokort-menuen for aktuel periode |
-| u                 | Åbn Udskrift-menuen for konti     |
-| c                 | Åbn CSV-menuen for en specifik konto |
-
-## Terminal
-
-| Tastaturgenvej    | Handling                           |
-| ----------------- | ---------------------------------- |
-| T                 | Åbn en ny terminalvindue          |
-| s                 | Tag et screenshot af det aktuelle vindue |
-| S                 | Se tidligere screenshots          |
-
-## Manual
-
-| Tastaturgenvej    | Handling                           |
-| ----------------- | ---------------------------------- |
-| m                 | Åbn LICENS-siden                  |
-| t                 | Åbn n4s - Bogføringssystem (tmux-vinduessystem) |
-| v                 | Åbn Vim - Editor-siden            |
-| u                 | Åbn tmux - Vinduesystem-siden     |
-
 # Redigering af Transaktioner med Vim
 
 I vores arbejde med at håndtere transaktioner anvender vi den kraftfulde editor Vim. Vim er kendt som en af de mest effektive og fleksible tekstredigeringsværktøjer, der findes. Her er nogle grundlæggende instruktioner, der hjælper dig med at navigere og redigere tekst i Vim:
