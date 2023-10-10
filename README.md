@@ -29,7 +29,6 @@ n4s - dit frie regnskabsprogram
    * [Redigering af Transaktioner med Vim](#redigering-af-transaktioner-med-vim)
    * [Opdatering af N4S](#opdatering-af-n4s)
 * [Kom hurtigt i gang](#kom-hurtigt-i-gang)
-* [Table of Contents](#table-of-contents)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
 
