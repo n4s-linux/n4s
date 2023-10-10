@@ -374,3 +374,15 @@ Husk at når du paster i en terminal skal du også holde shift nede (Ctrl-Shift-
 Vim er ikke kun en teksteditor, det er en kraftfuld arbejdshest, der giver dig fuld kontrol over dine transaktioner og tekstredigering. Det er kendt for sin effektivitet og fleksibilitet, og det er en af de bedste måder at håndtere tekstredigering på.
 
 Så kom i gang med at bruge Vim til at redigere transaktioner og oplev, hvorfor det er et uundværligt værktøj for tekstredigering og datahåndtering.
+
+# Opdatering af N4S
+Opdater din lokale kopi af n4s ved at trække ændringer fra GitHub ved hjælp af følgende kommando:
+```bash
+cd /svn/svnroot/
+git pull
+```
+
+Når opdateringen er færdig, skal du lukke din terminal.
+Nu har du succesfuldt opdateret n4s til den nyeste bleeding edge-version fra GitHub.
+
+Husk at have de nødvendige tilladelser og rettigheder til at opdatere n4s, og udvis forsigtighed, når du arbejder med kommandolinjeværktøjer.
