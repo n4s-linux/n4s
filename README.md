@@ -243,6 +243,7 @@ Hvis du vil eksportere dine transaktioner til en CSV-fil i Linux-terminalen, kan
 l csv > ~/tmp/[ønsket_filnavn].csv
 ```
 
+
 Herefter vil du kunne finde filen i mappen tmp som er bogmærket i filmanageren der kan åbnes i venstre side af skærmen
 
 # Sagsstyring / stamdatakartotek / wikisystem
