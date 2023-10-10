@@ -225,14 +225,28 @@ Regnskabsmenu med diverse funktioner kan tilgås med Alt-m når du har åbnet et
 * Søg med 's' Enter for at søge i den aktuelle periode (ændres med Alt-p)
 * Søg med 'ss' Enter for at søge i alle perioder
 
-# Hvordan eksporterer man rapporteringen
+# Hvordan eksporterer man rapporteringen - saldobalancer og kontokort PDF
 Indstil først periode med Alt-p som du ønsker at rapportere for
 skriv herefter 'html' Enter
 Den vil spørge efter firmanavn som skal indtastes første gang - det er til tekst på forsiden af rapporten - der kan evt. medtages andre noter
 Herefter vil saldobalance og kontokort ligger i tmp-mappen som kan åbne i filmanageren i venstre side
 
+# Sådan eksporteres transaktioner til CSV-filformat
+
+Hvis du vil eksportere dine transaktioner til en CSV-fil i Linux-terminalen, kan du følge disse trin:
+
+1. Åbn en terminal ved at trykke på `Ctrl + Alt + T`.
+
+2. Skriv følgende kommando og tryk på `Enter`:
+
+```bash
+l csv > ~/tmp/[ønsket_filnavn].csv
+
+Herefter vil du kunne finde filen i mappen tmp som er bogmærket i filmanageren der kan åbnes i venstre side af skærmen
+
 # Sagsstyring / stamdatakartotek / wikisystem
 n4s har også et wikisystem hvor man kan holde styr på kunderer, varer, reservedele, viden e.t.c.
+Det er klar til brug - hvis du vil hjælpe med at udvikle dokumentationen vil vi gerne lære dig at bruge det.
 
 # Genvejstaster terminal multiplexer - tmux - terminalvinduehåndteringen
 ## Navigering i vinduer
@@ -280,7 +294,7 @@ n4s har også et wikisystem hvor man kan holde styr på kunderer, varer, reserve
 | u                 | Åbn Udskrift-menuen for konti     |
 | c                 | Åbn CSV-menuen for en specifik konto |
 
-# Terminal
+## Terminal
 
 | Tastaturgenvej    | Handling                           |
 | ----------------- | ---------------------------------- |
@@ -288,7 +302,7 @@ n4s har også et wikisystem hvor man kan holde styr på kunderer, varer, reserve
 | s                 | Tag et screenshot af det aktuelle vindue |
 | S                 | Se tidligere screenshots          |
 
-# Manual
+## Manual
 
 | Tastaturgenvej    | Handling                           |
 | ----------------- | ---------------------------------- |
