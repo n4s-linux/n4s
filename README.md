@@ -183,43 +183,21 @@ Inden du begynder, skal du sørge for at have følgende:
    - Vælg den virtuelle maskine fra listen.
    - Klik på knappen "Start" i VirtualBox-manageren.
 
-9. **Logins til den virtuelle maskine**
+# Brug
+## Start maskinen
+**Logins til den virtuelle maskine**
 * Brugernavn: n4s
 * Password bruger: n4s
 * Diskkrypteringskode: n4s
 * Root kode: n4s
 
-10. **Kør programmet:**
-    - Når opsætningen af operativsystemet er fuldført, kan du køre programmet inden for den virtuelle maskine.
-    - Installer software, surf på nettet og udfør forskellige opgaver inden for det virtuelle miljø.
-
-11. **Aflukning:**
-    - For at lukke den virtuelle maskine kan du blot klikke på "Afluk" eller "Sluk" i det virtuelle operativsystem eller bruge VirtualBox-manageren til at slukke for den.
-
-12. **Afslut VirtualBox:**
-    - Når du er færdig med at bruge den virtuelle maskine, kan du lukke VirtualBox.
-
-
-
-# Installation på eksisterende GNU/Linux System
-## Installation af GIT
-	sudo apt-get install git -y
-
-## Hentning af n4s
-	git clone git@github.com:n4s-linux/n4s.git
-## Installation af n4s (enkeltbrugersystem)
-	cd n4s
-	./install.sh
-Herefter genstart computeren / serveren.
-# Brug
-## Start n4s
-	n4s
 ## Start et regnskab
 * Tryk F1 (menu)
 * Vælg Regnskab
 * Vælg Åbn Regnskab
 * Vælg NY
 * Skriv navnet på dit regnskab
+
 ## Din første transaktion
 * Frembring regnskabsmenu (Alt-M)
 * Vælg Opret postering
@@ -234,22 +212,6 @@ Herefter genstart computeren / serveren.
 * Vælg Ingen funktion (momskode) på modkonto [ENTER]
 * Såfremt du har lavet en fejl eller ønsker at kontrollere transaktionen kan du nu trykke 'e' for at redigere den i vim eller enter for at fortsætte.
 
-# N4S
-n4s er en samling af fri software til linux.
-Det er en samling scripts og bindeled mellem følgende populære foss-programmer: ledger-cli, tmux, php, bash.
-
-# Bogføring i n4s
-n4s primære funktion er bogføring.
-
-Datastruktur:
-	* Hvert regnskab er en mappe
-	* Hvert bilag er en fil med en række transaktioner (typisk 2-benede).
-	* Konkrete ændringer i bilagsregistreringer logføres med navn, tidspunkt og præcise ændringer.
-
-
-# Før du går i gang
-Se hvordan vi bogfører et simpelt regnskab i vores [demo video](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/view?usp=sharing) - der kan du også se hvilke taster vi trykker for at tilgå de fleste funktioner
-
 # Hovedmenu
 Hovedmenu tilgås på F1
 
@@ -262,8 +224,8 @@ Regnskabsmenu med diverse funktioner kan tilgås med Alt-m når du har åbnet et
 * Skriv et navn på dit regnskab
 
 # Åbn et eksisterende regnskab
-	Tryk F4
-	Vælg det ønskede regnskab
+* Tryk F4
+* Vælg det ønskede regnskab
 
 # Din første transaktion
 *Tryk 'e'
