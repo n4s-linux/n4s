@@ -1,4 +1,3 @@
-git pull 2>/dev/null >/dev/null&
 function h() {
 l r $@|head
 }
@@ -638,7 +637,6 @@ export TMUX_PANE_TITLE="$1"
 
 prompt_function () {
 cmd=$(fc -ln -0)
-#env=$(getenv|sed 's/LEDGER_//g')
 bn=$(basename "$tpath");
 update_title "#[bg=yellow]$cmd #[bg=blue]$LEDGER_BEGIN - $LEDGER_END"
 env=
@@ -653,43 +651,9 @@ tmux set -g pane-border-format "#[fg=black,bg=gray]$env$showpath#[fg=black,bg=or
 #cmd=$(history|tail -n1|awk '{print $4}')
 bnpwd=$(basename "$PWD")
 echo "$(whoami) $(date '+%Y-%m-%dT%H:%m') $bnpwd : $cmd" >> /data/regnskaber/.log
-BPWD="$(basename "$PWD")"
-#tmux rename-window "💻$BPWD|$cmd" # virker ikke så godt hvis der er flere panes... ?
-	oms=$(tail -n1 ~/tmp/.oms 2>/dev/null)
-	op=$(whoami)
-	oms=
-	timers=
-	if [ "$op" == "joo" ] || [ "$op" == "mim" ] || [ "$op" == "cas" ]; then
-		budget=280000
-		mkdir -p /data/regnskaber/transactions_igangv
-		if [ ! -f /data/regnskaber/transactions_igangv/curl ]; then
-			touch /data/regnskaber/transactions_igangv/curl
-		fi
-		omsf=$(echo $(LEDGER_BEGIN=$(date +%Y-%m-%d --date="4 months ago") LEDGER_END=$(date +%Y-%m-%d --date=tomorrow) LEDGER_DEPTH=5 ledger -f /data/regnskaber/transactions_igangv/curl --begin=$(date +%Y-%m-%d --date="4 months ago") --end=$(date +%Y-%m-%d --date=tomorrow) b Fakturaer|tail -n1) |bc 2>/dev/null)
-		omsr=$(echo $(LEDGER_BEGIN=$(date +%Y-%m-%d --date="4 months ago") LEDGER_END=$(date +%Y-%m-%d --date=tomorrow) LEDGER_DEPTH=5 ledger -f /data/regnskaber/transactions_igangv/curl --begin=$(date +%Y-%m-%d --date="4 months ago") --end=$(date +%Y-%m-%d --date=tomorrow) b indtægter|tail -n1) "*-1"|bc 2>/dev/null)
-		min=$(echo -e "$omsf\n$omsr"|sort|head -n1)
-		min=$(echo "$min * 1"|bc 2>/dev/null)
-		percent=$(echo "(85* $min / $budget)"|bc 2>/dev/null)
-		(timers=$(find /data/otimers/$(whoami)/ -type f|grep -v .log|while read i; do echo -n "$(basename $i):" ;echo -n $(echo "($(stat -c %Y "$i")-$(date +%s))/-60"|bc 2>/dev/null)"⌛"; done) )2>/dev/null
-		oms="#budget $percent%"
-	fi
-	rand=$(shuf -i 40-41 -n1)
-	#tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "☰ F1 Menu $timers" 2>/dev/null
-	dosha=$(fortune -n80 -a);
-	differ="" #$(grep $(date +%Y-%m-%d) ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
-	diff2=$(grep $(date +%Y-%m-%d --date=yesterday) ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
-	diff3=$(grep $(date +%Y-%m-%d --date="-2 days") ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
-	oms=$(cat /data/regnskaber/transactions_crm/.månedsoms)
-	omsk=$(cat /data/regnskaber/transactions_crm/.kvartalsoms)
-	omsar=$(cat /data/regnskaber/transactions_crm/.årsoms)
-	oms=$(echo "$oms/-1000"|bc)
-	omsk=$(echo "$omsk/-1000/3"|bc)
-	omsar=$(echo "$omsar/-1000/12"|bc)
-	regnskaber=$(pushd . >/dev/null;cd /data/regnskaber/;ls -t|grep -v log|grep -v chart_of_account|grep -v NY|grep -v igang|grep -v crm|grep -v regnska|sed 's/transactions_//g'|sed 's/_//g'|head -n5|while read i; do echo -n "$i"|cut -c1-10;echo -n " "; done;popd >/dev/null)
-	regnskaber=
-	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=colour70,bg=colour25]$dosha#[fg=colour50,bg=colour95]" 2>/dev/null
+	fortune=$(fortune -n80 -a);
 	tmux set -g status 2 2>/dev/null; tmux set -g stgatus-format[1] "" 2>/dev/null
-	tmux set-option status-right "#[fg=black,bg=white] $params %Y-%m-%dT%H:%M #[fg=colour233,bg=colour8]n4s"
+	tmux set-option status-right "#[fg=black,bg=white] $params %Y-%m-%dT%H:%M #[fg=colour233,bg=colour8]$keys"
 	pushd . >/dev/null
 	cd "$tpath"
 	popd >/dev/null
@@ -830,15 +794,12 @@ if [ "$bn" == "NY" ]; then
 			newfolder=/data/regnskaber/"$navn"
 		else
 			newfolder=~/regnskaber/"$navn"
-Qe
 		fi
 			mkdir -p "$newfolder"
 			tpath="$newfolder"
 			bn=$(basename "$tpath")
 		ln -s "$tpath" ~/regnskaber/"$bn"
-		#scrips
-		cp /svn/svnroot/Applications/999_Periodresult.bash ~/regnskaber/"$bn"/
-
+		cp /svn/svnroot/Applications/scrips/999_Periodresult.bash "$tpath/"
 	fi
 fi
 bn=$(basename "$tpath")
@@ -862,7 +823,6 @@ if [ -f "$tpath/.init.bash" ]; then
 	source "$tpath/.init.bash"
 fi
 #echo Åbnet $(basename "$tpath") ....
-clear
 #asciinema rec -i1 /data/recordings/$(whoami)_"$bn"_$(date +%s).cast # problematisk at den starte et nyt shell, så kan man ikke sr() ind i et regnskab (uendeligtloop)
 echo -e "\e[42mÅbnet $(basename "$tpath") OK - Tryk Alt-m eller skriv 'm' [Enter] for Menu !\e[0m"
 }
