@@ -1,3 +1,40 @@
+Table of Contents
+=================
+
+* [Savner du de gode gamle DOS-dage uden så meget gas eller dyre abonnementer ?](#savner-du-de-gode-gamle-dos-dage-uden-så-meget-gas-eller-dyre-abonnementer-)
+* [N4S - Din Vej til Regnskabsmæssig Ekspertise!](#n4s---din-vej-til-regnskabsmæssig-ekspertise)
+* [Problemfri Eksport af Dine Data](#problemfri-eksport-af-dine-data)
+* [Fordele ved Dataeksport](#fordele-ved-dataeksport)
+* [Lets get down to business 🐝](#lets-get-down-to-business-)
+* [Demo Video - Kontering af simpelt regnskab?](#demo-video---kontering-af-simpelt-regnskab)
+* [TLDR - Lad mig downloade din OVA](#tldr---lad-mig-downloade-din-ova)
+* [Import / Export](#import--export)
+* [Eksempel på rapportering](#eksempel-på-rapportering)
+* [Support](#support)
+* [n4s - Open Source / Fri Software GNU/Linux baseret dobbelt bogholderi og ERP](#n4s---open-source--fri-software-gnulinux-baseret-dobbelt-bogholderi-og-erp)
+* [Krav til installation](#krav-til-installation)
+* [Guide til Import og Kørsel af en OVA-fil i VirtualBox](#guide-til-import-og-kørsel-af-en-ova-fil-i-virtualbox)
+   * [Forudsætninger](#forudsætninger)
+   * [Trin](#trin)
+* [Brug](#brug)
+   * [Start maskinen](#start-maskinen)
+   * [Start et regnskab](#start-et-regnskab)
+   * [Din første transaktion](#din-første-transaktion)
+* [Hovedmenu](#hovedmenu)
+* [Regnskabsmenu (virker kun når du har åbnet et regnskab)](#regnskabsmenu-virker-kun-når-du-har-åbnet-et-regnskab)
+* [Søg en transaktion frem](#søg-en-transaktion-frem)
+* [Hvordan eksporterer man rapporteringen - saldobalancer og kontokort PDF](#hvordan-eksporterer-man-rapporteringen---saldobalancer-og-kontokort-pdf)
+* [Sådan eksporteres transaktioner til CSV-filformat](#sådan-eksporteres-transaktioner-til-csv-filformat)
+* [Sagsstyring / stamdatakartotek / wikisystem](#sagsstyring--stamdatakartotek--wikisystem)
+* [Genvejstaster terminal multiplexer - tmux - terminalvinduehåndteringen](#genvejstaster-terminal-multiplexer---tmux---terminalvinduehåndteringen)
+   * [Navigering i vinduer](#navigering-i-vinduer)
+* [Redigering af Transaktioner med Vim](#redigering-af-transaktioner-med-vim)
+* [Opdatering af N4S](#opdatering-af-n4s)
+* [Kom hurtigt i gang](#kom-hurtigt-i-gang)
+* [Table of Contents](#table-of-contents)
+
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
+
 ![n4s - 2nd brain & accounting](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/30bdcc4a1e46da33a502dfcde0548823f8445054/png/Black%20logo%20-%20no%20background.png)
 
 # Savner du de gode gamle DOS-dage uden så meget gas eller dyre abonnementer ?
@@ -309,3 +346,4 @@ Jeg vil vise dig hvordan du:
 samt besvare evt. spørgsmål du måtte have.
 
 [Book din tid her](https://n4s-linux-regnskab.youcanbook.me)
+
