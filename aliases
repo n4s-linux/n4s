@@ -637,6 +637,7 @@ export TMUX_PANE_TITLE="$1"
 
 prompt_function () {
 cmd=$(fc -ln -0)
+#env=$(getenv|sed 's/LEDGER_//g')
 bn=$(basename "$tpath");
 update_title "#[bg=yellow]$cmd #[bg=blue]$LEDGER_BEGIN - $LEDGER_END"
 env=
@@ -651,9 +652,12 @@ tmux set -g pane-border-format "#[fg=black,bg=gray]$env$showpath#[fg=black,bg=or
 #cmd=$(history|tail -n1|awk '{print $4}')
 bnpwd=$(basename "$PWD")
 echo "$(whoami) $(date '+%Y-%m-%dT%H:%m') $bnpwd : $cmd" >> /data/regnskaber/.log
+BPWD="$(basename "$PWD")"
+#tmux rename-window "💻$BPWD|$cmd" # virker ikke så godt hvis der er flere panes... ?
 	fortune=$(fortune -n80 -a);
-	tmux set -g status 2 2>/dev/null; tmux set -g stgatus-format[1] "" 2>/dev/null
-	tmux set-option status-right "#[fg=black,bg=white] $params %Y-%m-%dT%H:%M #[fg=colour233,bg=colour8]$keys"
+	diff3=$(grep $(date +%Y-%m-%d --date="-2 days") ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
+	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=colour70,bg=colour25]$fortune#[fg=colour50,bg=colour95]" 2>/dev/null
+	tmux set-option status-right "#[fg=black,bg=white] $params %Y-%m-%dT%H:%M #[fg=colour233,bg=colour8]n4s v1.0"
 	pushd . >/dev/null
 	cd "$tpath"
 	popd >/dev/null
