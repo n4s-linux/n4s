@@ -218,18 +218,6 @@ Hovedmenu tilgås på F1
 # Regnskabsmenu (virker kun når du har åbnet et regnskab)
 Regnskabsmenu med diverse funktioner kan tilgås med Alt-m når du har åbnet et regnskab
 
-# Opret nyt regnskab / regnskabsmappe
-* Tryk F4. 
-* Vælg NY, 
-* Skriv et navn på dit regnskab
-
-# Åbn et eksisterende regnskab
-* Tryk F4
-* Vælg det ønskede regnskab
-
-# Din første transaktion
-*Tryk 'e'
-* Følg guiden på skærmen
 # Søg en transaktion frem
 * Søg med 's' Enter for at søge i den aktuelle periode (ændres med Alt-p)
 * Søg med 'ss' Enter for at søge i alle perioder
