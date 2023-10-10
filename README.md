@@ -1,5 +1,27 @@
 ![n4s - 2nd brain & accounting](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/30bdcc4a1e46da33a502dfcde0548823f8445054/png/Color%20logo%20-%20no%20background.png)
 
+# Savner du de gode gamle DOS-dage uden så meget gas eller dyre abonnementer ?
+I dag, hvor teknologi og computere konstant udvikler sig 🚀, kan det være fristende at kigge tilbage på de gode gamle dage i 1990'erne 🕰️, da DOS-operativsystemet og de tidlige regnskabssystemer var dominerende 💾. Der er noget nostalgisk ved den tid, hvor computere og software fungerede på en enklere måde, og brugeroplevelsen havde sine egne charmerende kvaliteter.
+
+**Stabilitet og Pålidelighed:**
+I DOS-dagene var der sjældent bekymringer om servernedetid ⏳. De gamle regnskabssystemer blev normalt kørt lokalt på en enkelt computer 💻, hvilket betød, at du havde fuld kontrol over dit system 🛠️. Der var ingen afhængighed af komplekse serverinfrastrukturer, der kunne fejle, og det gav en følelse af stabilitet og pålidelighed 🏢.
+
+**Responsivitet:**
+En af de bemærkelsesværdige ting ved DOS-tiden var den øjeblikkelige respons, du fik fra din computer ⚡. Når du trykkede på en knap 🎮 eller ønskede at generere en rapport 📊 i de gamle regnskabssystemer, var der ingen ventetid ⌛. Softwaren reagerede næsten øjeblikkeligt, hvilket gjorde arbejdsprocessen hurtig og effektiv 💨.
+
+**Ejerskab:**
+En anden fordel ved den tidlige software var ejerskab 📜. Når du havde betalt for et program 💰, var det dit. Der var ingen abonnementsmodeller, ingen løbende omkostninger og ingen behov for konstant internetforbindelse 🌐. Du kunne bruge softwaren, når du ville, uden at bekymre dig om restriktioner eller licensbegrænsninger 🚫.
+
+**Kildekodeadgang og Tilpasning:**
+Selvom moderne regnskabssystemer har deres egne fordele, er der stadig noget unikt ved n4s 🤖. En bemærkelsesværdig fordel ved n4s er adgangen til kildekoden 🧩. Dette giver virksomheder mulighed for at tilpasse n4s præcist til deres behov 🧰. Med adgang til kildekoden kan virksomheder foretage ændringer, tilføje funktioner og optimere systemet i overensstemmelse med deres unikke krav 🛠️. Denne grad af tilpasning giver en hidtil uset kontrol over virksomhedens regnskabssystem og sikrer, at det opfylder deres specifikke behov 🎯.
+
+Så selvom vi kan savne de dage, hvor alt syntes enklere med DOS-programmer, er det vigtigt at erkende, at moderne teknologi har bragt os mange fordele 🌐. For n4s omfatter disse fordele adgangen til kildekoden, hvilket giver enestående muligheder for tilpasning og kontrol over regnskabssystemet 🌈.
+
+
+**Online Funktionalitet og Samarbejde:**
+Det er vigtigt at bemærke, at selvom n4s er baseret på en terminal, må man ikke lade sig snyde af dette. N4S er stadig utroligt funktionelt og designet til at være et flerbrugersystem, der kan arbejde online fra hvor som helst 🌐. Den terminalbaserede tilgang giver en unik mulighed for samarbejde, da flere brugere nemt kan få adgang til systemet og arbejde sammen om opgaverne. Dette gør det til et kraftfuldt værktøj for moderne virksomheder, der søger effektivitet og samarbejde 🤝.
+
+
 # N4S - Din Vej til Regnskabsmæssig Ekspertise!
 
 N4S er mere end blot et regnskabssystem; det er en kraftfuld allieret på din rejse mod regnskabsmæssig succes. Uanset om du er en regnskabsprofessionel, en iværksætter eller en virksomhedsejer, har N4S de værktøjer, du har brug for, til at opnå overlegen kontrol over dine finanser.
