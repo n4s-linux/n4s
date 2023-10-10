@@ -334,3 +334,97 @@ Det er klar til brug - hvis du vil hjælpe med at udvikle dokumentationen vil vi
 | t                 | Åbn n4s - Bogføringssystem (tmux-vinduessystem) |
 | v                 | Åbn Vim - Editor-siden            |
 | u                 | Åbn tmux - Vinduesystem-siden     |
+
+# Om redigering af transaktioner
+### Grundlæggende Vim Instruktioner
+
+1. **Navigering i Normal Tilstand:**
+   - Brug piletasterne eller `h`, `j`, `k`, `l` til at navigere op, ned, til venstre eller højre.
+   - `w` og `b` bevæger dig henholdsvis fremad og bagud fra ord til ord.
+   - `0` flytter markøren til linjens start, og `$` flytter den til linjens slutning.
+
+2. **Skift til Indsættelsestilstand:**
+   - Tryk `i` for at indsætte tekst før markøren.
+   - Tryk `a` for at indsætte tekst efter markøren.
+   - Tryk `I` for at indsætte tekst i linjens start.
+   - Tryk `A` for at indsætte tekst i linjens slutning.
+
+3. **Gem og Luk Fil:**
+   - Brug `W` for at gemme filen (tilpasset tastaturgenvej).
+   - Brug `å` for at tømme det aktuelt markerede felt (tilpasset tastaturgenvej).
+   - Brug `:w` for at gemme filen.
+   - Brug `:q` for at lukke Vim.
+   - Brug `:wq` for at gemme og lukke Vim (tilpasset tastaturgenvej).
+
+4. **Undo og Redo:**
+   - Tryk `u` for at angre den seneste ændring.
+   - Tryk `Ctrl` + `r` for at fortryde en fortrydelse (redo).
+
+5. **Slet og Kopiér Tekst:**
+   - Tryk `x` for at slette det tegn, markøren står på.
+   - Tryk `dd` for at slette den aktuelle linje.
+   - Tryk `yy` for at kopiere den aktuelle linje.
+
+6. **Indsæt Klippebordets Indhold:**
+   - Tryk `p` for at indsætte teksten, du har kopieret eller klippet.
+
+7. **Søg og Erstat:**
+   - Tryk `/` for at starte en søgning.
+   - Tryk `n` for at finde næste forekomst af søgningen.
+   - Tryk `N` for at finde forrige forekomst.
+   - Brug `:s/søgning/erstatning/g` for at erstatte tekst i hele filen.
+
+8. **Åbn og Luk Filer:**
+   - Brug `:e filnavn` for at åbne en ny fil.
+   - Brug `:q` for at lukke den aktuelle fil (uden at afslutte Vim).
+
+Husk at Vim har mange flere avancerede funktioner og muligheder, men disse grundlæggende instruktioner bør hjælpe dig med at komme i gang med at redigere filer effektivt i Vim-editoren.
+
+Jeg håber, at denne liste hjælper dig med at komme i gang med at bruge Vim med dine tilpassede tastaturgenveje.
+
+
+
+
+User
+add a text in the beginning about how we use the poweful editor vim to edit our transactions, and a little text about why it is one of the best and most efficient ways to edit text
+ChatGPT
+Selvfølgelig, her er en opdateret version af instruktionslisten, der inkluderer en introduktion om, hvordan vi bruger den kraftfulde editor Vim til at redigere vores transaktioner, samt hvorfor det er en af de bedste og mest effektive måder at redigere tekst på:
+
+markdown
+Copy code
+### Redigering af Transaktioner med Vim
+
+I vores arbejde med at håndtere transaktioner anvender vi den kraftfulde editor Vim. Vim er kendt som en af de mest effektive og fleksible tekstredigeringsværktøjer, der findes. Her er nogle grundlæggende instruktioner, der hjælper dig med at navigere og redigere tekst i Vim:
+
+1. **Navigering i Normal Tilstand:**
+   - Brug piletasterne eller `h`, `j`, `k`, `l` til at navigere op, ned, til venstre eller højre. (du kan også bruge piletasterne indtil du har lært systemet bedre at kende)
+   - `w` og `b` bevæger dig henholdsvis fremad og bagud fra ord til ord.
+   - `0` flytter markøren til linjens start, og `$` flytter den til linjens slutning.
+
+2. **Skift til Indsættelsestilstand:**
+   - Brug `å` for at tømme det aktuelt markerede felt (tilpasset tastaturgenvej).
+   - Tryk `i` for at indsætte tekst før markøren.
+   - Tryk `a` for at indsætte tekst efter markøren.
+   - Tryk `I` for at indsætte tekst i linjens start.
+   - Tryk `A` for at indsætte tekst i linjens slutning.
+
+3. **Gem og Luk Fil:**
+   - Brug `W` for at gemme filen (tilpasset tastaturgenvej).
+   - Brug `Q` for at lukke uden at gemme (tilpasset tastaturgenvej)
+
+4. **Undo og Redo:**
+   - Tryk `u` for at fortryde den seneste ændring.
+   - Tryk `Ctrl` + `r` for at fortryde en fortrydelse (redo).
+
+5. **Indsæt Klippebordets Indhold:**
+Husk at når du paster i en terminal skal du også holde shift nede (Ctrl-Shift-v)
+
+6. **Søg og Erstat:**
+   - Tryk `/` for at starte en søgning. Søg f.eks. efter Fejlkonto ved at skrive /Fej [Enter]
+   - Tryk `n` for at finde næste forekomst af søgningen.
+   - Tryk `N` for at finde forrige forekomst.
+   - Brug `:s/søgning/erstatning/g` for at erstatte tekst i hele filen.
+
+Vim er ikke kun en teksteditor, det er en kraftfuld arbejdshest, der giver dig fuld kontrol over dine transaktioner og tekstredigering. Det er kendt for sin effektivitet og fleksibilitet, og det er en af de bedste måder at håndtere tekstredigering på.
+
+Så kom i gang med at bruge Vim til at redigere transaktioner og oplev, hvorfor det er et uundværligt værktøj for tekstredigering og datahåndtering.
