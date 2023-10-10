@@ -1,3 +1,5 @@
+![n4s - 2nd brain & accounting](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/30bdcc4a1e46da33a502dfcde0548823f8445054/png/Color%20logo%20-%20no%20background.png)
+
 # N4S - Din Vej til Regnskabsmæssig Ekspertise!
 
 N4S er mere end blot et regnskabssystem; det er en kraftfuld allieret på din rejse mod regnskabsmæssig succes. Uanset om du er en regnskabsprofessionel, en iværksætter eller en virksomhedsejer, har N4S de værktøjer, du har brug for, til at opnå overlegen kontrol over dine finanser.
@@ -33,7 +35,6 @@ Så uanset om du udforsker nye rapporteringsværktøjer, deler data med interess
 Så hvorfor vente? Start din rejse mod økonomisk succes i dag med N4S. Lad ikke noget begrænse dig - ikke engang din regnskabssoftware. N4S er din nøgle til at låse op for dit regnskabsmæssige potentiale og er klar til at hjælpe dig med at lykkes uanset hvor du er eller hvilken enhed du bruger. Sæt kursen mod succes og lad N4S tage dig derhen!
 
 
-![n4s - 2nd brain & accounting](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/30bdcc4a1e46da33a502dfcde0548823f8445054/png/Color%20logo%20-%20no%20background.png)
 
 # Demo Video - Kontering af simpelt regnskab?
 [![n4s demo](demo.gif 'n4s demo')](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/)
