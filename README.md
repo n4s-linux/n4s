@@ -123,7 +123,7 @@ Den nemmeste måde at installere det på er ved at downloade være prækonfigure
 
 # Guide til Import og Kørsel af en OVA-fil i VirtualBox
 
-I denne vejledning vil vi guide dig gennem trinnene til at importere og køre en OVA-fil (Open Virtualization Appliance) i VirtualBox. En OVA-fil indeholder typisk et komplet operativsystem, og VirtualBox er en populær virtualiseringssoftware til at køre virtuelle maskiner.
+I denne vejledning vil jeg guide dig gennem trinnene til at importere og køre en OVA-fil (Open Virtualization Appliance) i VirtualBox. En OVA-fil indeholder typisk et komplet operativsystem, og VirtualBox er en populær virtualiseringssoftware til at køre virtuelle maskiner.
 
 ## Forudsætninger
 
@@ -228,7 +228,7 @@ Herefter vil du kunne finde filen i mappen tmp som er bogmærket i filmanageren 
 
 # Sagsstyring / stamdatakartotek / wikisystem
 n4s har også et wikisystem hvor man kan holde styr på kunderer, varer, reservedele, viden e.t.c.
-Det er klar til brug - hvis du vil hjælpe med at udvikle dokumentationen vil vi gerne lære dig at bruge det.
+Det er klar til brug - hvis du vil hjælpe med at udvikle dokumentationen vil jeg gerne lære dig at bruge det.
 
 # Genvejstaster terminal multiplexer - tmux - terminalvinduehåndteringen
 ## Navigering i vinduer
@@ -300,7 +300,7 @@ Husk at have de nødvendige tilladelser og rettigheder til at opdatere n4s, og u
 Hvis du vil hurtigt i gang og have en introduktion kan du booke et zoom-møde til favorabel intro-pris.
 Det forventes at du har downloadet vores OVA samt Virtualbox med Extension Pack, og at du har Zoom installeret
 Det forventes at du er nogenlunde teknisk kyndig.
-Vi vil vise dig hvordan du:
+Jeg vil vise dig hvordan du:
 * Opretter regnskaber
 * Indtaster transaktioner
 * Importerer bank CSV filer
