@@ -121,7 +121,7 @@ Ulemper:
 	Særligt nyttigt hvis man vil indlæse et kontoudtog fra bank eller lign.
 
 # Support
-Der ydes foreløbig *gratis* support til brug af den virtuelle maskine. Kontakt herom på email olsenit@gmail.com
+Der ydes foreløbig *gratis* support til brug af den virtuelle maskine. Kontakt herom på email joodk@pm.me
 
 # n4s - Open Source / Fri Software GNU/Linux baseret dobbelt bogholderi og ERP
 n4s er et terminalbaseret system til brug for dobbelt bogholderi (finans, debitor, kreditor).
