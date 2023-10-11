@@ -96,6 +96,15 @@ Så hvorfor vente? Start din rejse mod økonomisk succes i dag med N4S. Lad ikke
 Vil du gerne se hvordan systemet betjenes i det daglige ?
 
 [Video Tutorial / Demonstration - hvordan konteres et simpelt regnskab i n4s](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/view?usp=sharing)
+
+
+# Eksempel på rapportering
+Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter.
+Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)
+* [Eksempel saldobalance](https://drive.google.com/file/d/1WAlPO73OykvF5-wUCh9-XDIikK_8SoBU/view?usp=sharing)
+* [Eksempel kontokort](https://drive.google.com/file/d/1d_se9vbtTHx38qCeMm4gSxC0gy9byxez/view?usp=sharing)
+
+
 # TLDR - Lad mig downloade din OVA
 * Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/)
 * Link til [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (husk at få Extension Pack også)
@@ -110,13 +119,6 @@ Ulemper:
 # Import / Export
 	n4s understøtter import/eksport af CSV-filer
 	Særligt nyttigt hvis man vil indlæse et kontoudtog fra bank eller lign.
-
-# Eksempel på rapportering
-Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter.
-Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)
-* [Eksempel saldobalance](https://drive.google.com/file/d/1WAlPO73OykvF5-wUCh9-XDIikK_8SoBU/view?usp=sharing)
-* [Eksempel kontokort](https://drive.google.com/file/d/1d_se9vbtTHx38qCeMm4gSxC0gy9byxez/view?usp=sharing)
-
 
 # Support
 Der ydes foreløbig *gratis* support til brug af den virtuelle maskine. Kontakt herom på email olsenit@gmail.com
