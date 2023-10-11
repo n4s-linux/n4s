@@ -327,6 +327,8 @@ Nu har du succesfuldt opdateret n4s til den nyeste bleeding edge-version fra Git
 Husk at have de nødvendige tilladelser og rettigheder til at opdatere n4s, og udvis forsigtighed, når du arbejder med kommandolinjeværktøjer.
 
 # Kom hurtigt i gang
+Du kan komme i gang med det samme ved at downloade vores OVA og starte den i virtualbox. For at lære hvordan du bruger systemet kan du se hvordan vi bogfører vores [eksempel regnskab](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/).
+
 Hvis du vil hurtigt i gang og have en introduktion kan du booke et zoom-møde til favorabel intro-pris.
 Det forventes at du har downloadet vores OVA samt Virtualbox med Extension Pack, og at du har Zoom installeret
 Det forventes at du er nogenlunde teknisk kyndig.
@@ -337,5 +339,7 @@ Jeg vil vise dig hvordan du:
 * Genererer balancer og kontokort
 
 samt besvare evt. spørgsmål du måtte have.
+
+Det anbefales at du har et konkret regnskab til til bogføring som vi kan arbejde med.
 
 
