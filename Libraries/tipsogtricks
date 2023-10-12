@@ -1,0 +1,45 @@
+VIM: Indsæt datestamp = F9 (indsæt)
+VIM: Indsæt datetimestamp = F10 (indsæt)
+VIM: Tøm felt = å (normal)
+VIM: Slet række = dd (normal)
+VIM: Start markering = v
+VIM: Op/ned = j/k (normal)
+VIM: Venstre/højre = h/l (normal)
+VIM: Top af fil = gg (normal)
+VIM: Bunden af fil = G (normal)
+TMUX: Vis klokken = Ctrl-b + t
+TMUX: Nyt vindue = Ctrl-b + 
+TMUX: Del terminal lodret = Ctrl-b + %
+TMUX: Del terminal vandret= Ctrl-b + "
+N4S: Dagens tip ligger i Libraries/tipsogtricks
+N4S: Åbn Regnskab = F4
+N4S: Åbn Journal = F2
+Regnskab: Prøv at skrive 'pivot'
+Regnskab: Prøv at skrive 'plot KONTO'
+Regnskab: Kontokort Periode = 'l r KONTO'
+Regnskab: Kontokort Al tid= 'll r KONTO'
+Regnskab: Opret regel = 'rule'
+Regnskab: Kør alle regelsæt = 'logic'
+Regnskab: Importer bank = 'csv'
+Regnskab: Eksportér csv Periode = 'l csv Konto > ~/tmp/filnavn'
+Regnskab: Eksportér csv Al tid= 'll csv Konto > ~/tmp/filnavn'
+Regnskab: Eksporter html='html'
+Regnskab: Skift regnskab='sr'
+Regnskab: Ændre parametre='lp'
+Regnskab: Åbn menu='m' (Alt-m)
+Regnskab: Skift periode=dp (Alt-p)
+Regnskab: Indtægter pr. måned=l r Indtægter -M
+Regnskab: Udgifter pr. måned=l r Udgifter -M
+Regnskab: Indtæger pr. uge=l r Udgifter -W
+Regnskab: Indtægter pr. år=ll r Indtægter -M
+Regnskab: Søg Periode='s HVAD VIL DU SØGE'
+Regnskab: Søg Al tid='ss HVAD VIL DU SØGE'
+Regnskab: Sortering poster beløb='l r bank -S amount' (Periode) eller 'll r bank -S amount' (Al tid)'
+Regnskab: Sortering poster tekst='l r bank -S payee' (Periode) eller 'll r bank -S payee' (Al tid)'
+Regnskab: Sortering kan tage flere parametre f.eks. 'l r bank -S date,payee'
+Regnskab: Hver gang du åbner et regnskab tages der automatisk en backup før du starter dit arbejde
+N4S: N4S kan køre på Ipad, Telefon, Bærbar, computer og dele samme skærm via en SSH forbindelse
+N4S: En billig og sikker hosting løsning er linode - n4s kan hostes fra 5USD pr. måned
+Lovgivning: Kvart moms ved repræsentation imødekommes med funktionen 'rep'
+N4S: I N4S kalder vi momskoder for funktioner og hver transaktion har en Func egenskab
+N4S: Du får et nyt tip til hvordan du bruger systemet for hvert bilag du bogfører
