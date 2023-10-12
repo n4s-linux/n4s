@@ -1,3 +1,4 @@
+export BORG_RELOCATED_REPO_ACCESS_IS_OK=true
 function h() {
 l r $@|head
 }
@@ -585,9 +586,9 @@ bnpwd=$(basename "$PWD")
 echo "$(whoami) $(date '+%Y-%m-%dT%H:%m') $bnpwd : $cmd" >> /data/regnskaber/.log
 BPWD="$(basename "$PWD")"
 #tmux rename-window "💻$BPWD|$cmd" # virker ikke så godt hvis der er flere panes... ?
-	fortune=$(fortune -n80 -a);
+	tips=$(shuf -n 1 /svn/svnroot/Libraries/tipsogtricks);
 	diff3=$(grep $(date +%Y-%m-%d --date="-2 days") ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
-	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=colour70,bg=colour119]$fortune#[fg=colour50,bg=colour95]" 2>/dev/null
+	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=colour70,bg=colour119]📑 #vidstedu📑 $tips#[fg=colour50,bg=colour95]" 2>/dev/null
 	tmux set-option status-right "#[fg=black,bg=white] $params %Y-%m-%dT%H:%M #[fg=colour233,bg=colour8]n4s v1.0"
 	pushd . >/dev/null
 	cd "$tpath"
@@ -804,7 +805,6 @@ function show_progress {
 }
 
 function sync() {
-	BORG_RELOCATED_REPO_ACCESS_IS_OK=true
 	if [ ! -d "$tpath/.backup" ]; then
 		mkdir -p "$tpath/.backup"
 		borg init --encryption=none "$tpath/.backup"
