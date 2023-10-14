@@ -112,6 +112,11 @@ Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)
 * [Eksempel kontokort](https://drive.google.com/file/d/1TegmpGs-EuA6jYqtzJUFiq8yn2noGD8y/view?usp=sharing)
 * [Eksempel nøgletal](https://drive.google.com/file/d/1eFUnHhibB2g6Nmigi6lQ0R6eNQqZYOyc/view?usp=sharing)
 
+For at generere tilsvarende rapportering for dit regnskab følg da følgende instrukser i n4s:
+* Sæt rapporteringperiode: skriv 'dp' eller tryk Alt-p
+* Skriv 'html'
+* Rediger firmanavn til forside - skriv evt. kommentar - gem på W
+* Rapporteringen (Saldobalance, kontokort & nøgletal) ligger i ~/tmp som kan findes i filmanageren Nautilus til venstre
 
 # TLDR - Lad mig downloade din OVA
 * Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/)
