@@ -350,3 +350,27 @@ samt besvare evt. spørgsmål du måtte have.
 Det anbefales at du har et konkret regnskab til til bogføring som vi kan arbejde med.
 
 
+
+
+
+# N4s er ikke bare et regnskabsystem !!!
+Vores motto ved udviklingen af *stuff* - din *2nd brain* / "anden hjerne" : "A place for everything and a thing for every place " - altså et sted til alle ting, og en ting til alle steder.
+Lige meget hvad du har af oplysninger du ønsker din computer skal organisere skal der være en plads til den, uden at du skal have fat i en udvikler til at udvikle et nyt felt.
+
+Selvom det måske virker som en udfordrende opgave at organisere og bevare al vores information og idéer, er der nu en løsning, der gør det let for alle at bygge deres eget "anden hjerne" af viden 🧠💡. Med vores innovative N4S-system kan du nemt skabe en digital platform, der fungerer som din sekundære hjerne og gør det muligt at organisere og navigere gennem dine tanker og informationer på en problemfri måde.
+
+## Fordele ved at opbygge en "anden hjerne" i markdown-format:
+
+- **Øget Produktivitet**: Uanset om du har ADHD eller ej, vil N4S hjælpe dig med at forbedre din produktivitet. Du kan nemt strukturere og finde dine data, så du kan fokusere på det, der virkelig betyder noget.
+
+- **Bedre Organisering**: Med N4S kan du nemt organisere alle dine filer ved at bruge hashtags i det åbne og etablerede markdown-format. Dette gør det enkelt at kategorisere og finde de oplysninger, du har brug for.
+
+- **Hurtig Adgang til Information**: Med N4S-systemet kan du hoppe fra en hashtag i en fil direkte til den relevante information, hvilket sparer tid og gør det nemt at fordybe dig i de emner, der interesserer dig.
+
+- **Søgning på Tværs af Filer**: Du kan nemt søge i dine data på tværs af filer for at finde præcis, hvad du leder efter, hvilket gør informationssøgning til en leg.
+
+- **Eksportér til PDF**: Du kan også eksportere dine oplysninger til et læsbart PDF-format, så du kan dele din viden med andre på en professionel måde.
+
+Med N4S i det åbne og etablerede markdown-format er det enkelt for alle at opbygge deres egen "anden hjerne" af information og få glæde af en mere struktureret og organiseret tilgang til data.!!
+Selvom det måske virker som en udfordrende opgave at organisere og bevare al vores information og idéer, er der nu en løsning, der gør det let for alle at bygge deres eget "anden hjerne" af viden 🧠💡. Med vores innovative N4S-system kan du nemt skabe en digital platform, der fungerer som din sekundære hjerne og gør det muligt at organisere og navigere gennem dine tanker og informationer på en problemfri måde.
+
