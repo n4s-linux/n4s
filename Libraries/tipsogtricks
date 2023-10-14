@@ -1,3 +1,5 @@
+Vim er en af de mest effektive teksteditorer i universet
+Bash er Bourne Again Shell - din skal, en anden skal er DOS - Disk based operating system - bash er også et programmeringssprog
 VIM: Indsæt datestamp = F9 (indsæt)
 VIM: Indsæt datetimestamp = F10 (indsæt)
 VIM: Tøm felt = å (normal)
@@ -43,3 +45,8 @@ N4S: En billig og sikker hosting løsning er linode - n4s kan hostes fra 5USD pr
 Lovgivning: Kvart moms ved repræsentation imødekommes med funktionen 'rep'
 N4S: I N4S kalder vi momskoder for funktioner og hver transaktion har en Func egenskab
 N4S: Du får et nyt tip til hvordan du bruger systemet for hvert bilag du bogfører
+VIM: SØG =  /Hvad\ Vil\ du\ søge - NB mellemrum escapes med '\' (normal)
+VIM: Erstat :%s/Hvad\ Vil\ du\ søge/ERSTATNING/  - NB Mellemrum escapes med '\' (normal)
+VIM: Lær at bruge vim - skriv vimtutor
+Gnome Terminal: Ctrl-Shift-n = ny terminal - du kan køre flere terminaler af gangen
+Gnome genveje: Windows+1-9 = skift aktivitet (terminal, filer, etc)
