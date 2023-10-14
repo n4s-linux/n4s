@@ -47,11 +47,14 @@ function printfullspec($darray,$filter) {
 	if ($filter == "Indtægter") printheader("Kontokort","landscape");
 	echo "<center><h2>Kontospecifikationer $filter - $begin - $realend</h2></center>";
 	echo "<table class=\"table table-striped table-sm\">";
-	$cols = array("Date","Reference","Tekst","Header","Subacc","Subsub","Beløb");
+	$cols = array("Date","Reference","Tekst","Subacc","Subsub","Beløb");
 	$saldo = 0;
 	$ksaldo = array();
 	echo "<tr>";
-	foreach ($cols as $curcol) echo "<td><b>$curcol</b></td>";
+	foreach ($cols as $curcol) {
+		$w = getw($curcol);
+		echo "<td width=$w><b>$curcol</b></td>";
+	}
 	echo "<td><b><p align=right>Konto</b></td><td><b><p align=right>Total</p></b></td>";
 	echo "</tr>";
 	$firstfejl = true;
@@ -60,7 +63,8 @@ function printfullspec($darray,$filter) {
 		echo "<tr>";
 		$orgb = $curtrans['Beløb'];
 		foreach ($cols as $curcol) {
-			echo "<td>";
+			$w = getw($curcol);
+			echo "<td width=$w>";
 			//if ($curcol == "Date") $curtrans[$curcol] = date("d-m",strtotime($curtrans[$curcol]));
 			if ($curcol == "Beløb") $curtrans[$curcol] = prettynum($curtrans[$curcol]);
 			if ($curcol == "Tekst") $curtrans[$curcol] = substr($curtrans[$curcol],0,10);
@@ -226,4 +230,19 @@ function showfejlkonto() {?>
 <div class="alert alert-danger" role="alert">
   Der er poster på fejkontoen - det betyder at vi mangler oplysninger se venligst kontospecifikationerne
 </div>
-<?php }?>
+<?php }
+function getw($col) {
+	if ($col == "Subacc")
+		return 200;
+	if ($col == "Beløb")
+		return 50;
+	if ($col == "Date")
+		return 100;
+	if ($col == "Reference")
+		return 100;
+	if ($col == "Tekst")
+		return 200;
+	return 100;
+}
+
+?>

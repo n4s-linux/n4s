@@ -380,8 +380,10 @@ function html2() {
 	cd ~/tmp/
 	google-chrome-stable --headless --disable-gpu --print-to-pdf out.html
 	mv output.pdf Saldobalance-$bn-$begin-$end.pdf
+	/svn/svnroot/Applications/removeblankpages.bash Saldobalance-$bn-$begin-$end.pdf
 	google-chrome-stable --headless --disable-gpu --print-to-pdf kontokort.html
-	mv output.pdf kontokort-$bn-$begin-$end.pdf
+	mv output.pdf Kontokort-$bn-$begin-$end.pdf
+	/svn/svnroot/Applications/removeblankpages.bash Kontokort-$bn-$begin-$end.pdf
 	popd 2>/dev/null
 }
 function html() {
