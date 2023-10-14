@@ -12,11 +12,11 @@ $sectionsres = array('Indtægter','Udgifter','Resultatdisponering');
 $sectionsbal = array('Aktiver','Egenkapital','Passiver','Fejlkonto');
 $darray = getdata($begin,$end);
 //if (hasfejl($darray)) showfejlkonto();
-echo "<center><h2>Resultatopgørelse $begin - $realend</center></h2><br>";
+echo "<center><h5>Resultatopgørelse $begin - $realend</center></h5><br>";
 foreach ($sectionsres as $cursect) 
 	printsection($darray,$cursect);
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
-echo "<center><h2>Balance $begin - $realend</h2></center><br>";
+echo "<center><h5>Balance $begin - $realend</h5></center><br>";
 foreach ($sectionsbal as $cursect) 
 	printsection($darray,$cursect);
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
@@ -45,9 +45,9 @@ function printfullspec($darray,$filter) {
 	global $end;
 	ob_start();
 	if ($filter == "Indtægter") printheader("Kontokort","landscape");
-	echo "<center><h3>Kontospecifikationer $filter - $begin - $realend</h3></center>";
+	echo "<center><h3><font style='background:yellow'>Kontospecifikationer $filter - $begin - $realend</font></h3></center>";
 	echo "<table class=\"table table-based table-sm\">";
-	$cols = array("Date","Reference","Tekst","Subacc","Subsub","Beløb");
+	$cols = array("Date","Reference","Tekst","KontoN1","KontoN2","Beløb");
 	$saldo = 0;
 	$ksaldo = array();
 	echo "<tr>";
@@ -59,16 +59,20 @@ function printfullspec($darray,$filter) {
 	echo "</tr>";
 	$firstfejl = true;
 	foreach ($darray as $curtrans) {
+		$c = "white";
+		if (substr($curtrans['Reference'],0,4) == "CSV-") {
+			$c = "gray";$curtrans["Reference"] = "BANK";
+		}
+		else $curtrans[$curcol] = substr($curtrans[$curcol],0,8);
 		if ($curtrans['Header'] != $filter) continue;
 		echo "<tr>";
 		$orgb = $curtrans['Beløb'];
 		foreach ($cols as $curcol) {
 			$w = getw($curcol);
-			echo "<td width=$w>";
+			echo "<td width=$w style='background-color:$c;'>";
 			//if ($curcol == "Date") $curtrans[$curcol] = date("d-m",strtotime($curtrans[$curcol]));
 			if ($curcol == "Beløb") $curtrans[$curcol] = prettynum($curtrans[$curcol]);
 			if ($curcol == "Tekst") $curtrans[$curcol] = substr($curtrans[$curcol],0,25);
-			if ($curcol == "Reference") $curtrans[$curcol] = substr($curtrans[$curcol],0,6);
 			if ($firstfejl == true && stristr($curtrans['Konto'],'fejl')) {echo "<a name=fejl>";}
 			echo $curtrans[$curcol];
 			if ($firstfejl == true && stristr($curtrans['Konto'],'fejl')) {echo "</a>";$firstfejl = false;}
@@ -78,8 +82,8 @@ function printfullspec($darray,$filter) {
 		$ksaldo[$curtrans['Konto']] += $orgb;
 		$pksaldo = prettynum($ksaldo[$curtrans['Konto']]);
 		$psaldo = prettynum($saldo);
-		echo "<td>$pksaldo</td>";
-		echo "<td>$psaldo</td>";
+		echo "<td style='background-color:$c'>$pksaldo</td>";
+		echo "<td style='background-color:$c'>$psaldo</td>";
 		echo "</tr>";
 	}
 
@@ -96,7 +100,7 @@ function printnotes() {
 	foreach ($notes as $key => $val) {
 		if ($first) {pagebreak();$first = false;}
 		$nn = $notenames[$key];
-		echo "<a name='note$key'><h3>$key - $nn </h3></a>\n";
+		echo "<div><a name='note$key'><h3>$key - $nn </h3></a>\n";
 		$sum = 0;
 		foreach ($val as $curnote) {
 			echo "<table class=\"table table-based \" width=800>";
@@ -108,7 +112,7 @@ function printnotes() {
 			}
 			$sum = prettynum($sum);
 			echo "<tr><td style='background: white;'><b><u>$nn total</u></b></td><td style='background:white'><b><u>$sum</u></b></td></tr>";
-			echo "</table><br><br>";
+			echo "</table></div>";
 		}
 	}
 }
@@ -127,8 +131,8 @@ function getdata($begin,$end) {
 			$d['Konto'] = $data[3];
 			$d['Beløb'] = $data[5];
 			$d['Header'] = explode(":",$data[3])[0];
-			$d['Subacc'] = explode(":",$data[3])[1];
-			error_reporting(0);$d['Subsub'] = explode(":",$data[3])[2];error_reporting(E_ALL);
+			$d['KontoN1'] = explode(":",$data[3])[1];
+			error_reporting(0);$d['KontoN2'] = explode(":",$data[3])[2];error_reporting(E_ALL);
 			array_push($darray,$d);
 		}
 	fclose($handle);
@@ -142,10 +146,10 @@ function getdata($begin,$end) {
 		$curnote = array();
 		error_reporting(0);
 		foreach ($d as $curd) {
-			if ($curd['Subacc'] == $key && isset($curd['Subsub']))
-				$curnote[$curd['Subacc']][$curd['Subsub']] += $curd['Beløb'];
-			else if ($curd['Subacc'] == $key)
-				$curnote[$curd['Subacc']][$key] += $curd['Beløb'];
+			if ($curd['KontoN1'] == $key && isset($curd['KontoN2']))
+				$curnote[$curd['KontoN1']][$curd['KontoN2']] += $curd['Beløb'];
+			else if ($curd['KontoN1'] == $key)
+				$curnote[$curd['KontoN1']][$key] += $curd['Beløb'];
 		}
 		error_reporting(E_ALL);
 		if (count(reset($curnote)) > 1) {
@@ -163,7 +167,7 @@ function getdata($begin,$end) {
 		foreach ($d as $curd) {
 			if ($curd['Header'] != $header) continue;
 			error_reporting(0);
-			$bal[$curd['Subacc']] += $curd['Beløb'];
+			$bal[$curd['KontoN1']] += $curd['Beløb'];
 			error_reporting(E_ALL);
 		}
 		echo "<table class=\"table table-based \" width=800>";
@@ -182,7 +186,7 @@ function getdata($begin,$end) {
 		}
 		$ptotal = prettynum($total);
 		echo "<tr><td style='background: white;'><b><u>$header i alt</b></u></td><td style='background:white'><b><u>$ptotal</u></b></td></tr>";
-		echo "</tbody></table><br>";
+		echo "</tbody></table>";
 	}
 	function prettynum($a) { return "<p align=right>" . number_format($a,0,",",".") . "</p>";}
 ?>
@@ -201,6 +205,14 @@ global $realend;
     margin: 0;  /* this affects the margin in the printer settings */
 }
 @media print {
+<?php if ($parameter == "Saldobalance") {?>
+	div {
+    break-inside: avoid;
+}
+	table {
+    break-inside: avoid;
+	}
+<?php }?>
     table tbody tr td:before,
     table tbody tr td:after {
         content: "";
@@ -232,7 +244,7 @@ function showfejlkonto() {?>
 </div>
 <?php }
 function getw($col) {
-	if ($col == "Subacc")
+	if ($col == "KontoN1")
 		return 200;
 	if ($col == "Beløb")
 		return 50;
