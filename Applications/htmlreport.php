@@ -45,8 +45,8 @@ function printfullspec($darray,$filter) {
 	global $end;
 	ob_start();
 	if ($filter == "Indtægter") printheader("Kontokort","landscape");
-	echo "<center><h2>Kontospecifikationer $filter - $begin - $realend</h2></center>";
-	echo "<table class=\"table table-striped table-sm\">";
+	echo "<center><h3>Kontospecifikationer $filter - $begin - $realend</h3></center>";
+	echo "<table class=\"table table-based table-sm\">";
 	$cols = array("Date","Reference","Tekst","Subacc","Subsub","Beløb");
 	$saldo = 0;
 	$ksaldo = array();
@@ -67,7 +67,7 @@ function printfullspec($darray,$filter) {
 			echo "<td width=$w>";
 			//if ($curcol == "Date") $curtrans[$curcol] = date("d-m",strtotime($curtrans[$curcol]));
 			if ($curcol == "Beløb") $curtrans[$curcol] = prettynum($curtrans[$curcol]);
-			if ($curcol == "Tekst") $curtrans[$curcol] = substr($curtrans[$curcol],0,10);
+			if ($curcol == "Tekst") $curtrans[$curcol] = substr($curtrans[$curcol],0,25);
 			if ($curcol == "Reference") $curtrans[$curcol] = substr($curtrans[$curcol],0,6);
 			if ($firstfejl == true && stristr($curtrans['Konto'],'fejl')) {echo "<a name=fejl>";}
 			echo $curtrans[$curcol];
@@ -99,7 +99,7 @@ function printnotes() {
 		echo "<a name='note$key'><h3>$key - $nn </h3></a>\n";
 		$sum = 0;
 		foreach ($val as $curnote) {
-			echo "<table class=\"table table-striped\" width=800>";
+			echo "<table class=\"table table-based \" width=800>";
 			foreach ($curnote as $key => $val) {
 				if (intval($val) == 0) continue; // dont print blank note lines
 				$sum += $val;
@@ -166,7 +166,7 @@ function getdata($begin,$end) {
 			$bal[$curd['Subacc']] += $curd['Beløb'];
 			error_reporting(E_ALL);
 		}
-		echo "<table class=\"table table-striped\" width=800>";
+		echo "<table class=\"table table-based \" width=800>";
 		$upper = mb_strtoupper($header);
 		echo "<thead><tr><th style='background: white'><p align=left>$upper</p></th><th style='background: white'><p align=right>Beløb</p></th></th></tr>";
 		echo "<tbody>";
@@ -241,7 +241,7 @@ function getw($col) {
 	if ($col == "Reference")
 		return 100;
 	if ($col == "Tekst")
-		return 200;
+		return 400;
 	return 100;
 }
 
