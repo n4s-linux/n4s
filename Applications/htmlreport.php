@@ -34,7 +34,7 @@ foreach (array('Indtægter','Udgifter','Aktiver','Egenkapital','Passiver') as $c
 }
 if (hasfejl($darray)) {
 	echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
-	echo printfullspec($darray,$curf);
+	echo printfullspec($darray,"Fejlkonto");
 }
 
 function hasfejl($darray) {
@@ -55,8 +55,8 @@ function printfullspec($darray,$filter) {
 	global $begin; global $realend;
 	global $end;
 	ob_start();
-	if ($filter == "Indtægter") printheader("Kontokort","landscape");
-	echo "<center><h3><font style='background:yellow'>Kontospecifikationer $filter - $begin - $realend</font></h3></center>";
+	if ($filter == "Indtægter") printheader("Kontokort","portrait");
+	echo "<center><h3><font style='background:#ded2d1'>Kontospecifikationer $filter - $begin - $realend</font></h3></center>";
 	echo "<table class=\"table table-based table-sm\">";
 	$cols = array("Date","Reference","Tekst","KontoN1","KontoN2","Beløb");
 	$saldo = 0;
@@ -71,8 +71,11 @@ function printfullspec($darray,$filter) {
 	$firstfejl = true;
 	foreach ($darray as $curtrans) {
 		$c = "white";
-		if (substr($curtrans['Reference'],0,4) == "CSV-") {
-			$c = "gray";$curtrans["Reference"] = "BANK";
+		if ($curtrans['Reference'] == "") {
+			$c = "#7a615f";
+		}
+		else if (substr($curtrans['Reference'],0,4) == "CSV-") {
+			$c = "gray";$curtrans["Reference"] = "CSV";
 		}
 		else $curtrans[$curcol] = substr($curtrans[$curcol],0,8);
 		if ($curtrans['Header'] != $filter) continue;
@@ -193,7 +196,7 @@ function getdata($begin,$end) {
 			$val = prettynum($val);
 			$note = getnote($d,$key);
 			if ($note != false)
-				$note = "\n<a href=#note$note> - Note $note</a>";
+				$note = "\n - <a href=#note$note>Note $note</a>";
 			echo "<tr><td width=150>$key $note </td><td width=50>$val</td></tr>";
 		}
 		$ptotal = prettynum($total);
@@ -203,7 +206,7 @@ function getdata($begin,$end) {
 	function prettynum($a) { return "<p align=right>" . number_format($a,0,",",".") . "</p>";}
 ?>
 <?php
-function printheader($parameter = "Saldobalance",$orientation="landscape") {
+function printheader($parameter = "Saldobalance",$orientation="Portrait") {
 global $tpath;
 global $begin;
 global $end;
