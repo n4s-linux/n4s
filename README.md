@@ -53,12 +53,13 @@ Så selvom vi kan savne de dage, hvor alt syntes enklere med DOS-programmer, er 
 **Online Funktionalitet og Samarbejde:**
 Det er vigtigt at bemærke, at selvom n4s er baseret på en terminal, må man ikke lade sig snyde af dette. N4S er stadig utroligt funktionelt og designet til at være et flerbrugersystem, der kan arbejde online fra hvor som helst 🌐. Den terminalbaserede tilgang giver en unik mulighed for samarbejde, da flere brugere nemt kan få adgang til systemet og arbejde sammen om opgaverne. Dette gør det til et kraftfuldt værktøj for moderne virksomheder, der søger effektivitet og samarbejde 🤝.
 
-N4S kan køres fra en central server og du kan forbinde med Windows Terminalen
-
-![Win11 Screenshot1 n4s regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_1.png?raw=true)
-![Win11 Screenshot1 n4s regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_2.png?raw=true)
-![Win11 Screenshot1 n4s regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_3.png?raw=true)
-![Win11 Screenshot1 n4s regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_4.png?raw=true)
+# Kan køres på en hvilket som helst operativsystem uden installation
+N4S kan køres fra en central server og du kan forbinde med Windows Terminalen, OS X terminal Applikationen eller lign.
+Eksempler på remote kørsel fra Windows 11
+![Win11 Screenshot1 n4s gratis regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_1.png?raw=true)
+![Win11 Screenshot2 n4s dobbelt bogholderi](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_2.png?raw=true)
+![Win11 Screenshot3 n4s momsregnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_3.png?raw=true)
+![Win11 Screenshot4 n4s regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_4.png?raw=true)
 
 # N4S - Din Vej til Regnskabsmæssig Ekspertise!
 
