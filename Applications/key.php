@@ -516,7 +516,7 @@ foreach ($darray as $dataarray) {
 		$trans["OrigAmount"] = $trans["Amount"];
 		if (!isset($trans["Func"]))
 			$trans["Func"] = "";
-		if ($trans["Func"] != "" && ( stristr($trans['Account'],'Likvider') || stristr($trans['Account'],'Kreditorer') || stristr($trans['Account'],'debitorer'))) {
+		if ($trans["Func"] != "" && ( stristr($trans['Account'] ,"Egenkapital")||stristr($trans['Account'],'Likvider') || stristr($trans['Account'],'Kreditorer') || stristr($trans['Account'],'debitorer'))) {
 			echo("fejl - der er skrevet funktion ind på en konto der indeholder Likvider/Kreditorer/Debitorer - afbryder !\n");
 			echo $dataarray['Filename'] . "\n";
 			die();
