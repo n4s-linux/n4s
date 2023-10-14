@@ -21,8 +21,11 @@ foreach ($sectionsbal as $cursect)
 	printsection($darray,$cursect);
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
 printnotes();
-echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
-echo printfullspec($darray);
+unlink("/home/$op/tmp/kontokort.html");
+foreach (array('Indtægter','Udgifter','Aktiver','Egenkapital','Passiver','Fejlkonto') as $curf) {
+	echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
+	echo printfullspec($darray,$curf);
+}
 function hasfejl($darray) {
 	$saldo = 0;
 	foreach ($darray as $curkonto)
@@ -36,13 +39,13 @@ function pagebreak() {
 <center><h2>Noter</h2></center>
 <?php
 }
-function printfullspec($darray) {
+function printfullspec($darray,$filter) {
 	global $op;
 	global $begin; global $realend;
 	global $end;
 	ob_start();
-	printheader("Kontokort","landscape");
-	echo "<center><h2>Kontospecifikationer $begin - $realend</h2></center>";
+	if ($filter == "Indtægter") printheader("Kontokort","landscape");
+	echo "<center><h2>Kontospecifikationer $filter - $begin - $realend</h2></center>";
 	echo "<table class=\"table table-striped table-sm\">";
 	$cols = array("Date","Reference","Tekst","Header","Subacc","Subsub","Beløb");
 	$saldo = 0;
@@ -53,6 +56,7 @@ function printfullspec($darray) {
 	echo "</tr>";
 	$firstfejl = true;
 	foreach ($darray as $curtrans) {
+		if ($curtrans['Header'] != $filter) continue;
 		echo "<tr>";
 		$orgb = $curtrans['Beløb'];
 		foreach ($cols as $curcol) {
@@ -77,7 +81,7 @@ function printfullspec($darray) {
 
 	echo "</table>";
 	$data = ob_get_clean();
-	file_put_contents("/home/$op/tmp/kontokort.html",$data);
+	file_put_contents("/home/$op/tmp/kontokort.html",$data,FILE_APPEND);
 	return "";
 	return $data;
 }
