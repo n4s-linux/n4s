@@ -374,3 +374,11 @@ Selvom det måske virker som en udfordrende opgave at organisere og bevare al vo
 Med N4S i det åbne og etablerede markdown-format er det enkelt for alle at opbygge deres egen "anden hjerne" af information og få glæde af en mere struktureret og organiseret tilgang til data.!!
 Selvom det måske virker som en udfordrende opgave at organisere og bevare al vores information og idéer, er der nu en løsning, der gør det let for alle at bygge deres eget "anden hjerne" af viden 🧠💡. Med vores innovative N4S-system kan du nemt skabe en digital platform, der fungerer som din sekundære hjerne og gør det muligt at organisere og navigere gennem dine tanker og informationer på en problemfri måde.
 
+Hvad kan man f.eks. bruge det til? (ikke udtømmende liste) :
+* En password database (her anbefaler vi kraftigt du vælger at blowfish-kryptere dine markdown-filer)
+* En kundedatabase 
+* CRM-system - styr dine sager - dokumenter alle hændelser
+* Indkøbsliste
+* Medicin / patientjournal
+* Dagbog
+* Stamdata
