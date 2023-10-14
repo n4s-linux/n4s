@@ -808,13 +808,20 @@ function show_progress {
 }
 
 function sync() {
+	bn=$(basename "$tpath")
 	if [ ! -d "$tpath/.backup" ]; then
+		echo "Opretter ny backup $bn"
 		mkdir -p "$tpath/.backup"
 		borg init --encryption=none "$tpath/.backup"
 	fi	
-	pushd .
+	pushd . >/dev/null
 	cd "$tpath/.backup"
 	echo "Kører backup"
-	borg create $tpath/.backup::$(date +%Y-%m-%d) $(realpath "$tpath") --stats
-	popd
+	borg create $tpath/.backup::$(date +%Y-%m-%d) $(realpath "$tpath") --stats 2>~/tmp/backup
+	if [ $? -eq 0 ]; then
+		echo "Backup dannet"
+	else
+		cat ~/tmp/backup
+	fi
+	popd >/dev/null
 }
