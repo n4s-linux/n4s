@@ -9,12 +9,15 @@ $notes = array();
 $notenames = array();
 $notecount = 0;
 $sectionsres = array('Indtægter','Udgifter','Resultatdisponering');
-$sectionsbal = array('Aktiver','Egenkapital','Passiver','Fejlkonto');
+$sectionsbal = array('Aktiver','Egenkapital','Passiver');
 $darray = getdata($begin,$end);
 //if (hasfejl($darray)) showfejlkonto();
 echo "<center><h5>Resultatopgørelse $begin - $realend</center></h5><br>";
 foreach ($sectionsres as $cursect) 
 	printsection($darray,$cursect);
+if (hasfejl($darray))
+	printsection($darray,"Fejlkonto");
+
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
 echo "<center><h5>Balance $begin - $realend</h5></center><br>";
 foreach ($sectionsbal as $cursect) 
@@ -22,10 +25,18 @@ foreach ($sectionsbal as $cursect)
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
 printnotes();
 unlink("/home/$op/tmp/kontokort.html");
-foreach (array('Indtægter','Udgifter','Aktiver','Egenkapital','Passiver','Fejlkonto') as $curf) {
+file_put_contents("/home/$op/tmp/nøgletal.html",getnøgletal($darray));
+
+
+foreach (array('Indtægter','Udgifter','Aktiver','Egenkapital','Passiver') as $curf) {
 	echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
 	echo printfullspec($darray,$curf);
 }
+if (hasfejl($darray)) {
+	echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
+	echo printfullspec($darray,$curf);
+}
+
 function hasfejl($darray) {
 	$saldo = 0;
 	foreach ($darray as $curkonto)
@@ -87,7 +98,8 @@ function printfullspec($darray,$filter) {
 		echo "</tr>";
 	}
 
-	echo "</table>";
+	echo "</table><br>";
+	echo pb();
 	$data = ob_get_clean();
 	file_put_contents("/home/$op/tmp/kontokort.html",$data,FILE_APPEND);
 	return "";
@@ -181,8 +193,8 @@ function getdata($begin,$end) {
 			$val = prettynum($val);
 			$note = getnote($d,$key);
 			if ($note != false)
-				$note = "<a href=#note$note>*$note</a>";
-			echo "<tr><td width=150>$key $note</td><td width=50>$val</td></tr>";
+				$note = "\n<a href=#note$note> - Note $note</a>";
+			echo "<tr><td width=150>$key $note </td><td width=50>$val</td></tr>";
 		}
 		$ptotal = prettynum($total);
 		echo "<tr><td style='background: white;'><b><u>$header i alt</b></u></td><td style='background:white'><b><u>$ptotal</u></b></td></tr>";
@@ -197,7 +209,6 @@ global $begin;
 global $end;
 global $realend;
 ?><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<body style="font-family: Courier" size=8>
 <html charset=utf8>
 <style type="text/css" media="print">
 @page {
@@ -256,5 +267,102 @@ function getw($col) {
 		return 400;
 	return 100;
 }
+function pb() {
+return "<p style=\"page-break-after: always;\">&nbsp;</p>";
+}
+function getnoteicon() {
+	system("cp /svn/svnroot/png/edit.png ~/tmp/note.png");
+	return "<img width=25 height=25 src=note.png>";
+}
 
+function dækningsbidrag($darray) {
+	$bal = 0;
+	$i = "Indtægter:";
+	$u = "Udgifter:Direkte";
+	foreach ($darray as $curtrans) {
+		if (substr($curtrans['Konto'],0,strlen($i)) == $i || substr($curtrans['Konto'],0,strlen($u)) == $u)
+			$bal += $curtrans['Beløb'];
+	}
+	return $bal;
+}
+function resultat($darray) {
+	$bal = 0;
+	$i = "Indtægter:";
+	$u = "Udgifter:";
+	foreach ($darray as $curtrans) {
+		if (substr($curtrans['Konto'],0,strlen($i)) == $i || substr($curtrans['Konto'],0,strlen($u)) == $u)
+			$bal += $curtrans['Beløb'];
+	}
+	return $bal;
+}
+
+
+function egenkapital($darray) {
+	$bal = 0;
+	$i = "Egenkapital:";
+	foreach ($darray as $curtrans) {
+		if (substr($curtrans['Konto'],0,strlen($i)) == $i)
+			$bal += $curtrans['Beløb'];
+	}
+	return $bal;
+}
+function aktiver($darray) {
+	$bal = 0;
+	$i = "Aktiver:";
+	foreach ($darray as $curtrans) {
+		if (substr($curtrans['Konto'],0,strlen($i)) == $i)
+			$bal += $curtrans['Beløb'];
+	}
+	return $bal;
+}
+
+function kortfristetgæld($darray) {
+	$bal = 0;
+	$i = "Passiver:";
+	foreach ($darray as $curtrans) {
+		if (substr($curtrans['Konto'],0,strlen($i)) == $i)
+			$bal += $curtrans['Beløb'];
+	}
+	return $bal;
+}
+
+function omsætningsaktiver($darray) {
+	$bal = 0;
+	$i = "Aktiver:Omsætningsaktiver";
+	foreach ($darray as $curtrans) {
+		if (substr($curtrans['Konto'],0,strlen($i)) == $i)
+			$bal += $curtrans['Beløb'];
+	}
+	return $bal;
+}
+function omsætning($darray) {
+	$bal = 0;
+	$i = "Indtægter:";
+	foreach ($darray as $curtrans) {
+		if (substr($curtrans['Konto'],0,strlen($i)) == $i)
+			$bal += $curtrans['Beløb'];
+	}
+	return $bal;
+}
+function getnøgletal($darray)  {
+	ob_start();
+	printheader("Nøgletal");
+	echo "<table class=\"table\">";
+	$omsætning = omsætning($darray);
+	$resultat = resultat($darray);
+	$ebit = prettynum($resultat / $omsætning * 100);
+	$dækningsgrad = prettynum(dækningsbidrag($darray) / omsætning($darray) * 100);
+	$likviditetsgrad = prettynum(omsætningsaktiver($darray) / kortfristetgæld($darray) * 100);
+	$afkastningsgrad = prettynum(resultat($darray) * 100 / aktiver($darray));
+	$soliditet =  prettynum(-egenkapital($darray) / aktiver($darray) * 100);
+	$ekforrent = prettynum(resultat($darray) * 100 / egenkapital($darray));
+	echo "<tr><td>EBIT (Overskudsgrad)<br>Resultat / Omsætning </td><td>$ebit</td></tr>";	
+	echo "<tr><td>Dækningsgrad<br>Dækningsbidrag / Omsætning</td><td>$dækningsgrad</td></tr>";	
+	echo "<tr><td>Likviditetsgrad<br>Omsætningsaktiver / kortfristet gæld</td><td>$likviditetsgrad</td></tr>";	
+	echo "<tr><td>Soliditet<br>Egenkapital / Aktiver</td><td>$soliditet</td></tr>";	
+	echo "<tr><td>Egenkapitalens forretning<br>Resultat / Egenkapital</td><td>$ekforrent</td></tr>";	
+	
+	echo "</table>";
+	return ob_get_clean();
+}
 ?>
