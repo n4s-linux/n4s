@@ -108,7 +108,7 @@ Vil du gerne se hvordan systemet betjenes i det daglige ?
 # Eksempel på rapportering
 Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter.
 Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)
-* [Eksempel saldobalance](https://drive.google.com/file/d/1TegmpGs-EuA6jYqtzJUFiq8yn2noGD8y/view?usp=sharing)
+* [Eksempel saldobalance](https://drive.google.com/file/d/1WAlPO73OykvF5-wUCh9-XDIikK_8SoBU/view?usp=sharing)
 * [Eksempel kontokort](https://drive.google.com/file/d/1cRU-zrJVdUjT7v8ABheJbjCU3y3WZrMB/view?usp=sharing)
 * [Eksempel nøgletal](https://drive.google.com/file/d/1eFUnHhibB2g6Nmigi6lQ0R6eNQqZYOyc/view?usp=sharing)
 
