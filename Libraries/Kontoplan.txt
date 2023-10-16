@@ -76,17 +76,14 @@ Udgifter:Lokaleomkostninger:El, vand og varme
 Udgifter:Lokaleomkostninger:Husleje
 Udgifter:Lokaleomkostninger:Rengøring
 Udgifter:Lokaleomkostninger:Vedligeholdelse
-Udgifter:Løn:ATP
-Udgifter:Løn:Atp
 Udgifter:Personaleomkostninger:AER
+Udgifter:Personaleomkostninger:Barsel
 Udgifter:Personaleomkostninger:ATP
 Udgifter:Personaleomkostninger:Diverse
 Udgifter:Personaleomkostninger:Feriepenge
 Udgifter:Personaleomkostninger:Fremmed arbejde
 Udgifter:Personaleomkostninger:KM-Penge
-Udgifter:Personaleomkostninger:Løn:AER
-Udgifter:Personaleomkostninger:Løn:ATP
-Udgifter:Personaleomkostninger:Løn:A-indkomst
+Udgifter:Personaleomkostninger:A-indkomst
 Udgifter:Personaleomkostninger:Diverse:Mad
 Udgifter:Personaleomkostninger:Sygedagpenge
 Udgifter:Personaleomkostninger:Refusioner
