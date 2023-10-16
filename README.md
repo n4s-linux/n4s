@@ -119,7 +119,7 @@ For at generere tilsvarende rapportering for dit regnskab følg da følgende ins
 * Rapporteringen (Saldobalance, kontokort & nøgletal) ligger i ~/tmp som kan findes i filmanageren Nautilus til venstre
 
 # TLDR - Lad mig downloade din OVA
-* Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/)
+* Link til [Virtualbox OVA appliance](https://l.linklyhq.com/l/1uAWJ)
 * Link til [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (husk at få Extension Pack også)
 
 Fordele ved OVA Løsning:
