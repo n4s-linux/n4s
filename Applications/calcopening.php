@@ -29,7 +29,6 @@ if ($y != 0)
 	$s .= "\tEgenkapital:Overført resultat\n";
 $s .= "\n";
 $tpath = getenv("tpath");
-echo $s;
 file_put_contents("$tpath/.Åbning_$begin.ledger",$s);
 $aktiver = "<table border=1>";
 $passiver = "<table border=1>";
@@ -57,5 +56,6 @@ $ft .= "<tr><td><b>Egenkapital</b><br>$egenkapital</td>";
 $ft .= "<td><b>Fejlkonto</b><br>$fejlkonto</td></tr>";
 $ft .= "</table>";
 file_put_contents("/home/$op/tmp/ft.html",$ft);
-system("w3m -dump ~/tmp/ft.html");
+require_once("/svn/svnroot/Applications/proc_open.php");
+exec_app("w3m -dump ~/tmp/ft.html|less");
 ?>
