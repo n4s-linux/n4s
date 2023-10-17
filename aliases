@@ -62,7 +62,7 @@ function dp() {
 	#echo LEDGER_BEGIN=$begin LEDGER_END=$end noend=1 php /svn/svnroot/Applications/key.php ledger equity
 	#LEDGER_BEGIN=$begin LEDGER_END=$end      noend=1 php /svn/svnroot/Applications/key.php ledger equity > $tpath/.Åbning_$end.ledger
 	echo $LEDGER_BEGIN Overført\ saldo > $tpath/.Åbning_$end.ledger
-LEDGER_BEGIN=$begin LEDGER_END=$end      noend=1 php /svn/svnroot/Applications/key.php ledger b --flat ^Aktiver ^Passiver ^Egenkapital ^Fejlkonto --no-total  --balance-format="%(account)\t%(total)\n"|sed 's/Egenkapital:Periodens resultat/Egenkapital:Overført resultat/g'|column -ts $'\t'
+LEDGER_BEGIN=$begin LEDGER_END=$end      noend=1 php /svn/svnroot/Applications/key.php ledger b --flat ^Aktiver ^Passiver ^Egenkapital ^Fejlkonto --no-total  --balance-format="%(account)\t%(total)\n"|grep -v ^"Egenkapital:Periodens resultat"|grep -v ^"Egenkapital:Overført resultat"|column -ts $'\t'
 (
 	LEDGER_BEGIN=$begin LEDGER_END=$end      noend=1 php /svn/svnroot/Applications/key.php ledger b --flat ^Aktiver ^Passiver ^Egenkapital ^Fejlkonto --no-total  --balance-format="%(account)\t%(total)\n"|while read i
 	do
