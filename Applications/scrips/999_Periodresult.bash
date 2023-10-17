@@ -22,4 +22,4 @@ do
 	fi
 
 done
-echo -e "\tDifferencer\n\n"
+echo -e "\tEgenkapital:Overført resultat\n\n"
