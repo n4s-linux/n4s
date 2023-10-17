@@ -15,6 +15,6 @@
 		}
 		if (!strlen(trim($curline)))continue;
 		$ch = ($cursubheading == "") ? $curheading : $curheading . " - $cursubheading";
-		echo "$ch: $curline\n";
+		echo "[$ch]:\t$curline\n";
 	}
 ?>
