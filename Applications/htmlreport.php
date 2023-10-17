@@ -1,4 +1,5 @@
 <?php
+require_once("/svn/svnroot/Applications/short.php");
 $op = exec("whoami");
 $tpath = getenv("tpath");
 $begin = getenv("LEDGER_BEGIN");
@@ -15,17 +16,18 @@ $darray = getdata($begin,$end);
 echo "<center><h5>Resultatopgørelse $begin - $realend</center></h5><br>";
 foreach ($sectionsres as $cursect) 
 	printsection($darray,$cursect);
-if (hasfejl($darray))
-	printsection($darray,"Fejlkonto");
 
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
 echo "<center><h5>Balance $begin - $realend</h5></center><br>";
 foreach ($sectionsbal as $cursect) 
 	printsection($darray,$cursect);
+if (hasfejl($darray))
+	printsection($darray,"Fejlkonto");
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
 printnotes();
 unlink("/home/$op/tmp/kontokort.html");
 file_put_contents("/home/$op/tmp/nøgletal.html",getnøgletal($darray));
+file_put_contents("/home/$op/tmp/statistik.html",getstatistik($darray));
 
 
 foreach (array('Indtægter','Udgifter','Aktiver','Egenkapital','Passiver') as $curf) {
@@ -38,11 +40,8 @@ if (hasfejl($darray)) {
 }
 
 function hasfejl($darray) {
-	$saldo = 0;
 	foreach ($darray as $curkonto)
-		if (stristr($curkonto['Konto'],'fejl')) $saldo += $curkonto['Beløb'];
-	if (intval($saldo) == 0) return true; else return false;
-
+		if (stristr($curkonto['Konto'],'fejl')) return true;
 }
 function pagebreak() {
 ?>
@@ -286,7 +285,7 @@ function dækningsbidrag($darray) {
 		if (substr($curtrans['Konto'],0,strlen($i)) == $i || substr($curtrans['Konto'],0,strlen($u)) == $u)
 			$bal += $curtrans['Beløb'];
 	}
-	return $bal;
+	return -$bal;
 }
 function resultat($darray) {
 	$bal = 0;
@@ -296,7 +295,7 @@ function resultat($darray) {
 		if (substr($curtrans['Konto'],0,strlen($i)) == $i || substr($curtrans['Konto'],0,strlen($u)) == $u)
 			$bal += $curtrans['Beløb'];
 	}
-	return $bal;
+	return -$bal;
 }
 
 
@@ -307,7 +306,7 @@ function egenkapital($darray) {
 		if (substr($curtrans['Konto'],0,strlen($i)) == $i)
 			$bal += $curtrans['Beløb'];
 	}
-	return $bal;
+	return -$bal;
 }
 function aktiver($darray) {
 	$bal = 0;
@@ -322,18 +321,26 @@ function aktiver($darray) {
 function kortfristetgæld($darray) {
 	$bal = 0;
 	$i = "Passiver:";
+	$exclude = array("Passiver:Lån:","Passiver:Skyldig","Passiver:Mellemregning");
 	foreach ($darray as $curtrans) {
+		foreach ($exclude as $curex) {
+		if (substr($curtrans['Konto'],0,strlen($curex)) == $curex)
+			continue 2;
+		}
 		if (substr($curtrans['Konto'],0,strlen($i)) == $i)
 			$bal += $curtrans['Beløb'];
 	}
-	return $bal;
+	return -$bal;
 }
 
 function omsætningsaktiver($darray) {
 	$bal = 0;
 	$i = "Aktiver:Omsætningsaktiver";
+	$y = "Aktiver:Likvider";
 	foreach ($darray as $curtrans) {
 		if (substr($curtrans['Konto'],0,strlen($i)) == $i)
+			$bal += $curtrans['Beløb'];
+		else if (substr($curtrans['Konto'],0,strlen($y)) == $y)
 			$bal += $curtrans['Beløb'];
 	}
 	return $bal;
@@ -345,7 +352,29 @@ function omsætning($darray) {
 		if (substr($curtrans['Konto'],0,strlen($i)) == $i)
 			$bal += $curtrans['Beløb'];
 	}
-	return $bal;
+	return -$bal;
+}
+function getomk($darray) {
+	$sum = array();
+	foreach ($darray as $curtrans) {
+		$x = explode(":",$curtrans['Konto']);
+		$l2 = $x[1];
+		$l1 = $x[0];
+		if ($l1 != "Udgifter") continue;
+		eoff();
+		$sum[$l2] += $curtrans['Beløb'];
+		eon();
+		
+	}
+	return $sum;
+}
+function getstatistik($darray) {
+	ob_start();
+	printheader("Statistik");
+	require_once("/svn/svnroot/Applications/piechart.php");
+	$piedata = getomk($darray);
+	echo pie($piedata,"Udgifter fordeling");
+	return ob_get_clean();
 }
 function getnøgletal($darray)  {
 	ob_start();
@@ -354,12 +383,15 @@ function getnøgletal($darray)  {
 	$omsætning = omsætning($darray);
 	$resultat = resultat($darray);
 	$ebit = prettynum($resultat / $omsætning * 100);
-	$dækningsgrad = prettynum(dækningsbidrag($darray) / omsætning($darray) * 100);
-	$likviditetsgrad = prettynum(omsætningsaktiver($darray) / kortfristetgæld($darray) * 100);
+	$dækningsbidrag = dækningsbidrag($darray);
+	$dækningsgrad = prettynum($dækningsbidrag / $omsætning * 100);
+	$kortfristetgæld = kortfristetgæld($darray);
+	$omsætningsaktiver = omsætningsaktiver($darray);
+	$likviditetsgrad = prettynum($omsætningsaktiver / $kortfristetgæld * 100);
 	$afkastningsgrad = prettynum(resultat($darray) * 100 / aktiver($darray));
-	$soliditet =  prettynum(-egenkapital($darray) / aktiver($darray) * 100);
+	$soliditet =  prettynum(egenkapital($darray) / aktiver($darray) * 100);
 	$ekforrent = prettynum(resultat($darray) * 100 / egenkapital($darray));
-	echo "<tr><td>EBIT (Overskudsgrad)<br>Resultat / Omsætning </td><td>$ebit</td></tr>";	
+	echo "<tr><td>EBIT (Overskudsgrad)<br>Resultat / Omsætning)</td><td>$ebit</td></tr>";	
 	echo "<tr><td>Dækningsgrad<br>Dækningsbidrag / Omsætning</td><td>$dækningsgrad</td></tr>";	
 	echo "<tr><td>Likviditetsgrad<br>Omsætningsaktiver / kortfristet gæld</td><td>$likviditetsgrad</td></tr>";	
 	echo "<tr><td>Soliditet<br>Egenkapital / Aktiver</td><td>$soliditet</td></tr>";	
