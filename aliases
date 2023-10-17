@@ -53,8 +53,6 @@ export LEDGER_TOTAL_WIDTH=12
 alias reconcile="php /svn/svnroot/Applications/recon.php"
 alias debtorreport="/svn/svnroot/Applications/browsedebitors.bash"
 function dp() {
-	echo "dp kører med den nye 999 script - træd varsomt"
-	sleep 0.75
 	php /svn/svnroot/Applications/datepick.php
 	source ~/tmp/.datepick
 	end=$LEDGER_BEGIN
