@@ -67,7 +67,6 @@ if (isset($argv[1]) && $argv[1] == "searchuid") {
 	foreach ($filez as $curfile)
 		$vimfilez .= " \"$curfile\"";
 	exec_app("$editor $vimfilez");
-//	exec_app("$editor $vimfilez;git -C \"$path\" commit $vimfilez -m \"Ændret manuelt ved UID søgning\"");
 }
 if (isset($argv[1]) && $argv[1] == "bilag" ) {
 	foreach($data as $file) {
