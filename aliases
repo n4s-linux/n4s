@@ -236,8 +236,6 @@ cp ~/.listfolders.2 ~/.listfolders
 rm ~/.listfolders.2
 cat ~/.listfolders|while read i
 do 
-#	echo "link"
-#else
 	echo "$i"
 done|fzf --cycle --no-mouse|awk '{print $1}' > ~/.select
 db=$(cat ~/.select)
@@ -261,10 +259,8 @@ opath=$(select_db)
 else
 opath="$2"
 fi
-#return
 echo "<meta charset=utf8><p align=right><img src='https://olsensrevision.dk/wp-content/uploads/elementor/thumbs/olsens-onf38ivvwko6z6ujk7ubpjc3t0n8teweq5uwfuvuhs.png'></p><p align=center><h3>Status på din sag hos Olsens Revision ApS</h3></p>" > /tmp/currap.html
 echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">' >> /tmp/currap.html
-#cat ~/$opath/$1/5000" -"* >> /tmp/currap.html
 echo "<table class=table-striped valign=top><tr vlign=top><td valign=top>" >> /tmp/currap.html;
 pushd . >/dev/null
 cd ~/$opath/$1
@@ -299,7 +295,6 @@ done
 popd > /dev/null
 echo "</td></tr></table>" >> /tmp/currap.html;
 echo '<hr><center>Olsens Revision ApS, Fortunstræde 1, 2., 1065 København K, Tlf. 2586 4573</center><P style="page-break-before: always">' >> /tmp/currap.html
-#cat ~/$opath/$1/"100000 - History" >> /tmp/currap.html
 w3m -dump /tmp/currap.html|less
 output=/tmp/currap.html
 md=$(cat /tmp/currap.html|md5sum|awk '{print $1'})
@@ -497,74 +492,19 @@ export LEDGER_MISSING_VOUCHERS="$s"
 echo "export simple=$simple" > $fn
 echo "export LEDGER_MISSING_VOUCHERS=$missing_vouchers" >> $fn
 (env|grep LEDGER|while read i; do echo -n export" "; echo $i; done ) >> "$fn"
-#chmod 777 "$fn"
 php /svn/svnroot/Applications/key.php ledger b foobarbidity
 }
 
 
 
-#alias dl="sort /revi/deadlines > /revi/deadlines.tmp;mv /revi/deadlines.tmp /revi/deadlines;vi /revi/deadlines;git commit /revi/deadlines -v"
-#source /svn/svnroot/Applications/la.bash
-#bind '"\C-p": shell-backward-kill-word'
 
 
 
-### LEDGER IN PDF STUFF
-#export LEDGER_BEGIN=$(date --date="$(date +%Y-%m-%d) -1 month" +%Y-%m-%d)
-#export LEDGER_END=$(date +%Y-%m-%d --date="+1 day")
-#alias ledger="ledger -B --sort date --date-format %Y-%m-%d --payee-width 40 --account-width 50 --amount-width 13 --recursive-aliases"
-alias ep="bash /svn/svnroot/Applications/editpdfmeta.bash" #EDIT PDF
-#export LEDGER_FILE=~/curl/cur.ledger
-function epb {
-#Henter posteringer
-(cat aliases.ledger *.ledger;ls -t *.pdf|while read i; do ep "$i" cat;done)>~/curl.ledger
-cat ~/curl.ledger
-}
-function epi {
-#Henter dem der Ingen kontering har
-ls -t *.pdf|while read i; do  ep "$i" cat $1;done |grep Ingen
-}
-function epu {
-#Henter dem der Ingen kontering har
-ls -t *.pdf|while read i; do  ep "$i" unaccounted ;done |grep Ingen
-}
-
-
-function epm { ###Viser unmappede accounts
-epb|ledger -B bal --depth 1|grep -v Aktiver|grep -v Passiver|grep -v "                   0"|grep -v "\-\-\-"|grep -v Egenkapital|while read i
-do
-echo -n "alias "
-echo -n $(echo "$i"|awk '{print $2" "$3" "$4" "$5" "$6" "$7}')
-echo "="
-done
-}
-
-### ENDDD LLEDGER I PDF STUFF
-###Underskrift af dokumenter i gimp
-alias underskriv="gimp ~/Dropbox/Jørgen\ Olsen/Signature.xcf $1"
-###SLUT Underskrift
-###RT CLI
-alias +s="php /svn/svnroot/Applications/rt_cli/main.php search"
-alias +f="vi /svn/svnroot/tmp/filter_$(whoami)"
-alias +l="vi /svn/svnroot/tmp/limit_$(whoami)"
-alias +o="vi /svn/svnroot/tmp/sort_$(whoami)"
-alias +q="vi /svn/svnroot/tmp/query_$(whoami)"
-alias +v="php /svn/svnroot/Applications/rt_cli/main.php show $1"
-
-alias +h="echo +s=search;echo +f=filter;echo +l=limit;echo +o=sort;echo +q=query;echo +h=help;echo +v=view"
-
-##RT CLI END
-
-#alias ti="python /svn/svnroot/Applications/ti.py"
-alias tii="python /svn/svnroot/Applications/ti.py f;python /svn/svnroot/Applications/ti.py o"
-bash /svn/svnroot/Applications/require_detach.bash
 basename=$(basename "$PWD")
-#alias log="less +G \"$logfile_o\""
 export LC_ALL=da_DK.UTF-8
 export LANG=$LC_ALL
 export LANGUAGE=$LC_ALL
 alias python="ipython3 --no-banner"
-#(python2 /svn/svnroot/Applications/dropbox.py start >/dev/null&)>/dev/null &
 function getenv() {
 	env|grep LEDGER|grep -v "=$"|grep -v LEDGER_SORT|grep -v LEDGER_DEPTH|while read i
 do
@@ -770,9 +710,8 @@ fi
 if [ -f "$tpath/.init.bash" ]; then
 	source "$tpath/.init.bash"
 fi
-#echo Åbnet $(basename "$tpath") ....
-#asciinema rec -i1 /data/recordings/$(whoami)_"$bn"_$(date +%s).cast # problematisk at den starte et nyt shell, så kan man ikke sr() ind i et regnskab (uendeligtloop)
 echo -e "\e[42mÅbnet $(basename "$tpath") OK - Tryk Alt-m eller skriv 'm' [Enter] for Menu !\e[0m"
+
 }
 function saveconf() {
 	if [ "$tpath" == "" ]; then
