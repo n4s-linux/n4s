@@ -57,5 +57,5 @@ $ft .= "<td><b>Fejlkonto</b><br>$fejlkonto</td></tr>";
 $ft .= "</table>";
 file_put_contents("/home/$op/tmp/ft.html",$ft);
 require_once("/svn/svnroot/Applications/proc_open.php");
-exec_app("w3m -dump ~/tmp/ft.html|less");
+exec_app("w3m -dump ~/tmp/ft.html");
 ?>
