@@ -162,9 +162,10 @@ else if (isset($argv[1]) && $argv[1] == "ledger") {
 
 	}
 	system("echo '' > $path/$cbf");
+	$begin = getenv("LEDGER_BEGIN");
 	if (!missingvouchers()) {
 		if (getenv("noend") != "1")
-			system("cat $path/*.ledger > $path/$cbf 2>/dev/null");
+			system("cat $path/*.ledger $path/.Åbning_$begin.ledger > $path/$cbf 2>/dev/null");
 		else
 			system("ls $path/*.ledger 2>/dev/null|grep -v Åbning_|xargs cat > $path/$cbf 2>/dev/null");
 	}
