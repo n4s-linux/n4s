@@ -11,7 +11,8 @@ function kd() {
 function i() {
 	cd Bilag/Incoming
 }
-
+op=$(whoami)
+alias p="tmux split -h \"w3m -dump /home/$op/tmp/ft.html|vi - \""
 alias v="bash /svn/svnroot/Applications/viewpdf.bash $@"
 alias 111="tmux send-keys 'l b ^Indtægter: ^Udgifter' Enter"
 alias 320="tmux send-keys 'l b ^Indtægter:' Enter"
@@ -89,6 +90,7 @@ function lm() {
 bind '"\em":"m\n"' 2>/dev/null
 bind '"\eå":"lm\n"' 2>/dev/null
 bind '"\er":"r\n"' 2>/dev/null
+bind '"\eb":"b\n"' 2>/dev/null
 bind '"\ep":"dp\n"' 2>/dev/null
 bind '"\es":"ds\n"' 2>/dev/null
 bind '"\eq":"changetermcmd\n"' 2>/dev/null
@@ -111,6 +113,9 @@ function r() {
 	konto=$(ledger -f $tpath/curl accounts|fzf --header="v-lg konto")
 	#konto=$(whiptail --inputbox "Konto" 10 30 3>&1 1>&2 2>&3)
 	tmux send-keys "l r ^$konto" Enter
+}
+function b() {
+	tmux send-keys "l b " Enter
 }
 function x() {
 if [ "$STY" != "" ]; then
