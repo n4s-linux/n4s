@@ -5,7 +5,7 @@ require_once ('/svn/svnroot/Libraries/jpgraph-4.4.2/src/jpgraph_pie3d.php');
 function pie($piedata,$title) {
 	$op = exec("whoami");
 	$filename = "/home/$op/tmp/pie.png";
-	$graph = new PieGraph(700,700);
+	$graph = new PieGraph(750,450);
 	$graph->clearTheme();
 
 	$graph->title->Set($title);

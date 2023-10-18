@@ -354,6 +354,20 @@ function omsætning($darray) {
 	}
 	return -$bal;
 }
+function getsubomk($darray,$acc) {
+	$sum = array();
+	foreach ($darray as $curtrans) {
+		eoff();
+		$x = explode(":",$curtrans['Konto']);
+		$l2 = $x[1];
+		if (!isset($x[2])) continue;
+		$l3 = $x[2];
+		if ($l2 != $acc) continue;
+		$sum[$l3] += $curtrans['Beløb'];
+		eon();
+	}
+	return $sum;
+}
 function getomk($darray) {
 	$sum = array();
 	foreach ($darray as $curtrans) {
@@ -374,6 +388,11 @@ function getstatistik($darray) {
 	require_once("/svn/svnroot/Applications/piechart.php");
 	$piedata = getomk($darray);
 	echo pie($piedata,"Udgifter fordeling");
+	foreach ($piedata as $curomk => $bal) {
+		$pd = getsubomk($darray,$curomk);
+		if (!empty($pd))
+			echo pie($pd,$curomk);
+	}
 	return ob_get_clean();
 }
 function getnøgletal($darray)  {
