@@ -1,7 +1,7 @@
 <?php
 // Formål: Beregning af rente på baggrund af aktuel ledger
 // Status: Ikke funktionel
-
+echo "Genererer åbningsposter...\n";
 $accounts = "";
 $saldo = array();
 require_once("/svn/svnroot/Applications/short.php");
@@ -55,11 +55,11 @@ $egenkapital .= "</table>";
 $fejlkonto .= "</table>";
 $ft = "<table border=1>";
 $ft .= "<tr><td><b>Aktiver</b><br>$aktiver</td>";
-$ft .= "<td><b>Passiver</b><br>$passiver</td></tr>";
+$ft .= "</tr><tr><td><b>Passiver</b><br>$passiver</td></tr>";
 $ft .= "<tr><td><b>Egenkapital</b><br>$egenkapital</td>";
-$ft .= "<td><b>Fejlkonto</b><br>$fejlkonto</td></tr>";
+$ft .= "</tr><tr><td><b>Fejlkonto</b><br>$fejlkonto</td></tr>";
 $ft .= "</table>";
 file_put_contents("/home/$op/tmp/ft.html",$ft);
 require_once("/svn/svnroot/Applications/proc_open.php");
-exec_app("w3m -dump ~/tmp/ft.html");
+echo "Tast p for at se primobalance\n"
 ?>
