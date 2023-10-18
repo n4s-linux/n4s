@@ -13,6 +13,8 @@ while ($line = fgetcsv($fd,null,",","\"","\\")) { // GET DATA
 	$desc = $line[2];
 	$konto = $line[3];
 	$fn = $line[7];
+	if (substr($konto,0,strlen("Udgifter:")) == "Udgifter:") continue;
+	if (substr($konto,0,strlen("Indtægter:")) == "Indtægter:") continue;
 	$belob = floatval($line[5]);
 	$saldo[$konto] += $belob;
 }
