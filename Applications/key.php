@@ -1,4 +1,5 @@
 <?php
+require_once("/svn/svnroot/Applications/short.php");
 $termcmd = getenv("termcmd");
 if ($termcmd == "")
 	$termcmd = "terminal";
@@ -142,8 +143,15 @@ else if (isset($argv[1]) && $argv[1] == "ledger") {
 			$file["Ref"] = "";
 		$attachedFiles = 0;
 		if (isset($file['Filereferences'])){
-            $attachedFiles = count($file['Filereferences']);
-        }
+		    $attachedFiles = count($file['Filereferences']);
+        	}
+		eoff();
+		if (isset($file['Reference']))
+			$file['Reference'] = str_replace("\\","",$file['Reference']);
+		if (isset($file['Ref']))
+			$file['Ref'] = str_replace("\\","",$file['Ref']);
+		$file['Description'] = str_replace("\\","",$file['Description']);
+		eon();
 		$o .= "$file[Date] ($file[Ref]) $file[Description] \t ; FilesAttached: $attachedFiles \n";
 //		$o .= "; FilesAttached: 0\n";
 		$oo = "";
