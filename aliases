@@ -392,6 +392,9 @@ function html2() {
 	google-chrome-stable --headless --disable-gpu --print-to-pdf nøgletal.html
 	mv output.pdf Nøgletal-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Nøgletal-$bn-$begin-$end.pdf
+	google-chrome-stable --headless --disable-gpu --print-to-pdf statistik.html
+	mv output.pdf Lagkagediagrammer-$bn-$begin-$end.pdf
+	/svn/svnroot/Applications/removeblankpages.bash Lagkagediagrammer-$bn-$begin-$end.pdf
 	popd 2>/dev/null
 }
 function html() {
