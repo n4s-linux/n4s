@@ -1,7 +1,17 @@
-# Changelog
-* Opdateret 2023-10-20
+# Disabler budgetscript midlertidigt
+* Opdateret 2023-10-21
 
-[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/29ae83e69a5f94f2a1e5e33b388421a671cf6883)
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/2521feccddb3c57b5904250dee67998ed4e257f8)
+
+# Forbedring - lad ikke program fejle hvis man taster et space ved input af tal
+* Opdateret 2023-10-21
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/4442bfb385795c5c20415dd46687f99b816d5eb8)
+
+# Naturlig retning på perioderegnskab
+* Opdateret 2023-10-21
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/8d7c36e3b170c86b386e154397667cc94b3b53d1)
 
 # joo bindings kalender
 * Opdateret 2023-10-20
@@ -12,11 +22,6 @@
 * Opdateret 2023-10-20
 
 [Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/ba6474a3fd68f90e7094e8fb0effaf81c2c7b278)
-
-# Changelog
-* Opdateret 2023-10-20
-
-[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/cc53a8f799297274610fcb4f1034866f3aa2af8b)
 
 # N4s-relaterede ideer publiceres løbende
 * Opdateret 2023-10-20
@@ -32,11 +37,6 @@
 * Opdateret 2023-10-20
 
 [Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/a1f9eea9ec2f6524bb8b33957333fd8a4863d900)
-
-# Changelog
-* Opdateret 2023-10-20
-
-[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/eb28bb5fd84cba3c24ebd874e5f3a02f927d91c0)
 
 # Datepicker har også altid nu  - tager fra 1970-01-01 og frem til dags dato
 * Opdateret 2023-10-20
