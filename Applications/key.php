@@ -952,7 +952,7 @@ function evalmath($equation)
     $equation = preg_replace("/([0-9]+)(%)/",".\$1",$equation);
     if ( $equation != "" ){
 	if ($equation == "0") return 0;
-        $result = @eval("return " . $equation . ";" );
+        $result = @eval("return " . trim($equation) . ";" );
     }
     if ($result == null) {
         throw new Exception("Unable to calculate equation");
