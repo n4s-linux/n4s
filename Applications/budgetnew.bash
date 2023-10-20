@@ -1,3 +1,4 @@
+exit
 startdate=2023-10-01
 months=12
 function momsdato() {
