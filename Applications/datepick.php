@@ -21,10 +21,12 @@
 		$fzf .= "$år\n";
 	
 	}
+	$fzf .= "Altid\n";
 	$fzf .= "MANUEL";
 	$valg = fzf($fzf,"vælg periode","--height=10 --tac --exact");
 	if ($valg =="")die();
-	if ($valg == "MANUEL") {
+	else if ($valg == "Altid") {$begin = "1970-01-01"; $end=date("Y-m-d",strtotime("tomorrow"));}
+	else if ($valg == "MANUEL") {
 		echo "Begin: "; $fd = fopen("PHP://stdin","r");$begin = trim(explode("\n",fgets($fd))[0]);fclose($fd);
 		echo "End: "; $fd = fopen("PHP://stdin","r");$end = trim(fgets($fd));fclose($fd);
 	}
