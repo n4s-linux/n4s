@@ -9,20 +9,19 @@ printheader();
 $notes = array();
 $notenames = array();
 $notecount = 0;
-$sectionsres = array('Indtægter','Udgifter','Resultatdisponering');
-$sectionsbal = array('Aktiver','Egenkapital','Passiver');
 $darray = getdata($begin,$end);
 //if (hasfejl($darray)) showfejlkonto();
 echo "<center><h5>Resultatopgørelse $begin - $realend</center></h5><br>";
-foreach ($sectionsres as $cursect) 
-	printsection($darray,$cursect);
-
+printsection($darray,"Indtægter",true);
+printsection($darray,"Udgifter",true);
+printsection($darray,"Resultatdisponering",false);
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
 echo "<center><h5>Balance $begin - $realend</h5></center><br>";
-foreach ($sectionsbal as $cursect) 
-	printsection($darray,$cursect);
+printsection($darray,"Aktiver",false);
+printsection($darray,"Egenkapital",true);
+printsection($darray,"Passiver",true);
 if (hasfejl($darray))
-	printsection($darray,"Fejlkonto");
+	printsection($darray,"Fejlkonto",true);
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
 printnotes();
 unlink("/home/$op/tmp/kontokort.html");
@@ -175,8 +174,9 @@ function getdata($begin,$end) {
 		else 
 			return false;
 	}
-	function printsection($d,$header) {
+	function printsection($d,$header,$reverse) {
 		global $curnote;
+		global $notes;
 		$bal = array();
 		foreach ($d as $curd) {
 			if ($curd['Header'] != $header) continue;
@@ -190,6 +190,7 @@ function getdata($begin,$end) {
 		echo "<tbody>";
 		$total = 0;
 		foreach ($bal as $key => $val) {
+			if ($reverse) $val = $val *-1;
 			if (intval($val) == 0) continue;
 			$total += $val;
 			$val = prettynum($val);
@@ -201,6 +202,7 @@ function getdata($begin,$end) {
 		$ptotal = prettynum($total);
 		echo "<tr><td style='background: white;'><b><u>$header i alt</b></u></td><td style='background:white'><b><u>$ptotal</u></b></td></tr>";
 		echo "</tbody></table>";
+		file_put_contents("/home/joo/tmp/notes.json",json_encode($notes,JSON_PRETTY_PRINT));
 	}
 	function prettynum($a) { return "<p align=right>" . number_format($a,0,",",".") . "</p>";}
 ?>
