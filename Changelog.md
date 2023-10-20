@@ -1,3 +1,8 @@
+# Opdateret changelog
+* Opdateret 2023-10-20
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/ce1402d26eedcb18b59250c62e2b80f62d909d46)
+
 # Ny changelog
 * Opdateret 2023-10-20
 
