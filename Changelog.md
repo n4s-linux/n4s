@@ -1,3 +1,13 @@
+# Changelog
+* Opdateret 2023-10-20
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/29ae83e69a5f94f2a1e5e33b388421a671cf6883)
+
+# joo bindings kalender
+* Opdateret 2023-10-20
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/695c9b85026d790a91ad98000399b694be12832b)
+
 # Flere ideer taget med
 * Opdateret 2023-10-20
 
