@@ -1,3 +1,18 @@
+# Flere ideer taget med
+* Opdateret 2023-10-20
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/ba6474a3fd68f90e7094e8fb0effaf81c2c7b278)
+
+# Changelog
+* Opdateret 2023-10-20
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/cc53a8f799297274610fcb4f1034866f3aa2af8b)
+
+# N4s-relaterede ideer publiceres løbende
+* Opdateret 2023-10-20
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/a17da8ea85984439f8177d95c55adb73d6b3da5d)
+
 # Opdateret changelog
 * Opdateret 2023-10-20
 
