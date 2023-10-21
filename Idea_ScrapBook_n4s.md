@@ -1,5 +1,12 @@
+# N4s noter i forskellige afdelinger kan ikke have samme navn
+	2023-10-21T01:36 joo	#observation de bliver flettet sammen i html rapporteringen f.eks Aktiver:Kapitalandele & Indtægter:Kapitalandele
+
+# N4s backup virker ikke på anden bruger
+	2023-10-21T00:00 joo	#observation backup hænger når man åbner regnskab på en anden bruger, skal undersøges
+
 # Rapportering n4s - naturlige fortegn
 	2023-10-18T11:26 joo	#ide naturlige fortegn i rapportering - dvs indtægter er postive, udgifter er negative, egenkapital skal også vendes - aktiver står som de skal
+	2023-10-21T01:58 joo	så er der naturlige fortegn på indtægter, udgifter, passiver, egenkapital - skal der også være på noter ?
 
 # Pandoc erstatning #n4s #stuff
 	2023-10-16T13:45 joo	#observation pandoc er meget langsomt
