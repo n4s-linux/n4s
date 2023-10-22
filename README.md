@@ -79,10 +79,10 @@ Det er vigtigt at bemærke, at selvom n4s er baseret på en terminal, må man ik
 # Kan køres på en hvilket som helst operativsystem uden installation
 N4S kan køres fra en central server og du kan forbinde med Windows Terminalen, OS X terminal Applikationen eller lign.
 Eksempler på remote kørsel fra Windows 11
-![Win11 Screenshot1 n4s gratis regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_1.png?raw=true)
 ![Win11 Screenshot2 n4s dobbelt bogholderi](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_2.png?raw=true)
 ![Win11 Screenshot3 n4s momsregnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_3.png?raw=true)
 ![Win11 Screenshot4 n4s regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_4.png?raw=true)
+![Win11 Screenshot1 n4s gratis regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_1.png?raw=true)
 
 
 # Problemfri Eksport af Dine Data
