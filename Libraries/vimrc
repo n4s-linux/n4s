@@ -1,3 +1,10 @@
+set termguicolors
+set cursorline
+autocmd InsertEnter * highlight CursorLine guifg=black guibg=yellow ctermfg=black ctermbg=yellow
+autocmd InsertLeave * highlight CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
+highlight CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
+
+
 filetype plugin on
 set mouse=a
 
@@ -45,8 +52,6 @@ function TogLineMark() abort
 endfunction
 
 
-set cursorline
-hi CursorLine   cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
 
 let tpath = $tpath
 nnoremap I Go<C-R>=strftime("%Y-%m-%dT%H:%M\t")<CR>
@@ -158,58 +163,35 @@ set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
 
-	hi Search cterm=NONE ctermfg=grey ctermbg=brown
+	hi Search cterm=NONE ctermfg=grey ctermbg=brown guibg=yellow guifg=black
 	syn match subheader /\v.*##.*/
-	highlight subheader ctermfg=black ctermbg=white cterm=bold
+	highlight subheader ctermfg=black ctermbg=white cterm=bold guibg=#d4fce0 guifg=black
 
 
 
 	syn match sporg /\v.*spørg.*/
-	highlight sporg ctermfg=black ctermbg=blue cterm=bold
+	highlight sporg ctermfg=black ctermbg=blue cterm=bold guibg=#00B3FF
 
-	syn match beginht /\v^#\ .*/
-	highlight beginht ctermfg=black ctermbg=white cterm=bold
-
-	syn match fyi /\v.*#fyi.*/
-	highlight fyi ctermfg=black ctermbg=gray cterm=bold
-
-	syn match working /\v.*📝.*/
-	highlight working ctermfg=70 ctermbg=20 cterm=italic
-
-
-
-
-
-        exe "syn match Today /.*".strftime("%Y-%m-%d").".*$/"      
-        exe "syn match Today /.*".strftime("%Y%m%d").".*$/"
-	highlight Today ctermfg=black ctermbg=cyan cterm=bold
-
-
-
-
-
-
-
-
-	syn match husk /\v.*husk.*/
-	highlight husk ctermfg=black ctermbg=yellow cterm=bold
-
-
+	syn match vigtigt /\v.*vigtigt.*/
+	syn match vigtigt /\v.*husk.*/
+	syn match vigtigt /\v.*haste.*/
+	highlight vigtigt ctermfg=black ctermbg=blue cterm=bold guibg=red guifg=black
 
 	syn match vente /\v.*vente.*/
-	highlight vente ctermfg=black ctermbg=yellow cterm=bold
-	syn match haster /\v.*haster.*/
-	highlight haster ctermfg=black ctermbg=red cterm=bold
+
+	highlight vente ctermfg=black ctermbg=blue cterm=bold guibg=#FFFF00 guifg=black
 
 
+	syn match obs /\v.*obs.*/
+	syn match obs /\v.*forslag.*/
+	highlight obs ctermfg=black ctermbg=blue cterm=bold guibg=#9A5FC0 guifg=black
 
-	syn match smallone /\v.*✓.*/
-	highlight smallone ctermfg=yellow ctermbg=black
+	syn match beginht /\v^#\ .*/
+	highlight beginht ctermfg=black ctermbg=white cterm=bold guibg=#defae6 guifg=black
 
-	syn match reject /\v.*✕.*/
-	highlight reject ctermfg=black ctermbg=yellow cterm=bold
+	highlight reject ctermfg=240 guifg=#585858 guibg=green
 	syn match bigcheck /\v.*✔.*/
-	highlight bigcheck ctermfg=black ctermbg=green cterm=bold
+	hi bigcheck guifg=#f8f8ff guibg=#008000
 
 
 
