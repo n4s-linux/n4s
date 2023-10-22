@@ -1,14 +1,16 @@
 ![n4s - 2nd brain & accounting](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/30bdcc4a1e46da33a502dfcde0548823f8445054/png/Black%20logo%20-%20no%20background.png)
 
 # Et simpelt og gratis regnskabsprogram
-Her er ingen bindinger eller betalingskort nødvendig. N4S er frit og opensource, og derved gratis at bruge nu og for altid.
-Når du bogfører i N4S bliver dit regnskab til en leg. 
+Her er ingen bindinger eller betalingskort nødvendig. 
+N4S er frit og opensource, og derved gratis at bruge nu og for altid.
+
+Når du bogfører i N4S bliver dit regnskab til en leg.
 
 Hvadenten du har en helt ny virksomhed, en forening eller bare dit husholdsningsregnskab, har du her et regnskabsprogram som kan undstøtte dine aktiviteter fra nu af og altid.
 
 Vores vision er at det skal være simpelt og effektivt at lave din bogføring, momsregnskab, husholdsningsregnskab og andet.
 
-# N4S - nt fri og gratis regnskabs- og ERP-løsning til små virksomheder og private
+# N4S - en fri og gratis regnskabs- og ERP-løsning til små virksomheder og private
 
 N4S er et Frit og Gratis regnskabsprogram til Cloud eller lokal kørsel
 

@@ -1,3 +1,6 @@
+# Tmux menuer - visning på flere klienter #n4s
+	2023-10-21T14:59 joo	#observation tmux-menus bliver kun vist på den aktive klient, ikke på evt. andre attached klienter #spørgirc
+
 # N4s noter i forskellige afdelinger kan ikke have samme navn
 	2023-10-21T01:36 joo	#observation de bliver flettet sammen i html rapporteringen f.eks Aktiver:Kapitalandele & Indtægter:Kapitalandele
 

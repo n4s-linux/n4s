@@ -1,3 +1,18 @@
+# Update issue templates
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/64883faf1436d6f0dc479f44390f4478217daaf9)
+
+# Contributing
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/33c99376ac457a689ada4e19819e2371928d3e91)
+
+# Diverse noter
+* Opdateret 2023-10-21
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/f006638f8254c75560937dfea28b8aa9e681e457)
+
 # Disabler budgetscript midlertidigt
 * Opdateret 2023-10-21
 
