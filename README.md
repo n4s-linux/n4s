@@ -1,6 +1,6 @@
 # N4S - Et frit og gratis regnskabs- og ERP-løsning til små virksomheder og private
 
-* Open source - Frit og Gratis regnskabsprogram til Cloud eller lokal kørsel *
+N4S er et Frit og Gratis regnskabsprogram til Cloud eller lokal kørsel
 
 N4S er mere end blot et regnskabssystem; det er en kraftfuld allieret på din rejse mod regnskabsmæssig succes. Uanset om du er en regnskabsprofessionel, en iværksætter eller en virksomhedsejer, har N4S de værktøjer, du har brug for, til at opnå overlegen kontrol over dine finanser.
 
