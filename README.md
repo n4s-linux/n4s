@@ -8,11 +8,11 @@ Hvadenten du har en helt ny virksomhed, en forening eller bare dit husholdsnings
 
 Vores vision er at det skal være simpelt og effektivt at lave din bogføring, momsregnskab, husholdsningsregnskab og andet.
 
-# N4S - Et frit og gratis regnskabs- og ERP-løsning til små virksomheder og private
+# N4S - nt fri og gratis regnskabs- og ERP-løsning til små virksomheder og private
 
 N4S er et Frit og Gratis regnskabsprogram til Cloud eller lokal kørsel
 
-N4S er mere end blot et regnskabssystem; det er en kraftfuld allieret på din rejse mod regnskabsmæssig succes. Uanset om du er en regnskabsprofessionel, en iværksætter eller en virksomhedsejer, har N4S de værktøjer, du har brug for, til at opnå overlegen kontrol over dine finanser.
+N4S er dog mere end blot et regnskabssystem; det er en kraftfuld allieret på din rejse mod regnskabsmæssig succes. Uanset om du er en regnskabsprofessionel, en iværksætter eller en virksomhedsejer, har N4S de værktøjer, du har brug for, til at opnå overlegen kontrol over dine finanser og virksomheds processer.
 
 🚀 *Lynhurtig og Universel*: Med N4S kan du arbejde effektivt på enhver platform - selv en brødrister! Dette system er kendt for sin utrolige hastighed, hvilket betyder, at du kan fokusere på det, der virkelig betyder noget: at drive din forretning fremad.
 
