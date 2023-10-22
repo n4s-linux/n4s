@@ -1,3 +1,5 @@
+![n4s - 2nd brain & accounting](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/30bdcc4a1e46da33a502dfcde0548823f8445054/png/Black%20logo%20-%20no%20background.png)
+
 # N4S - Et frit og gratis regnskabs- og ERP-løsning til små virksomheder og private
 
 N4S er et Frit og Gratis regnskabsprogram til Cloud eller lokal kørsel
@@ -12,7 +14,6 @@ N4S er mere end blot et regnskabssystem; det er en kraftfuld allieret på din re
 
 💼 *Dine Data, Din Kontrol*: En af de mest overbevisende funktioner ved N4S er, at du har fuld kontrol over dine data. Du hoster det på din egen server, hvilket betyder, at dine oplysninger altid er i dine hænder. Og det bedste af det hele? Du kan gøre det for så lidt som 5 USD om måneden på Linode!
 
-![n4s - 2nd brain & accounting](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/30bdcc4a1e46da33a502dfcde0548823f8445054/png/Black%20logo%20-%20no%20background.png)
 
 n4s - dit frie regnskabsprogram
 =================
