@@ -526,9 +526,20 @@ function update_title {
 export TMUX_PANE_TITLE="$1"
  printf "\033]2;%s\033\\" "${1:-$TMUX_PANE_TITLE}"; }
 # it is done here
+function getcolor() {
+	acc=$(echo "$1"|awk '{print $1}')
+	if [ "$acc" == "Bank" ] || [ "$acc" == "Kasse" ]; then
+		echo "#95eb34"
+	else
+		echo "#bec9b1"
+	fi
+}
 function statusaccount() {
 	ledger -f $tpath/.statusline.ledger b --no-total Aktiver:Likvider: --flat --balance-format="%(account) %(total)\n" 2>/dev/null|sed 's/Aktiver:Likvider://g'|while read i
-	do echo -n " - $i"
+	do 
+		#[fg=black,bg=white]
+		color=$(getcolor "$i")
+		echo -n " -- #[bg=$color]$i"
 	done
 }
 prompt_function () {
