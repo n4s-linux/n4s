@@ -15,7 +15,8 @@ Vores vision er at det skal være simpelt og effektivt at lave din bogføring, m
 Med n4s har du fuld kontrol over dine egne data.
 
 ### Hastighed 
-n4s er hurtigere end de fleste andre regnskabssystemer på markedet.
+n4s er [hurtigere](https://drive.google.com/file/d/1D7PW7Te92-4RvlXTPedoDU3QIuC-bMNp/view?usp=sharing) end de fleste andre regnskabssystemer på markedet.
+
 
 ### Mulighed for automatisk konsolidering og allokering mellem datterselskaber 
 n4s kan nemt sættes op til automatisk at konsolidere dine regnskaber herunder:
