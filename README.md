@@ -100,6 +100,7 @@ Det er vigtigt at bemærke, at selvom n4s er baseret på en terminal, må man ik
 # Kan køres på en hvilket som helst operativsystem uden installation
 N4S kan køres fra en central server og du kan forbinde med Windows Terminalen, OS X terminal Applikationen eller lign.
 Eksempler på remote kørsel fra Windows 11
+![Demo1 kontering af bilag](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/demo1.gif 'n4s demo')](https://drive.google.com/file/d/1D7PW7Te92-4RvlXTPedoDU3QIuC-bMNp/view?usp=sharing)
 ![Win11 Screenshot2 n4s dobbelt bogholderi](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_2.png?raw=true)
 ![Win11 Screenshot3 n4s momsregnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_3.png?raw=true)
 ![Win11 Screenshot4 n4s regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_4.png?raw=true)
@@ -134,7 +135,7 @@ Så hvorfor vente? Start din rejse mod økonomisk succes i dag med N4S. Lad ikke
 
 Vil du gerne se hvordan systemet betjenes i det daglige ?
 
-[Video Tutorial / Demonstration - hvordan konteres et simpelt regnskab i n4s](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/view?usp=sharing)
+[Video Tutorial / Demonstration - hvordan konteres et FULDT simpelt regnskab i n4s](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/view?usp=sharing)
 
 
 # Eksempel på rapportering
