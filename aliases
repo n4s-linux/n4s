@@ -526,12 +526,17 @@ function update_title {
 export TMUX_PANE_TITLE="$1"
  printf "\033]2;%s\033\\" "${1:-$TMUX_PANE_TITLE}"; }
 # it is done here
-
+function statusaccount() {
+	ledger -f $tpath/.statusline.ledger b --no-total Aktiver:Likvider: --flat --balance-format="%(account) %(total)\n" 2>/dev/null|sed 's/Aktiver:Likvider://g'|while read i
+	do echo -n " - $i"
+	done
+}
 prompt_function () {
 cmd=$(fc -ln -0)
 #env=$(getenv|sed 's/LEDGER_//g')
 bn=$(basename "$tpath");
-update_title "#[bg=yellow]$cmd #[bg=blue]$LEDGER_BEGIN - $LEDGER_END"
+status=$(statusaccount)
+update_title "#[bg=yellow]$cmd #[bg=blue]$LEDGER_BEGIN - $LEDGER_END $status"
 env=
 if [ "$tpath" != "" ]; then
 	showpath="#[fg=black,bg=white]$(basename "$tpath")"
@@ -598,6 +603,7 @@ alias eu="php /svn/svnroot/Applications/key.php entry bilag"
 unalias l 2>/dev/null #ubuntu default alias
 function l() {
 	LEDGER_CACHE=$LEDGER_CACHE php /svn/svnroot/Applications/key.php ledger $@
+	ledger -f $tpath/curl print Aktiver:Likvider: > $tpath/.statusline.ledger
 	cat "$tpath/notes" 2>/dev/null
 }
 function lll() {
