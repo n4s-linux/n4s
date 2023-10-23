@@ -44,38 +44,6 @@ N4S er dog mere end blot et regnskabssystem; det er en kraftfuld allieret på di
 💼 *Dine Data, Din Kontrol*: En af de mest overbevisende funktioner ved N4S er, at du har fuld kontrol over dine data. Du hoster det på din egen server, hvilket betyder, at dine oplysninger altid er i dine hænder. Og det bedste af det hele? Du kan gøre det for så lidt som 5 USD om måneden på Linode!
 
 
-n4s - dit frie regnskabsprogram
-=================
-
-* [TLDR - Lad mig downloade din OVA](#tldr---lad-mig-downloade-din-ova)
-* [Problemfri Eksport af Dine Data](#problemfri-eksport-af-dine-data)
-* [Fordele ved Dataeksport](#fordele-ved-dataeksport)
-* [Demo Video - Kontering af simpelt regnskab?](#demo-video---kontering-af-simpelt-regnskab)
-* [Import / Export](#import--export)
-* [Eksempel på rapportering](#eksempel-på-rapportering)
-* [Support](#support)
-* [n4s - Open Source / Fri Software GNU/Linux baseret dobbelt bogholderi og ERP](#n4s---open-source--fri-software-gnulinux-baseret-dobbelt-bogholderi-og-erp)
-* [Krav til installation](#krav-til-installation)
-* [Guide til Import og Kørsel af en OVA-fil i VirtualBox](#guide-til-import-og-kørsel-af-en-ova-fil-i-virtualbox)
-   * [Forudsætninger](#forudsætninger)
-   * [Trin](#trin)
-* [Brug](#brug)
-   * [Start maskinen](#start-maskinen)
-   * [Start et regnskab](#start-et-regnskab)
-   * [Din første transaktion](#din-første-transaktion)
-   * [Hovedmenu](#hovedmenu)
-   * [Regnskabsmenu (virker kun når du har åbnet et regnskab)](#regnskabsmenu-virker-kun-når-du-har-åbnet-et-regnskab)
-   * [Søg en transaktion frem](#søg-en-transaktion-frem)
-   * [Hvordan eksporterer man rapporteringen - saldobalancer og kontokort PDF](#hvordan-eksporterer-man-rapporteringen---saldobalancer-og-kontokort-pdf)
-   * [CSV Export](#csv-export)
-   * [Genvejstaster terminal multiplexer - tmux - terminalvinduehåndteringen](#genvejstaster-terminal-multiplexer---tmux---terminalvinduehåndteringen)
-      * [Navigering i vinduer](#navigering-i-vinduer)
-   * [Redigering af Transaktioner med Vim](#redigering-af-transaktioner-med-vim)
-   * [Opdatering af N4S](#opdatering-af-n4s)
-* [Kom hurtigt i gang](#kom-hurtigt-i-gang)
-
-<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-
 # Savner du de gode gamle DOS-dage uden så meget gas eller dyre abonnementer ?
 I dag, hvor teknologi og computere konstant udvikler sig 🚀, kan det være fristende at kigge tilbage på de gode gamle dage i 1990'erne 🕰️, da DOS-operativsystemet og de tidlige regnskabssystemer var dominerende 💾. Der er noget nostalgisk ved den tid, hvor computere og software fungerede på en enklere måde, og brugeroplevelsen havde sine egne charmerende kvaliteter.
 
@@ -240,119 +208,12 @@ Inden du begynder, skal du sørge for at have følgende:
    - Vælg den virtuelle maskine fra listen.
    - Klik på knappen "Start" i VirtualBox-manageren.
 
-# Brug
-## Start maskinen
+## OVA solution koder
 **Logins til den virtuelle maskine**
 * Brugernavn: n4s
 * Password bruger: n4s
 * Diskkrypteringskode: n4s
 * Root kode: n4s
-
-## Start et regnskab
-* Tryk F1 (menu)
-* Vælg Regnskab
-* Vælg Åbn Regnskab
-* Vælg NY
-* Skriv navnet på dit regnskab
-
-## Din første transaktion
-* Frembring regnskabsmenu (Alt-M)
-* Vælg Opret postering
-* Indtast dato [ENTER] - dato indtastet i formatet YYYY-mm-dd f.eks. 2022-01-31
-* Indtast bilagsnummer / reference [ENTER]
-* Indtast transaktionstekst [ENTER]
-* Vælg konto fra listen - skriv hvad du vil søge efter f.eks. telefon hvor du kan vælge "Udgifter:Administration:Telefoni" [ENTER]
-* Tast beløb (debet/kredit) [ENTER]
-* Vælg funktion (momskode - hvis der ikke er momsfradrag vælg Ingen) [ENTER]
-* Vælg modkonto f.eks. skriv bank og vælg "Aktiver:Likvider:Bank"
-* Tryk [ENTER] for at genbruge den omvendte balancesum fra den tidligere transaktion 
-* Vælg Ingen funktion (momskode) på modkonto [ENTER]
-* Såfremt du har lavet en fejl eller ønsker at kontrollere transaktionen kan du nu trykke 'e' for at redigere den i vim eller enter for at fortsætte.
-
-## Hovedmenu
-Hovedmenu tilgås på F1
-
-## Regnskabsmenu (virker kun når du har åbnet et regnskab)
-Regnskabsmenu med diverse funktioner kan tilgås med Alt-m når du har åbnet et regnskab
-
-## Søg en transaktion frem
-* Søg med 's' Enter for at søge i den aktuelle periode (ændres med Alt-p)
-* Søg med 'ss' Enter for at søge i alle perioder
-
-## Hvordan eksporterer man rapporteringen - saldobalancer og kontokort PDF
-Indstil først periode med Alt-p som du ønsker at rapportere for
-skriv herefter 'html' Enter
-Den vil spørge efter firmanavn som skal indtastes første gang - det er til tekst på forsiden af rapporten - der kan evt. medtages andre noter
-Herefter vil saldobalance og kontokort ligger i tmp-mappen som kan åbne i filmanageren i venstre side
-
-## CSV Export
-
-Hvis du vil eksportere dine transaktioner til en CSV-fil i Linux-terminalen, kan du følge disse trin:
-
-1. Åbn en terminal ved at trykke på `Ctrl + Alt + T`.
-
-2. Skriv følgende kommando og tryk på `Enter`:
-
-```bash
-l csv > ~/tmp/[ønsket_filnavn].csv
-```
-
-
-Herefter vil du kunne finde filen i mappen tmp som er bogmærket i filmanageren der kan åbnes i venstre side af skærmen
-
-## Genvejstaster terminal multiplexer - tmux - terminalvinduehåndteringen
-### Navigering i vinduer
-
-| Tastaturgenvej    | Handling                    |
-| ----------------- | ----------------------------|
-| Alt+1             | Skift til vindue 1          |
-| Alt+2             | Skift til vindue 2          |
-| Alt+3             | Skift til vindue 3          |
-| Alt+4             | Skift til vindue 4          |
-| Alt+5             | Skift til vindue 5          |
-| Alt+6             | Skift til vindue 6          |
-| Alt+7             | Skift til vindue 7          |
-| Alt+8             | Skift til vindue 8          |
-| Alt+9             | Skift til vindue 9          |
-| Alt+Venstre Pil   | Skift til foregående vindue |
-| Alt+Højre Pil     | Skift til næste vindue      |
-
-## Redigering af Transaktioner med Vim
-
-I vores arbejde med at håndtere transaktioner anvender vi den kraftfulde editor Vim. Vim er kendt som en af de mest effektive og fleksible tekstredigeringsværktøjer, der findes. Her er nogle grundlæggende instruktioner, der hjælper dig med at navigere og redigere tekst i Vim:
-
-1. **Navigering i Normal Tilstand:**
-   - Brug piletasterne eller `h`, `j`, `k`, `l` til at navigere op, ned, til venstre eller højre. (du kan også bruge piletasterne indtil du har lært systemet bedre at kende)
-   - `w` og `b` bevæger dig henholdsvis fremad og bagud fra ord til ord.
-   - `0` flytter markøren til linjens start, og `$` flytter den til linjens slutning.
-
-2. **Skift til Indsættelsestilstand:**
-   - Brug `å` for at tømme det aktuelt markerede felt (tilpasset tastaturgenvej).
-   - Tryk `i` for at indsætte tekst før markøren.
-   - Tryk `a` for at indsætte tekst efter markøren.
-   - Tryk `I` for at indsætte tekst i linjens start.
-   - Tryk `A` for at indsætte tekst i linjens slutning.
-
-3. **Gem og Luk Fil:**
-   - Brug `W` for at gemme filen (tilpasset tastaturgenvej).
-   - Brug `Q` for at lukke uden at gemme (tilpasset tastaturgenvej)
-
-4. **Undo og Redo:**
-   - Tryk `u` for at fortryde den seneste ændring.
-   - Tryk `Ctrl` + `r` for at fortryde en fortrydelse (redo).
-
-5. **Indsæt Klippebordets Indhold:**
-Husk at når du paster i en terminal skal du også holde shift nede (Ctrl-Shift-v)
-
-6. **Søg og Erstat:**
-   - Tryk `/` for at starte en søgning. Søg f.eks. efter Fejlkonto ved at skrive /Fej [Enter]
-   - Tryk `n` for at finde næste forekomst af søgningen.
-   - Tryk `N` for at finde forrige forekomst.
-   - Brug `:s/søgning/erstatning/g` for at erstatte tekst i hele filen.
-
-Vim er ikke kun en teksteditor, det er en kraftfuld arbejdshest, der giver dig fuld kontrol over dine transaktioner og tekstredigering. Det er kendt for sin effektivitet og fleksibilitet, og det er en af de bedste måder at håndtere tekstredigering på.
-
-Så kom i gang med at bruge Vim til at redigere transaktioner og oplev, hvorfor det er et uundværligt værktøj for tekstredigering og datahåndtering.
 
 ## Opdatering af N4S
 Opdater din lokale kopi af n4s ved at trække ændringer fra GitHub ved hjælp af følgende kommando:
@@ -381,9 +242,6 @@ Jeg vil vise dig hvordan du:
 samt besvare evt. spørgsmål du måtte have.
 
 Det anbefales at du har et konkret regnskab til til bogføring som vi kan arbejde med.
-
-
-
 
 
 # N4s er ikke bare et regnskabsystem !!!
