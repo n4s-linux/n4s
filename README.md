@@ -10,6 +10,24 @@ Hvadenten du har en helt ny virksomhed, en forening eller bare dit husholdsnings
 
 Vores vision er at det skal være simpelt og effektivt at lave din bogføring, momsregnskab, husholdsningsregnskab og andet.
 
+## Key selling Points
+* Herre i eget hus *
+Med n4s har du fuld kontrol over dine egne data.
+
+* Hastighed * 
+n4s er hurtigere end de fleste andre regnskabssystemer på markedet.
+
+* Mulighed for automatisk konsolidering og allokering mellem datterselskaber *
+n4s kan nemt sættes op til automatisk at konsolidere dine regnskaber herunder:
+* Automatisk overførsel af resultat
+* Automatisk afstemning af mellemregningskonti
+
+* Automatisk kontering udfra egne definerede regler * 
+i n4s kan du selv definere regler for hvordan dine nye posteringer skal konteres.
+Dvs du kan slippe for manuel kontering igen og igen af samme type poster
+f.eks. Hvis Tekst = 'Gebyr' SÅ Konto = 'Udgifter:Administration:Gebyrer'
+
+
 # N4S - en fri og gratis regnskabs- og ERP-løsning til små virksomheder og private
 
 N4S er et Frit og Gratis regnskabsprogram til Cloud eller lokal kørsel
