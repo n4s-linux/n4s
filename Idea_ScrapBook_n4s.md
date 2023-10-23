@@ -1,3 +1,11 @@
+# Styr på skat #n4s
+	2023-10-22T17:40 joo	ide konto til styr på skat 
+	2023-10-22T19:27 joo	#ide praksisændring: hver år omkonteres det indberettede resultat fra Egenkapital:Overført Resultat til Egenkapital:Indberettet resultat - således vil evt. differencer fremkomme som residualpost
+
+# N4S automatisk konsolidering månedsvis
+	2023-10-22T13:37 joo	#ide lave konsolidsering månedsvis i autoscripts, så der kommer historiske poster i moderselskab
+	2023-10-22T13:53 joo	#observation det styres 999_Periodresult.bash og følger dens metode
+
 # Tmux menuer - visning på flere klienter #n4s
 	2023-10-21T14:59 joo	#observation tmux-menus bliver kun vist på den aktive klient, ikke på evt. andre attached klienter #spørgirc
 
@@ -15,11 +23,20 @@
 	2023-10-16T13:45 joo	#observation pandoc er meget langsomt
 	2023-10-16T13:45 joo	#ide min egen markdown til html rapport - bør også lave vim style highlighting
 
+# Frogmouth Markdown #n4s #stuff
+	2023-10-13T21:14 joo	#observation frogmouth er rigtig god til at vise markdown filer i terminalen
+	2023-10-13T21:14 joo	#baseret  @ #textualize
+
 # N4S tmp outputmappe
 	2023-10-13T10:10 joo	lav ny mappe til output fremfor tmp som har mange tmpfiler
 
 # Borgbackup add remotes #n4s
 	2023-10-13T08:25 joo	#ide #n4s #borgbackup sync() add remotes
+
+# Wallacepos #n4s
+	2023-10-12T21:27 joo	#ide pos til n4s
+	2023-10-12T21:27 joo	forked #wallacepos https://github.com/micwallace/wallacepos
+	2023-10-22T19:32 joo	kan det integreres i n4s ?
 
 # Ny bogføringslov - og overholdelse af gl. bogføringslov #n4s
 ## Standardkontoplan
@@ -78,8 +95,16 @@
 	2023-10-04T10:27 joo	har opdateret html funktion med bedre htmlbaserede saldobalancer med noter, og bedre kontokort
 	2023-10-11T09:58 joo	#ide lav også traditionel opstilling baseret på erst kontoplan - kræver der bliver mappet og rapporteringen sker udfra en flad nummerbaseret struktur
 
+# Vitouch latex support #n4s
+	2023-06-20T18:17 joo	#ide detekter om det er en markdown eller latex fil og skift pandoc kommando derefter
+
 # N4s regnskabsår
 	2023-06-07T13:52 joo	#ide for hver årsafslutning skal der oprettes et regnskabsår som man let kan skifte til - skal kunne navngives som man ønsker
+
+# Hvidvask markdown section #n4s
+	2023-05-29T16:19 joo	#ide en Hvidvask sektion på hver kunde som jeg løbende kan få opdateret
+	2023-07-21T21:09 joo	har jeg fået gjort på mange
+	2023-09-14T16:03 joo	#update har brugt det, men er mindre vigtigt nu hvor jeg er under nedlukning
 
 # Mini n4s pc
 	2023-04-26T16:06 joo	#ide lille bitte skærm og mulighed for bluetooth tastatur #raspberry pi til n4s klient/server
@@ -89,8 +114,26 @@
 	2023-10-04T10:28 joo	kan spare 500kr/md til #vultr hvis jeg får sat min egen server op, men har nok stadig brug for en #jumpserver
 	2023-10-11T09:59 joo	#ide bedre at bruge en rigtig server
 
+# Fremtidsregnskab #n4s
+	2023-04-16T17:09 joo	#ide i stedet for budgetter, lav regnskab x år ud i fremtiden baseret på budgettal
+	2023-04-17T16:51 joo	#udfordring det er svært at beregne budget på residualposter, det vil kræve man holder styr på alle tallene
+	2023-04-18T07:04 joo	#ide kan man tage udgangspunkt i den nuværende ledger? jeg synes den bliver ved at lægge sig selv oveni - altså at resultatet bliver fordoblet for hver kørsel
+	2023-04-26T17:04 joo	#ide hver markdown sektion bør tidsestimeres - spørg brugeren  undervejs i processen efter #vitouch
+	2023-05-02T12:30 joo	#every.php hvis man skriver #every som comment bliver det automatisk budgetteret fremover
+	2023-07-21T21:19 joo	#godide har et fungerende newbudget
+	2023-07-21T21:19 joo	#ide simpel matrix editor til config filer - første config fil er bare et array budgetdata
+
 # Tvivlsomme poster i n4s - hashtags udvælger til rapporteirng
         2023-02-28T21:00 joo    #ide Hashtags medtages i specs fx ulovligt aktionærlån mangler bilag , forkert modtager ml58, tvivlsomt fradrag (#rt 10927)
+
+# Csv til markdown #n4s
+	2023-03-22T16:00 joo	#ide indtastning af CSV data konverteres automatisk til markdown så de kan vises nice i rapporter https://github.com/lzakharov/csv2md
+	2023-03-31T21:03 joo	har fået gjort det her i nogle rapporter, så der er fremskridt
+	2023-07-21T21:38 joo	#godide
+
+# Eksport af data til andre regnskabssystemer #n4s
+	2023-03-22T08:44 joo	#ide ved en simpel mapning til standardkontoplan burde man nemt kunne spytte alle poster ud for en periode til e-conomic, uniconta, dinero etc
+	2023-10-22T19:33 joo	lige nu kan man eksportere og manuelt mappe konti
 
 # Afstemning ved et ekstra lag poster #n4s
 	2023-03-18T15:13 joo	#ide #n4s oprettelse af modpost til bank så den kan blive afstemt - modposter til alt, således at man skal kunne trække en balance på 0 når alt er udlignet
@@ -115,6 +158,16 @@
 	2023-03-09T20:12 joo	#ide #stuff #n4s allerede åbne journaler skal søge efter en fane ved det navn, om ikke andet i samme session, men evt. på alle sessioner, i stedet for at sige den allerede er åben - foreløbig af samme bruger
 	
 
+# Vim tabbing #n4s
+        2023-03-01T19:00 joo    #ide tabbe mellem felter i vim (#rt 10957)
+	2023-10-22T19:33 joo	bedre løsning tui forms - evt. outsourcing med forms library
+
+# Markdowngrep #n4s
+	2023-01-31T10:24 joo	#ide #markdowngrep hvis man sammenkæder markdown headings  med underliggende poster kan man bedre greppe og finde relevante informationer 2023-02-01T12:07 joo	#hjælpmigathuske
+	2023-02-01T12:50 joo	har lavet det, men er i tvivl om hvordan funktionen skal implementeres - markdowngrepexpand.php
+	2023-02-01T13:50 joo	skal implementeres i #diffile / #vitouch
+	2023-02-05T18:39 joo	#ide kan deles på nettet, der må også være andre der kunne have glæde af dette
+
 # Search - bulk update #n4s
 	2023-01-30T10:12 joo	#ide #n4s search funtion - also add bulk update
 
@@ -127,14 +180,29 @@
 # n4s - entry after unaccounted aliases
 	2022-12-21T15:39 joo	når man skriver efter et nyt unmapped aliases, så virker det ikke
 
+# Csv import preview #n4s
+	2022-12-06T22:34 joo	#ide kunne man lave et preview på csv import
+	2023-01-27T21:52 joo	det er ikke helt ligetil
+
 # n4s største udfordring er hurtig data storage
 
 # Blockchain n4s
 	2022-11-20T08:09 joo	#ide n4s på blockchain
 	2023-01-27T22:07 joo	#ide hver fil / transaktion puttes ind i blokken og markeres som "brugt" med reference til punktet i blockchainen - hver ny blok har alle de tidligere blokkes checksum
 
+# Tmux FORMATS section #n4s
+	2022-10-10T17:04 joo	#ide tmux FORMATS sektionen i mansiden kan bruges til at styre pane titler individuelt
+
 # Frappe #n4s
 	2022-09-20T15:32 joo	#ide brug erpnext sammen med n4s samt https://github.com/frappe/books/tree/master/reports
+
+# Ledger query kommando #n4s
+	2022-08-30T18:06	#ide query kommando er ret kraftig, skal jeg gøre mere brug af
+	2023-10-22T19:35 joo	kan bruges til at filtrere transaktioner
+
+# GDPR bilag #n4s
+	2022-08-25T06:18	#ide gdpr bilagsopbevaring - skal de være låst inde, eller kun personfølsomme oplysninger ?
+	2023-10-22T19:35 joo	sletning efter 5 år kan automatiseres med find -mtime
 
 # Undermapper / underregnskaber #n4s
 	2022-07-30T12:51	#ide undermappe #n4s et helt tpath under et tpath - måske i mange niveauer ? eller er 2 nok ? #arbitrarylimits #aginstgnu #hardtoimplement på flere niveauer
@@ -189,6 +257,40 @@
 # Cygwin #n4s
 	2023-07-28T11:29 joo	#cygwin kan n4s køre i det ? installeret på #kamatera #scrabble
 	2023-07-28T18:04 joo	ser ud til at køre fint, undtagen x11 hvor keyboard ikke virker
+
+# PDF regnskab #n4s
+	2023-07-11T15:41 joo	#ide put krypteret tgz fil med hele regnskabet inde i pdf filen - evt. flere sæt med forskellige detaljenivauer
+	2023-10-22T19:36 joo	hele regnskabet kan også krypteres med luks og indlejres i pdf, både en version med fulde detaljer, og en version hvor posteringer er anonymiserede
+
+# Nye transaktioner - entry - kig efter dublikater #n4s
+	2023-05-07T13:29 joo	#ide hvis man laver en ny transaktion bør den søge efter duplikater
+
+# Regnskabsår som skyggeregnskab #n4s
+	2023-05-07T11:35 joo	#ide forbedre regnskabsår ved at separere dem i hvert sit skyggeregnskab - så kan man heller ikke ændre ved en fejl i et eksiterende
+	2023-10-22T19:37 joo	lige nu opereres der ikke med regnskabsår, men åbningsposter dannes efter behov
+
+# Vim Menuer fremfor genvejstaster #n4s
+	2023-05-03T08:47 joo	#ide menuer til vim da jeg er ved at løbe tør for taster og de er svære at huske for andre end mig selv
+	2023-05-03T17:40 joo	#vim har nogle popup menuer som kunne være meget nytige - men bør lave lidt research på hvad er den bedste #vimpopup
+
+# Ledger split-window og popup output med autoupdate #n4s
+	2023-04-28T08:49 joo	#ide har brug for at når key.phps fork som opdaterer data i baggrunden er færdig og overskriver filen loades den bare uden videre #erdetfarligt ? hvad kan der ske #worstcase hvis jeg implementerer dette ?
+
+ # Stuff - F6 virker ikke - opslag
+	2023-04-27T08:57 joo	#observation kan ikke slå #månedsløn eller andre tags op med F6
+	2023-04-28T08:39 joo	lige nu er det way over my head hvordan grepsearchtag fungerer
+
+# Hurtig indtastning af gentagne linier #n4s
+	2023-04-27T07:30 joo	#ide gentag en linie - søg i alle hashtags efter ofte / seneste brugte - erstat kun timestamp i ny post
+	
+# Vitouch opslag af tags - afbryd hvis ikke valg noget #n4s
+	2023-04-26T17:27 joo	#ide hvis #ctrl-c er trykket skal den ikke fortsætte, men afbryde helt - når man trykker F2 for at vælge en journal med #vitouch
+
+# Vim 256 color syntax #n4s
+	2023-04-26T09:59 joo	#ide kan vim highlighte med 256 farver ? afventer #irc
+	2023-04-26T10:25 joo	understøtter også truecolor, men er nok lidt overkill
+	2023-04-26T10:26 joo	for 256 farver skal der blot henvises til hexkoder
+	2023-10-22T19:37 joo	har 256 farver, men skal have specificeret farver nærmere, lige nu afhænger de af brugerens tema
 
 # Kryptering af filer og historik #n4s
         2023-02-08T09:31 joo    #ide få krypteret historik således at både journal og historik fil er krypteret og først åbnes op når man åbner den #n4s #sikkerhed #stuff                                                                                                                                                                    2023-02-13T09:09 joo    evt. kunne hver journal være sit eget #luksfs filsystem der låses op, - men kan man bruge fingeraftryk eller andet ?
@@ -331,12 +433,21 @@
 	2023-04-08T10:37 joo	#ide er der en trigger når der kun er et vindue tilbage så man kan starte et nyt ?
 	2023-04-11T10:13 joo	spurgt på irc om der er en trigger til tmux sidste vindue, afventer respons
 
+# Vend fortegn #n4s
+	2023-04-14T08:50 joo	#ide vend fortegn på poster - først og fremmest ved import af csv - men også vend fortegn funktion iøvrigt
+
 # Ledger filer konverteres til json #n4s
 	2023-04-10T19:46 joo	#ide alle ledger filer skal konverteres til json
+
+# Kontrol af regnskabsår primoposter - om den har ændret sig #n4s
+        2023-02-15T11:02 joo    #ide #n4s automatisk kontrol af primoposter 
+	2023-10-20T02:50 joo	umiddelbart irrelevant med den automatiske årsafslutningskørsel
+	2023-10-22T19:38 joo	lige nu dannes primoposter automatisk så er ikke relevant 
 
 # Hastighed n4s
         2023-02-16T16:06 joo    #observation #n4s alvorlige hastighedsproblemer - kan først og fremmest testes på olsensrevision	2023-03-06T08:06 joo    både cas og joo observerede særligt hastighedsproblemer på texas samt olsensrevision	2023-03-15T17:49 joo    lavede det så hver process laver en fork og arbejder med den tidligere fremsendte fil	2023-03-16T09:37 joo    ser ud til at have hjulpet, er ret hurtigt nu 
 	2023-05-03T20:50 joo	#fork i key.php ledger fungerer ikke optimalt, men er vidst hurtig nok - hvordan kan vi genskrive noget i terminalen ?
+	2023-10-22T19:39 joo	#ide få genimplementeret en fork process så den kan danne poster i baggrunden
 
 # Reconcile alternativ n4s
         2023-03-19T16:57 joo    #ide #n4s kunne man putte periode på hver post i en afstemning af a-skat f.eks. A-skat betaling for juli som betales i august sættes til Passiver:A-skat:Juli
@@ -348,11 +459,23 @@
 # n4s Centralisering postgresql
         2023-03-16T23:00 joo    #ide decentralisering ved at kører lokalt. forbindelse via postgresql server (#rt 11313) 2023-03-19T16:54 joo   #ide kunne man få alexandr til at give sit perspektiv på løsningen om den er god ? Automatisk allokering Olsens Revision / 0lsen                      2023-03-21T13:10 joo    #eftertanke tror jeg lige prøver #resilio og evaluerer min strategi
 
+# Ledger output som split-windows #ledger #n4s
+        2023-03-17T15:00 joo    2023-03-17T15:00 joo    Ide loutpit i split window frem for popup (#rt 11353)
+        2023-03-20T08:40 joo    er implementeret, man kan endda skifte mellem modes på alt-q
+
+# Min egen ledger med serienumre på baggrund af ledgeren, kunne gerne være nummerisk #n4s
+        2023-03-21T08:38 joo    #ide #n4s min egen ledger med serienumre på baggrund af ledgeren, kunne gerne være nummerisk
+        2023-03-21T09:23 joo    man kunne trække alle ledger transaktioner ud og beregne deres md5sum som unik identifier, og give den et id i en blockchain eller lign
+        2023-03-21T13:08 joo    det mest pålidelige udtræk er i CSV
+        2023-03-30T11:00 joo    kunne man trække uid baseret på CSV og koble den på blockchain på md5 - hvis transaktionen bliver ændret vil dens hash ikke længere passe og så skal den igen uploades i blockchainen, evt erstatte den gamle
+
+# Kontrol af store poster #ledger #n4s
+        2023-03-22T07:54 joo    #ide alle store poster udtages til kontrol - skal hakkes af, - kan gøres med en genvejstast der sætter et tjekmark - kunne evt. gælde på alle regnskaber så der scannes for ikke godkendte store poster
+	2023-10-20T02:51 joo	har lavet review script, virker fint
+
 # Eksport af data til andre regnskabssystemer #n4s
-        2023-03-22T08:44 joo    #ide ved en simpel mapning til standardkontoplan burde man nemt kunne spytte alle poster ud for en periode til e-conomic, uniconta, dinero etc
-	2023-10-20T02:51 joo	lige nu kan 'l csv' fint klare ærterne, men kræver manuel mapning
-
-
+	2023-03-22T08:44 joo	#ide ved en simpel mapning til standardkontoplan burde man nemt kunne spytte alle poster ud for en periode til e-conomic, uniconta, dinero etc
+	2023-10-22T19:33 joo	lige nu kan man eksportere og manuelt mappe konti
 
 # Justering af balance - ncurses #n4s
         2023-03-22T15:13 joo    #ide #n4s justering af balance - oprettes som ny json-transaktion - hver række i balancen har tre kolonner: Bogført værdi, Justering, Ny saldo. Man skal kunne taste i Justering samt ny saldo, som på #tastselverhverv ved momsreguleringer. Ny transaktion åbnes efterfølgende i vi
@@ -441,4 +564,75 @@
 
 # n4s - transaktions historik i separat fil
 	2023-07-18T12:00 joo	Ide trans history separate file (#rt 15081) #scrabble
+
+# Budget i n4s - gammel budgetsystem
+Der kan oprettes automatiske periodiske transaktioner på kontoniveau
+Periodiske transaktioner fremskrives automatisk (indtil videre 24 måneder frem fra nu, men kan ændres)
+Derfor er det p.t. en forudsætning for maksimalt udbytte at der er tale om et rullende regnskab med forholdsvis stabil drift.
+
+## Hvordan laves et budget
+> budget
+
+Herefter vil kontoplanen blive vist - og hver måneds budget, - der er også en kolonne til alle måneder
+Vælg konto, vælg herefter periode og indtast værdi for at ændre. Afbryd med Ctrl-C
+
+## Udvikling TODO
+### Validering af tal
+	2023-05-04T21:14 joo	#ide tal skal valideres som floatval for at sikre imod problemer i ledger-output
+
+### Vis total i bunden
+	2023-05-04T21:12 joo	#ide vis totaler i bunden
+
+### Tillad modkonto
+	2023-05-04T21:12 joo	#ide tillad modkonto
+
+### Tillad specifikation på detaljegrad på kontoniveau der automatisk summer op
+	2023-05-04T21:12 joo	#ide specifikation af budgettal kan være en TSV fil
+	2023-05-10T11:56 joo	lavet udkast som er næsten funktionelt
+
+### Filtre skjule/vise tomme konti
+	2023-05-04T21:13 joo	#ide "Skjul/vis Tomme" skal skjule/vise de tomme rækker
+
+
+### Manuelle transaktioner
+	2023-05-04T21:15 joo	#ide optimalt vil manuelle transaktioner henvise til et underliggende #skyggeregnskab - men #skyggeregnskab er ikke implementeret endnu, og vurderes ret komplekst
+	2023-05-04T21:15 joo	#ide manuel ledger-fil som kan redigeres via budget (Vælg: Manuel) - skal åbne i vi
+	2023-05-04T21:16 joo	#ide oprettelse af transaktioner guidet af fzf, som så bliver appendet til ledger-fil
+# N4S Windows version udkast
+Subject: Software Distribution Project - Requirements and Collaboration
+
+# Regarding Windows Version of n4s
+
+I have developed an ERP/Accounting system for my local market, and it is currently running on GNU/Linux. 
+To expand its reach to the Windows user base, I am looking for assistance in creating a standalone application with an exe-installer that incorporates the entire Linux environment. 
+Below are the requirements for the project:
+
+1. Virtual Machine Conversion:
+   - Convert the Linux Virtual Machine (VM) into a standalone application that runs on Windows.
+   - Ensure that the converted application includes all the necessary components for it to function seamlessly, such as working network, graphics, etc.
+
+2. User-Friendly Installer:
+   - Create an exe-installer that simplifies the installation process for Windows users.
+   - The installer should automatically:
+      a. Create a folder "C:\n4s" to house the necessary files.
+      b. Set up "C:\n4s" as a shared folder accessible to the virtual appliance.
+      c. Copy the VM, its configuration, and the required runtime files into the "C:\n4s" folder.
+      d. Create a desktop shortcut to launch the virtual machine.
+
+3. Application Features:
+   - The application and shortcut must have a custom icon, making it visually distinct and easily recognizable.
+   - Implement an autosave feature that regularly saves user data within the VM.
+   - Include an idle suspension mechanism, which automatically suspends the application if left idle for more than an hour or upon system shutdown.
+
+Optional Solutions:
+   - Consider various deployment options, such as Docker, Windows Linux Subsystem, and others, to provide flexibility to users with different preferences.
+Please feel free to reach out to me at your earliest convenience. You can contact me directly at +45 25864573 or add me on Whatsapp.
+
+Thank you for considering this opportunity, and I look forward to the possibility of working together on this exciting project.
+
+# n4s Transaktion historik
+	2023-07-18T12:00 joo	Ide trans history separate file (#rt 15081) #scrabble
+
+# Sletning af journallinier forbydes #n4s
+	2023-07-25T17:00 joo    Ide fjern slet linje kun transponer til history eller evt devnull (#rt 15265)
 

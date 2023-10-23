@@ -1,3 +1,63 @@
+# Truecolors til journaler og vim
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/98c52f0c4f2d6eabb89053a88c452a9e0a55ef10)
+
+# Diverse
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/03d64b174eae2fab3c56b463750d56725ad2ef34)
+
+# Nyt periodresult script - simplificeret
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/1035dda6d52f09e34f549f8c50f60ec83d1375b7)
+
+# conduct
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/d111d530bd7e3293bfde70c0fc034acfd4f7025b)
+
+# Udkast til code of conduct (credit chatgpt)
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/3f73875e9233399daede155f1dd7f46352a00f21)
+
+# README
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/56147bbbf7731a820fdc92361fd0df45b56a466b)
+
+# README
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/4ea967e67235018120d8e4112bf61eb12e445607)
+
+# README
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/ca7ab26d05a8d0ecb21327b4bfe5c5ef1e1cdaae)
+
+# README
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/6f8627b1d3c3eb69eff4c6d0d5a39c3cf3e47970)
+
+# README
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/b91fe3b399af9d656eb77f1bbb2420fdfc6d7e46)
+
+# README
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/2090322705d39d1c1aa4652aedbc3578da4652ca)
+
+# ændring af readme
+* Opdateret 2023-10-22
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/5ded9b49fa31853b07a3cec457863cf724fc570a)
+
 # Update issue templates
 * Opdateret 2023-10-22
 
