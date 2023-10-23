@@ -8,19 +8,28 @@ Det skal også kunne køre på den billigste cloudserver der findes og betjenes 
 Her er ingen bindinger eller betalingskort nødvendig. 
 N4S er frit og opensource regnskabsystem, og derved gratis at bruge nu og for altid.
 
-Når du bogfører i N4S bliver dit regnskab til en leg.
+Man kan næsten med sikkerhed sige at n4s er et af de billigste regnskabsprogrammer på markedet.
+Det koster kun den tid du skal investere dig i at arbejde på en mere effektiv måde.
+Og evt. hosting service som fås ned til < 50kr/måneden hvis du ønsker at dit regnskab ligger i skyen og kan tilgås fra hele verden. For den pris får du nærmest ubegrænsede antal transaktioner, ubegrænsede antal regnskaber, ubegrænsede snapshots og backups af dine regnskaber etc. Du betaler kun for den plads du bruget.
+Det kan oplyses at et meget omfangsrigt regnskab med tusindvis af posteringer fylder få MB på en server eller maskine.
+
+
+Du kan komme i gang ved at downloade og prøve vores OVA udgave på din maskine, helt gratis.
+
+Når du bogfører i N4S bliver dit regnskab til en leg. Når du først har fået det lært... !
 
 Hvadenten du har en helt ny virksomhed, en forening eller bare dit husholdsningsregnskab, har du her et regnskabsprogram som kan undstøtte dine aktiviteter fra nu af og altid.
 
 Vores vision er at det skal være simpelt og effektivt at lave din bogføring, momsregnskab, husholdsningsregnskab og andet.
+
+Dine data kan let eksporteres til et åbent format, som du kan tage med dig senere til et hvilket som helst andet system.
 
 ## Key selling Points
 ### Herre i eget hus
 Med n4s har du fuld kontrol over dine egne data.
 
 ### Hastighed 
-n4s er [hurtigere](https://drive.google.com/file/d/1D7PW7Te92-4RvlXTPedoDU3QIuC-bMNp/view?usp=sharing) end de fleste andre regnskabssystemer på markedet.
-
+n4s er hurtigere end andre systemer på markedet. De fleste operationer sker på et splitsekund. Kun din processorkraft og harddisk/ram sætter grænsen for hvor hurtigt systemet afvikles, og for de fleste små regnskaber når du ikke at blinke før du får de data frem på skærmen du beder om.
 
 ### Mulighed for automatisk konsolidering og allokering mellem datterselskaber 
 n4s kan nemt sættes op til automatisk at konsolidere dine regnskaber herunder:
