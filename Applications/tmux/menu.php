@@ -116,9 +116,6 @@ else if ($argv[1] == "CRM" ) {
 }
 $cmd = 'tmux display-menu -T "#[align=middle fg=brown]n4s $bn" ';
 foreach ($menu as $key => $ar) {
-	error_reporting(0);
-	$key['cmd'] = trim($key['cmd']);
-	error_reporting(E_ALL);
 	$nice = str_pad($key,20);
 	$cmd .= "\"$nice\" $ar[key] \"$ar[cmd]\" ";
 }
