@@ -96,15 +96,6 @@ function vitouch() {
 	if [ "$jn" != "Ja" ]; then
 		print=no
 	fi
-	if [ "$print" == "yes" ]; then
-	jn=$(echo -e "Nej\nJa"|fzf --header="Skal vi fjerne færdige opgaver ?")
-	if [ "$jn" == "Ja" ]; then
-		grep -v "✔" $if > "$if.notdone"
-		grep "✔" $if|awk -F✔ '{print $1}'|awk -F '\t' '{$1=""}1'|cut -c 23- |sed 's/?//g' |sed 's/^ *//;s/ *$//'> "$if.done"
-	fi
-	fi
-	cp "$if.notdone" $if
-	rm "$if.notdone"
 	runpath="$1" php "$if" > "$if.parsed"
 	cp "$if.parsed" "$if"
 	rm "$if.parsed"
