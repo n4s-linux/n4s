@@ -41,6 +41,16 @@ i n4s kan du selv definere regler for hvordan dine nye posteringer skal konteres
 Dvs du kan slippe for manuel kontering igen og igen af samme type poster
 f.eks. Hvis Tekst = 'Gebyr' SÅ Konto = 'Udgifter:Administration:Gebyrer'
 
+### Sikret imod opkøb
+n4s står for Not 4 Sale - oversat 'ikke til salg'. Derfor er det sikret imod opkøb, således at systemet altid vil være frit.
+Du må gerne klone vores system og sælge det videre, men der under forudsætning at du respekterer brugernes grundlæggende rettigheder som bl.a. er:
+* Frihed til at køre programmet til et hvilket som helst formål
+* Frihed til at tilpasse programmet til dine behov
+* Frihed til at dele programmet
+
+... Betingelser som er nærmere beskrevet i softwarens licens som e GPL v3
+
+
 
 # N4S - en fri og gratis regnskabs- og ERP-løsning til små virksomheder og private
 
