@@ -136,7 +136,6 @@ function vitouch() {
 		#(clear;glow ~/n4s-export/current.md -p)
 		if [ "$print" == "yes" ]; then
 			pandoc -H /svn/svnroot/Applications/listing.tex --listings -s -o ~/n4s-export/"$bn"-$date.pdf "$if" -f markdown+hard_line_breaks -V geometry:landscape -V papersize:a4  -V geometry:margin=.8in -V toc-title:"$bn"  -N $toc --pdf-engine=xelatex --wrap=auto +RTS -K100000000
-			pandoc -s -o ~/n4s-export/"$bn"-$date.html "$if" -f markdown+hard_line_breaks -V geometry:landscape -V papersize:a4  -V geometry:margin=.8in -V toc-title:"$bn"  -N $toc --pdf-engine=xelatex --wrap=auto +RTS -K100000000
 		fi
 		#(clear;glow ~/n4s-export/current.md -p)
 		# if it is not crm
