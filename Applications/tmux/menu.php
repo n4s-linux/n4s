@@ -9,20 +9,9 @@ if (!isset($argv[1])) {
 	$menu["Journaler (Sager)"] = array('key'=>'c','Text'=>'Journaler (sager)','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php CRM'");
 	$menu["Regnskab"] = array('key'=>'r','Text'=>'Rapportering...','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Regnskab'");
 	$menu["Terminal"] = array('key'=>'T','Text'=>'🖥Terminal','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Terminal'");
-	//$menu["Kommunikation"] = array('key'=>'K','Text'=>'Komm','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Kommunikation'");
-	//$menu["Tid"] = array('key'=>'t','Text'=>'⌚ Tid','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Time'");
-	//$menu["Statistik"] = array('key'=>'s','Text'=>'Stats','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Stats'");
 	$menu["Manual"] = array('key'=>'m','Text'=>'Manual','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Manual'");
 	$menu["Lommeregner"] = array('key'=>'C','Text'=>'python','cmd'=>"split-window 'ipython3 --no-banner'");
-	//if ($op == "joo") $menu['Review'] = array('key'=>'R','Text'=>'Review','cmd'=>"new-window -n \#review 'bash /svn/svnroot/Applications/reviewtransactions.bash' ");
-	//if ($op == "joo") $menu['RTMail'] = array('key'=>'a','Text'=>'mail','cmd'=>"new-window -n \#rtmails 'vi ~/tmp/rt.ls' ");
-	//if ($op == "joo") $menu['Book'] = array('key'=>'W','Text'=>'mail','cmd'=>"display-popup -w 115 -E 'bash /svn/svnroot/Applications/start.bash cal' ");
-	//if ($op == "joo") $menu['Kalender'] = array('key'=>'C','Text'=>'mail','cmd'=>"display-popup -w 115 -E 'bash /svn/svnroot/Applications/start.bash calshow' ");
-	//if ($op == "joo") $menu['Log'] = array('key'=>'L','Text'=>'log','cmd'=>"new-window -n logview 'bash /svn/svnroot/Applications/log.bash' ");
-//	if ($op == "joo") $menu['Ugeoverblik'] = array('key'=>'E','Text'=>'mail','cmd'=>"new-window 'tpath=~/regnskaber/kalender/ LEDGER_BEGIN=1970/1/1 LEDGER_END=$(date +%Y-%m-%d --date=+8\ weeks) php /svn/svnroot/Applications/key.php ledger print -S date> ~/tmp/kal.ledger;hledger -f ~/tmp/kal.ledger b -W Opgaver|less' ");
-	//if ($op == "joo") $menu['Ugeoverblik2'] = array('key'=>'E','Text'=>'mail','cmd'=>"new-window 'tpath=/data/regnskaber/regnskabsdeadlines/ LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 php /svn/svnroot/Applications/key.php ledger r opgaver -S date --account-width=15|less' ");
-	//if ($op == "joo") $menu['AddTime⌛'] = array('key'=>'w','Text'=>'emoji','cmd'=>"rename-window '#W⌛'");
-	//if ($op == "joo") $menu['RemTime⌛'] = array('key'=>'W','Text'=>'emoji','cmd'=>"run-shell 'bash /svn/svnroot/Applications/remwm.bash'");
+	if ($op == "joo") $menu['Ugeoverblik2'] = array('key'=>'E','Text'=>'mail','cmd'=>"new-window 'tpath=/data/regnskaber/regnskabsdeadlines/ LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 php /svn/svnroot/Applications/key.php ledger r opgaver -S date --account-width=15|less' ");
 
 
 
