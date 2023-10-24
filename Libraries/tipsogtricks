@@ -15,7 +15,11 @@ TMUX: Del terminal lodret = Ctrl-b + %
 TMUX: Del terminal vandret= Ctrl-b + "
 N4S: Dagens tip ligger i Libraries/tipsogtricks
 N4S: Åbn Regnskab = F4
+Regnskab: Skift aktivt regnskab = sr
 N4S: Åbn Journal = F2
+N4S: Opret regel guide = rule
+Regnskab: Kopier regler fra andet regnskab = rule_copy
+Regnskab: Kør alle regler: logic
 Regnskab: Prøv at skrive 'pivot'
 Regnskab: Prøv at skrive 'plot KONTO'
 Regnskab: Kontokort Periode = 'l r KONTO'
@@ -49,8 +53,8 @@ N4S: En billig og sikker hosting løsning er linode - n4s kan hostes fra 5USD pr
 Lovgivning: Kvart moms ved repræsentation imødekommes med funktionen 'rep'
 N4S: I N4S kalder vi momskoder for funktioner og hver transaktion har en Func egenskab
 N4S: Du får et nyt tip til hvordan du bruger systemet for hvert bilag du bogfører
-VIM: SØG =  /Hvad\ Vil\ du\ søge - NB mellemrum escapes med '\' (normal)
-VIM: Erstat :%s/Hvad\ Vil\ du\ søge/ERSTATNING/  - NB Mellemrum escapes med '\' (normal)
+VIM: SØG =  Hvad Vil du søge - NB mellemrum escapes med '\' (normal)
+VIM: Erstat :%s/Hvad Vil du søge/ERSTATNING/  - NB Mellemrum escapes med '\' (normal)
 VIM: Lær at bruge vim - skriv vimtutor
 Gnome Terminal: Ctrl-Shift-n = ny terminal - du kan køre flere terminaler af gangen
 Gnome genveje: Windows+1-9 = skift aktivitet (terminal, filer, etc)
