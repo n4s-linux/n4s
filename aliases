@@ -98,8 +98,10 @@ bind '"\eq":"changetermcmd\n"' 2>/dev/null
 shopt -s histappend
 mkdir -p ~/tmp/ /svn/svnroot/tmp/
 LEDGER_DEPTH=5
-
-export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
+--color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+--color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
 function ti() {
 	time=$(date +"%H:%m")
 	#tmux set -g status-right "#[fg=white]# $time: $1"
@@ -211,155 +213,7 @@ done) > ~/"$opath/template/.headers"
 function customers() {
 ls ~/c|grep -v template|grep -v completed|while read i; do echo -n "$i - "; echo -n $(cat ~/c/$i/"1000 - "*);echo|head -n1; done|sort -n
 }
-alias olc="ol companies"
-alias olp="ol p"
-alias olt="ol t"
-alias olst="ol st"
-alias olj="ol j"
-function select_db() {
-(
-ls /dropbox/ol/*/template -d|while read y
-	do 
-		lw=$(echo -n $(echo "$y"|sed 's/\/template//g'))"/.viewed"
-		if [ -f "$lw" ]; then
-			echo -n $(stat -c "%y" "$lw")
-			echo -e "\t$y"|head -n2
-		else
-			touch "$lw"
-                        echo -n $(stat -c "%y" "$lw")
-                        echo -e "\t$y"|head -n2
-		fi
- 	done
 
-)|sort --reverse|awk '{print $4}'|sed 's/\/template//g' > ~/.listfolders
-cat ~/.listfolders|while read i 
-	do
-	basename "$i" >> ~/.listfolders.2
-done 
-cp ~/.listfolders.2 ~/.listfolders
-rm ~/.listfolders.2
-cat ~/.listfolders|while read i
-do 
-	echo "$i"
-done|fzf --cycle --no-mouse|awk '{print $1}' > ~/.select
-db=$(cat ~/.select)
-rm ~/.select
-touch ~/"$db"/.viewed
-echo "$db"
-export tpath="$db"
-}
-
-
-
-
-
-
-
-
-
-function po_latex() { #// print offer
-if [ "$2" == "" ];  then
-opath=$(select_db)
-else
-opath="$2"
-fi
-echo "<meta charset=utf8><p align=right><img src='https://olsensrevision.dk/wp-content/uploads/elementor/thumbs/olsens-onf38ivvwko6z6ujk7ubpjc3t0n8teweq5uwfuvuhs.png'></p><p align=center><h3>Status på din sag hos Olsens Revision ApS</h3></p>" > /tmp/currap.html
-echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">' >> /tmp/currap.html
-echo "<table class=table-striped valign=top><tr vlign=top><td valign=top>" >> /tmp/currap.html;
-pushd . >/dev/null
-cd ~/$opath/$1
-y=0
-ls|grep -v History|sort -n|while read i;do
-	echo "i: '$i'" >> /tmp/debug.log
-	if [ "$y" = "12" ]; then
-		newrow="1"
-		y=0;
-	else
-		newrow="0"
-		y=$((y+1))
-	fi
-	if [[ ! -s "$i" ]]; then
-		continue
-	fi
-	echo "<table class=table border=1 width=100%><tr valign=top>" >> /tmp/currap.html
-	if [ "$i" == "6000 - Behovsliste" ] ; then
-		yellow_begin="bgcolor=yellow "
-		pre_yellow=" style='background-color:yellow' "
-	else
-		yellow_begin=""
-		pre_yellow=""
-	fi
-	translated_i=$(translate "$i")
-	(echo "<td valign=top width=350  $yellow_begin><div style='width: 350'>$translated_i</div></td><td valign=top style='width: 550px' with=550 $yellow_begin><div style='width: 550'><pre $pre_yellow>";cat "$i"|sed 's/^/  /'; echo " </pre></div></td>") >> /tmp/currap.html
-	echo "</tr></table>" >> /tmp/currap.html;
-	if [[ "$newrow" == "1" ]]; then
-		echo "</td><td valign=top>" >> /tmp/currap.html
-	fi
-done
-popd > /dev/null
-echo "</td></tr></table>" >> /tmp/currap.html;
-echo '<hr><center>Olsens Revision ApS, Fortunstræde 1, 2., 1065 København K, Tlf. 2586 4573</center><P style="page-break-before: always">' >> /tmp/currap.html
-w3m -dump /tmp/currap.html|less
-output=/tmp/currap.html
-md=$(cat /tmp/currap.html|md5sum|awk '{print $1'})
-fn="$opath-$md.pdf"
-fnpng="$opath-$md.png"
-outputpdf="/svn/svnroot/tmp/$fn"
-wkhtmltopdf --images --enable-internal-links toc "$output" "$outputpdf" 
-dato=$(date +%Y-%m-%d)
-echo -e "<h1><u>Status dags dato på sag vedr. " > /tmp/msg
-cat ~/$opath/$1/5000" -"* >> /tmp/msg
-echo "</u></h1>" >> /tmp/msg
-cat /tmp/currap.html >> /tmp/msg
-behov=~/"$opath/$1/6000 - Behovsliste"
-skridt=~/"$opath/$1/7250 - Næste skridt"
-if [ -s "$behov" ]; then
-	echo "<table border=1 width=700><tr><td>" >> /tmp/msg
-	echo "<h3>Aktuelle behov <u>du</u> skal være opmærksom på:</h3><br>" >> /tmp/msg
-	echo "<pre style='background-color: yellow'>" >> /tmp/msg
-	cat "$behov" >> /tmp/msg
-	echo "</pre>" >> /tmp/msg
-	echo "</td></tr></table>" >> /tmp/msg
-fi
-if [ -s "$skridt" ]; then
-	echo "<table border=1 width=700><tr><td>" >> /tmp/msg
-	echo "<h3>Vores næste skridt i sagen</h3>" >> /tmp/msg
-	echo "<pre style='background-color: green'><i>" >> /tmp/msg
-	cat "$skridt" >> /tmp/msg
-	echo "</i></pre>" >> /tmp/msg
-	echo "</td></tr></table>" >> /tmp/msg
-fi
-echo "<br><i>...For flere detaljer - se vedlagte PDF</i><br><br><br><b>Med venlig hilsen<b><br>Jørgen Olsen<br><br>Olsens Revision ApS<br>Fortunstræde 1, 2.<br>1065 København K<br>Tlf. 2586 4573" >> /tmp/msg
-filepdf="$(echo -n $(date +%Y-%m-%d))-$fn"
-filepng="$(echo -n $(date +%Y-%m-%d))-$fnpng"
-cp "$outputpdf" "$filepdf"
-cp /tmp/msg /tmp/status.html
-cp "$filepdf" /tmp/status.pdf
-php /svn/svnroot/Applications/phpmailer.php
-rm /tmp/msg
-rm -rf *.jpeg
-rm -rf *.pdf
-}
-
-uriencode() {
-  s="${1//'%'/%25}"
-  s="${s//' '/%20}"
-  s="${s//'"'/%22}"
-  s="${s//'#'/%23}"
-  s="${s//'$'/%24}"
-  s="${s//'&'/%26}"
-  s="${s//'+'/%2B}"
-  s="${s//','/%2C}"
-  s="${s//'/'/%2F}"
-  s="${s//':'/%3A}"
-  s="${s//';'/%3B}"
-  s="${s//'='/%3D}"
-  s="${s//'?'/%3F}"
-  s="${s//'@'/%40}"
-  s="${s//'['/%5B}"
-  s="${s//']'/%5D}"
-  printf %s "$s"
-}
 alias csv="php /svn/svnroot/Applications/key_csv.php load"
 function cvr() {
 	php /svn/svnroot/Applications/cvr.php "$@"|less
@@ -385,19 +239,19 @@ function html2() {
 	pushd . 2>/dev/null > /dev/null
 	cd ~/tmp/
 set -x
-    wkhtmltopdf --encoding UTF-8 out.html Saldobalance-$bn-$begin-$end.pdf
+    wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 out.html Saldobalance-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Saldobalance-$bn-$begin-$end.pdf
 
-    wkhtmltopdf --encoding UTF-8 kontokort.html Kontokort-$bn-$begin-$end.pdf
+    wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 kontokort.html Kontokort-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Kontokort-$bn-$begin-$end.pdf
 
-    wkhtmltopdf --encoding UTF-8 nøgletal.html Nøgletal-$bn-$begin-$end.pdf
+    wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 nøgletal.html Nøgletal-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Nøgletal-$bn-$begin-$end.pdf 
 
-    wkhtmltopdf --encoding UTF-8 statistik.html Lagkagediagrammer-$bn-$begin-$end.pdf
+    wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 statistik.html Lagkagediagrammer-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Lagkagediagrammer-$bn-$begin-$end.pdf 
 
-    wkhtmltopdf --encoding UTF-8 manglendebilag.html Manglendebilag-$bn-$begin-$end.pdf
+    wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 manglendebilag.html Manglendebilag-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Manglendebilag-$bn-$begin-$end.pdf 
 set +x
 
