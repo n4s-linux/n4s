@@ -1,5 +1,13 @@
 cd ~/regnskaber/stuff/.tags/
+if [ "$select" == "" ]; then
 valg=$(ls |grep -v .diff|grep -v .scrabble|fzf)
+else
+valg=thenow
+fi
+
+if [ "$valg" == "" ]; then
+	valg=thenow
+fi
 
 if [ "$1" == "hide" ]; then
 	txt=$(whiptail --passwordbox "Hvad siger du ?" 8 80 3>&1 1>&2 2>&3)
