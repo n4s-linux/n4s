@@ -1,3 +1,12 @@
+# OpenPeppol #n4s
+    2023-10-25T22:12     xml eksmpler her under structure https://github.com/OpenPEPPOL/peppol-bis-invoice-3/tree/master
+
+# Markdown folding disabled #n4s
+2023-10-25T19:11 #observation markdown folding virker hvis jeg skriver set ft=md #nyserver
+    2023-10-25T21:10     #vitouch korrektion behøver ikke -c flag når jeg matcher den i vimrc
+    2023-10-25T21:10     forbedring nu kører den kun markdown på filer .tags
+    2023-10-25T21:10     #løst
+
 # n4s vitouch reload
 2023-10-25T15:58 #ide reload fil for at få scrabbles med og committe changes til historik #vitouch
 
