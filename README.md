@@ -147,13 +147,6 @@ Fordele ved OVA Løsning:
 Ulemper:
 * Størrelse 20GB da den indeholder et helt operativsystem plus ekstra plads så du ikke løber tør (n4s fylder < 70MB)
 
-# Import / Export
-	n4s understøtter import/eksport af CSV-filer
-	Særligt nyttigt hvis man vil indlæse et kontoudtog fra bank eller lign.
-
-# Support
-Der ydes foreløbig *gratis* support til brug af den virtuelle maskine. Kontakt herom på email joodk@pm.me
-
 # n4s - Open Source / Fri Software GNU/Linux baseret dobbelt bogholderi og ERP
 n4s er et terminalbaseret system til brug for dobbelt bogholderi (finans, debitor, kreditor).
 Det kan køre på en hvilken som helst computer - eller i skyen.
@@ -166,6 +159,7 @@ Funktioner:
 * Årsafslutning
 * Rapport generator og transaktions-stifinder (webapplikation samt tekstbaseret)
 * Import af transaktioner fra CSV eller live bank forbindelse
+* Eksport af transaktioner til XML samt CSV
 * Automatisk beregning af rente hvor man kan specificere rentesatsen på en given konto
 * Automatisk periodisering hvor man på hver udgift kan angive en start og slutdato
 * Automatisk konsolidering
