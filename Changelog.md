@@ -1,3 +1,113 @@
+# Fjernet duplicate kørsel af pandoc
+* Opdateret 2023-10-24
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/f1c8fdbb98bb01e5133b9ca4f8bfe821a62e8de8)
+
+# Nyt dropbox script
+* Opdateret 2023-10-24
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/18096a2beaf12c09ddfe83ef077f410997cc3d77)
+
+# Script til at migrere server
+* Opdateret 2023-10-24
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/b0e77758e1cd47a8ddb16620ebcbfcc437933f80)
+
+# Bugfix - fundet ved opgradering til php8- gør intet, fjernes
+* Opdateret 2023-10-24
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/77e2f02db5e6d4fbc2e0c65c58558281af99033b)
+
+# Fjerner done-filter fra vitouch, ikke nødvendigt
+* Opdateret 2023-10-24
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/c082d9005c41f636b3ad6c9ca15208bd5dff2a95)
+
+# Forbedring af farveskema
+* Opdateret 2023-10-24
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/958cf42d1cd06f47700ac14368aa261f15f08e22)
+
+# Fjerner nogle streger som ikke ser så godt ud
+* Opdateret 2023-10-24
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/14d27e5eeb289ed2fd88686d7d487e8b73a1608b)
+
+# Oprydning af menuer og lidt ændring til farveskemaer herunder mere synligt vindueknapper
+* Opdateret 2023-10-24
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/97b3ef27d77dafa678cf0e79d9fefb985e49e1b7)
+
+# readme stuff
+* Opdateret 2023-10-24
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/460c9939d0a8829bc01d3c61d5ad4916ba02ccaf)
+
+# readme stuff
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/5af0bbf0d7034b3ee89bd530dae15dac8665300b)
+
+# readme stuff
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/a66d327f61cf21c3bb013ce9e6f44620355e2180)
+
+# readme stuff
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/1a6eedd949bc56bd7a43b3f8e2493b40e83ea405)
+
+# Manual fjernet som del af denne side
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/d3f3a042c6c6c95b853a34bf6c4586116ad5d5ca)
+
+# readme stuff
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/cab57c78188ca16c68c2b851da134618e264878e)
+
+# readme stuff
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/b044c2aadf9ae60b86cc893ca71bbb5cb4c9491f)
+
+# Ny demo video
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/3153d7c4b36a98bd9c4fa6a7db302191a0a4325b)
+
+# Eksempel video
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/2dc5c626bf19e47ea37589f88493dfbd0062d0dc)
+
+# Et par tips om kontokort
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/30e585ffcc2aabf525fb7a6add49e9fb5d5fe095)
+
+# Farvekoder på statuskoder
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/cf937c526525b4266e7a8709e2c1ddbcfc4d67cb)
+
+# Readme
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/4727e01779550aa2a893dae535727d5ed27c0599)
+
+# Readme key selling points
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/30cfb1ba34ffb3be6dc7680febc81ed9823072ad)
+
+# Status konti saldi opdateres ved l på tmux line
+* Opdateret 2023-10-23
+
+[Se patch indhold](https://github.com/n4s-linux/n4s-gratis-regnskab/commit/7fac363b4c34873e44151abd03a6a514afd39f4c)
+
 # Truecolors til journaler og vim
 * Opdateret 2023-10-23
 

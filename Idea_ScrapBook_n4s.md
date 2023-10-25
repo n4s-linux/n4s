@@ -1,3 +1,7 @@
+# Statuslinie afstemningskonti #n4s
+	2023-10-23T16:16 joo	#ide statuskonti i tmux line
+	2023-10-23T16:16 joo	implementeret så den tager alle Aktiver:Likvider - skal tilpasses så brugeren selv kan vælge hvilke konti der skal vises
+
 # Styr på skat #n4s
 	2023-10-22T17:40 joo	ide konto til styr på skat 
 	2023-10-22T19:27 joo	#ide praksisændring: hver år omkonteres det indberettede resultat fra Egenkapital:Overført Resultat til Egenkapital:Indberettet resultat - således vil evt. differencer fremkomme som residualpost
@@ -5,15 +9,18 @@
 # N4S automatisk konsolidering månedsvis
 	2023-10-22T13:37 joo	#ide lave konsolidsering månedsvis i autoscripts, så der kommer historiske poster i moderselskab
 	2023-10-22T13:53 joo	#observation det styres 999_Periodresult.bash og følger dens metode
+	2023-10-24T09:28 joo	er fikset ved at udskifte 999_Periodresult med 999_periodresult som kører på dagsbasis fremfor periodevis.
 
 # Tmux menuer - visning på flere klienter #n4s
 	2023-10-21T14:59 joo	#observation tmux-menus bliver kun vist på den aktive klient, ikke på evt. andre attached klienter #spørgirc
+	2023-10-24T09:34 joo	mulig løsning tmux-menus skifter ud med fzf-baserede menuer
 
 # N4s noter i forskellige afdelinger kan ikke have samme navn
 	2023-10-21T01:36 joo	#observation de bliver flettet sammen i html rapporteringen f.eks Aktiver:Kapitalandele & Indtægter:Kapitalandele
 
 # N4s backup virker ikke på anden bruger
 	2023-10-21T00:00 joo	#observation backup hænger når man åbner regnskab på en anden bruger, skal undersøges
+	2023-10-24T09:34 joo	#teori permission based
 
 # Rapportering n4s - naturlige fortegn
 	2023-10-18T11:26 joo	#ide naturlige fortegn i rapportering - dvs indtægter er postive, udgifter er negative, egenkapital skal også vendes - aktiver står som de skal
