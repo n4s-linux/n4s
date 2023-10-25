@@ -213,11 +213,6 @@ func MyHandler(timer)
 endfunc
 let timer = timer_start(50000,'MyHandler',
 			\ {'repeat': -1 })
-set number
-let g:markdown_folding = 1
-set ft=markdown
-set foldmethod=expr
-set foldexpr=MarkdownLevel()
 
 function! MarkdownLevel()
     if getline(v:lnum) =~ '^# .*$'
@@ -343,3 +338,9 @@ let php_sql_query = 1      "Syntax highlight SQL code inside PHP strings.
 let php_noShortTags = 1    "Disable PHP short tags.
 
 source /svn/svnroot/Libraries/adam/transplant.vim
+set number
+let g:markdown_folding = 1
+set ft=markdown
+set foldmethod=expr
+set foldexpr=MarkdownLevel()
+autocmd BufRead,BufNewFile *.tags/* set filetype=markdown
