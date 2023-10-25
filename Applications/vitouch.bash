@@ -83,7 +83,7 @@ function vitouch() {
 		mkdir -p $tpath/.scrabbles
 		mv "$sf" $tpath/.scrabbles/$uuid
 	fi
-       	$cmd "$1" "$2" "$3"  -c "set ft=md"
+       	$cmd "$1" "$2" "$3"
 	rm "$tpath/.tags/.$bn"".lock"
 	if=~/tmp/if.md
 	cat $tpath/.tags/header "$1" $tpath/.tags/footer > $if
