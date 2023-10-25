@@ -27,6 +27,7 @@ printnotes();
 unlink("/home/$op/tmp/kontokort.html");
 file_put_contents("/home/$op/tmp/nøgletal.html",getnøgletal($darray));
 file_put_contents("/home/$op/tmp/statistik.html",getstatistik($darray));
+file_put_contents("/home/$op/tmp/manglendebilag.html",getmanglendebilag($darray));
 
 
 foreach (array('Indtægter','Udgifter','Aktiver','Egenkapital','Passiver') as $curf) {
@@ -91,7 +92,9 @@ function printfullspec($darray,$filter) {
 			echo "</td>";
 		}
 		$saldo += $orgb;
+		error_reporting(0);
 		$ksaldo[$curtrans['Konto']] += $orgb;
+		error_reporting(E_ALL);
 		$pksaldo = prettynum($ksaldo[$curtrans['Konto']]);
 		$psaldo = prettynum($saldo);
 		echo "<td style='background-color:$c'>$pksaldo</td>";
@@ -365,7 +368,9 @@ function getsubomk($darray,$acc) {
 		if (!isset($x[2])) continue;
 		$l3 = $x[2];
 		if ($l2 != $acc) continue;
+		error_reporting(0);
 		$sum[$l3] += $curtrans['Beløb'];
+		error_reporting(E_ALL);
 		eon();
 	}
 	return $sum;
@@ -377,12 +382,37 @@ function getomk($darray) {
 		$l2 = $x[1];
 		$l1 = $x[0];
 		if ($l1 != "Udgifter") continue;
-		eoff();
+		error_reporting(0);
 		$sum[$l2] += $curtrans['Beløb'];
-		eon();
+		error_reporting(E_ALL);
 		
 	}
 	return $sum;
+}
+function filter_manglende($curtrans) {
+	$filter_simple = array('Netbankbetaling','GEBYR','Gebyr','Rente','Afregning til Told og Skat');
+	$filter_contains = array('Aktiver:','Passiver','Egenkapital:');
+	$tekst = $curtrans['Tekst'];
+	$konto = $curtrans['Konto'];
+	if (in_array($tekst,$filter_simple)) return true;
+	foreach ($filter_contains as $curcontain) {
+		if (stristr($konto,$curcontain)) return true;
+	}
+
+	return false;
+}
+function getmanglendebilag($darray) {
+	ob_start();
+	printheader("Manglende bilag");
+	echo "<table class=table>\n";
+	foreach ($darray as $curtrans) {
+		if (!stristr($curtrans['Reference'],'CSV-')) continue;
+		if (filter_manglende($curtrans)) continue;
+		$ref = $curtrans['Reference'];
+		echo "<tr><td>$curtrans[Reference]</td><td>$curtrans[Date]</td><td>$curtrans[Tekst]</td><td>$curtrans[Beløb]</td><td>$curtrans[Konto]</td></tr>\n";
+	}
+	echo "</table>\n";
+	return ob_get_clean();
 }
 function getstatistik($darray) {
 	ob_start();
@@ -392,8 +422,10 @@ function getstatistik($darray) {
 	echo pie($piedata,"Udgifter fordeling");
 	foreach ($piedata as $curomk => $bal) {
 		$pd = getsubomk($darray,$curomk);
-		if (!empty($pd))
-			echo pie($pd,$curomk);
+		if (!empty($pd))  {
+			$pie = pie($pd,$curomk);
+			if ($pie != false) echo $pie;
+		}
 	}
 	return ob_get_clean();
 }
