@@ -305,19 +305,72 @@ require_once("sortsearch.php");
 			$resultvim .= ":e $fn\n";
 		}
 	}
+	require_once("/svn/svnroot/Applications/ansi-color.php");
+	system("clear");
+	foreach ($res as $curres) { echo set($curres. "\n","blue_bg");}
+	$action = fzf("Redigér\nÆndr Konto1\nÆndr Konto2\nÆndr Func1\nÆndr Func2\nÆndr reference","Vælg en handling","--height=10");
 	$op = exec("whoami");
 	$vf = "/tmp/vim_$op";
 	file_put_contents($vf,$resultvim);
 	//exec_app("$editor $results");
-	if (strlen(trim($resultvim))) {
-		if ($argv[1] == "search") {
+	if ($action == "Ændr reference"||$action == "Ændr Konto1"||$action=="Ændr Konto2"||$action == "Ændr Func1"||$action=="Ændr Func2") {
+		$nyværdi="";
+		if ($action == "Ændr reference"||$action=="Ændr Func1"||$action=="Ændr Func2") {
+			$fd = fopen("PHP://stdin","r");
+			$str = "";
+			while ($str == "") {
+				echo "$action: ";
+				$str = trim(fgets($fd));
+			}
+			$nyværdi = trim($str);
+		}
+		else if ($action == "Ændr Konto1" || $action == "Ændr Konto2") {
+			$nykonto = lookup_acc($accounts,0);
+		}
+		foreach (explode("\n",$resultvim) as $curfile) {
+			$fn = trim(substr($curfile,3));
+			if ($fn == "") continue;
+			if (!file_exists("$tpath/$fn"));
+			$data = json_decode(fgc("$tpath/$fn"),true);
+
+			if ($action == "Ændr Func1") {
+				$oldref = $data['Transactions'][0]['Func'];
+				$data['History'][] = array('date'=>date("Y-m-d H:m"),'op'=>$op,"Description"=>"Ændret Func1 fra '$oldref' to '$nyværdi'");
+				$data['Transactions'][0]['Func'] = $nyværdi;
+				file_put_contents("$tpath/$fn",json_encode($data,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+			}
+			else if ($action == "Ændr Func2") {
+				$oldref = $data['Transactions'][1]['Func'];
+				$data['History'][] = array('date'=>date("Y-m-d H:m"),'op'=>$op,"Description"=>"Ændret Func2 fra '$oldref' to '$nyværdi'");
+				$data['Transactions'][0]['Func'] = $nyværdi;
+				file_put_contents("$tpath/$fn",json_encode($data,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+			}
+			else if ($action == "Ændr reference") {
+				$oldref = $data['Reference'];
+				$data['History'][] = array('date'=>date("Y-m-d H:m"),'op'=>$op,"Description"=>"Ændret Reference fra '$oldref' to '$nyværdi'");
+				$data['Reference'] = $nyværdi;
+				file_put_contents("$tpath/$fn",json_encode($data,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+			}
+			else if ($action == "Ændr Konto1") {
+				$oldkonto = $data['Transactions']['0']['Account'];
+				$data['History'][] = array('date'=>date("Y-m-d H:m"),'op'=>$op,"Description"=>"Ændret Konto1 fra '$oldkonto' to '$nykonto'");
+				$data['Transactions'][0]['Account'] = $nykonto;
+				file_put_contents("$tpath/$fn",json_encode($data,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+			}
+			else if ($action == "Ændr Konto2") {
+				$oldkonto = $data['Transactions']['1']['Account'];
+				$data['History'][] = array('date'=>date("Y-m-d H:m"),'op'=>$op,"Description"=>"Ændret Konto2 fra '$oldkonto' to '$nykonto'");
+				$data['Transactions'][1]['Account'] = $nykonto;
+				file_put_contents("$tpath/$fn",json_encode($data,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+			}
+		}
+		
+	}
+	else if ($action == "Redigér") {
+		if (strlen(trim($resultvim))) {
 			exec_app("$editor -s $vf");
 			exec_app("php /svn/svnroot/Applications/key_arraydiff.php $results");
 			system("rm \"$path\"/.*.old");
-		}
-		else if ($argv[1] == "bulk") {
-			echo "bulk..\n"; 
-			print_r($results);	
 		}
 	}
 	}
@@ -527,6 +580,7 @@ foreach ($darray as $dataarray) {
 		if ($trans["Func"] != "" && ( stristr($trans['Account'] ,"Egenkapital")||stristr($trans['Account'],'Likvider') || stristr($trans['Account'],'Kreditorer') || stristr($trans['Account'],'debitorer'))) {
 			echo("fejl - der er skrevet funktion ind på en konto der indeholder Likvider/Kreditorer/Debitorer - afbryder !\n");
 			echo $dataarray['Filename'] . "\n";
+			$cmd = ("vim '$dataarray[Filename]' -c \"let g:winid = popup_create('Venligst fjern momskode fra likvid/kreditor/debitorkonto', #{mindwidth:60, minheight: 1,line: 1,col:8})\"");
 			die();
 		}
 		if ($trans['Func'] == "iv" || $trans['Func'] == "iv25") {
