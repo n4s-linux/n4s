@@ -92,13 +92,26 @@ Det er vigtigt at bemærke, at selvom n4s er baseret på en terminal, må man ik
 N4S kan køres fra en central server og du kan forbinde med Windows Terminalen, OS X terminal Applikationen eller lign.
 Eksempler på remote kørsel fra Windows 11
 
-[![n4s demo](demo.gif 'n4s demo')](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/)
-[![n4s demo](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/demo1.gif 'n4s demo')](https://drive.google.com/file/d/1D7PW7Te92-4RvlXTPedoDU3QIuC-bMNp/view?usp=sharing)
-
 ![Win11 Screenshot2 n4s dobbelt bogholderi](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_2.png?raw=true)
 ![Win11 Screenshot3 n4s momsregnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_3.png?raw=true)
 ![Win11 Screenshot4 n4s regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_4.png?raw=true)
 ![Win11 Screenshot1 n4s gratis regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_1.png?raw=true)
+[![n4s demo](demo.gif 'n4s demo')](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/)
+[![n4s demo](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/demo1.gif 'n4s demo')](https://drive.google.com/file/d/1D7PW7Te92-4RvlXTPedoDU3QIuC-bMNp/view?usp=sharing)
+
+
+# Eksempel på rapportering
+Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter.
+Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)
+* [Eksempel saldobalance](https://drive.google.com/file/d/1WAlPO73OykvF5-wUCh9-XDIikK_8SoBU/view?usp=sharing)
+* [Eksempel kontokort](https://drive.google.com/file/d/1TegmpGs-EuA6jYqtzJUFiq8yn2noGD8y/view?usp=sharing)
+* [Eksempel nøgletal](https://drive.google.com/file/d/1eFUnHhibB2g6Nmigi6lQ0R6eNQqZYOyc/view?usp=sharing)
+
+For at generere tilsvarende rapportering for dit regnskab følg da følgende instrukser i n4s:
+* Sæt rapporteringperiode: skriv 'dp' eller tryk Alt-p
+* Skriv 'html'
+* Rediger firmanavn til forside - skriv evt. kommentar - gem på W
+* Rapporteringen (Saldobalance, kontokort & nøgletal) ligger i ~/tmp som kan findes i filmanageren Nautilus til venstre
 
 
 # Problemfri Eksport af Dine Data
@@ -122,19 +135,6 @@ Så uanset om du udforsker nye rapporteringsværktøjer, deler data med interess
 # Lets get down to business 🐝
 Så hvorfor vente? Start din rejse mod økonomisk succes i dag med N4S. Lad ikke noget begrænse dig - ikke engang din regnskabssoftware. N4S er din nøgle til at låse op for dit regnskabsmæssige potentiale og er klar til at hjælpe dig med at lykkes uanset hvor du er eller hvilken enhed du bruger. Sæt kursen mod succes og lad N4S tage dig derhen!
 
-
-# Eksempel på rapportering
-Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter.
-Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)
-* [Eksempel saldobalance](https://drive.google.com/file/d/1WAlPO73OykvF5-wUCh9-XDIikK_8SoBU/view?usp=sharing)
-* [Eksempel kontokort](https://drive.google.com/file/d/1TegmpGs-EuA6jYqtzJUFiq8yn2noGD8y/view?usp=sharing)
-* [Eksempel nøgletal](https://drive.google.com/file/d/1eFUnHhibB2g6Nmigi6lQ0R6eNQqZYOyc/view?usp=sharing)
-
-For at generere tilsvarende rapportering for dit regnskab følg da følgende instrukser i n4s:
-* Sæt rapporteringperiode: skriv 'dp' eller tryk Alt-p
-* Skriv 'html'
-* Rediger firmanavn til forside - skriv evt. kommentar - gem på W
-* Rapporteringen (Saldobalance, kontokort & nøgletal) ligger i ~/tmp som kan findes i filmanageren Nautilus til venstre
 
 # TLDR - Lad mig downloade din OVA
 * Link til [Virtualbox OVA appliance](https://l.linklyhq.com/l/1uAWJ)
