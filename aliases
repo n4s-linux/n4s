@@ -382,21 +382,26 @@ function html2() {
 	bn=$(basename "$tpath")
 	vim $tpath/.companyname.txt
 	php /svn/svnroot/Applications/htmlreport.php > ~/tmp/out.html
-	pushd . 2>/dev/null
+	pushd . 2>/dev/null > /dev/null
 	cd ~/tmp/
-	google-chrome-stable --headless --disable-gpu --print-to-pdf out.html
-	mv output.pdf Saldobalance-$bn-$begin-$end.pdf
+set -x
+    wkhtmltopdf --encoding UTF-8 out.html Saldobalance-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Saldobalance-$bn-$begin-$end.pdf
-	google-chrome-stable --headless --disable-gpu --print-to-pdf kontokort.html
-	mv output.pdf Kontokort-$bn-$begin-$end.pdf
+
+    wkhtmltopdf --encoding UTF-8 kontokort.html Kontokort-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Kontokort-$bn-$begin-$end.pdf
-	google-chrome-stable --headless --disable-gpu --print-to-pdf nøgletal.html
-	mv output.pdf Nøgletal-$bn-$begin-$end.pdf
-	/svn/svnroot/Applications/removeblankpages.bash Nøgletal-$bn-$begin-$end.pdf
-	google-chrome-stable --headless --disable-gpu --print-to-pdf statistik.html
-	mv output.pdf Lagkagediagrammer-$bn-$begin-$end.pdf
-	/svn/svnroot/Applications/removeblankpages.bash Lagkagediagrammer-$bn-$begin-$end.pdf
-	popd 2>/dev/null
+
+    wkhtmltopdf --encoding UTF-8 nøgletal.html Nøgletal-$bn-$begin-$end.pdf
+	/svn/svnroot/Applications/removeblankpages.bash Nøgletal-$bn-$begin-$end.pdf 
+
+    wkhtmltopdf --encoding UTF-8 statistik.html Lagkagediagrammer-$bn-$begin-$end.pdf
+	/svn/svnroot/Applications/removeblankpages.bash Lagkagediagrammer-$bn-$begin-$end.pdf 
+
+    wkhtmltopdf --encoding UTF-8 manglendebilag.html Manglendebilag-$bn-$begin-$end.pdf
+	/svn/svnroot/Applications/removeblankpages.bash Manglendebilag-$bn-$begin-$end.pdf 
+set +x
+
+	popd 2>/dev/null > /dev/null
 }
 function html() {
 	html2 2>/dev/null
