@@ -50,6 +50,11 @@ Du må gerne klone vores system og sælge det videre, men der under forudsætnin
 
 ... Betingelser som er nærmere beskrevet i softwarens licens som e GPL v3
 
+### Løbende opdateringer
+Du skal ikke vente årevis på at der bliver udgivet en ny version. Du kan løbende hente patches med forbedringer til systemet.
+Følg dette [link](https://github.com/n4s-linux/n4s-gratis-regnskab/commits?author=n4s-linux) for at se de seneste ændringer til systemet.
+Det tager under et minut at opdatere n4s til den nyeste version.
+Du kan også selv lave ændringer i koden og foreslå at disse ændringer bliver en del af n4s.
 
 
 # N4S - en fri og gratis regnskabs- og ERP-løsning til små virksomheder og private
