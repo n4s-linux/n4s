@@ -156,8 +156,7 @@ Der ydes foreløbig *gratis* support til brug af den virtuelle maskine. Kontakt 
 
 # n4s - Open Source / Fri Software GNU/Linux baseret dobbelt bogholderi og ERP
 n4s er et terminalbaseret system til brug for dobbelt bogholderi (finans, debitor, kreditor).
-Det kan køre på en fysisk GNU/Linux computer eller en VPS i skyen.
-Det kan også køres på Windows 10+ såfremt man aktiverer WSL (Windows Linux Subsystem)
+Det kan køre på en hvilken som helst computer - eller i skyen.
 Systemet er bygget i PHP og BASH og benytter den populære teksteditor vim (VI Improved), terminalmultiplexeren tmux, samt det tekstbaserede double entry regnskabsprogram ledger-cli samt hledger
 
 Funktioner:
