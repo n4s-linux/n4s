@@ -1,0 +1,43 @@
+function l() {
+    LEDGER_CACHE=$LEDGER_CACHE php /svn/svnroot/Applications/key.php ledger $@
+    ledger -f $tpath/curl print Aktiver:Likvider: > $tpath/.statusline.ledger
+    cat "$tpath/notes" 2>/dev/null
+}
+function lll() {
+noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31  php /svn/svnroot/Applications/key.php ledger $@
+    cat "$tpath/notes" 2>/dev/null
+}
+unalias ll 2>/dev/null #ubuntu default alias
+function ll() {
+    noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=$(echo -n $(date +%Y-%m-%d -d "tomorrow"))  php /svn/svnroot/Applications/key.php ledger $@
+    cat "$tpath/notes" 2>/dev/null
+}
+function lc() {
+    ledger --no-color --no-pager -f $tpath/curl $@
+}
+function llc() {
+    noend=1  LEDGER_BEGIN=1970/1/1 LEDGER_END=$(echo -n $(date +%Y-%m-%d -d "tomorrow")) ledger --no-pager --no-color --f $tpath/curl $@
+}
+function lllc() {
+    noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 ledger --no-pager ---no-color -f $tpath/curl $@
+}
+
+function logic() {
+
+if [ "$tpath" = "" ]; then
+    echo "no tpath set..."
+else
+    pushd . >/dev/null
+    cd $tpath
+    php /svn/svnroot/Applications/editclass_key.php $tpath/*.trans
+    popd >/dev/null
+fi
+}
+function logicG() {
+if [ "$tpath" = "" ]; then
+    echo "no tpath set..."
+else
+    scriptscope=global php /svn/svnroot/Applications/editclass_key.php $tpath/*.trans
+fi
+}
+

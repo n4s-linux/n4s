@@ -1,3 +1,4 @@
+alias fp=" python /svn/svnroot/Applications/fpaste/fpaste.py"
 version=$(echo $(git log|wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
 export TERM=xterm-256color tmux
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=y
@@ -472,62 +473,7 @@ alias e="php /svn/svnroot/Applications/key.php entry"
 alias eu="php /svn/svnroot/Applications/key.php entry bilag"
 
 unalias l 2>/dev/null #ubuntu default alias
-function l() {
-	LEDGER_CACHE=$LEDGER_CACHE php /svn/svnroot/Applications/key.php ledger $@
-	ledger -f $tpath/curl print Aktiver:Likvider: > $tpath/.statusline.ledger
-	cat "$tpath/notes" 2>/dev/null
-}
-function lll() {
-noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31  php /svn/svnroot/Applications/key.php ledger $@
-	cat "$tpath/notes" 2>/dev/null
-}
-unalias ll 2>/dev/null #ubuntu default alias
-function ll() {
-	noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=$(echo -n $(date +%Y-%m-%d -d "tomorrow"))  php /svn/svnroot/Applications/key.php ledger $@
-	cat "$tpath/notes" 2>/dev/null
-}
-function lc() {
-	ledger --no-color --no-pager -f $tpath/curl $@
-}
-function llc() {
-	noend=1  LEDGER_BEGIN=1970/1/1 LEDGER_END=$(echo -n $(date +%Y-%m-%d -d "tomorrow")) ledger --no-pager --no-color --f $tpath/curl $@
-}
-function lllc() {
-	noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 ledger --no-pager ---no-color -f $tpath/curl $@
-}
-alias rc="php /svn/svnroot/Applications/key.php ledger register \"Uhåndterede kreditorbetalinger\""
-alias rd="php /svn/svnroot/Applications/key.php ledger register \"Uhåndterede debitorbetalinger\""
-alias b="bash /svn/svnroot/Applications/csvdatakey.bash"
-function hb() {
-	hledger-ui --theme=terminal --watch -f $tpath/curl -T --begin=$LEDGER_BEGIN --end=$LEDGER_END $@
-}
-
-alias bb="(noend=1 LEDGER_BEGIN=1970/01/01 LEDGER_END=2099/12/31 nicebal|less);" #php /svn/svnroot/Applications/key.php ledger bal"
-
-function logic() {
-
-if [ "$tpath" = "" ]; then
-	echo "no tpath set..."
-else
-	pushd . >/dev/null
-	cd $tpath
-	php /svn/svnroot/Applications/editclass_key.php $tpath/*.trans
-	popd >/dev/null
-fi
-}
-function logicG() {
-if [ "$tpath" = "" ]; then
-	echo "no tpath set..."
-else
-	scriptscope=global php /svn/svnroot/Applications/editclass_key.php $tpath/*.trans
-fi
-}
-
-function backup() {
-echo "Indtast kommentar: "
-read kommentar < /dev/tty
-tar czvf $tpath/.backup-$(date +%s)_$kommentar.tgz $tpath
-}
+source /svn/svnroot/Libraries/aliases
 function nr() {
 	pushd . 2>/dev/null
 	cd /data/regnskaber
