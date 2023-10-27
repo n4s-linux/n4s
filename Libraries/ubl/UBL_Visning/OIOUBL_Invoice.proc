@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OIOUBL visning version 2.0.0 (2017)</title>
+<style type="text/css">
+body, h2, h1, h3, td, th, tr {
+    font-family: arial, serif;
+    font-size: 10pt;
+    background-color: white;
+    color: #000000;
+}
+
+h2 {
+    font-weight: bold;
+    margin: 0;
+    font-size: 12pt;
+}
+
+h3 {
+    margin: 0;
+    font-size: 20pt;
+}
+
+table {
+    border: 0;
+    margin: 0;
+    width: 100%;
+}
+
+th, td {
+    vertical-align: top;
+    text-align: left;
+}
+
+td.AlignRightTd {
+    text-align: right;
+    padding-left: 20px;
+}
+
+td.AlignRightTdAmountType {
+    vertical-align: top;
+    text-align: right;
+    width: 20px;
+}
+
+/* HEADER */
+h3.DocumentType {
+    background-color: lightblue;
+    -webkit-print-color-adjust: exact;
+}
+
+td.DocumentHeader {
+    width: 10%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 11px;
+    background-color: lightblue;
+    -webkit-print-color-adjust: exact;
+}
+
+td.DocumentHeaderInfo {
+    white-space: nowrap;
+    background-color: lightblue;
+    -webkit-print-color-adjust: exact;
+}
+
+td.UBLLine {
+    margin: 0;
+    font-size: 8pt;
+}
+
+td.UBLHeaderTd {
+    margin: 0;
+    font-size: 8pt;
+    width: 15%
+}
+
+hr {
+    border: none;
+    border-top: solid 7px lightblue;
+}
+
+/* ITEM LINES */
+table.ItemsTable {
+    border-collapse: collapse;
+}
+
+.oddrow {
+    background-color: #DFE0E1;
+    -webkit-print-color-adjust: exact;
+}
+
+.evenrow {
+    background-color: white;
+    -webkit-print-color-adjust: exact;
+}
+
+th.ItemLineHeader {
+    background-color: lightblue;
+    -webkit-print-color-adjust: exact;
+}
+
+th.ItemLineHeaderAmount {
+    text-align: center;
+    background-color: lightblue;
+    -webkit-print-color-adjust: exact;
+}
+
+/* Tax and total */
+hr.HrTaxTotalBorder {
+    border: none;
+    border-top: solid 2px lightblue;
+}
+
+td.TaxAndTotalText {
+    white-space: nowrap;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+td.TaxAndTotalTextBc {
+    white-space: nowrap;
+    font-weight: bold;
+    background-color: lightblue;
+    -webkit-print-color-adjust: exact;
+}
+
+td.TaxAndTotalValueBc {
+    text-align: right;
+    vertical-align: top;
+    font-weight: bold;
+    background-color: lightblue;
+    -webkit-print-color-adjust: exact;
+}
+
+td.TaxAndTotalValueTypeBc {
+    vertical-align: top;
+    font-weight: bold;
+    background-color: lightblue;
+    -webkit-print-color-adjust: exact;
+}
+        </style>
+</head>
+<body>
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+<tr>
+<td class="UBLHeaderTd"></td>
+<td class="UBLHeaderTd"></td>
+<td class="UBLHeaderTd"></td>
+<td class="DocumentHeader">
+<h3 class="DocumentType">FAKTURA 
+                                
+                                 
+                                </h3>
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+<tr>
+<td class="DocumentHeaderInfo"><b>Nummer:</b></td>
+<td class="DocumentHeaderInfo"></td>
+</tr>
+<tr>
+<td class="DocumentHeaderInfo"><b>Dato:</b></td>
+<td class="DocumentHeaderInfo">2005-11-20</td>
+</tr>
+<tr>
+<td class="DocumentHeaderInfo"><b>Købers ordrenr:</b></td>
+<td class="DocumentHeaderInfo">5002701</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td colspan="4"><hr></td></tr>
+<tr>
+<td>
+<b>Fakturamodtager</b><br><div class="UBLBuyerCustomerParty"><div class="UBLPayeeParty">
+<div class="UBLPartyName">Den Lille Skole</div>
+<div class="UBLPostalAddress">
+<div>
+<span class="UBLStreetName">Fredericiavej</span><span class="UBLBuildingNumber">10</span>
+</div>
+<div></div>
+<div>
+<span class="UBLCountry">DK</span>-<span class="UBLPostalZone">3000 </span><span class="UBLCityName">Helsingør</span>
+</div>
+<div></div>
+</div>5798009811578 (GLN, EndepunktID)
+			</div></div>Dimensions konto: 5250124502</td>
+<td>
+<b>Kontaktoplysninger</b><br><div class="UBLContact">
+<div class="UBLID">Personreference: 7778</div>
+<div class="UBLName">Navn: Hans Hansen</div>
+<div><span class="UBLTelephone">Tlf: 26532147</span></div>
+<div></div>
+<div><span class="UBLElectronicMail">E-mail: Hans@dls.dk</span></div>
+</div>
+</td>
+</tr>
+<tr><td colspan="4"><hr></td></tr>
+<tr>
+<td>
+<b>Fakturaafsender</b><br><div class="UBLBuyerCustomerParty"><div class="UBLPayeeParty">
+<div class="UBLPartyName">Tavleverandøren</div>
+<div class="UBLPostalAddress">
+<div>
+<span class="UBLStreetName">Leverandørvej</span><span class="UBLBuildingNumber">11</span>
+</div>
+<div></div>
+<div>
+<span class="UBLCountry">DK</span>-<span class="UBLPostalZone">2870 </span><span class="UBLCityName">Dyssegård</span>
+</div>
+<div></div>
+</div>DK16356706 (DK:CVR, EndepunktID)
+			<div class="UBLPartyLegalEntity"><span class="UBLCompanyID">DK16356706 (DK:CVR, Juridisk)
+				</span></div>
+<div class="UBLPartyTaxScheme"><span class="UBLCompanyID">DK16356706 (DK:SE, Moms)
+			</span></div>
+</div></div>
+</td>
+<td>
+<b>Kontaktoplysninger</b><br><div class="UBLContact">
+<div class="UBLID">Personreference: 23456</div>
+<div class="UBLName">Navn: Hugo Jensen</div>
+<div><span class="UBLTelephone">Tlf: 15812337</span></div>
+<div></div>
+<div><span class="UBLElectronicMail">E-mail: Hugo@tavl.dk</span></div>
+</div>
+</td>
+</tr>
+<tr><td colspan="4"><hr></td></tr>
+<tr><td>
+<b>Levering</b><br>Leveringsdag:  2005-11-15<br>
+</td></tr>
+</table>
+<br><table class="ItemsTable" border="0" width="100%" cellspacing="0" cellpadding="2">
+<tr class="UBLInvoiceLineHeader">
+<th class="ItemLineHeader">Linje</th>
+<th class="ItemLineHeader">Varenr</th>
+<th class="ItemLineHeader">Beskrivelse</th>
+<th class="ItemLineHeader">Antal</th>
+<th class="ItemLineHeader">Enhed</th>
+<th class="ItemLineHeader">Enhedspris</th>
+<th class="ItemLineHeader">Moms</th>
+<th class="ItemLineHeader">Pris incl</th>
+<th class="ItemLineHeaderAmount">Pris</th>
+<th class="ItemLineHeaderAmount"></th>
+</tr>
+<tr class="UBLInvoiceLine">
+<td class="UBLID oddrow">1</td>
+<td class="UBLSellersItemIdentification oddrow">5712345780121</td>
+<td class="UBLName oddrow">Hejsetavle</td>
+<td class="UBLInvoicedQuantity oddrow">1.00</td>
+<td class="UBLInvoiceQuantityUnit oddrow">EA</td>
+<td class="UBLPriceUnit oddrow">5000.00 pr. 1 EA</td>
+<td class="UBLTax oddrow">25%</td>
+<td class="UBLPriceAllowanceChargeEmpty oddrow"></td>
+<td class="UBLLineExtensionAmount AlignRightTd oddrow">5000.00</td>
+<td class="AlignRightTdAmountType oddrow">DKK</td>
+</tr>
+<tr>
+<td class="UBLIDEmpty oddrow"></td>
+<td class="UBLSellersItemIdentificationEmpty oddrow"></td>
+<td class="UBLLine oddrow">
+<b>Basis-/ordremængde faktor: </b>1<br><b>Ordrelinjeref: </b>1<br>
+</td>
+<td class="UBLIDEmpty oddrow"></td>
+<td class="UBLIDEmpty oddrow"></td>
+<td class="UBLIDEmpty oddrow" colspan="5"></td>
+</tr>
+<tr class="UBLInvoiceLine">
+<td class="UBLID evenrow">2</td>
+<td class="UBLSellersItemIdentification evenrow">5712345780111</td>
+<td class="UBLName evenrow">Beslag</td>
+<td class="UBLInvoicedQuantity evenrow">2.00</td>
+<td class="UBLInvoiceQuantityUnit evenrow">EA</td>
+<td class="UBLPriceUnit evenrow">25.00 pr. 1 EA</td>
+<td class="UBLTax evenrow">25%</td>
+<td class="UBLPriceAllowanceChargeEmpty evenrow"></td>
+<td class="UBLLineExtensionAmount AlignRightTd evenrow">50.00</td>
+<td class="AlignRightTdAmountType evenrow">DKK</td>
+</tr>
+<tr>
+<td class="UBLIDEmpty evenrow"></td>
+<td class="UBLSellersItemIdentificationEmpty evenrow"></td>
+<td class="UBLLine evenrow">
+<b>Basis-/ordremængde faktor: </b>1<br><b>Ordrelinjeref: </b>2<br>
+</td>
+<td class="UBLIDEmpty evenrow"></td>
+<td class="UBLIDEmpty evenrow"></td>
+<td class="UBLIDEmpty evenrow" colspan="5"></td>
+</tr>
+<tr><td colspan="10"><hr class="HrTaxTotalBorder"></td></tr>
+<tr class="TaxTotal">
+<td colspan="5"></td>
+<td colspan="3" class="TaxAndTotalText">Linjesum i alt excl moms</td>
+<td class="AlignRightTd">5050.00</td>
+<td>DKK</td>
+</tr>
+<tr class="TaxTotal">
+<td colspan="5"></td>
+<td colspan="3" class="TaxAndTotalText">Momsgrundlag</td>
+<td class="AlignRightTd">5050.00</td>
+<td>DKK</td>
+</tr>
+<tr class="TaxTotal">
+<td colspan="5"></td>
+<td colspan="3" class="TaxAndTotalText">Total momsbeløb (25.00%)</td>
+<td class="AlignRightTd">1262.50</td>
+<td>DKK</td>
+</tr>
+<tr class="TaxTotal">
+<td colspan="5"></td>
+<td colspan="3" class="TaxAndTotalTextBc">Fakturatotal incl moms</td>
+<td class="TaxAndTotalValueBc">6312.50</td>
+<td class="TaxAndTotalValueTypeBc">DKK</td>
+</tr>
+</table>
+<hr>
+<table border="0" width="100%" cellspacing="0" cellpadding="2"><tr>
+<td><table>
+<tr><td><b>Betalingsmåde</b></td></tr>
+<tr><td>Sidste betalingsdato:  2005-11-25</td></tr>
+<tr><td>Indenlandsk kontooverførsel: 
+						
+							(DK:BANK) 
+						<br>Reg.nr: 1234 
+						Kontonr: 1234567890</td></tr>
+<tr><td>Note til betalingsmodtager:   A00095678</td></tr>
+</table></td>
+<td>
+<table>
+<tr><td><b>Betalingsbetingelser</b></td></tr>
+<tr><td>Type: 
+                            1</td></tr>
+</table>
+<br><b>Supplerende oplysninger om totaler</b><br>Afgift total: 
+				1262.50 DKK<br><br>
+</td>
+</tr></table>
+<hr>
+<table border="0" width="100%" cellspacing="0" cellpadding="2"><tr><td>
+<b>OIOUBL dokumentparametre</b><br>CustomizationID: OIOUBL-2.1<br>Profil ID: urn:www.nesubl.eu:profiles:profile5:ver2.0<br>ID: <br>UUID: 9756b4d0-8815-1029-857a-e388fe63f399<br>Dokument valuta: DKK<br>
+</td></tr></table>
+</body>
+</html>
