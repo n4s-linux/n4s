@@ -18,10 +18,29 @@ class ComposerStaticInit4de79ba14c652e823aac59344b6f5667
             'Sabre\\Xml\\' => 10,
             'Sabre\\Uri\\' => 10,
         ),
+        'P' => 
+        array (
+            'Psr\\Cache\\' => 10,
+            'PHPStan\\PhpDocParser\\' => 21,
+        ),
         'N' => 
         array (
             'NumNum\\UBL\\Tests\\' => 17,
             'NumNum\\UBL\\' => 11,
+        ),
+        'M' => 
+        array (
+            'Metadata\\' => 9,
+        ),
+        'J' => 
+        array (
+            'JMS\\Serializer\\' => 15,
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Lexer\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
         ),
     );
 
@@ -34,6 +53,14 @@ class ComposerStaticInit4de79ba14c652e823aac59344b6f5667
         array (
             0 => __DIR__ . '/..' . '/sabre/uri/lib',
         ),
+        'Psr\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'PHPStan\\PhpDocParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src',
+        ),
         'NumNum\\UBL\\Tests\\' => 
         array (
             0 => __DIR__ . '/..' . '/num-num/ubl-invoice/tests',
@@ -41,6 +68,26 @@ class ComposerStaticInit4de79ba14c652e823aac59344b6f5667
         'NumNum\\UBL\\' => 
         array (
             0 => __DIR__ . '/..' . '/num-num/ubl-invoice/src',
+        ),
+        'Metadata\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jms/metadata/src',
+        ),
+        'JMS\\Serializer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jms/serializer/src',
+        ),
+        'Doctrine\\Instantiator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+        ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/src',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
         ),
     );
 
