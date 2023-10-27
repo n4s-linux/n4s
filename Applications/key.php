@@ -1,4 +1,5 @@
 <?php
+require_once("/svn/svnroot/Applications/get_func.php");
 require_once("/svn/svnroot/Applications/short.php");
 $termcmd = getenv("termcmd");
 if ($termcmd == "")
@@ -1013,15 +1014,6 @@ function evalmath($equation)
     }
     return $result;
    // return $equation;
-}
-function get_func($account,$bal,$amount) {
-	require_once("/svn/svnroot/Applications/fzf.php");
-	system("clear"); 
-	$func = fzf("Ingen\nu\ni\niy\niv\nrep\n", "Vælg funktion (moms)", "--border=sharp");
-	if ($func == "Ingen")
-		return "";
-	else
-		return ($func);
 }
 function has_children($array) {
 	$children = 0;
