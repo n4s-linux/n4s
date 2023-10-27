@@ -1,7 +1,7 @@
 {
     "require": {
-        "num-num/ubl-invoice": "^1.15",
         "sabre/xml": "^4.0",
-        "jms/serializer": "^3.28"
+        "jms/serializer": "^3.28",
+        "num-num/ubl-invoice": "^1.15"
     }
 }
