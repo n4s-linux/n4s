@@ -1,5 +1,5 @@
 alias fp=" python /svn/svnroot/Applications/fpaste/fpaste.py"
-version=$(echo $(git log /svn/svnroot/|wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
+version=$(cd /svn/svnroot/;echo $(git log |wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
 export TERM=xterm-256color tmux
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=y
 function h() {
