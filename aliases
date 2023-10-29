@@ -1,5 +1,5 @@
 alias fp=" python /svn/svnroot/Applications/fpaste/fpaste.py"
-version=$(echo $(git log|wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
+version=$(echo $(git log /svn/svnroot/|wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
 export TERM=xterm-256color tmux
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=y
 function h() {
@@ -308,8 +308,7 @@ source /svn/svnroot/Applications/nicebal.bash
 alias plot="bash /svn/svnroot/Applications/key_plot.bash"
 alias plotg="png='set terminal png' bash /svn/svnroot/Applications/key_plot.bash $@ > /svn/svnroot/tmp/plotg.png"
 alias se="php /svn/svnroot/Applications/key.php search_expression"
-alias inv="bash /svn/svnroot/Applications/key_inv.bash"
-alias inv="ol inv"
+alias inv="bash /svn/svnroot/Applications/invoice.bash"
 source /svn/svnroot/Applications/code.bash
 function c() {
 	start=$(date +%s)
