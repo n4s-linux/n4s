@@ -6,8 +6,8 @@ $histfile = getenv("HOME")."/tmp/journal_history";
 system("bash /svn/svnroot/Applications/vthist.bash list|head -n9 > $histfile");
 
 if (!isset($argv[1])) {
-	$menu["Journaler (Sager)"] = array('key'=>'c','Text'=>'Journaler (sager)','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php CRM'");
 	$menu["Regnskab"] = array('key'=>'r','Text'=>'Rapportering...','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Regnskab'");
+	$menu["Journaler (Sager)"] = array('key'=>'c','Text'=>'Journaler (sager)','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php CRM'");
 	$menu["Terminal"] = array('key'=>'T','Text'=>'🖥Terminal','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Terminal'");
 	$menu["Manual"] = array('key'=>'m','Text'=>'Manual','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Manual'");
 	$menu["Lommeregner"] = array('key'=>'C','Text'=>'python','cmd'=>"split-window 'ipython3 --no-banner'");
