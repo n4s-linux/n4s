@@ -142,7 +142,7 @@ Så hvorfor vente? Start din rejse mod økonomisk succes i dag med N4S. Lad ikke
 
 
 # TLDR - Lad mig downloade din OVA
-* Link til [Virtualbox OVA appliance](https://l.linklyhq.com/l/1uAWJ)
+* Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
 * Link til [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (husk at få Extension Pack også)
 
 Fordele ved OVA Løsning:
