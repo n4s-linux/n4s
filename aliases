@@ -606,3 +606,5 @@ function sync() {
 	fi
 	popd >/dev/null
 }
+
+echo "Velkommen til n4s - tryk F1 for at aktivere hovedmenu"
