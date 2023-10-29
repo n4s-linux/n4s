@@ -39,24 +39,16 @@ else if ($argv[1] == "Bogføring") {
 	$menu["Opret postering"] = array('key'=>'p','Text'=>'Python - regnemaskine','cmd'=>"send-keys 'e' Enter");
 	$menu["Ændre outputmetode"] = array('key'=>'m','Text'=>'Metode','cmd'=>"send-keys 'changetermcmd' Enter");
 	$menu["Regnskabsviser"] = array('key'=>'r','Text'=>'Viser','cmd'=>"send-keys 'bash /svn/svnroot/Applications/csvdatakey.bash' Enter");
+	$menu["Eksporter rapporter"] = array('key'=>'x','Text'=>'html','cmd'=>"send-keys 'html' Enter");
 	$menu["Indlæs CSV"] = array('key'=>'c','Text'=>'CSV','cmd'=>"send-keys 'csv' Enter");
 	$menu["Åbne poster"] = array('key'=>'å','Text'=>'Afstemning','cmd'=>"send-keys 'reconcile' Enter");
 	$menu["Juster Periode"] = array('key'=>'P','Text'=>'Ændre periode','cmd'=>"send-keys 'dp' Enter");
 	$menu["Juster Sortering"] = array('key'=>'P','Text'=>'Ændre periode','cmd'=>"send-keys 'ds' Enter");
-	$menu["Debitorafstemning"] = array('key'=>'d','Text'=>'debtorafstemning','cmd'=>"send-keys 'debtorreport' Enter");
-}
-else if ($argv[1] == "Budget") {
-	$menu["Rediger budget"] = array('key'=>'R','Text'=>'Edit','cmd'=> "send-keys 'bash /svn/svnroot/Applications/budget.bash' Enter ");
-	$menu["Gem budget"] = array('key'=>'G','Text'=>'SAve','cmd'=> "send-keys 'bash /svn/svnroot/Applications/budget.bash print > \$tpath/budget.ledger' Enter");
-
 }
 else if ($argv[1] == "rmenu") {
 	$menu["Bogføring"] = array('key'=>'b','Text'=>'Bogføring','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Bogføring' ");
-	$menu["Budget"] = array('key'=>'u','Text'=>'Budget','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Budget' ");
 	$menu["Rapportering"] = array('key'=>'e','Text'=>'Regnskab...','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Rapportering'");
 	$menu["Automatisering"] = array('key'=>'a','Text'=>'Automatisering','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Automatisering' ");
-	$menu["Fejlkonto"] = array('key'=>'f','Text'=>"Fejlkonto",'cmd'=>"send-keys 'php /svn/svnroot/Applications/fk.php' Enter");
-	$menu["Årsafslutning / afstemning"] = array('key'=>'å','Text'=>'Periodeafslutning','cmd'=>"send-keys 'bash /svn/svnroot/Applications/yearend.bash' Enter");
 }
 else if ($argv[1] == "Manual" ) {
 	$menu["n4s - Bogføringssystem"] = array('key'=>'t','Text'=>'Tmux - Vinduesystem','cmd'=>"new-window 'vi /svn/svnroot/MANUAL'");
