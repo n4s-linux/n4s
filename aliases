@@ -240,22 +240,25 @@ function html2() {
 	php /svn/svnroot/Applications/htmlreport.php > ~/tmp/out.html
 	pushd . 2>/dev/null > /dev/null
 	cd ~/tmp/
-set -x
     wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 out.html Saldobalance-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Saldobalance-$bn-$begin-$end.pdf
+    mv Saldobalance-$bn-$begin-$end.pdf ~/n4s-export
 
     wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 kontokort.html Kontokort-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Kontokort-$bn-$begin-$end.pdf
+    mv Kontokort-$bn-$begin-$end.pdf ~/n4s-export
 
     wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 nøgletal.html Nøgletal-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Nøgletal-$bn-$begin-$end.pdf 
+    mv Nøgletal-$bn-$begin-$end.pdf ~/n4s-export
 
     wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 statistik.html Lagkagediagrammer-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Lagkagediagrammer-$bn-$begin-$end.pdf 
+    mv Lagkagediagrammer-$bn-$begin-$end.pdf ~/n4s-export
 
     wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 manglendebilag.html Manglendebilag-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Manglendebilag-$bn-$begin-$end.pdf 
-set +x
+    mv Manglendebilag-$bn-$begin-$end.pdf ~/n4s-export
 
 	popd 2>/dev/null > /dev/null
 }
