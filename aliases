@@ -39,8 +39,8 @@ export LEDGER_SORT=date
 alias pivot="bash /svn/svnroot/Applications/hpivot.bash $@"
 alias ppivot="LEDGER_BEGIN=1970/1/1 LEGDER_END=2099/12/31 bash /svn/svnroot/Applications/hpivot.bash $@"
 
-mkdir -p ~/tmp/tmux-sockets/
-export TMUX_TMPDIR=~/tmp/tmux-sockets
+mkdir -p ~/n4s-sockets/
+export TMUX_TMPDIR=~/n4s-sockets/
 alias budget="bash /svn/svnroot/Applications/budget.bash"
 transfer() {
     curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
