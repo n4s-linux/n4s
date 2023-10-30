@@ -16,7 +16,6 @@ require_once("key_accountsfuncs.php");
 require_once("/svn/svnroot/Applications/proc_open.php");
 require_once("/svn/svnroot/Applications/key_config.php");
 global $path;
-require_once("/svn/svnroot/Applications/key_chart_acc.php");
 global $aliases;
 $editor = "php /svn/svnroot/Applications/key_fzf.php";
 if (getenv("DISPLAY") == "")
@@ -26,105 +25,24 @@ else
 $editor = "vim";
 
 
-//require_once("/svn/svnroot/Applications/key_chart_acc.php");
 if ($argv[1] == "entry")
 	$data = loadcache();
 else
 	$data = loadall($path);
 $expanded = expand_ek(expand($data));
+require_once("/svn/svnroot/Applications/key_chart_acc.php");
 $i = 0;
 $args = "";
 $args_uc = array();;
-	foreach ($argv as $arg) {
-		if ($i > 1)
-			$args .= "\"$arg\"" . " ";
-		if ($i > 3)
-		  array_push($args_uc,$arg);
+foreach ($argv as $arg) {
+	if ($i > 1)
+		$args .= "\"$arg\"" . " ";
+	if ($i > 3)
+	  array_push($args_uc,$arg);
 
-		$i++;
-	}
-if (isset($argv[1]) && $argv[1] == "openentries") {
-	openentries:
-	$open = array();
-	foreach ($expanded as $file) {
-		foreach ($file['Transactions'] as $trans) {
-				if (stristr($trans['Account'],'Kreditorer:') || stristr($trans['Account'],'Debitorer:') || stristr($trans['Account'],'Fejl'))
-					array_push($open,array('trans'=>$trans,'source'=>$file));
-//					array_push($open,array('trans'=>$trans));
-		}
-	}
-	foreach ($open as $curopen) {
-		$data = $curopen['trans'];
-		echo "$curopen[source][Date]\t$data[Amount]\n";
-	}
+	$i++;
 }
-if (isset($argv[1]) && $argv[1] == "searchuid") {
-	exec_app("$editor /tmp/pasteuids");
-	$uids = array_filter(explode(" ",str_replace("─","",file_get_contents("/tmp/pasteuids"))));
-	print_r($uids);die();
-	$filez = array();
-	foreach ($uids as $curuid)
-		array_push($filez,trim(shell_exec("grep \"$curuid\" $path/*.trans -l")));
-	$vimfilez = "";
-	foreach ($filez as $curfile)
-		$vimfilez .= " \"$curfile\"";
-	exec_app("$editor $vimfilez");
-}
-if (isset($argv[1]) && $argv[1] == "bilag" ) {
-	foreach($data as $file) {
-		$orgfile = $file;
-		if (strtotime($file["Date"]) < strtotime("-35 days")) continue;
-		$amount = $file["Transactions"][0]["Amount"];
-		if ($amount == 0) continue; // ingen tomme transaktioner tak
-		$fn = str_replace(".trans","",sanitize($file["Filename"] . "_" .$amount ,true) . ".pdf");
-		if (!file_exists($path."/vouchers/used/$fn") && !file_exists($path."/vouchers/ignore/$fn")) {
-			touch($path."/vouchers/$fn",strtotime($file["Date"])) ;
-			$file["HasVoucher"] = "Missing";
-		}
-		else {
-			if (file_exists($path."/vouchers/used/$fn"))
-				$file["HasVoucher"] = $fn;
-			else if (file_exists($path."/vouchers/ignore/$fn"))
-				$file["HasVoucher"] = "Ignore";
-			if (json_encode($orgfile) != json_encode($file))
-				file_put_contents($file["Filename"],json_encode($file,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
-		}
-		if (json_encode($orgfile) != json_encode($file))
-				file_put_contents($file["Filename"],json_encode($file,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
-		system("tpath=$path bash /svn/svnroot/Applications/arkiverbilag.bash");
-	}
-}
-if (isset($argv[1]) && $argv[1] == "fejl") {
-	$begin = getenv("LEDGER_BEGIN");
-	$end = getenv("LEDGER_END");
-	$fejler = array();
-	foreach (expand($data) as $file) { // Gennemgang af filer som har hashtags i comments
-		$t = strtotime($file['Date']);
-		if ($t >= s2t($begin) && $t <= s2t($end)) {
-			if (isset($file['Comment']) && stristr($file['Comment'], "#")) {
-				if (!isset($fejler['hashtags'])) $fejler['hashtags'] = array();
-				array_push($fejler['hashtags'],$file);
-			}
-		}
-	}
-	foreach (expand($data) as $file) {
-		$t = strtotime($file['Date']);
-		if ($t >= s2t($begin) && $t <= s2t($end)) {
-			$fejl = false;
-			foreach ($file['Transactions'] as $curtrans) {
-				if (stristr($curtrans['Account'],"Fejl")) $fejl = true;	
-			}
-			if ($fejl) {
-				if (!isset($fejler['fejlkonto'])) $fejler['fejlkonto'] = array();
-				array_push($fejler['fejlkonto'],$file);
-			}
-
-		}
-	}
-	require_once("fejlrapport.php");
-	fejlrapport($fejler);
-}
-else if (isset($argv[1]) && $argv[1] == "ledger") {
+if (isset($argv[1]) && $argv[1] == "ledger") {
 	$loutput_uid = uniqid();
 	$uid = date("Y-m-d") . "_".exec("whoami");
 	$cbf = ".curl_$op";
@@ -135,7 +53,7 @@ else if (isset($argv[1]) && $argv[1] == "ledger") {
 		system ("php /svn/svnroot/Applications/csv2ledger.php *.csv> /home/$op/tmp/.csv2l");
 	$o.=file_get_contents("/home/$op/tmp/.csv2l");
 	}
-	foreach (expand($data) as $file) {
+	foreach ($expanded as $file) {
 		if (!nobilag($file) && missingvouchers())
 			continue;
 		if (!isset($file['Ref']) && isset($file['Reference']))
@@ -146,16 +64,21 @@ else if (isset($argv[1]) && $argv[1] == "ledger") {
 		if (isset($file['Filereferences'])){
 		    $attachedFiles = count($file['Filereferences']);
         	}
-		eoff();
 		if (isset($file['Reference']))
 			$file['Reference'] = str_replace("\\","",$file['Reference']);
 		if (isset($file['Ref']))
 			$file['Ref'] = str_replace("\\","",$file['Ref']);
 		$file['Description'] = str_replace("\\","",$file['Description']);
-		eon();
 		$o .= "$file[Date] ($file[Ref]) $file[Description] \t ; FilesAttached: $attachedFiles \n";
 //		$o .= "; FilesAttached: 0\n";
-		$oo = "";
+		$oo = "\n";
+		$noend = getenv("noend");
+		$begin = getenv("LEDGER_BEGIN");$end=getenv("LEDGER_END");
+		if (!isset($file['Date'])) continue;
+		if ($noend == "") {
+			if (strtotime($file['Date']) < strtotime($begin)) continue;
+			if (strtotime($file['Date']) > strtotime($end)) continue;
+		}
 		foreach ($file['Transactions'] as $trans) {
 			if (!isset($trans['id'])) $trans['id'] = "(unset)";
 			$o .= "\t$trans[Account]  $trans[Amount] ";
@@ -165,7 +88,6 @@ else if (isset($argv[1]) && $argv[1] == "ledger") {
 			//$o .= "\n";
 
 		}
-		$o .= "\n";
 		$o .= $oo;
 
 	}
@@ -187,15 +109,7 @@ else if (isset($argv[1]) && $argv[1] == "ledger") {
 			system("$cmd");
 		$cmd = ("cp \"$path/" . $cbf . "\"" .  " \"$path/curl\"; ledger   -B -f \"$path/curl\" $args > ~/tmp/loutput_$loutput_uid");
 		system($cmd);
-		
-		$cmd = "ledger -f \"$path/$cbf\" b indtægter: udgifter: --depth 1|tail -n1";
-		$total = trim(exec($cmd));
-		if (getenv("LEDGER_ADD_BUDGET") == "1")
-			system("cd \"$path\";cat .budget.ledger >> $cbf");
-		system ("rm -f /tmp/loutput_$uid");
 		$lretval = 0;
-
-
 		system("ledger -B -f \"$path/$cbf\" b foobarbiditybas 2> /dev/null",$lretval);
 		if ($lretval === 0) {
 			$basename = basename("$path");
@@ -220,16 +134,6 @@ else if (isset($argv[1]) && $argv[1] == "ledger") {
 }
 if (isset($argv[1]) && $argv[1] == "load") {
   loadfile();
-}
-else if (isset($argv[1]) && $argv[1] == "search_exTrykion") {
-	$results = "";
-	foreach ($data as $curtrans) {
-		$a = 0;
-		eval('$a = (' . $argv[2] . ");");
-		if ($a) $results .= "\"$path/$curtrans[Filename]\" ";
-	}
-	if ($results != "")
-		exec_app("$editor $results");
 }
 else if (isset($argv[1]) && ($argv[1] == "search" || $argv[1] == "bulk" )) {
 	if (!isset($argv[2]) || !isset($argv[3]))

@@ -60,12 +60,12 @@ else
 require_once("key.php");
 if (isset($data))
 	$data = loadall($path);
-$cmd = "LEDGER_DEPTH=999 ledger -f \"$path/curl\" accounts > \"$path/.ledger_accounts.txt\"";
+if (time() - filemtime("$path/.ledger_accounts.txt") - time() > 60*5) {
+$cmd = "LEDGER_DEPTH=999 ledger --no-pager -f \"$path/curl\" accounts > \"$path/.ledger_accounts.txt\"";
 system($cmd);
+}
 $ledger_accounts = explode("\n",file_get_contents("$path/.ledger_accounts.txt"));
-#system("rm \"$path/.ledger_accounts.txt\""); // nok bedre at lade være hvis der køres flere på samme tid
 $tree = $accounts;
-
 foreach ($ledger_accounts as $acc) { // here we just combine the chart of accounts with the added accounts :-)
 	$parts = explode(":",$acc);
 	if ($parts[0] == "") continue;
@@ -79,5 +79,4 @@ foreach ($ledger_accounts as $acc) { // here we just combine the chart of accoun
 }
 $accounts = $tree;
 file_put_contents("$path/chart_of_account",json_encode($accounts,JSON_PRETTY_PRINT));
-
 ?>
