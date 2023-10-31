@@ -1,5 +1,6 @@
 <?php
 global $path;
+if ($path == "") $path = getenv("tpath");
 	$accounts = array('Fejlkonto'=>array(
 	'Uhåndterede debitorbetalinger'=>[],'Uhåndterede kreditorbetalinger'=>[]),
 	'Aktiver'=>array(

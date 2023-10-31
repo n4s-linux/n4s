@@ -11,6 +11,7 @@ $mtimez = array();
 $cache = array();
 $lbf = getenv("LEDGER_BUDGET_STUFF"); // this is not very compliated, it is a hack... fix me anytime 
 $lem = getenv("LEDGER_ENTRY_MTIME"); // also hack just to pass envinronment from terminal to system()
+require_once("/svn/svnroot/Applications/key_chart_acc.php");
 require_once("key_accountsfuncs.php");
 //require_once("key_csv.php");
 require_once("/svn/svnroot/Applications/proc_open.php");
@@ -30,7 +31,6 @@ if ($argv[1] == "entry")
 else
 	$data = loadall($path);
 $expanded = expand_ek(expand($data));
-require_once("/svn/svnroot/Applications/key_chart_acc.php");
 $i = 0;
 $args = "";
 $args_uc = array();;
