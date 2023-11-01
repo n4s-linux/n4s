@@ -119,7 +119,7 @@ function printnotes() {
 		echo "<div><a name='note$key'><h3>$key - $nn </h3></a>\n";
 		$sum = 0;
 		foreach ($val as $curnote) {
-			echo "<table class=\"table table-based \" width=800>";
+			echo "<table class=\"table table-based \" width=750>";
 			foreach ($curnote as $key => $val) {
 				if (intval($val) == 0) continue; // dont print blank note lines
 				$sum += $val;
@@ -132,10 +132,14 @@ function printnotes() {
 		}
 	}
 }
-
+function ledgerhack() {
+	// ledger csv problem workaround unset ledger-depth, then set it again - irc no response 2023-11-01
+	return "unset LEDGER_DEPTH;LEDGER_DEPTH=5";
+}
 function getdata($begin,$end) {
 	$op = exec("whoami");
-	$cmd = "LEDGER_BEGIN=$begin LEDGER_END=$end php /svn/svnroot/Applications/key.php ledger csv -S account,date,payee > /home/$op/htmlreport.csv";
+	$lh = ledgerhack();
+	$cmd = "$lh; LEDGER_BEGIN=$begin LEDGER_END=$end php /svn/svnroot/Applications/key.php ledger csv -S account,date,payee > /home/$op/htmlreport.csv";
 	exec($cmd);
 	$row = 1;
 	$darray = array();
@@ -187,9 +191,9 @@ function getdata($begin,$end) {
 			$bal[$curd['KontoN1']] += $curd['Beløb'];
 			error_reporting(E_ALL);
 		}
-		echo "<table class=\"table table-based \" width=800>";
+		echo "<table border=1 style='width: 750px'>";
 		$upper = mb_strtoupper($header);
-		echo "<thead><tr><th style='background: white'><p align=left>$upper</p></th><th style='background: white'><p align=right>Beløb</p></th></th></tr>";
+		echo "<thead><tr><th style='background: white width=500'><p align=left>$upper</p></th><th style='width: 250;background: white'><p align=right>Beløb</p></th></th></tr>";
 		echo "<tbody>";
 		$total = 0;
 		foreach ($bal as $key => $val) {
