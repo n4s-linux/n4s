@@ -43,6 +43,9 @@ foreach ($argv as $arg) {
 	$i++;
 }
 if (isset($argv[1]) && $argv[1] == "ledger") {
+	if ($path == "" ) {
+		die("Ingen path.");
+	}
 	$loutput_uid = uniqid();
 	$uid = date("Y-m-d") . "_".exec("whoami");
 	$cbf = ".curl_$op";
@@ -69,8 +72,6 @@ if (isset($argv[1]) && $argv[1] == "ledger") {
 		if (isset($file['Ref']))
 			$file['Ref'] = str_replace("\\","",$file['Ref']);
 		$file['Description'] = str_replace("\\","",$file['Description']);
-		$o .= "$file[Date] ($file[Ref]) $file[Description] \t ; FilesAttached: $attachedFiles \n";
-//		$o .= "; FilesAttached: 0\n";
 		$oo = "\n";
 		$noend = getenv("noend");
 		$begin = getenv("LEDGER_BEGIN");$end=getenv("LEDGER_END");
@@ -79,6 +80,8 @@ if (isset($argv[1]) && $argv[1] == "ledger") {
 			if (strtotime($file['Date']) < strtotime($begin)) continue;
 			if (strtotime($file['Date']) > strtotime($end)) continue;
 		}
+		$o .= "$file[Date] ($file[Ref]) $file[Description] \t ; FilesAttached: $attachedFiles \n";
+		$oo = "\n";
 		foreach ($file['Transactions'] as $trans) {
 			if (!isset($trans['id'])) $trans['id'] = "(unset)";
 			$o .= "\t$trans[Account]  $trans[Amount] ";
