@@ -90,7 +90,11 @@ elif [ "$argument" == "watch" ]; then
 		sleep 360
 	done
 elif [ "$argument" == "search" ]; then
-	tpath="$2" noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 LEDGER_DEPTH=5 php /svn/svnroot/Applications/key.php ledger select date,account,amount,payee "where payee=~/$3/"|grep -v Resultatdi|grep -v Egenkapital:Periodens|fzf --tac
+	(
+		ledger -f $2/curl -S payee,date select date,account,amount,payee "where payee=~/$3/"
+		ledger -f $2/curl -S payee,date select date,account,amount,payee "$3"
+	)|fzf --header=Opslag
+	#tpath="$2" noend=1 LEDGER_NOTTERMINAL=Fejlkonto:NotCalculatedYet LEDGER_END=2099-01-01 LEDGER_BEGIN=$(date +%-%m-%d --date="-1 year") LEDGER_DEPTH=5 php /svn/svnroot/Applications/key.php ledger select date,account,amount,payee "where payee=~/$3/"|grep -v Resultatdi|grep -v Egenkapital:Periodens|fzf --tac
 elif [ "$argument" == "tag" ]; then
 	pushd .>/dev/null
 	db=$(ls -1td ~/regnskaber/*/.tags|sed 's/\/\.tags//g'|while read i; do basename "$i"; done|fzf -1 --header="Vælg database")
