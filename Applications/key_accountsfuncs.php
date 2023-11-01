@@ -1,20 +1,24 @@
 <?php
+$op = exec("whoami");
 require_once("key.php");
 $ledger_accounts = null;
 
 function listaccounts() {
-$cmd = "LEDGER_DEPTH=99 noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 php /svn/svnroot/Applications/key.php ledger accounts > /tmp/accounts;chmod 777 /tmp/accounts";
+$cmd = "LEDGER_DEPTH=99 noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 php /svn/svnroot/Applications/key.php ledger accounts > /home/$op/tmp/accounts;chmod 777 /home/$op/tmp/accounts";
 system($cmd);
 //echo $cmd;
 $accounts = explode("\n",file_get_contents("/tmp/accounts"));
 return $accounts;
 }
+
 function has_subacc($account){
+	global $op;
 	global $ledger_accounts;
+	$op = exec("whoami");
 	if ($ledger_accounts == null) {
-		$cmd = "ledger_depth=99 noend=1 ledger_begin=1970/1/1 ledger_end=2099/12/31 php /svn/svnroot/Applications/key.php ledger accounts > /tmp/subacc";
+		$cmd = "ledger_depth=99 noend=1 ledger_begin=1970/1/1 ledger_end=2099/12/31 php /svn/svnroot/Applications/key.php ledger accounts > /home/$op/tmp/subacc";
 		system($cmd);
-		$ledger_accounts = explode("\n",file_get_contents("/tmp/subacc"));
+		$ledger_accounts = explode("\n",file_get_contents("/home/$op/tmp/subacc"));
 	}
 	$a = has_subs($account,$ledger_accounts);
 	return $a;
