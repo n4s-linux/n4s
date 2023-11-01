@@ -56,5 +56,7 @@ N4S: Du får et nyt tip til hvordan du bruger systemet for hvert bilag du bogfø
 VIM: SØG =  Hvad Vil du søge - NB mellemrum escapes med '\' (normal)
 VIM: Erstat :%s/Hvad Vil du søge/ERSTATNING/  - NB Mellemrum escapes med '\' (normal)
 VIM: Lær at bruge vim - skriv vimtutor
+VIM: Søg efter streng blandt tidligere transaktioner = Ctrl-o (normal)
 Gnome Terminal: Ctrl-Shift-n = ny terminal - du kan køre flere terminaler af gangen
 Gnome genveje: Windows+1-9 = skift aktivitet (terminal, filer, etc)
+Terminal zoom: Ctrl + +/-
