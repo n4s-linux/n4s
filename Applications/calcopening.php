@@ -9,16 +9,22 @@ $op = exec("whoami");
 $fd = fopen("PHP://stdin","r");
 while ($line = fgetcsv($fd,null,",","\"","\\")) { // GET DATA 
 	$date = $line[0];
-	$bilag = $line[1];
-	$desc = $line[2];
-	$konto = $line[3];
-	$fn = $line[7];
+	if (isset($line[1])) $bilag = $line[1]; else $bilag = "";
+	if (isset($line[2])) $desc = $line[2]; else $desc = "";
+	if (isset($line[3])) $konto = $line[3];else $konto = "";
+	if (isset($line[7])) $fn = $line[7]; else $fn = "";
 	if (substr($konto,0,strlen("Udgifter:")) == "Udgifter:") continue;
 	if (substr($konto,0,strlen("Indtægter:")) == "Indtægter:") continue;
 	if (substr($konto,0,strlen("Resultatdisponering:")) == "Resultatdisponering:") continue;
 	if (substr($konto,0,strlen("Egenkapital:Periodens resultat")) == "Egenkapital:Periodens resultat") continue;
-	$belob = floatval($line[5]);
-	$saldo[$konto] += $belob;
+	if (isset($line[5]))
+		$belob = floatval($line[5]);
+	else
+		$belob = 0;
+	if (isset($saldo[$konto]))
+		$saldo[$konto] += $belob;
+	else
+		$saldo[$konto] = $belob;
 }
 $begin = getenv("LEDGER_BEGIN");
 $s = "$begin Overført saldo\n";
