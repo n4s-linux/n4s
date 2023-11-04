@@ -10,7 +10,8 @@ function lookup_acc($accounts,$bal,$alias = "") {
 	$v = $curpos;
 	$keyz = print_array($curpos);
 	$lvl = 0;
-	exec_app("((echo NY; cat /svn/svnroot/Libraries/Kontoplan.txt ;LEDGER_DEPTH=999 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 ledger -f $path/curl accounts)|sed 's/^ *//;s/ *$//'|sed 's/\//\./g')|sort|uniq|fzf --history=\"$hist\" --preview-window=bottom --header=\"Vælg konto *** $alias balance *** =  $bal\" --preview=\"LEDGER_DEPTH=999 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31; echo Transactioner;ledger -f $path/curl r \"{}\$\"|tail -n10;   echo Kilde;ledger -f $path/curl r --related \"{}\"|tail -n10;echo Ugentligt;ledger -f $path/curl r \"{}\" -W|tail -n10\" > $path/.acclookup");
+	$cmd = "tmux display-popup -E \"(ledger -f $path/curl accounts;cat /svn/svnroot/Libraries/Kontoplan.txt)|fzf > $path/.acclookup --header='vælg konto for $alias'\"";
+	exec_app($cmd);
 	$accountstring = trim(file_get_contents($path."/.acclookup"));
 	if ($accountstring=="NY") {
 		echo "Ingen konto valgt ved opslag...\n";
