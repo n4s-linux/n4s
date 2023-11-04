@@ -46,7 +46,6 @@ function check_accounts($file) {
 				$aliases[$aname] = $curtrans['Account'];
 				file_put_contents("$path/aliases",json_encode($aliases,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n");
 				file_put_contents("$path/$file[Filename]",json_encode($file,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n");
-	//                      system("cd \"$path\";git commit aliases -m \"New Alias via command line\";git commit \"$file[Filename]\" -m 'Changed accounts via new alias from commandline'");
 			}
 			else
 				$curtrans["Account"] = "New aliases:$curtrans[Account]";
