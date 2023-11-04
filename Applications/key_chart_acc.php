@@ -61,6 +61,8 @@ else
 require_once("key.php");
 if (isset($data))
 	$data = loadall($path);
+if (!file_exists("$path/.ledger_accounts.txt"))
+	system("touch $path/.ledger_accounts.txt");
 if (time() - filemtime("$path/.ledger_accounts.txt") - time() > 60*5) {
 $cmd = "LEDGER_DEPTH=999 ledger --no-pager -f \"$path/curl\" accounts > \"$path/.ledger_accounts.txt\"";
 system($cmd);
