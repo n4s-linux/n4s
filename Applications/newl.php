@@ -19,21 +19,26 @@
 	scanalias($transactions); // check and fix missing aliases
 	$x = expand($transactions); //transactions gets data from global environment set in functions
 	$ledgerdata .= getledgerdata($x);
-
 	$uid = uniqid();
 	$op = exec("whoami");
 	$fn = "/home/$op/tmp/.newl-$uid";
 	file_put_contents("$fn",$ledgerdata);
 	$nargs = $argv;
 	array_shift($nargs);
-	$cmd = ("cp $fn $tpath/curl; ledger -f $fn");
-	if ($nargs[0] != "entry") {
+	$begin = getenv("LEDGER_BEGIN");
+	$end = getenv("LEDGER_END");
+	$cmd = ("cp $fn $tpath/curl; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -B -f $tpath/curl ");
+	if ($nargs[0] == "interest") {
+		calcinterest($x);		
+	}
+	else if ($nargs[0] != "entry") {
 		foreach ($nargs as $curarg)
 			$cmd .= " $curarg";
 		system("$cmd");
 	}
-	else
+	else {
 		entry();
+	}
 	function entry() {
 		global $tpath;
 		global $op;
@@ -64,7 +69,6 @@
 		file_put_contents("$tpath/$f[Filename]",json_encode($f,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		echo "Gemt $tpath/$f[Filename]\n";
 	}
-
 	function askamount($konto,$bal) {
 		$bal = $bal *-1;
 		$rv = getstdin("Beløb for $konto ($bal)");
@@ -103,6 +107,7 @@
 	function scanalias($t) {
 		foreach ($t as $curtrans) {
 			$i = 0;
+			if (!isset($curtrans['Transactions'])) continue;
 			foreach ($curtrans['Transactions'] as $curtransaction) {
 				$x = explode(":",$curtransaction['Account']);
 				if (!isset($x[1])) missingalias($curtrans['Filename'],$i);
@@ -186,6 +191,7 @@ function filter_filename($name) {
     // maximise filename length to 255 bytes http://serverfault.com/a/9548/44086
     $ext = pathinfo($name, PATHINFO_EXTENSION);
     $name= mb_strcut(pathinfo($name, PATHINFO_FILENAME), 0, 255 - ($ext ? strlen($ext) + 1 : 0), mb_detect_encoding($name)) . ($ext ? '.' . $ext : '');
+	$name = str_replace(" ","__",$name);
     return $name;
 }
 ?>
