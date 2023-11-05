@@ -1,3 +1,9 @@
+function b() {
+    tmux split-window -h "LEDGER_BEGIN=$LEDGER_BEGIN LEDGER_END=$LEDGER_END tpath=$tpath php /svn/svnroot/Applications/newl.php b $@|less"
+}
+function r() {
+    tmux split-window -v "LEDGER_BEGIN=$LEDGER_BEGIN LEDGER_END=$LEDGER_END tpath=$tpath php /svn/svnroot/Applications/newl.php r $@|less"
+}
 alias fp=" python /svn/svnroot/Applications/fpaste/fpaste.py"
 version=$(cd /svn/svnroot/;echo $(git log |wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
 export TERM=xterm-256color tmux
@@ -63,7 +69,9 @@ function dp() {
 	begin=1970-01-01 
 	#echo LEDGER_BEGIN=$begin LEDGER_END=$end noend=1 php /svn/svnroot/Applications/key.php ledger equity
 	#LEDGER_BEGIN=$begin LEDGER_END=$end      noend=1 php /svn/svnroot/Applications/key.php ledger equity > $tpath/.Åbning_$end.ledger
-	LEDGER_DEPTH=999 LEDGER_BEGIN=$begin LEDGER_END=$end      noend=1 php /svn/svnroot/Applications/key.php ledger csv |php /svn/svnroot/Applications/calcopening.php 2>/dev/null
+    echo beregner åbning
+    LEDGER_DEPTH=999 LEDGER_BEGIN=$begin LEDGER_END=$end noend=1 php /svn/svnroot/Applications/newl.php csv|php /svn/svnroot/Applications/calcopening.php
+    echo færdig med åbning
 }
 function ds() {
 	php /svn/svnroot/Applications/sortpick.php
@@ -114,14 +122,6 @@ tmux select-window -t $(tmux list-windows|fzf|awk '{print $1}'|sed 's/://g')
 logfile_o="/var/log/olsen"
 
 source /svn/svnroot/Applications/key_tas.bash
-function r() {
-	konto=$(ledger -f $tpath/curl accounts|fzf --header="v-lg konto")
-	#konto=$(whiptail --inputbox "Konto" 10 30 3>&1 1>&2 2>&3)
-	tmux send-keys "l r ^$konto" Enter
-}
-function b() {
-	tmux send-keys "l b " Enter
-}
 function x() {
 if [ "$STY" != "" ]; then
 	echo du er allerede i en STY $STY
@@ -240,23 +240,25 @@ function html2() {
 	php /svn/svnroot/Applications/htmlreport.php > ~/tmp/out.html
 	pushd . 2>/dev/null > /dev/null
 	cd ~/tmp/
-    wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 out.html Saldobalance-$bn-$begin-$end.pdf
+    google-chrome --headless out.html --print-to-pdf=Saldobalance-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Saldobalance-$bn-$begin-$end.pdf
     mv Saldobalance-$bn-$begin-$end.pdf ~/n4s-export
 
-    wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 kontokort.html Kontokort-$bn-$begin-$end.pdf
+    google-chrome --headless kontokort.html --print-to-pdf=Kontokort-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Kontokort-$bn-$begin-$end.pdf
     mv Kontokort-$bn-$begin-$end.pdf ~/n4s-export
 
-    wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 nøgletal.html Nøgletal-$bn-$begin-$end.pdf
+    google-chrome --headless nøgletal.html --print-to-pdf=Nøgletal-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Nøgletal-$bn-$begin-$end.pdf 
     mv Nøgletal-$bn-$begin-$end.pdf ~/n4s-export
 
-    wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 statistik.html Lagkagediagrammer-$bn-$begin-$end.pdf
+
+    google-chrome --headless statistik.html --print-to-pdf=Lagkagediagrammer-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Lagkagediagrammer-$bn-$begin-$end.pdf 
     mv Lagkagediagrammer-$bn-$begin-$end.pdf ~/n4s-export
 
-    wkhtmltopdf --disable-external-links --enable-internal-links  --encoding UTF-8 manglendebilag.html Manglendebilag-$bn-$begin-$end.pdf
+
+    google-chrome --headless manglendebilag.html --print-to-pdf=Manglendebilag-$bn-$begin-$end.pdf
 	/svn/svnroot/Applications/removeblankpages.bash Manglendebilag-$bn-$begin-$end.pdf 
     mv Manglendebilag-$bn-$begin-$end.pdf ~/n4s-export
 
@@ -325,66 +327,10 @@ function c() {
 	fn=$(echo "$fn"|sed 's/\/svn\/svnroot\///g')
 	echo -e "$ts\t#n4s:#code:$fn\t$min" >> /data/regnskaber/stats/$(whoami).stats
 }
-function push() {
-	bash /svn/svnroot/Applications/backup_key.bash $(basename $tpath)
-}
-function lp() {
-fn="$tpath/config.bash"
-env|grep LEDGER
-echo Changing ledger parameters
-echo -n "Begin: "
-read begin
-if [ "$begin" != "" ]; then 
-	export LEDGER_BEGIN=$begin
-fi
-echo -n "End: "
-read end
-if [ "$end" != "" ] ; then
-	export LEDGER_END=$end
-fi
-echo -n "Depth: "
-read depth
-if [ "$depth" != "" ]; then
-	export LEDGER_DEPTH=$depth
-fi
-echo -n "Simple (periodisering): "
-read s
-export simple="$s"
-
-
-echo -n "Reconciliation (skriv 1 for ja): "
-read s
-export reconciliation="$s"
-
-echo -n "Missing vouchers (1 for at filtrere): "
-read s
-export LEDGER_MISSING_VOUCHERS="$s"
-echo "export simple=$simple" > $fn
-echo "export LEDGER_MISSING_VOUCHERS=$missing_vouchers" >> $fn
-(env|grep LEDGER|while read i; do echo -n export" "; echo $i; done ) >> "$fn"
-php /svn/svnroot/Applications/key.php ledger b foobarbidity
-}
-
-
-
-
-
-
 basename=$(basename "$PWD")
 export LC_ALL=da_DK.UTF-8
 export LANG=$LC_ALL
 export LANGUAGE=$LC_ALL
-alias python="ipython3 --no-banner"
-function getenv() {
-	env|grep LEDGER|grep -v "=$"|grep -v LEDGER_SORT|grep -v LEDGER_DEPTH|while read i
-do
-
-	echo -n "$i "
-done
-	bn=$(basename "$tpath");
-	echo -n "$bn"
-}
-# update tmux pane title found here: https://stackoverflow.com/questions/14356857/how-to-show-current-command-in-tmux-pane-title
 function update_title {
 export TMUX_PANE_TITLE="$1"
  printf "\033]2;%s\033\\" "${1:-$TMUX_PANE_TITLE}"; }
@@ -397,21 +343,10 @@ function getcolor() {
 		echo "#bec9b1"
 	fi
 }
-function statusaccount() {
-	ledger -f $tpath/.statusline.ledger b --no-total Aktiver:Likvider: --flat --balance-format="%(account) %(total)\n" 2>/dev/null|sed 's/Aktiver:Likvider://g'|while read i
-	do 
-		#[fg=black,bg=white]
-		color=$(getcolor "$i")
-		echo -n " -- #[bg=$color]$i"
-	done
-}
 prompt_function () {
 cmd=$(fc -ln -0)
-#env=$(getenv|sed 's/LEDGER_//g')
 bn=$(basename "$tpath");
-status=$(statusaccount)
-update_title "#[bg=yellow]$cmd #[bg=blue]$LEDGER_BEGIN - $LEDGER_END $status"
-env=
+update_title "#[bg=yellow]$cmd #[bg=blue]$LEDGER_BEGIN - $LEDGER_END"
 if [ "$tpath" != "" ]; then
 	showpath="#[fg=black,bg=white]$(basename "$tpath")"
 else
@@ -420,11 +355,9 @@ fi
 tmux set -g pane-border-format "#[fg=black,bg=gray]$env$showpath#[fg=black,bg=orange]#T"
 
 
-#cmd=$(history|tail -n1|awk '{print $4}')
 bnpwd=$(basename "$PWD")
 echo "$(whoami) $(date '+%Y-%m-%dT%H:%m') $bnpwd : $cmd" >> /data/regnskaber/.log
 BPWD="$(basename "$PWD")"
-#tmux rename-window "💻$BPWD|$cmd" # virker ikke så godt hvis der er flere panes... ?
 	tips=$(shuf -n 1 /svn/svnroot/Libraries/tipsogtricks);
 	diff3=$(grep $(date +%Y-%m-%d --date="-2 days") ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
 	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=black,bg=#f5ce42]🐃 Vidste du at: 🐃 $tips#[fg=colour50,bg=colour95]" 2>/dev/null
@@ -446,15 +379,6 @@ if [[ -z $SVNROOT ]];then
     export SVNROOT=/svn/svnroot # default
 fi
 # Set the title string at the top of your current terminal window or terminal window tab
-cd $SVNROOT;
-function bulk() {
-	if [ "$1" == "" ]; then
-		echo "s kræver søgefrase, f.eks. 's 2022-01 løn'"
-		return
-	fi
-	echo "bulksearching for $@  in $LEDGER_BEGIN - $LEDGER_END - use ss for searching in all time"
-	php /svn/svnroot/Applications/key.php bulk $LEDGER_BEGIN $LEDGER_END "$@"
-}
 function s() {
 	if [ "$1" == "" ]; then
 		echo "s kræver søgefrase, f.eks. 's 2022-01 løn'"
@@ -471,25 +395,11 @@ function ss() {
 	echo "searching for $@  in 1970-01-01 - 2019-12-31 - use s for searching only in $LEDGER_BEGIN - $LEDGER_END"
 	php /svn/svnroot/Applications/key.php search 1970-01-01 2099-12-31 "$@" 
 }
-alias e="php /svn/svnroot/Applications/key.php entry"
+alias e="php /svn/svnroot/Applications/newl.php entry"
 alias eu="php /svn/svnroot/Applications/key.php entry bilag"
 
 unalias l 2>/dev/null #ubuntu default alias
 source /svn/svnroot/Libraries/aliases
-function nr() {
-	pushd . 2>/dev/null
-	cd /data/regnskaber
-	echo -n "Indtast navn på nyt regnskab: "
-	read regnskab
-	source /svn/svnroot/Libraries/File/sanitize_file_name.bash
-	regnskab=$(sanitize_file_name "$regnskab")
-	regnskab=${regnskab// /_}
-	mkdir $regnskab
-	cd ~/regnskaber
-	ln -s /data/regnskaber/$regnskab 
-	popd 2>/dev/null
-	sr $regnskab
-}
 function scrips() {
 		ls -a /svn/svnroot/Applications/scrips/|fzf --multi --header="Vælg plugins"|while read choice
 		do
@@ -535,14 +445,9 @@ else
     echo FAILED entering $tpath
 	return 1
 fi
-sync
-if [ -f "$tpath/config.bash" ] ; then
-	source "$tpath/config.bash"
-fi
-if [ -f "$tpath/.init.bash" ]; then
-	source "$tpath/.init.bash"
-fi
-echo -e "\e[42mÅbnet $(basename "$tpath") OK - Tryk Alt-m eller skriv 'm' [Enter] for Menu !\e[0m"
+LEDGER_BEGIN=1970-01-01
+LEDGER_END=2099-12-31
+echo -e "\e[42mÅbnet $(basename "$tpath") OK - Tryk Alt-m eller skriv 'm' [Enter] for Menu samt husk at sætte periode med dp!\e[0m"
 
 }
 function saveconf() {
