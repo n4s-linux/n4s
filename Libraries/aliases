@@ -1,7 +1,5 @@
 function l() {
-    LEDGER_CACHE=$LEDGER_CACHE php /svn/svnroot/Applications/key.php ledger $@
-    ledger -f $tpath/curl print Aktiver:Likvider: > $tpath/.statusline.ledger
-    cat "$tpath/notes" 2>/dev/null
+    php /svn/svnroot/Applications/newl.php $@
 }
 function lll() {
 noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31  php /svn/svnroot/Applications/key.php ledger $@
@@ -9,8 +7,7 @@ noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31  php /svn/svnroot/Applicatio
 }
 unalias ll 2>/dev/null #ubuntu default alias
 function ll() {
-    noend=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=$(echo -n $(date +%Y-%m-%d -d "tomorrow"))  php /svn/svnroot/Applications/key.php ledger $@
-    cat "$tpath/notes" 2>/dev/null
+    noend=1 LEDGER_BEGIN=1970-01-01      LEDGER_END=2099-12-31 l $@
 }
 function lc() {
     ledger --no-color --no-pager -f $tpath/curl $@
