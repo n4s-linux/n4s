@@ -191,7 +191,7 @@ function getdata($begin,$end) {
 			$bal[$curd['KontoN1']] += $curd['Beløb'];
 			error_reporting(E_ALL);
 		}
-		echo "<table border=1 style='width: 750px'>";
+		echo "<table class=table style='width: 750px'>";
 		$upper = mb_strtoupper($header);
 		echo "<thead><tr><th style='background: white width=500'><p align=left>$upper</p></th><th style='width: 250;background: white'><p align=right>Beløb</p></th></th></tr>";
 		echo "<tbody>";
