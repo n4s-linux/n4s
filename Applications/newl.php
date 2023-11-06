@@ -27,7 +27,7 @@
 	array_shift($nargs);
 	$begin = getenv("LEDGER_BEGIN");
 	$end = getenv("LEDGER_END");
-	$cmd = ("cp $fn $tpath/curl; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -B -f $tpath/curl ");
+	$cmd = ("cp $fn $tpath/curl; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/curl ");
 	if ($nargs[0] == "interest") {
 		calcinterest($x);		
 	}
@@ -44,9 +44,6 @@
 		global $op;
 		global $x;
 		$f = array();
-		$f['Date'] = askdate();
-		$f['Reference'] = askref();
-		$f['Description'] = askdesc();
 		$f['Transactions'] = array();
 		$bal = -1;
 		$i = 0;
@@ -65,14 +62,20 @@
 		}
 		$filename = date("Ymd") . uniqid();
 		$f['History'] = array(array('Date'=>date("Y-m-d H:m"),'Desc'=>"Manual entry $op"));
+		$f['Date'] = askdate();
+		$f['Reference'] = askref();
+		$f['Description'] = askdesc();
 		$f['Filename'] = $filename . "_" . filter_filename($f['Description']) . ".trans";
 		file_put_contents("$tpath/$f[Filename]",json_encode($f,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		echo "Gemt $tpath/$f[Filename]\n";
+		system("unlink $tpath/.lasttrans 2>/dev/null;ln -s $tpath/$f[Filename] $tpath/.lasttrans; echo skriv 'lt' for at redigere sidste transaktion");
 	}
 	function askamount($konto,$bal) {
+		require_once("/svn/svnroot/Applications/math.php");
 		$bal = $bal *-1;
 		$rv = getstdin("Beløb for $konto ($bal)");
-		return ($rv == "") ? $bal:$rv;	
+		if ($rv == "") $rv = $bal;
+		return evalmath($rv);
 	}
 	function getkontoplan($x) {
 		$r = array();
