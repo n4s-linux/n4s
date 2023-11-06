@@ -1,3 +1,6 @@
+function lt() {
+ vi $(realpath $tpath/.lasttrans )
+}
 function b() {
     tmux split-window -h "LEDGER_BEGIN=$LEDGER_BEGIN LEDGER_END=$LEDGER_END tpath=$tpath php /svn/svnroot/Applications/newl.php b $@|less"
 }
@@ -445,10 +448,10 @@ else
     echo FAILED entering $tpath
 	return 1
 fi
-LEDGER_BEGIN=1970-01-01
-LEDGER_END=2099-12-31
-echo -e "\e[42mÅbnet $(basename "$tpath") OK - Tryk Alt-m eller skriv 'm' [Enter] for Menu samt husk at sætte periode med dp!\e[0m"
-
+LEDGER_BEGIN=$(date +%Y-01-01)
+LEDGER_END=$(date +%Y-01-01 --date="+1 year")
+echo -e "\e[42mÅbnet $(basename "$tpath") OK - Tryk Alt-m eller skriv 'm' [Enter] \e[0m"
+echo -e "\e[45Start med at skrive 'dp' tak !\e[0m"
 }
 function saveconf() {
 	if [ "$tpath" == "" ]; then
