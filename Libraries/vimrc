@@ -238,10 +238,6 @@ endfunction
 au BufEnter *.md setlocal foldexpr=MarkdownLevel()  
 au BufEnter *.md setlocal foldmethod=expr     
 
-hi Normal guibg=#300A24
-
-
-
 
 function! s:ShowMaps()
   let old_reg = getreg("a")          " save the current content of register a
