@@ -1,4 +1,5 @@
 <?php
+require_once("/svn/svnroot/Applications/math.php");
 require_once("/svn/svnroot/Applications/datemorph.php");
 require_once("/svn/svnroot/Applications/expand.php");
 require_once("/svn/svnroot/Applications/get_func.php");
@@ -690,7 +691,6 @@ function get_amount($account,$bal) {
 	}
 	return array("formula"=>$form,"calculated"=>number_format($result,2,".",""));
 }
-require_once("/svn/svnroot/Applications/math.php");
 function has_children($array) {
 	$children = 0;
 	foreach ($array as $key) {
