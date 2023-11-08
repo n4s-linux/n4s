@@ -35,7 +35,7 @@ function vitouch() {
 	if [ "$notitle" == "" ]; then
 		shortbn="${bn:0:6}" #credits #chatgpt
 		bg=$(getbg $shortbn)
-		tmux rename-window "#[fg=$bg]$shortbn"
+		tmux rename-window "$shortbn"
 	fi
 	bnt="$(basename "$tpath")"
 	lockfile="$tpath/.tags/.$bn"".lock"
