@@ -47,14 +47,16 @@
 		$f['Transactions'] = array();
 		$bal = -1;
 		$i = 0;
+			$v = "";
 		while ($bal != 0) {
 			if ($bal == -1 ) $bal = 0;
 			require_once("/svn/svnroot/Applications/fzf.php");
 			$konto = fzf(getkontoplan($x),"vælg konto bal=$bal");
-			$belob = askamount($konto,$bal);
+			$belob = round(askamount($konto,$bal), 2);
 			require_once("/svn/svnroot/Applications/get_func.php");
 			$func = get_func($konto,$bal,$belob);
 			$bal += $belob;
+			$v .= "\e[33m$belob\t$konto\t$func\n\e[0m";
 			$f['Transactions'][$i]['Account'] = $konto;
 			$f['Transactions'][$i]['Func'] = $func;
 			$f['Transactions'][$i]['Amount'] = $belob;
@@ -62,6 +64,7 @@
 		}
 		$filename = date("Ymd") . uniqid();
 		$f['History'] = array(array('Date'=>date("Y-m-d H:m"),'Desc'=>"Manual entry $op"));
+		echo $v."\n";
 		$f['Date'] = askdate();
 		$f['Reference'] = askref();
 		$f['Description'] = askdesc();
