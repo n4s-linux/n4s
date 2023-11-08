@@ -139,7 +139,7 @@ function ledgerhack() {
 function getdata($begin,$end) {
 	$op = exec("whoami");
 	$lh = ledgerhack();
-	$cmd = "$lh; LEDGER_BEGIN=$begin LEDGER_END=$end php /svn/svnroot/Applications/key.php ledger csv -S account,date,payee > /home/$op/htmlreport.csv";
+	$cmd = "$lh; LEDGER_BEGIN=$begin LEDGER_END=$end php /svn/svnroot/Applications/newl.php csv -S account,date,payee > /home/$op/htmlreport.csv";
 	exec($cmd);
 	$row = 1;
 	$darray = array();
