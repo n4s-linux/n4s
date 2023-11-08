@@ -56,7 +56,7 @@ function printfullspec($darray,$filter) {
 	ob_start();
 	if ($filter == "Indtægter") printheader("Kontokort","portrait");
 	echo "<center><h3><font style='background:#ded2d1'>Kontospecifikationer $filter - $begin - $realend</font></h3></center>";
-	echo "<table class=\"table table-based table-sm\">";
+	echo "<table class=\"table table\">";
 	$cols = array("Date","Reference","Tekst","KontoN1","KontoN2","Beløb");
 	$saldo = 0;
 	$ksaldo = array();
@@ -119,7 +119,7 @@ function printnotes() {
 		echo "<div><a name='note$key'><h3>$key - $nn </h3></a>\n";
 		$sum = 0;
 		foreach ($val as $curnote) {
-			echo "<table class=\"table table-based \" width=750>";
+			echo "<table class=\"table\" width=750>";
 			foreach ($curnote as $key => $val) {
 				if (intval($val) == 0) continue; // dont print blank note lines
 				$sum += $val;
@@ -191,9 +191,9 @@ function getdata($begin,$end) {
 			$bal[$curd['KontoN1']] += $curd['Beløb'];
 			error_reporting(E_ALL);
 		}
-		echo "<table class=table style='width: 750px'>";
+		echo "<table class=\"table\" >";
 		$upper = mb_strtoupper($header);
-		echo "<thead><tr><th style='background: white width=500'><p align=left>$upper</p></th><th style='width: 250;background: white'><p align=right>Beløb</p></th></th></tr>";
+		echo "<thead><tr><th width=50 style='background:white; width: 50px'>&nbsp;</th><th style='background: white width=500'><p align=left>$upper</p></th><th style='width: 250;background: white'><p align=right>Beløb</p></th></th></tr>";
 		echo "<tbody>";
 		$total = 0;
 		foreach ($bal as $key => $val) {
@@ -203,11 +203,13 @@ function getdata($begin,$end) {
 			$val = prettynum($val);
 			$note = getnote($d,$key);
 			if ($note != false)
-				$note = "\n - <a href=#note$note>Note $note</a>";
-			echo "<tr><td width=150>$key $note </td><td width=50>$val</td></tr>";
+				$note = "<td><a href=#note$note>$note</a></td>";
+			else
+				$note = "<td>&nbsp;</td>";
+			echo "<tr>$note<td> $key</td><td width=50>$val</td></tr>";
 		}
 		$ptotal = prettynum($total);
-		echo "<tr><td style='background: white;'><b><u>$header i alt</b></u></td><td style='background:white'><b><u>$ptotal</u></b></td></tr>";
+		echo "<tr><td>&nbsp;</td><td style='background: white;'><b><u>$header i alt</b></u></td><td style='background:white'><b><u>$ptotal</u></b></td></tr>";
 		echo "</tbody></table>";
 		file_put_contents("/home/joo/tmp/notes.json",json_encode($notes,JSON_PRETTY_PRINT));
 	}
