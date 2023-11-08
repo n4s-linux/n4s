@@ -363,7 +363,7 @@ echo "$(whoami) $(date '+%Y-%m-%dT%H:%m') $bnpwd : $cmd" >> /data/regnskaber/.lo
 BPWD="$(basename "$PWD")"
 	tips=$(shuf -n 1 /svn/svnroot/Libraries/tipsogtricks);
 	diff3=$(grep $(date +%Y-%m-%d --date="-2 days") ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
-	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=black,bg=#f5ce42]🐃 Vidste du at: 🐃 $tips#[fg=colour50,bg=colour95]" 2>/dev/null
+	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=black,bg=#594a18]🐃 Vidste du at: 🐃 $tips#[fg=colour50,bg=colour95]" 2>/dev/null
 	tmux set-option status-right "#[fg=black,bg=white] $params %Y-%m-%dT%H:%M #[fg=colour233,bg=colour8]n4s v$version"
 	pushd . >/dev/null
 	cd "$tpath"
@@ -438,7 +438,7 @@ if [ "$bn" == "NY" ]; then
 fi
 bn=$(basename "$tpath")
 if [ "$nochange" != "1" ]; then
-	tmux rename-window "#[bg=darkblue]$bn" 
+	tmux rename-window "$bn" 
 fi
 cd $tpath
 if [ ! -f "curl" ]; then touch curl; fi
