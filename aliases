@@ -368,11 +368,12 @@ BPWD="$(basename "$PWD")"
 	pushd . >/dev/null
 	cd "$tpath"
 	popd >/dev/null
+time=$(date -Iseconds)
 if [ "$tpath" != "" ]; then
 	if [ "$tpath" == "$PWD" ]; then
-		PS1="\[\e[1;32m\]$(echo $lenv)$(basename '$tpath')]\$\[\e[0m "
+		PS1="\[\e[1;32m\]$(echo $lenv)$time $(basename '$tpath')]\$\[\e[0m "
 	else
-		PS1="\[\e[1;32m\]$(echo $lenv)$(basename $tpath) / \W]\$\[\e[0m "
+		PS1="\[\e[1;32m\]$(echo $lenv)$time $(basename $tpath) / \W]\$\[\e[0m "
 	fi
 fi
 }
