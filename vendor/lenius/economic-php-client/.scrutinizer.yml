@@ -1,0 +1,18 @@
+filter:
+  excluded_paths: [Tests/*]
+
+build:
+  environment:
+    php:
+      version: 7.1 # Common versions: 5.4, 5.5, 5.6, 7.0 or hhvm
+  tests:
+    override:
+      -
+        command: 'vendor/bin/phpunit --coverage-clover=clover.xml'
+        coverage:
+          file: 'clover.xml'
+          format: 'php-clover'
+checks:
+  php:
+    custom_coding_standard:
+      ruleset_path: 'phpcs.xml'

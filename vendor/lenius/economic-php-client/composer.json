@@ -1,0 +1,38 @@
+{
+    "name": "lenius/economic-php-client",
+    "type": "library",
+    "description": "PHP-SDK to communicate with E-Conomic",
+    "homepage": "https://github.com/lenius/economic-php-client",
+    "keywords": ["e-conomic", "economic", "rest"],
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Lenius",
+        "email": "info@lenius.dk"
+      }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lenius\\Economic\\": "Economic/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "Lenius\\Economic\\Tests\\": "Tests/api/"
+        }
+    },
+    "require-dev" : {
+        "phpunit/phpunit": "^5.0 || ^6.0 || ^7.0",
+        "squizlabs/php_codesniffer": "3.*",
+        "php-coveralls/php-coveralls": "2.1.*"
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit"
+        ]
+    }
+}
