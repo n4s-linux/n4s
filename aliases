@@ -1,3 +1,4 @@
+alias ui="php /svn/svnroot/Applications/newl.php ui"
 function lt() {
  vi $(realpath $tpath/.lasttrans )
 }
@@ -516,6 +517,5 @@ function sync() {
 	popd >/dev/null
 }
 
-echo "Velkommen til n4s - tryk F1 for at aktivere hovedmenu"
 LEDGER_END=2099/12/31
 LEDGER_BEGIN=1970/01/01
