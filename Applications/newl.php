@@ -28,7 +28,12 @@
 	$begin = getenv("LEDGER_BEGIN");
 	$end = getenv("LEDGER_END");
 	$cmd = ("cp $fn $tpath/curl; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/curl ");
-	if ($nargs[0] == "interest") {
+	if ($nargs[0] == "ui") {
+		echo "launching ui...\n";
+		require_once("nc.php");
+		ui($x); // x = expanded
+	}
+	else if ($nargs[0] == "interest") {
 		calcinterest($x);		
 	}
 	else if ($nargs[0] != "entry") {
