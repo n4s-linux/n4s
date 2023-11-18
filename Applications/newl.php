@@ -29,9 +29,24 @@
 	$end = getenv("LEDGER_END");
 	$cmd = ("cp $fn $tpath/curl; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/curl ");
 	if ($nargs[0] == "ui") {
-		echo "launching ui...\n";
+		echo "launching ui... we should load csv as datasource for ledger backwards compatiblity - or get rid of ledger completely\n";
 		require_once("nc.php");
-		ui($x); // x = expanded
+		$csv = shell_exec("cp $fn $tpath/curl;tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/curl csv --no-pager");
+		$lines = explode(PHP_EOL, $csv);
+		$array = array();
+		$data = array();
+		foreach ($lines as $line) {
+		    $array = str_getcsv($line);
+			if (!isset($array[3]) || $array[3] == "") continue;
+			$bilag = $array[1];
+			$konto = $array[3];
+			$tekst = $array[2];
+			$dato = $array[0];
+			$belob = $array[5];
+			$source = "NotImplemented";
+			array_push($data,array('Account'=>$konto,'tekst'=>$tekst,'Date'=>$dato,'Amount'=>$belob,'source'=>$source,'bilag'=>$bilag));
+		}
+		ui($data); // x = expanded
 	}
 	else if ($nargs[0] == "interest") {
 		calcinterest($x);		
@@ -53,7 +68,7 @@
 		$bal = -1;
 		$i = 0;
 			$v = "";
-		while ($bal != 0) {
+		while (round($bal,2) != 0) {
 			if ($bal == -1 ) $bal = 0;
 			require_once("/svn/svnroot/Applications/fzf.php");
 			$konto = fzf(getkontoplan($x),"vælg konto bal=$bal");
@@ -76,7 +91,6 @@
 		$f['Filename'] = $filename . "_" . filter_filename($f['Description']) . ".trans";
 		file_put_contents("$tpath/$f[Filename]",json_encode($f,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		echo "Gemt $tpath/$f[Filename]\n";
-		system("unlink $tpath/.lasttrans 2>/dev/null;ln -s $tpath/$f[Filename] $tpath/.lasttrans; echo skriv 'lt' for at redigere sidste transaktion");
 	}
 	function askamount($konto,$bal) {
 		require_once("/svn/svnroot/Applications/math.php");
@@ -156,9 +170,13 @@
 		foreach ($x as $c) {
 			if (isset($c['Reference'])) $ref = $c['Reference']; else $ref = "";
 			$ledgerdata .= "$c[Date] ($ref) $c[Description]\n";
+			$counter = 0;
 			foreach ($c['Transactions'] as $ct) {
-				$ledgerdata .= "\t$ct[Account]  $ct[Amount]\n";
+				$ledgerdata .= "\t$ct[Account]  $ct[Amount] ";
+				$ledgerdata .= " ; Filename: $c[Filename]\n\t; TransID: $counter\n";
+
 			}
+				$ledgerdata .= "\n";
 		}
 		return $ledgerdata;
 	}
