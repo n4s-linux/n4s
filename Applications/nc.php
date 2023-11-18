@@ -1,4 +1,6 @@
 <?php
+$aktuelkonto = null;
+$maxwidth=0;
 $lastmode = null;
 $rownum = 1;
 setlocale(LC_ALL,"da_DK.UTF-8");
@@ -10,6 +12,18 @@ $menu = null;
 $main = null;
 $bot = null;
 $pagenum = 0;
+$browsepage = 0;
+function browse($konto,$data) {
+	global $browsepage;
+	ncurses_getmaxyx (STDSCR, $Height, $Width);
+	$w = ncurses_newwin($Height -9,$Width/2,5,$Width/2);
+	ncurses_wborder($w,0,0,0,0,0,0,0,0);
+	while (true) {
+		$key = ncurses_wgetch($w);
+		break;
+	}
+	ncurses_werase($w);
+}
 function ui($data) {
 	global $bot;
 	global $rownum;
@@ -26,12 +40,13 @@ function ui($data) {
 		$main = drawmain($main,$Width,$Height - 9,$mode,$data);
 		$menu = drawtopmenu($menu,$Width,$mode);
 		$bot = drawbotmenu($bot,$Width,$Height,$mode);
-		$lastkey = ncurses_getch();
+		 //int mvwgetch(WINDOW *win, int y, int x);
+		$lastkey = ncurses_wgetch($menu);
 		switch ($lastkey) {
-			case 261:
+			case 67:
 				$mode = switchmode($mode,'next');
 				break;
-			case 260:
+			case 68:
 				$mode = switchmode($mode,'previous');
 				break;
 			case 338:
@@ -42,16 +57,20 @@ function ui($data) {
 				$pagenum--;
 				if ($pagenum < 0)$pagenum=0;
 				break;
-			case 258:
+			case 66:
 				$rownum++;break;
-			case 259:
+			case 65:
 				if ($rownum > 1) $rownum--;
+				break;
+			case 10:
+			case 13:
+				browse($aktuelkonto,$data);
 				break;
 		}
 	}
 }
 function switchmode($mode, $valg) {
-	$typer = explode(":","Indtægter:Udgifter:Aktiver:Passiver:Fejlkonto");
+	$typer = explode(":","Indtægter:Udgifter:Aktiver:Passiver:Egenkapital:Fejlkonto");
 	$i = 0;
 	foreach ($typer as $curtype) {
 		if ($curtype == $mode) {
@@ -73,7 +92,9 @@ function getbal($mode,$data) {
 	global $end;
 	$bal = array();
 	foreach ($data as $curdata) {
-		foreach ($curdata['Transactions'] as $curtrans) {
+		if (strtotime($curdata['Date']) < strtotime($begin)) continue;
+		if (strtotime($curdata['Date']) > strtotime($end))continue;
+			$curtrans = $curdata;
 			$acc = $curtrans['Account'];
 			$date = $curdata['Date'];
 			$amount = floatval($curtrans ['Amount']);
@@ -81,22 +102,26 @@ function getbal($mode,$data) {
 				if (isset($bal[$acc])) $bal[$acc] += $amount;
 				else $bal[$acc] = $amount;
 			}
-		}
 	}
 	return $bal;
 }
 function gettotal($mode,$data) {
+	global $begin;
+	global $end;
 	$bal = 0;
 	foreach ($data as $curtrans) {
-		foreach ($curtrans['Transactions'] as $ct) {
-			if (substr($ct['Account'],0,strlen($mode)) == $mode)
-				$bal += $ct['Amount'];
+		if (strtotime($curtrans['Date']) < strtotime($begin)) continue;
+		if (strtotime($curtrans['Date']) > strtotime($end)) continue;
+		if (substr($curtrans['Account'],0,strlen($mode)) == $mode) {
+				$bal += floatval($curtrans['Amount']);
 		}
 	}
 	return $bal;
 }
 function drawmain($main = null,$Width,$Height,$mode='Indtægter',$data) {
 	global $rownum;
+	global $aktuelkonto;
+	global $maxwidth;
 	global $menu;
 	global $pagenum;
 	global $lastmode;
@@ -107,56 +132,64 @@ function drawmain($main = null,$Width,$Height,$mode='Indtægter',$data) {
 	}
 
 	$bal = getbal($mode,$data);
-	$pagesize = $Height - 3;
+	ksort($bal);
+	$pagesize = $Height - 4;
 	$slice = array_slice($bal,$pagenum * $pagesize,$pagesize);
 	if (empty($slice)) {
 		$pagenum = 0;
 		$slice = array_slice($bal,$pagenum*$pagesize,$pagesize,true);
 	}
-	file_put_contents("/home/joo/tmp/slice",json_encode($slice,JSON_PRETTY_PRINT));
-	$maxwidth = 0;
 	foreach ($slice as $curslice=>$curbal) {
 		if (strlen($curslice) > $maxwidth)
 			$maxwidth= strlen($curslice);	
 	}
-	if ($menu != null)ncurses_mvwaddstr($menu,2,35,"$count    ");
+	$count = count($slice);
 	if ($rownum > count($slice)) $rownum = count($slice);
+	if ($rownum ==0)$rownum=1;
 	$y = 1;
 	ncurses_wclear($main);
 	$pagebal = 0;
 	foreach ($slice as $curslice => $curbal) {
 		$pagebal += $curbal;
-		$curslice = substr($curslice,strlen($mode)+1);
+		$orgslice = $curslice;
+		$curslice = str_pad(substr($curslice,strlen($mode)+1),55," ");
 		if ($y == $rownum) { ncurses_wattron($main,NCURSES_A_STANDOUT); }
 		ncurses_mvwaddstr($main,$y,2,str_pad($curslice,$maxwidth," ",STR_PAD_RIGHT));
 		ncurses_mvwaddstr($main,$y++,$maxwidth+1,str_pad(number_format($curbal,2),15," ",STR_PAD_LEFT));
 		if ($y-1 == $rownum) { ncurses_wattroff($main,NCURSES_A_STANDOUT); }
 	}
-	ncurses_wattron($main,NCURSES_A_UNDERLINE);
-	ncurses_mvwaddstr($main,$Height-3,2,str_pad("Side total",$maxwidth," ",STR_PAD_RIGHT));
-	ncurses_mvwaddstr($main,$Height-3,$maxwidth+1,str_pad(number_format($pagebal,2),15," ",STR_PAD_LEFT));
-	ncurses_mvwaddstr($main,$Height-2,2,str_pad("$mode total",$maxwidth," ",STR_PAD_RIGHT));
 	$modetotal = gettotal($mode,$data);
-	ncurses_wattron($main,NCURSES_A_BOLD);
-	ncurses_mvwaddstr($main,$Height-2,$maxwidth+1,str_pad(number_format($modetotal,2),15," ",STR_PAD_LEFT));
-	ncurses_wattroff($main,NCURSES_A_BOLD);
-	ncurses_wattroff($main,NCURSES_A_UNDERLINE);
+	if ($modetotal!= 0) {
+		ncurses_wattron($main,NCURSES_A_UNDERLINE);
+		ncurses_mvwaddstr($main,$Height-3,2,str_pad("Side total",$maxwidth," ",STR_PAD_RIGHT));
+		ncurses_mvwaddstr($main,$Height-3,$maxwidth+1,str_pad(number_format($pagebal,2),15," ",STR_PAD_LEFT));
+		ncurses_mvwaddstr($main,$Height-2,2,str_pad("$mode total",$maxwidth," ",STR_PAD_RIGHT));
+		ncurses_wattron($main,NCURSES_A_BOLD);
+		ncurses_mvwaddstr($main,$Height-2,$maxwidth+1,str_pad(number_format($modetotal,2),15," ",STR_PAD_LEFT));
+		ncurses_wattroff($main,NCURSES_A_BOLD);
+		ncurses_wattroff($main,NCURSES_A_UNDERLINE);
+	}
 	ncurses_wborder($main,0,0,0,0,0,0,0,0);
 	ncurses_wrefresh($main);
+
 	$lastmode = $mode;
 	return $main;
 }
 function drawtopmenu($win = null,$Width,$mode) {
+	$v = getversion();
 	global $lastkey;
 	global $pagenum;
 	global $rownum;
 	if ($win == null) $win = ncurses_newwin(5,$Width,0,0);
 	global $begin; global $end;
-	ncurses_mvwaddstr($win,1,25,"begin: " . $begin);
-	ncurses_mvwaddstr($win,1,1,"end: $end");
-	ncurses_mvwaddstr($win,2,1,"laskey: $lastkey");
-	ncurses_mvwaddstr($win,2,19,"pagenum: $pagenum");
-	ncurses_mvwaddstr($win,3,19,"rownum: ". str_pad($rownum,5," "));
+	ncurses_wattron($win,NCURSES_A_BOLD);
+	ncurses_mvwaddstr($win,1,1,str_pad("Periode: $begin - $end",$Width-3," ",STR_PAD_LEFT));
+	$bn = basename(getenv("tpath"));
+	ncurses_mvwaddstr($win,1,1,"n4s v $v - $bn");
+	ncurses_mvwaddstr($win,2,$Width-6,"S: " . $pagenum . "   ");
+	ncurses_mvwaddstr($win,3,$Width-6,"R: $rownum  ");
+	ncurses_mvwaddstr($win,3,1,"$mode             ");
+	ncurses_wattroff($win,NCURSES_A_BOLD);
 	ncurses_wborder($win,0,0,0,0,0,0,0,0);
 	ncurses_wrefresh($win);
 	return $win;
@@ -167,7 +200,12 @@ function drawbotmenu($win = null,$Width,$Height,$mode) {
 	global $pagenum;
 	global $rownum;
 	if ($win == null) $win = ncurses_newwin(4,$Width,$Height-4,0);
+	ncurses_mvwaddstr($win,1,1,"PGUP/PGDOWN = Skift side - Venstre/Højre = Skift kontogruppe");
+	ncurses_mvwaddstr($win,2,1,"Op/ned = Naviger konti - ENTER = Vis detaljer - ESC = Exit");
 	ncurses_wborder($win,0,0,0,0,0,0,0,0);
 	ncurses_wrefresh($win);
 	return $win;
+}
+function getversion() {
+return exec("cd /svn/svnroot/;echo $(git log |wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg'");
 }
