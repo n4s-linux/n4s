@@ -454,6 +454,7 @@ LEDGER_BEGIN=$(date +%Y-01-01)
 LEDGER_END=$(date +%Y-01-01 --date="+1 year")
 echo -e "\e[42mÅbnet $(basename "$tpath") OK - Tryk Alt-m eller skriv 'm' [Enter] \e[0m"
 echo -e "\e[45Start med at skrive 'dp' tak !\e[0m"
+source .init.bash
 }
 function saveconf() {
 	if [ "$tpath" == "" ]; then
