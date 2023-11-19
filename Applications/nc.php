@@ -1,7 +1,13 @@
 <?php
+function ncd($a) {
+	ncurses_end();
+	echo "Exiting with...\n";
+	print_r($a);die();
+}
 $aktuelkonto = null;
 $maxwidth=0;
 $lastmode = null;
+$brownum=1;
 $rownum = 1;
 setlocale(LC_ALL,"da_DK.UTF-8");
 setlocale(LC_ALL, "");
@@ -12,17 +18,77 @@ $menu = null;
 $main = null;
 $bot = null;
 $pagenum = 0;
-$browsepage = 0;
+$browsepage = 1;
 function browse($konto,$data) {
+	global $brownum;
+	global $aktuelkonto;
+	$y = 0;
 	global $browsepage;
+	$browsepage=0;
 	ncurses_getmaxyx (STDSCR, $Height, $Width);
-	$w = ncurses_newwin($Height -9,$Width/2,5,$Width/2);
+	$w = ncurses_newwin(($Height -9)/2,$Width/2,6,$Width/2);
+	ncurses_keypad($w, TRUE);
 	ncurses_wborder($w,0,0,0,0,0,0,0,0);
+	ncurses_mvwaddstr($w,$y++,1,$aktuelkonto);
+	$key = false;
 	while (true) {
+		ncurses_wclear($w);
+		ncurses_wborder($w,0,0,0,0,0,0,0,0);
+		$y=1;
+		ncurses_mvwaddstr($w,0,40,"key=$key  rn=$brownum pg=$browsepage ");
+		$transactions = gettransactions($data,$aktuelkonto,10,$browsepage,$w);
+		if (count($transactions) < 1) { $browsepage--; $transactions = gettransactions($data,$aktuelkonto,10,$browsepage,$w);}
+		for ($i = 0; $i < 10;$i++) {
+			$cur = $transactions[$i];
+			if (empty($cur)) continue;
+			if ($y == $brownum) { $aktueltrans = $transactions[$i]; ncurses_wattron($w,NCURSES_A_STANDOUT); }
+			require_once("/svn/svnroot/Applications/shortacc.php");
+			ncurses_mvwaddstr($w,$y,1,$cur['Date']);
+			ncurses_mvwaddstr($w,$y,15,$cur['bilag']);
+			ncurses_mvwaddstr($w,$y,20,shortacc($cur['Account']));
+			ncurses_mvwaddstr($w,$y,35,$cur['tekst']);
+			ncurses_mvwaddstr($w,$y,45,str_pad(round($cur['Amount'],2),10," ",STR_PAD_LEFT));
+			if ($y == $brownum) { ncurses_wattroff($w,NCURSES_A_STANDOUT); }
+			$y++;
+		}
+		ncurses_wrefresh($w);
+		$i++;
 		$key = ncurses_wgetch($w);
-		break;
+		switch ($key) {
+			case 259:
+				$brownum--;
+				if ($brownum < 1)$brownum=1;
+				break;
+			case 258:
+				$brownum++;
+				if ( $brownum > count($transactions)) $brownum--;
+				break;
+			case 338:
+				$browsepage++;
+				break;
+			case 339:
+				$browsepage--;
+				if ($browsepage < 0) $browsepage=0;
+				break;
+			case 27:
+			case 113:
+				break 2;
+			case 13:
+				ncd($aktueltrans);die();
+		}
 	}
 	ncurses_werase($w);
+}
+function gettransactions($data,$konto,$pagesize,$page,$win) {
+	ncurses_mvwaddstr($win,0,50,"k=$konto pz=$pagesize pg=$page ");	
+	$results = array();
+	foreach ($data as $curdata) {
+		if (substr($curdata['Account'],0,strlen($konto)) == $konto) {
+			$results[] = $curdata;
+		}
+	}
+	$slice = array_slice($results,$page*$pagesize,$pagesize);
+	return $slice;
 }
 function ui($data) {
 	global $bot;
@@ -137,7 +203,7 @@ function drawmain($main = null,$Width,$Height,$mode='Indtægter',$data) {
 	$slice = array_slice($bal,$pagenum * $pagesize,$pagesize);
 	if (empty($slice)) {
 		$pagenum = 0;
-		$slice = array_slice($bal,$pagenum*$pagesize,$pagesize,true);
+		$slice = array_slice($bal,$pagenum*$pagesize,$pagesize);
 	}
 	foreach ($slice as $curslice=>$curbal) {
 		if (strlen($curslice) > $maxwidth)
@@ -153,7 +219,7 @@ function drawmain($main = null,$Width,$Height,$mode='Indtægter',$data) {
 		$pagebal += $curbal;
 		$orgslice = $curslice;
 		$curslice = str_pad(substr($curslice,strlen($mode)+1),55," ");
-		if ($y == $rownum) { ncurses_wattron($main,NCURSES_A_STANDOUT); }
+		if ($y == $rownum) { $aktuelkonto = $orgslice;ncurses_wattron($main,NCURSES_A_STANDOUT); }
 		ncurses_mvwaddstr($main,$y,2,str_pad($curslice,$maxwidth," ",STR_PAD_RIGHT));
 		ncurses_mvwaddstr($main,$y++,$maxwidth+1,str_pad(number_format($curbal,2),15," ",STR_PAD_LEFT));
 		if ($y-1 == $rownum) { ncurses_wattroff($main,NCURSES_A_STANDOUT); }
@@ -208,4 +274,8 @@ function drawbotmenu($win = null,$Width,$Height,$mode) {
 }
 function getversion() {
 return exec("cd /svn/svnroot/;echo $(git log |wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg'");
+}
+function utf8_strrev($str){
+    preg_match_all('/./us', $str, $ar);
+    return join('', array_reverse($ar[0]));
 }
