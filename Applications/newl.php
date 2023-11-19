@@ -43,8 +43,8 @@
 			$tekst = $array[2];
 			$dato = $array[0];
 			$belob = $array[5];
-			$source = "NotImplemented";
-			array_push($data,array('Account'=>$konto,'tekst'=>$tekst,'Date'=>$dato,'Amount'=>$belob,'source'=>$source,'bilag'=>$bilag));
+			$tags = $array[7];
+			array_push($data,array('Account'=>$konto,'tekst'=>$tekst,'Date'=>$dato,'Amount'=>$belob,'tags'=>$tags,'bilag'=>$bilag));
 		}
 		ui($data); // x = expanded
 	}
@@ -58,6 +58,9 @@
 	}
 	else {
 		entry();
+	}
+	function gettag($str,$tag) {
+		return "here it is\n";
 	}
 	function entry() {
 		global $tpath;
@@ -143,7 +146,7 @@
 	function bookbash($file) {
 		global $tpath;
 		$op = exec("whoami");
-		$uid = md5($file);
+		$uid = md5($tpath.$file);
 		$time = date("Y-m-d");
 		$buffer = "/home/$op/tmp/.buffer_" . $uid . "-" . $time;
 		global $ledgerdata;
@@ -173,8 +176,7 @@
 			$counter = 0;
 			foreach ($c['Transactions'] as $ct) {
 				$ledgerdata .= "\t$ct[Account]  $ct[Amount] ";
-				$ledgerdata .= " ; Filename: $c[Filename]\n\t; TransID: $counter\n";
-
+				$ledgerdata .= " ; Filename: $c[Filename] |||| TransID: $counter\n";
 			}
 				$ledgerdata .= "\n";
 		}
