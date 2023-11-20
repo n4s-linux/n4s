@@ -31,7 +31,7 @@ source /svn/svnroot/Applications/key_tas.bash
 #    fi;
 #    LEDGER_SORT=-date,-payee LEDGER_ADDTIME_TO_PAYEE=1 LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 LEDGER_DEPTH=999 /usr/bin/ledger --related --payee-width=40 -f "$tpath/curl" -l "payee =~ /#$1/" $2 $3 $4
 #}
-reviewcount=$(grep "#review" *.trans|grep Description|grep -v "old value"|grep -v "New Value"|grep -v "console edit"|wc -l)
+reviewcount=$(grep "#review" *.trans 2>/dev/null|grep Description|grep -v "old value"|grep -v "New Value"|grep -v "console edit"|wc -l)
 
 #bash $tpath/.top7d.bash
 
@@ -173,13 +173,11 @@ elif [ "$valg" == "query" ]; then
 	$tpath/.offeraward.bash "#$fn" 1
 	exit
 elif [ "$valg" == "tags" ]; then
-	#find $tpath/.tags -mtime -7|
 	if [ "$2" == "" ]; then
 		fn=$(gettags)
 	else
 		fn="$2"
 	fi
-	echo fn=$fn
 	bn=$(basename "$fn")
 	echo "$bn" >> ~/tmp/lastbn_menu
 	echo -e "Logger: " > "$tpath/.tags/.$fn.lr"
@@ -191,15 +189,9 @@ elif [ "$valg" == "tags" ]; then
 	timebefore=$(date +%s)
 	ofn="$fn"
 	fn=$(echo -n $(echo "$tpath/.tags/$fn"|awk '{print $1}')) 
-	#tmux split-window bash /svn/svnroot/Applications/key_tagview.bash "$ofn"
-	#tmux resize-pane -D 20
-	#tmux select-pane -U
 	bn=$(basename "$fn")
 	bbn=${bn:0:5}
-	#tmux rename-window "$bbn"
-	echo running vitouch
 	notitle=$notitle vitouch "$fn" "$tpath/.tags/.$ofn.lr" "$tpath/.tags/$ofn.diff" "$tpath/.tags/.$ofn.lr.diff"
-	echo echo done vitouch
 	exit
 elif [ "$valg" == "tag" ] || [ "$valg" == "Tag" ]; then #only for command line entering of an extra search param
 	fn=$(echo -n $(grep -L "#dupl" $tpath/.tags/*|grep -i "$2"|while read i; do echo -n $( basename "$i")" ";stat --printf="%s (%y)\n" "$i"; done|fzf)|awk '{print $1}')
