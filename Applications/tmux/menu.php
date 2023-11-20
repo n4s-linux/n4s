@@ -100,7 +100,7 @@ else if ($argv[1] == "history" ) {
 }
 else if ($argv[1] == "CRM" ) {
 	$menu['Åbn Journal'] = array('key'=>'j','Text'=>'Åbn Journal','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash business');
-	$menu["Søgning"] = array('key'=>'M','Text'=>'mail','cmd'=>"display-popup -E -w 140 'bash /svn/svnroot/Applications/sogmail.bash'");
+	$menu["Søgning"] = array('key'=>'M','Text'=>'mail','cmd'=>"new-window -n Søgning 'bash /svn/svnroot/Applications/newsearchgrep.bash momskvartal'");
 	$menu["Mine seneste åbne journaler"] = array('key'=>'s','Text'=>'Seneste opgaver','cmd'=>"new-window 'bash /svn/svnroot/Applications/vthist.bash'");
 	$menu["Mine opgaver"] = array('key'=>'o','Text'=>'Vis mine opgaver','cmd'=>"new-window  'bash /svn/svnroot/Applications/start.bash mine'");                                                                                                                               
 	$menu["Søg Journal"] = array('key'=>'J','Text'=>'Søg Journal','cmd'=>"new-window 'bash /svn/svnroot/Applications/start.bash grepsearchtag'");                                                                                                                             
