@@ -64,7 +64,8 @@
 
 	}
 	$op = 	exec("whoami");
-	file_put_contents("/home/$op/tmp/.datepick","export LEDGER_BEGIN=$begin\nexport LEDGER_END=$end\n");	
+	$bn = basename(getenv("tpath"));
+	file_put_contents("/home/$op/tmp/.datepick_$bn","export LEDGER_BEGIN=$begin\nexport LEDGER_END=$end\n");	
 	echo set("Ny periode\t\t$begin - $end\n","green");
 ?>
 

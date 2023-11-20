@@ -64,7 +64,7 @@ elif [ "$argument" == "jootidsbal" ]; then
 	hledger-ui --theme=terminal -T -f $tpath/.hl --watch --depth=4
 elif [ "$argument" == "anyentry" ]; then
 	sr
-	php /svn/svnroot/Applications/key.php entry
+	php /svn/svnroot/Applications/newl.php entry
 elif [ "$argument" == "stuffbal" ]; then
 	sr "stuff"
 	1d
@@ -131,7 +131,7 @@ elif [ "$argument" == "business" ]; then
 	else
 		tpath=$( ls -d ~/regnskaber/"$db")
 	fi
-	local="Åbn Lokal" sr "$db"
+	noperiod=1 local="Åbn Lokal" sr "$db"
 	notitle=$notitle $tpath/.menu.bash tags "$tag"
 	tag="$(cat ~/tmp/lastbn_menu)"
 	echo "$tag | $db"  >> ~/tmp/journal_history
@@ -149,9 +149,6 @@ elif [ "$argument" == "code" ]; then
 	echo "$fn" > ~/tmp/.editcode
 elif [ "$argument" == "shell" ]; then
 	bash
-elif [ "$argument" == "cal" ]; then
-	sr kalender
-	echo "Startet fra menu/start.bash"|bash /svn/svnroot/Applications/cal.bash
 elif [ "$argument" == "calshow" ]; then
 (
 echo KALENDER
