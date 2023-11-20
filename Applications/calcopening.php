@@ -4,7 +4,7 @@ $bn = basename($tpath);
 $begin = getenv("LEDGER_BEGIN");
 // Formål: Beregning af rente på baggrund af aktuel ledger
 // Status: Ikke funktionel
-echo "$bn: Opdaterer åbningsposter $begin...";
+echo "$bn: Opdaterer åbningsposter $begin";
 $accounts = "";
 $saldo = array();
 require_once("/svn/svnroot/Applications/short.php");
@@ -41,4 +41,6 @@ if ($y != 0)
 	$s .= "\tEgenkapital:Overført resultat\n";
 $s .= "\n";
 file_put_contents("$tpath/.Åbning_$begin.ledger",$s);
+system("clear");
+echo "Åbning $begin genereret !";sleep(1);
 ?>
