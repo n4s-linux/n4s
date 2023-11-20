@@ -12,16 +12,16 @@ $notecount = 0;
 $darray = getdata($begin,$end);
 //if (hasfejl($darray)) showfejlkonto();
 echo "<center><h5>Resultatopgørelse $begin - $realend</center></h5><br>";
-printsection($darray,"Indtægter",true);
-printsection($darray,"Udgifter",true);
+printsection($darray,"Indtægter",false);
+printsection($darray,"Udgifter",false);
 printsection($darray,"Resultatdisponering",false);
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
 echo "<center><h5>Balance $begin - $realend</h5></center><br>";
 printsection($darray,"Aktiver",false);
-printsection($darray,"Egenkapital",true);
-printsection($darray,"Passiver",true);
+printsection($darray,"Egenkapital",false);
+printsection($darray,"Passiver",false);
 if (hasfejl($darray))
-	printsection($darray,"Fejlkonto",true);
+	printsection($darray,"Fejlkonto",false);
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
 printnotes();
 unlink("/home/$op/tmp/kontokort.html");
@@ -56,7 +56,7 @@ function printfullspec($darray,$filter) {
 	ob_start();
 	if ($filter == "Indtægter") printheader("Kontokort","portrait");
 	echo "<center><h3><font style='background:#ded2d1'>Kontospecifikationer $filter - $begin - $realend</font></h3></center>";
-	echo "<table class=\"table table\">";
+	echo "<table class=\"table table-striped\">";
 	$cols = array("Date","Reference","Tekst","KontoN1","KontoN2","Beløb");
 	$saldo = 0;
 	$ksaldo = array();
@@ -119,7 +119,7 @@ function printnotes() {
 		echo "<div><a name='note$key'><h3>$key - $nn </h3></a>\n";
 		$sum = 0;
 		foreach ($val as $curnote) {
-			echo "<table class=\"table\" width=750>";
+			echo "<table class=\"table table-striped\" width=750>";
 			foreach ($curnote as $key => $val) {
 				if (intval($val) == 0) continue; // dont print blank note lines
 				$sum += $val;
@@ -191,7 +191,7 @@ function getdata($begin,$end) {
 			$bal[$curd['KontoN1']] += $curd['Beløb'];
 			error_reporting(E_ALL);
 		}
-		echo "<table class=\"table\" >";
+		echo "<table class=\"table table-striped\" >";
 		$upper = mb_strtoupper($header);
 		echo "<thead><tr><th width=50 style='background:white; width: 50px'>&nbsp;</th><th style='background: white width=500'><p align=left>$upper</p></th><th style='width: 250;background: white'><p align=right>Beløb</p></th></th></tr>";
 		echo "<tbody>";
@@ -395,6 +395,20 @@ function getomk($darray) {
 	}
 	return $sum;
 }
+function getoms($darray) {
+	$sum = array();
+	foreach ($darray as $curtrans) {
+		$x = explode(":",$curtrans['Konto']);
+		$l2 = $x[1];
+		$l1 = $x[0];
+		if ($l1 != "Indtægter") continue;
+		error_reporting(0);
+		$sum[$l2] += $curtrans['Beløb'];
+		error_reporting(E_ALL);
+		
+	}
+	return $sum;
+}
 function filter_manglende($curtrans) {
 	$filter_simple = array('Netbankbetaling','GEBYR','Gebyr','Rente','Afregning til Told og Skat');
 	$filter_contains = array('Aktiver:','Passiver','Egenkapital:');
@@ -410,7 +424,7 @@ function filter_manglende($curtrans) {
 function getmanglendebilag($darray) {
 	ob_start();
 	printheader("Manglende bilag");
-	echo "<table class=table>\n";
+	echo "<table class=table table-striped>\n";
 	foreach ($darray as $curtrans) {
 		if (!stristr($curtrans['Reference'],'CSV-')) continue;
 		if (filter_manglende($curtrans)) continue;
@@ -424,6 +438,8 @@ function getstatistik($darray) {
 	ob_start();
 	printheader("Statistik");
 	require_once("/svn/svnroot/Applications/piechart.php");
+	$piedata = getoms($darray);
+	echo pie($piedata,utf8_decode("Omsætning fordeling"));
 	$piedata = getomk($darray);
 	echo pie($piedata,"Udgifter fordeling");
 	foreach ($piedata as $curomk => $bal) {
@@ -438,7 +454,7 @@ function getstatistik($darray) {
 function getnøgletal($darray)  {
 	ob_start();
 	printheader("Nøgletal");
-	echo "<table class=\"table\">";
+	echo "<table class=\"table table-striped\">";
 	$omsætning = omsætning($darray);
 	$resultat = resultat($darray);
 	$ebit = prettynum($resultat / $omsætning * 100);
