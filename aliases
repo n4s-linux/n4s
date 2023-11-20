@@ -74,7 +74,9 @@ function dp() {
 	#echo LEDGER_BEGIN=$begin LEDGER_END=$end noend=1 php /svn/svnroot/Applications/key.php ledger equity
 	#LEDGER_BEGIN=$begin LEDGER_END=$end      noend=1 php /svn/svnroot/Applications/key.php ledger equity > $tpath/.Åbning_$end.ledger
     echo beregner åbning
-    LEDGER_DEPTH=999 LEDGER_BEGIN=$begin LEDGER_END=$end noend=1 php /svn/svnroot/Applications/newl.php csv|php /svn/svnroot/Applications/calcopening.php
+    tmux split-window -l1 -v "cd $tpath; tpath=$tpath LEDGER_DEPTH=999 LEDGER_BEGIN=$begin LEDGER_END=$end noend=1 php /svn/svnroot/Applications/newl.php csv|LEDGER_BEGIN=$LEDGER_BEGIN tpath=$tpath php /svn/svnroot/Applications/calcopening.php"
+    #LEDGER_DEPTH=999 LEDGER_BEGIN=$begin LEDGER_END=$end noend=1 php /svn/svnroot/Applications/newl.php csv|php /svn/svnroot/Applications/calcopening.php
+    tmux last-pane
     echo færdig med åbning
 }
 function ds() {
