@@ -90,7 +90,6 @@ echo remember to add @@@@ to any line in tags to make it executed !
 function m() {
 	pushd . >/dev/null
 	cd "$tpath"
-	echo "running custom menu if any..."
 	$tpath/.menu.bash $@
 	popd >/dev/null
 }
