@@ -135,7 +135,14 @@
 		}
 		$rv = "";
 		foreach ($r as $curr) $rv .= "$curr\n";
-		return $rv;
+		if (file_exists("$tpath/.accounts"))
+			$accounts = fgc("$tpath/.accounts");
+		$rv = trim($rv) . "\n" . trim($accounts);
+		$x = explode("\n",$rv);
+		$x = array_unique($x);
+		arsort($x,SORT_STRING);
+		$x = trim(implode("\n",$x));
+		return $x;
 	}
 	function askdesc() {
 		return getstdin("Indtast tekst");
