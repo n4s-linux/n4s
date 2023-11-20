@@ -1,8 +1,15 @@
 <?php
+	$nargs = $argv;
+	array_shift($nargs);
 	$tpath = getenv("tpath");
+	require_once("/svn/svnroot/Applications/nextnumber.php");
+	$nextnumber = getnextnumber($tpath);
+	$nextcbnumber = getnextcbnumber($tpath);
+	$orgnextnumber = $nextnumber;
+	$op = exec("whoami");
 	if ($tpath == "") die("new.php kræver tpath\n");
 	$transactions = array();
-	if (getenv("noend") != "1")
+	if (getenv("noend") != "1" && $nargs[0] != "book")
 		$ledgerdata = getopening();
 	else	$ledgerdata="";
 	require_once("/svn/svnroot/Applications/datemorph.php");
@@ -12,23 +19,39 @@
 	foreach($files as $file) {
 		$ext = pathinfo($file, PATHINFO_EXTENSION);
 		if ($ext == "trans") booktrans($file);
-		else if ($ext == "ledger") bookledger($file);
-		else if ($ext == "bash") bookbash($file);
-		else unhandled($file);
+		// nargs[0] != book er når vi ikke er ved at bogføre, - når vi skal bogføre skal vi ikke have tidligere bogførte posteringer med, men kun transaktionsfiler - heller ikke scripts bliver bogført
+		else if ($ext == "ledger" && $nargs[0] != "book") bookledger($file);
+		else if ($ext == "bash" && $nargs[0] != "book") bookbash($file);
+		else if ($nargs[0] != "book") unhandled($file);
 	}
 	scanalias($transactions); // check and fix missing aliases
 	$x = expand($transactions); //transactions gets data from global environment set in functions
 	$ledgerdata .= getledgerdata($x);
 	$uid = uniqid();
-	$op = exec("whoami");
 	$fn = "/home/$op/tmp/.newl-$uid";
 	file_put_contents("$fn",$ledgerdata);
-	$nargs = $argv;
-	array_shift($nargs);
 	$begin = getenv("LEDGER_BEGIN");
 	$end = getenv("LEDGER_END");
 	$cmd = ("cp $fn $tpath/curl; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/curl ");
-	if ($nargs[0] == "ui") {
+	if ($nargs[0] == "book") {
+		require_once("/svn/svnroot/Applications/nextnumber.php");
+		$nextnumber = getnextnumber($tpath);
+		$ledgerdata = getledgerdata($x,true,false);
+		require_once("/svn/svnroot/Applications/proc_open.php");
+		file_put_contents("$tpath/.bookpreview",$ledgerdata);
+		exec_app("less $tpath/.bookpreview");
+		$jn = "Nej\nJa";
+		require_once("/svn/svnroot/Applications/fzf.php");
+		$jn = fzf($jn,"Vil du bogføre den viste kladde?");
+		if ($jn == "Ja");
+		$nextnumber = $orgnextnumber; // global nummercounter skal genstartes fordi vi har kørt data før
+		$ledgerdata = getledgerdata($x,true,false);
+		file_put_contents("$tpath/Mainbook.ledger",$ledgerdata,FILE_APPEND);
+		file_put_contents("$tpath/.nextnumber",$nextnumber);
+		file_put_contents("$tpath/.nextcbnumber",$nextcbnumber +1);
+		system("cd $tpath&&mkdir -p $tpath/.cashbooks/$nextcbnumber/&&mv $tpath/*.trans $tpath/.cashbooks/$nextcbnumber/");
+	}
+	else if ($nargs[0] == "ui") {
 		echo "launching ui... we should load csv as datasource for ledger backwards compatiblity - or get rid of ledger completely\n";
 		require_once("nc.php");
 		$csv = shell_exec("cp $fn $tpath/curl;tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/curl csv --no-pager");
@@ -51,7 +74,7 @@
 	else if ($nargs[0] == "interest") {
 		calcinterest($x);		
 	}
-	else if ($nargs[0] != "entry") {
+	else if ($nargs[0] != "entry") { // this is where we pass the ledger commands - todo pass them properly even with quotes and stuff, to make it a proper working full wrapper
 		foreach ($nargs as $curarg)
 			$cmd .= " $curarg";
 		system("$cmd");
@@ -145,14 +168,13 @@
 	}
 	function bookbash($file) {
 		global $tpath;
-		$op = exec("whoami");
+		global $op;
 		$uid = md5($tpath.$file);
 		$time = date("Y-m-d");
 		$buffer = "/home/$op/tmp/.buffer_" . $uid . "-" . $time;
 		global $ledgerdata;
-		if (stristr($file,"Periodresult") || !file_exists($buffer)) {
+		if (stristr($file,"Periodresult") || (!file_exists($buffer))) {
 			ob_start();
-			echo "; running $file ...\n";
 			system("cd $tpath;bash $file");
 			$ld = ob_get_clean();
 			$ledgerdata .= $ld;
@@ -168,15 +190,22 @@
 		$fn = "$tpath/.Åbning_$begin.ledger";
 		if (file_exists($fn)) return file_get_contents($fn); else return "; No opening available $fn";
 	}
-	function getledgerdata($x) {
+	function getledgerdata($x,$book = false,$pretty = false) {
 		$ledgerdata = "";
+		global $nextnumber;
 		foreach ($x as $c) {
-			if (isset($c['Reference'])) $ref = $c['Reference']; else $ref = "";
-			$ledgerdata .= "$c[Date] ($ref) $c[Description]\n";
+				if (isset($c['Reference'])) $ref = $c['Reference']; else $ref = "";
+				$ledgerdata .= "$c[Date] ($ref) $c[Description]\n";
 			$counter = 0;
 			foreach ($c['Transactions'] as $ct) {
 				$ledgerdata .= "\t$ct[Account]  $ct[Amount] ";
-				$ledgerdata .= " ; Filename: $c[Filename] |||| TransID: $counter\n";
+				$comment = " ; Filename: $c[Filename] |||| TransID: $counter "; 
+				if ($book) {
+					$comment .= " |||| Løbenr $nextnumber";
+					$nextnumber++;
+				}
+				if (!$pretty) $ledgerdata .= $comment; 
+				$ledgerdata .= "\n";
 			}
 				$ledgerdata .= "\n";
 		}
