@@ -5,9 +5,9 @@ tpath=~/regnskaber/$db
 cd $tpath/.tags
 searchtype=$(echo -e "Hashtags\nFullsearch"|fzf --header="Vælg søgetype")
 if [ $searchtype == "Hashtags" ]; then
-fn=$(find . -type f -not -path '*/.*' -exec awk 'BEGIN { OFS = "\t"; ORS = "\n" } !/✔/ && /#'"$soeg"'/ {print FILENAME,$0}' {} +|grep -v .diff|sed 's/^\.\///'|column -ts $'\t'|fzf|awk '{print $1}')
+fn=$(find . -type f -not -path '*/.*' -exec awk 'BEGIN { OFS = "\t"; ORS = "\n" } !/✔/ && /#'"$soeg"'/ {print FILENAME,$0}' {} +|grep -v .diff|sed 's/^\.\///'|column -ts $'\t'|fzf -e|awk '{print $1}')
 else
-fn=$(find . -type f -not -path '*/.*' -exec awk 'BEGIN { OFS = "\t"; ORS = "\n" } !/✔/ && /'"$soeg"'/ {print FILENAME,$0}' {} +|grep -v .diff|sed 's/^\.\///'|column -ts $'\t'|fzf|awk '{print $1}')
+fn=$(find . -type f -not -path '*/.*' -exec awk 'BEGIN { OFS = "\t"; ORS = "\n" } !/✔/ && /'"$soeg"'/ {print FILENAME,$0}' {} +|grep -v .diff|sed 's/^\.\///'|column -ts $'\t'|fzf -e|awk '{print $1}')
 fi
 cd $tpath
 tpath=$tpath bash $tpath/.menu.bash tags "$fn"
