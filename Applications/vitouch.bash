@@ -102,11 +102,8 @@ function vitouch() {
 	cp "$if" ~/tmp/if.tmp # 2023-04-05T18:21 joo	can we remove this ? #isitbeingused ?
 # Diffile
         difffile "$tpath/.$bn.bak.$uuid" "$1"  >> "$tmpf" #vigtigt det her skal ske før fzf
-	cat "$tmpf"
-	echo "tmpf=$tmpf"
 	rm "$tpath/.$bn.bak.$uuid" 2>/dev/null
         cat "$tmpf" >> "$1.diff"
-	echo -n $(whoami) $(date)" " >> /data/regnskaber/.log
 	cat "$tmpf"|while read line
 	do
 		echo -n $(whoami) $(date) "( $bnt -  $bn) " >> /data/regnskaber/.log
