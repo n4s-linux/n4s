@@ -247,26 +247,28 @@ function html2() {
 	pushd . 2>/dev/null > /dev/null
 	cd ~/tmp/
     google-chrome --headless out.html --print-to-pdf=Saldobalance-$bn-$begin-$end.pdf
-	/svn/svnroot/Applications/removeblankpages.bash Saldobalance-$bn-$begin-$end.pdf
     mv Saldobalance-$bn-$begin-$end.pdf ~/n4s-export
+(	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Saldobalance-$bn-$begin-$end.pdf&)
 
     google-chrome --headless kontokort.html --print-to-pdf=Kontokort-$bn-$begin-$end.pdf
-	/svn/svnroot/Applications/removeblankpages.bash Kontokort-$bn-$begin-$end.pdf
+
     mv Kontokort-$bn-$begin-$end.pdf ~/n4s-export
+(	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Kontokort-$bn-$begin-$end.pdf &)
 
     google-chrome --headless nøgletal.html --print-to-pdf=Nøgletal-$bn-$begin-$end.pdf
-	/svn/svnroot/Applications/removeblankpages.bash Nøgletal-$bn-$begin-$end.pdf 
+
     mv Nøgletal-$bn-$begin-$end.pdf ~/n4s-export
+(	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Nøgletal-$bn-$begin-$end.pdf &)
 
 
     google-chrome --headless statistik.html --print-to-pdf=Lagkagediagrammer-$bn-$begin-$end.pdf
-	/svn/svnroot/Applications/removeblankpages.bash Lagkagediagrammer-$bn-$begin-$end.pdf 
     mv Lagkagediagrammer-$bn-$begin-$end.pdf ~/n4s-export
+(	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Lagkagediagrammer-$bn-$begin-$end.pdf &)
 
 
     google-chrome --headless manglendebilag.html --print-to-pdf=Manglendebilag-$bn-$begin-$end.pdf
-	/svn/svnroot/Applications/removeblankpages.bash Manglendebilag-$bn-$begin-$end.pdf 
     mv Manglendebilag-$bn-$begin-$end.pdf ~/n4s-export
+	(/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Manglendebilag-$bn-$begin-$end.pdf &)
 
 	popd 2>/dev/null > /dev/null
 }
