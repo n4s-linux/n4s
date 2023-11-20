@@ -1,4 +1,5 @@
 <?php
+// 2023-11-20T22:38 joo	this file is being used for searching, but is deprecated, everything should be ported to newl.php
 require_once("/svn/svnroot/Applications/math.php");
 require_once("/svn/svnroot/Applications/datemorph.php");
 require_once("/svn/svnroot/Applications/expand.php");
@@ -515,17 +516,13 @@ $uid = uniqid();
 		$newd = json_decode(file_get_contents_cached("$path/$fn",$bn),true);
 		//file_put_contents($fn,json_encode($newd,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		if ($newd == false) {
-			$err = date_format($date=date_create('now'),'Y-m-d H:i:s') . " - Unable to json decode $fn - written \"$path/log\"\n";
+			$err = date_format($date=date_create('now'),'Y-m-d H:i:s') . " - Unable to json decode '$fn' - written \"$path/log\"\n";
 			file_put_contents("$path/log",$err,FILE_APPEND);
-			fwrite(STDERR, $err);
-			system("echo \"$err\"");
 			die(); //continue;
 		}
     	if (stristr($fn,".trans")) {
 			if ($newd['Filename'] != $fn) {
 				$newd['Filename'] = $fn;
-				//file_put_contents($fn,json_encode($newd,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE) . "\n");
-//				//system("git -C \"$path\" commit  \"$fn\" -m 'Filename problem fixed inside loadall()'");
 			}
     array_push($data,$newd);
 		}
