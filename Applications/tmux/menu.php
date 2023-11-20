@@ -100,11 +100,7 @@ else if ($argv[1] == "history" ) {
 }
 else if ($argv[1] == "CRM" ) {
 	$menu['Åbn Journal'] = array('key'=>'j','Text'=>'Åbn Journal','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash business');
-	$menu["Søgning"] = array('key'=>'M','Text'=>'mail','cmd'=>"new-window -n Søgning 'bash /svn/svnroot/Applications/newsearchgrep.bash momskvartal'");
-	$menu["Mine seneste åbne journaler"] = array('key'=>'s','Text'=>'Seneste opgaver','cmd'=>"new-window 'bash /svn/svnroot/Applications/vthist.bash'");
-	$menu["Mine opgaver"] = array('key'=>'o','Text'=>'Vis mine opgaver','cmd'=>"new-window  'bash /svn/svnroot/Applications/start.bash mine'");                                                                                                                               
-	$menu["Søg Journal"] = array('key'=>'J','Text'=>'Søg Journal','cmd'=>"new-window 'bash /svn/svnroot/Applications/start.bash grepsearchtag'");                                                                                                                             
-	//$menu["Blip"] = array('key'=>'b','Text'=>'Lav et hurtigt blip på et tag 🕊','cmd'=>"split-window -p25  'bash /svn/svnroot/Applications/blip.bash'");
+	$menu["Søgning"] = array('key'=>'s','Text'=>'Søg','cmd'=>"new-window -n Søgning 'bash /svn/svnroot/Applications/newsearchgrep.bash momskvartal'");
 
 }
 $cmd = 'tmux display-menu -T "#[align=middle fg=brown]n4s $bn" ';
