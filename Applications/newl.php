@@ -69,7 +69,11 @@
 	else if ($nargs[0] == "book") {
 		require_once("/svn/svnroot/Applications/nextnumber.php");
 		$nextnumber = getnextnumber($tpath);
-		$ledgerdata = getledgerdata($x,true,false);
+		if (file_exists("$tpath/Mainbook.ledger"))
+			$curbook = fgc("$tpath/Mainbook.ledger");
+		else
+			$curbook = "";
+		$ledgerdata = getledgerdata($x,true,false,$curbook);
 		require_once("/svn/svnroot/Applications/proc_open.php");
 		file_put_contents("$tpath/.bookpreview",$ledgerdata);
 		exec_app("less $tpath/.bookpreview");
@@ -79,7 +83,7 @@
 		if ($jn == "Ja") {
 			$nextnumber = $orgnextnumber; // global nummercounter skal genstartes fordi vi har kørt data før
 			$ledgerdata = getledgerdata($x,true,false);
-			file_put_contents("$tpath/Mainbook.ledger",$ledgerdata,FILE_APPEND);
+			file_put_contents("$tpath/Mainbook.ledger",$ledgerdata);
 			file_put_contents("$tpath/.nextnumber",$nextnumber);
 			file_put_contents("$tpath/.nextcbnumber",$nextcbnumber +1);
 			system("cd $tpath&&mkdir -p $tpath/.cashbooks/$nextcbnumber/&&mv $tpath/*.trans $tpath/.cashbooks/$nextcbnumber/");
@@ -231,10 +235,12 @@
 		$fn = "$tpath/.Åbning_$begin.ledger";
 		if (file_exists($fn)) return file_get_contents($fn); else return "; No opening available $fn";
 	}
-	function getledgerdata($x,$book = false,$pretty = false) {
-		$ledgerdata = "";
+	function getledgerdata($x,$book = false,$pretty = false,$currentledger = "") {
+		$ledgerdata = $currentledger;
+		if ($book == true && $ledgerdata == "") $ledgerdata = "\n; Dette er hovedbogen. Hver transaktion bekræfter alle transaktioner forinden med deres samlede md5 checksum - det vil sige hvis du ændrer i denne bog bliver checksummen ugyldig og bogen er manipuleret - efter denne besked starter transaktionerne fra Løbenummer 1 og frem\n\n";
 		global $nextnumber;
-		foreach ($x as $c) {
+		foreach ($x as $c) { // for hver transaktion der skal bogføres
+				$hash = md5(trim($ledgerdata));
 				if (isset($c['Reference'])) $ref = $c['Reference']; else $ref = "";
 				$ledgerdata .= "$c[Date] ($ref) $c[Description]\n";
 			$counter = 0;
@@ -242,7 +248,7 @@
 				$ledgerdata .= "\t$ct[Account]  $ct[Amount] ";
 				$comment = " ; Filename: $c[Filename] |||| TransID: $counter "; 
 				if ($book) {
-					$comment .= " |||| Løbenr $nextnumber";
+					$comment .= " |||| Løbenr $nextnumber |||| Hash $hash";
 					$nextnumber++;
 				}
 				if (!$pretty) $ledgerdata .= $comment; 
