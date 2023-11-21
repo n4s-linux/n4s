@@ -10,7 +10,7 @@ function lookup_acc($accounts,$bal,$alias = "") {
 	$v = $curpos;
 	$keyz = print_array($curpos);
 	$lvl = 0;
-	$cmd = "tmux display-popup -E \"(ledger -f $path/curl accounts;cat /svn/svnroot/Libraries/Kontoplan.txt)|fzf > $path/.acclookup --header='vælg konto for $alias'\"";
+	$cmd = "tmux display-popup -E \"((ledger -f $path/curl accounts;cat /svn/svnroot/Libraries/Kontoplan.txt)|sort|uniq)|fzf > $path/.acclookup --header='vælg konto for $alias'\"";
 	exec_app($cmd);
 	$accountstring = trim(file_get_contents($path."/.acclookup"));
 	if ($accountstring=="NY") {
