@@ -15,6 +15,6 @@
 		else {
 			$nextnumber = trim(file_get_contents("$path/.nextcbnumber"));
 		}
-		return $nextcbnumber;
+		return $nextnumber;
 	}
 ?>
