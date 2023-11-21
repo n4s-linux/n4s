@@ -33,7 +33,40 @@
 	$begin = getenv("LEDGER_BEGIN");
 	$end = getenv("LEDGER_END");
 	$cmd = ("cp $fn $tpath/curl; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/curl ");
-	if ($nargs[0] == "book") {
+	if ($nargs[0] == "openentries") {
+		system("mkdir -p $tpath/.openentries");
+		require_once("/svn/svnroot/Applications/openentries.php");
+		$dk = getdebcred($x);
+		$open = getopen($dk);
+		$fejl = getfejl($x);
+		$match = findmatch($open,$fejl);
+		while ($match != false) {
+			echo $match['Open']['Date'] . "\t" . str_pad($match['Open']['Description'],25," ") . "\t" . $match['Open']['Amount'] . "\n";
+			echo $match['Fejl']['Date'] . "\t" . str_pad($match['Fejl']['Description'],25," ") . "\t" . $match['Fejl']['Amount'] . "\n";
+			echo "\nVil du matche disse ? (j/n): ";
+			$fd = fopen("PHP://stdin","r");$str = trim(fgets($fd));	fclose($fd);
+			if ($str == "j") {
+				$fnfejl = $match['Fejl']['Filename'];
+				$filf = json_decode(file_get_contents("$fnfejl"),true);
+				$t = &$filf['Transactions'];
+				$fid = $match['Fejl']['id'];
+				$oldval = $t[$fid]['Account'];
+				$newval = $match['Open']['Account'];
+				$t[$fid]['Account'] = $newval;
+				$filf['History'][] = array('op'=>exec("whoami"),'date'=>date("Y-m-d H:m"),'description'=>"Ændret konto for transaktion $fid fra $oldval til $newval");
+				file_put_contents($fnfejl,json_encode($filf,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+				system("touch " . $match['Ignorefile']);
+				echo "saved " . $fnfejl . "\n";
+			}
+			else{
+				system("touch " . $match['Ignorefile']);
+				echo "Ignored...\n";
+			}
+			$match = findmatch($open,$fejl,30);
+		}
+		echo "no entries to match\n";
+	}
+	else if ($nargs[0] == "book") {
 		require_once("/svn/svnroot/Applications/nextnumber.php");
 		$nextnumber = getnextnumber($tpath);
 		$ledgerdata = getledgerdata($x,true,false);
@@ -43,13 +76,14 @@
 		$jn = "Nej\nJa";
 		require_once("/svn/svnroot/Applications/fzf.php");
 		$jn = fzf($jn,"Vil du bogføre den viste kladde?");
-		if ($jn == "Ja");
-		$nextnumber = $orgnextnumber; // global nummercounter skal genstartes fordi vi har kørt data før
-		$ledgerdata = getledgerdata($x,true,false);
-		file_put_contents("$tpath/Mainbook.ledger",$ledgerdata,FILE_APPEND);
-		file_put_contents("$tpath/.nextnumber",$nextnumber);
-		file_put_contents("$tpath/.nextcbnumber",$nextcbnumber +1);
-		system("cd $tpath&&mkdir -p $tpath/.cashbooks/$nextcbnumber/&&mv $tpath/*.trans $tpath/.cashbooks/$nextcbnumber/");
+		if ($jn == "Ja") {
+			$nextnumber = $orgnextnumber; // global nummercounter skal genstartes fordi vi har kørt data før
+			$ledgerdata = getledgerdata($x,true,false);
+			file_put_contents("$tpath/Mainbook.ledger",$ledgerdata,FILE_APPEND);
+			file_put_contents("$tpath/.nextnumber",$nextnumber);
+			file_put_contents("$tpath/.nextcbnumber",$nextcbnumber +1);
+			system("cd $tpath&&mkdir -p $tpath/.cashbooks/$nextcbnumber/&&mv $tpath/*.trans $tpath/.cashbooks/$nextcbnumber/");
+		}
 	}
 	else if ($nargs[0] == "ui") {
 		echo "launching ui... we should load csv as datasource for ledger backwards compatiblity - or get rid of ledger completely\n";
