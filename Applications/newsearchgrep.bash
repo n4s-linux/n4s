@@ -9,5 +9,8 @@ fn=$(find . -type f -not -path '*/.*' -exec awk 'BEGIN { OFS = "\t"; ORS = "\n" 
 else
 fn=$(find . -type f -not -path '*/.*' -exec awk 'BEGIN { OFS = "\t"; ORS = "\n" } !/✔/ && /'"$soeg"'/ {print FILENAME,$0}' {} +|grep -v .diff|sed 's/^\.\///'|column -ts $'\t'|fzf -e|awk '{print $1}')
 fi
+if [ "$fn" == "" ]; then
+	exit
+fi
 cd $tpath
 tpath=$tpath bash $tpath/.menu.bash tags "$fn"
