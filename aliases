@@ -1,3 +1,4 @@
+alias autoudlign="php /svn/svnroot/Applications/newl.php openentries"
 alias ui="php /svn/svnroot/Applications/newl.php ui"
 function lt() {
  vi $(realpath $tpath/.lasttrans )
@@ -112,10 +113,6 @@ bind '"\eq":"changetermcmd\n"' 2>/dev/null
 shopt -s histappend
 mkdir -p ~/tmp/ /svn/svnroot/tmp/
 LEDGER_DEPTH=5
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
---color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
---color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
 function ti() {
 	time=$(date +"%H:%m")
 	#tmux set -g status-right "#[fg=white]# $time: $1"
@@ -202,35 +199,9 @@ function srb()
 }
 
 alias csv="php /svn/svnroot/Applications/key_csv.php load"
-alias pro="ol pr"
-function olh() {
-	opath=$(select_db)
-headers=""
-rm -rf ~/.curheader
-cat ~/"$opath"/template/.headers|while read i
-do
-	echo -n "$i - " >> ~/.curheader
-done
-curheader=$(echo -n $(cat ~/.curheader)) 2>/dev/null
-(ls ~/"$opath"/*/*" - "*|while read i; do basename "$i"; done|sort|uniq|opath=$opath fzf --reverse --multi --preview-window=down:1 --preview="echo Current: $curheader"|while read i; do 
-	echo "$i"|awk '{print $1}'; 
-done) > ~/"$opath/template/.headers"
-}
-function customers() {
-ls ~/c|grep -v template|grep -v completed|while read i; do echo -n "$i - "; echo -n $(cat ~/c/$i/"1000 - "*);echo|head -n1; done|sort -n
-}
-
 alias csv="php /svn/svnroot/Applications/key_csv.php load"
 function cvr() {
 	php /svn/svnroot/Applications/cvr.php "$@"|less
-}
-function gsp (){
-return
-	#git diff "$tpath"
-	#echo -n "Indtast kommentar til gemning: "
-	#read kommentar </dev/tty
-	#kommentar=autogem
-	#pushd . >/dev/null;cd "$tpath";git add .;git commit -m "Gemt: $kommentar" -q . &&git push ;popd >/dev/null
 }
 alias rule="php /svn/svnroot/Applications/key_condgen.php"
 function rule_copy() {
@@ -313,12 +284,9 @@ function html() {
 	fi
 	echo "se $url/tmp/Resultat & Balance $id.html"
 }
-alias li="bash /svn/svnroot/Applications/key_massupdate.bash"
-export simple=1
 source /svn/svnroot/Applications/nicebal.bash
 alias plot="bash /svn/svnroot/Applications/key_plot.bash"
 alias plotg="png='set terminal png' bash /svn/svnroot/Applications/key_plot.bash $@ > /svn/svnroot/tmp/plotg.png"
-alias se="php /svn/svnroot/Applications/key.php search_expression"
 alias inv="bash /svn/svnroot/Applications/invoice.bash"
 source /svn/svnroot/Applications/code.bash
 function c() {
