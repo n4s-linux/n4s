@@ -13,6 +13,9 @@ TMUX: Vis klokken = Ctrl-b + t
 TMUX: Nyt vindue = Ctrl-b + 
 TMUX: Del terminal lodret = Ctrl-b + %
 TMUX: Del terminal vandret= Ctrl-b + "
+TMUX: Bring fane til nyt vindue = Ctrl-b + !
+TMUX: Marker fane = Ctrl-b + m
+TMUX: Indsæt markeret fane = Ctrl-B + :join
 N4S: Dagens tip ligger i Libraries/tipsogtricks
 N4S: Åbn Regnskab = F4
 Regnskab: Skift aktivt regnskab = sr
@@ -48,6 +51,7 @@ Regnskab: Sortering poster beløb='l r bank -S amount' (Periode) eller 'll r ban
 Regnskab: Sortering poster tekst='l r bank -S payee' (Periode) eller 'll r bank -S payee' (Al tid)'
 Regnskab: Sortering kan tage flere parametre f.eks. 'l r bank -S date,payee'
 Regnskab: Hver gang du åbner et regnskab tages der automatisk en backup før du starter dit arbejde
+Regnskab: Frembring forslag til automatisk udligning af fejlkonto mod deb/kred: 'autoudlign'
 N4S: N4S kan køre på Ipad, Telefon, Bærbar, computer og dele samme skærm via en SSH forbindelse
 N4S: En billig og sikker hosting løsning er linode - n4s kan hostes fra 5USD pr. måned
 Lovgivning: Kvart moms ved repræsentation imødekommes med funktionen 'rep'
@@ -60,3 +64,16 @@ VIM: Søg efter streng blandt tidligere transaktioner = Ctrl-o (normal)
 Gnome Terminal: Ctrl-Shift-n = ny terminal - du kan køre flere terminaler af gangen
 Gnome genveje: Windows+1-9 = skift aktivitet (terminal, filer, etc)
 Terminal zoom: Ctrl + +/-
+N4S: Hovedbogen har kryptografisk bevis for bogføringen indbygget (md5 hash) ?
+Ordsprog: Jeg vil hellere se kartoflerne ovenfra end nedefra
+Ordsprog: Lige så meget værd som en tændstik under vand
+Ordsprog: The upper hand is better than the lower hand
+Ordsprog: The whiter the bread, the quicker You're dead
+Ordsprog: For windows problems, reboot, for linux problems, be root
+Ordsprog: The man who chases two rabbits, catches neither
+Regnskab: Prøv vores ui = 'ui'
+Regnskab: Forslag til rubrik 111 overskud = '111'
+Regnskab: Forslag til rubrik 320 omsætning = '320'
+Regnskab: Vis passiver = 'Passiver'
+Regnskab: Vis aktiver = 'Aktiver'
+N4S: CVR opslag = 'cvr [søgefrase]'
