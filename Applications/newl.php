@@ -135,7 +135,11 @@
 		while (round($bal,2) != 0) {
 			if ($bal == -1 ) $bal = 0;
 			require_once("/svn/svnroot/Applications/fzf.php");
-			$konto = fzf(getkontoplan($x),"vælg konto bal=$bal");
+			$konto = fzf("NY\n" . getkontoplan($x),"vælg konto bal=$bal");
+			if ($konto == "NY") {
+				echo "Indtast kontostreng: ";
+				$fd = fopen("PHP://stdin","r");$konto = trim(fgets($fd)); fclose($fd);
+			}
 			$belob = round(askamount($konto,$bal), 2);
 			require_once("/svn/svnroot/Applications/get_func.php");
 			$func = get_func($konto,$bal,$belob);
@@ -164,6 +168,7 @@
 		return evalmath($rv);
 	}
 	function getkontoplan($x) {
+		global $tpath;
 		$r = array();
 		foreach ($x as $curpost) {
 			foreach ($curpost['Transactions'] as $curtrans) {
@@ -175,6 +180,8 @@
 		foreach ($r as $curr) $rv .= "$curr\n";
 		if (file_exists("$tpath/.accounts"))
 			$accounts = fgc("$tpath/.accounts");
+		else
+			$accounts = "";
 		$rv = trim($rv) . "\n" . trim($accounts);
 		$x = explode("\n",$rv);
 		$x = array_unique($x);
@@ -240,7 +247,7 @@
 		if ($book == true && $ledgerdata == "") $ledgerdata = "\n; Dette er hovedbogen. Hver transaktion bekræfter alle transaktioner forinden med deres samlede md5 checksum - det vil sige hvis du ændrer i denne bog bliver checksummen ugyldig og bogen er manipuleret - efter denne besked starter transaktionerne fra Løbenummer 1 og frem\n\n";
 		global $nextnumber;
 		foreach ($x as $c) { // for hver transaktion der skal bogføres
-				$hash = md5(trim($ledgerdata));
+				if ($book == true) $hash = md5(trim($ledgerdata));
 				if (isset($c['Reference'])) $ref = $c['Reference']; else $ref = "";
 				$ledgerdata .= "$c[Date] ($ref) $c[Description]\n";
 			$counter = 0;
