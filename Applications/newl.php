@@ -38,25 +38,25 @@
 	if ($nargs[0] == "openentries") {
 		system("mkdir -p $tpath/.openentries");
 		require_once("/svn/svnroot/Applications/openentries.php");
+		require_once("/svn/svnroot/Applications/newl_csv.php");
+		$x = getcsv("1970-01-01",$end,$tpath);
 		$dk = getdebcred($x);
 		$open = getopen($dk);
 		$fejl = getfejl($x);
 		$match = findmatch($open,$fejl);
 		while ($match != false) {
-			echo $match['Open']['Date'] . "\t" . str_pad($match['Open']['Description'],25," ") . "\t" . $match['Open']['Amount'] . "\n";
-			echo $match['Fejl']['Date'] . "\t" . str_pad($match['Fejl']['Description'],25," ") . "\t" . $match['Fejl']['Amount'] . "\n";
+			echo $match['Open']['Date'] . "\t" . str_pad($match['Open']['tekst'],25," ") . "\t" . $match['Open']['Amount'] . "\n";
+			echo $match['Fejl']['Date'] . "\t" . str_pad($match['Fejl']['tekst'],25," ") . "\t" . $match['Fejl']['Amount'] . "\n";
 			echo "\nVil du matche disse ? (j/n): ";
 			$fd = fopen("PHP://stdin","r");$str = trim(fgets($fd));	fclose($fd);
 			if ($str == "j") {
-				$fnfejl = $match['Fejl']['Filename'];
-				$filf = json_decode(file_get_contents("$fnfejl"),true);
-				$t = &$filf['Transactions'];
-				$fid = $match['Fejl']['id'];
-				$oldval = $t[$fid]['Account'];
-				$newval = $match['Open']['Account'];
-				$t[$fid]['Account'] = $newval;
-				$filf['History'][] = array('op'=>exec("whoami"),'date'=>date("Y-m-d H:m"),'description'=>"Ændret konto for transaktion $fid fra $oldval til $newval");
-				file_put_contents($fnfejl,json_encode($filf,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+				$fnfejl = gettag($match['Fejl'],'Filename');
+				$tid = gettag($match['Fejl'],"TransID");
+				$filf = json_decode(file_get_contents("$tpath/$fnfejl"),true);
+				$filf['Transactions'][$tid]['Account'] = $match['Open']["Account"];
+				$filf['Transactions'][$tid]['Func'] = "";
+				$filf['History'][] = array('Date'=>date("Y-m-d H:m"),'op'=>exec("whoami"),"Desc"=>"Automatisk udligning af kreditor via openentries");
+				file_put_contents("$tpath/$fnfejl",json_encode($filf,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 				system("touch " . $match['Ignorefile']);
 				echo "saved " . $fnfejl . "\n";
 			}
@@ -93,22 +93,9 @@
 	}
 	else if ($nargs[0] == "ui") {
 		echo "launching ui... we should load csv as datasource for ledger backwards compatiblity - or get rid of ledger completely\n";
-		require_once("nc.php");
-		$csv = shell_exec("cp $fn $tpath/curl;tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/curl csv --no-pager");
-		$lines = explode(PHP_EOL, $csv);
-		$array = array();
-		$data = array();
-		foreach ($lines as $line) {
-		    $array = str_getcsv($line);
-			if (!isset($array[3]) || $array[3] == "") continue;
-			$bilag = $array[1];
-			$konto = $array[3];
-			$tekst = $array[2];
-			$dato = $array[0];
-			$belob = $array[5];
-			$tags = $array[7];
-			array_push($data,array('Account'=>$konto,'tekst'=>$tekst,'Date'=>$dato,'Amount'=>$belob,'tags'=>$tags,'bilag'=>$bilag));
-		}
+		require_once("/svn/svnroot/Applications/nc.php");
+		require_once("/svn/svnroot/Applications/newl_csv.php");
+		$data = getcsv($begin,$end,$tpath);
 		ui($data); // x = expanded
 	}
 	else if ($nargs[0] == "interest") {
@@ -122,9 +109,6 @@
 	else {
 		entry();
 	}
-	function gettag($str,$tag) {
-		return "here it is\n";
-	}
 	function entry() {
 		global $tpath;
 		global $op;
@@ -137,20 +121,22 @@
 		while (round($bal,2) != 0) {
 			if ($bal == -1 ) $bal = 0;
 			require_once("/svn/svnroot/Applications/fzf.php");
-			$konto = fzf("NY\n" . getkontoplan($x),"vælg konto bal=$bal");
-			if ($konto == "NY") {
-				echo "Indtast kontostreng: ";
-				$fd = fopen("PHP://stdin","r");$konto = trim(fgets($fd)); fclose($fd);
+			$konti = explode("\n",fzf("NY\n" . getkontoplan($x),"vælg konto bal=$bal"," --multi"));
+			foreach ($konti as $konto) {
+				if ($konto == "NY") {
+					echo "Indtast kontostreng: ";
+					$fd = fopen("PHP://stdin","r");$konto = trim(fgets($fd)); fclose($fd);
+				}
+				$belob = round(askamount($konto,$bal), 2);
+				require_once("/svn/svnroot/Applications/get_func.php");
+				$func = get_func($konto,$bal,$belob);
+				$bal += $belob;
+				$v .= "\e[33m$belob\t$konto\t$func\n\e[0m";
+				$f['Transactions'][$i]['Account'] = $konto;
+				$f['Transactions'][$i]['Func'] = $func;
+				$f['Transactions'][$i]['Amount'] = $belob;
+				$i++;
 			}
-			$belob = round(askamount($konto,$bal), 2);
-			require_once("/svn/svnroot/Applications/get_func.php");
-			$func = get_func($konto,$bal,$belob);
-			$bal += $belob;
-			$v .= "\e[33m$belob\t$konto\t$func\n\e[0m";
-			$f['Transactions'][$i]['Account'] = $konto;
-			$f['Transactions'][$i]['Func'] = $func;
-			$f['Transactions'][$i]['Amount'] = $belob;
-			$i++;
 		}
 		$filename = date("Ymd") . uniqid();
 		$f['History'] = array(array('Date'=>date("Y-m-d H:m"),'Desc'=>"Manual entry $op"));
@@ -255,13 +241,15 @@
 			$counter = 0;
 			foreach ($c['Transactions'] as $ct) {
 				$ledgerdata .= "\t$ct[Account]  $ct[Amount] ";
-				$comment = " ; Filename: $c[Filename] |||| TransID: $counter "; 
+				$tid = (isset($ct['id'])) ? $ct['id'] : $counter;
+				$comment = " ; Filename: $c[Filename] |||| TransID: $tid "; 
 				if ($book) {
 					$comment .= " |||| Løbenr $nextnumber |||| Hash $hash";
 					$nextnumber++;
 				}
 				if (!$pretty) $ledgerdata .= $comment; 
 				$ledgerdata .= "\n";
+				if (!isset($ct['id'])) $counter++;
 			}
 				$ledgerdata .= "\n";
 		}
@@ -299,6 +287,7 @@
 		$ledgerdata .= "; unhandled $file\n";
 	}
 function filter_filename($name) {
+	$name = str_replace("#","_",$name);
     // remove illegal file system characters https://en.wikipedia.org/wiki/Filename#Reserved_characters_and_words
     $name = str_replace(array_merge(
         array_map('chr', range(0, 31)),
