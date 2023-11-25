@@ -1,6 +1,6 @@
 <?php
 function expand($darray){
-$simple = getenv("simple");
+$simple = "";
 $newdarray = array();
 $darray_add = array();
 foreach ($darray as $dataarray) {
@@ -85,15 +85,6 @@ foreach ($darray as $dataarray) {
 			array_push($newtrans,$trans);
 
 		}
-			/*if (substr($sourcetrans['Account'],0,3) == "Ind"||substr($sourcetrans['Account'],0,3) == "Udg") {
-				$eqtrans = $sourcetrans;
-				$eqtrans['Account'] = "Egenkapital:Periodens resultat";
-				array_push($newtrans,$eqtrans);
-				$eqtrans['Amount'] = $eqtrans['Amount']*-1;
-				$eqtrans['Account'] = "Resultatoverførsel";
-				array_push($newtrans,$eqtrans);
-
-			}	*/
 		if ($simple != "1" && isset($trans['P-Start']) && isset($trans['P-End']) && $trans["P-Start"] != $trans["P-End"]) {
 			$start = new DateTime($trans['P-Start']);
 			$end = new DateTime($trans['P-End']);
@@ -106,6 +97,7 @@ foreach ($darray as $dataarray) {
 			$ptrans = $dataarray;
 			$orgtrans = $dataarray;
 			$ptrans['Transactions'] = array();
+			$ptrans['id'] = "virt";
 			if (strtotime($orgtrans['Date']) < strtotime($trans['P-End'])) {
 				if (isset($sourcetrans['P-Account']) && strlen($sourcetrans['P-Account']))
 					$contra = $sourcetrans['P-Account'];
@@ -168,22 +160,6 @@ foreach ($darray as $dataarray) {
 
 
 	}
-	/*
-	foreach ($newtrans as $sourcetrans) {
-			if (substr($sourcetrans['Account'],0,3) == "Ind"||substr($sourcetrans['Account'],0,3) == "Udg") {
-				$eqtrans = $sourcetrans;
-				$eqtrans['Account'] = "Egenkapital:Periodens resultat";
-				array_push($newtrans,$eqtrans);
-				print_r($newtrans);
-				$eqtrans['Amount'] = $eqtrans['Amount']*-1;
-				$eqtrans['Account'] = "Resultatoverførsel";
-				array_push($newtrans,$eqtrans);
-				print_r($newtrans);
-
-			}
-	}
-	echo "nothing?";
-	die();*/
 	$dataarray['Transactions'] = $newtrans;
 	array_push($newdarray,$dataarray);
 
