@@ -1,3 +1,20 @@
+alias mutt="ssh -t localhost -p8888 mutt"
+alias spks="u http://spks.dk"
+function skat() {
+site=$(echo -e "Borger\nErhverv"|fzf --header="Vælg side")
+if [ "$site" == "Borger" ]; then
+    u "https://www.tastselv.skat.dk/part/login"
+else
+    u "https://pdcs.skat.dk/dcs-atn-gateway/login/tsk"
+fi
+}
+function u() {
+ssh -p 8888 localhost DISPLAY=:1 xdg-open "$1" 2>/dev/null
+}
+function r() {
+ssh -p 8888 localhost DISPLAY=:1 $@
+}
+
 alias autoudlign="php /svn/svnroot/Applications/newl.php openentries"
 alias ui="php /svn/svnroot/Applications/newl.php ui"
 function lt() {
@@ -5,9 +22,6 @@ function lt() {
 }
 function b() {
     tmux split-window -h "LEDGER_BEGIN=$LEDGER_BEGIN LEDGER_END=$LEDGER_END tpath=$tpath php /svn/svnroot/Applications/newl.php b $@|less"
-}
-function r() {
-    tmux split-window -v "LEDGER_BEGIN=$LEDGER_BEGIN LEDGER_END=$LEDGER_END tpath=$tpath php /svn/svnroot/Applications/newl.php r $@|less"
 }
 alias fp=" python /svn/svnroot/Applications/fpaste/fpaste.py"
 version=$(cd /svn/svnroot/;echo $(git log |wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
@@ -20,7 +34,7 @@ function t() {
 l r $@|tail
 }
 function kd() {
-	cd ~/Dropbox/"$(ls ~/Dropbox|fzf)"
+	r nemo ~/Dropbox/\"$(ls ~/Dropbox|fzf)\"
 }
 function i() {
 	cd Bilag/Incoming
@@ -434,21 +448,6 @@ if [ -f .init.bash ]; then
     source .init.bash
 fi
 }
-function saveconf() {
-	if [ "$tpath" == "" ]; then
-		#echo saveconf error tpath=$tpath - error
-		return
-	fi
-    fn="$tpath/config.bash";
-    echo "simple=$simple" > $fn;
-	env|grep LEDGER_|while read ldg
-	do
-	echo "$ldg" >> $fn
-	done
-	#chmod 777 "$fn"
-
-}
-
 
 bar_size=40
 bar_char_done="#"
@@ -498,3 +497,4 @@ function sync() {
 
 LEDGER_END=2099/12/31
 LEDGER_BEGIN=1970/01/01
+export DISPLAY=:1
