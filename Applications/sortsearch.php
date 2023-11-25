@@ -2,6 +2,7 @@
 	function dosorting($arr) {
 		require_once("fzf.php");
 		$sortering = fzf("Date\nDescription\nAmount\nReference\nAccount\nContraAccount\n","Vælg sortering");
+		if ($sortering == "") die("Afbrudt sortering af søgning\n");
 		usort($arr,"sortsearch_$sortering");
 		return $arr;
 	}
