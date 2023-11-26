@@ -34,7 +34,7 @@
 	file_put_contents("$fn",$ledgerdata);
 	$begin = getenv("LEDGER_BEGIN");
 	$end = getenv("LEDGER_END");
-	$cmd = ("cp $fn $tpath/curl; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/curl ");
+	$cmd = ("cp $fn $tpath/curl$begin-$end; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/curl$begin-$end ");
 	if ($nargs[0] == "openentries") {
 		system("mkdir -p $tpath/.openentries");
 		require_once("/svn/svnroot/Applications/openentries.php");
@@ -209,20 +209,11 @@
 	function bookbash($file) {
 		global $tpath;
 		global $op;
-		$uid = md5($tpath.$file);
-		$time = date("Y-m-d");
-		$buffer = "/home/$op/tmp/.buffer_" . $uid . "-" . $time;
 		global $ledgerdata;
-		if (stristr($file,"Periodresult") || (!file_exists($buffer))) {
-			ob_start();
-			system("cd $tpath;bash $file");
-			$ld = ob_get_clean();
-			$ledgerdata .= $ld;
-			file_put_contents($buffer,$ld);
-		}
-		else {
-			$ledgerdata .= "; buffered $file from $buffer\n" . fgc($buffer);
-		}
+		ob_start();
+		system("cd $tpath;bash $file");
+		$ld = ob_get_clean();
+		$ledgerdata .= $ld;
 	}
 	function getopening()  {
 		$begin = getenv("LEDGER_BEGIN");
