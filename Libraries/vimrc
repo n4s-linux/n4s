@@ -34,7 +34,7 @@ function! s:numbertog()
 		    
 "set number
 
-set relativenumber!
+set number!
 
 "nnoremap <C-g> :call matchadd('ErrorMsg', printf('\%%%dl', line('.')),printf('\%%%dl',line('.')))<CR>
 "nnoremap <C-g> :call TogLineMark()<CR>
