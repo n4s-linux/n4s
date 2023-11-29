@@ -114,7 +114,7 @@ function vitouch() {
 		echo exiting no print
 		exit
 	fi
-	bash /svn/svnroot/Applications/mkd.bash "$if" select > ~/tmp/if.selected.$uuid; 
+	bash /svn/svnroot/Applications/mkd.bash "$if" select|sed 's/✔/\t\#done\t/g' > ~/tmp/if.selected.$uuid; 
 	cp ~/tmp/if.selected.$uuid "$if"
 	rm ~/tmp/if.selected.$uuid
 	template=/svn/svnroot/Applications/github.html5
