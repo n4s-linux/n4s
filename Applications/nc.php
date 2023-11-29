@@ -39,8 +39,8 @@ function browse($konto,$data) {
 		$transactions = gettransactions($data,$aktuelkonto,10,$browsepage,$w);
 		if (count($transactions) < 1) { $browsepage--; $transactions = gettransactions($data,$aktuelkonto,10,$browsepage,$w);}
 		for ($i = 0; $i < 10;$i++) {
+			if (!isset($transactions[$i])) continue;
 			$cur = $transactions[$i];
-			if (empty($cur)) continue;
 			if ($y == $brownum) { $aktueltrans = $transactions[$i]; ncurses_wattron($w,NCURSES_A_STANDOUT); }
 			require_once("/svn/svnroot/Applications/shortacc.php");
 			ncurses_mvwaddstr($w,$y,1,$cur['Date']);
@@ -97,6 +97,7 @@ function ui($data) {
 	global $main;
 	global $menu;
 	global $pagenum;
+	global $aktuelkonto;
 	ncurses_init();
 	ncurses_noecho();
 	ncurses_getmaxyx (STDSCR, $Height, $Width);
