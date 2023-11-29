@@ -1,9 +1,16 @@
 <?php
+function cirka ($transa,$transb,$afvigelse = 5) {
+	$deviation = abs(1- ($transa['Amount'] / $transb['Amount']));
+	if ($deviation < $afvigelse) return true; else return false;
+}
 function findmatch($open,$fejl,$maxtimediff = 30) {
 	global $tpath;
 	foreach ($open as $key => $val) {
 		foreach ($val['Transactions'] as $curopentrans) {
 			foreach ($fejl as $curfejl) {
+				if (stristr($curopentrans['Description'],"#cirka") && cirka($curopen,$curfejl)) {
+					die("yescirka\n");	
+				}
 				if ($curopentrans['Amount'] == -$curfejl['Amount']) {
 					$md = md5(json_encode($curopentrans) . json_encode($curfejl));
 					if (file_exists("$tpath/.openentries/$md")) continue;
