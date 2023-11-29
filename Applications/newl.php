@@ -1,4 +1,5 @@
 <?php
+	$deletebilag = array();
 	$nargs = $argv;
 	array_shift($nargs);
 	$tpath = getenv("tpath");
@@ -24,6 +25,7 @@
 		else if ($ext == "bash" && $nargs[0] != "book") bookbash($file);
 		else if ($nargs[0] != "book") unhandled($file);
 	}
+	if (!empty($deletebilag)) rundelbilag();
 	scanalias($transactions); // check and fix missing aliases
 	$x = expand($transactions); //transactions gets data from global environment set in functions
 	require_once("/svn/svnroot/Applications/addresult.php");
@@ -34,7 +36,7 @@
 	file_put_contents("$fn",$ledgerdata);
 	$begin = getenv("LEDGER_BEGIN");
 	$end = getenv("LEDGER_END");
-	$cmd = ("cp $fn $tpath/curl$begin-$end; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/curl$begin-$end ");
+	$cmd = ("cp $fn $tpath/.curl$begin-$end; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/.curl$begin-$end ");
 	if ($nargs[0] == "openentries") {
 		system("mkdir -p $tpath/.openentries");
 		require_once("/svn/svnroot/Applications/openentries.php");
@@ -121,7 +123,7 @@
 		while (round($bal,2) != 0) {
 			if ($bal == -1 ) $bal = 0;
 			require_once("/svn/svnroot/Applications/fzf.php");
-			$konti = explode("\n",fzf("NY\n" . getkontoplan($x),"vælg konto bal=$bal"," --multi"));
+			$konti = explode("\n",fzf("NY\n" . getkontoplan($x),"vælg konto bal=$bal","--bind 'enter:toggle+accept'  --bind 'tab:toggle+down+clear-query' --multi"));
 			foreach ($konti as $konto) {
 				if ($konto == "NY") {
 					echo "Indtast kontostreng: ";
@@ -147,6 +149,7 @@
 		$f['Filename'] = $filename . "_" . filter_filename($f['Description']) . ".trans";
 		file_put_contents("$tpath/$f[Filename]",json_encode($f,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		echo "Gemt $tpath/$f[Filename]\n";
+		system("php /svn/svnroot/Applications/newl.php b >/dev/null");
 	}
 	function askamount($konto,$bal) {
 		require_once("/svn/svnroot/Applications/math.php");
@@ -268,11 +271,40 @@
 		$ledgerdata .= "; ledger file $file\n";
 		$ledgerdata .= fgc($tpath."/".$file);
 	}
+	function rundelbilag() {
+		global $deletebilag;;
+		global $tpath;
+		foreach ($deletebilag as $bilag) {
+			unlink($bilag);
+		}
+	}
 	function booktrans($file) {
 		global $tpath;
 		global $transactions;
-		$transactions[] = json_decode(fgc($tpath."/".$file),true);
+		global $op;
+		global $deletebilag;
+		$newtrans = json_decode(fgc($tpath."/".$file),true);
+		if (isset($newtrans['Reference']) && isFile($newtrans['Reference'])) {
+			$newtrans['Reference'] = str_replace("'","",trim($newtrans['Reference']));
+			$nb = getnextbilagnumber($tpath);
+			$bn = basename($newtrans['Reference']);
+			$cmd = "mkdir -p $tpath/.vouchers;cp \"$newtrans[Reference]\" \"$tpath/.vouchers/$nb - $bn\"";
+			$deletebilag[] = $newtrans['Reference'];
+			print_r($deletebilag);
+			$newtrans['Files'][] = $nb . " - $bn";
+			$newtrans['Reference'] = $nb;
+			$nb++;
+			$newtrans['History'][] = array('op'=>$op,'desc'=>"Uploadet bilag $newtrans[Reference]",'date'=>date("Y-m-d H:m"));
+			system("$cmd");
+			file_put_contents("$tpath/$file",json_encode($newtrans,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+			file_put_contents("$tpath/.nextbilagnumber",$nb);
+		}
+		$transactions[] = $newtrans;
 	}
+function isFile($file) {
+        $f = pathinfo($file, PATHINFO_EXTENSION);
+        return (strlen($f) > 0) ? true : false;
+    }
 	function unhandled($file) {
 		global $ledgerdata;
 		$ledgerdata .= "; unhandled $file\n";
