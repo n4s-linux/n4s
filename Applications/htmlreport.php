@@ -439,7 +439,7 @@ function getstatistik($darray) {
 	printheader("Statistik");
 	require_once("/svn/svnroot/Applications/piechart.php");
 	$piedata = getoms($darray);
-	echo pie($piedata,utf8_decode("Omsætning fordeling"));
+	echo pie($piedata,("Omsætning fordeling"));
 	$piedata = getomk($darray);
 	echo pie($piedata,"Udgifter fordeling");
 	foreach ($piedata as $curomk => $bal) {
