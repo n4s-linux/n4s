@@ -85,6 +85,40 @@ foreach ($darray as $dataarray) {
 			array_push($newtrans,$trans);
 
 		}
+		if (isset($trans['Levetid'])) {
+			$mk = explode(":",$trans['Account']);
+			$mk = $mk[count($mk)-1];
+			$start = $orgtrans['Date'];
+			$levetid = $trans['Levetid'];
+			$belob = number_format($trans['Amount'] *-1 / $levetid,2,".","");
+			$konto = $trans['Account'];
+			$remainder = 0;
+			for ($i = 0;$i < $levetid;$i++) {
+				$ptrans = $dataarray;
+				unset($ptrans['History']);
+				$ptrans['Description'] .= " ( $i / $levetid måneder )";
+				$ptrans['Date'] = date("Y-m-d",strtotime("$ptrans[Date] + $i months"));
+				$ptrans['Transactions'] = array(
+					array('Amount'=>$belob,'Account'=>$konto,'id'=>"virt"),
+					array('Amount'=>-$belob,'Account'=>"Udgifter:Afskrivninger:$mk",'id'=>"virt")
+					);
+				array_push($newdarray,$ptrans);
+				$remainder += $belob;
+			}
+			$remainder += $trans['Amount'];
+			$remainder = -number_format($remainder,2,".","");
+			if ($remainder != 0) {
+				$ptrans = $dataarray;
+				unset($ptrans['History']);
+				$ptrans['Date'] = date("Y-m-d",strtotime("$ptrans[Date] + $i months"));
+				$ptrans['Transactions'] = array(
+					array('Amount'=>$remainder,'Account'=>$konto,'id'=>"virt"),
+					array('Amount'=>-$remainder,'Account'=>"Udgifter:Afskrivninger:$mk",'id'=>"virt")
+					);
+				array_push($newdarray,$ptrans);
+			}
+	
+		}
 		if ($simple != "1" && isset($trans['P-Start']) && isset($trans['P-End']) && $trans["P-Start"] != $trans["P-End"]) {
 			$start = new DateTime($trans['P-Start']);
 			$end = new DateTime($trans['P-End']);
