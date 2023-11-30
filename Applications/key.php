@@ -284,6 +284,7 @@ require_once("sortsearch.php");
 		}
 	}
 	}
+		system ("php /svn/svnroot/Applications/newl.php b >/dev/null");
 }
 else if (isset($argv[1]) && $argv[1] == "acclookup") {
 	$bal = 0;
