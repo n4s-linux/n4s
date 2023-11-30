@@ -134,6 +134,8 @@
 				$func = get_func($konto,$bal,$belob);
 				$bal += $belob;
 				$v .= "\e[33m$belob\t$konto\t$func\n\e[0m";
+				$f['Transactions'][$i]['P-Start'] = "";
+				$f['Transactions'][$i]['P-End'] = "";
 				$f['Transactions'][$i]['Account'] = $konto;
 				$f['Transactions'][$i]['Func'] = $func;
 				$f['Transactions'][$i]['Amount'] = $belob;
@@ -275,6 +277,7 @@
 		global $deletebilag;;
 		global $tpath;
 		foreach ($deletebilag as $bilag) {
+			echo "deleting $bilag\n";
 			unlink($bilag);
 		}
 	}
@@ -284,20 +287,26 @@
 		global $op;
 		global $deletebilag;
 		$newtrans = json_decode(fgc($tpath."/".$file),true);
+		if (!isset($newtrans['Reference'])) $newtrans['Reference'] = "";
+		if ($newtrans['Reference'] == "p") $newtrans['Reference'] = file_get_contents("/home/$op/tmp/.curfile");
 		if (isset($newtrans['Reference']) && isFile($newtrans['Reference'])) {
-			$newtrans['Reference'] = str_replace("'","",trim($newtrans['Reference']));
-			$nb = getnextbilagnumber($tpath);
-			$bn = basename($newtrans['Reference']);
-			$cmd = "mkdir -p $tpath/.vouchers;cp \"$newtrans[Reference]\" \"$tpath/.vouchers/$nb - $bn\"";
-			$deletebilag[] = $newtrans['Reference'];
-			print_r($deletebilag);
-			$newtrans['Files'][] = $nb . " - $bn";
-			$newtrans['Reference'] = $nb;
-			$nb++;
-			$newtrans['History'][] = array('op'=>$op,'desc'=>"Uploadet bilag $newtrans[Reference]",'date'=>date("Y-m-d H:m"));
-			system("$cmd");
-			file_put_contents("$tpath/$file",json_encode($newtrans,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
-			file_put_contents("$tpath/.nextbilagnumber",$nb);
+			if (!file_exists($newtrans['Reference'])) {
+				$newtrans['Reference'] = str_replace("'","",trim($newtrans['Reference']));
+				$nb = getnextbilagnumber($tpath);
+				$bn = basename($newtrans['Reference']);
+				$cmd = "mkdir -p $tpath/.vouchers;cp \"$newtrans[Reference]\" \"$tpath/.vouchers/$nb - $bn\"";
+				$deletebilag[] = $newtrans['Reference'];
+				$filemd5 = md5_file($newtrans['Reference']);
+				$mtime = filemtime($newtrans['Reference']);
+				$newtrans['Files'][] =  array('Filename'=>$nb . " - $bn","Hash"=>$filemd5,"Mtime"=>date("Y-m-d H:m",$mtime));
+				$newtrans['Reference'] = $nb;
+				$nb++;
+				$newtrans['History'][] = array('fn'=>$bn,'op'=>$op,'desc'=>"Uploadet bilag $newtrans[Reference]",'date'=>date("Y-m-d H:m"),'filemd5'=>$filemd5);
+				system("$cmd");
+				file_put_contents("$tpath/$file",json_encode($newtrans,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+				file_put_contents("$tpath/.nextbilagnumber",$nb);
+				rundelbilag();
+			}
 		}
 		$transactions[] = $newtrans;
 	}
