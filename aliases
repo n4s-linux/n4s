@@ -34,10 +34,24 @@ function t() {
 l r $@|tail
 }
 function kd() {
-	r nemo ~/Dropbox/\"$(ls ~/Dropbox|fzf)\"
+	cd ~/Dropbox/"$(ls ~/Dropbox|fzf)"
 }
 function i() {
 	cd Bilag/Incoming
+}
+function convertimages() {
+ls *.jpg *.png *.JPG *.PNG 2>/dev/null|while read i
+do
+    echo "Konverterer $i til pdf"
+    filemtime=$(stat -c %Y "$i")
+    img2pdf --rotation=ifvalid "$i" -o "$i.pdf" && rm "$i" && touch -d @$filemtime "$i.pdf"
+    done
+}
+function b() {
+convertimages
+file=$(ls *.pdf|head -n1)
+realpath "$file" > ~/tmp/.curfile
+scp -P 8888 "$file" localhost:~/Preview/current.pdf
 }
 op=$(whoami)
 alias p="tmux split -h \"w3m -dump /home/$op/tmp/ft.html|vi - \""
