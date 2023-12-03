@@ -20,9 +20,6 @@ alias ui="php /svn/svnroot/Applications/newl.php ui"
 function lt() {
  vi $(realpath $tpath/.lasttrans )
 }
-function b() {
-    tmux split-window -h "LEDGER_BEGIN=$LEDGER_BEGIN LEDGER_END=$LEDGER_END tpath=$tpath php /svn/svnroot/Applications/newl.php b $@|less"
-}
 alias fp=" python /svn/svnroot/Applications/fpaste/fpaste.py"
 version=$(cd /svn/svnroot/;echo $(git log |wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
 export TERM=xterm-256color tmux
@@ -34,10 +31,14 @@ function t() {
 l r $@|tail
 }
 function kd() {
-	cd ~/Dropbox/"$(ls ~/Dropbox|fzf)"
+	path=$(echo ~/Dropbox/"$(ls ~/Dropbox|fzf)")
+    echo "$path" > ~/tmp/.curbpath
+    cd "$path"
 }
 function i() {
 	cd Bilag/Incoming
+	path=$PWD
+    echo "$path" > ~/tmp/.curbpath
 }
 function convertimages() {
 ls *.jpg *.png *.JPG *.PNG 2>/dev/null|while read i
@@ -48,10 +49,15 @@ do
     done
 }
 function b() {
+pushd . >/dev/null
+path="$(cat ~/tmp/.curbpath)"
+cd "$path"
+echo "looking in \"$path\""
 convertimages
 file=$(ls *.pdf|head -n1)
 realpath "$file" > ~/tmp/.curfile
 scp -P 8888 "$file" localhost:~/Preview/current.pdf
+popd >/dev/null
 }
 op=$(whoami)
 alias p="tmux split -h \"w3m -dump /home/$op/tmp/ft.html|vi - \""
