@@ -426,6 +426,7 @@ function getmanglendebilag($darray) {
 	printheader("Manglende bilag");
 	echo "<table class=table table-striped>\n";
 	foreach ($darray as $curtrans) {
+		if (substr($curtrans['Konto'],0,strlen("Resultatdisponering:")) == "Resultatdisponering:") continue;
 		if (!stristr($curtrans['Reference'],'CSV-')) continue;
 		if (filter_manglende($curtrans)) continue;
 		$ref = $curtrans['Reference'];
