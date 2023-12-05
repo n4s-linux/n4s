@@ -38,35 +38,51 @@
 	$end = getenv("LEDGER_END");
 	$cmd = ("cp $fn $tpath/.curl$begin-$end; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/.curl$begin-$end ");
 	if ($nargs[0] == "openentries") {
-		system("mkdir -p $tpath/.openentries");
-		require_once("/svn/svnroot/Applications/openentries.php");
-		require_once("/svn/svnroot/Applications/newl_csv.php");
-		$x = getcsv("1970-01-01",$end,$tpath);
-		$dk = getdebcred($x);
-		$open = getopen($dk);
-		$fejl = getfejl($x);
-		$match = findmatch($open,$fejl);
+		$match = true;
 		while ($match != false) {
-			echo $match['Open']['Date'] . "\t" . str_pad($match['Open']['tekst'],25," ") . "\t" . $match['Open']['Amount'] . "\n";
-			echo $match['Fejl']['Date'] . "\t" . str_pad($match['Fejl']['tekst'],25," ") . "\t" . $match['Fejl']['Amount'] . "\n";
+			system("mkdir -p $tpath/.openentries");
+			require_once("/svn/svnroot/Applications/openentries.php");
+			require_once("/svn/svnroot/Applications/newl_csv.php");
+			$x = getcsv("1970-01-01",$end,$tpath);
+			$dk = getdebcred($x);
+			$open = getopen($dk);
+			$fejl = getfejl($x);
+			$match = findmatch($open,$fejl);
+
+			$fnmatch = gettag($match['Open'],'Filename');
+			$fnfejl = gettag($match['Fejl'],'Filename');
+			echo "$fnmatch vs $fnfejl\n";
+			if ($fnmatch == $fnfejl) { touch($match['Ignorefile']);continue;}
+
+			echo $match['Open']['Date'] . "\t" . str_pad($match['Open']['bilag'],19, " ") . "\t" . str_pad(substr(lastacc($match['Open']['Account']),-25),25," ") ."\t" . str_pad($match['Open']['tekst'],25," ") . "\t" . $match['Open']['Amount'] . "\n";
+			echo $match['Fejl']['Date'] . "\t" .  str_pad($match['Fejl']['bilag'],19, " ") . "\t" . str_pad(substr(lastacc($match['Fejl']['Account']),-25),25," ") . "\t" . str_pad($match['Fejl']['tekst'],25," ") . "\t" . $match['Fejl']['Amount'] . "\n";
 			echo "\nVil du matche disse ? (j/n): ";
 			$fd = fopen("PHP://stdin","r");$str = trim(fgets($fd));	fclose($fd);
 			if ($str == "j") {
-				$fnfejl = gettag($match['Fejl'],'Filename');
+				if (!file_exists($fnfejl) || !file_exists($fnmatch)) { "smth not exist, continuing ... :-)\n";die();}
+				$uid = uniqid();
 				$tid = gettag($match['Fejl'],"TransID");
+				$mtid = gettag($match['Open'],"TransID");
 				$filf = json_decode(file_get_contents("$tpath/$fnfejl"),true);
-				$filf['Transactions'][$tid]['Account'] = $match['Open']["Account"];
+				$mfilf = json_decode(file_get_contents("$tpath/$fnmatch"),true);
+				$mfilf['MatchID'] = $uid;
+				$filf['MatchID'] = $uid;
+				$filf['Transactions'][$tid]['Account'] = $match['Open']["Account"] . ":$uid";
 				$filf['Transactions'][$tid]['Func'] = "";
 				$filf['History'][] = array('Date'=>date("Y-m-d H:m"),'op'=>exec("whoami"),"Desc"=>"Automatisk udligning af kreditor via openentries");
 				file_put_contents("$tpath/$fnfejl",json_encode($filf,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
-				system("touch " . $match['Ignorefile']);
 				echo "saved " . $fnfejl . "\n";
+				$mfilf['Transactions'][$mtid]['Account'] = $match['Open']["Account"] . ":$uid";
+				$mfilf['Transactions'][$mtid]['Func'] = "";
+				$mfilf['History'][] = array('Date'=>date("Y-m-d H:m"),'op'=>exec("whoami"),"Desc"=>"Automatisk udligning af kreditor via openentries");
+				file_put_contents("$tpath/$fnmatch",json_encode($mfilf,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+				echo "saved " . $fnmatch. "\n";
+				system("touch " . $match['Ignorefile']);
 			}
 			else{
 				system("touch " . $match['Ignorefile']);
 				echo "Ignored...\n";
 			}
-			$match = findmatch($open,$fejl,30);
 		}
 		echo "no entries to match\n";
 	}
@@ -330,5 +346,18 @@ function filter_filename($name) {
     $name= mb_strcut(pathinfo($name, PATHINFO_FILENAME), 0, 255 - ($ext ? strlen($ext) + 1 : 0), mb_detect_encoding($name)) . ($ext ? '.' . $ext : '');
 	$name = str_replace(" ","__",$name);
     return $name;
+}
+function lastacc($acc) {
+	$r = "";
+	$s = explode(":",$acc);
+	$last = $s[count($s)-1];
+	if (strlen($last) > 10)
+	$last= "..." . substr($last,-10);
+	unset($s[count($s)-1]);
+	foreach ($s as $curelement) {
+		$r .= substr($curelement,0,1) . ":";
+	}
+	$r .= $last;
+	return $r;
 }
 ?>
