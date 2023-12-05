@@ -3,16 +3,19 @@ function cirka ($transa,$transb,$afvigelse = 5) {
 	$deviation = abs(1- ($transa['Amount'] / $transb['Amount']));
 	if ($deviation < $afvigelse) return true; else return false;
 }
-function findmatch($open,$fejl,$maxtimediff = 30) {
+function findmatch($open,$fejl,$maxtimediff = 5) {
 	global $tpath;
 	foreach ($open as $key => $val) {
 		foreach ($val['Transactions'] as $curopentrans) {
 			foreach ($fejl as $curfejl) {
-				if (stristr($curopentrans['Description'],"#cirka") && cirka($curopen,$curfejl)) {
+				if (isset($curopentrans['Description']) && stristr($curopentrans['Description'],"#cirka") && cirka($curopen,$curfejl)) {
 					die("yescirka\n");	
 				}
 				if ($curopentrans['Amount'] == -$curfejl['Amount']) {
-					$md = md5(json_encode($curopentrans) . json_encode($curfejl));
+					$diff = abs(strtotime($curopentrans['Date']) - strtotime($curfejl['Date'])) / 86400;
+					if ($diff > $maxtimediff) continue;
+					$curfejl['Filename'] = gettag($curfejl,"Filename");
+					$md = md5(json_encode($curopentrans['Filename']) . json_encode($curfejl['Filename']));
 					if (file_exists("$tpath/.openentries/$md")) continue;
 					return array('Open'=>$curopentrans,'Fejl'=>$curfejl,'Ignorefile'=>"$tpath/.openentries/$md");
 				}
@@ -23,6 +26,7 @@ function findmatch($open,$fejl,$maxtimediff = 30) {
 }
 function getopen($dk) {
 	$grouped = groupbyacc($dk);
+	if (empty($grouped)) die("empty group\n");
 	$grouped_sorted = sortbydate($grouped);
 	$removezeroes = removezero($grouped_sorted);
 	return $removezeroes;
@@ -62,6 +66,7 @@ function groupbyacc($dk) {
 			$r[$c['Account']]['Sum'] = $c['Amount'];
 	}
 	// remove empty
+	$retval = array();
 	foreach ($r as $key=>$curr) {
 		if (!intval($curr['Sum']) == 0)
 			$retval[$key] = $curr;
@@ -71,11 +76,13 @@ function groupbyacc($dk) {
 function getfejl($x) {
 	$fejl = array();
 	foreach ($x as $curtrans) {
-		if (stristr($curtrans['Account'],'Fejlkonto')) {
+		if (stristr($curtrans['bilag'],"CSV-") && (substr($curtrans['Account'],0,strlen("Indtægter:")) == "Indtægter:" || substr($curtrans['Account'],0,strlen("Udgifter:")) == "Udgifter:")) {
+			array_push($fejl,$curtrans);
+		}
+		else if (stristr($curtrans['Account'],'Fejlkonto')) {
 			array_push($fejl,$curtrans);
 		}
 	}
-	
 	return $fejl;
 }
 function getdebcred($x) {
