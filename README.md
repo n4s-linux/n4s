@@ -109,6 +109,7 @@ Eksempler på remote kørsel fra Windows 11
 Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter.
 Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)
 * [Eksempel saldobalance](https://drive.google.com/file/d/1WAlPO73OykvF5-wUCh9-XDIikK_8SoBU/view?usp=sharing)
+    - OBS - Notelinks er ej klikbare på google, men hvis du downloader PDFen kan du følge links til relevante noter
 * [Eksempel kontokort](https://drive.google.com/file/d/1rSafmw3wDCaAimgJ_q0pQlij2H9YsZ19/view?usp=sharing)
 * [Eksempel nøgletal](https://drive.google.com/file/d/1EQLJ1Pi7YguV1BNUR-lf31zyxxKNywAD/view?usp=sharing)
 * [Eksempel manglende bilagsrapport](https://drive.google.com/file/d/10SdbxFneTBzgFaN6dH1kOHHH3c0MdnXN/view?usp=sharing)
