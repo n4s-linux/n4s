@@ -23,6 +23,7 @@
 		// nargs[0] != book er når vi ikke er ved at bogføre, - når vi skal bogføre skal vi ikke have tidligere bogførte posteringer med, men kun transaktionsfiler - heller ikke scripts bliver bogført
 		else if ($ext == "ledger" && $nargs[0] != "book") bookledger($file);
 		else if ($ext == "bash" && $nargs[0] != "book") bookbash($file);
+		else if ($ext == "php" && $nargs[0] != "book") bookphp($file);
 		else if ($nargs[0] != "book") unhandled($file);
 	}
 	if (!empty($deletebilag)) rundelbilag();
@@ -226,6 +227,15 @@
 				$i++;
 			}
 		}
+	}
+	function bookphp($file) {
+		global $tpath;
+		global $op;
+		global $ledgerdata;
+		ob_start();
+		system("cd $tpath;php $file");
+		$ld = ob_get_clean();
+		$ledgerdata .= $ld;
 	}
 	function bookbash($file) {
 		global $tpath;
