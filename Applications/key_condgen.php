@@ -123,7 +123,6 @@ $fn = $tpath . "/logic_" . read("Kodenavn") . time();
 file_put_contents($fn,$code);
 exec_app("vim \"$fn\"");
 chdir($tpath);
-system("git add $fn");
 require_once("fzf.php");
 /*function fzf($list,$header) {
 	$cmd = "echo \"" . str_replace("\n","\\n",$list);
