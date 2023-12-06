@@ -48,7 +48,7 @@ Du må gerne klone vores system og sælge det videre, men der under forudsætnin
 * Frihed til at tilpasse programmet til dine behov
 * Frihed til at dele programmet
 
-... Betingelser som er nærmere beskrevet i softwarens licens som e GPL v3
+... Betingelser som er nærmere beskrevet i softwarens licens som er GPL v3
 
 ### Løbende opdateringer
 Du skal ikke vente årevis på at der bliver udgivet en ny version. Du kan løbende hente patches med forbedringer til systemet.
