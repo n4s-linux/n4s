@@ -1,3 +1,4 @@
+alias åbneposter="php /svn/svnroot/Applications/newl.php openentries"
 alias mutt="ssh -t localhost -p8888 mutt"
 alias spks="u http://spks.dk"
 function skat() {
