@@ -132,7 +132,10 @@ N4S kan køres fra en central server og du kan forbinde med Windows Terminalen, 
 
 
 # Eksempel på rapportering
-Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter.
+Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter i en pæn opstilling.
+![Eksempel på saldobalance i gratis regnskabsprogram n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/main/png/res.png)
+![Eksempel på noter i gratis regnskabsprogram n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/main/png/not.png)
+
 
 [Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)](https://github.com/n4s-linux/n4s-gratis-regnskab/tree/main/examples)
 
