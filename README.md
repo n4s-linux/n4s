@@ -191,3 +191,7 @@ Funktioner:
 [![asciicast](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD.svg)](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD)
 ## Få bedre overblik over regnskabet med pivot tabeller
 [![asciicast](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8.svg)](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8)
+## Automatisk kontering af transaktioner med egne regler
+[![asciicast](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt.svg)](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt)
+Brug aldrig igen tid på at kontere bankgebyrer, bankrenter, private hævninger, telefonregninger etc - få dem konteret automatisk med let definerbare regler.
+Hver regel gemmes i sin egen fil, som er nem at dele med dine venner
