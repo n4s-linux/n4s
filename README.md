@@ -70,6 +70,33 @@ N4S er dog mere end blot et regnskabssystem; det er en kraftfuld allieret på di
 🤖 *Automatiseret Regnskab*: Med N4S kan du definere regler, der automatiserer regnskabsprocessen. Dette sparer dig tid og mindsker risikoen for fejl. Lad N4S tage sig af de rutinemæssige opgaver, så du kan fokusere på strategisk planlægning.
 
 💼 *Dine Data, Din Kontrol*: En af de mest overbevisende funktioner ved N4S er, at du har fuld kontrol over dine data. Du hoster det på din egen server, hvilket betyder, at dine oplysninger altid er i dine hænder. Og det bedste af det hele? Du kan gøre det for så lidt som 5 USD om måneden på Linode!
+## VT100 - Det eneste terminalbaserede program på markedet
+# Moderne System bygget på legendarisk VT100 Teknologi 💻
+
+Velkommen til vores futuristiske system, der trækker på den ærværdige VT100-teknologi, som så dagens lys tilbage i 1978. Dette er ikke blot en teknologi; det er en arv, en kilde til hurtighed og bærbarhed, og det er nøglen til en effektiv og glidende arbejdsoplevelse.
+
+## 🚀 **Blazing Fast Performance**
+
+VT100-teknologien, der danner grundlaget for vores system, er kendt for sin ekstreme hastighed. Dens enkle og effektive design gør det muligt for vores system at udføre opgaver lynhurtigt. Dette betyder, at du kan arbejde mere effektivt og fokusere på det, der virkelig betyder noget.
+
+## 🌐 **Portability at its Core**
+
+Med VT100-teknologien som fundament har vores system indbygget portabilitet. Uanset hvor du er, kan du nemt få adgang til systemet og udføre dine opgaver uden besvær. Dette gør det til det ideelle valg for moderne fagfolk, der er konstant på farten.
+
+## 🤖 **Terminal-Based Brilliance**
+
+Vores system bygger på den tidløse tradition af terminalbaserede systemer. Dette giver ikke kun et nostalgisk strejf, men det bringer også en række fordele med sig. Terminalbaserede systemer er kendt for deres enkelhed, pålidelighed og kraftfulde kommandoer, hvilket resulterer i en mere strømlinet og effektiv arbejdsproces.
+
+## 🧑💻 **Læringskurve som en Ninjitsu-mester**
+
+Mange forhenværende tasteoperatører, aka datanauter, som nu er gået på pension, har uden problemer taget imod denne teknologi og omfavnet den. VT100-teknologien har vist sig at være exceptionelt let at lære, selv for dem uden tidligere kendskab. De, der har taget springet, har oplevet en transformation og er blevet så hurtige som ninjas inden for kort tid.
+Fordelen ved vores tekstbaserede system er bl.a. at når du kender systemet kan du indtaste data uden at kigge - du ved hvor du er henne i programmet udfra dine tastetryk og diverse outputs fra systemet.
+
+## 🌟 **Vælg Fremtiden med VT100-Forankret Teknologi**
+
+Dyk ned i fortiden og omfavne fremtiden med vores system, der ærer den legendariske VT100-teknologi. Oplev hastigheden, bærbarheden og enkelheden ved et terminalbaseret system, og se, hvordan det kan forvandle din arbejdsdag.
+
+Læs videre, hvis det lyder interessant!
 
 
 # Savner du de gode gamle DOS-dage uden så meget gas eller dyre abonnementer ?
