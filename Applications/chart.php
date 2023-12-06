@@ -55,7 +55,7 @@ function chart($id,$title,$datalabels,$datapoints,$unit="DKK") {
   ctx = document.getElementById('<?=$id?>');
 
   new Chart(ctx, {
-    type: 'pie',
+    type: 'bar',
     data: {
 	labels : [<?php echo getlabels($datalabels)?>],
 	<?php echo getdatapoints($datapoints,"$unit");?>
