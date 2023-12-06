@@ -494,6 +494,7 @@ function getnøgletal($darray)  {
 }
 function rewrite($str) {
 	global $tpath;
+	if (!file_exists("$tpath/.rewrite.json")) return $str;
 	$rewrite = json_decode(file_get_contents("$tpath/.rewrite.json"),true);
 	$s = $str;
 	foreach ($rewrite as $search => $replace) {
