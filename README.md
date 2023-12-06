@@ -195,3 +195,5 @@ Funktioner:
 [![asciicast](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt.svg)](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt)
 Brug aldrig igen tid på at kontere bankgebyrer, bankrenter, private hævninger, telefonregninger etc - få dem konteret automatisk med let definerbare regler.
 Hver regel gemmes i sin egen fil, som er nem at dele med dine venner
+# Oprettelse af manuelle transaktioner
+[![asciicast](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ.svg)](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ)
