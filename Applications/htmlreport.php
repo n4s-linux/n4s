@@ -146,15 +146,15 @@ function getdata($begin,$end) {
 	if (($handle = fopen("/home/$op/htmlreport.csv", "r")) !== FALSE) {
 		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 			$d['Date'] = $data[0];
-			$d['Reference'] = $data[1];
-			$d['Tekst'] = $data[2];
-			$d['Konto'] = $data[3];
+			$d['Reference'] = rewrite($data[1]);
+			$d['Tekst'] = rewrite($data[2]);
+			$d['Konto'] = rewrite($data[3]);
 			$d['Beløb'] = $data[5];
 			$d['Header'] = explode(":",$data[3])[0];
-			$k = explode(":",$data[3]);
+			$k = explode(":",rewrite($data[3]));
 			if (isset($k[1])) $k = $k[1]; else $k = "";
 			$d['KontoN1'] = $k;
-			error_reporting(0);$d['KontoN2'] = explode(":",$data[3])[2];error_reporting(E_ALL);
+			error_reporting(0);$d['KontoN2'] = explode(":",rewrite($data[3]))[2];error_reporting(E_ALL);
 			array_push($darray,$d);
 		}
 	fclose($handle);
@@ -454,9 +454,9 @@ function getstatistik($darray) {
 	require_once("/svn/svnroot/Applications/chart.php");
 	$piedata = getoms($darray);
 	file_put_contents("/home/joo/tmp/data.json",json_encode($piedata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
-	echo pie($piedata,("Omsætning fordeling"));
+	echo pie($piedata,("Omsætning"));
 	$piedata = getomk($darray);
-	echo pie($piedata,"Udgifter fordeling");
+	echo pie($piedata,"Udgifter");
 	foreach ($piedata as $curomk => $bal) {
 		$pd = getsubomk($darray,$curomk);
 		if (!empty($pd))  {
@@ -491,5 +491,14 @@ function getnøgletal($darray)  {
 	
 	echo "</table>";
 	return ob_get_clean();
+}
+function rewrite($str) {
+	global $tpath;
+	$rewrite = json_decode(file_get_contents("$tpath/.rewrite.json"),true);
+	$s = $str;
+	foreach ($rewrite as $search => $replace) {
+		$s = str_replace($search,$replace,$s);
+	}
+	return $s;
 }
 ?>
