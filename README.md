@@ -69,8 +69,8 @@ N4S er dog mere end blot et regnskabssystem; det er en kraftfuld allieret på di
 🤖 *Automatiseret Regnskab*: Med N4S kan du definere regler, der automatiserer regnskabsprocessen. Dette sparer dig tid og mindsker risikoen for fejl. Lad N4S tage sig af de rutinemæssige opgaver, så du kan fokusere på strategisk planlægning.
 
 💼 *Dine Data, Din Kontrol*: En af de mest overbevisende funktioner ved N4S er, at du har fuld kontrol over dine data. Du hoster det på din egen server, hvilket betyder, at dine oplysninger altid er i dine hænder. Og det bedste af det hele? Du kan gøre det for så lidt som 5 USD om måneden på Linode!
-## VT100 - Det eneste terminalbaserede program på markedet
-# Moderne System bygget på legendarisk VT100 Teknologi 💻
+# VT100 - Det eneste terminalbaserede program på markedet
+## Moderne System bygget på legendarisk VT100 Teknologi 💻
 
 Velkommen til vores futuristiske system, der trækker på den ærværdige VT100-teknologi, som så dagens lys tilbage i 1978. Dette er ikke blot en teknologi; det er en arv, en kilde til hurtighed og bærbarhed, og det er nøglen til en effektiv og glidende arbejdsoplevelse.
 
