@@ -54,7 +54,7 @@ else
 	$curacc = "";
            $curtrans['Transactions'] = array();
 	$curtrans['Comment'] = "";
-         $curtrans['Description'] = $c['Description'];
+         $curtrans['Description'] = clean($c['Description']);
         $curtrans['Date'] = date("Y-m-d",strtotime($c['Date']));
 	if (strtotime($curtrans['Date']) < strtotime("1986-12-25"))
 		die("Aborting, this is some old stuff that should probably not be imported- cant understand date format $c[Date]...\n");
@@ -101,5 +101,10 @@ function detectDelimiter($csvFile)
     }
 
     return array_search(max($delimiters), $delimiters);
+}
+function clean($string) {
+   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 }
 ?>
