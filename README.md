@@ -109,8 +109,10 @@ Eksempler på remote kørsel fra Windows 11
 Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter.
 Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)
 * [Eksempel saldobalance](https://drive.google.com/file/d/1WAlPO73OykvF5-wUCh9-XDIikK_8SoBU/view?usp=sharing)
-* [Eksempel kontokort](https://drive.google.com/file/d/1TegmpGs-EuA6jYqtzJUFiq8yn2noGD8y/view?usp=sharing)
-* [Eksempel nøgletal](https://drive.google.com/file/d/1eFUnHhibB2g6Nmigi6lQ0R6eNQqZYOyc/view?usp=sharing)
+* [Eksempel kontokort](https://drive.google.com/file/d/1rSafmw3wDCaAimgJ_q0pQlij2H9YsZ19/view?usp=sharing)
+* [Eksempel nøgletal](https://drive.google.com/file/d/1EQLJ1Pi7YguV1BNUR-lf31zyxxKNywAD/view?usp=sharing)
+* [Eksempel manglende bilagsrapport](https://drive.google.com/file/d/10SdbxFneTBzgFaN6dH1kOHHH3c0MdnXN/view?usp=sharing)
+* [Eksempel Lagekagediagramrapport under udvikling](https://drive.google.com/file/d/189kk08kQjEZkkL1E_C4_EV2tXXyztZu_/view?usp=sharing)
 
 For at generere tilsvarende rapportering for dit regnskab følg da følgende instrukser i n4s:
 * Sæt rapporteringperiode: skriv 'dp' eller tryk Alt-p
@@ -182,3 +184,7 @@ Funktioner:
 # Quick Start videoer
 ## Oprettelse af åbningsbalance
 [![asciicast](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S.svg)](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S)
+## Indlæsning af bank CSV og kontering af posteringer
+[![asciicast](https://asciinema.org/a/vxOr2DKCrcflhiVhRqABCxkeO.svg)](https://asciinema.org/a/vxOr2DKCrcflhiVhRqABCxkeO)
+## Få bedre overblik over regnskabet med pivot tabeller
+[![asciicast](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8.svg)](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8)
