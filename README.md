@@ -179,3 +179,4 @@ Funktioner:
 * Indlæsning af OIOUBL (XML) fakturaer
 * Simpel Automatisk konsolidering af koncernregnskaber
 
+[![asciicast](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S.svg)](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S)
