@@ -187,5 +187,7 @@ Funktioner:
 [![asciicast](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S.svg)](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S)
 ## Indlæsning af bank CSV og kontering af posteringer
 [![asciicast](https://asciinema.org/a/vxOr2DKCrcflhiVhRqABCxkeO.svg)](https://asciinema.org/a/vxOr2DKCrcflhiVhRqABCxkeO)
+## Udlæsning af posteringer til CSV
+[![asciicast](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD.svg)](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD)
 ## Få bedre overblik over regnskabet med pivot tabeller
 [![asciicast](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8.svg)](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8)
