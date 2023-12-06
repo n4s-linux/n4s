@@ -92,7 +92,7 @@ Fordelen ved vores tekstbaserede system er bl.a. at når du kender systemet kan 
 
 ## 🌟 **Vælg Fremtiden med VT100-Forankret Teknologi**
 
-Dyk ned i fortiden og omfavne fremtiden med vores system, der ærer den legendariske VT100-teknologi. Oplev hastigheden, bærbarheden og enkelheden ved et terminalbaseret system, og se, hvordan det kan forvandle din arbejdsdag.
+Dyk ned i fortiden og omfavn fremtiden med vores system, der ærer den legendariske VT100-teknologi. Oplev hastigheden, bærbarheden og enkelheden ved et terminalbaseret system, og se, hvordan det kan forvandle din arbejdsdag.
 
 Læs videre, hvis det lyder interessant!
 
