@@ -140,9 +140,13 @@
 		while (round($bal,2) != 0) {
 			if ($bal == -1 ) $bal = 0;
 			require_once("/svn/svnroot/Applications/fzf.php");
-			$konti = explode("\n",fzf("NY\n" . getkontoplan($x),"vælg konto bal=$bal","--bind 'enter:toggle+accept'  --bind 'tab:toggle+down+clear-query' --multi"));
+			$find = false;
+			$konti = explode("\n",fzf("NY\nGlobalt opslag\n" . getkontoplan($x),"vælg konto bal=$bal","--bind 'enter:toggle+accept'  --bind 'tab:toggle+down+clear-query' --multi"));
 			foreach ($konti as $konto) {
-				if ($konto == "NY") {
+				if ($konto == "Globalt opslag") {
+					$konto = getkontoplan_allaccounts();
+				}	
+				else if ($konto == "NY") {
 					echo "Indtast kontostreng: ";
 					$fd = fopen("PHP://stdin","r");$konto = trim(fgets($fd)); fclose($fd);
 				}
@@ -176,6 +180,14 @@
 		$rv = getstdin("Beløb for $konto ($bal)");
 		if ($rv == "") $rv = $bal;
 		return evalmath($rv);
+	}
+	function getkontoplan_allaccounts() {
+		ob_start();
+		global $tpath;
+		system("cat $tpath/../*/.accounts|grep -i \"^Indtægter\|^Udgifter\|^Aktiver\|^Passiver\|^Egenkapital\"|sort|uniq");
+		$valg = ob_get_clean();
+		$account = fzf($valg,"Vælg konto fra alle regnskaber");
+		return $account;
 	}
 	function getkontoplan($x) {
 		global $tpath;
