@@ -1,7 +1,3 @@
-# N4S - Sikkert og frit bogføringsprogram til små virksomheder, foreninger - eller privatpersoner
-Vi mener der skal være et lynhurtigt og sikkert bogføringssystem som kan køre lokalt på enhver computer (eller telefon/ipad/brødrister, – linux kan køre på næsten alt) til de nye iværksættere / små selvstændige. 
-Det skal også kunne køre på den billigste cloudserver der findes og betjenes af flere samtidige brugere.
-
 # Et simpelt og gratis regnskabsprogram
 Her er ingen bindinger eller betalingskort nødvendig. 
 N4S er frit og opensource regnskabsystem, og derved gratis at bruge nu og for altid.
@@ -9,8 +5,7 @@ N4S er frit og opensource regnskabsystem, og derved gratis at bruge nu og for al
 Man kan næsten med sikkerhed sige at n4s er et af de billigste regnskabsprogrammer på markedet.
 Det koster kun den tid du skal investere dig i at arbejde på en mere effektiv måde.
 Og evt. hosting service som fås ned til < 50kr/måneden hvis du ønsker at dit regnskab ligger i skyen og kan tilgås fra hele verden. For den pris får du nærmest ubegrænsede antal transaktioner, ubegrænsede antal regnskaber, ubegrænsede snapshots og backups af dine regnskaber etc. Du betaler kun for den plads du bruget.
-Det kan oplyses at et meget omfangsrigt regnskab med tusindvis af posteringer fylder få MB på en server eller maskine.
-
+Vælger du at hoste dit system bør du søge kvalificeret hjælp til sikring af serveren. Vi anbefaler at en servers firewall er helt lukket med untagelse af porten til terminalens sikre forbindelse som krypteres med AES/Blowfish.
 
 Du kan komme i gang ved at downloade og prøve vores OVA udgave på din maskine, helt gratis.
 
