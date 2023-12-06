@@ -44,11 +44,9 @@ function getdatapoints($data,$title) {
 }
 function chart($id,$title,$datalabels,$datapoints,$unit="DKK") {
 ?>
-<span style="width: 2480; height: 3508">
-<h2><?=$title;?></h2>
+<span style="width: 2480; height: 1750;white-space:nowrap">
   <canvas id="<?=$id?>"></canvas>
 </span>
-<p style="page-break-after: always;">&nbsp;</p>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
@@ -58,7 +56,7 @@ function chart($id,$title,$datalabels,$datapoints,$unit="DKK") {
     type: 'bar',
     data: {
 	labels : [<?php echo getlabels($datalabels)?>],
-	<?php echo getdatapoints($datapoints,"$unit");?>
+	<?php echo getdatapoints($datapoints,"$title");?>
     ,
     options: {
       scales: {
