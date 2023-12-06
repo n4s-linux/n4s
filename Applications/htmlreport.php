@@ -24,7 +24,7 @@ if (hasfejl($darray))
 	printsection($darray,"Fejlkonto",false);
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
 printnotes();
-unlink("/home/$op/tmp/kontokort.html");
+if (file_exists("/home/$op/tmp/kontokort.html")) unlink("/home/$op/tmp/kontokort.html");
 file_put_contents("/home/$op/tmp/nøgletal.html",getnøgletal($darray));
 file_put_contents("/home/$op/tmp/statistik.html",getstatistik($darray));
 file_put_contents("/home/$op/tmp/manglendebilag.html",getmanglendebilag($darray));
@@ -151,7 +151,9 @@ function getdata($begin,$end) {
 			$d['Konto'] = $data[3];
 			$d['Beløb'] = $data[5];
 			$d['Header'] = explode(":",$data[3])[0];
-			$d['KontoN1'] = explode(":",$data[3])[1];
+			$k = explode(":",$data[3]);
+			if (isset($k[1])) $k = $k[1]; else $k = "";
+			$d['KontoN1'] = $k;
 			error_reporting(0);$d['KontoN2'] = explode(":",$data[3])[2];error_reporting(E_ALL);
 			array_push($darray,$d);
 		}
@@ -367,6 +369,7 @@ function omsætning($darray) {
 }
 function getsubomk($darray,$acc) {
 	$sum = array();
+	error_reporting(0);
 	foreach ($darray as $curtrans) {
 		eoff();
 		$x = explode(":",$curtrans['Konto']);
@@ -379,9 +382,11 @@ function getsubomk($darray,$acc) {
 		error_reporting(E_ALL);
 		eon();
 	}
+	error_reporting(E_ALL);
 	return $sum;
 }
 function getomk($darray) {
+	error_reporting(0);
 	$sum = array();
 	foreach ($darray as $curtrans) {
 		$x = explode(":",$curtrans['Konto']);
@@ -393,13 +398,16 @@ function getomk($darray) {
 		error_reporting(E_ALL);
 		
 	}
+	error_reporting(E_ALL);
 	return $sum;
 }
 function getoms($darray) {
 	$sum = array();
+	error_reporting(0);
 	foreach ($darray as $curtrans) {
 		$x = explode(":",$curtrans['Konto']);
-		$l2 = $x[1];
+		if (isset($x[1]))
+			$l2 = $x[1];
 		$l1 = $x[0];
 		if ($l1 != "Indtægter") continue;
 		error_reporting(0);
@@ -407,6 +415,7 @@ function getoms($darray) {
 		error_reporting(E_ALL);
 		
 	}
+	error_reporting(E_ALL);
 	return $sum;
 }
 function filter_manglende($curtrans) {
@@ -438,8 +447,10 @@ function getmanglendebilag($darray) {
 function getstatistik($darray) {
 	ob_start();
 	printheader("Statistik");
-	require_once("/svn/svnroot/Applications/piechart.php");
+	echo "<center>";
+	require_once("/svn/svnroot/Applications/chart.php");
 	$piedata = getoms($darray);
+	file_put_contents("/home/joo/tmp/data.json",json_encode($piedata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 	echo pie($piedata,("Omsætning fordeling"));
 	$piedata = getomk($darray);
 	echo pie($piedata,"Udgifter fordeling");
@@ -450,6 +461,8 @@ function getstatistik($darray) {
 			if ($pie != false) echo $pie;
 		}
 	}
+	echo "</center>";
+	loadsome();
 	return ob_get_clean();
 }
 function getnøgletal($darray)  {
