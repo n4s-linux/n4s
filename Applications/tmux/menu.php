@@ -38,11 +38,9 @@ else if ($argv[1] == "Ledger") {
 }
 else if ($argv[1] == "Bogføring") {
 	$menu["Opret postering"] = array('key'=>'p','Text'=>'Python - regnemaskine','cmd'=>"send-keys 'e' Enter");
-	$menu["Ændre outputmetode"] = array('key'=>'m','Text'=>'Metode','cmd'=>"send-keys 'changetermcmd' Enter");
-	$menu["Regnskabsviser"] = array('key'=>'r','Text'=>'Viser','cmd'=>"send-keys 'bash /svn/svnroot/Applications/csvdatakey.bash' Enter");
-	$menu["Eksporter rapporter"] = array('key'=>'x','Text'=>'html','cmd'=>"send-keys 'html' Enter");
+	$menu["Eksporter til HTML/PDF"] = array('key'=>'x','Text'=>'html','cmd'=>"send-keys 'html' Enter");
 	$menu["Indlæs CSV"] = array('key'=>'c','Text'=>'CSV','cmd'=>"send-keys 'csv' Enter");
-	$menu["Åbne poster"] = array('key'=>'å','Text'=>'Afstemning','cmd'=>"send-keys 'reconcile' Enter");
+	$menu["Åbne poser udligning"] = array('key'=>'å','Text'=>'åbne','cmd'=>"send-keys 'åbneposter' Enter");
 	$menu["Juster Periode"] = array('key'=>'P','Text'=>'Ændre periode','cmd'=>"send-keys 'dp' Enter");
 	$menu["Juster Sortering"] = array('key'=>'P','Text'=>'Ændre periode','cmd'=>"send-keys 'ds' Enter");
 }
