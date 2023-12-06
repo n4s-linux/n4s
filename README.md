@@ -183,7 +183,7 @@ Funktioner:
 * Værktøj til effektiv oprettelse af transaktioner
 * Indlæsning af OIOUBL (XML) fakturaer
 * Simpel Automatisk konsolidering af koncernregnskaber
-* Unik måde at dokumentere regnskabets rigtighed. Bogførte posteringer bliver bogført ála blockchain hvor den næste transaktion verificerer den forrige ved at inkludere alle de forrige transaktioners md5-hash. Således kan der ikke fifles med bogførte posteringer, uden at bogen bliver ugyldig. Vi anbefaler at du løbende signerer dit regnskabs hash for at dokumentere transaktionerne.
+* Unik måde at dokumentere regnskabets rigtighed. Bogførte posteringer bliver bogført ála blockchain hvor den næste bogførte transaktion verificerer samtlige tidligere bogførte posteringer ved at inkludere deres samlede md5-hash. Således kan der ikke fifles med bogførte posteringer, uden at bogen bliver ugyldig. Vi anbefaler at du løbende signerer dit regnskabs hash for at dokumentere transaktionerne.
 * Fuld log over alle ændringer. Hver ændring af transkationer bliver logført på transaktionen med operatør, ændring, samt dato og tidspunkt
 
 # Quick Start videoer
