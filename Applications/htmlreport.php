@@ -373,7 +373,7 @@ function getsubomk($darray,$acc) {
 	foreach ($darray as $curtrans) {
 		eoff();
 		$x = explode(":",$curtrans['Konto']);
-		$l2 = $x[1];
+		if (isset($x[1])) 	$l2 = $x[1]; else $l2 = "";
 		if (!isset($x[2])) continue;
 		$l3 = $x[2];
 		if ($l2 != $acc) continue;
@@ -383,6 +383,7 @@ function getsubomk($darray,$acc) {
 		eon();
 	}
 	error_reporting(E_ALL);
+	asort($sum,SORT_NUMERIC);
 	return $sum;
 }
 function getomk($darray) {
@@ -390,7 +391,7 @@ function getomk($darray) {
 	$sum = array();
 	foreach ($darray as $curtrans) {
 		$x = explode(":",$curtrans['Konto']);
-		$l2 = $x[1];
+		if (isset($x[1])) $l2 = $x[1]; else $l2 = "";
 		$l1 = $x[0];
 		if ($l1 != "Udgifter") continue;
 		error_reporting(0);
@@ -399,6 +400,7 @@ function getomk($darray) {
 		
 	}
 	error_reporting(E_ALL);
+	asort($sum,SORT_NUMERIC);
 	return $sum;
 }
 function getoms($darray) {
@@ -416,6 +418,7 @@ function getoms($darray) {
 		
 	}
 	error_reporting(E_ALL);
+	asort($sum,SORT_NUMERIC);
 	return $sum;
 }
 function filter_manglende($curtrans) {
