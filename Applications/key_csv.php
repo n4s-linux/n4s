@@ -55,7 +55,14 @@ else
            $curtrans['Transactions'] = array();
 	$curtrans['Comment'] = "";
          $curtrans['Description'] = clean($c['Description']);
-        $curtrans['Date'] = date("Y-m-d",strtotime($c['Date']));
+	$x = explode("-",$c['Date']);
+	if (strlen($x[0]) == 2 && strlen($x[1]) == 2 && strlen($x[2]) == 4)
+		$curtrans['Date'] = date("Y-m-d",strtotime($x[2]."-" . $x[1] . "-" . $x[0]));
+        else if (strlen($x[0]) == 2 && strlen($x[1]) == 2 && strlen($x[2]) == 2)
+		$curtrans['Date'] = date("Y-m-d",strtotime(2000+$x[2]."-" . $x[1] . "-" . $x[0])); // could be problematic for the next generation
+	else // assume iso
+		$curtrans['Date'] = date("Y-m-d",strtotime($c['Date']));
+	print_r($curtrans);die();
 	if (strtotime($curtrans['Date']) < strtotime("1986-12-25"))
 		die("Aborting, this is some old stuff that should probably not be imported- cant understand date format $c[Date]...\n");
 	if (strtotime($curtrans['Date']) > strtotime("+1 days") && getenv("future") != "1")
