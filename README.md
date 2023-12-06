@@ -208,6 +208,7 @@ Funktioner:
 [![asciicast](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD.svg)](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD)
 ## Få bedre overblik over regnskabet med pivot tabeller
 [![asciicast](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8.svg)](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8)
+Disse tabeller er særligt nyttige for erfarne regnskabsbrugere, hvis man hurtigt skal kontrollere om de forventede faste omkostninger forekommer månedsvis fx husleje
 ## Automatisk kontering af transaktioner med egne regler
 [![asciicast](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt.svg)](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt)
 Brug aldrig igen tid på at kontere bankgebyrer, bankrenter, private hævninger, telefonregninger etc - få dem konteret automatisk med let definerbare regler.
