@@ -122,12 +122,14 @@ Det er vigtigt at bemærke, at selvom n4s er baseret på en terminal, må man ik
 
 # Kan køres på en hvilket som helst operativsystem uden installation
 N4S kan køres fra en central server og du kan forbinde med Windows Terminalen, OS X terminal Applikationen eller lign.
-Eksempler på remote kørsel fra Windows 11
+## Eksempler på remote kørsel fra Windows 11
 
 ![Win11 Screenshot2 n4s dobbelt bogholderi](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_2.png?raw=true)
 ![Win11 Screenshot3 n4s momsregnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_3.png?raw=true)
 ![Win11 Screenshot4 n4s regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_4.png?raw=true)
 ![Win11 Screenshot1 n4s gratis regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_1.png?raw=true)
+
+## Videodemonstrationer hvor der konteres demoregnskab
 [![n4s demo](demo.gif 'n4s demo')](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/)
 [![n4s demo](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/demo1.gif 'n4s demo')](https://drive.google.com/file/d/1D7PW7Te92-4RvlXTPedoDU3QIuC-bMNp/view?usp=sharing)
 
@@ -151,26 +153,11 @@ For at generere tilsvarende rapportering for dit regnskab følg da følgende ins
 
 # Problemfri Eksport af Dine Data
 
-N4S excellerer ikke kun i håndteringen af dine daglige regnskabsbehov, det giver dig også mulighed for at tage dine data, hvor du har brug for det, ubesværet. At eksportere dine data fra N4S er en leg, hvilket gør det tilgængeligt for andre online systemer, selv dem med mindre omfattende kapaciteter.
-
-# Fordele ved Dataeksport
-
-1. **Datafrihed**: Dine økonomiske data er din ressource. Ved at eksportere det fra N4S sikrer du, at du har frihed til at bruge det med andre værktøjer, platforme eller tjenester efter eget valg.
-
-2. **Integrationsmuligheder**: Integrér nemt dine økonomiske data med andre online systemer, såsom rapporteringsværktøjer, forretningsanalyse-software eller cloud-baserede analytiske platforme.
-
-3. **Data Backup**: Eksport af dine data fungerer som en værdifuld backup-strategi, der sikrer, at du har en kopi af dine økonomiske poster i tilfælde af uventede begivenheder.
-
-4. **Brugerdefineret Analyse**: Overfør dine data til specialiserede analyseværktøjer for dybdegående økonomisk modellering, prognoser eller overholdelsesrapportering.
-
-Med N4S er dine økonomiske data ikke låst inde i systemet. Det er et alsidigt værktøj, der ikke kun effektivt administrerer din regnskab, men også sikrer, at dine data forbliver tilgængelige og tilpasningsdygtige i forhold til dine skiftende forretningsbehov.
-
-Så uanset om du udforsker nye rapporteringsværktøjer, deler data med interessenter eller bare udfører dybdegående analyse, gør N4S dataeksport til en smidig og problemfri proces.
+N4S excellerer ikke kun i håndteringen af dine daglige regnskabsbehov, det giver dig også mulighed for at tage dine data, hvor du har brug for det, ubesværet. At eksportere dine data fra N4S er en leg, hvilket gør det tilgængeligt for andre online systemer, selv dem med mindre omfattende funktionalitet.
+Vores system understøtter indlæsning og udlæsning af CSV filer hvorfor det er nemt at migrere til/fra et andet system.
 
 # Lets get down to business 🐝
 Så hvorfor vente? Start din rejse mod økonomisk succes i dag med N4S. Lad ikke noget begrænse dig - ikke engang din regnskabssoftware. N4S er din nøgle til at låse op for dit regnskabsmæssige potentiale og er klar til at hjælpe dig med at lykkes uanset hvor du er eller hvilken enhed du bruger. Sæt kursen mod succes og lad N4S tage dig derhen!
-
-
 
 # n4s - Open Source / Fri Software GNU/Linux baseret dobbelt bogholderi og ERP
 n4s er et terminalbaseret system til brug for dobbelt bogholderi (finans, debitor, kreditor).
