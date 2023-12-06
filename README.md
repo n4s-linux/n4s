@@ -171,16 +171,6 @@ Så uanset om du udforsker nye rapporteringsværktøjer, deler data med interess
 Så hvorfor vente? Start din rejse mod økonomisk succes i dag med N4S. Lad ikke noget begrænse dig - ikke engang din regnskabssoftware. N4S er din nøgle til at låse op for dit regnskabsmæssige potentiale og er klar til at hjælpe dig med at lykkes uanset hvor du er eller hvilken enhed du bruger. Sæt kursen mod succes og lad N4S tage dig derhen!
 
 
-# TLDR - Lad mig downloade din OVA
-* Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
-* Link til [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (husk at få Extension Pack også)
-
-Fordele ved OVA Løsning:
-* Hurtigt i gang
-* Nem at sikkerhedskopiere - lav snapshots nemt i Virtualbox
-
-Ulemper:
-* Størrelse 20GB da den indeholder et helt operativsystem plus ekstra plads så du ikke løber tør (n4s fylder < 70MB)
 
 # n4s - Open Source / Fri Software GNU/Linux baseret dobbelt bogholderi og ERP
 n4s er et terminalbaseret system til brug for dobbelt bogholderi (finans, debitor, kreditor).
@@ -224,3 +214,7 @@ Brug aldrig igen tid på at kontere bankgebyrer, bankrenter, private hævninger,
 Hver regel gemmes i sin egen fil, som er nem at dele med dine venner
 # Oprettelse af manuelle transaktioner
 [![asciicast](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ.svg)](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ)
+
+# TLDR - Lad mig downloade din OVA
+* Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
+* Link til [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (husk at få Extension Pack også)
