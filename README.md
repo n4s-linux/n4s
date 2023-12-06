@@ -163,8 +163,9 @@ Systemet er bygget i PHP og BASH og benytter den populære teksteditor vim (VI I
 
 Funktioner:
 * Avanceret udvidet filstruktur og versionering og sporing på data/transaktioner.
-* Periodisering
-* Momskoder
+* Automatisk Periodisering ved angivelse af periode på transaktioner
+* Automatisk afskrivning ved angivelse af levetid på transaktioner
+* Momskoder (i,u,iv,iy,rep)
 * Årsafslutning
 * Rapport generator og transaktions-stifinder (webapplikation samt tekstbaseret)
 * Import af transaktioner fra CSV eller live bank forbindelse
@@ -178,10 +179,12 @@ Funktioner:
 * Præsentabel rapportering (saldobalancer og kontokort)
 * Mulighed for at generere links for en given regnskabsperiode for et regnskab som kan åbnes uden login, hvor man kan se saldobalancen og gennemse de bagvedliggende posteringer.
 * Skatteregnskab – manuel
-* Bilagshåndteringssystem
+* Bilagshåndteringssystem drag & drop til terminalen.
 * Værktøj til effektiv oprettelse af transaktioner
 * Indlæsning af OIOUBL (XML) fakturaer
 * Simpel Automatisk konsolidering af koncernregnskaber
+* Unik måde at dokumentere regnskabets rigtighed. Bogførte posteringer bliver bogført ála blockchain hvor den næste transaktion verificerer den forrige ved at inkludere alle de forrige transaktioners md5-hash. Således kan der ikke fifles med bogførte posteringer, uden at bogen bliver ugyldig. Vi anbefaler at du løbende signerer dit regnskabs hash for at dokumentere transaktionerne.
+* Fuld log over alle ændringer. Hver ændring af transkationer bliver logført på transaktionen med operatør, ændring, samt dato og tidspunkt
 
 # Quick Start videoer
 ## Oprettelse af åbningsbalance
