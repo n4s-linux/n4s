@@ -1,4 +1,4 @@
-![n4s - 2nd brain & accounting](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/main/png/prettysmall.png)
+<p align=center>![n4s - 2nd brain & accounting](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/main/png/prettysmall.png)</p>
 
 # N4S - Sikkert og frit bogføringsprogram til små virksomheder, foreninger - eller privatpersoner
 Vi mener der skal være et lynhurtigt og sikkert bogføringssystem som kan køre lokalt på enhver computer (eller telefon/ipad/brødrister, – linux kan køre på næsten alt) til de nye iværksættere / små selvstændige. 
