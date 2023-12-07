@@ -35,7 +35,7 @@ Passiver:Ansatte:ATP
 Passiver:Ansatte:Feriepenge
 Passiver:Ansatte:Løn
 Passiver:Gældsstyrelsen
-Passiver:Kreditorer:Div
+Passiver:Kreditorer:Diverse
 Passiver:Mellemregning med anpartshaver
 Passiver:Mellemregning med holding
 Passiver:Moms:Købsmoms
@@ -48,7 +48,8 @@ Passiver:Moms:Primo
 Passiver:Moms:Salgsmoms
 Passiver:Skattekontoen
 Passiver:Skyldig selskabsskat
-Passiver:Skyldige omkostninger
+Passiver:Skyldige omkostninger:Skyldig revisor
+Passiver:Skyldige omkostninger:Diverse
 Udgifter:Autodrift:Vægtafgift
 Udgifter:Autodrift:Brændstof
 Udgifter:Autodrift:Forsikring
@@ -63,15 +64,14 @@ Udgifter:Administration:Konsulenter
 Udgifter:Administration:Kontingenter
 Udgifter:Administration:Kontorartikler
 Udgifter:Administration:Mindre anskaffelser
-Udgifter:Administration:Tab
+Udgifter:Administration:Tab på debitorer
 Udgifter:Administration:Telefoni
 Udgifter:Administration:Webhosting
 Udgifter:Direkte omkostninger:Fragt
 Udgifter:Direkte omkostninger:Told
-Udgifter:Direkte omkostninger:Ukategoriseret
 Udgifter:Direkte omkostninger:Diverse
 Udgifter:Ekstraordinære poster
-Udgifter:Lagerregulering
+Udgifter:Direkte omkostninger:Lagerregulering
 Udgifter:Lokaleomkostninger:El, vand og varme
 Udgifter:Lokaleomkostninger:Husleje
 Udgifter:Lokaleomkostninger:Rengøring
