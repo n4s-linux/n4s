@@ -1,4 +1,14 @@
 logging=on
+function log() {
+    echo -n "Indtast evt. søgefrase eller tryk enter for at vise alle logs: "
+    read search
+    if [ "$search" == "" ]; then
+        vi $tpath/.logs/$(ls $tpath/.logs -t|fzf)
+    else
+        valg=$(cd $tpath;grep -lri "$search" .logs|fzf)
+        vi "$valg"
+    fi
+}
 alias åbneposter="php /svn/svnroot/Applications/newl.php openentries"
 alias mutt="ssh -t localhost -p8888 mutt"
 alias spks="u http://spks.dk"
