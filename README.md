@@ -206,6 +206,8 @@ Hver regel gemmes i sin egen fil, som er nem at dele med dine venner
 [![asciicast](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ.svg)](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ)
 ## Om periodisering - 3 eksempler
 [![asciicast](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw.svg)](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw)
+## Rentetilskrivning på konto
+[![asciicast](https://asciinema.org/a/YBnnVrYtmlftMdbrCkY7P6J6K.svg)](https://asciinema.org/a/YBnnVrYtmlftMdbrCkY7P6J6K)
 
 # TLDR - Lad mig downloade din OVA
 * Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
