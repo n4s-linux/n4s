@@ -199,6 +199,10 @@
 			}
 		}
 		$rv = "";
+		ob_start();
+		system("cat /svn/svnroot/Libraries/Kontoplan.txt");
+		$x = explode("\n",ob_get_clean());
+		foreach ($x as $curline) { if (strlen($curline)) array_push($r,$curline); }
 		foreach ($r as $curr) $rv .= "$curr\n";
 		if (file_exists("$tpath/.accounts"))
 			$accounts = fgc("$tpath/.accounts");
