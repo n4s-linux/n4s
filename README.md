@@ -202,8 +202,10 @@ Disse tabeller er særligt nyttige for erfarne regnskabsbrugere, hvis man hurtig
 [![asciicast](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt.svg)](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt)
 Brug aldrig igen tid på at kontere bankgebyrer, bankrenter, private hævninger, telefonregninger etc - få dem konteret automatisk med let definerbare regler.
 Hver regel gemmes i sin egen fil, som er nem at dele med dine venner
-# Oprettelse af manuelle transaktioner
+## Oprettelse af manuelle transaktioner
 [![asciicast](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ.svg)](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ)
+## Om periodisering - 3 eksempler
+[![asciicast](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw.svg)](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw)
 
 # TLDR - Lad mig downloade din OVA
 * Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
