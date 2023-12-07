@@ -96,9 +96,23 @@ Velkommen til vores futuristiske system, der trækker på den ærværdige VT100-
 
 VT100-teknologien, der danner grundlaget for vores system, er kendt for sin ekstreme hastighed. Dens enkle og effektive design gør det muligt for vores system at udføre opgaver lynhurtigt. Dette betyder, at du kan arbejde mere effektivt og fokusere på det, der virkelig betyder noget.
 
+Forestil dig du sidder i toget og du mister forbindelsen mellem to master - det kan f.eks. være der er et blackout mens du passerer øresund. Du kan taste videre i terminalen uden at bekymre dig om dette, da dine tastetryk bliver reflekteret på den anden side af sundet når forbindelsen genetableres. Det kan også være du sidder på en 5G forbindelse i byen, og 50.000 demonstranter og deres mobiltelefoner belaster netværket i en sådan grad at der er udfald. Dette er ikke nogen hindring for et terminalbaseret system.
+
+Om hastigheden kan vi oplyse at der ikke er noget snurre-symbol mens den venter på svar fra serveren, ligeledes behøver du ikke gå ud og hente kaffe mens du venter på at kassekladden bliver bogført. Vores vision er at alt du foretager dig i systemet bliver reflekteret med det samme.
+
+Hvis du f.eks. har et mindre regnskab med små 20.000 posteringer tager det cirka 300-400ms (0.3-0.4 sekunder) at frembringe en fuld saldobalance eller kontokort på skærmen. Et klassisk problem med saldobalancer og kontokort er at man slider på øjnene og musens scroll-hjul. I n4s behøver du ikke vise en fuld balance. Du kan nøjes med at vise den sektion af balancen du har behov for, f.eks. likvider eller alle aktiver.
+Ligeledes med kontokort - du kan hurtigt frembringe kontokort for enhver given konto eller hovedkategori.
+Følgende kommando viser dig specifikation af alle dine udgifter i størrelsesorden:
+> l r udgifter -S amount
+Følgende kommando viser dig specifikation af dine administrationsomkostninger i tekstrækkefølge
+> l r admin -S payee
+
+Du behøver ikke engang at skrive samme kommando mere end een gang. Systemet husker dine tidligere brugte kommandoer så de let kan genbruges.
+
 ## 🌐 **Portability at its Core**
 
 Med VT100-teknologien som fundament har vores system indbygget portabilitet. Uanset hvor du er, kan du nemt få adgang til systemet og udføre dine opgaver uden besvær. Dette gør det til det ideelle valg for moderne fagfolk, der er konstant på farten.
+Hvis du kan undvære flotte unicode-symboler og æ, ø og å, kan du faktisk afvikle systemet via en seriel forbindelse til en gammel terminal fra 80erne.
 
 ## 🤖 **Terminal-Based Brilliance**
 
