@@ -1,3 +1,4 @@
+logging=on
 alias åbneposter="php /svn/svnroot/Applications/newl.php openentries"
 alias mutt="ssh -t localhost -p8888 mutt"
 alias spks="u http://spks.dk"
@@ -83,7 +84,7 @@ alias egenkapital="tmux send-keys 'period=yearly ppivot ^Egenkapital:' Enter"
 
 export LEDGER_SORT=date
 alias pivot="bash /svn/svnroot/Applications/hpivot.bash $@"
-alias ppivot="LEDGER_BEGIN=1970/1/1 LEGDER_END=2099/12/31 bash /svn/svnroot/Applications/hpivot.bash $@"
+alias ppivot="LEDGER_BEGIN=1970-1-1 LEGDER_END=2099-12-31 bash /svn/svnroot/Applications/hpivot.bash $@"
 
 mkdir -p ~/n4s-sockets/
 export TMUX_TMPDIR=~/n4s-sockets/
@@ -362,7 +363,16 @@ else
 	showpath=n4s
 fi
 tmux set -g pane-border-format "#[fg=black,bg=gray]$env$showpath#[fg=black,bg=orange]#T"
-
+if [ "$tpath" != "" ]; then
+    if [ "$tpath" == "$PWD" ]; then
+        if [ "$logging" == "on" ]; then
+            tmux capture-pane -pS - > $tpath/.logs/$(whoami)-$(date +%Y-%m-%dT%H:%M).log
+        fi
+    elif [ "$logging" == "on" ]; then
+        export logging=off
+        echo "Logging = off"
+    fi
+fi
 
 bnpwd=$(basename "$PWD")
 echo "$(whoami) $(date '+%Y-%m-%dT%H:%m') $bnpwd : $cmd" >> /data/regnskaber/.log
@@ -420,6 +430,7 @@ function scrips() {
 		done
 }
 function sr() {
+clear&&tmux clear-history
 if [ -z "$1" ] ; then
 	export tpath=~/regnskaber/$((echo NY;ls -t ~/regnskaber)|fzf --no-mouse --cycle)
 else
@@ -457,13 +468,12 @@ else
 fi
 LEDGER_BEGIN=$(date +%Y-01-01)
 LEDGER_END=$(date +%Y-01-01 --date="+1 year")
-echo -e "\e[42mÅbnet $(basename "$tpath") OK - Tryk Alt-m eller skriv 'm' [Enter] \e[0m"
 if [ "$noperiod" != 1 ]; then
 dp
 fi
-
-
-
+echo -e "\e[42mÅbnet $(basename "$tpath") OK - Tryk Alt-m eller skriv 'm' [Enter] \e[0m"
+echo "Full log = $logging"
+mkdir -p $tpath/.logs/
 
 if [ -f .init.bash ]; then
     source .init.bash
@@ -516,8 +526,8 @@ function sync() {
 	popd >/dev/null
 }
 
-LEDGER_END=2099/12/31
-LEDGER_BEGIN=1970/01/01
+LEDGER_END=2099-12-31
+LEDGER_BEGIN=1970-01-01
 export DISPLAY=:1
 # HSTR configuration - add this to ~/.bashrc
 alias hh=hstr                    # hh to be alias for hstr
