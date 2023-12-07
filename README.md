@@ -103,9 +103,13 @@ Om hastigheden kan vi oplyse at der ikke er noget snurre-symbol mens den venter 
 Hvis du f.eks. har et mindre regnskab med små 20.000 posteringer tager det cirka 300-400ms (0.3-0.4 sekunder) at frembringe en fuld saldobalance eller kontokort på skærmen. Et klassisk problem med saldobalancer og kontokort er at man slider på øjnene og musens scroll-hjul. I n4s behøver du ikke vise en fuld balance. Du kan nøjes med at vise den sektion af balancen du har behov for, f.eks. likvider eller alle aktiver.
 Ligeledes med kontokort - du kan hurtigt frembringe kontokort for enhver given konto eller hovedkategori.
 Følgende kommando viser dig specifikation af alle dine udgifter i størrelsesorden:
+
 > l r udgifter -S amount
+
+
 Følgende kommando viser dig specifikation af dine administrationsomkostninger i tekstrækkefølge
 > l r admin -S payee
+
 
 Du behøver ikke engang at skrive samme kommando mere end een gang. Systemet husker dine tidligere brugte kommandoer så de let kan genbruges.
 
