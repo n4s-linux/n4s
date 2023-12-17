@@ -1,3 +1,5 @@
 tmp/*
 tmp/.*
 *.swp
+tags/*
+tags
