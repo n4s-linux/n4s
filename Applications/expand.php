@@ -136,17 +136,17 @@ foreach ($darray as $dataarray) {
 				if (isset($sourcetrans['P-Account']) && strlen($sourcetrans['P-Account']))
 					$contra = $sourcetrans['P-Account'];
 				else if ($sourcetrans['Amount'] > 0)
-					$contra = "Aktiver:Forudbetalte omkostninger:$orgtrans[Description]";
+					$contra = "Aktiver:Periodeafgrænsningsposter:$orgtrans[Description]";
 				else
-					$contra = "Passiver:Debitor forudbetalinger:$orgtrans[Description]";
+					$contra = "Passiver:Periodeafgrænsningsposter:$orgtrans[Description]";
 			}
 			else {
 				if (isset($sourcetrans['P-Account']) && strlen($sourcetrans['P-Account']))
 					$contra = $sourcetrans['P-Account'];
-				else if ($sourcetrans['Amount'] > 0)
-					$contra = "Passiver:Skyldige omkostninger:$orgtrans[Description]";
+				else if ($sourcetrans['Amount'] < 0)
+					$contra = "Passiver:Periodeafgrænsningsposter:$orgtrans[Description]";
 				else
-					$contra = "Aktiver:Debitor efterbetalinger:$orgtrans[Description]";
+					$contra = "Aktiver:Periodeafgrænsningsposter:$orgtrans[Description]";
 			}
 
 			$reversetrans = $sourcetrans;
