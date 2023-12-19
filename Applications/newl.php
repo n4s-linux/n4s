@@ -1,4 +1,5 @@
 <?php
+	require_once("rewrite.php");
 	$deletebilag = array();
 	$nargs = $argv;
 	array_shift($nargs);
@@ -251,7 +252,13 @@
 		ob_start();
 		system("cd $tpath;php $file");
 		$ld = ob_get_clean();
-		$ledgerdata .= $ld;
+		$x = explode("\n",$ld);
+		$s = "";
+		foreach ($x as $curx)  {
+			$s .= "; $curx\n";
+		}
+		$ledgerdata .= $s . "\n; rewrite:\n";
+		$ledgerdata .= rewrite($ld);
 	}
 	function bookbash($file) {
 		global $tpath;
@@ -260,7 +267,13 @@
 		ob_start();
 		system("cd $tpath;bash $file");
 		$ld = ob_get_clean();
-		$ledgerdata .= $ld;
+		$x = explode("\n",$ld);
+		$s = "";
+		foreach ($x as $curx) {
+			$s .= "; $curx\n";
+		}
+		$ledgerdata .= $s . "\n; rewrite:\n";
+		$ledgerdata .= rewrite($ld);
 	}
 	function getopening()  {
 		$begin = getenv("LEDGER_BEGIN");
@@ -313,7 +326,13 @@
 		global $tpath;
 		global $ledgerdata;
 		$ledgerdata .= "; ledger file $file\n";
-		$ledgerdata .= fgc($tpath."/".$file);
+		$filedata = (fgc($tpath."/".$file));
+		$x = explode("\n",$filedata);
+		$s = "";
+		foreach ($x as $curline) {
+			$s .= " ; $curline\n";
+		}
+		$ledgerdata .= "; rewrite: \n" . rewrite($filedata);
 	}
 	function rundelbilag() {
 		global $deletebilag;;
@@ -350,7 +369,7 @@
 				rundelbilag();
 			}
 		}
-		$transactions[] = $newtrans;
+		$transactions[] = json_decode(rewrite(json_encode($newtrans)),true);
 	}
 function isFile($file) {
         $f = pathinfo($file, PATHINFO_EXTENSION);
