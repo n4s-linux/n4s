@@ -13,6 +13,7 @@ $op = exec("whoami");
 require_once("lookup_account.php");
 $mtimez = array();
 $cache = array();
+$tpath = getenv("tpath"); if ($tpath=="") die("Kræver tpath\n");
 $lbf = getenv("LEDGER_BUDGET_STUFF"); // this is not very compliated, it is a hack... fix me anytime 
 $lem = getenv("LEDGER_ENTRY_MTIME"); // also hack just to pass envinronment from terminal to system()
 require_once("/svn/svnroot/Applications/key_chart_acc.php");
@@ -187,6 +188,8 @@ require_once("sortsearch.php");
 	foreach ($sresult as $curres) {
 		$curres['Description'] = substr($curres['Description'],0,25);
 		$konto = str_pad(shortacc($curres['Transactions'][0]['Account']),4," ",STR_PAD_LEFT);
+		if (!isset($curres['Transactions'][0]['Func'])) $curres['Transactions'][0]['Func'] = "";
+		if (!isset($curres['Transactions'][1]['Func'])) $curres['Transactions'][1]['Func'] = "";
 		$m1 = ($curres['Transactions'][0]['Func']);
 		$m2 = ($curres['Transactions'][1]['Func']);
 		if (count($curres['Transactions']) > 2) $mk = "FLERE";
@@ -201,7 +204,7 @@ require_once("sortsearch.php");
 	if (getenv("justshowall") == "1") 
 		{ $res = array(); $res[0] = "Alle"; }
 	else
-		$res = explode("\n",fzf($fzf,"Vælg søgeresultat","--multi --exact",true));
+		$res = explode("\n",fzf($fzf,"Vælg søgeresultat","--multi --exact --height=8",true));
 	if (trim($res[0]) == "Alle") {
 		foreach ($sresult as $curres) {
 			$fn = $curres['Filename'];
@@ -218,7 +221,7 @@ require_once("sortsearch.php");
 	require_once("/svn/svnroot/Applications/ansi-color.php");
 	system("clear");
 	foreach ($res as $curres) { echo set($curres. "\n","blue_bg");}
-	$action = fzf("Redigér\nÆndr Konto1\nÆndr Konto2\nÆndr Func1\nÆndr Func2\nÆndr reference","Vælg en handling","--height=10");
+	$action = fzf("Redigér\nÆndr Konto1\nÆndr Konto2\nÆndr Func1\nÆndr Func2\nÆndr reference","Vælg en handling","--height=8");
 	$op = exec("whoami");
 	$vf = "/tmp/vim_$op";
 	file_put_contents($vf,$resultvim);
