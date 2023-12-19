@@ -204,7 +204,7 @@ require_once("sortsearch.php");
 	if (getenv("justshowall") == "1") 
 		{ $res = array(); $res[0] = "Alle"; }
 	else
-		$res = explode("\n",fzf($fzf,"Vælg søgeresultat","--multi --exact --height=8",true));
+		$res = explode("\n",fzf($fzf,"Vælg søgeresultat","--multi --exact --height=24",true));
 	if (trim($res[0]) == "Alle") {
 		foreach ($sresult as $curres) {
 			$fn = $curres['Filename'];
