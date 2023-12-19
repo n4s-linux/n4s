@@ -1,4 +1,5 @@
 <?php
+require_once("/svn/svnroot/Applications/rewrite.php");
 require_once("/svn/svnroot/Applications/short.php");
 $op = exec("whoami");
 $tpath = getenv("tpath");
@@ -161,17 +162,17 @@ function getdata($begin,$end) {
 	}
 	return $darray;
 }
-	function getnote($d,$key) {
+	function getnote($d,$key,$header) {
 		global $notes;
 		global $notecount;
 		global $notenames;
 		$curnote = array();
 		error_reporting(0);
 		foreach ($d as $curd) {
-			if ($curd['KontoN1'] == $key && isset($curd['KontoN2']))
-				$curnote[$curd['KontoN1']][$curd['KontoN2']] += $curd['Beløb'];
-			else if ($curd['KontoN1'] == $key)
-				$curnote[$curd['KontoN1']][$key] += $curd['Beløb'];
+			if ($curd['Header'] == $header && $curd['KontoN1'] == $key && isset($curd['KontoN2']))
+				$curnote[$header .":".$curd['KontoN1']][$curd['KontoN2']] += $curd['Beløb'];
+			else if ($curd['Header'] == $header && $curd['KontoN1'] == $key)
+				$curnote[$header .":".$curd['KontoN1']][$key] += $curd['Beløb'];
 		}
 		error_reporting(E_ALL);
 		if (count(reset($curnote)) > 1) {
@@ -203,7 +204,7 @@ function getdata($begin,$end) {
 			if (intval($val) == 0) continue;
 			$total += $val;
 			$val = prettynum($val);
-			$note = getnote($d,$key);
+			$note = getnote($d,$key,$header);
 			if ($note != false)
 				$note = "<td><a href=#note$note>$note</a></td>";
 			else
@@ -491,15 +492,5 @@ function getnøgletal($darray)  {
 	
 	echo "</table>";
 	return ob_get_clean();
-}
-function rewrite($str) {
-	global $tpath;
-	if (!file_exists("$tpath/.rewrite.json")) return $str;
-	$rewrite = json_decode(file_get_contents("$tpath/.rewrite.json"),true);
-	$s = $str;
-	foreach ($rewrite as $search => $replace) {
-		$s = str_replace($search,$replace,$s);
-	}
-	return $s;
 }
 ?>
