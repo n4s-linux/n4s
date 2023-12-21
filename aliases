@@ -246,10 +246,15 @@ function srb()
 
 function csv() {
 php /svn/svnroot/Applications/key_csv.php load
-echo -ne "Data indlæst\n\tØnsker du forslag til kontering af nyligt indlæste poster (j/n)"
+echo -ne "Data indlæst\n\tØnsker du forslag til kontering af nyligt indlæste poster (j/n): "
 read jn
 if [ "$jn" == "j" ] || [ "$jn" == "J" ]; then
     php /svn/svnroot/Applications/newl.php suggestions
+fi
+echo -ne "\n\tØnsker du forslag til udligning af åbne poster ? (j/n): "
+read jn
+if [ "$jn" == "j" ] || [ "$jn" == "J" ]; then
+    php /svn/svnroot/Applications/newl.php openentries
 fi
 }
 function cvr() {
