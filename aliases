@@ -1,3 +1,4 @@
+alias aliases="updatealiases=1 php /svn/svnroot/Applications/newl.php b > /dev/null"
 logging=on
 function log() {
     echo -n "Indtast evt. søgefrase eller tryk enter for at vise alle logs: "
