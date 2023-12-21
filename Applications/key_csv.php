@@ -109,8 +109,9 @@ function detectDelimiter($csvFile)
     return array_search(max($delimiters), $delimiters);
 }
 function clean($string) {
-   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-
-   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+	$string = preg_replace('/[\x00-\x1F\x7F]/u', '', $string);
+	$string = str_replace(";",":",$string);
+	$string = str_replace("\\","",$string);
+   return $string;
 }
 ?>
