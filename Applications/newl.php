@@ -86,7 +86,7 @@
 			$open = getopen($dk);
 			$fejl = getfejl($x);
 			$match = findmatch($open,$fejl);
-
+			if ($match == false) continue;
 			$fnmatch = gettag($match['Open'],'Filename');
 			$fnfejl = gettag($match['Fejl'],'Filename');
 			echo "$fnmatch vs $fnfejl\n";
