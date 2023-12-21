@@ -15,14 +15,14 @@ fi
 #read account
 account="$@"
 if [ "$period" == "monthly" ]; then
-	php /svn/svnroot/Applications/newl.php print |hledger --depth=$depth -f /dev/stdin $cmd ^"$account" --monthly  
+	php /svn/svnroot/Applications/newl.php print |hledger --depth=$depth -f /dev/stdin $cmd $@ --monthly  
 elif [ "$period" == "quarterly" ]; then
-php /svn/svnroot/Applications/newl.php print |hledger --depth=$depth -f /dev/stdin $cmd ^"$account" --quarterly  
+php /svn/svnroot/Applications/newl.php print |hledger --depth=$depth -f /dev/stdin $cmd $@ --quarterly  
 	elif [ "$period" == "yearly" ]; then
-php /svn/svnroot/Applications/newl.php print |hledger  --depth=$depth -f /dev/stdin $cmd ^"$account" --yearly  
+php /svn/svnroot/Applications/newl.php print |hledger  --depth=$depth -f /dev/stdin $cmd $@ --yearly  
 
 	elif [ "$period" == "weekly" ]; then
-php /svn/svnroot/Applications/newl.php print |hledger --depth=$depth -f /dev/stdin $cmd ^"$account" --weekly 
+php /svn/svnroot/Applications/newl.php print |hledger --depth=$depth -f /dev/stdin $cmd $@ --weekly 
 	elif [ "$period" == "daily" ]; then
-php /svn/svnroot/Applications/newl.php print |hledger  --depth=$depth -f /dev/stdin $cmd ^"$account" --daily 
+php /svn/svnroot/Applications/newl.php print |hledger  --depth=$depth -f /dev/stdin $cmd $@ --daily 
 fi
