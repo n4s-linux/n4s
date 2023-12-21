@@ -17,6 +17,18 @@ if (!isset($argv[1])) {
 
 
 }
+else if ($argv[1] == "Vim") {
+	$menu["Account1"] = array('key'=>'a','Text'=>'Account1','cmd'=>"send-keys \"escape\" gg/Account ENTER wwwå");
+	$menu["Account2"] = array('key'=>'A','Text'=>'Account1','cmd'=>"send-keys \"escape\" gg/Account ENTER n wwwå");
+	$menu["Func1"] = array('key'=>'f','Text'=>'Func1','cmd'=>"send-keys \"escape\" gg/Func ENTER wwli");
+	$menu["Func2"] = array('key'=>'F','Text'=>'Func2','cmd'=>"send-keys \"escape\" gg/Func ENTER n wwli");
+	$menu["Ændre dato"] = array('key'=>'d','Text'=>'Dato','cmd'=>"send-keys \"escape\" gg/Date ENTER wwlR");
+	$menu["Ændre tekst"] = array('key'=>'t','Text'=>'Tekst','cmd'=>"send-keys \"escape\" gg/Description ENTER wwlå");
+	$menu["Ændre bilag"] = array('key'=>'b','Text'=>'Tekst','cmd'=>"send-keys \"escape\" gg/Reference ENTER wwlå");
+	$menu["Ændre kommentar"] = array('key'=>'k','Text'=>'Kommentar','cmd'=>"send-keys \"escape\" gg/Comment ENTER wwlå");
+	$menu["Periodisering Start"] = array('key'=>'p','Text'=>'Pstart','cmd'=>"send-keys \"escape\" gg/P-Start ENTER wwwwli");
+	$menu["Periodisering Slut"] = array('key'=>'P','Text'=>'Pslut','cmd'=>"send-keys \"escape\" gg/P-End ENTER wwwwli");
+}
 else if ($argv[1] == "Kommunikation") {
 	$menu["Materialeindkaldelse"] = array('key'=>'m','Text'=>'materiale','cmd'=>"new-window 'php /svn/svnroot/Applications/materiale.php'");
 }
