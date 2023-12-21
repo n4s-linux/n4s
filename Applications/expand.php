@@ -93,10 +93,12 @@ foreach ($darray as $dataarray) {
 			$belob = number_format($trans['Amount'] *-1 / $levetid,2,".","");
 			$konto = $trans['Account'];
 			$remainder = 0;
+			$rest = $trans['Amount'];
 			for ($i = 0;$i < $levetid;$i++) {
+				$rest -= $belob;
 				$ptrans = $dataarray;
 				unset($ptrans['History']);
-				$ptrans['Description'] .= " ( $i / $levetid måneder )";
+				$ptrans['Description'] .= " ( $i / $levetid måneder rest $rest)";
 				$ptrans['Date'] = date("Y-m-d",strtotime("$ptrans[Date] + $i months"));
 				$ptrans['Transactions'] = array(
 					array('Amount'=>$belob,'Account'=>$konto,'id'=>"virt"),
