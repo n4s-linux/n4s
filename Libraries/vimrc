@@ -1,3 +1,4 @@
+nnoremap å dt"i
 set termguicolors
 set cursorline
 autocmd InsertEnter * highlight CursorLine guifg=black guibg=yellow ctermfg=black ctermbg=yellow
@@ -24,6 +25,12 @@ nnoremap <Space> :cnext<cr>
 
 set hlsearch
 nnoremap <C-q> :call <sid>numbertog()<cr>
+nnoremap <C-k> <esc>/"Account<cr>wwww
+nnoremap <C-æ> <esc>/"Func<cr>wwww
+nnoremap <C-m> <esc>/"Amount<cr>www
+nnoremap <C-n> <esc>/"Reference<cr>wwww
+nnoremap <C-b> <esc>/"Date<cr>wwww
+
 function! s:numbertog()
 	  if &number
 		      set relativenumber!
@@ -109,7 +116,6 @@ nnoremap <C-L> :w<CR>:bp<CR>
 map <F5> :'<,'>!awk '{ sum += $1; print; } END { printf("Total:\n----------\n\%.2f\n----------\n", sum) }'<cr>
 
 
-nnoremap å dt"i
 
 nnoremap Q :qa!<cr>
 nnoremap W :wqa!<cr>
@@ -340,3 +346,8 @@ set ft=markdown
 set foldmethod=expr
 set foldexpr=MarkdownLevel()
 autocmd BufRead,BufNewFile *.tags/* set filetype=markdown
+func! s:lines_count()
+    echom line('$') . ' lines in buffer'
+endfunc
+nnoremap ? :!php /svn/svnroot/Applications/tmux/menu.php Vim& <CR><CR>
+:highlight Pmenu ctermbg=blue guibg=blue guifg=black
