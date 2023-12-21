@@ -1,4 +1,6 @@
 <?php
+	require_once("/svn/svnroot/Applications/openentries.php");
+	require_once("/svn/svnroot/Applications/newl_csv.php");
 	require_once("rewrite.php");
 	$deletebilag = array();
 	$nargs = $argv;
@@ -39,12 +41,46 @@
 	$begin = getenv("LEDGER_BEGIN");
 	$end = getenv("LEDGER_END");
 	$cmd = ("cp $fn $tpath/.curl$begin-$end; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/.curl$begin-$end ");
-	if ($nargs[0] == "openentries") {
+	if ($nargs[0] == "suggestions") {
+		$x = getcsv("1970-01-01",$end,$tpath);
+		$fejl = getfejl($x,true);
+		$suggestioncount = 0;
+		$accepted = 0;
+		foreach ($fejl as $curfejl) {
+			$similar = findsimilar($curfejl,$transactions);
+			if (is_array($similar)) {
+				$suggestioncount += 1;
+				$id = gettag($curfejl,"TransID");
+				system("clear");
+				echo "------------------------------------------------------------------------------------------\n";
+				$fn = gettag($curfejl,"Filename");
+				echo "\tForslag til kontering af transaktion i $fn:\n";
+				echo "\tDato\t$curfejl[Date]\n\tTekst\t$curfejl[tekst]\n\tBeløb\t$curfejl[Amount]\n\n";
+				echo "\tNuværende konto\t$curfejl[Account]\n\n";
+				echo "\tForslag til konto og moms $similar[Kontoforslag] ($similar[Momsforslag])\n";
+				require_once("/svn/svnroot/Applications/fzf.php");
+				echo "------------------------------------------------------------------------------------------\n";
+				$janej = fzf("Ja\nNej","Accepter forslag - tryk CTRL-c for at afbryde","--height=5");
+				if ($janej == "") die();
+				if ($janej == "Ja") {
+					$accepted++;
+					$data = json_decode(fgc($fn),true);
+					$oldacc = $data["Transactions"][$id]['Account'];
+					$oldvat = $data["Transactions"][$id]['Func'];
+					$data["Transactions"][$id]['Account'] = $similar["Kontoforslag"];
+					$data["Transactions"][$id]['Func'] = $similar["Momsforslag"];
+					array_push($data["History"],array("Date"=>date("Y-m-d H:m"),"op"=>$op,"Description"=>"Ændret transaktion $id baseret på historik  til $similar[Kontoforslag] ($similar[Momsforslag])"));
+					file_put_contents("$tpath/$fn",json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+				}
+			}
+		}
+		if ($suggestioncount == 0) die("Ingen forslag\n");
+		else die("Brugt $accepted / $suggestioncount forslag\n");
+	}
+	else if ($nargs[0] == "openentries") {
 		$match = true;
 		while ($match != false) {
 			system("mkdir -p $tpath/.openentries");
-			require_once("/svn/svnroot/Applications/openentries.php");
-			require_once("/svn/svnroot/Applications/newl_csv.php");
 			$x = getcsv("1970-01-01",$end,$tpath);
 			$dk = getdebcred($x);
 			$open = getopen($dk);

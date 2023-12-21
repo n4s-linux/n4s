@@ -1,4 +1,34 @@
 <?php
+function findsimilar($trans,$transactions) {
+	$forslag=array();
+	$total = 0;
+	foreach ($transactions as $curtrans) {
+  		if (stristr(json_encode($curtrans['Transactions']),"Fejl")) continue; // tager ej fejlkonto med i betragtning
+		$id = gettag($trans,"TransID");
+		if(! ( ($trans['Amount'] > 0 && $curtrans["Transactions"][$id]['Amount'] > 0) || ($trans['Amount'] < 0 && $curtrans["Transactions"][$id]['Amount'] < 0) )) continue; // udgifter matches med ugfiter, indtægter matches med indtægter
+		$similarity = similar_text($curtrans['Description'],$trans['tekst'],$percent);
+		if ($percent > 90) {
+			error_reporting(0);
+			$konto = $curtrans["Transactions"][$id]['Account'];
+			$moms = $curtrans["Transactions"][$id]['Func'];
+			error_reporting(E_ALL);
+			if ($konto == "") continue;
+			if (!isset($forslag[$konto . "|||" . $moms] )) { 
+				$forslag[$konto . "|||" . $moms] = 1;$total++;
+			}
+			else { 
+				$total++; $forslag[$konto . "|||" . $moms]++;
+			}
+		}	
+	}
+	foreach ($forslag as $kontoforslag => $antal) {
+		if ($antal / $total * 100 >= 80) {
+			$x = explode("|||",$kontoforslag);
+			return array("Kontoforslag"=>$x[0],"Momsforslag"=>$x[1],"Sandsynlighed"=>$antal/$total*100 . "%");
+		}
+	}
+	return false;
+}
 function cirka ($transa,$transb,$afvigelse = 5) {
 	$deviation = abs(1- ($transa['Amount'] / $transb['Amount']));
 	if ($deviation < $afvigelse) return true; else return false;
@@ -73,10 +103,10 @@ function groupbyacc($dk) {
 	}
 	return ($retval);
 }
-function getfejl($x) {
+function getfejl($x,$onlyfejl = false) { //onlyfejl will only return fejlkonto postings, but sometimes we want to consider postings with no bilag as well
 	$fejl = array();
 	foreach ($x as $curtrans) {
-		if (stristr($curtrans['bilag'],"CSV-") && (substr($curtrans['Account'],0,strlen("Indtægter:")) == "Indtægter:" || substr($curtrans['Account'],0,strlen("Udgifter:")) == "Udgifter:")) {
+		if (!$onlyfejl && stristr($curtrans['bilag'],"CSV-") && (substr($curtrans['Account'],0,strlen("Indtægter:")) == "Indtægter:" || substr($curtrans['Account'],0,strlen("Udgifter:")) == "Udgifter:")) {
 			array_push($fejl,$curtrans);
 		}
 		else if (stristr($curtrans['Account'],'Fejlkonto')) {
