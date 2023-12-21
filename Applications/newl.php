@@ -1,4 +1,6 @@
 <?php
+	$undefined_aliascount = 0;
+	require_once("/svn/svnroot/Applications/fzf.php");
 	require_once("/svn/svnroot/Applications/openentries.php");
 	require_once("/svn/svnroot/Applications/newl_csv.php");
 	require_once("rewrite.php");
@@ -58,7 +60,6 @@
 				echo "\tDato\t$curfejl[Date]\n\tTekst\t$curfejl[tekst]\n\tBeløb\t$curfejl[Amount]\n\n";
 				echo "\tNuværende konto\t$curfejl[Account]\n\n";
 				echo "\tForslag til konto og moms $similar[Kontoforslag] ($similar[Momsforslag])\n";
-				require_once("/svn/svnroot/Applications/fzf.php");
 				echo "------------------------------------------------------------------------------------------\n";
 				$janej = fzf("Ja\nNej","Accepter forslag - tryk CTRL-c for at afbryde","--height=5");
 				if ($janej == "") die();
@@ -161,6 +162,7 @@
 		foreach ($nargs as $curarg)
 			$cmd .= " $curarg";
 		system("$cmd");
+		if ($undefined_aliascount > 0)fwrite(STDERR,"$undefined_aliascount manglende aliases - skriv 'aliases'\n");
 	}
 	else {
 		entry();
@@ -218,12 +220,19 @@
 		if ($rv == "") $rv = $bal;
 		return evalmath($rv);
 	}
-	function getkontoplan_allaccounts() {
+	function getkontoplan_allaccounts($tekst = "") {
 		ob_start();
 		global $tpath;
-		system("cat $tpath/../*/.accounts|grep -i \"^Indtægter\|^Udgifter\|^Aktiver\|^Passiver\|^Egenkapital\"|sort|uniq");
+		echo "NY\n";
+		system("cat $tpath/../*/.accounts|grep -i \"^Indtægter\|^Udgifter\|^Aktiver\|^Passiver\|^Egenkapital\|^Fejlkonto\"|sort|uniq");
 		$valg = ob_get_clean();
-		$account = fzf($valg,"Vælg konto fra alle regnskaber");
+		$account = fzf($valg,"Vælg konto fra alle regnskaber $tekst");
+		if ($account == "NY") {
+			$fd = fopen("PHP://stdin","r");
+			echo "Indtast kontostreng: ";
+			$account = trim(fgets($fd));
+			fclose ($fd);
+		}
 		return $account;
 	}
 	function getkontoplan($x) {
@@ -343,12 +352,16 @@
 		return $ledgerdata;
 	}
 	function missingalias($file,$id) {
+		global $undefined_aliascount;
+		$update = trim(getenv("updatealiases"));
+		if (posix_isatty(STDOUT)) $update = 1;
 		$tpath = getenv("tpath");
-		if (true) {
-			$aliases = json_decode(fgc("$tpath/aliases"),true);
-			$filedata = json_decode(fgc("$tpath/$file"),true);
-			$d = $filedata['Transactions'][$id]['Account'];
-			if (!isset($aliases[$d])) {
+		$aliases = json_decode(fgc("$tpath/aliases"),true);
+		$filedata = json_decode(fgc("$tpath/$file"),true);
+		$d = $filedata['Transactions'][$id]['Account'];
+		if ($update == "") {
+			$undefined_aliascount++;
+			if (!isset($aliases[$d]) && $update == "") {
 				$aliases[$d] = "Mangler";
 				file_put_contents("$tpath/aliases",json_encode($aliases,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 			}
@@ -356,6 +369,13 @@
 				$filedata['Transactions'][$id]['Account'] = $aliases[$d];
 				file_put_contents("$tpath/$file",json_encode($filedata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 			}
+		}
+		else {
+			//update aliases from book 
+			$konto = getkontoplan_allaccounts($tekst = " - aliases $d peger på");
+			if ($konto == "") die();
+			$filedata['Transactions'][$id]['Account'] = $konto;
+			file_put_contents("$tpath/$file",json_encode($filedata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		}
 	}
 	function bookledger($file) {
