@@ -1,4 +1,5 @@
 <?php
+	$aliases_warning_displayed = 0;
 	$undefined_aliascount = 0;
 	require_once("/svn/svnroot/Applications/fzf.php");
 	require_once("/svn/svnroot/Applications/openentries.php");
@@ -75,7 +76,7 @@
 				}
 			}
 		}
-		if ($suggestioncount == 0) die("Ingen forslag\n");
+		if ($suggestioncount == 0) die("Ingen forslag at tage stilling til\n");
 		else die("Brugt $accepted / $suggestioncount forslag\n");
 	}
 	else if ($nargs[0] == "openentries") {
@@ -353,6 +354,7 @@
 	}
 	function missingalias($file,$id) {
 		global $undefined_aliascount;
+		global $aliases_warning_displayed;
 		$update = trim(getenv("updatealiases"));
 		if (posix_isatty(STDOUT)) $update = 1;
 		$tpath = getenv("tpath");
@@ -371,9 +373,14 @@
 			}
 		}
 		else {
+			require_once("/svn/svnroot/Applications/proc_open.php");
+			$bn = basename("$tpath");
+			if ($aliases_warning_displayed == 0) { exec_app("whiptail --msgbox \"Der mangler at blive defineret nye aliases i $bn\nDu vil nu blive spurgt hvilken konto de enkelte aliases skal henføres til\" 10 80");$aliases_warning_displayed=1;}
 			//update aliases from book 
 			$konto = getkontoplan_allaccounts($tekst = " - aliases $d peger på");
 			if ($konto == "") die();
+			$aliases[$d] = $konto;
+			file_put_contents("$tpath/aliases",json_encode($aliases,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 			$filedata['Transactions'][$id]['Account'] = $konto;
 			file_put_contents("$tpath/$file",json_encode($filedata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		}
