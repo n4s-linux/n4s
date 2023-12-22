@@ -2,10 +2,15 @@
 function findsimilar($trans,$transactions) {
 	$forslag=array();
 	$total = 0;
+	$trans["tekst"] = trim($trans["tekst"]);
 	foreach ($transactions as $curtrans) {
+		$curtrans["Description"] = trim($curtrans["Description"]);
+		
   		if (stristr(json_encode($curtrans['Transactions']),"Fejl")) continue; // tager ej fejlkonto med i betragtning
 		$id = gettag($trans,"TransID");
+		error_reporting(0);
 		if(! ( ($trans['Amount'] > 0 && $curtrans["Transactions"][$id]['Amount'] > 0) || ($trans['Amount'] < 0 && $curtrans["Transactions"][$id]['Amount'] < 0) )) continue; // udgifter matches med ugfiter, indtægter matches med indtægter
+		error_reporting(E_ALL);
 		$similarity = similar_text($curtrans['Description'],$trans['tekst'],$percent);
 		if ($percent > 90) {
 			error_reporting(0);
@@ -25,6 +30,11 @@ function findsimilar($trans,$transactions) {
 		if ($antal / $total * 100 >= 80) {
 			$x = explode("|||",$kontoforslag);
 			return array("Kontoforslag"=>$x[0],"Momsforslag"=>$x[1],"Sandsynlighed"=>$antal/$total*100 . "%");
+		}
+		else if ($antal / $total * 100 >= 50) {
+			$x = explode("|||",$kontoforslag);
+			if ($x[1] != "") $moms = " ($x[1])"; else $moms = "";
+			fwrite(STDERR,"Forslag [ $x[0]$moms] på ". $antal / $total *100 . "% ignoreres for $trans[tekst] da konteringen ikke er sikker nok\n");
 		}
 	}
 	return false;
