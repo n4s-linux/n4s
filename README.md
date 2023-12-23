@@ -212,14 +212,14 @@ Funktioner:
 * Uendeligt antal muligheder for forskellige farveskemaer - der er fx flere farveskemaer der er egnet til at du kan sidde i solen med din laptop og arbejde - det kan du godt glemme alt om i andre systemer... !
 
 # Quick Start videoer
-[Åbningsbalance](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S)
-[Indlæsning af bank CSV](https://asciinema.org/a/vxOr2DKCrcflhiVhRqABCxkeO)
-[Eksporter til CSV i n4s ](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD)
-[Pivot tabellter](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8)
-[Automatisk kontering af transaktioner med regler](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt)
-[Oprettelse af transaktioner](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ)
-[Om Periodisering](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw)
-[Renteberegning på konto](https://asciinema.org/a/YBnnVrYtmlftMdbrCkY7P6J6K)
+* [Oprettelse af transaktioner](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ)
+* [Åbningsbalance](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S)
+* [Indlæsning af bank CSV](https://asciinema.org/a/vxOr2DKCrcflhiVhRqABCxkeO)
+* [Eksporter til CSV i n4s ](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD)
+* [Pivot tabellter](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8)
+* [Automatisk kontering af transaktioner med regler](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt)
+* [Om Periodisering](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw)
+* [Renteberegning på konto](https://asciinema.org/a/YBnnVrYtmlftMdbrCkY7P6J6K)
 
 # TLDR - Lad mig downloade din OVA
 * Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
