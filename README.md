@@ -43,6 +43,11 @@ Du må gerne klone vores system og sælge det videre, men der under forudsætnin
 
 ... Betingelser som er nærmere beskrevet i softwarens licens som er GPL v3
 
+### Spar tid - automatiske bogføringsforslag
+Ved indlæsning af nye posteringer kan du spare tid for systemet kan selv komme med forslag baseret på din tidligere historik.
+Selv med meget lidt data får du hurtigt forslag til kontering - baseret på similar_text hvad der ofte refereres til som verdens bedste algoritme.
+Mange poster med samme tekst havner samme sted hver gang - systemet opdager selv når der er afvigelser og kræver stor præcision for at komme med forslag
+
 ### Løbende opdateringer
 Du skal ikke vente årevis på at der bliver udgivet en ny version. Du kan løbende hente patches med forbedringer til systemet.
 Følg dette [link](https://github.com/n4s-linux/n4s-gratis-regnskab/commits?author=n4s-linux) for at se de seneste ændringer til systemet.
@@ -207,25 +212,14 @@ Funktioner:
 * Uendeligt antal muligheder for forskellige farveskemaer - der er fx flere farveskemaer der er egnet til at du kan sidde i solen med din laptop og arbejde - det kan du godt glemme alt om i andre systemer... !
 
 # Quick Start videoer
-## Oprettelse af åbningsbalance
-[![asciicast](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S.svg)](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S)
-## Indlæsning af bank CSV og kontering af posteringer
-[![asciicast](https://asciinema.org/a/vxOr2DKCrcflhiVhRqABCxkeO.svg)](https://asciinema.org/a/vxOr2DKCrcflhiVhRqABCxkeO)
-## Udlæsning af posteringer til CSV
-[![asciicast](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD.svg)](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD)
-## Få bedre overblik over regnskabet med pivot tabeller
-[![asciicast](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8.svg)](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8)
-Disse tabeller er særligt nyttige for erfarne regnskabsbrugere, hvis man hurtigt skal kontrollere om de forventede faste omkostninger forekommer månedsvis fx husleje
-## Automatisk kontering af transaktioner med egne regler
-[![asciicast](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt.svg)](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt)
-Brug aldrig igen tid på at kontere bankgebyrer, bankrenter, private hævninger, telefonregninger etc - få dem konteret automatisk med let definerbare regler.
-Hver regel gemmes i sin egen fil, som er nem at dele med dine venner
-## Oprettelse af manuelle transaktioner
-[![asciicast](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ.svg)](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ)
-## Om periodisering - 3 eksempler
-[![asciicast](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw.svg)](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw)
-## Rentetilskrivning på konto
-[![asciicast](https://asciinema.org/a/YBnnVrYtmlftMdbrCkY7P6J6K.svg)](https://asciinema.org/a/YBnnVrYtmlftMdbrCkY7P6J6K)
+[Åbningsbalance](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S)
+[Indlæsning af bank CSV](https://asciinema.org/a/vxOr2DKCrcflhiVhRqABCxkeO)
+[Eksporter til CSV i n4s ](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD)
+[Pivot tabellter](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8)
+[Automatisk kontering af transaktioner med regler](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt)
+[Oprettelse af transaktioner](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ)
+[Om Periodisering](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw)
+[Renteberegning på konto](https://asciinema.org/a/YBnnVrYtmlftMdbrCkY7P6J6K)
 
 # TLDR - Lad mig downloade din OVA
 * Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
