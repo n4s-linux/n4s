@@ -1,6 +1,20 @@
-Aktiver:Anlægsaktiver:Driftsmidler:Primo
-Aktiver:Anlægsaktiver:Driftsmidler:Tilgang
-Aktiver:Anlægsaktiver:Driftsmidler:Årets afskrivninger
+Aktiver:Anlægsaktiver:Goodwill:Bogført værdi primo
+Aktiver:Anlægsaktiver:Goodwill:Årets tilgange
+Aktiver:Anlægsaktiver:Goodwill:Årets afgange
+Aktiver:Anlægsaktiver:Goodwill:Øvrige værdireguleringer
+Aktiver:Anlægsaktiver:Goodwill:Årets af- og nedskrivninger
+Aktiver:Anlægsaktiver:Goodwill:Goodwill, tilbageførte af- og nedskrivninger
+Aktiver:Anlægsaktiver:Immaterielle:Værdi primo
+Aktiver:Anlægsaktiver:Immaterielle:Tilgange
+Aktiver:Anlægsaktiver:Immaterielle:Afgange
+Aktiver:Anlægsaktiver:Immaterielle:Værdireguleringer
+Aktiver:Anlægsaktiver:Immaterielle:Af- og nedskrivninger
+Aktiver:Anlægsaktiver:Andre anlæg driftsmidler og inventar:Værdi primo
+Aktiver:Anlægsaktiver:Andre anlæg driftsmidler og inventar:Tilgange
+Aktiver:Anlægsaktiver:Andre anlæg driftsmidler og inventar:Afgange
+Aktiver:Anlægsaktiver:Andre anlæg driftsmidler og inventar:Værdireguleringer
+Aktiver:Anlægsaktiver:Andre anlæg driftsmidler og inventar:Af- og nedskrivninger
+Aktiver:Anlægsaktiver:Andre anlæg driftsmidler og inventar:Af- og nedskrivninger
 Aktiver:Anlægsaktiver:Indretning:Primo
 Aktiver:Anlægsaktiver:Indretning:Tilgang
 Aktiver:Forudbetalte omkostninger:Diverse
@@ -28,8 +42,17 @@ Egenkapital:Periodens resultat
 Egenkapital:Reserve udvikling
 Egenkapital:Selskabskapital
 Egenkapital:Primo
-Indtægter:Reg. Igangværende arbejder
-Indtægter:Salg m.moms
+Indtægter:Salg af varer og ydelser 
+Indtægter:Salg af varer udland, EU
+Indtægter:Salg af varer udland, ikke-EU
+Indtægter:Salg af ydelser udland, EU
+Indtægter:Salg af ydelser udland, ikke-EU
+Indtægter:Regulering igangværende arbejder
+Indtægter:Værdireguleringer af investeringsejendomme
+Indtægter:Andre driftsindtægter:Gevinst ved salg af immaterielle anlægsaktiver
+Indtægter:Andre driftsindtægter:Gevinst ved salg af materielle anlægsaktiver
+Indtægter:Andre driftsindtægter:Gevinst ved salg af finansielle anlægsaktiver
+Indtægter:Andre driftsindtægter:Øvrige andre driftsindtægter
 Passiver:Ansatte:A-skat
 Passiver:Ansatte:ATP
 Passiver:Ansatte:Feriepenge
@@ -53,43 +76,104 @@ Passiver:Skyldige omkostninger:Diverse
 Udgifter:Autodrift:Vægtafgift
 Udgifter:Autodrift:Brændstof
 Udgifter:Autodrift:Forsikring
-Udgifter:Administration:Advokat
-Udgifter:Administration:Bøder
-Udgifter:Administration:Edb
-Udgifter:Administration:Faglitteratur
-Udgifter:Administration:Forsikring
-Udgifter:Administration:Gebyrer
-Udgifter:Administration:Internet
-Udgifter:Administration:Konsulenter
+Udgifter:Administration:Småanskaffelser under skattemæssig grænse for småaktiver
+Udgifter:Administration:Småanskaffelser over skattemæssig grænse for småaktiver
+Udgifter:Administration:Underleverandører
+Udgifter:Administration:Forsknings- og udviklingsomkostninger
+Udgifter:Administration:Øvrige produktionsomkostninger
+Udgifter:Administration:Konstaterede tab på tilgodehavender fra salg og tjenesteydelser
+Udgifter:Administration:Regulering af nedskrivning på tilgodehavender fra salg og tjenesteydelser
+Udgifter:Administration:Regulering af tilgodehavender fra tilknyttede virksomheder og associerede virksomheder
+Udgifter:Administration:Edb It-udstyr mv.
+Udgifter:Administration:Skattefri rejse- og befordringsgodtgørelse 
+Udgifter:Administration:Kantineudgifter
 Udgifter:Administration:Kontingenter
+Udgifter:Administration:Faglitteratur
+Udgifter:Administration:Porto og gebyrer
+Udgifter:Administration:Telefon og internet mv. (kun virksomhed)
+Udgifter:Administration:Telefon og internet mv. (delvist privat)
 Udgifter:Administration:Kontorartikler
-Udgifter:Administration:Mindre anskaffelser
-Udgifter:Administration:Tab på debitorer
-Udgifter:Administration:Telefoni
-Udgifter:Administration:Webhosting
-Udgifter:Direkte omkostninger:Fragt
-Udgifter:Direkte omkostninger:Told
-Udgifter:Direkte omkostninger:Diverse
+Udgifter:Administration:Leje og operationelle leasingydelser (ekskl. husleje)
+Udgifter:Administration:Rejseudgifter
+Udgifter:Administration:Vikarassistance
+Udgifter:Administration:Konsulentydelser
+Udgifter:Administration:Kursusudgifter
+Udgifter:Administration:Leasingomkostninger, personbiler
+Udgifter:Administration:Driftsomkostninger, personbiler
+Udgifter:Administration:Driftsomkostninger, varebiler
+Udgifter:Administration:Parkeringsudgifter
+Udgifter:Administration:Biludgifter efter statens takster
+Udgifter:Administration:Fri bil
+Udgifter:Administration:Arbejdsskadeforsikring
+Udgifter:Administration:Offentlige gebyrer og bøder
+Udgifter:Administration:Revision og regnskabsmæssig assistance
+Udgifter:Administration:Advokatmæssig assistance
+Udgifter:Administration:Øvrige rådgivningshonorarer
+Udgifter:Administration:Ej skattemæssigt fradragsberettigede rådgivningshonorarer
+Udgifter:Administration:Adm- & management fee
+Udgifter:Administration:Øreafrunding & Kassedifferencer
+Udgifter:Administration:Andre eksterne omkostninger
+Udgifter:Direkte omkostninger:Varekøb
+Udgifter:Direkte omkostninger:Varekøb udland, EU
+Udgifter:Direkte omkostninger:Varekøb udland, ikke-EU
+Udgifter:Direkte omkostninger:Ydelseskøb
+Udgifter:Direkte omkostninger:Ydelseskøb udland, EU
+Udgifter:Direkte omkostninger:Ydelseskøb, udland, ikke-EU
+Udgifter:Direkte omkostninger:Varelagerregulering på lagre af råvarer og hjælpematerialer
+Udgifter:Direkte omkostninger:Nedskrivning på varelager
 Udgifter:Ekstraordinære poster
-Udgifter:Direkte omkostninger:Lagerregulering
-Udgifter:Lokaleomkostninger:El, vand og varme
-Udgifter:Lokaleomkostninger:Husleje
-Udgifter:Lokaleomkostninger:Rengøring
-Udgifter:Lokaleomkostninger:Vedligeholdelse
-Udgifter:Personaleomkostninger:AER
-Udgifter:Personaleomkostninger:Barsel
+Udgifter:Lokaleomkostninger:Husleje, ekskl. el, vand og varme
+Udgifter:Lokaleomkostninger:El
+Udgifter:Lokaleomkostninger:Elafgift
+Udgifter:Lokaleomkostninger:Vand
+Udgifter:Lokaleomkostninger:Varme
+Udgifter:Lokaleomkostninger:Vandafgift
+Udgifter:Lokaleomkostninger:Olie- og flaskegasafgift
+Udgifter:Lokaleomkostninger:Kulafgift
+Udgifter:Lokaleomkostninger:Naturgas- og bygasafgift
+Udgifter:Lokaleomkostninger:Co2-afgift
+Udgifter:Lokaleomkostninger:Øvrige afgifter
+Udgifter:Lokaleomkostninger:Rengøring og renovation (affaldshåndtering)
+Udgifter:Lokaleomkostninger:Reparation og vedligeholdelse
+Udgifter:Lokaleomkostninger:Reparation og vedligeholdelse, ejendom skattemæssigt afskrivningsberettiget, bygning 1
+Udgifter:Lokaleomkostninger:Forsikringer
+Udgifter:Lokaleomkostninger:Ejendomsskatter
+Udgifter:Lokaleomkostninger:Andre lokaleomkostninger
+Udgifter:Personaleomkostninger:Lønninger
+Udgifter:Personaleomkostninger:Feriepengeforpligtelse
+Udgifter:Personaleomkostninger:Jubilæumsgratiale og fratrædelsesgodtgørelse 
+Udgifter:Personaleomkostninger:Bestyrelseshonorar
+Udgifter:Personaleomkostninger:AM Bidragspligtig A-Indkomst
+Udgifter:Personaleomkostninger:AM Bidragsfri A-Indkomst
+Udgifter:Personaleomkostninger:Pensioner
+Udgifter:Personaleomkostninger:Vederlag til afløsning af pensionstilsagn 
+Udgifter:Personaleomkostninger:Omkostninger til social sikring
+Udgifter:Personaleomkostninger:AER & AUB
 Udgifter:Personaleomkostninger:ATP
-Udgifter:Personaleomkostninger:Diverse
-Udgifter:Personaleomkostninger:Feriepenge
-Udgifter:Personaleomkostninger:Fremmed arbejde
-Udgifter:Personaleomkostninger:KM-Penge
-Udgifter:Personaleomkostninger:A-indkomst
-Udgifter:Personaleomkostninger:Diverse:Mad
-Udgifter:Personaleomkostninger:Sygedagpenge
-Udgifter:Personaleomkostninger:Refusioner
-Udgifter:Reklame & Markedsføring:Annoncer & Reklamer
-Udgifter:Reklame & Markedsføring:Rejseomkostninger
-Udgifter:Reklame & Markedsføring:Repræsentation
+Udgifter:Personaleomkostninger:Andre personaleomkostninger
+Udgifter:Personaleomkostninger:Personalegoder 
+Udgifter:Personaleomkostninger:Lønrefusioner
+Udgifter:Personaleomkostninger:Udbetalte skattefrie godtgørelser i form af kørepenge og diæter
+Udgifter:Personaleomkostninger:Lønsumsafgift
+Udgifter:Af- og nedskrivninger:Erhvervede immaterielle anlægsaktiver
+Udgifter:Af- og nedskrivninger:Goodwill
+Udgifter:Af- og nedskrivninger:Grunde og bygninger
+Udgifter:Af- og nedskrivninger:Produktionsanlæg og maskiner
+Udgifter:Af- og nedskrivninger:Indretning af lejede lokaler
+Udgifter:Af- og nedskrivninger:Andre anlæg, driftsmateriel og inventar
+Udgifter:Af- og nedskrivninger:Software
+Udgifter:Af- og nedskrivninger:Finansielt leasede grunde og bygninger
+Udgifter:Af- og nedskrivninger:Finansielt leasede produktionsanlæg og maskiner
+Udgifter:Af- og nedskrivninger:Finansielt leasede andre anlæg, driftsmateriel og inventar
+Udgifter:Reklame & Markedsføring:Fragtomkostninger
+Udgifter:Reklame & Markedsføring:Annoncering og reklame
+Udgifter:Reklame & Markedsføring:Udstillinger og dekoration
+Udgifter:Reklame & Markedsføring:Restaurationsbesøg
+Udgifter:Reklame & Markedsføring:Repræsentationsomkostninger, skattemæssigt begrænset fradrag
+Udgifter:Reklame & Markedsføring:Repræsentationsomkostninger, fuld fradragsret skattemæssigt
+Udgifter:Reklame & Markedsføring:Andre salgsomkostninger
+Udgifter:Reklame & Markedsføring:Aviser og blade
+Udgifter:Reklame & Markedsføring:Gaver og blomster
 Udgifter:Renteudgifter:Div
 Udgifter:Renteudgifter:Bank
 Udgifter:Renteudgifter:Skattestyrelsen
