@@ -49,6 +49,7 @@
 		$fejl = getfejl($x,true);
 		$suggestioncount = 0;
 		$accepted = 0;
+		$yestoall = 0;
 		foreach ($fejl as $curfejl) {
 			$similar = findsimilar($curfejl,$transactions);
 			if (is_array($similar)) {
@@ -62,7 +63,8 @@
 				echo "\tNuværende konto\t$curfejl[Account]\n\n";
 				echo "\tForslag til konto og moms $similar[Kontoforslag] ($similar[Momsforslag])\n";
 				echo "------------------------------------------------------------------------------------------\n";
-				$janej = fzf("Ja\nNej","Accepter forslag - tryk CTRL-c for at afbryde","--height=5");
+				if ($yestoall != true) $janej = fzf("Ja\nNej\nJa til alle","Accepter forslag - tryk CTRL-c for at afbryde","--height=5"); else $janej = "Ja";
+				if ($janej == "Ja til alle") { $yestoall = true; $janej = "Ja"; }
 				if ($janej == "") die();
 				if ($janej == "Ja") {
 					$accepted++;
@@ -182,6 +184,8 @@
 			require_once("/svn/svnroot/Applications/fzf.php");
 			$find = false;
 			$konti = explode("\n",fzf("NY\nGlobalt opslag\n" . getkontoplan($x),"vælg konto bal=$bal","--bind 'enter:toggle+accept'  --bind 'tab:toggle+down+clear-query' --multi"));
+			if (trim(implode("\n",$konti)) == "") die("Afbrudt kontering\n");
+			if ($konti == "") die("Afbrudt kontering\n");
 			foreach ($konti as $konto) {
 				if ($konto == "Globalt opslag") {
 					$konto = getkontoplan_allaccounts();
