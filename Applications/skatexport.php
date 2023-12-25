@@ -1,4 +1,5 @@
 <?php
+require_once("/svn/svnroot/Applications/accountheader.php");
 $tpath = getenv("tpath");
 require_once("/svn/svnroot/Applications/fzf.php");
 $map = getmap();
@@ -6,10 +7,14 @@ $stdkto = getstandardkontoplan();
 $t = gettransactions();
 $newtrans = rewritetrans($t);
 bootstrap();
+$begin = getenv("LEDGER_BEGIN");
+$end = getenv("LEDGER_END");
+printheader("Ekstern rapportering");
 saldobalance($newtrans,$stdkto);
+echo "<p style=\"page-break-before: always\"></p>";
 kontokort($newtrans,$stdkto);
 function kontokort($newtrans,$stdkto) {
-	echo "<h1>Kontokort</h1>";
+	echo "<h1><center>Kontokort</center></h1>";
 	$konti = array();
 	foreach ($newtrans as $nt) {
 		$konti[$nt["Account"]][] = $nt;	
@@ -22,7 +27,7 @@ function kontokort($newtrans,$stdkto) {
 			if ($curkonto == $c[0]) echo $c[2];
 		}
 		echo "</b><br>";
-		echo "<table class='table-sm' border=1 width=700>";
+		echo "<table class='table-sm' width=700>";
 		kk($curkonto,$transactions);
 		echo "</table>";
 	}
@@ -32,20 +37,24 @@ function kk($curkonto,$transactions) {
 	foreach ($transactions as $curtrans) {
 		$bal += $curtrans['Amount'];
 		$trimmed = substr($curtrans["Tekst"],0,25);
-		$pretty=number_format($curtrans['Amount'],2,".",",");
-		$prettybal=number_format($bal,2,".",",");
-		echo "<tr><td width=70>$curtrans[Date]</td><td width=150>$trimmed</td><td width=70><p align=right>$pretty</p></td><td width=70><p align=right>$prettybal</p></td></tr>";
+		$pretty=number_format($curtrans['Amount'],2,",",".");
+		$prettybal=number_format($bal,2,",",".");
+		echo "<tr><td width=70>$curtrans[Date]</td><td width=70>$curtrans[Bilag]</td><td width=250>$trimmed</td><td width=70><p align=right>$pretty</p></td><td width=70><p align=right>$prettybal</p></td></tr>\n";
 	}
 }
 function bootstrap() {?><meta charset=utf8><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"><?php }
 $nulkontrol = 0;
+function printheader_ktoplan($header) {
+       return "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td><b>" . $header[2]."</b></td><td>&nbsp;</td></tr>\n";
+}
+
 function saldobalance($t,$stdkto) {
-	echo "<h1>Saldobalance</h1>";
+	echo "<h1><center>Saldobalance</center></h1>";
 	global $nulkontrol;
-	echo "<table border=1 class='table-sm' width=700>";
+	echo "<table class='table-sm ' width=700>";
 	$curheader="";
 	foreach ($stdkto as $curkto) {
-		if ($curkto[1] == "Overskrift") $curheader = printheader($curkto);
+		if ($curkto[1] == "Overskrift") $curheader = printheader_ktoplan($curkto);
 		else if ($curkto[1] == "" ) {
 			$p = printaccbal($curkto);
 			if ($p != "" ) {
@@ -104,9 +113,6 @@ function printaccbal($curkto) {
 	}
 	return ob_get_clean();
 }
-function printheader($header) {
-	return "<tr><td>&nbsp;</td><td><b>" . $header[2]."</b></td></tr>\n";
-}
 function rewritetrans($t) {
 	global $map;
 	$retval = array();
@@ -115,6 +121,7 @@ function rewritetrans($t) {
 		$newt = array();
 		$newt['Date'] = $curt[0];
 		$newt['Tekst'] = $curt[2];
+		$newt['Bilag'] = $curt[1];
 		$newt['Account'] = trim(explode("\t",changeacc($curt[3]))[0]);
 		$newt['Amount'] = $curt[5];
 		$newt['Tags'] = $curt[7];
