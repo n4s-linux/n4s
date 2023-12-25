@@ -1,6 +1,7 @@
 <?php
 function expand($darray){
 $simple = "";
+$simple = getenv("simple");
 $newdarray = array();
 $darray_add = array();
 foreach ($darray as $dataarray) {
