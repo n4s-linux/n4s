@@ -1,4 +1,12 @@
 <?php 
+function gettag($trans,$tag) {
+        if (!isset($trans['tags'])) return -1; 
+        $x = explode("$tag:",$trans['tags']);
+        if (!isset($x[1])) {                                                                                                                                                                                                        
+                 return -2; 
+        }
+        return trim(explode("||||",$x[1])[0]);
+}
 function getcomingdeadlines($kundenr) {
 	setlocale("LC_ALL","da_DK.UTF-8");
 	$deadlinez = array_unique(explode("|",gettags($kundenr,"|",false)));	

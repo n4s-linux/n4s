@@ -1,4 +1,5 @@
 <?php
+require_once("/svn/svnroot/Applications/gettags.php");
 function findsimilar($trans,$transactions) {
 	$forslag=array();
 	$total = 0;
@@ -136,13 +137,5 @@ function getdebcred($x) {
 				$i++;
 		}
 		return $open;
-}
-function gettag($trans,$tag) {
-	if (!isset($trans['tags'])) return -1;
-	$x = explode("$tag:",$trans['tags']);
-	if (!isset($x[1])) {
-		 return -2;
-	}
-	return trim(explode("||||",$x[1])[0]);
 }
 ?>
