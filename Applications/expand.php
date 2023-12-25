@@ -23,6 +23,59 @@ foreach ($darray as $dataarray) {
 			$cmd = ("vim '$dataarray[Filename]' -c \"let g:winid = popup_create('Venligst fjern momskode fra likvid/kreditor/debitorkonto', #{mindwidth:60, minheight: 1,line: 1,col:8})\"");
 			die();
 		}
+
+
+		if ($trans['Func'] == "iy-abr") {
+			$ot = $trans;
+			$trans['Amount'] = $trans['Amount'] * -0.25;
+			$trans['Account'] = "Passiver:Moms:Moms af ydelseskøb Udland";
+			$trans['id'] = "virt";
+			array_push($newtrans,$trans);
+			$trans["Amount"] = $trans["Amount"] *-1;
+			$trans["Account"] = "Passiver:Moms:Købsmoms:Ydelseskøb Udland";
+			array_push($newtrans,$trans);
+			$trans = $ot;
+
+		}
+		if ($trans['Func'] == "iv-abr") {
+			$ot = $trans;
+			$trans['Amount'] = $trans['Amount'] * -0.25;
+			$trans['Account'] = "Passiver:Moms:Moms af varekøb Udland";
+			$trans['id'] = "virt";
+			array_push($newtrans,$trans);
+			$trans["Amount"] = $trans["Amount"] *-1;
+			$trans["Account"] = "Passiver:Moms:Købsmoms:Varekøb Udland";
+			array_push($newtrans,$trans);
+			$trans = $ot;
+
+		}
+
+
+
+		if ($trans['Func'] == "iy-eu") {
+			$ot = $trans;
+			$trans['Amount'] = $trans['Amount'] * -0.25;
+			$trans['Account'] = "Passiver:Moms:Moms af ydelseskøb EU";
+			$trans['id'] = "virt";
+			array_push($newtrans,$trans);
+			$trans["Amount"] = $trans["Amount"] *-1;
+			$trans["Account"] = "Passiver:Moms:Købsmoms:Ydelseskøb EU";
+			array_push($newtrans,$trans);
+			$trans = $ot;
+
+		}
+		if ($trans['Func'] == "iv-eu") {
+			$ot = $trans;
+			$trans['Amount'] = $trans['Amount'] * -0.25;
+			$trans['Account'] = "Passiver:Moms:Moms af varekøb EU";
+			$trans['id'] = "virt";
+			array_push($newtrans,$trans);
+			$trans["Amount"] = $trans["Amount"] *-1;
+			$trans["Account"] = "Passiver:Moms:Købsmoms:Varekøb EU";
+			array_push($newtrans,$trans);
+			$trans = $ot;
+
+		}
 		if ($trans['Func'] == "iv" || $trans['Func'] == "iv25") {
 			$ot = $trans;
 			$trans['Amount'] = $trans['Amount'] * -0.25;
