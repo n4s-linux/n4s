@@ -9,19 +9,19 @@ bootstrap();
 saldobalance($newtrans,$stdkto);
 kontokort($newtrans,$stdkto);
 function kontokort($newtrans,$stdkto) {
-	
+	echo "<h1>Kontokort</h1>";
 	$konti = array();
 	foreach ($newtrans as $nt) {
 		$konti[$nt["Account"]][] = $nt;	
 	}
 	ksort($konti,SORT_NUMERIC);
 	foreach ($konti as $curkonto => $transactions) {
-		echo "$curkonto - ";
+		echo "<b>$curkonto - ";
 		foreach ($stdkto as $c) {
 			if ($curkonto == $c[0]) echo $c[2];
 		}
-		echo "<br>";
-		echo "<table class='table-sm'>";
+		echo "</b><br>";
+		echo "<table class='table-sm' border=1 width=700>";
 		kk($curkonto,$transactions);
 		echo "</table>";
 	}
@@ -36,11 +36,12 @@ function kk($curkonto,$transactions) {
 		echo "<tr><td width=70>$curtrans[Date]</td><td width=150>$trimmed</td><td width=70><p align=right>$pretty</p></td><td width=70><p align=right>$prettybal</p></td></tr>";
 	}
 }
-function bootstrap() {?><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"><?php }
+function bootstrap() {?><meta charset=utf8><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"><?php }
 $nulkontrol = 0;
 function saldobalance($t,$stdkto) {
+	echo "<h1>Saldobalance</h1>";
 	global $nulkontrol;
-	echo "<table class='table-sm'>";
+	echo "<table border=1 class='table-sm' width=700>";
 	$curheader="";
 	foreach ($stdkto as $curkto) {
 		if ($curkto[1] == "Overskrift") $curheader = printheader($curkto);
@@ -146,7 +147,7 @@ function selectaccount($acc) {
 }
 function gettransactions() {
 	ob_start();
-	system("php /svn/svnroot/Applications/newl.php csv");
+	system("skipresult=1 php /svn/svnroot/Applications/newl.php csv");
 	$str = ob_get_clean();
 	$x = str_getcsv($str,"\n");
 	foreach ($x as $curx) {

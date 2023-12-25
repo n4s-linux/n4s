@@ -36,7 +36,7 @@
 	scanalias($transactions); // check and fix missing aliases
 	$x = expand($transactions); //transactions gets data from global environment set in functions
 	require_once("/svn/svnroot/Applications/addresult.php");
-	$x = addresult($x);
+	if (getenv("skipresult") == "") $x = addresult($x);
 	$ledgerdata .= getledgerdata($x);
 	$uid = uniqid();
 	$fn = "/home/$op/tmp/.newl-$uid";
