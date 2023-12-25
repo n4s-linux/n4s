@@ -1,0 +1,485 @@
+1000,Overskrift,RESULTATOPGØRELSE
+1001,Overskrift,Nettoomsætning
+1010,,Salg af varer og ydelser 
+1050,,"Salg af varer udland, EU"
+1100,,"Salg af varer udland, ikke-EU"
+1150,,"Salg af ydelser udland, EU"
+1200,,"Salg af ydelser udland, ikke-EU"
+1300,,Regulering igangværende arbejder
+1350,,Værdireguleringer af investeringsejendomme
+1390,Sum 1010-1389,Nettoomsætning
+1400,Overskrift,Ændring i lagre af færdigvarer og varer under fremstilling
+1410,,Varelagerregulering på lagre af færdigvarer og varer under fremstilling
+1430,,Nedskrivning på lagre af færdigvarer og varer under fremstilling
+1460,,Øvrige ændringer på lagre af færdigvarer og varer under fremstilling
+1490,Sum 1410-1489,Ændring i lagre af færdigvarer og varer under fremstilling
+1500,Overskrift,Andre driftsindtægter
+1510,,Gevinst ved salg af immaterielle anlægsaktiver
+1530,,Gevinst ved salg af materielle anlægsaktiver
+1540,,Gevinst ved salg af finansielle anlægsaktiver
+1550,,Øvrige andre driftsindtægter
+1590,Sum 1510-1589,Andre driftsindtægter
+1600,Overskrift,"Omkostninger til råvarer, hjælpematerialer og ydelser"
+1610,,Varekøb
+1630,,"Varekøb udland, EU"
+1650,,"Varekøb udland, ikke-EU"
+1660,,Ydelseskøb
+1710,,"Ydelseskøb udland, EU"
+1740,,"Ydelseskøb, udland, ikke-EU"
+1770,,Varelagerregulering på lagre af råvarer og hjælpematerialer
+1800,,Nedskrivning på varelager
+1810,Sum 1610-1809,Omkostninger til råvarer og hjælpematerialer
+1820,Overskrift,Andre eksterne omkostninger
+1821,Overskrift,Salgsomkostninger
+1830,,Fragtomkostninger
+1850,,Annoncering og reklame
+1870,,Udstillinger og dekoration
+1890,,Restaurationsbesøg
+1910,,"Repræsentationsomkostninger, skattemæssigt begrænset fradrag"
+1930,,"Repræsentationsomkostninger, fuld fradragsret skattemæssigt"
+1950,,Andre salgsomkostninger
+1970,,Aviser og blade
+1990,,Gaver og blomster
+2010,Sum 1830-2009,Salgsomkostninger
+2020,Overskrift,Lokaleomkostninger
+2030,,"Husleje, ekskl. el, vand og varme"
+2050,,El
+2060,,Elafgift
+2070,,Vand
+2080,,Varme
+2090,,Vandafgift
+2100,,Olie- og flaskegasafgift
+2110,,Kulafgift
+2120,,Naturgas- og bygasafgift
+2130,,Co2-afgift
+2140,,Øvrige afgifter
+2150,,Rengøring og renovation (affaldshåndtering)
+2160,,Reparation og vedligeholdelse
+2170,,"Reparation og vedligeholdelse, ejendom skattemæssigt afskrivningsberettiget, bygning 1"
+2180,,Forsikringer
+2190,,Ejendomsskatter
+2200,,Andre lokaleomkostninger
+2210,Sum 2030-2209,Lokaleomkostninger
+2220,Overskrift,Administrationsomkostninger
+2230,,Småanskaffelser under skattemæssig grænse for småaktiver
+2240,,Småanskaffelser over skattemæssig grænse for småaktiver
+2250,,Underleverandører
+2260,,Forsknings- og udviklingsomkostninger
+2270,,Øvrige produktionsomkostninger
+2280,,Konstaterede tab på tilgodehavender fra salg og tjenesteydelser
+2290,,Regulering af nedskrivning på tilgodehavender fra salg og tjenesteydelser
+2300,,Regulering af tilgodehavender fra tilknyttede virksomheder og associerede virksomheder
+2310,,It-udstyr mv.
+2330,,Skattefri rejse- og befordringsgodtgørelse 
+2350,,Kantineudgifter
+2370,,Kontingenter
+2380,,Faglitteratur
+2390,,Porto og gebyrer
+2410,,Telefon og internet mv. (kun virksomhed)
+2420,,Telefon og internet mv. (delvist privat)
+2450,,Kontorartikler
+2460,,Leje og operationelle leasingydelser (ekskl. husleje)
+2470,,Rejseudgifter
+2480,,Vikarassistance
+2510,,Konsulentydelser
+2520,,Kursusudgifter
+2530,,"Leasingomkostninger, personbiler"
+2540,,"Driftsomkostninger, personbiler"
+2560,,"Driftsomkostninger, varebiler"
+2620,,Parkeringsudgifter
+2630,,Biludgifter efter statens takster
+2640,,Fri bil
+2650,,Arbejdsskadeforsikring
+2660,,Offentlige gebyrer og bøder (ej fradragsberettiget skattemæssigt)
+2670,,Revision og regnskabsmæssig assistance
+2680,,Advokatmæssig assistance
+2690,,Øvrige rådgivningshonorarer
+2700,,Ej skattemæssigt fradragsberettigede rådgivningshonorarer
+2710,,Administrationsvederlag/management fee
+2720,,Øreafrunding/kassedifferencer
+2810,,Andre eksterne omkostninger
+2830,Sum 2230-2829,Administrationsomkostninger
+2831,Sum 1830-2829,Andre eksterne omkostninger
+2840,Sum 1010-2829,Bruttofortjeneste/Bruttotab
+2841,Overskrift,Personaleomkostninger
+2850,,Lønninger
+2860,,Feriepengeforpligtelse
+2870,,Jubilæumsgratiale og fratrædelsesgodtgørelse 
+2880,,Bestyrelseshonorar
+2890,,AM Bidragspligtig A-Indkomst
+2900,,AM Bidragsfri A-Indkomst
+2910,,Pensioner
+2920,,Vederlag til afløsning af pensionstilsagn 
+2930,,Omkostninger til social sikring
+2940,,AER/ AUB
+2950,,ATP
+2960,,Andre personaleomkostninger
+2965,,Personalegoder 
+2968,,Lønrefusioner
+2970,,Udbetalte skattefrie godtgørelser i form af kørepenge og diæter
+2980,,Lønsumsafgift
+2990,Sum 2850-2989,Personaleomkostninger
+2991,Overskrift,Af- og nedskrivninger af materielle og immaterielle anlægsaktiver 
+3000,,Af- og nedskrivninger af erhvervede immaterielle anlægsaktiver
+3010,,Af- og nedskrivninger af goodwill
+3020,,Af- og nedskrivninger af grunde og bygninger
+3030,,Af- og nedskrivninger af produktionsanlæg og maskiner
+3040,,Af- og nedskrivninger af indretning af lejede lokaler
+3050,,"Af- og nedskrivninger af andre anlæg, driftsmateriel og inventar"
+3060,,Af- og nedskrivninger af software
+3070,,Af- og nedskrivninger af finansielt leasede grunde og bygninger
+3080,,Af- og nedskrivninger af finansielt leasede produktionsanlæg og maskiner
+3090,,"Af- og nedskrivninger af finansielt leasede andre anlæg, driftsmateriel og inventar"
+3100,Sum 3000-3099,Af- og nedskrivninger af materielle og immaterielle anlægsaktiver 
+3120,Overskrift,"Nedskrivninger af omsætningsaktiver, som overstiger normale nedskrivninger"
+3130,,"Nedskrivninger af omsætningsaktiver, som overstiger normale nedskrivninger"
+3140,Sum 3130-3139,"Nedskrivninger af omsætningsaktiver, som overstiger normale nedskrivninger"
+3150,Overskrift,Andre driftsomkostninger
+3160,,Tab ved salg af immaterielle anlægsaktiver
+3170,,Tab ved salg af materielle anlægsaktiver
+3180,,Øvrige andre driftsomkostninger
+3190,Sum 3160-3189,Andre driftsomkostninger
+3191,Overskrift,Indtægter af kapitalandele
+3192,Overskrift,Indtægter af kapitalandele i tilknyttede virksomheder
+3200,,Indtægter af kapitalandele i tilknyttede virksomheder
+3210,Sum 3200-3209,Indtægter af kapitalandele i tilknyttede virksomheder
+3220,Overskrift,Indtægter af kapitalandele i kapitalinteresser
+3230,,Indtægter af kapitalandele i kapitalinteresser
+3240,Sum 3230-3239,Indtægter af kapitalandele i kapitalinteresser
+3250,Sum 3200-3239,Indtægter af kapitalandele
+3370,Overskrift,"Indtægter af andre kapitalandele, værdipapirer og tilgodehavender, der er anlægsaktiver"
+3380,,Udbytte fra unoterede porteføljeaktier (bruttoudbytte)
+3400,,"Øvrige indtægter af andre kapitalandele, værdipapirer og tilgodehavender, der er anlægsaktiver"
+3410,Sum 3380-3409,"Indtægter af andre kapitalandele, værdipapirer og tilgodehavender, der er anlægsaktiver"
+3411,Overskrift,Andre finansielle indtægter fra tilknyttede virksomheder 
+3440,,Andre finansielle indtægter fra tilknyttede virksomheder
+3450,Sum 3440-3449,Andre finansielle indtægter fra tilknyttede virksomheder 
+3451,Overskrift,Andre finansielle indtægter
+3470,,Renter fra banker
+3490,,Renter vedr. tilgodehavende fra salg af varer og tjenesteydelser
+3510,,Rentetillæg mv. fra det offentlige (ej skattepligtig)
+3530,,Øvrige finansielle indtægter
+3540,Sum 3470-3539,Andre finansielle indtægter
+3541,Overskrift,Nedskrivning af finansielle aktiver
+3560,,Nedskrivning af finansielle aktiver
+3570,Sum 3560-3569,Nedskrivning af finansielle aktiver
+3571,Overskrift,"Finansielle omkostninger, der hidrører fra tilknyttede virksomheder"
+3590,,"Finansielle omkostninger, der hidrører fra tilknyttede virksomheder"
+3600,Sum 3590-3599,"Finansielle omkostninger, der hidrører fra tilknyttede virksomheder"
+3601,Overskrift,Øvrige finansielle omkostninger
+3610,,Valutakursreguleringer
+3620,,"Valutakursreguleringer, udenlandske dattervirksomheder"
+3630,,"Kurstab på likvider, bankgæld og prioritetsgæld"
+3640,,Renter på finansiel leasinggæld 
+3650,,Renter vedr. leverandører af varer og tjenesteydelser
+3670,,Renter til banker og realkreditinstitutter
+3675,,Renter til det offentlige (ej fradragsberettiget skattemæssigt)
+3680,,Værdireguleringer af investeringsejendomme
+3690,,Andre finansielle omkostninger
+3700,Sum 3610-3699,Øvrige finansielle omkostninger
+3701,Sum 1010-3699,Resultat før skat
+3702,Overskrift,Skat af årets resultat
+3740,,Aktuel skat
+3760,,Ændring af udskudt skat
+3780,,Regulering vedrørende tidligere år
+3790,Sum 3740-3789,Skat af årets resultat
+3791,Overskrift,Andre skatter
+3810,,Andre skatter
+3820,Sum 3810-3819,Andre skatter
+4999,Sum 1010-3819,Årets resultat
+5000,Overskrift,BALANCE
+5001,Overskrift,AKTIVER
+5002,Overskrift,Anlægsaktiver
+5003,Overskrift,Immaterielle anlægsaktiver
+5004,Overskrift,Goodwill
+5010,,"Goodwill, bogført værdi primo"
+5020,,"Goodwill, årets tilgange"
+5030,,"Goodwill, årets afgange"
+5040,,"Goodwill, øvrige værdireguleringer"
+5050,,"Goodwill, årets af- og nedskrivninger"
+5060,,"Goodwill, tilbageførte af- og nedskrivninger"
+5070,Sum 5010-5069,"Goodwill, ultimo"
+5071,Overskrift,Erhvervede immaterielle anlægsaktiver
+5080,,"Erhvervede immaterielle anlægsaktiver, bogført værdi primo"
+5090,,"Erhvervede immaterielle anlægsaktiver, årets tilgange"
+5100,,"Erhvervede immaterielle anlægsaktiver, årets afgange"
+5110,,"Erhvervede immaterielle anlægsaktiver, øvrige værdireguleringer"
+5120,,"Erhvervede immaterielle anlægsaktiver, årets af- og nedskrivninger"
+5130,,"Erhvervede immaterielle anlægsaktiver, tilbageførte af- og nedskrivninger"
+5140,Sum 5080-5139,"Erhvervede immaterielle anlægsaktiver, ultimo"
+5141,Sum 5010-5139,Immaterielle anlægsaktiver
+5142,Overskrift,Materielle anlægsaktiver
+5150,Overskrift,Investeringsejendomme
+5160,,"Investeringsejendomme, bogført værdi primo"
+5170,,"Investeringsejendomme, årets tilgange "
+5180,,"Investeringsejendomme, årets afgange "
+5190,,"Investeringsejendomme, årets forbedringer"
+5200,,"Investeringsejendomme, øvrige værdireguleringer"
+5210,,"Investeringsejendomme, årets af- og nedskrivninger"
+5220,,"Investeringsejendomme, tilbageførte af- og nedskrivninger"
+5230,Sum 5160-5229,"Investeringsejendomme, ultimo"
+5231,Overskrift,Investeringsejendomme under opførelse
+5240,,"Investeringsejendomme under opførelse, bogført værdi primo"
+5250,,"Investeringsejendomme under opførelse, årets tilgange "
+5260,,"Investeringsejendomme under opførelse, årets afgange "
+5270,,"Investeringsejendomme under opførelse, årets forbedringer"
+5280,,"Investeringsejendomme under opførelse, øvrige værdireguleringer"
+5290,,"Investeringsejendomme under opførelse, årets nedskrivninger"
+5300,,"Investeringsejendomme under opførelse, tilbageførte nedskrivninger"
+5310,Sum 5240-5309,"Investeringsejendomme under opførelse, ultimo"
+5311,Overskrift,Grunde og bygninger
+5320,,"Grunde og bygninger, bogført værdi primo"
+5330,,"Grunde og bygninger, årets tilgange "
+5340,,"Grunde og bygninger, årets afgange "
+5350,,"Grunde og bygninger, årets forbedringer"
+5370,,"Grunde og bygninger, øvrige værdireguleringer"
+5390,,"Grunde og bygninger, årets af- og nedskrivninger"
+5400,,"Grunde og bygninger, tilbageførte af- og nedskrivninger"
+5410,Sum 5320-5409,"Grunde og bygninger, ultimo"
+5411,Overskrift,Produktionsanlæg og maskiner
+5420,,"Produktionsanlæg og maskiner, bogført værdi primo"
+5430,,"Produktionsanlæg og maskiner, årets tilgange"
+5440,,"Produktionsanlæg og maskiner, årets afgange"
+5450,,"Produktionsanlæg og maskiner, øvrige værdireguleringer"
+5470,,"Produktionsanlæg og maskiner, årets af- og nedskrivninger"
+5480,,"Produktionsanlæg og maskiner, tilbageførte af- og nedskrivninger"
+5490,Sum 5420-5489,"Produktionsanlæg og maskiner, ultimo"
+5491,Overskrift,Indretning af lejede lokaler
+5500,,"Indretning af lejede lokaler, bogført værdi primo"
+5510,,"Indretning af lejede lokaler, årets tilgange"
+5520,,"Indretning af lejede lokaler, årets afgange"
+5530,,"Indretning af lejede lokaler, øvrige værdireguleringer"
+5540,,"Indretning af lejede lokaler, årets af- og nedskrivninger"
+5550,,"Indretning af lejede lokaler, tilbageførte af- og nedskrivninger"
+5560,Sum 5500-5559,"Indretning af lejede lokaler, ultimo"
+5561,Overskrift,"Andre anlæg, driftsmateriel og inventar"
+5570,,"Andre anlæg, driftsmateriel og inventar, bogført værdi primo"
+5580,,"Andre anlæg, driftsmateriel og inventar, årets tilgange"
+5590,,"Andre anlæg, driftsmateriel og inventar, årets afgange"
+5600,,"Andre anlæg, driftsmateriel og inventar, øvrige værdireguleringer"
+5610,,"Andre anlæg, driftsmateriel og inventar, årets af- og nedskrivninger"
+5620,,"Andre anlæg, driftsmateriel og inventar, tilbageførte af- og nedskrivninger"
+5630,Sum 5570-5629,"Andre anlæg, driftsmateriel og inventar, ultimo"
+5631,Overskrift,Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver
+5640,,"Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, bogført værdi primo"
+5650,,"Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, årets tilgange"
+5660,,"Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, årets afgange"
+5670,,"Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, øvrige værdireguleringer"
+5680,,"Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, årets nedskrivninger"
+5690,,"Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, tilbageførte nedskrivninger"
+5700,Sum 5640-5699,"Materielle anlægsaktiver under udførelse og forudbetalinger for materielle anlægsaktiver, ultimo"
+5701,Overskrift,Finansielt leasede aktiver
+5710,,"Finansielt leasede aktiver, bogført værdi primo"
+5720,,"Finansielt leasede aktiver, årets tilgange"
+5730,,"Finansielt leasede aktiver, årets afgange"
+5740,,"Finansielt leasede aktiver, øvrige værdireguleringer"
+5750,,"Finansielt leasede aktiver, årets af- og nedskrivninger"
+5760,,"Finansielt leasede aktiver, tilbageførte af- og nedskrivninger"
+5770,Sum 5710-5769,"Finansielt leasede aktiver, ultimo"
+5771,Sum 5160-5769,Materielle anlægsaktiver
+5772,Overskrift,Finansielle anlægsaktiver
+5773,Overskrift,Kapitalandele i tilknyttede virksomheder
+5800,,"Kapitalandele i tilknyttede virksomheder, bogført værdi primo"
+5810,,"Kapitalandele i tilknyttede virksomheder, årets tilgange"
+5820,,"Kapitalandele i tilknyttede virksomheder, årets afgange"
+5830,,"Kapitalandele i tilknyttede virksomheder, øvrige værdireguleringer"
+5840,,"Kapitalandele i tilknyttede virksomheder, årets nedskrivninger"
+5850,,"Kapitalandele i tilknyttede virksomheder, tilbageførte nedskrivninger"
+5860,Sum 5800-5859,"Kapitalandele i tilknyttede virksomheder, ultimo"
+5861,Overskrift,Langfristede tilgodehavender hos tilknyttede virksomheder
+5870,,Langfristede tilgodehavender hos tilknyttede virksomheder
+5880,,Nedskrivning på langfristede tilgodehavender hos tilknyttede virksomheder
+5890,Sum 5870-5889,Langfristede tilgodehavender hos tilknyttede virksomheder
+5891,Overskrift,Kapitalandele i kapitalinteresser
+5900,,"Kapitalandele i kapitalinteresser, bogført værdi primo"
+5910,,"Kapitalandele i kapitalinteresser, årets tilgange"
+5920,,"Kapitalandele i kapitalinteresser, årets afgange"
+5930,,"Kapitalandele i kapitalinteresser, øvrige værdireguleringer"
+5940,,"Kapitalandele i kapitalinteresser, årets nedskrivninger"
+5950,,"Kapitalandele i kapitalinteresser, bogført værdi primo, tilbageførte nedskrivninger"
+5960,Sum 5900-5959,"Kapitalandele i kapitalinteresser, ultimo"
+5961,Overskrift,Langfristede tilgodehavender hos kapitalinteresser
+5970,,Langfristede tilgodehavender hos kapitalinteresser
+5980,,Nedskrivning på langfristede tilgodehavender hos kapitalinteresser
+5990,Sum 5970-5989,Langfristede tilgodehavender hos kapitalinteresser
+5991,Overskrift,Andre værdipapirer og kapitalandele
+6000,,Andre værdipapirer og kapitalandele
+6010,Sum 6000-6009,Andre værdipapirer og kapitalandele
+6011,Overskrift,Andre (langfristede) tilgodehavender
+6020,,Udskudte skatteaktiver
+6030,,Øvrige (langfristede) tilgodehavender
+6040,,Deposita
+6050,Sum 6020-6049,Andre (langfristede) tilgodehavender
+6051,Overskrift,Tilgodehavender hos virksomhedsdeltagere og ledelse
+6060,,Tilgodehavender hos virksomhedsdeltagere og ledelse
+6070,Sum 6060-6069,Tilgodehavender hos virksomhedsdeltagere og ledelse
+6071,Sum 5800-6069,Finansielle anlægsaktiver
+6072,Sum 5010-6069,Anlægsaktiver i alt
+6073,Overskrift,Omsætningsaktiver
+6074,Overskrift,Varebeholdninger
+6075,Overskrift,Råvarer og hjælpematerialer
+6080,,Råvarer og hjælpematerialer
+6090,,Nedskrivning på råvarer og hjælpematerialer
+6100,Sum 6080-6099,Råvarer og hjælpematerialer
+6101,Overskrift,Varer under fremstilling
+6110,,Varer under fremstilling
+6120,,Nedskrivning på varer under fremstilling
+6130,Sum 6110-6129,Varer under fremstilling
+6131,Overskrift,Fremstillede varer og handelsvarer
+6140,,Fremstillede varer og handelsvarer
+6150,,Nedskrivning på fremstillede varer og handelsvarer
+6160,Sum 6140-6159,Fremstillede varer og handelsvarer
+6161,Overskrift,Forudbetalinger for varer
+6170,,Forudbetalinger for varer
+6180,Sum 6170-6179,Forudbetalinger for varer
+6181,Sum 6080-6179,Varebeholdninger
+6182,Overskrift,Tilgodehavender
+6183,Overskrift,Tilgodehavender fra salg og tjenesteydelser
+6190,,Tilgodehavender fra salg og tjenesteydelser
+6200,,Akkumulerede nedskrivninger til tab på tilgodehavender fra salg og tjenesteydelser
+6210,Sum 6190-6209,Tilgodehavender fra salg og tjenesteydelser
+6211,Overskrift,Kortfristede tilgodehavender hos tilknyttede virksomheder
+6220,,Kortfristede tilgodehavender hos tilknyttede virksomheder
+6230,,Akkumulerede nedskrivninger til tab på tilgodehavender fra tilknyttede virksomheder
+6240,,Kortfristede tilgodehavender hos kapitalinteresser
+6250,,Akkumulerede nedskrivninger til tab på tilgodehavender fra kapitalinteresser
+6260,Sum 6220-6259,Kortfristede tilgodehavender hos tilknyttede virksomheder
+6261,Overskrift,Igangværende arbejder for fremmed regning
+6270,,Igangværende arbejder for fremmed regning
+6280,Sum 6270-6279,Igangværende arbejder for fremmed regning
+6281,Overskrift,Andre tilgodehavender (kortfristede)
+6290,,Udskudte skatteaktiver
+6300,,Tilgodehavende selskabsskat (kortfristet)
+6310,,Tilgodehavende kildeskat
+6320,,Tilgodehavende moms (kortfristet)
+6330,,Øvrige tilgodehavender (kortfristede)
+6340,Sum 6290-6339,Andre tilgodehavender (kortfristede)
+6341,Overskrift,Krav på indbetaling af virksomhedskapital og overkurs
+6350,,Krav på indbetaling af virksomhedskapital og overkurs
+6360,Sum 6350-6359,Krav på indbetaling af virksomhedskapital og overkurs
+6361,Overskrift,Kortfristede tilgodehavender hos virksomhedsdeltagere og ledelse
+6370,,Kortfristede tilgodehavender hos virksomhedsdeltagere og ledelse
+6380,Sum 6370-6379,Kortfristede tilgodehavender hos virksomhedsdeltagere og ledelse
+6381,Overskrift,Periodeafgrænsningsposter
+6390,,"Periodeafgrænsningsposter, der kan opretholdes skattemæssigt"
+6400,,"Periodeafgrænsningsposter, der ikke kan opretholdes skattemæssigt"
+6410,Sum 6390-6409,Periodeafgrænsningsposter
+6411,Sum 6190-6409,Tilgodehavender
+6412,Overskrift,Værdipapirer og kapitalandele
+6413,Overskrift,Kapitalandele i tilknyttede virksomheder
+6420,,Kapitalandele i tilknyttede virksomheder
+6430,Sum 6420-6429,Kapitalandele i tilknyttede virksomheder
+6431,Overskrift,Andre værdipapirer og kapitalandele
+6450,,Andre værdipapirer og kapitalandele
+6460,Sum 6450-6459,Andre værdipapirer og kapitalandele
+6461,Sum 6420-6459,Værdipapirer og kapitalandele
+6462,Overskrift,Likvide beholdninger
+6470,,Likvide beholdninger
+6480,,Bankkonto
+6490,Sum 6470-6489,Likvide beholdninger
+6491,Sum 6080-6489,Omsætningsaktiver i alt
+6499,Sum 5010-6489,AKTIVER I ALT
+6500,Overskrift,PASSIVER
+6501,Overskrift,Egenkapital
+6502,Overskrift,Virksomhedskapital
+6510,,Registreret kapital mv.
+6520,,Indbetalt registreret kapital mv.
+6530,Sum 6510-6529,Virksomhedskapital
+6531,Overskrift,Overkurs ved emission
+6540,,Overkurs ved emission
+6550,Sum 6540-6549,Overkurs ved emission
+6551,Overskrift,Reserve for opskrivninger
+6560,,Reserve for opskrivninger
+6570,Sum 6560-6569,Reserve for opskrivninger
+6571,Overskrift,Reserve for nettoopskrivning efter den indre værdis metode
+6580,,Reserve for nettoopskrivning efter den indre værdis metode
+6590,Sum 6580-6589,Reserve for nettoopskrivning efter den indre værdis metode
+6591,Overskrift,Andre reserver
+6810,,Reserve for udlån og sikkerhedsstillelse
+6830,,Reserve for ikke indbetalt virksomhedskapital og overkurs
+6870,,Øvrige lovpligtige reserver
+6890,,Vedtægtsmæssige reserver
+6820,,Årets hævninger (afventer standardkontoplan regnskabsklasse A)
+6821,,Årets indskud (afventer standardkontoplan regnskabsklasse A)
+6820,,Årets hævninger
+6910,,Øvrige reserver
+6930,Sum 6810-6929,Andre reserver
+6931,Overskrift,Overført resultat
+6940,,Overført resultat
+6950,Sum 6940-6949,Overført resultat
+6951,Overskrift,Foreslået udbytte indregnet under egenkapitalen
+6960,,Foreslået udbytte indregnet under egenkapitalen
+6970,Sum 6960-6969,Foreslået udbytte indregnet under egenkapitalen
+6971,Sum 6510-6969,Egenkapital i alt
+6972,Overskrift,Hensatte forpligtelser
+6973,Overskrift,Hensættelse til udskudt skat
+7010,,Hensættelser til udskudt skat
+7020,,Hensættelser til pensioner og lignende forpligtelser
+7030,Sum 7010-7029,Hensættelse til udskudt skat
+7031,Overskrift,Andre hensatte forpligtelser
+7040,,Andre hensatte forpligtelser
+7050,Sum 7040-7049,Andre hensatte forpligtelser
+7051,Sum 7010-7049,Hensatte forpligtelser
+7052,Overskrift,Langfristet gæld
+7053,Overskrift,Gæld til kreditinstitutter - langfristet gæld
+7110,,Gæld til kreditinstitutter - langfristet gæld
+7120,,Gæld til banker - langfristet gæld
+7130,Sum 7110-7129,Gæld til kreditinstitutter
+7131,Overskrift,Gæld til tilknyttede virksomheder - langfristet gæld
+7160,,Gæld til tilknyttede virksomheder - langfristet gæld
+7170,,Gæld til kapitalinteresser - langfristet gæld
+7180,Sum 7160-7179,Gæld til tilknyttede virksomheder - langfristet gæld
+7181,Overskrift,"Anden gæld, herunder skyldige skatter og skyldige bidrag til social sikring"
+7190,,Anden gæld - langfristet
+7210,,Gæld til selskabsdeltagere og ledelse - langfristet gæld
+7230,,Deposita - langfristet gæld
+7240,,Leasingforpligtelse - langfristet gæld
+7250,,Selskabsskat - langfristet gæld
+7260,Sum 7190-7259,"Anden gæld, herunder skyldige skatter og skyldige bidrag til social sikring"
+7261,Sum 7110-7259,Langfristet gæld
+7262,Overskrift,Kortfristet gæld
+7263,Overskrift,Gæld til kreditinstitutter - kortfristet gæld
+7310,,Gæld til kreditinstitutter - kortfristet gæld
+7330,,Gæld til banker - kortfristet gæld
+7350,,Kreditinstitutter i øvrigt
+7360,Sum 7310-7359,Gæld til kreditinstitutter - kortfristet gæld
+7361,Overskrift,Modtagne forudbetalinger fra kunder
+7410,,Modtagne forudbetalinger fra kunder
+7420,Sum 7410-7419,Modtagne forudbetalinger fra kunder
+7421,Overskrift,Leverandører af varer og tjenesteydelser
+7440,,Leverandører af varer og tjenesteydelser
+7450,Sum 7440-7449,Leverandører af varer og tjenesteydelser
+7451,Overskrift,Gæld til tilknyttede virksomheder - kortfristet gæld
+7510,,Gæld til tilknyttede virksomheder - kortfristet gæld
+7520,,Gæld til kapitalinteresser - kortfristet gæld
+7530,Sum 7510-7529,Gæld til tilknyttede virksomheder - kortfristet gæld
+7531,Overskrift,"Anden gæld, herunder skyldige skatter og skyldige bidrag til social sikring"
+7590,,Gæld til selskabsdeltagere og ledelse - kortfristet gæld
+7610,,Deposita - kortfristet gæld
+7630,,Leasingforpligtelse - kortfristet
+7680,,Salgsmoms
+7700,,"Moms af varekøb udland, EU og ikke-EU"
+7720,,"Moms af ydelseskøb udland, EU og ikke-EU"
+7740,,Købsmoms
+7760,,Olie- og flaskegasafgift
+7780,,Elafgift
+7800,,Naturgas- og bygasafgift
+7810,,Kulafgift
+7820,,Vandafgift
+7830,,Co2-afgift
+7840,,Skyldig moms
+7860,,Skyldig løn og gager
+7880,,Skyldig bonus og tantieme
+7900,,Skyldige feriepenge
+7920,,Skyldig A-skat
+7940,,Skyldigt AM-bidrag
+7960,,Skyldigt ATP-bidrag
+7980,,Skyldigt AMP-bidrag
+8000,,Anden skyldig pension
+8040,,Øvrig anden gæld
+8050,Sum 7590-8049,Anden gæld (kortfristet gæld)
+8051,Overskrift,Periodeafgrænsningsposter
+8070,,Periodeafgrænsningsposter
+8080,Sum 8070-8079,Periodeafgrænsningsposter
+9950,Sum 7310-8079,Kortfristet gæld
+9999,Sum 6510-8079,PASSIVER I ALT 
