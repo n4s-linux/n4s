@@ -188,7 +188,7 @@ Funktioner:
 * Avanceret udvidet filstruktur og versionering og sporing på data/transaktioner.
 * Automatisk Periodisering ved angivelse af periode på transaktioner
 * Automatisk afskrivning ved angivelse af levetid på transaktioner
-* Momskoder (i,u,iv,iy,rep)
+* Momskoder (i,u,iv-eu,iy-eu,iv-abr,iy-abr,rep)
 * Årsafslutning
 * Rapport generator og transaktions-stifinder (webapplikation samt tekstbaseret)
 * Import af transaktioner fra CSV eller live bank forbindelse
@@ -210,6 +210,7 @@ Funktioner:
 * Fuld log over alle ændringer. Hver ændring af transkationer bliver logført på transaktionen med operatør, ændring, samt dato og tidspunkt
 * Fuld log over alle handlinger, output fra alle viste balancer, kontokort m.v. med dato og tidsstempel for hver bruger for hvert regnskab, indtastning af transaktioner o.s.v. - søgbar fx nyttigt hvis du skal spore et beløb i regnskabet som ikke længere findes, indtastning af transaktioner o.s.v. - søgbar fx nyttigt hvis du skal spore et beløb i regnskabet som ikke længere findes
 * Uendeligt antal muligheder for forskellige farveskemaer - der er fx flere farveskemaer der er egnet til at du kan sidde i solen med din laptop og arbejde - det kan du godt glemme alt om i andre systemer... !
+* Mapning til Erhvervsstyrelsens standardkontoplan for ekstern rapportering, herunder nem indtastning i Regnskab 2.0
 
 # Quick Start videoer
 * [Oprettelse af transaktioner](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ)
