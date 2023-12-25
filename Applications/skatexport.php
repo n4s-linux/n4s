@@ -16,6 +16,7 @@ function kontokort($newtrans,$stdkto) {
 	}
 	ksort($konti,SORT_NUMERIC);
 	foreach ($konti as $curkonto => $transactions) {
+		if (!is_numeric($curkonto)) continue;
 		echo "<b>$curkonto - ";
 		foreach ($stdkto as $c) {
 			if ($curkonto == $c[0]) echo $c[2];
