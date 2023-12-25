@@ -7,11 +7,40 @@ $t = gettransactions();
 $newtrans = rewritetrans($t);
 bootstrap();
 saldobalance($newtrans,$stdkto);
+kontokort($newtrans,$stdkto);
+function kontokort($newtrans,$stdkto) {
+	
+	$konti = array();
+	foreach ($newtrans as $nt) {
+		$konti[$nt["Account"]][] = $nt;	
+	}
+	ksort($konti,SORT_NUMERIC);
+	foreach ($konti as $curkonto => $transactions) {
+		echo "$curkonto - ";
+		foreach ($stdkto as $c) {
+			if ($curkonto == $c[0]) echo $c[2];
+		}
+		echo "<br>";
+		echo "<table class='table-sm'>";
+		kk($curkonto,$transactions);
+		echo "</table>";
+	}
+}
+function kk($curkonto,$transactions) {
+	$bal = 0;
+	foreach ($transactions as $curtrans) {
+		$bal += $curtrans['Amount'];
+		$trimmed = substr($curtrans["Tekst"],0,25);
+		$pretty=number_format($curtrans['Amount'],2,".",",");
+		$prettybal=number_format($bal,2,".",",");
+		echo "<tr><td width=70>$curtrans[Date]</td><td width=150>$trimmed</td><td width=70><p align=right>$pretty</p></td><td width=70><p align=right>$prettybal</p></td></tr>";
+	}
+}
 function bootstrap() {?><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"><?php }
 $nulkontrol = 0;
 function saldobalance($t,$stdkto) {
 	global $nulkontrol;
-	echo "<table class=table>";
+	echo "<table class='table-sm'>";
 	$curheader="";
 	foreach ($stdkto as $curkto) {
 		if ($curkto[1] == "Overskrift") $curheader = printheader($curkto);
