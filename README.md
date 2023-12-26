@@ -1,3 +1,8 @@
+# Regnskabsprogram perfekt til iværksættere med omsætning på < 300.000
+Det Fremgår af bogføringsloven: *Kravene til digitale bogføringssystemer omfatter alle digitale bogføringssystemer, der bliver markedsført til virksomheder, som har pligt til digitale bogføring. Det drejer sig for det første om alle regnskabspligtige virksomheder. For det andet drejer det sig om personligt ejede virksomheder, der i to på hinanden følgende indkomstår har haft en nettoomsætning over 300.000 kr.
+
+Systemet vil også kunne oprere som et speciudviklet system for større virksomheder, men det kræver konsulentassistance til opsætningen.
+
 # Et simpelt og gratis regnskabsprogram
 Her er ingen bindinger eller betalingskort nødvendig. 
 N4S er frit og opensource regnskabsystem, og derved gratis at bruge nu og for altid.
