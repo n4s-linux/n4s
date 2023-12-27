@@ -190,6 +190,7 @@ Det kan køre på en hvilken som helst computer - eller i skyen.
 Systemet er bygget i PHP og BASH og benytter den populære teksteditor vim (VI Improved), terminalmultiplexeren tmux, samt det tekstbaserede double entry regnskabsprogram ledger-cli samt hledger
 
 Funktioner:
+* Automatisk fremskrivning af regnskab (forecasting) uendeligt antal måneder, indtil videre beregnes de fremtidige månedsbalancer som et gennemsnit af tidligere måneder, så er kun nyttigt ved stabil løbende drift uden sæsonudsving fx servicevirksomheder som sælger hele året, eller butikker med stabil omsætning (Vælg budget i menu)
 * Avanceret udvidet filstruktur og versionering og sporing på data/transaktioner.
 * Automatisk Periodisering ved angivelse af periode på transaktioner
 * Automatisk afskrivning ved angivelse af levetid på transaktioner
