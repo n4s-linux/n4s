@@ -23,6 +23,7 @@
 	require_once("/svn/svnroot/Applications/short.php");
 	require_once("/svn/svnroot/Applications/expand.php");
 	$files = preg_grep('/^([^.])/', scandir($tpath)); // dont show hidden files
+	if (getenv("budget") == 1 && file_exists("$tpath/.budget.ledger")) bookledger(".budget.ledger");
 	foreach($files as $file) {
 		$ext = pathinfo($file, PATHINFO_EXTENSION);
 		if ($ext == "trans") booktrans($file);
