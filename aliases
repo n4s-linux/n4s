@@ -1,3 +1,23 @@
+function updatebudget() {
+    pushd . >/dev/null
+	echo -n "Indtast startdato for rullende budget ($(date +%Y-%m-%d)): "
+	read budgetstart
+	if [ "$budgetstart" == "" ]; then
+		budgetstart=$(date +%Y-%m-%d)
+	fi
+	echo -n "Antal måneders forecast (12): "
+	read forecast
+	if [ "$forecast" == "" ]; then
+		forecast=12
+	fi
+    budgetstart=$budgetstart php /svn/svnroot/Applications/rullendebudget.php $forecast > $tpath/.budget.ledger
+    popd >/dev/null
+    export budget=1
+    echo Du kan nu se posteringer i fremtidige perioder $forecast måneder ud i fremtiden baseret på gennemsnit
+}
+isYYYYMMDDdate() {
+  [[ "$1" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] && [[ "$1" == $(date -r $(date -j -f "%Y-%m-%d" "$1" "+%s") '+%Y-%m-%d') ]] &> /dev/null; echo "$?"
+}
 alias aliases="updatealiases=1 php /svn/svnroot/Applications/newl.php b > /dev/null"
 logging=on
 function log() {
