@@ -242,6 +242,7 @@ Funktioner:
 * [Om Periodisering](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw)
 * [Renteberegning på konto](https://asciinema.org/a/YBnnVrYtmlftMdbrCkY7P6J6K)
 * [Automatisk Forecasting / Budgettering](https://asciinema.org/a/UP7jkTM07x0P4qqhqikwNBf5B)
+* [Opdatering af system til seneste version](https://asciinema.org/a/UFD86HqcTk5vXmpJ9slOu4W2I)
 
 # TLDR - Lad mig downloade din OVA
 * Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
