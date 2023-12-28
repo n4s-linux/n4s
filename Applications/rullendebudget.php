@@ -2,9 +2,14 @@
 $startdate = date("Y-m-d");
 $startdate = getenv("budgetstart");
 $bankkonto = "Aktiver:Likvider:RevolutDKK";
-$budgetmonths=$argv[1];
+$lookback = getenv("gobackmonths");
+echo "; lookback = $lookback\n";
+$budgetmonths=getenv("forecast");
 ob_start();
-system("noend=1 budget=0 LEDGER_BEGIN=$(date +%Y-%m-%d --date='-24 months') LEDGER_END=$(date +%Y-%m-%d) php /svn/svnroot/Applications/newl.php csv");
+$lastday = date("Y-m-t");
+$lastday = date("Y-m-d",strtotime($lastday ." + 1 day"));
+$cmd = ("noend=1 budget=0 LEDGER_BEGIN=$(date +%Y-%m-%d --date='-$lookback months') LEDGER_END=$lastday php /svn/svnroot/Applications/newl.php csv");
+system($cmd);
 $data = ob_get_clean();
 $t = array();
 $x = str_getcsv($data,"\n");
@@ -46,6 +51,7 @@ function average($monthsstats) {
 	for ($i = 0;$i<$budgetmonths;$i++) {
 		foreach ($average as $curavg => $curval) {
 			if (stristr($curavg,"Indtægter:") || stristr($curavg,"Udgifter:" ) && !stristr($curavg,"Afskrivninger")) { // afskrivninger bør være skrevet ud i fremtiden via levetid
+				echo "; $curavg => $curval\n";
 				error_reporting(0);
 				$value = $curval - $monthsstats[date("Y-m",strtotime("$startdate +$i months"))][$curavg];
 				if (abs($value) < 50) continue; // bagatelgrænse
@@ -60,6 +66,9 @@ function average($monthsstats) {
 					$momspayments_new[momsduedate($dato,"halfyear")] += ($value* -0.25);
 				}
 				error_reporting(E_ALL);
+			}
+			else {
+				echo "; Unhandled $curavg => $curval\n";
 			}
 		}
 		foreach ($total as $curtot => $curval) {
@@ -76,18 +85,19 @@ function average($monthsstats) {
 	}
 	foreach ($momspayments as $dato => $betaling) {
 		$betaling = $betaling *-1;
-		echo "$dato ⏳ Momsbetaling\n\tPassiver:Moms:Momsafregning  $betaling\n\t$bankkonto\n\n";	
+		echo "$dato [Budget] Momsbetaling\n\tPassiver:Moms:Momsafregning  $betaling\n\t$bankkonto\n\n";	
 	}
 	foreach ($momspayments_new as $dato => $betaling) {
-		echo "$dato ⏳ Momsbetaling\n\tPassiver:Moms:Momsafregning  $betaling\n\t$bankkonto\n\n";	
+		echo "$dato [Budget] Momsbetaling\n\tPassiver:Moms:Momsafregning  $betaling\n\t$bankkonto\n\n";	
 	}
 	foreach ($nt as $curt) {
-		echo "$curt[month]-01 ⏳ $curt[Account]\n\t$curt[Account]  $curt[Amount]\n\t$bankkonto\n\n";
+		echo "$curt[month]-01 [Budget] $curt[Account]\n\t$curt[Account]  $curt[Amount]\n\t$bankkonto\n\n";
 	}
 }
 function getmomspayments($t,$period = "halfyear") {
 	$nt = array();
 	foreach ($t as $curt) {
+		if (!isset($curt[3])) continue;
 		if (stristr($curt[3],"Passiver:Moms:Salgsmoms") || stristr($curt[3],"Passiver:Moms:Købsmoms")) {
 			error_reporting(0);
 			$dd = momsduedate($curt[0],$period);

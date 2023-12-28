@@ -1,16 +1,44 @@
 function updatebudget() {
+    if [ "$tpath" == "" ];  then
+        echo "updatebudget kræver tpath"
+        return
+    fi
+    acc=$(cat $tpath/.budgetkonto 2>/dev/null)
+    acc=$(php /svn/svnroot/Applications/newl.php accounts|grep -v ^Fejl|grep -v ^Egenkapital:|grep -v ^Udgifter|grep -v ^Indtægter|grep -v ^Resultatdisponering|fzf --header="Vælg konto til fremskrivning" --query="$acc")
+    echo -n "$acc" > $tpath/.budgetkonto
     pushd . >/dev/null
-	echo -n "Indtast startdato for rullende budget ($(date +%Y-%m-%d)): "
-	read budgetstart
-	if [ "$budgetstart" == "" ]; then
-		budgetstart=$(date +%Y-%m-%d)
+    gobackmonths=$(cat $tpath/.budgetgobackmonths 2>/dev/null)
+    if [ "$gobackmonths" == "" ]; then
+        gobackmonths=6
+    fi
+    echo -n "Indtast måneder tilbage fra nu til beregningsgrundlag ($gobackmonths): "
+    read gbm
+    if [ "$gbm" != "" ]; then
+        gobackmonths=$gbm
+    fi
+    export gobackmonths
+	budgetstart=$(date +%Y-%m-%d)
+    budgetstart=$(cat $tpath/.budgetstart 2>/dev/null)
+    if [ "$budgetstart" == "" ]; then
+        budgetstart=$(date +%Y-%m-%d)
+    fi
+	echo -n "Indtast startdato for rullende budget ($budgetstart): "
+	read bs
+	if [ "$bs" != "" ]; then
+		budgetstart=$bs
 	fi
-	echo -n "Antal måneders forecast (12): "
-	read forecast
-	if [ "$forecast" == "" ]; then
-		forecast=12
+    export budgetstart
+    forecast=$(cat $tpath/.forecastlength 2>/dev/null)
+    if [ "$forecast" == "" ]; then
+        forecast=12
+    fi
+	echo -n "Antal måneders forecast ($forecast): "
+	read fc
+	if [ "$fc" != "" ]; then
+		forecast=$fc
 	fi
-    budgetstart=$budgetstart php /svn/svnroot/Applications/rullendebudget.php $forecast > $tpath/.budget.ledger
+    export forecast
+    php /svn/svnroot/Applications/rullendebudget.php > $tpath/.budget.ledger
     popd >/dev/null
     export budget=1
     echo Du kan nu se posteringer i fremtidige perioder $forecast måneder ud i fremtiden baseret på gennemsnit
@@ -114,7 +142,9 @@ alias indtægter="tmux send-keys 'period=yearly ppivot ^Indtægter:' Enter"
 alias egenkapital="tmux send-keys 'period=yearly ppivot ^Egenkapital:' Enter"
 
 export LEDGER_SORT=date
-alias pivot="bash /svn/svnroot/Applications/hpivot.bash $@"
+function pivot() {
+bash /svn/svnroot/Applications/hpivot.bash $@
+}
 alias ppivot="LEDGER_BEGIN=1970-1-1 LEGDER_END=2099-12-31 bash /svn/svnroot/Applications/hpivot.bash $@"
 
 mkdir -p ~/n4s-sockets/
