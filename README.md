@@ -1,3 +1,16 @@
+# Det tredobbelte bogholderi - fremtidens regnskab
+Regnskaber er typisk historiske, dvs de beskriver ting som er sket i fortiden.
+Visionen om fremtidens regnskab er at fortid, nutid og fremtid smelter sammen.
+Så hvis du drømmer om et live regnskab der ikke bare er ajour til her og nu, men med indbygget krystalkugle, kunne n4s være rammerne omkring dette.
+
+Hvis vi skal gøre et teknologisk kvantespring er vi nødt til at arbejde sammen.
+I stedet for at mange udbydere af regnskabssystemer skal sælges SAAS løsninger i hver deres lejr og løse de samme problematikker, kan vi hjælpe hinanden med at bygge et stærkt system som er fælleseje for nu og altid.
+Derfor lanceres n4s som **fri software** - fri software er pr. definition gratis, hvis vi ser bort fra din tid, eller dine medarbejderes tid.
+
+Der er en tidsmæssig omkostning med opstart i et nyt system, og hvis du skal bruge systemet professionelt og have det sat op til at overholde gældende lovgivning bør du søge kyndig vejledning. Dette gælder dog ikke for små virksomheder med en omsætning på under 300.000
+
+Hvis du mangler en feature kan du med fordel udlove for en sådan feature. Hvis flere udlover dusør for samme feature kan dusøren stige og gøre det mere attraktivt for en udvikler at lave det.
+
 # Regnskabsprogram perfekt til iværksættere med omsætning på < 300.000
 Det Fremgår af bogføringsloven: **Kravene til digitale bogføringssystemer omfatter alle digitale bogføringssystemer, der bliver markedsført til virksomheder, som har pligt til digitale bogføring. Det drejer sig for det første om alle regnskabspligtige virksomheder. For det andet drejer det sig om personligt ejede virksomheder, der i to på hinanden følgende indkomstår har haft en nettoomsætning over 300.000 kr.**
 
