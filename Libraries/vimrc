@@ -7,7 +7,7 @@ highlight CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
 
 
 filetype plugin on
-" set mouse=a
+set mouse=a
 
 let LEDGER_DEPTH=99
  let LEDGER_BALANCE_FORMAT="%(display_total)\t%(account)\n "
