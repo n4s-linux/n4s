@@ -5,10 +5,10 @@ Så hvis du drømmer om et live regnskab der ikke bare er ajour til her og nu, m
 
 Hvis vi skal gøre et teknologisk kvantespring er vi nødt til at arbejde sammen.
 I stedet for at mange udbydere af regnskabssystemer skal sælges SAAS løsninger i hver deres lejr og løse de samme problematikker, kan vi hjælpe hinanden med at bygge et stærkt system som er fælleseje for nu og altid.
-Derfor lanceres n4s som **fri software** aka ** free software **  - fri software forveksles ofte med værende gratis, men det er ikke altid tilfældet. Fri referer altså ikke til pris, men til frihed, som i at softwaren respekterer nogle grundlæggende rettigheder som vi mener bør følge med alt software:
+Derfor lanceres n4s som **fri software** - fri software forveksles ofte med værende gratis, men det er ikke altid tilfældet. Fri referer altså ikke til pris, men til frihed, som i at softwaren respekterer nogle grundlæggende rettigheder som vi mener bør følge med alt software:
 * Friheden til at benytte programmet til ethvert formål (frihed 0).
 * Friheden til at lære, hvordan programmet virker og forandre det efter egne behov (frihed 1). Adgang til kildekoden er en betingelse for at dette.
-* Friheden til at redistribuere kopier, så du kan hjælpe din næste (frihed 2).
+* Friheden til at redistribuere kopier (frihed 2).
 * Friheden til at forbedre softwaren og udgive forbedringerne til offentligheden, så hele samfundet kan få gavn af det (frihed 3). Adgang til kildekoden er ligeledes en betingelse for dette.
 
 Der er en tidsmæssig omkostning med opstart i et nyt system, og hvis du skal bruge systemet professionelt og have det sat op til at overholde gældende lovgivning bør du søge kyndig vejledning. Dette gælder dog ikke for små virksomheder med en omsætning på under 300.000
