@@ -1,6 +1,7 @@
 <?php
 	$aliases_warning_displayed = 0;
 	$undefined_aliascount = 0;
+	require_once("/svn/svnroot/Applications/lookup_account.php");
 	require_once("/svn/svnroot/Applications/fzf.php");
 	require_once("/svn/svnroot/Applications/openentries.php");
 	require_once("/svn/svnroot/Applications/newl_csv.php");
@@ -152,6 +153,9 @@
 			system("cd $tpath&&mkdir -p $tpath/.cashbooks/$nextcbnumber/&&mv $tpath/*.trans $tpath/.cashbooks/$nextcbnumber/");
 		}
 	}
+	else if ($nargs[0] == "preview") {
+
+	}
 	else if ($nargs[0] == "ui") {
 		echo "launching ui... we should load csv as datasource for ledger backwards compatiblity - or get rid of ledger completely\n";
 		require_once("/svn/svnroot/Applications/nc.php");
@@ -174,7 +178,7 @@
 	function entry() {
 		global $tpath;
 		global $op;
-		global $x;
+		global $x; // expanded transactions
 		$f = array();
 		$f['Transactions'] = array();
 		$bal = -1;
@@ -184,14 +188,12 @@
 			if ($bal == -1 ) $bal = 0;
 			require_once("/svn/svnroot/Applications/fzf.php");
 			$find = false;
-			$konti = explode("\n",fzf("NY\nGlobalt opslag\n" . getkontoplan($x),"vælg konto bal=$bal","--bind 'enter:toggle+accept'  --bind 'tab:toggle+down+clear-query' --multi"));
-			if (trim(implode("\n",$konti)) == "") die("Afbrudt kontering\n");
+			$konti = lookup_acc("",$bal,"Vælg konto");
+			if (trim($konti) == "") die("Afbrudt kontering\n");
 			if ($konti == "") die("Afbrudt kontering\n");
+			$konti = explode("\n",$konti);
 			foreach ($konti as $konto) {
-				if ($konto == "Globalt opslag") {
-					$konto = getkontoplan_allaccounts();
-				}	
-				else if ($konto == "NY") {
+				if ($konto == "NY") {
 					echo "Indtast kontostreng: ";
 					$fd = fopen("PHP://stdin","r");$konto = trim(fgets($fd)); fclose($fd);
 				}
@@ -225,21 +227,6 @@
 		$rv = getstdin("Beløb for $konto ($bal)");
 		if ($rv == "") $rv = $bal;
 		return evalmath($rv);
-	}
-	function getkontoplan_allaccounts($tekst = "") {
-		ob_start();
-		global $tpath;
-		echo "NY\n";
-		system("cat $tpath/../*/.accounts|grep -i \"^Indtægter\|^Udgifter\|^Aktiver\|^Passiver\|^Egenkapital\|^Fejlkonto\"|sort|uniq");
-		$valg = ob_get_clean();
-		$account = fzf($valg,"Vælg konto fra alle regnskaber $tekst");
-		if ($account == "NY") {
-			$fd = fopen("PHP://stdin","r");
-			echo "Indtast kontostreng: ";
-			$account = trim(fgets($fd));
-			fclose ($fd);
-		}
-		return $account;
 	}
 	function getkontoplan($x) {
 		global $tpath;
@@ -382,7 +369,10 @@
 			$bn = basename("$tpath");
 			if ($aliases_warning_displayed == 0) { exec_app("whiptail --msgbox \"Der mangler at blive defineret nye aliases i $bn\nDu vil nu blive spurgt hvilken konto de enkelte aliases skal henføres til\" 10 80");$aliases_warning_displayed=1;}
 			//update aliases from book 
-			$konto = getkontoplan_allaccounts($tekst = " - aliases $d peger på");
+			//  3 function lookup_acc($accounts,$bal,$alias = "",$multi = "--multi") {
+			$konto = lookup_acc("",0,"aliaset '$d'","");
+			//getkontoplan_allaccounts($tekst = " - aliases $d peger på");
+			//$konto = lookup_acc("",0,$tekst = " - aliases $d peger på");
 			if ($konto == "") die();
 			$aliases[$d] = $konto;
 			file_put_contents("$tpath/aliases",json_encode($aliases,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));

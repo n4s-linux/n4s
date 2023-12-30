@@ -1,6 +1,7 @@
 <?php 
-function lookup_acc($accounts,$bal,$alias = "") {
-	global $path;
+require_once("/svn/svnroot/Applications/print_array.php");
+function lookup_acc($accounts,$bal,$alias = "",$multi = "--multi") {
+	$path = getenv("tpath");
 	$hist = "$path/.acchist";
     system("stty -icanon -echo");
 	$curpos = $accounts;
@@ -10,9 +11,11 @@ function lookup_acc($accounts,$bal,$alias = "") {
 	$v = $curpos;
 	$keyz = print_array($curpos);
 	$lvl = 0;
-	$cmd = "tmux display-popup -E \"((ledger -f $path/curl accounts;cat /svn/svnroot/Libraries/Kontoplan.txt)|sort|uniq)|fzf > $path/.acclookup --header='vælg konto for $alias'\"";
-	exec_app($cmd);
-	$accountstring = trim(file_get_contents($path."/.acclookup"));
+	ob_start();
+	$cmd = ("(php /svn/svnroot/Applications/newl.php accounts;cat /svn/svnroot/Libraries/Kontoplan.txt)|sort|uniq|fzf --header='vælg konto for $alias' --scrollbar=* $multi --margin 1% --padding 1% --border --preview-label='Seneste posteringer' --preview-window 55%:bottom --preview 'LEDGER_SORT=date LEDGER_PAYEE_WIDTH=15 php /svn/svnroot/Applications/newl.php register ^\"{}\" |tac'");
+	system($cmd);
+	$accountstring = trim(ob_get_clean());
+	if ($accountstring == "") die("Afbrudt lookup_account intet valgt");
 	if ($accountstring=="NY") {
 		echo "Ingen konto valgt ved opslag...\n";
 		$accountstring = "";
@@ -28,10 +31,6 @@ function lookup_acc($accounts,$bal,$alias = "") {
 		$curpos = $accountstring;
 		$lvl++;
 	}
-
-
-
-
 
 		$v = $curpos;
 		//echo "$accountstring\n";

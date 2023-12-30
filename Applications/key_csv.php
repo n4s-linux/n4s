@@ -1,30 +1,31 @@
 <?php
+require_once("/svn/svnroot/Applications/str_file_filter.php");
+require_once("/svn/svnroot/Applications/proc_open.php");
+require_once("/svn/svnroot/Applications/print_array.php");
+require_once("/svn/svnroot/Applications/lookup_account.php");
 require_once("/svn/svnroot/Applications/oledger/csv_to_array.php");
-require_once("/svn/svnroot/Applications/key.php");
-echo "loaded\n";
 if (isset($argv[1]) && $argv[1] == "load") {
-	echo "loadfile()";sleep(5);
 	loadfile();
 	echo "loaded()";sleep(5);
 	die();
 }
 function loadfile() {
-  global $path;
+	$path = getenv("tpath");
   global $accounts;
   $availablefields =array( "Date","Description","Reference","Amount","Account","Func","Comment","Choose");;
        array_push($availablefields,"No match");
-$op=system("whoami");
+$op=exec("whoami");
 	global $argv;
 	if (!isset($argv[2]))
   $filename = "/home/$op/tmp/" . time() . ".csv";
 	else
 		$filename = $argv[2];
        exec_app("nano $filename");
+	if (!file_exists($filename)) die("afbrudt ingen data\n");
        $d = detectDelimiter("$filename");
        $data = csv_to_array("$filename",$d);
 	unlink($filename);
-       echo "Type account for importing to: ";
-       $contraacc = lookup_acc($accounts,0);
+       $contraacc = lookup_acc($accounts,0,"Bankimport");
        $mappings = array();
 	require_once("/svn/svnroot/Applications/fzf.php");
        foreach ($data['header'] as $header) {
@@ -76,7 +77,7 @@ else
          $curtrans['Filename'] =  $path . "/" . str_file_filter($c['Description'] . " - " . $curtrans['Date']) . "-$curtrans[UID].trans";
          $fn = $curtrans['Filename'];
          $curtrans['Filename'] =  str_file_filter($c['Description'] . " - " . $curtrans['Date']) . "-$curtrans[UID].trans";
-$curtrans['History'] = array(array('Date'=>date("Y-m-d"),'Desc'=>'Loaded from CSV'));
+$curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d"),'Desc'=>'Loaded from CSV'));
                  $curtrans['Transactions'] = array(
                    array('Account'=>$contraacc,'Amount'=> $c['Amount'],'Func'=>''),
                    array('P-Start'=>'','P-End'=>'','Account'=> ($curacc == "") ? 

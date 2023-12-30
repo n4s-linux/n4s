@@ -1,4 +1,6 @@
 <?php
+require_once("/svn/svnroot/Applications/str_file_filter.php");
+require_once("/svn/svnroot/Applications/print_array.php");
 // 2023-11-20T22:38 joo	this file is being used for searching, but is deprecated, everything should be ported to newl.php
 require_once("/svn/svnroot/Applications/math.php");
 require_once("/svn/svnroot/Applications/datemorph.php");
@@ -130,7 +132,7 @@ if (isset($argv[1]) && $argv[1] == "ledger") {
 			$thedate=date("Y-m-d H:m");
 			system("ledger -f \"$path/$cbf\" b foobarbiditybas 2>> /dev/stdout |while read line; do echo \"$thedate\t\$line\" >> \"$path/log\";done");
 			echo "der er fejl, ledger er IKKE opdateret";
-			die();
+			die("some stuff happened\n");
 
 		}
 		system($cmd);
@@ -702,66 +704,6 @@ function has_children($array) {
 		return false;
 	else
 		return true;
-}
-function print_array($ar,$lvl=0) {
-return;
-	$retval = array();
-$hclz = array();
-	$nhcl = 1;
-	//if (has_children($ar)) {
-		foreach ($ar as $key => $val) {
-			for ($i = 0;$i<$lvl*3;$i+=1) echo "\t";
-			preg_match( '/[A-Z]/', $key, $matches, PREG_OFFSET_CAPTURE );
-			//$hcl = $matches[0][0];
-			if (!isset($matches[0][0])) {
-				$hcl = $nhcl++;
-			}
-			else {
-				if (!in_array($matches[0][0],$hclz)) {
-					$hcl = $matches[0][0];
-					array_push($hclz,$hcl);
-				}
-				else
-					$hcl = $nhcl++;
-			}
-			echo "$hcl - $key\n";
-			$retval[$hcl] = $key;
-		}
-	return $retval;
-	//}
-	/*else {
-		foreach ($ar as $key) {
-			for ($i = 0;$i<$lvl*3;$i+=1) echo "\t";
-			echo "\t*$key\n";
-		}
-	}*/
-}
-function str_file_filter(
-	$str,
-	$sep = '_',
-	$strict = false,
-	$trim = 75) {
-	$str = strip_tags(htmlspecialchars_decode(strtolower($str))); // lowercase -> decode -> strip tags
-	$str = str_replace("%20", ' ', $str); // convert rogue %20 into spaces
-	$str = preg_replace("/%[a-z0-9]{1,2}/i", '', $str); // remove hexy things
-	$str = str_replace("&nbsp;", ' ', $str); // convert all nbsp into space
-	$str = preg_replace("/&#?[a-z0-9]{2,8};/i", '', $str); // remove the other non-tag things
-	$str = preg_replace("/\s+/", $sep, $str); // filter multiple spaces
-	$str = preg_replace("/\.+/", '.', $str); // filter multiple periods
-	$str = preg_replace("/^\.+/", '', $str); // trim leading period
-	if ($strict) {
-		$str = preg_replace("/([^\w\d\\" . $sep . ".])/", '', $str); // only allow words and digits
-	} else {
-		$str = preg_replace("/([^\w\d\\" . $sep . "\[\]\(\).])/", '', $str); // allow words, digits, [], and ()
-	}
-	$str = preg_replace("/\\" . $sep . "+/", $sep, $str); // filter multiple separators
-	$str = substr($str, 0, $trim); // trim filename to desired length, note 255 char limit on windows
-	$str = str_replace("'","",$str);
-		$str = str_replace(")","",$str);
-			$str = str_replace("()","",$str);
-
-
-	return $str;
 }
 // Returns full file name including fallback and extension
 function str_file(
