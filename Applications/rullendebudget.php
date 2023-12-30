@@ -48,8 +48,10 @@ function average($monthsstats) {
 		$average[$curtotal] = $curval / count($monthsstats);
 	}
 	$nt = array();
+	$momspayments_new = array();
 	for ($i = 0;$i<$budgetmonths;$i++) {
 		foreach ($average as $curavg => $curval) {
+			$curval = round($curval,2);
 			if (stristr($curavg,"Indtægter:") || stristr($curavg,"Udgifter:" ) && !stristr($curavg,"Afskrivninger")) { // afskrivninger bør være skrevet ud i fremtiden via levetid
 				echo "; $curavg => $curval\n";
 				error_reporting(0);
@@ -87,9 +89,11 @@ function average($monthsstats) {
 		$betaling = $betaling *-1;
 		echo "$dato [Budget] Momsbetaling\n\tPassiver:Moms:Momsafregning  $betaling\n\t$bankkonto\n\n";	
 	}
+	error_reporting(0);
 	foreach ($momspayments_new as $dato => $betaling) {
 		echo "$dato [Budget] Momsbetaling\n\tPassiver:Moms:Momsafregning  $betaling\n\t$bankkonto\n\n";	
 	}
+	error_reporting(E_ALL);
 	foreach ($nt as $curt) {
 		echo "$curt[month]-01 [Budget] $curt[Account]\n\t$curt[Account]  $curt[Amount]\n\t$bankkonto\n\n";
 	}
