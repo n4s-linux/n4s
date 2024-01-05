@@ -1,3 +1,9 @@
+function fejl() {
+    fn="$(cat $tpath/.log|fzf --tac)"
+    echo "Valgt fejl: $fn"
+    fn="$(echo "$fn"|awk '{print $NF}')"
+    tmux split-window -v "vi \"$fn\""
+}
 function updatebudget() {
     if [ "$tpath" == "" ];  then
         echo "updatebudget kræver tpath"
@@ -353,11 +359,6 @@ function html2() {
     google-chrome --headless manglendebilag.html --print-to-pdf=Manglendebilag-$bn-$begin-$end.pdf
     mv Manglendebilag-$bn-$begin-$end.pdf ~/n4s-export
 	(/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Manglendebilag-$bn-$begin-$end.pdf &)
-
-    php /svn/svnroot/Applications/skatexport.php > stdkto.html
-    google-chrome --headless stdkto.html --print-to-pdf=Standard-export-$bn-$begin-$end.pdf
-    mv Standard-export-$bn-$begin-$end.pdf ~/n4s-export/
-
 
 	popd 2>/dev/null > /dev/null
 }
