@@ -1,6 +1,7 @@
 <?php
 	$aliases_warning_displayed = 0;
 	$undefined_aliascount = 0;
+	require_once("/svn/svnroot/Applications/ansi-color.php");
 	require_once("/svn/svnroot/Applications/lookup_account.php");
 	require_once("/svn/svnroot/Applications/fzf.php");
 	require_once("/svn/svnroot/Applications/openentries.php");
@@ -188,7 +189,7 @@
 			if ($bal == -1 ) $bal = 0;
 			require_once("/svn/svnroot/Applications/fzf.php");
 			$find = false;
-			$konti = lookup_acc("",$bal,"Vælg konto");
+			$konti = lookup_acc("",$bal,"entry (bal=$bal)");
 			if (trim($konti) == "") die("Afbrudt kontering\n");
 			if ($konti == "") die("Afbrudt kontering\n");
 			$konti = explode("\n",$konti);
@@ -348,7 +349,7 @@
 		global $undefined_aliascount;
 		global $aliases_warning_displayed;
 		$update = trim(getenv("updatealiases"));
-		if (posix_isatty(STDOUT)) $update = 1;
+		//if (posix_isatty(STDOUT)) $update = 1;
 		$tpath = getenv("tpath");
 		$aliases = json_decode(fgc("$tpath/aliases"),true);
 		$filedata = json_decode(fgc("$tpath/$file"),true);
@@ -365,12 +366,14 @@
 			}
 		}
 		else {
+			echo "its do or die time\n";
 			require_once("/svn/svnroot/Applications/proc_open.php");
 			$bn = basename("$tpath");
 			if ($aliases_warning_displayed == 0) { exec_app("whiptail --msgbox \"Der mangler at blive defineret nye aliases i $bn\nDu vil nu blive spurgt hvilken konto de enkelte aliases skal henføres til\" 10 80");$aliases_warning_displayed=1;}
 			//update aliases from book 
 			//  3 function lookup_acc($accounts,$bal,$alias = "",$multi = "--multi") {
 			$konto = lookup_acc("",0,"aliaset '$d'","");
+			//$konto = "Mangler";
 			//getkontoplan_allaccounts($tekst = " - aliases $d peger på");
 			//$konto = lookup_acc("",0,$tekst = " - aliases $d peger på");
 			if ($konto == "") die();
@@ -406,6 +409,11 @@
 		global $op;
 		global $deletebilag;
 		$newtrans = json_decode(fgc($tpath."/".$file),true);
+		if ($newtrans == false) {
+			file_put_contents("$tpath/.log",date("Y-m-d H:m") . "Could not json decode $tpath/$file\n",FILE_APPEND);
+			FWRITE(STDERR,set("Error: for at se fejl skriv 'fejl'\n","red"));
+			sleep(2);
+		}
 		if (!isset($newtrans['Reference'])) $newtrans['Reference'] = "";
 		if ($newtrans['Reference'] == "p") $newtrans['Reference'] = file_get_contents("/home/$op/tmp/.curfile");
 		if (isset($newtrans['Reference']) && isFile($newtrans['Reference'])) {
