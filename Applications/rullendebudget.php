@@ -97,6 +97,11 @@ function average($monthsstats) {
 	foreach ($nt as $curt) {
 		echo "$curt[month]-01 [Budget] $curt[Account]\n\t$curt[Account]  $curt[Amount]\n\t$bankkonto\n\n";
 	}
+	foreach ($nt as $curt) { // Periodens resultat medtages af budgetterede indtægts og udgiftskonti
+		if (!stristr($curt['Account'],"Indtægter:") && !stristr($curt['Account'],"Udgifter:")) continue;
+		echo "$curt[month]-01 [BudgetRes] Periodens budgetterede resultat\n\tEgenkapital:Periodens resultat\t$curt[Amount]\n\tResultatdisponering:Periodens resultat\n\n";
+		//echo "$curt[month]-01 [Budget] $curt[Account]\n\t$curt[Account]  $curt[Amount]\n\t$bankkonto\n\n";
+	}
 }
 function getmomspayments($t,$period = "halfyear") {
 	$nt = array();
