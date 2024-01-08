@@ -18,11 +18,13 @@
 		for ($i=1;$i<3;$i++) {
 			$fzf .= "$år" . "H$i\n";	
 		}
-		$fzf .= "$år\n";
+		if (date("Y") != $år)
+			$fzf .= "$år\n";
 	
 	}
 	$fzf .= "Altid\n";
-	$fzf .= "MANUEL";
+	$fzf .= "MANUEL\n";
+	$fzf .= date("Y");
 	$valg = fzf($fzf,"vælg periode","--height=10 --tac --exact");
 	if ($valg =="")die();
 	else if ($valg == "Altid") {$begin = "1970-01-01"; $end=date("Y-m-d",strtotime("tomorrow"));}
