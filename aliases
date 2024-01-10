@@ -305,11 +305,11 @@ function csv() {
 php /svn/svnroot/Applications/key_csv.php load
 echo -ne "Data indlæst\n\n - Ønsker du forslag til kontering af nyligt indlæste poster (j/n): "
 jn=$(echo -e "Nej\nJa"|fzf --header="Data indlæst - ønskes forslag til kontering?")
-if [ "$jn" == "j" ] || [ "$jn" == "J" ]; then
+if [ "$jn" == "Ja" ]; then
     php /svn/svnroot/Applications/newl.php suggestions
 fi
 jn=$(echo -e "Nej\nJa"|fzf --header="Data indlæst - ønskes forslag til udligning af åbne poster ?")
-if [ "$jn" == "j" ] || [ "$jn" == "J" ]; then
+if [ "$jn" == "Ja" ]; then
     php /svn/svnroot/Applications/newl.php openentries
 fi
 }
