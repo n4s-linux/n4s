@@ -1,6 +1,5 @@
 <?php
 
-
 $development = false;
 $ip = array('77.112.123.155_', '89.74.155.177');
 if (in_array($_SERVER['REMOTE_ADDR'], $ip)) $development = true;
@@ -158,7 +157,6 @@ if (isset($_POST['req'])){
 
 
 
-//
 if (!strlen($_POST['begin']))
     $_POST['begin'] = $userSettings["key_html_begin"];
 if (!strlen($_POST['end']))
@@ -167,11 +165,15 @@ if (!strlen($_POST['end']))
 //    $_POST['beginytd'] = $userSettings["key_html_beginytd"];
 //if (!strlen($_POST['endytd']))
 //    $_POST['endytd'] = $userSettings["key_html_endytd"];
-if (!count($_POST['periods']))
-    $_POST['periods'] = $userSettings["key_html_periods"];
+if (!isset($_POST['periods']) || $_POST['periods'] == null || !is_array($_POST['periods'])) 
+{
+	if (isset($userSettings["key_html_periods"]))
+	    $_POST['periods'] = $userSettings["key_html_periods"];
+}
 
 
 require_once("/svn/svnroot/Applications/ledgerweb/ledger.php");
+system("tpath=$tpath php /svn/svnroot/Applications/newl.php b");
 
 $file = $tpath . "/curl";
 
