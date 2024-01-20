@@ -351,3 +351,6 @@ func! s:lines_count()
 endfunc
 nnoremap ? :!php /svn/svnroot/Applications/tmux/menu.php Vim& <CR><CR>
 :highlight Pmenu ctermbg=blue guibg=blue guifg=black
+
+autocmd BufReadPost * if &readonly | setlocal nomodifiable | endif
+autocmd BufReadPost * if &readonly | highlight Normal guifg=#2b6e4b guibg=#a7d4b3 | endif
