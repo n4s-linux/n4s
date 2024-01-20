@@ -140,6 +140,7 @@
 		else
 			$curbook = "";
 		$ledgerdata = getledgerdata($x,true,false,$curbook);
+		
 		require_once("/svn/svnroot/Applications/proc_open.php");
 		file_put_contents("$tpath/.bookpreview",$ledgerdata);
 		exec_app("less $tpath/.bookpreview");
@@ -147,8 +148,10 @@
 		require_once("/svn/svnroot/Applications/fzf.php");
 		$jn = fzf($jn,"Vil du bogføre den viste kladde?");
 		if ($jn == "Ja") {
+			$antal = count(array_unique($lockthesefiles));
+			echo set(strtoupper("Bekræftet bogføring af $antal poster ($begin - $end)\n"),"inverse");
 			$nextnumber = $orgnextnumber; // global nummercounter skal genstartes fordi vi har kørt data før
-			$ledgerdata = getledgerdata($x,true,false);
+			$ledgerdata = getledgerdata($x,true,false,$curbook);
 			file_put_contents("$tpath/Mainbook.ledger",$ledgerdata);
 			file_put_contents("$tpath/.nextnumber",$nextnumber);
 			file_put_contents("$tpath/.nextcbnumber",$nextcbnumber +1);
@@ -158,9 +161,17 @@
 				$data['Status'] = "Locked";
 				$data['History'][] = array("Desc" => 'Bogført','op'=>$op,'tidspunkt'=>date("Y-m-d H:m"));
 				file_put_contents("$tpath/$curfile",json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+				foreach ($data['Transactions'] as $ct) {
+					$str = str_pad($data['Filename'],25," ",STR_PAD_RIGHT) . "\t";
+					$str .= str_pad($ct['Account'] . " (" . $ct['Func'] . ")",25," ",STR_PAD_RIGHT) . "\t";
+					$str .= str_pad($ct['Amount'],10," ",STR_PAD_LEFT);
+					echo set(strtoupper("🔒 $str\n"),"green");
+				}
 				system("chmod a=r $tpath/$curfile");
 			}
 		}
+		else
+			echo set(strtoupper("Afbrudt bogføring\n\n"),"inverse");
 	}
 	else if ($nargs[0] == "preview") {
 
@@ -331,27 +342,33 @@
 	function getledgerdata($x,$book = false,$pretty = false,$currentledger = "") {
 		global $lockthesefiles;
 		$ledgerdata = $currentledger;
+		$begin =getenv("LEDGER_BEGIN");
+		$end =getenv("LEDGER_BEGIN");
+		require_once("/svn/svnroot/Applications/ansi-color.php");
+		if ($book == true) echo set(strtoupper("Starter bogføring af poster [ $begin - $end ]\n\n"),"inverse");
 		if ($book == true && $ledgerdata == "") $ledgerdata = "\n; Dette er hovedbogen. Hver transaktion bekræfter alle transaktioner forinden med deres samlede md5 checksum - det vil sige hvis du ændrer i denne bog bliver checksummen ugyldig og bogen er manipuleret - efter denne besked starter transaktionerne fra Løbenummer 1 og frem\n\n";
 		global $nextnumber;
 		foreach ($x as $c) { // for hver transaktion der skal bogføres
-				if ($book == true) $hash = md5(trim($ledgerdata));
-				if (isset($c['Reference'])) $ref = $c['Reference']; else $ref = "";
-				$ledgerdata .= "$c[Date] ($ref) 🔒 $c[Description]\n";
-			$counter = 0;
-			foreach ($c['Transactions'] as $ct) {
-				array_push($lockthesefiles,$c['Filename']);
-				$ledgerdata .= "\t$ct[Account]  $ct[Amount] ";
-				$tid = (isset($ct['id'])) ? $ct['id'] : $counter;
-				$comment = " ; Filename: $c[Filename] |||| TransID: $tid "; 
-				if ($book) {
-					$comment .= " |||| Løbenr $nextnumber |||| Hash $hash";
-					$nextnumber++;
-				}
-				if (!$pretty) $ledgerdata .= $comment; 
-				$ledgerdata .= "\n";
-				if (!isset($ct['id'])) $counter++;
+			if (strtotime($c['Date'] >= strtotime($end) || strtotime($c['Date']) <= strtotime($begin))) continue; // skip periods we are not in - only book current period
+			if ($book == true) $hash = md5(trim($ledgerdata));
+			if (isset($c['Reference'])) $ref = $c['Reference']; else $ref = "";
+			$ledgerdata .= "$c[Date] ($ref) 🔒 $c[Description]\n";
+		$counter = 0;
+		foreach ($c['Transactions'] as $ct) {
+			array_push($lockthesefiles,$c['Filename']);
+			$ledgerdata .= "\t$ct[Account]  $ct[Amount] ";
+			$tid = (isset($ct['id'])) ? $ct['id'] : $counter;
+			$comment = " ; Filename: $c[Filename] |||| TransID: $tid "; 
+			if ($book) {
+				$comment .= " |||| Løbenr $nextnumber |||| Hash $hash";
+				$nextnumber++;
 			}
-				$ledgerdata .= "\n";
+			if (!$pretty) $ledgerdata .= $comment; 
+			$ledgerdata .= "\n";
+			if (!isset($ct['id'])) $counter++;
+		}
+			$ledgerdata .= "\n";
+
 		}
 		return $ledgerdata;
 	}
