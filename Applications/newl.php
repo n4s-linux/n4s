@@ -1,4 +1,5 @@
 <?php
+	$lockthesefiles = array();
 	$aliases_warning_displayed = 0;
 	$undefined_aliascount = 0;
 	require_once("/svn/svnroot/Applications/ansi-color.php");
@@ -151,7 +152,14 @@
 			file_put_contents("$tpath/Mainbook.ledger",$ledgerdata);
 			file_put_contents("$tpath/.nextnumber",$nextnumber);
 			file_put_contents("$tpath/.nextcbnumber",$nextcbnumber +1);
-			system("cd $tpath&&mkdir -p $tpath/.cashbooks/$nextcbnumber/&&mv $tpath/*.trans $tpath/.cashbooks/$nextcbnumber/");
+			foreach (array_unique($lockthesefiles) as $curfile) {
+				$data = json_decode(fgc($curfile),true);
+				$data['Description'] = "🔒" . $data['Description'];
+				$data['Status'] = "Locked";
+				$data['History'][] = array("Desc" => 'Bogført','op'=>$op,'tidspunkt'=>date("Y-m-d H:m"));
+				file_put_contents("$tpath/$curfile",json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+				system("chmod a=r $tpath/$curfile");
+			}
 		}
 	}
 	else if ($nargs[0] == "preview") {
@@ -321,15 +329,17 @@
 		if (file_exists($fn)) return file_get_contents($fn); else return "; No opening available $fn";
 	}
 	function getledgerdata($x,$book = false,$pretty = false,$currentledger = "") {
+		global $lockthesefiles;
 		$ledgerdata = $currentledger;
 		if ($book == true && $ledgerdata == "") $ledgerdata = "\n; Dette er hovedbogen. Hver transaktion bekræfter alle transaktioner forinden med deres samlede md5 checksum - det vil sige hvis du ændrer i denne bog bliver checksummen ugyldig og bogen er manipuleret - efter denne besked starter transaktionerne fra Løbenummer 1 og frem\n\n";
 		global $nextnumber;
 		foreach ($x as $c) { // for hver transaktion der skal bogføres
 				if ($book == true) $hash = md5(trim($ledgerdata));
 				if (isset($c['Reference'])) $ref = $c['Reference']; else $ref = "";
-				$ledgerdata .= "$c[Date] ($ref) $c[Description]\n";
+				$ledgerdata .= "$c[Date] ($ref) 🔒 $c[Description]\n";
 			$counter = 0;
 			foreach ($c['Transactions'] as $ct) {
+				array_push($lockthesefiles,$c['Filename']);
 				$ledgerdata .= "\t$ct[Account]  $ct[Amount] ";
 				$tid = (isset($ct['id'])) ? $ct['id'] : $counter;
 				$comment = " ; Filename: $c[Filename] |||| TransID: $tid "; 
@@ -408,6 +418,10 @@
 		global $transactions;
 		global $op;
 		global $deletebilag;
+		if (!is_writable("$tpath/$file")) {
+			//fwrite(STDERR,"$file is readonly (booked) - skipping");
+			return;
+		}
 		$newtrans = json_decode(fgc($tpath."/".$file),true);
 		if ($newtrans == false) {
 			file_put_contents("$tpath/.log",date("Y-m-d H:m") . "Could not json decode $tpath/$file\n",FILE_APPEND);
