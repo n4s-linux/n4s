@@ -53,12 +53,13 @@ else if ($argv[1] == "Ledger") {
 	$menu["Kontokort 1970-01-01 - $imorgen"] = array('key'=>'r','Text'=>'Kontokort','cmd'=>"send-keys 'll r ' Enter");
 }
 else if ($argv[1] == "Bogføring") {
+	$menu["Bogfør kladdeposter"] = array('key'=>'B','Text'=>'Bogføring af poster','cmd'=>"send-keys 'bookledger' Enter");
 	$menu["Opret postering"] = array('key'=>'p','Text'=>'Python - regnemaskine','cmd'=>"send-keys 'e' Enter");
 	$menu["Eksporter til HTML/PDF"] = array('key'=>'x','Text'=>'html','cmd'=>"send-keys 'html' Enter");
 	$menu["Indlæs CSV"] = array('key'=>'c','Text'=>'CSV','cmd'=>"send-keys 'csv' Enter");
-	$menu["Åbne poser udligning"] = array('key'=>'å','Text'=>'åbne','cmd'=>"send-keys 'åbneposter' Enter");
+	$menu["Åbne poster"] = array('key'=>'å','Text'=>'åbne','cmd'=>"send-keys 'åbneposter' Enter");
 	$menu["Juster Periode"] = array('key'=>'P','Text'=>'Ændre periode','cmd'=>"send-keys 'dp' Enter");
-	$menu["Juster Sortering"] = array('key'=>'P','Text'=>'Ændre periode','cmd'=>"send-keys 'ds' Enter");
+	$menu["Juster Sortering"] = array('key'=>'S','Text'=>'Ændre periode','cmd'=>"send-keys 'ds' Enter");
 	$menu["Forecasting"] = array('key'=>'f','Text'=>'forecasting','cmd'=>"send-keys 'updatebudget' Enter");
 }
 else if ($argv[1] == "rmenu") {
