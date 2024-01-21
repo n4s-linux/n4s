@@ -29,17 +29,15 @@ while ($line = fgetcsv($fd,null,",","\"","\\")) { // GET DATA
 	else
 		$saldo[$konto] = $belob;
 }
-$s = "$begin Overført saldo\n";
 $y = 0;
+$s = "";
 foreach ($saldo as $konto => $cursaldo) {
 	$y += $cursaldo;
 	if (intval($cursaldo) == 0) continue;
-	$cursaldo = number_format($cursaldo,3,".","");
-	$s .= "\t$konto  $cursaldo\n";
+	$cursaldo = number_format($cursaldo,2,".","");
+	$s .= "$begin 📖 $konto\n";
+	$s .= "\t$konto  $cursaldo\n\tEgenkapital:Overført resultat\n\n";
 }
-if ($y != 0)
-	$s .= "\tEgenkapital:Overført resultat\n";
-$s .= "\n";
 file_put_contents("$tpath/.Åbning_$begin.ledger",$s);
 fwrite(STDERR, "Åbning $begin genereret !\n");
 ?>
