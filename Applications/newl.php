@@ -350,9 +350,14 @@
 		global $nextnumber;
 		foreach ($x as $c) { // for hver transaktion der skal bogføres
 			if (strtotime($c['Date'] >= strtotime($end) || strtotime($c['Date']) <= strtotime($begin))) continue; // skip periods we are not in - only book current period
-			if ($book == true) $hash = md5(trim($ledgerdata));
 			if (isset($c['Reference'])) $ref = $c['Reference']; else $ref = "";
-			$ledgerdata .= "$c[Date] ($ref) 🔒 $c[Description]\n";
+			if ($book == true) { 
+				$hash = md5(trim($ledgerdata)); 
+				$ledgerdata .= "$c[Date] ($ref) 🔒 $c[Description]\n";
+			}
+			else {
+				$ledgerdata .= "$c[Date] ($ref) ✎ $c[Description]\n";
+			}
 		$counter = 0;
 		foreach ($c['Transactions'] as $ct) {
 			array_push($lockthesefiles,$c['Filename']);
