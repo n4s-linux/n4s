@@ -1,3 +1,10 @@
+function nmenu() {
+    valg=$(php /svn/svnroot/Applications/menu.php)
+    if [ "$valg" != "" ]; then
+        php /svn/svnroot/Applications/menu.php "$valg"
+    fi
+}
+alias bookledger="php /svn/svnroot/Applications/newl.php book"
 function fejl() {
     fn="$(cat $tpath/.log|fzf --tac)"
     echo "Valgt fejl: $fn"
