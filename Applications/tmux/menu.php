@@ -54,6 +54,7 @@ else if ($argv[1] == "Ledger") {
 }
 else if ($argv[1] == "Bogføring") {
 	$menu["Bogfør kladdeposter"] = array('key'=>'B','Text'=>'Bogføring af poster','cmd'=>"send-keys 'bookledger' Enter");
+	$menu["Beta regnskabsviser"] = array('key'=>'b','Text'=>'Beta regnskabsviser','cmd'=>"send-keys 'nmenu' Enter");
 	$menu["Opret postering"] = array('key'=>'p','Text'=>'Python - regnemaskine','cmd'=>"send-keys 'e' Enter");
 	$menu["Eksporter til HTML/PDF"] = array('key'=>'x','Text'=>'html','cmd'=>"send-keys 'html' Enter");
 	$menu["Indlæs CSV"] = array('key'=>'c','Text'=>'CSV','cmd'=>"send-keys 'csv' Enter");
@@ -124,5 +125,6 @@ foreach ($menu as $key => $ar) {
 	$nice = str_pad($key,20);
 	$cmd .= "\"$nice\" $ar[key] \"$ar[cmd]\" ";
 }
+	fwrite(STDERR,$cmd."\n");
 	system("$cmd");
 ?>
