@@ -1,4 +1,5 @@
 <?php
+require_once("/svn/svnroot/Applications/tlasort.php");
 require_once("ansi-color.php");
 $op = exec("whoami");
 $darray = array();
@@ -92,16 +93,4 @@ function gettla($darray) {
 			$rv[$key] = $val; 
 	}
 	return $rv;
-}
-function tlasort($a,$b) {
-	$score = array('Indtægter'=>0,'Udgifter'=>1,'Resultatdisponering'=>2,'Aktiver'=>4,'Egenkapital'=>5,'Passiver'=>6);
-	if (isset($score[$a]))
-		$as = $score[$a];
-	else
-		$as = 7;
-	if (isset($score[$b]))
-		$bs = $score[$b];
-	else
-		$bs = 7;
-	return ($as > $bs);
 }
