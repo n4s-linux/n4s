@@ -64,6 +64,7 @@ function printfullspec($darray,$filter) {
 	global $op;
 	global $begin; global $realend;
 	global $end;
+	global $showbudget;
 	ob_start();
 	if ($filter == "Indtægter") printheader("Kontokort","portrait");
 	echo "<center><h3><font style='background:#ded2d1'>Kontospecifikationer $filter - $begin - $realend $showbudget</font></h3></center>";
