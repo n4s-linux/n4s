@@ -35,7 +35,7 @@ foreach ($saldo as $konto => $cursaldo) {
 	$y += $cursaldo;
 	if (intval($cursaldo) == 0) continue;
 	$cursaldo = number_format($cursaldo,2,".","");
-	$s .= "$begin 📖 $konto\n";
+	$s .= "$begin ☀ $konto\n";
 	$s .= "\t$konto  $cursaldo\n\tEgenkapital:Overført resultat\n\n";
 }
 file_put_contents("$tpath/.Åbning_$begin.ledger",$s);
