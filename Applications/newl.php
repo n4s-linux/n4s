@@ -48,7 +48,19 @@
 	$begin = getenv("LEDGER_BEGIN");
 	$end = getenv("LEDGER_END");
 	$cmd = ("cp $fn $tpath/.curl$begin-$end; tpath=$tpath LEDGER_BEGIN=$begin LEDGER_END=$end ledger --no-pager -X -B -f $tpath/.curl$begin-$end ");
-	if ($nargs[0] == "suggestions") {
+	if ($nargs[0] == "search") {
+		$s = $argv;
+		unset($s[0]);
+		unset($s[1]);
+		$searchresults = array();
+		foreach ($transactions as $curtrans) {
+			$res = searchfor($s,$curtrans);
+			if ($res != -1)
+				array_push($searchresults,$res);
+		}
+		displaysearch($searchresults,$s);
+	}
+	else if ($nargs[0] == "suggestions") {
 		$x = getcsv("1970-01-01",$end,$tpath);
 		$fejl = getfejl($x,true);
 		$suggestioncount = 0;
@@ -353,7 +365,7 @@
 			if (isset($c['Reference'])) $ref = $c['Reference']; else $ref = "";
 			if ($book == true) { 
 				$hash = md5(trim($ledgerdata)); 
-				$ledgerdata .= "$c[Date] ($ref) 🔒 $c[Description]\n";
+				$ledgerdata .= "$c[Date] ($ref) ☀ $c[Description]\n";
 			}
 			else {
 				$ledgerdata .= "$c[Date] ($ref) ✎ $c[Description]\n";
@@ -381,7 +393,6 @@
 		global $undefined_aliascount;
 		global $aliases_warning_displayed;
 		$update = trim(getenv("updatealiases"));
-		//if (posix_isatty(STDOUT)) $update = 1;
 		$tpath = getenv("tpath");
 		$aliases = json_decode(fgc("$tpath/aliases"),true);
 		$filedata = json_decode(fgc("$tpath/$file"),true);
@@ -506,5 +517,65 @@ function lastacc($acc) {
 	}
 	$r .= $last;
 	return $r;
+}
+function searchfor($searcharray,$trans) {
+	$h = $trans['History'];
+	unset($trans['History']);
+	$txt = json_encode($trans,JSON_UNESCAPED_UNICODE);
+	foreach ($searcharray as $cursearch) {
+		if (stristr($txt,$cursearch) == false) {
+			return -1;
+		}
+	}
+	$trans['History'] = $h;
+	return $trans;
+}
+function displaysearch($res,$s) {
+	require_once("/svn/svnroot/Applications/shortacc.php");
+	require_once("/svn/svnroot/Applications/sortsearch.php");
+	$fzf = "";
+	$res = dosorting($res);
+	foreach ($res as $curres) {
+		$fzf .= str_pad($curres['Date'],15," ",STR_PAD_RIGHT) . "\t";
+		$fzf .= str_pad(substr($curres['Reference'],0,15),15," ",STR_PAD_RIGHT) . "\t";
+		$fzf .= str_pad(substr($curres['Description'],0,20),20," ",STR_PAD_RIGHT) . "\t";
+		$short = shortacc($curres['Transactions'][0]['Account']);
+		$fzf .= str_pad($short,8," ",STR_PAD_LEFT) . "\t";
+		$amount = number_format($curres['Transactions'][0]['Amount'],2,",",".");
+		$fzf .= str_pad($amount,15," ",STR_PAD_LEFT) . "\t";
+		$short = shortacc($curres['Transactions'][1]['Account']);
+		$fzf .= str_pad($short,8," ",STR_PAD_LEFT) . "\t";
+		if (isset($curres['Transactions'][2])) {
+			$multi = "𝤒";
+		}
+		else
+			$multi = "᛫";
+
+		$fzf .= str_pad(getops($curres),5," ",STR_PAD_LEFT) . "\t";
+
+		$fzf .= str_pad($multi,2," ",STR_PAD_LEFT) . "\t$curres[Filename]";
+		$fzf .= "\n";
+	}
+	$sogning = "";
+	foreach ($s as $curs) $sogning .= $curs." ";
+	$valg = fzf($fzf,"Søgning $sogning","",true);
+}
+function getops($trans) {
+	$ops = array();
+	foreach ($trans['History'] as $curhist) {
+		$op = "";
+		if (isset($curhist['op']))
+			$op = $curhist['op'];
+		else if (isset($curhist['updatedby']))
+			$op = $curhist['updatedby'];
+		if ($op != "") {
+			if (!in_array($op,$ops)) array_push($ops,$op);
+		}
+	}
+	$r = "";
+	foreach ($ops as $curop) {
+		$r .= $curop . " ";
+	}
+	return trim($r);
 }
 ?>
