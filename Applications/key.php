@@ -173,7 +173,7 @@ unset($curtrans["History"]); // dont search in history please
 			array_push($sresult,$curtrans);
 			$count++;
 			$results .= "\"$path/$curtrans[Filename]\" ";
-			$resultvim .= ":e $path/$curtrans[Filename]\n";
+			$resultvim .= ":e \"$path/$curtrans[Filename]\"\n";
 			$cmd = "cp \"$path/$curtrans[Filename]\" \"$path/.$curtrans[Filename].old\";chmod 777 \"$path/.$curtrans[Filename].old\"";
 			system($cmd);
 
