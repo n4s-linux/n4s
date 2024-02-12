@@ -26,7 +26,7 @@ echo "<center><h5>Resultatopgørelse $begin - $realend $showbudget</center></h5>
 printsection($darray,"Indtægter",false);
 printsection($darray,"Udgifter",false);
 printsection($darray,"Resultatdisponering",false);
-echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
+echo "<meta charset=utf8><p style=\"page-break-after: always;\">&nbsp;</p>";
 echo "<center><h5>Balance $begin - $realend $showbudget</h5></center><br>";
 printsection($darray,"Aktiver",false);
 printsection($darray,"Egenkapital",false);
@@ -127,7 +127,8 @@ function printnotes() {
 	$first = true;
 	foreach ($notes as $key => $val) {
 		if ($first) {pagebreak();$first = false;}
-		$nn = $notenames[$key];
+		$nn = explode(":",$notenames[$key]);
+		$nn = end($nn);
 		echo "<div><a name='note$key'><h3>$key - $nn </h3></a>\n";
 		$sum = 0;
 		foreach ($val as $curnote) {
