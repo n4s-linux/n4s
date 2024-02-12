@@ -257,6 +257,7 @@
 		require_once("/svn/svnroot/Applications/math.php");
 		$bal = $bal *-1;
 		$rv = getstdin("Beløb for $konto ($bal)");
+		$rv = str_replace(",",".",$rv); // tillad komma, bliver blot tolket som punktum der er iso locales default decimalseparator
 		if ($rv == "") $rv = $bal;
 		return evalmath($rv);
 	}
