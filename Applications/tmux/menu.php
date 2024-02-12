@@ -125,6 +125,6 @@ foreach ($menu as $key => $ar) {
 	$nice = str_pad($key,20);
 	$cmd .= "\"$nice\" $ar[key] \"$ar[cmd]\" ";
 }
-	fwrite(STDERR,$cmd."\n");
+//	fwrite(STDERR,$cmd."\n");
 	system("$cmd");
 ?>
