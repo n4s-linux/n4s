@@ -1,4 +1,5 @@
 <?php
+require_once("/svn/svnroot/Applications/ansi-color.php");
 $op = exec("whoami");
 $mode = screensizemode();
 $begin = getenv("LEDGER_BEGIN");
@@ -7,7 +8,7 @@ if (getenv("tpath") == "") die("Kræver tpath\n");
 $hovedmenu = array("Saldobalance","Kontokort","Indstillinger","Udskrifter","Import","Eksport");
 
 if (!isset($argv[1]) ||$argv[1] == "") {
-	menu($hovedmenu,"n4s","Sneakpreview");
+	menu($hovedmenu,"n4s","Sneakpreview",""," --height=10");
 }
 else if ($argv[1] == "Saldobalance") {
 	$a = getaccounts();
@@ -40,13 +41,17 @@ else
 
 
 
-function menu($options,$header,$previewlabel,$previewcommand = "php /svn/svnroot/Applications/menu.php Preview {}") {
+function menu($options,$header,$previewlabel,$previewcommand = "php /svn/svnroot/Applications/menu.php Preview {}",$xtra = "") {
 $uid = md5($header) ;//. time();
 $str = "";
 foreach ($options as $curoption) {
 	$str .= "$curoption\n";
 }
-$cmd = "echo \"$str\" > ~/tmp/.mymenu_$uid;cat ~/tmp/.mymenu_$uid|fzf  --preview='$previewcommand' --header-first --header=\"$header\" --scrollbar=* --margin 2% --padding 1% --border --preview-label='$previewlabel' --preview-window 50%:right --bind 'load:reload-sync(sleep 1;cat ~/tmp/.mymenu_$uid)+unbind(load)'";
+if ($previewcommand != "")
+	$cmd = "echo \"$str\" > ~/tmp/.mymenu_$uid;cat ~/tmp/.mymenu_$uid|fzf  --ansi --preview='$previewcommand' --header-first --header=\"$header\" --scrollbar=* --margin 2% --padding 1% --border --preview-label='$previewlabel' --preview-window 65%:right $xtra --bind 'load:reload-sync(sleep 1;cat ~/tmp/.mymenu_$uid)+unbind(load)'";
+else
+	$cmd = "echo \"$str\" > ~/tmp/.mymenu_$uid;cat ~/tmp/.mymenu_$uid|fzf  --ansi --header-first --header=\"$header\" --scrollbar=* --margin 2% --padding 1% --border $xtra --bind 'load:reload-sync(sleep 1;cat ~/tmp/.mymenu_$uid)+unbind(load)'";
+
 system($cmd);
 }
 function getaccounts() {
@@ -56,8 +61,9 @@ function getaccounts() {
 	global $op;
 	system("php /svn/svnroot/Applications/newl.php print > ~/tmp/curl_$uid");
 	foreach ($tlas as $curtla) {
-		echo strtoupper($curtla) . "\n--------------------\n\n";
-		system("ledger -f ~/tmp/curl_$uid balance -E --flat \"^$curtla\"");
+		echo set("$curtla:","inverse");
+		echo "\n";
+		system("ledger -f ~/tmp/curl_$uid balance -E --flat ^\"$curtla\"");
 		echo "\n";
 	}
 	unlink("/home/$op/tmp/curl_$uid");
@@ -65,23 +71,25 @@ function getaccounts() {
 }
 function gettlas() { // tla = top level account
 	ob_start();
-	system("php /svn/svnroot/Applications/newl.php print |hledger --depth=2 -f /dev/stdin accounts -E");
+	system("php /svn/svnroot/Applications/newl.php print |hledger --depth=1 -f /dev/stdin accounts -E");
 	$r = array_filter(array_reverse(explode("\n",ob_get_clean())));
 	require_once("/svn/svnroot/Applications/tlasort.php");
 	usort($r,"tlasort");
 	return $r;
 }
 function getepictrans($konto) {
-	require_once("/svn/svnroot/Applications/ansi-color.php");
+
+
+	echo set("$konto:\n","inverse");
 	echo set("Posteringer:\n","inverse");
 	$cmd =("LEDGER_SORT=account,date LEDGER_ACCOUNT_WIDTH=16 LEDGER_PAYEE_WIDTH=22 php /svn/svnroot/Applications/newl.php register ^\"$konto\" ");
 	system($cmd);
 	echo "\n";
 	echo set("Summasummarum:\n","inverse");
-	$cmd =("LEDGER_SORT=account,date LEDGER_ACCOUNT_WIDTH=16 LEDGER_PAYEE_WIDTH=22 php /svn/svnroot/Applications/newl.php balance ^\"$konto\" -E");
+	$cmd =("LEDGER_SORT=account,date LEDGER_ACCOUNT_WIDTH=16 LEDGER_PAYEE_WIDTH=22 php /svn/svnroot/Applications/newl.php balance ^\"$konto\" ");
 	echo "\n";
 	system($cmd);
-
+	echo "\n";
 
 	echo set("Kvartalsvis:\n","inverse");
 	$cmd =("LEDGER_SORT=account,date LEDGER_ACCOUNT_WIDTH=16 LEDGER_PAYEE_WIDTH=22 php /svn/svnroot/Applications/newl.php register ^\"$konto\" --quarterly");
@@ -89,9 +97,12 @@ function getepictrans($konto) {
 	echo "\n";
 
 	echo set("Slægtninge:\n","inverse");
-	$cmd =("LEDGER_SORT=account,date LEDGER_PAYEE_WIDTH=22 php /svn/svnroot/Applications/newl.php balance ^\"$konto\" --flat --related -E");
+	$cmd =("LEDGER_SORT=account,date LEDGER_PAYEE_WIDTH=22 php /svn/svnroot/Applications/newl.php balance ^\"$konto\" --flat --related ");
 	system($cmd);
 	echo "\n";
+
+
+
 
 }
 
