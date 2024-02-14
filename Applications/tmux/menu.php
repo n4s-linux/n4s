@@ -14,6 +14,7 @@ if (!isset($argv[1])) {
 	$menu["Manual"] = array('key'=>'m','Text'=>'Manual','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Manual'");
 	if ($op == "joo") $menu['Ugeoverblik2'] = array('key'=>'E','Text'=>'mail','cmd'=>"new-window 'tpath=/data/regnskaber/regnskabsdeadlines/ LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 php /svn/svnroot/Applications/key.php ledger r opgaver -S date --account-width=15|less' ");
 	$menu["Skift session ved navn"] = array('key'=>'S','Text'=>'newsession','cmd'=>"display-popup -h 4 -E 'bash /svn/svnroot/Applications/newses.bash");
+	$menu["Ompriortering session"] = array('key'=>'o','Text'=>'ommpriortering','cmd'=>"display-popup -h 8 -E 'bash /svn/svnroot/Applications/rename-session.bash");
 //     display-popup [-BCE] [-b border-lines] [-c target-client] [-d start-directory] [-e environment] [-h height] [-s border-style] [-S style] [-t target-pane] [-T title] [-w width] [-x position] [-y position] [shell-command]
 //                   (alias: popup)
 
