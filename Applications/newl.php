@@ -391,6 +391,7 @@
 		return $ledgerdata;
 	}
 	function missingalias($file,$id) {
+		$alreadyused = array();
 		global $undefined_aliascount;
 		global $aliases_warning_displayed;
 		$update = trim(getenv("updatealiases"));
@@ -414,9 +415,16 @@
 			require_once("/svn/svnroot/Applications/proc_open.php");
 			$bn = basename("$tpath");
 			if ($aliases_warning_displayed == 0) { exec_app("whiptail --msgbox \"Der mangler at blive defineret nye aliases i $bn ($d)\nDu vil nu blive spurgt hvilken konto de enkelte aliases skal henføres til\" 10 80");$aliases_warning_displayed=1;}
-			//update aliases from book 
-			//  3 function lookup_acc($accounts,$bal,$alias = "",$multi = "--multi") {
-			$konto = lookup_acc("",0,"aliaset '$d'","");
+			if (!isset($alreadyused[$d])) {
+				$x = explode(":",$d);
+				if (isset($x[1]))
+					$konto = $d;
+				else
+					$konto = lookup_acc("",0,"aliaset '$d'","");
+				$alreadyused[$d] = $konto;
+			}
+			else
+				$konto = $alreadyused[$d];
 			//$konto = "Mangler";
 			//getkontoplan_allaccounts($tekst = " - aliases $d peger på");
 			//$konto = lookup_acc("",0,$tekst = " - aliases $d peger på");
