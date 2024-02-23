@@ -30,6 +30,7 @@ if (getenv("DISPLAY") == "")
 	$editor = "vim";
 else
 	$editor = "gvim -f";
+
 $editor = "vim";
 if ($argv[1] == "entry")
 	$data = loadcache();
@@ -283,7 +284,7 @@ require_once("sortsearch.php");
 	}
 	else if ($action == "Redigér") {
 		if (strlen(trim($resultvim))) {
-			exec_app("$editor -s $vf");
+			exec_app("$editor -s $vf 2>/dev/null");
 			exec_app("php /svn/svnroot/Applications/key_arraydiff.php $results");
 			system("rm \"$path\"/.*.old");
 		}
