@@ -247,7 +247,12 @@
 		echo $v."\n";
 		$f['Date'] = askdate();
 		$f['Reference'] = askref();
-		$f['Description'] = askdesc();
+		$sh = "";
+		foreach ($konti as $konto) { // make a unique hash for the account combination
+			$sh .= $konto;	
+		}
+		$acccombihash = md5($sh);
+		$f['Description'] = askdesc($acccombihash);
 		$f['Filename'] = $filename . "_" . filter_filename($f['Description']) . ".trans";
 		file_put_contents("$tpath/$f[Filename]",json_encode($f,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		echo "Gemt $tpath/$f[Filename]\n";
@@ -287,16 +292,47 @@
 		$x = trim(implode("\n",$x));
 		return $x;
 	}
-	function askdesc() {
-		return getstdin("Indtast tekst");
+	function askdesc($hash) {
+		global $tpath;
+		if (file_exists("$tpath/.lastdesc_$hash")) {
+			$curdesc = file_get_contents("$tpath/.lastdesc_$hash");
+		}
+		else $curdesc = "";
+		if ($curdesc != "")
+			$rv = getstdin("Indtast tekst [$curdesc]");
+		else
+			$rv = getstdin("Indtast tekst");
+		file_put_contents("$tpath/.lastdesc_$hash",$rv);
+		return $rv;
 	}
 	function askref() {
-		return getstdin("Indtast reference");
+		global $tpath;
+		if (file_exists("$tpath/.lastref")) {
+			$curref= intval(trim(file_get_contents("$tpath/.lastref")));
+			if ($curref> 0)  $curref++;
+			else  $curref= "" ;
+		}
+		else $curref= "";
+		if ($curref!= "") {
+			$rv = getstdin("Indtast reference (. for intet bilag) [$curref]");
+		}
+		else
+			$rv = trim(getstdin("Indtast reference"));
+		if ($rv == ".") $rv = "";
+		else if ($rv == "") $rv = $curref;
+		file_put_contents("$tpath/.lastref",$rv);
+		return strval($rv);
 	}
 	function askdate() {
-		$curdate =date("Y-m-d");
-		$s = getstdin("Indtast dato");
-		return ($s == "") ? $curdate : $s;
+		global $tpath;
+		if (!file_exists("$tpath/.lastdate"))
+			$curdate =date("Y-m-d");
+		else
+			$curdate = file_get_contents("$tpath/.lastdate");
+		$s = getstdin("Indtast dato [$curdate]");
+		$retval = ($s == "") ? $curdate : $s;
+		file_put_contents("$tpath/.lastdate",$retval);
+		return $retval;
 	}
 	function getstdin($prompt) {
 		echo "$prompt: ";
