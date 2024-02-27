@@ -211,6 +211,7 @@
 		global $tpath;
 		global $op;
 		global $x; // expanded transactions
+		$hashkonti = ""; // til at finde kontosammenfald for automatisk tekst gentagelsesforslag
 		$f = array();
 		$f['Transactions'] = array();
 		$bal = -1;
@@ -237,6 +238,7 @@
 				$f['Transactions'][$i]['P-Start'] = "";
 				$f['Transactions'][$i]['P-End'] = "";
 				$f['Transactions'][$i]['Account'] = $konto;
+				$hashkonti .= $konto;
 				$f['Transactions'][$i]['Func'] = $func;
 				$f['Transactions'][$i]['Amount'] = $belob;
 				$i++;
@@ -244,15 +246,9 @@
 		}
 		$filename = date("Ymd") . uniqid();
 		$f['History'] = array(array('Date'=>date("Y-m-d H:m"),'Desc'=>"Manual entry $op"));
-		echo $v."\n";
 		$f['Date'] = askdate();
 		$f['Reference'] = askref();
-		$sh = "";
-		foreach ($konti as $konto) { // make a unique hash for the account combination
-			$sh .= $konto;	
-		}
-		$acccombihash = md5($sh);
-		$f['Description'] = askdesc($acccombihash);
+		$f['Description'] = askdesc($hashkonti);
 		$f['Filename'] = $filename . "_" . filter_filename($f['Description']) . ".trans";
 		file_put_contents("$tpath/$f[Filename]",json_encode($f,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		echo "Gemt $tpath/$f[Filename]\n";
