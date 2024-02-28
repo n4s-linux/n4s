@@ -248,7 +248,7 @@
 		$f['History'] = array(array('Date'=>date("Y-m-d H:m"),'Desc'=>"Manual entry $op"));
 		$f['Date'] = askdate();
 		$f['Reference'] = askref();
-		$f['Description'] = askdesc($hashkonti);
+		$f['Description'] = askdesc(md5($hashkonti));
 		$f['Filename'] = $filename . "_" . filter_filename($f['Description']) . ".trans";
 		file_put_contents("$tpath/$f[Filename]",json_encode($f,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		echo "Gemt $tpath/$f[Filename]\n";
