@@ -325,6 +325,7 @@
 			$curdate =date("Y-m-d");
 		else
 			$curdate = file_get_contents("$tpath/.lastdate");
+		if (stristr($tpath,"igang")) $curdate = date("Y-m-d");
 		$s = getstdin("Indtast dato [$curdate]");
 		$retval = ($s == "") ? $curdate : $s;
 		file_put_contents("$tpath/.lastdate",$retval);
