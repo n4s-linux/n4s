@@ -71,31 +71,18 @@
 			if (is_array($similar)) {
 				$suggestioncount += 1;
 				$id = gettag($curfejl,"TransID");
-				system("clear");
-				echo "------------------------------------------------------------------------------------------\n";
 				$fn = gettag($curfejl,"Filename");
-				echo "\tForslag til kontering af transaktion i $fn:\n";
-				echo "\tDato\t$curfejl[Date]\n\tTekst\t$curfejl[tekst]\n\tBeløb\t$curfejl[Amount]\n\n";
-				echo "\tNuværende konto\t$curfejl[Account]\n\n";
-				echo "\tForslag til konto og moms $similar[Kontoforslag] ($similar[Momsforslag])\n";
-				echo "------------------------------------------------------------------------------------------\n";
-				if ($yestoall != true) $janej = fzf("Ja\nNej\nJa til alle","Accepter forslag - tryk CTRL-c for at afbryde","--height=5"); else $janej = "Ja";
-				if ($janej == "Ja til alle") { $yestoall = true; $janej = "Ja"; }
-				if ($janej == "") die();
-				if ($janej == "Ja") {
 					$accepted++;
 					$data = json_decode(fgc($fn),true);
 					$oldacc = $data["Transactions"][$id]['Account'];
 					$oldvat = $data["Transactions"][$id]['Func'];
-					$data["Transactions"][$id]['Account'] = $similar["Kontoforslag"];
-					$data["Transactions"][$id]['Func'] = $similar["Momsforslag"];
-					array_push($data["History"],array("Date"=>date("Y-m-d H:m"),"op"=>$op,"Description"=>"Ændret transaktion $id baseret på historik  til $similar[Kontoforslag] ($similar[Momsforslag])"));
+					$data["Transactions"][$id]['AccountSuggestion'] = $similar["Kontoforslag"];
+					$data["Transactions"][$id]['FuncSuggestion'] = $similar["Momsforslag"];
+					array_push($data["History"],array("Date"=>date("Y-m-d H:m"),"op"=>$op,"Description"=>"Forslag til transaktion $id baseret på historik: $similar[Kontoforslag] ($similar[Momsforslag])"));
 					file_put_contents("$tpath/$fn",json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
-				}
 			}
 		}
-		if ($suggestioncount == 0) die("Ingen forslag at tage stilling til\n");
-		else die("Brugt $accepted / $suggestioncount forslag\n");
+		die("Suggestions handled\n");
 	}
 	else if ($nargs[0] == "openentries") {
 		$match = true;
