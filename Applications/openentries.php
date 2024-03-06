@@ -30,6 +30,7 @@ function findsimilar($trans,$transactions) {
 	foreach ($forslag as $kontoforslag => $antal) {
 		if ($antal / $total * 100 >= 80) {
 			$x = explode("|||",$kontoforslag);
+			fwrite(STDERR,"Forslag [ $x[0]$moms] på ". $antal / $total *100 . "% accepteres for $trans[tekst]\n");
 			return array("Kontoforslag"=>$x[0],"Momsforslag"=>$x[1],"Sandsynlighed"=>$antal/$total*100 . "%");
 		}
 		else if ($antal / $total * 100 >= 50) {
