@@ -39,6 +39,7 @@ if (file_exists("/home/$op/tmp/kontokort.html")) unlink("/home/$op/tmp/kontokort
 file_put_contents("/home/$op/tmp/nøgletal.html",getnøgletal($darray));
 file_put_contents("/home/$op/tmp/statistik.html",getstatistik($darray));
 file_put_contents("/home/$op/tmp/manglendebilag.html",getmanglendebilag($darray));
+file_put_contents("/home/$op/tmp/kommentarer.html",getcomments($darray));
 
 
 foreach (array('Indtægter','Udgifter','Aktiver','Egenkapital','Passiver') as $curf) {
@@ -164,6 +165,7 @@ function getdata($begin,$end) {
 			$d['Konto'] = rewrite($data[3]);
 			$d['Beløb'] = $data[5];
 			$d['Header'] = explode(":",$data[3])[0];
+			$d['Tags'] = $data[7];
 			$k = explode(":",rewrite($data[3]));
 			if (isset($k[1])) $k = $k[1]; else $k = "";
 			$d['KontoN1'] = $k;
@@ -392,6 +394,22 @@ function filter_manglende($curtrans) {
 	}
 
 	return false;
+}
+
+function getcomments($darray) {
+	require_once("/svn/svnroot/Applications/gettags.php");
+	ob_start();
+	printheader("Kommentarer");
+	echo "<table class=table table-striped>\n";
+	foreach ($darray as $curtrans) {
+		$comment = gettag($curtrans['Tags'],"Comment");
+		if ($comment != -1) {
+			echo "<tr><td>$curtrans[Reference]</td><td>$curtrans[Date]</td><td>$curtrans[Tekst]</td><td>$curtrans[Beløb]</td><td>$curtrans[Konto]</td></tr>\n";
+			echo "<tr><td>$comment</td></tr>";
+		}
+	}
+	echo "</table>\n";
+	return ob_get_clean();
 }
 function getmanglendebilag($darray) {
 	ob_start();
