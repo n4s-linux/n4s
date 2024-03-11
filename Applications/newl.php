@@ -397,6 +397,8 @@
 			$ledgerdata .= "\t$ct[Account]  $ct[Amount] ";
 			$tid = (isset($ct['id'])) ? $ct['id'] : $counter;
 			$comment = " ; Filename: $c[Filename] |||| TransID: $tid "; 
+			if (isset($c['Comment']) && strlen($c['Comment']))
+				$comment .= "||| Comment: $c[Comment] ";
 			if ($book) {
 				$comment .= " |||| Løbenr $nextnumber |||| Hash $hash";
 				$nextnumber++;
