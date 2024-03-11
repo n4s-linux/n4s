@@ -529,14 +529,11 @@ if [ "$bn" == "NY" ]; then
 	read navn < /dev/tty
 	navn=$(echo "$navn"| tr -cd '[:alnum:]._-'|sed 's/\ /_/g')
 	if [ "$navn" != "" ]; then
-		if [ ! -f "/svn/svnroot/pubserver" ]; then
-			newfolder=/data/regnskaber/"$navn"
-		else
-			newfolder=~/regnskaber/"$navn"
-		fi
-			mkdir -p "$newfolder"
-			tpath="$newfolder"
-			bn=$(basename "$tpath")
+		path=$(echo -e "/data/regnskaber\n~/regnskaber"|fzf --header="Vælg sti")
+		newfolder=$path/"$navn"
+		mkdir -p "$newfolder"
+		tpath="$newfolder"
+		bn=$(basename "$tpath")
 		ln -s "$tpath" ~/regnskaber/"$bn"
 	fi
 fi
