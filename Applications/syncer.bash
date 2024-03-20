@@ -11,7 +11,7 @@ if [ "$?" != 0 ]; then
 fi
 while true
 do
-unison -contactquietly -prefer newer -ignorearchives -ignorenot "Name .*" -times=true -confirmbigdel=false -batch ~/unison/ ssh://$user@$host/unison 2>/dev/stdout|
+unison -contactquietly -prefer newer -ignorenot "Name .*" -times=true -confirmbigdel=false -batch ~/unison/ ssh://$user@$host/unison 2>/dev/stdout|
 grep -v ^"Looking for"|
 grep -v "Reconciling changes"|
 grep -v ^"Nothing to do:"|
