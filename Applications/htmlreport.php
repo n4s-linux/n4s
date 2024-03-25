@@ -413,7 +413,8 @@ function getcomments($darray) {
 }
 function getmanglendebilag($darray) {
 	ob_start();
-	printheader("Manglende bilag");
+//function printheader($parameter = "Saldobalance",$orientation="Portrait") {
+	printheader("Manglende bilag","Landscape");
 	echo "<table class=table table-striped>\n";
 	foreach ($darray as $curtrans) {
 		if (substr($curtrans['Konto'],0,strlen("Resultatdisponering:")) == "Resultatdisponering:") continue;
@@ -452,9 +453,15 @@ function getnøgletal($darray)  {
 	echo "<table class=\"table table-striped\">";
 	$omsætning = omsætning($darray);
 	$resultat = resultat($darray);
-	$ebit = prettynum($resultat / $omsætning * 100);
+	if ($omsætning != 0)
+		$ebit = prettynum($resultat / $omsætning * 100);
+	else
+		$ebit = 0;
 	$dækningsbidrag = dækningsbidrag($darray);
-	$dækningsgrad = prettynum($dækningsbidrag / $omsætning * 100);
+	if ($omsætning != 0)
+		$dækningsgrad = prettynum($dækningsbidrag / $omsætning * 100);
+	else
+		$dækningsgrad = 0;
 	$kortfristetgæld = kortfristetgæld($darray);
 	$omsætningsaktiver = omsætningsaktiver($darray);
 	$likviditetsgrad = prettynum($omsætningsaktiver / $kortfristetgæld * 100);
