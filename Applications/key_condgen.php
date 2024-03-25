@@ -119,7 +119,7 @@ foreach ($assignments as $curassignment) {
 }
 $code .= "}";
 $tpath = getenv("tpath");
-$fn = $tpath . "/logic_" . read("Kodenavn") . time();
+$fn = $tpath . "/logic_" . str_replace("_","_",read("Kodenavn")) . time();
 file_put_contents($fn,$code);
 exec_app("vim \"$fn\"");
 chdir($tpath);
