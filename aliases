@@ -309,11 +309,10 @@ function srb()
 }
 
 function csv() {
-php /svn/svnroot/Applications/key_csv.php load
-php /svn/svnroot/Applications/newl.php suggestions
-if [ "$jn" == "Ja" ]; then
-    php /svn/svnroot/Applications/newl.php openentries
-fi
+	php /svn/svnroot/Applications/key_csv.php load
+	php /svn/svnroot/Applications/newl.php suggestions
+	#php /svn/svnroot/Applications/newl.php openentries
+	logic
 }
 function cvr() {
 	php /svn/svnroot/Applications/cvr.php "$@"|less
