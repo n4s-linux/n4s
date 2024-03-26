@@ -1,4 +1,8 @@
 <?php
+	$tpath = getenv("tpath");
+	$alreadyused = array();
+	require_once("/svn/svnroot/Applications/short.php");
+	$aliases = json_decode(fgc("$tpath/aliases"),true);
 	$lockthesefiles = array();
 	$aliases_warning_displayed = 0;
 	$undefined_aliascount = 0;
@@ -11,7 +15,6 @@
 	$deletebilag = array();
 	$nargs = $argv;
 	array_shift($nargs);
-	$tpath = getenv("tpath");
 	require_once("/svn/svnroot/Applications/nextnumber.php");
 	$nextnumber = getnextnumber($tpath);
 	$nextcbnumber = getnextcbnumber($tpath);
@@ -23,7 +26,6 @@
 		$ledgerdata = getopening();
 	else	$ledgerdata="";
 	require_once("/svn/svnroot/Applications/datemorph.php");
-	require_once("/svn/svnroot/Applications/short.php");
 	require_once("/svn/svnroot/Applications/expand.php");
 	$files = preg_grep('/^([^.])/', scandir($tpath)); // dont show hidden files
 	if (getenv("budget") == 1 && file_exists("$tpath/.budget.ledger")) bookledger(".budget.ledger");
@@ -413,12 +415,12 @@
 		return $ledgerdata;
 	}
 	function missingalias($file,$id) {
-		$alreadyused = array();
+		global $alreadyused;
 		global $undefined_aliascount;
 		global $aliases_warning_displayed;
 		$update = trim(getenv("updatealiases"));
 		$tpath = getenv("tpath");
-		$aliases = json_decode(fgc("$tpath/aliases"),true);
+		global $aliases;
 		$filedata = json_decode(fgc("$tpath/$file"),true);
 		$d = $filedata['Transactions'][$id]['Account'];
 		if ($update == "") {
