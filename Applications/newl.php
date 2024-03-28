@@ -190,6 +190,7 @@
 	else if ($nargs[0] != "entry") { // this is where we pass the ledger commands - todo pass them properly even with quotes and stuff, to make it a proper working full wrapper
 		foreach ($nargs as $curarg)
 			$cmd .= " $curarg";
+			$cmd .="|php /svn/svnroot/Applications/colorizer.php";
 		system("$cmd");
 		if ($undefined_aliascount > 0)fwrite(STDERR,"$undefined_aliascount manglende aliases - skriv 'aliases'\n");
 	}
@@ -515,7 +516,7 @@
 				rundelbilag();
 			}
 		}
-		$transactions[] = json_decode(rewrite(json_encode($newtrans)),true);
+		$transactions[] = json_decode(rewrite(json_encode($newtrans,JSON_UNESCAPED_UNICODE)),true);
 	}
 function isFile($file) {
         $f = pathinfo($file, PATHINFO_EXTENSION);
