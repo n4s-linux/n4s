@@ -1,3 +1,5 @@
+alias farvelæg="n4s_setcolors=1 n4s_colorset=1 l b"
+alias farvelægkontokort="n4s_setcolors=1 n4s_colorset=1 l r"
 function nmenu() {
     valg=$(php /svn/svnroot/Applications/menu.php)
     if [ "$valg" != "" ]; then
@@ -309,9 +311,12 @@ function srb()
 }
 
 function csv() {
+	echo Starting CSV import
 	php /svn/svnroot/Applications/key_csv.php load
+	echo Loading possible account and func suggestions
 	php /svn/svnroot/Applications/newl.php suggestions
 	#php /svn/svnroot/Applications/newl.php openentries
+	echo Applying rules if any - you can define rules with 'rule' or 'rule_copy'
 	logic
 }
 function cvr() {
