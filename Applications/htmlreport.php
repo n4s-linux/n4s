@@ -165,7 +165,8 @@ function getdata($begin,$end) {
 			$d['Konto'] = rewrite($data[3]);
 			$d['Beløb'] = $data[5];
 			$d['Header'] = explode(":",$data[3])[0];
-			$d['Tags'] = $data[7];
+			if (isset($data[7])) $d['Tags'] = $data[7];
+			else $d['Tags'] = "";
 			$k = explode(":",rewrite($data[3]));
 			if (isset($k[1])) $k = $k[1]; else $k = "";
 			$d['KontoN1'] = $k;
