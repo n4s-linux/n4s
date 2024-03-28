@@ -25,7 +25,7 @@ $op=exec("whoami");
        $d = detectDelimiter("$filename");
        $data = csv_to_array("$filename",$d);
 	unlink($filename);
-       $contraacc = lookup_acc($accounts,0,"Bankimport");
+       $contraacc = lookup_acc($accounts,0,"Bankimport - Select Account to import to");
        $mappings = array();
 	require_once("/svn/svnroot/Applications/fzf.php");
        foreach ($data['header'] as $header) {
@@ -85,9 +85,9 @@ $curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d H:m"),'Desc'=>'
                          ,'Func'=>$curfunc,'Amount'=> $c['Amount'] * -1)
                    );
          file_put_contents($fn,json_encode($curtrans,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n");
-          
          }
 
+         system("LEDGER_END=2099-12-31 LEDGER_BEGIN=1970-01-01 php /svn/svnroot/Applications/newl.php r \"$contraacc\"|tail -n10"); 
 die();
 
 }
