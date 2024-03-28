@@ -54,6 +54,8 @@ else if ($argv[1] == "Ledger") {
 	$menu["Kontokort 1970-01-01 - $imorgen"] = array('key'=>'r','Text'=>'Kontokort','cmd'=>"send-keys 'll r ' Enter");
 }
 else if ($argv[1] == "Bogføring") {
+	$menu["Balance Painter"] = array('key'=>'F','Text'=>'Farvelægning Balance','cmd'=>"send-keys 'farvelæg ' ");
+	$menu["Konto Painter"] = array('key'=>'F','Text'=>'Farvelægning Kontokort','cmd'=>"send-keys 'farvelægkontokort ' ");
 	$menu["Bogfør kladdeposter"] = array('key'=>'B','Text'=>'Bogføring af poster','cmd'=>"send-keys 'bookledger' Enter");
 	$menu["Beta regnskabsviser"] = array('key'=>'b','Text'=>'Beta regnskabsviser','cmd'=>"send-keys 'nmenu' Enter");
 	$menu["Opret postering"] = array('key'=>'p','Text'=>'Python - regnemaskine','cmd'=>"send-keys 'e' Enter");
