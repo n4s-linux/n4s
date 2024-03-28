@@ -6,7 +6,6 @@ $ANSI_CODES = array(
         "underline"  => 4,
         "blink"      => 5,
         "inverse"    => 7,
-        "hidden"     => 8,
         "black"      => 30,
         "red"        => 31,
         "green"      => 32,
@@ -28,14 +27,12 @@ $tpath = getenv("tpath");
 function pick() {
 	$fzf = "";
 	global $ANSI_CODES;
+	global $op;
 	foreach ($ANSI_CODES as $key => $dontcare) {
+		$key = set($key,$key);
 		$fzf .= "$key\n";
 	}	
-	$retval = fzf($fzf,"Vælg farve til de valgte poster","--tac");
-	echo "Indtast tekst: ";
-	system ("read a < /dev/tty;echo \"\$a\">/tmp/.a.tmp");
-	$retval = trim(file_get_contents("/tmp/.a.tmp")) . ",$retval";
-	unlink("/tmp/.a.tmp");
+	$retval = fzf($fzf,"Vælg farve til de valgte poster --height=25","--tac --ansi");
 	return $retval;
 }
     function set($str, $color)
@@ -80,6 +77,7 @@ $ANSI_CODES = array(
     }
 function setcolor($fn,$farve) {
 	global $tpath;
+	global $op;
 	if (file_exists("$fn")) {
 		$data = file_get_contents("$fn");
 		$data = json_decode($data,true);
