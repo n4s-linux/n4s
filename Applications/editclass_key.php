@@ -1,5 +1,5 @@
 <?php
-$op = system("whoami");
+$op = exec("whoami");
 require_once("/svn/svnroot/Applications/proc_open.php");
 require_once("/svn/svnroot/Applications/key_config.php");
 $path = getenv("tpath");
@@ -21,7 +21,8 @@ foreach ($files as $file) {
     $orghash = md5(json_encode($data));
     $t1 = $data['Transactions'][0];
     $t2 = $data['Transactions'][1];
-    $code = file_get_contents("$lpath/$file");
+    if (!is_file("$lpath/$file")) continue;
+$code = file_get_contents("$lpath/$file");
     eval($code);
     $data['Transactions'][0] = $t1;
     $data['Transactions'][1] = $t2;
