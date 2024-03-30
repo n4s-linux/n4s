@@ -11,13 +11,23 @@ while ($line = fgets(STDIN)) {
 	if (file_exists("$tpath/.colorizer_$md")) {
 		$color = trim(file_get_contents("$tpath/.colorizer_$md"));
 		$notes[$color][trim($line)] = getnotes($md);
-		foreach(explode("\n",$notes[$color][trim($line)]) as $curline) {
-			$inlinenote .= "\n\t\t\t 🖋 " . trim($curline);
+		$lc = count(explode("\n",$notes[$color][trim($line)]));
+		if ($lc > 1) {
+			foreach(explode("\n",$notes[$color][trim($line)]) as $curline) {
+				if (trim($curline) != "")
+				$inlinenote .= "\n\t\t\t 🖋 " . set(trim($curline),"inverse");
+			}
+		}
+		else if ($lc == 1) {
+			$curline = explode("\n",$notes[$color][trim($line)])[0];
+			if (!trim($curline) == "")
+				$inlinenote .= "\t 🖋 " . set(trim($curline),"inverse");
 		}
 	}
 	else
 		$color = "white";	
 	$fzf .= set("$line\n",$color);
+	if (trim($inlinenote) == "") $inlinenote = "";
 	echo colorize($line.$inlinenote,$color) . "\n";
 }
 foreach ($notes as $key => $val) {
