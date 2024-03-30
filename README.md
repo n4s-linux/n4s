@@ -229,6 +229,7 @@ Funktioner:
 * [Automatisk Forecasting / Budgettering](https://asciinema.org/a/UP7jkTM07x0P4qqhqikwNBf5B)
 * [Opdatering af system til seneste version](https://asciinema.org/a/UFD86HqcTk5vXmpJ9slOu4W2I)
 * [Hvordan farver man sine rapporter i n4s?](https://www.youtube.com/watch?v=Id8-jAB-Q8c)
+* [Hvordan tilføjer man kommentarer til sine rapporter i n4s?](https://www.youtube.com/watch?v=iqgOCXVCxf0)
 
 # TLDR - Lad mig downloade din OVA
 * Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
