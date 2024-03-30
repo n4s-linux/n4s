@@ -91,8 +91,7 @@ elif [ "$argument" == "watch" ]; then
 	done
 elif [ "$argument" == "search" ]; then
 	(
-		ledger -f $2/curl -S payee,date select date,account,amount,payee "where payee=~/$3/"
-		ledger -f $2/curl -S payee,date select date,account,amount,payee "$3"
+	LEDGER_BEGIN=1970-01-01 LEDGER_END=2099-12-31 ledger -f $2/curl -S payee,date select date,account,amount,payee "where payee=~/$3/" -S date
 	)|fzf --header=Opslag
 	#tpath="$2" noend=1 LEDGER_NOTTERMINAL=Fejlkonto:NotCalculatedYet LEDGER_END=2099-01-01 LEDGER_BEGIN=$(date +%-%m-%d --date="-1 year") LEDGER_DEPTH=5 php /svn/svnroot/Applications/key.php ledger select date,account,amount,payee "where payee=~/$3/"|grep -v Resultatdi|grep -v Egenkapital:Periodens|fzf --tac
 elif [ "$argument" == "tag" ]; then
