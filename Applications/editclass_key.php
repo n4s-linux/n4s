@@ -27,7 +27,8 @@ $code = file_get_contents("$lpath/$file");
     $data['Transactions'][0] = $t1;
     $data['Transactions'][1] = $t2;
         if ($orghash != md5(json_encode($data))) {
-		echo "$fn changed\n";
+		$bn = basename($fn);
+		echo "$bn changed\n";
 		$fns .= "\"$fn\" ";
 		array_push($data['History'],array('Date'=>date("Y-m-d"),'Desc'=>"Changed by logic ($file)"));
 		file_put_contents("$fn", json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
