@@ -1,236 +1,233 @@
-# Det tredobbelte bogholderi - fremtidens regnskab
-Regnskaber er typisk historiske, dvs de beskriver ting som er sket i fortiden.
-Visionen om fremtidens regnskab er at fortid, nutid og fremtid smelter sammen.
-Så hvis du drømmer om et live regnskab der ikke bare er ajour til her og nu, men med indbygget krystalkugle, kunne n4s være rammerne omkring dette.
+# The triple bookkeeping - the accounting of the future
+Accounts are typically historical, i.e. they describe things that happened in the past.
+The vision of future accounting is that past, present and future merge.
+So if you dream of a live account that is not just up to date for the here and now, but with a built-in crystal ball, n4s could be the framework around this.
 
-Hvis vi skal gøre et teknologisk kvantespring er vi nødt til at arbejde sammen.
-I stedet for at mange udbydere af regnskabssystemer skal sælges SAAS løsninger i hver deres lejr og løse de samme problematikker, kan vi hjælpe hinanden med at bygge et stærkt system som er fælleseje for nu og altid.
-Derfor lanceres n4s som **fri software** - fri software forveksles ofte med værende gratis, men det er ikke altid tilfældet. Fri referer altså ikke til pris, men til frihed, som i at softwaren respekterer nogle grundlæggende rettigheder som vi mener bør følge med alt software:
-* Friheden til at benytte programmet til ethvert formål (frihed 0).
-* Friheden til at lære, hvordan programmet virker og forandre det efter egne behov (frihed 1). Adgang til kildekoden er en betingelse for at dette.
-* Friheden til at redistribuere kopier (frihed 2).
-* Friheden til at forbedre softwaren og udgive forbedringerne til offentligheden, så hele samfundet kan få gavn af det (frihed 3). Adgang til kildekoden er ligeledes en betingelse for dette.
+If we are to make a technological quantum leap, we have to work together.
+Instead of many providers of accounting systems having to be sell SAAS solutions in their own camps and solving the same problems aka reinventing the wheel over and over, we can help each other build a strong system that is commonly owned for now and forever.
+That's why n4s is launched as **free software** - free software is often confused with being free, but that's not always the case. Free therefore does not refer to price, but to freedom, as in that the software respects some basic rights that we believe should accompany all software:
+* The freedom to use the program for any purpose (freedom 0).
+* The freedom to learn how the program works and change it according to your own needs (freedom 1). Access to the source code is a condition for this.
+* The freedom to redistribute copies (freedom 2).
+* The freedom to improve the software and release the improvements to the public for the benefit of society as a whole (freedom 3). Access to the source code is also a condition for this.
 
-Der er en tidsmæssig omkostning med opstart i et nyt system, og hvis du skal bruge systemet professionelt og have det sat op til at overholde gældende lovgivning bør du søge kyndig vejledning. Dette gælder dog ikke for små virksomheder med en omsætning på under 300.000
+There is a time cost with starting up a new system, and if you need to use the system professionally and have it set up to comply with current legislation, you should seek expert guidance. However, this does not apply to small businesses with a turnover of less than 300,000
 
-Hvis du mangler en funktion kan du med fordel udlove dusør for en sådan feature. Hvis flere udlover dusør for samme feature kan dusøren stige og gøre det mere attraktivt for en udvikler at lave det.
+If you are missing a feature, you can offer a bounty for such a feature. If several people offer a bounty for the same feature, the bounty can increase and make it more attractive for a developer to make it.
 
-# Et simpelt og gratis regnskabsprogram
-Her er ingen bindinger eller betalingskort nødvendig. 
-N4S er frit og opensource regnskabsystem, og derved gratis at bruge nu og for altid.
+# A simple and free accounting program
+N4S is a free and open source accounting system, and thus free to use now and forever.
 
-Man kan næsten med sikkerhed sige at n4s er et af de billigste regnskabsprogrammer på markedet.
-Det koster kun den tid du skal investere dig i at arbejde på en mere effektiv måde.
-Og evt. hosting service som fås ned til < 50kr/måneden hvis du ønsker at dit regnskab ligger i skyen og kan tilgås fra hele verden. For den pris får du nærmest ubegrænsede antal transaktioner, ubegrænsede antal regnskaber, ubegrænsede snapshots og backups af dine regnskaber etc. Du betaler kun for den plads du bruget.
-Vælger du at hoste dit system bør du søge kvalificeret hjælp til sikring af serveren. Vi anbefaler at en servers firewall er helt lukket med untagelse af porten til terminalens sikre forbindelse som krypteres med AES/Blowfish.
+It is almost safe to say that n4s is one of the cheapest accounting programs on the market.
+It only costs the time you have to invest in working in a more efficient way.
+You can get started by downloading and trying our OVA version on your machine, absolutely free.
 
-Du kan komme i gang ved at downloade og prøve vores OVA udgave på din maskine, helt gratis.
+When you do bookeeping in N4S, your accounting becomes a breeze. Once you learn it... !
 
-Når du bogfører i N4S bliver dit regnskab til en leg. Når du først har fået det lært... !
+Whether you have a brand new company, an association or just your household accounts, here you have an accounting program that can support your activities from now on and always.
 
-Hvadenten du har en helt ny virksomhed, en forening eller bare dit husholdsningsregnskab, har du her et regnskabsprogram som kan undstøtte dine aktiviteter fra nu af og altid.
+Our vision is that it should be simple and efficient to do your bookkeeping, VAT accounting, household accounting and more.
 
-Vores vision er at det skal være simpelt og effektivt at lave din bogføring, momsregnskab, husholdsningsregnskab og andet.
+Your data can be easily exported to an open format that you can take with you later to any other system.
 
-Dine data kan let eksporteres til et åbent format, som du kan tage med dig senere til et hvilket som helst andet system.
+## Key selling points
+### Lord in his own house
+With n4s you have full control over your own data.
 
-## Key selling Points
-### Herre i eget hus
-Med n4s har du fuld kontrol over dine egne data.
+### Velocity
+n4s is faster than other systems on the market. Most operations take place in a split second. Only your processing power and hard disk/ram set the limit to how quickly the system is run, and for most small accounts you won't blink until you get the data you ask for on the screen.
 
-### Hastighed 
-n4s er hurtigere end andre systemer på markedet. De fleste operationer sker på et splitsekund. Kun din processorkraft og harddisk/ram sætter grænsen for hvor hurtigt systemet afvikles, og for de fleste små regnskaber når du ikke at blinke før du får de data frem på skærmen du beder om.
+### Possibility of automatic consolidation and allocation between subsidiaries
+n4s can easily be set up to automatically consolidate your accounts below:
+* Automatic transfer of result
+* Automatic reconciliation of interim accounts
 
-### Mulighed for automatisk konsolidering og allokering mellem datterselskaber 
-n4s kan nemt sættes op til automatisk at konsolidere dine regnskaber herunder:
-* Automatisk overførsel af resultat
-* Automatisk afstemning af mellemregningskonti
+### Automatic accounting based on own defined rules *
+in n4s you can define rules yourself for how your new postings are to be accounted for.
+This means you can get rid of manual posting again and again of the same type of items
+eg. IF Text = 'Fee' THEN Account = 'Expenses:Administration:Fees'
 
-### Automatisk kontering udfra egne definerede regler * 
-i n4s kan du selv definere regler for hvordan dine nye posteringer skal konteres.
-Dvs du kan slippe for manuel kontering igen og igen af samme type poster
-f.eks. Hvis Tekst = 'Gebyr' SÅ Konto = 'Udgifter:Administration:Gebyrer'
-
-### Sikret imod opkøb
-n4s står for Not 4 Sale - oversat 'ikke til salg'. Derfor er det sikret imod opkøb, således at systemet altid vil være frit.
-Du må gerne klone vores system og sælge det videre, men der under forudsætning at du respekterer brugernes grundlæggende rettigheder...
-... Betingelser som er nærmere beskrevet i softwarens licens som er GPL v3
-
-### Spar tid - automatiske bogføringsforslag
-Ved indlæsning af nye posteringer kan du spare tid for systemet kan selv komme med forslag baseret på din tidligere historik.
-Selv med meget lidt data får du hurtigt forslag til kontering - baseret på similar_text hvad der ofte refereres til som en af verdens bedste algoritmer.
-Mange poster med samme tekst havner samme sted hver gang - systemet opdager selv når der er afvigelser og kræver stor præcision for at komme med forslag
-DVS du behøver ikke gå ind og definere regler for simple gebyrposteringer, for systemet opdager automatisk at de altid havner på samme konto... !
-
-### Løbende opdateringer
-Du skal ikke vente årevis på at der bliver udgivet en ny version. Du kan løbende hente patches med forbedringer til systemet.
-Følg dette [link](https://github.com/n4s-linux/n4s-gratis-regnskab/commits?author=n4s-linux) for at se de seneste ændringer til systemet.
-Det tager under et minut at opdatere n4s til den nyeste version.
-Du kan også selv lave ændringer i koden og foreslå at disse ændringer bliver en del af n4s.
-Du kan se hvor let systemet opdateres i vores Quick Start Videoer
+### Secured against acquisition
+n4s stands for Not 4 Sale - translated 'not for sale'. Therefore, it is secured against acquisition, so that the system will always be free.
+You are welcome to clone our system and sell it on, but on the condition that you respect the basic rights of the users...
+... Conditions which are described in more detail in the software's license which is GPL v3
 
 
-# N4S - en fri og gratis regnskabs- og ERP-løsning til små virksomheder og private
-N4S er dog mere end blot et regnskabssystem; det er en kraftfuld allieret på din rejse mod forretningsmæssig succes. Uanset om du er en regnskabsprofessionel, en iværksætter eller en virksomhedsejer, har N4S de værktøjer, du har brug for, til at opnå overlegen kontrol over dine finanser og virksomheds processer.
+### Save time - automatic posting suggestions
+When loading new entries, you can save time because the system itself can make suggestions based on your previous history.
+Even with very little data, you quickly get suggestions for accounting - based on similar_text, which is often referred to as one of the world's best algorithms.
+Many entries with the same text end up in the same place every time - the system even detects when there are deviations and requires great precision to make suggestions
+That is, you do not need to go in and define rules for simple fee postings, because the system automatically detects that they always end up on the same account... !
 
-🚀 *Lynhurtig og Universel*: Med N4S kan du arbejde effektivt på enhver platform ! Den bagvedliggende teknologi er kendt for sin utrolige hastighed, hvilket betyder, at du kan fokusere på det, der virkelig betyder noget: at drive din forretning fremad. 
+### Running updates
+You don't have to wait years for a new version to be released. You can continuously download patches with improvements to the system.
+Follow this link to see the latest changes to the system.
+It takes under a minute to update the n4s to the latest version.
+You can also make changes to the code yourself and suggest that these changes become part of n4s.
+You can see how easily the system is updated in our Quick Start Videos
 
-🤓 *Skabt til Professionelle*: N4s er først udviklet med tanke på regnskabsprofessionelle og giver dig mulighed for at tage kontrol over dine finanser som aldrig før. Du vil føle dig som en ægte ekspert, når du bruger dette kraftfulde værktøj.
 
-🤖 *Automatiseret Regnskab*: Med N4S kan du definere regler, der automatiserer regnskabsprocessen. Dette sparer dig tid og mindsker risikoen for fejl. Lad N4S tage sig af de rutinemæssige opgaver, så du kan fokusere på strategisk planlægning. Dette kombineret med at systemet automatisk lærer sig selv regler baseret på dine tidligere konteringer og bogføringen derved bliver mindre og mindre tidskrævende, uden at du behøver gøre noget aktivt, andet end at bruge systemet.
+# N4S - a free and free accounting and ERP solution for small businesses and individuals
+However, N4S is more than just an accounting system; it is a powerful ally on your journey to business success. Whether you're an accounting professional, an entrepreneur or a business owner, N4S has the tools you need to gain superior control over your finances and business processes.
 
-💼 *Dine Data, Din Kontrol*: En af de mest overbevisende funktioner ved N4S er, at du har fuld kontrol over dine data. Du hoster det på din egen server, hvilket betyder, at dine oplysninger altid er i dine hænder. Og det bedste af det hele? Du kan gøre det for så lidt som 5 USD om måneden på Linode!
+**Ownership:**
+Another advantage of the early software was ownership 📜. Once you paid for a program 💰, it was yours. There were no subscription models, no ongoing costs and no need for a constant internet connection 🌐. You could use the software whenever you wanted without worrying about extensive restrictions or licensing restrictions. However, it should be mentioned that these days most commercial programs were under a strict license that denied the user each of the previously mentioned basic software rights. This can be seen as a necessity to promote the development of software, as it was difficult to find models for revenue beyond copyright and its enforcement - and that secrecy of the source code was a necessity as a defense against pirates.
 
-# Savner du de gode gamle DOS-dage uden så meget gas eller dyre abonnementer ?
-I dag, hvor teknologi og computere konstant udvikler sig 🚀, kan det være fristende at kigge tilbage på de gode gamle dage i 1990'erne 🕰️, da DOS-operativsystemet og de tidlige regnskabssystemer var dominerende 💾. Der er noget nostalgisk ved den tid, hvor computere og software fungerede på en enklere måde, og brugeroplevelsen havde sine egne charmerende kvaliteter.
+**Source Code Access and Customization:**
+Although modern accounting systems have their own advantages, there is still something unique about n4s 🤖. A notable advantage of n4s is the access to the source code 🧩. This allows companies to adapt n4s precisely to their needs 🧰. With access to the source code, companies can make changes, add features and optimize the system according to their unique requirements 🛠️n. This degree of customization gives unprecedented control over the company's accounting system and ensures that it meets their specific needs. Even if you are not a programmer and do not want to invest in using one, you can easily make simple changes by searching the source code, e.g. changing the text of buttons, colors and the like.
 
-**Stabilitet og Pålidelighed:**
-I DOS-dagene var der sjældent bekymringer om servernedetid ⏳. De gamle regnskabssystemer blev normalt kørt lokalt på en enkelt computer 💻, hvilket betød, at du havde fuld kontrol over dit system 🛠️. Der var ingen afhængighed af komplekse serverinfrastrukturer, der kunne fejle, og det gav en følelse af stabilitet og pålidelighed 🏢.
+**Online Functionality and Collaboration:**
+So while we may miss the days when everything seemed simpler with DOS programs, it is important to recognize that modern technology has brought us many benefits 🌐.
+It's important to note that although the n4s is based on a terminal, don't be fooled by this. N4S is still incredibly functional and designed to be a multi-user system that can work online from anywhere 🌐. The terminal-based approach provides a unique opportunity for collaboration, as multiple users can easily access the system and work together on tasks. This makes it a powerful tool for modern businesses seeking efficiency and collaboration 🤝. Screen sharing is part of the system from the start and does not require separate software.
 
-**Responsivitet:**
-En af de bemærkelsesværdige ting ved DOS-tiden var den øjeblikkelige respons, du fik fra din computer ⚡. Når du trykkede på en knap 🎮 eller ønskede at generere en rapport 📊 i de gamle regnskabssystemer, var der ingen ventetid ⌛. Softwaren reagerede næsten øjeblikkeligt, hvilket gjorde arbejdsprocessen hurtig og effektiv 💨.
+🚀 *Lightning fast and Universal*: With N4S you can work efficiently on any platform! The technology behind it is known for its incredible speed, which means you can focus on what really matters: driving your business forward.
 
-**Ejerskab:**
-En anden fordel ved den tidlige software var ejerskab 📜. Når du havde betalt for et program 💰, var det dit. Der var ingen abonnementsmodeller, ingen løbende omkostninger og ingen behov for konstant internetforbindelse 🌐. Du kunne bruge softwaren, når du ville, uden at bekymre dig om omfattende restriktioner eller licensbegrænsninger . Det bør dog nævnes at i disse dage var de fleste kommercielle programmer under en streng licens som nægtede brugeren hver af de tidligere nævnte basale softwarerettigheder. Dette kan man se som en nødvendighed for at fremme udviklingen af software, da det var svært at finde modeller for indtjening udeover via copyright og håndhævelse af dette - og at hemmeligholdelse af kildekoden var en nødvendighed som et forsvar imod pirater.
+🤓 *Made for Professionals*: N4s was first developed with accounting professionals in mind and allows you to take control of your finances like never before. You will feel like a real expert when you use this powerful tool.
 
-**Kildekodeadgang og Tilpasning:**
-Selvom moderne regnskabssystemer har deres egne fordele, er der stadig noget unikt ved n4s 🤖. En bemærkelsesværdig fordel ved n4s er adgangen til kildekoden 🧩. Dette giver virksomheder mulighed for at tilpasse n4s præcist til deres behov 🧰. Med adgang til kildekoden kan virksomheder foretage ændringer, tilføje funktioner og optimere systemet i overensstemmelse med deres unikke krav 🛠️. Denne grad af tilpasning giver en hidtil uset kontrol over virksomhedens regnskabssystem og sikrer, at det opfylder deres specifikke beho Selv hvis du ikke er programmør og ikke vil investere i at bruge en, kan du let ved søgning i kildekoden foretage simple ændringer fx ændre teksten på knapper, farver og lignende.
+🤖 *Automated Accounting*: With N4S you can define rules that automate the accounting process. This saves you time and reduces the risk of errors. Let N4S take care of the routine tasks so you can focus on strategic planning. This combined with the fact that the system automatically teaches itself rules based on your previous postings and the bookkeeping thereby becomes less and less time-consuming, without you having to do anything actively, other than using the system.
 
-**Online Funktionalitet og Samarbejde:**
-Så selvom vi kan savne de dage, hvor alt syntes enklere med DOS-programmer, er det vigtigt at erkende, at moderne teknologi har bragt os mange fordele 🌐.
-Det er vigtigt at bemærke, at selvom n4s er baseret på en terminal, må man ikke lade sig snyde af dette. N4S er stadig utroligt funktionelt og designet til at være et flerbrugersystem, der kan arbejde online fra hvor som helst 🌐. Den terminalbaserede tilgang giver en unik mulighed for samarbejde, da flere brugere nemt kan få adgang til systemet og arbejde sammen om opgaverne. Dette gør det til et kraftfuldt værktøj for moderne virksomheder, der søger effektivitet og samarbejde 🤝. Skærmdeling er en del af systemet fra starten af og kræver ikke særskilt software.
+💼 *Your Data, Your Control*: One of the most compelling features of N4S is that you have full control over your data. You host it on your own server, which means your information is always in your hands. And the best of all? You can do it for as little as $5 a month on Linode!
+
+# Do you miss the good old DOS days without so much gas or expensive subscriptions?
+Today, when technology and computers are constantly evolving 🚀, it can be tempting to look back to the good old days of the 1990s 🕰️ when the DOS operating system and early accounting systems were dominant 💾. There is something nostalgic about the time when computers and software worked in a simpler way and the user experience had its own charming qualities.
+
+**Stability and Reliability:**
+In the DOS days there were rarely worries about server downtime ⏳. The old accounting systems were usually run locally on a single computer 💻, which meant you had full control over your system 🛠️. There was no dependency on complex server infrastructures that could fail, and it provided a sense of stability and reliability 🏢.
+
+**Responsiveness:**
+One of the remarkable things about the DOS era was the instant response you got from your computer ⚡. When you pressed a button 🎮 or wanted to generate a report 📊 in the old accounting systems, there was no waiting time ⌛. The software responded almost instantly, making the work process fast and efficient 💨.
 
 
 
-# VT100 - Det eneste terminalbaserede program på markedet
-## Moderne System bygget på legendarisk VT100 Teknologi 💻
-Vores system trækker på den ærværdige VT100-teknologi, som så dagens lys tilbage i 1978. Dette er ikke blot en teknologi; det er en arv, en kilde til hurtighed og bærbarhed, og det er nøglen til en effektiv og glidende arbejdsoplevelse.
+# VT100 - The only terminal based program on the market
+## Modern System built on legendary VT100 Technology 💻
+Our system draws on the venerable VT100 technology, which saw the light of day back in 1978. This is not just a technology; it's a legacy, a source of speed and portability, and it's the key to an efficient and smooth working experience.
 
 ## 🚀 **Blazing Fast Performance**
-VT100-teknologien, der danner grundlaget for vores system, er kendt for sin ekstreme hastighed. Dens enkle og effektive design gør det muligt for vores system at udføre opgaver lynhurtigt. Dette betyder, at du kan arbejde mere effektivt og fokusere på det, der virkelig betyder noget.
+The VT100 technology that forms the basis of our system is known for its extreme speed. Its simple and efficient design enables our system to perform tasks at lightning speed. This means you can work more efficiently and focus on what really matters.
 
-Forestil dig du sidder i toget og du mister forbindelsen mellem to master - det kan f.eks. være der er et blackout mens du passerer øresund. Du kan taste videre i terminalen uden at bekymre dig om dette, da dine tastetryk bliver reflekteret på den anden side af sundet når forbindelsen genetableres. Det kan også være du sidder på en 5G forbindelse i byen, og 50.000 demonstranter og deres mobiltelefoner belaster netværket i en sådan grad at der er udfald. Dette er ikke nogen hindring for et terminalbaseret system.
+Imagine you are sitting on the train and you lose the connection between two masts - this can e.g. be there is a blackout while passing Øresund. You can continue typing in the terminal without worrying about this, as your keystrokes will be reflected on the other side of the strait when the connection is re-established. It could also be that you are on a 5G connection in the city, and 50,000 protesters and their mobile phones strain the network to such an extent that there are outages. This is no obstacle for a terminal-based system.
 
-Om hastigheden kan vi oplyse at der ikke er noget snurre-symbol mens den venter på svar fra serveren, ligeledes behøver du ikke gå ud og hente kaffe mens du venter på at kassekladden bliver bogført. Vores vision er at alt du foretager dig i systemet bliver reflekteret med det samme.
-Der er heller ikke nogen begrænsning på hvor mange poster du kan vise af gangen.
+Regarding the speed, we can state that there is no spinning symbol while it waits for a response from the server, likewise you do not have to go out and get coffee while you wait for the cash register to be posted. Our vision is that everything you do in the system is reflected immediately.
+There is also no limit on how many entries you can display at a time.
 
-Hvis du f.eks. har et mindre regnskab med små 20.000 posteringer tager det cirka 300-400ms (0.3-0.4 sekunder) at frembringe en fuld saldobalance eller kontokort på skærmen. Et klassisk problem med saldobalancer og kontokort er at man slider på øjnene og musens scroll-hjul. I n4s behøver du ikke vise en fuld balance. Du kan nøjes med at vise den sektion af balancen du har behov for, f.eks. likvider eller alle aktiver.
-Ligeledes med kontokort - du kan hurtigt frembringe kontokort for enhver given konto eller hovedkategori.
-Følgende kommando viser dig specifikation af alle dine udgifter i størrelsesorden:
+If you e.g. have a small account with a little 20,000 entries, it takes approximately 300-400ms (0.3-0.4 seconds) to produce a full balance balance or account card on the screen. A classic problem with balances and credit cards is that you wear out your eyes and the mouse's scroll wheel. In n4s you don't need to show a full balance. You can just show the section of the balance you need, e.g. cash or all assets.
+Likewise with credit cards - you can quickly generate credit cards for any given account or main category.
+The following command will show you the breakdown of all your expenses in order of magnitude:
 
-> l r udgifter -S amount
+> l r expenses -S amount
 
 
-Følgende kommando viser dig specifikation af dine administrationsomkostninger i tekstrækkefølge
+The following command will show you the specification of your administration costs in text order
 > l r admin -S payee
 
 
-Du behøver ikke engang at skrive samme kommando mere end een gang. Systemet husker dine tidligere brugte kommandoer så de let kan genbruges.
+You don't even need to type the same command more than once. The system remembers your previously used commands so they can be easily reused.
 
 ## 🌐 **Portability at its Core**
 
-Med VT100-teknologien som fundament har vores system indbygget portabilitet. Uanset hvor du er, kan du nemt få adgang til systemet og udføre dine opgaver uden besvær. Dette gør det til det ideelle valg for moderne fagfolk, der er konstant på farten.
-Hvis du kan undvære flotte unicode-symboler og æ, ø og å, kan du faktisk afvikle systemet via en seriel forbindelse til en gammel terminal fra 80erne.
-Du kan forbinde via PC, Mac, Linux, Android, iPhone - You name it.
+With the VT100 technology as a foundation, our system has built-in portability. No matter where you are, you can easily access the system and perform your tasks without any hassle. This makes it the ideal choice for modern professionals who are constantly on the go.
+If you can do without fancy unicode symbols and æ, ø and å, you can actually run the system via a serial connection to an old terminal from the 80s.
+You can connect via PC, Mac, Linux, Android, iPhone - You name it.
 
-## 🧑💻 **Læringskurve som en Ninjitsu-mester**
-Mange forhenværende tasteoperatører, aka datanauter, som nu er gået på pension, har uden problemer taget imod denne teknologi og omfavnet den. VT100-teknologien har vist sig at være exceptionelt let at lære, selv for dem uden tidligere kendskab. De, der har taget springet, har oplevet en transformation og er blevet så hurtige som ninjas inden for kort tid.
-Fordelen ved vores tekstbaserede system er bl.a. at når du kender systemet kan du indtaste data uden at kigge - du ved hvor du er henne i programmet udfra dine tastetryk og diverse outputs fra systemet.
+## 🧑💻 **Learning curve like a Ninjitsu master**
+Many former key operators, aka data nauts, who have now retired, have embraced and embraced this technology with no problems. VT100 technology has proven to be exceptionally easy to learn, even for those with no prior knowledge. Those who have taken the plunge have experienced a transformation and become as fast as ninjas within a short time.
+The advantage of our text-based system is, among other things, that when you know the system you can enter data without looking - you know where you are in the program based on your keystrokes and various outputs from the system.
 
-## 🌟 **Vælg Fremtiden med VT100-Forankret Teknologi**
-Dyk ned i fortiden og omfavn fremtiden med vores system, der ærer den legendariske VT100-teknologi. Oplev hastigheden, bærbarheden og enkelheden ved et terminalbaseret system, og se, hvordan det kan forvandle din arbejdsdag.
+## 🌟 **Choose the Future with VT100-Anchored Technology**
+Dive into the past and embrace the future with our system that honors the legendary VT100 technology. Experience the speed, portability and simplicity of a terminal-based system and see how it can transform your workday.
 
-Læs videre, hvis det lyder interessant!
+Read on if that sounds interesting!
 
 
-## Kan køres på en hvilket som helst operativsystem uden installation
-N4S kan køres fra en central server og du kan forbinde med Windows Terminalen, OS X terminal Applikationen eller lign.
 
-## Eksempler på remote kørsel fra Windows 11
+## Can be run on any operating system without installation
+N4S can be run from a central server and you can connect with the Windows Terminal, OS X terminal Application or similar.
 
-![Win11 Screenshot2 n4s dobbelt bogholderi](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_2.png?raw=true)
-![Win11 Screenshot3 n4s momsregnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_3.png?raw=true)
-![Win11 Screenshot4 n4s regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_4.png?raw=true)
-![Win11 Screenshot1 n4s gratis regnskab](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_1.png?raw=true)
+## Examples of remote driving from Windows 11
 
-## Videodemonstrationer hvor der konteres demoregnskab
+![Win11 Screenshot2 n4s double bookkeeping](https://github.com/n4s-linux/n4s-gratis-regnnings/blob/main/png/win11_2.png?raw=true)
+![Win11 Screenshot3 n4s tax account](https://github.com/n4s-linux/n4s-gratis-accounting/blob/main/png/win11_3.png?raw=true)
+![Win11 Screenshot4 n4s account](https://github.com/n4s-linux/n4s-gratis-accounts/blob/main/png/win11_4.png?raw=true)
+![Win11 Screenshot1 n4s free accounting](https://github.com/n4s-linux/n4s-gratis-accounting/blob/main/png/win11_1.png?raw=true)
+
+## Video demonstrations where demo accounts are posted
 [![n4s demo](demo.gif 'n4s demo')](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/)
-[![n4s demo](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/demo1.gif 'n4s demo')](https://drive.google.com/file/d/1D7PW7Te92-4RvlXTPedoDU3QIuC-bMNp/view?usp=sharing)
+[![n4s demo](https://github.com/n4s-linux/n4s-gratis-regnnings/blob/main/png/demo1.gif 'n4s demo')](https://drive.google.com /file/d/1D7PW7Te92-4RvlXTPedoDU3QIuC-bMNp/view?usp=sharing)
 
 
-# Eksempel på rapportering
-Rapportering af resultat & balance på overordnet kontoniveau med tilknyttede noter i en pæn opstilling.
-![Eksempel på saldobalance i gratis regnskabsprogram n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/main/png/res.png)
-![Eksempel på noter i gratis regnskabsprogram n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/main/png/not.png)
+# Example of reporting
+Reporting of results & balance at overall account level with associated notes in a neat layout.
+![Example of balance balance in free accounting program n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-reksandag/main/png/res.png)
+![Example of notes in the free accounting program n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnnings/main/png/not.png)
 
 
-[Eksempel regnskab Jensens Murer ApS 2020 (fiktivt selskab)](https://github.com/n4s-linux/n4s-gratis-regnskab/tree/main/examples)
+[Example account Jensens Murer ApS 2020 (fictitious company)](https://github.com/n4s-linux/n4s-gratis-accounting/tree/main/examples)
 
-- OBS - Download PDF filerne på din computer for optimal visning - da bliver noter også klikbare i saldobalance
+- NOTE - Download the PDF files on your computer for optimal viewing - then notes will also be clickable in the balance
 
-For at generere tilsvarende rapportering for dit regnskab følg da følgende instrukser i n4s:
-* Sæt rapporteringperiode: skriv 'dp' eller tryk Alt-p
-* Skriv 'html'
-* Rediger firmanavn til forside - skriv evt. kommentar - gem på W
-* Rapporteringen (Saldobalance, kontokort & nøgletal) ligger i ~/tmp som kan findes i filmanageren Nautilus til venstre
+To generate corresponding reporting for your accounts, follow the following instructions in n4s:
+* Set reporting period: type 'dp' or press Alt-p
+* Type 'html'
+* Change company name to front page - write if necessary. comment - save on W
+* The reporting (Balance, account card & key figures) is in ~/tmp which can be found in the file manager Nautilus on the left
 
+# Hassle-free export of your data
 
-# Problemfri Eksport af Dine Data
+N4S not only excels in handling your day-to-day accounting needs, it also allows you to take your data where you need it, effortlessly. Exporting your data from N4S is a breeze, making it available to other online systems, even those with less extensive functionality.
+Our system supports loading and unloading of CSV files, which is why it is easy to migrate to/from another system.
 
-N4S excellerer ikke kun i håndteringen af dine daglige regnskabsbehov, det giver dig også mulighed for at tage dine data, hvor du har brug for det, ubesværet. At eksportere dine data fra N4S er en leg, hvilket gør det tilgængeligt for andre online systemer, selv dem med mindre omfattende funktionalitet.
-Vores system understøtter indlæsning og udlæsning af CSV filer hvorfor det er nemt at migrere til/fra et andet system.
+# Let's get down to business 🐝
+So why wait? Start your journey to financial success today with N4S. Don't let anything limit you - not even your accounting software. N4S is your key to unlocking your accounting potential and is ready to help you succeed no matter where you are or what device you use. Set the course for success and let N4S take you there!
 
-# Lets get down to business 🐝
-Så hvorfor vente? Start din rejse mod økonomisk succes i dag med N4S. Lad ikke noget begrænse dig - ikke engang din regnskabssoftware. N4S er din nøgle til at låse op for dit regnskabsmæssige potentiale og er klar til at hjælpe dig med at lykkes uanset hvor du er eller hvilken enhed du bruger. Sæt kursen mod succes og lad N4S tage dig derhen!
+# n4s - Open Source / Free Software GNU/Linux based double bookkeeping and ERP
+n4s is a terminal-based system for double bookkeeping (finance, debtor, creditor).
+It can run on any computer - or in the cloud.
+The system is built in PHP and BASH and uses the popular text editor vim (VI Improved), the terminal multiplexer tmux, and the text-based double entry accounting program ledger-cli and hledger
 
-# n4s - Open Source / Fri Software GNU/Linux baseret dobbelt bogholderi og ERP
-n4s er et terminalbaseret system til brug for dobbelt bogholderi (finans, debitor, kreditor).
-Det kan køre på en hvilken som helst computer - eller i skyen.
-Systemet er bygget i PHP og BASH og benytter den populære teksteditor vim (VI Improved), terminalmultiplexeren tmux, samt det tekstbaserede double entry regnskabsprogram ledger-cli samt hledger
+Features:
+* Automatic projection of accounts (forecasting) infinite number of months, so far the future monthly balances are calculated as an average of previous months, so is only useful for stable ongoing operations without seasonal fluctuations, e.g. service companies that sell all year round, or shops with stable turnover (Select budget in menu)
+* Advanced extended file structure and versioning and tracking on data/transactions.
+* Automatic Periodization when specifying the period for transactions
+* Automatic depreciation when specifying the lifetime of transactions
+* VAT codes (i,u,iv-eu,iy-eu,iv-abr,iy-abr,rep)
+* End of year
+* Report generator and transaction explorer (web application and text-based)
+* Import of transactions from CSV or live bank connection
+* Export of transactions to XML and CSV
+* Automatic calculation of interest where you can specify the interest rate on a given account
+* Automatic periodization where you can specify a start and end date for each expense
+* Automatic consolidation
+* Bank reconciliation
+* Logic / rules – option to define rules for automatic accounting of postings
+* Search for transactions and mass update based on specified criteria
+* Presentable reporting (balances and account cards)
+* Option to generate links for a given accounting period for an account that can be opened without login, where you can see the balance and browse the underlying postings.
+* Tax accounting – manual
+* Document handling system drag & drop to the terminal.
+* Tool for efficient creation of transactions
+* Loading of OIOUBL (XML) invoices
+* Simple Automatic consolidation of group accounts
+* Unique way to document the correctness of the accounts. Posted transactions are posted on the blockchain where the next posted transaction verifies all previously posted transactions by including their total md5 hash. Thus, it is not possible to fiddle with posted entries without the book becoming invalid. We recommend that you regularly sign your accounting hash to document the transactions.
+* Full log of all changes. Every change to transactions is logged on the transaction with operator, change, and date and time
+* Full log of all actions, output from all displayed balances, account cards, etc. with date and time stamp for each user for each account, entry of transactions, etc. - searchable, e.g. useful if you need to trace an amount in the accounts that no longer exists, entering transactions, etc. - searchable, e.g. useful if you need to trace an amount in the accounts that no longer exists
+* An infinite number of options for different color schemes - there are, for example, several color schemes that are suitable for you to sit in the sun with your laptop and work - you can forget all about that in other systems... !
+* Mapping to the Danish Business Authority's standard chart of accounts for external reporting, including easy entry into Accounting 2.0
 
-Funktioner:
-* Automatisk fremskrivning af regnskab (forecasting) uendeligt antal måneder, indtil videre beregnes de fremtidige månedsbalancer som et gennemsnit af tidligere måneder, så er kun nyttigt ved stabil løbende drift uden sæsonudsving fx servicevirksomheder som sælger hele året, eller butikker med stabil omsætning (Vælg budget i menu)
-* Avanceret udvidet filstruktur og versionering og sporing på data/transaktioner.
-* Automatisk Periodisering ved angivelse af periode på transaktioner
-* Automatisk afskrivning ved angivelse af levetid på transaktioner
-* Momskoder (i,u,iv-eu,iy-eu,iv-abr,iy-abr,rep)
-* Årsafslutning
-* Rapport generator og transaktions-stifinder (webapplikation samt tekstbaseret)
-* Import af transaktioner fra CSV eller live bank forbindelse
-* Eksport af transaktioner til XML samt CSV
-* Automatisk beregning af rente hvor man kan specificere rentesatsen på en given konto
-* Automatisk periodisering hvor man på hver udgift kan angive en start og slutdato
-* Automatisk konsolidering
-* Bankafstemning
-* Logik / regler – mulighed for at definere regler for automatisk kontering af posteringer
-* Søgning efter transaktioner og masseopdatering udfra specificerbare kriterier
-* Præsentabel rapportering (saldobalancer og kontokort)
-* Mulighed for at generere links for en given regnskabsperiode for et regnskab som kan åbnes uden login, hvor man kan se saldobalancen og gennemse de bagvedliggende posteringer.
-* Skatteregnskab – manuel
-* Bilagshåndteringssystem drag & drop til terminalen.
-* Værktøj til effektiv oprettelse af transaktioner
-* Indlæsning af OIOUBL (XML) fakturaer
-* Simpel Automatisk konsolidering af koncernregnskaber
-* Unik måde at dokumentere regnskabets rigtighed. Bogførte posteringer bliver bogført ála blockchain hvor den næste bogførte transaktion verificerer samtlige tidligere bogførte posteringer ved at inkludere deres samlede md5-hash. Således kan der ikke fifles med bogførte posteringer, uden at bogen bliver ugyldig. Vi anbefaler at du løbende signerer dit regnskabs hash for at dokumentere transaktionerne.
-* Fuld log over alle ændringer. Hver ændring af transkationer bliver logført på transaktionen med operatør, ændring, samt dato og tidspunkt
-* Fuld log over alle handlinger, output fra alle viste balancer, kontokort m.v. med dato og tidsstempel for hver bruger for hvert regnskab, indtastning af transaktioner o.s.v. - søgbar fx nyttigt hvis du skal spore et beløb i regnskabet som ikke længere findes, indtastning af transaktioner o.s.v. - søgbar fx nyttigt hvis du skal spore et beløb i regnskabet som ikke længere findes
-* Uendeligt antal muligheder for forskellige farveskemaer - der er fx flere farveskemaer der er egnet til at du kan sidde i solen med din laptop og arbejde - det kan du godt glemme alt om i andre systemer... !
-* Mapning til Erhvervsstyrelsens standardkontoplan for ekstern rapportering, herunder nem indtastning i Regnskab 2.0
+# Quick Start videos
+* [Creating Transactions](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ)
+* [Opening balance](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S)
+* [Loading bank CSV](https://asciinema.org/a/vxOr2DKCrcflhiVhRqABCxkeO)
+* [Export to CSV in n4s ](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD)
+* [Pivot tables](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8)
+* [Automatic posting of transactions with rules](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt)
+* [About Periodization](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw)
+* [Interest calculation on account](https://asciinema.org/a/YBnnVrYtmlftMdbrCkY7P6J6K)
+* [Automatic Forecasting / Budgeting](https://asciinema.org/a/UP7jkTM07x0P4qqhqikwNBf5B)
+* [Updating system to latest version](https://asciinema.org/a/UFD86HqcTk5vXmpJ9slOu4W2I)
+* [How to color your reports in n4s?](https://www.youtube.com/watch?v=Id8-jAB-Q8c)
+* [How to add comments to your reports in n4s?](https://www.youtube.com/watch?v=iqgOCXVCxf0)
 
-# Quick Start videoer
-* [Oprettelse af transaktioner](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ)
-* [Åbningsbalance](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S)
-* [Indlæsning af bank CSV](https://asciinema.org/a/vxOr2DKCrcflhiVhRqABCxkeO)
-* [Eksporter til CSV i n4s ](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD)
-* [Pivot tabellter](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8)
-* [Automatisk kontering af transaktioner med regler](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt)
-* [Om Periodisering](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw)
-* [Renteberegning på konto](https://asciinema.org/a/YBnnVrYtmlftMdbrCkY7P6J6K)
-* [Automatisk Forecasting / Budgettering](https://asciinema.org/a/UP7jkTM07x0P4qqhqikwNBf5B)
-* [Opdatering af system til seneste version](https://asciinema.org/a/UFD86HqcTk5vXmpJ9slOu4W2I)
-* [Hvordan farver man sine rapporter i n4s?](https://www.youtube.com/watch?v=Id8-jAB-Q8c)
-* [Hvordan tilføjer man kommentarer til sine rapporter i n4s?](https://www.youtube.com/watch?v=iqgOCXVCxf0)
-
-# TLDR - Lad mig downloade din OVA
-* Link til [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
-* Link til [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (husk at få Extension Pack også)
+# TLDR - Let me download your OVA
+* Link to [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
+* Link to [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (remember to get the Extension Pack too)

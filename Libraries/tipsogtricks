@@ -1,79 +1,79 @@
-Vim er en af de mest effektive teksteditorer i universet
-Bash er Bourne Again Shell - din skal, en anden skal er DOS - Disk based operating system - bash er også et programmeringssprog
-VIM: Indsæt datestamp = F9 (indsæt)
-VIM: Indsæt datetimestamp = F10 (indsæt)
-VIM: Tøm felt = å (normal)
-VIM: Slet række = dd (normal)
-VIM: Start markering = v
-VIM: Op/ned = j/k (normal)
-VIM: Venstre/højre = h/l (normal)
-VIM: Top af fil = gg (normal)
-VIM: Bunden af fil = G (normal)
-TMUX: Vis klokken = Ctrl-b + t
-TMUX: Nyt vindue = Ctrl-b + 
-TMUX: Del terminal lodret = Ctrl-b + %
-TMUX: Del terminal vandret= Ctrl-b + "
-TMUX: Bring fane til nyt vindue = Ctrl-b + !
-TMUX: Marker fane = Ctrl-b + m
-TMUX: Indsæt markeret fane = Ctrl-B + :join
-N4S: Dagens tip ligger i Libraries/tipsogtricks
-N4S: Åbn Regnskab = F4
-Regnskab: Skift aktivt regnskab = sr
-N4S: Åbn Journal = F2
-N4S: Opret regel guide = rule
-Regnskab: Kopier regler fra andet regnskab = rule_copy
-Regnskab: Kør alle regler: logic
-Regnskab: Prøv at skrive 'pivot'
-Regnskab: Prøv at skrive 'plot KONTO'
-Regnskab: Kontokort Periode = 'l r KONTO'
-Regnskab: Kontokort Al tid= 'll r KONTO'
-Regnskab: Opret regel = 'rule'
-Regnskab: Kør alle regelsæt = 'logic'
-Regnskab: Importer bank = 'csv'
-Regnskab: Eksportér csv Periode = 'l csv Konto > ~/tmp/filnavn'
-Regnskab: Eksportér csv Al tid= 'll csv Konto > ~/tmp/filnavn'
-Regnskab: Eksporter html='html'
-Regnskab: Skift regnskab='sr'
-Regnskab: Ændre parametre='lp'
-Regnskab: Åbn menu='m' (Alt-m)
-Regnskab: Skift periode=dp (Alt-p)
-Regnskab: Kontokort Periode=l r [konto] 
-Regnskab: Kontokort Al tid=ll r [konto] 
-Regnskab: Kontokort Periode (sortering beløb)=l r [konto] -S amount
-Regnskab: Kontokort Periode (sortering beløb)=ll r [konto] -S amount
-Regnskab: Indtægter pr. måned=l r Indtægter -M
-Regnskab: Udgifter pr. måned=l r Udgifter -M
-Regnskab: Indtæger pr. uge=l r Udgifter -W
-Regnskab: Indtægter pr. år=ll r Indtægter -M
-Regnskab: Søg Periode='s HVAD VIL DU SØGE'
-Regnskab: Søg Al tid='ss HVAD VIL DU SØGE'
-Regnskab: Sortering poster beløb='l r bank -S amount' (Periode) eller 'll r bank -S amount' (Al tid)'
-Regnskab: Sortering poster tekst='l r bank -S payee' (Periode) eller 'll r bank -S payee' (Al tid)'
-Regnskab: Sortering kan tage flere parametre f.eks. 'l r bank -S date,payee'
-Regnskab: Hver gang du åbner et regnskab tages der automatisk en backup før du starter dit arbejde
-Regnskab: Frembring forslag til automatisk udligning af fejlkonto mod deb/kred: 'autoudlign'
-N4S: N4S kan køre på Ipad, Telefon, Bærbar, computer og dele samme skærm via en SSH forbindelse
-N4S: En billig og sikker hosting løsning er linode - n4s kan hostes fra 5USD pr. måned
-Lovgivning: Kvart moms ved repræsentation imødekommes med funktionen 'rep'
-N4S: I N4S kalder vi momskoder for funktioner og hver transaktion har en Func egenskab
-N4S: Du får et nyt tip til hvordan du bruger systemet for hvert bilag du bogfører
-VIM: SØG =  Hvad Vil du søge - NB mellemrum escapes med '\' (normal)
-VIM: Erstat :%s/Hvad Vil du søge/ERSTATNING/  - NB Mellemrum escapes med '\' (normal)
-VIM: Lær at bruge vim - skriv vimtutor
-VIM: Søg efter streng blandt tidligere transaktioner = Ctrl-o (normal)
-Gnome Terminal: Ctrl-Shift-n = ny terminal - du kan køre flere terminaler af gangen
-Gnome genveje: Windows+1-9 = skift aktivitet (terminal, filer, etc)
+Vim is one of the most powerful text editors in the universe
+Bash is Bourne Again Shell - your shell, another shell is DOS - Disk based operating system - bash is also a programming language
+VIM: Insert datestamp = F9 (insert)
+VIM: Insert datetimestamp = F10 (insert)
+VIM: Empty field = å (normal)
+VIM: Delete row = dd (normal)
+VIM: Start selection = v
+VIM: Up/down = j/k (normal)
+VIM: Left/Right = h/l (normal)
+VIM: Top of file = gg (normal)
+VIM: Bottom of file = G (normal)
+TMUX: Show Clock = Ctrl-b + t
+TMUX: New Window = Ctrl-b +
+TMUX: Split terminal vertically = Ctrl-b + %
+TMUX: Split terminal horizontally = Ctrl-b + "
+TMUX: Bring tab to new window = Ctrl-b + !
+TMUX: Select tab = Ctrl-b + m
+TMUX: Insert selected tab = Ctrl-B + :join
+N4S: Today's tip is in Libraries/tips and tricks
+N4S: Open Accounting = F4
+Accounting: Change active accounting = sr
+N4S: Open Journal = F2
+N4S: Create rule guide = rule
+Accounting: Copy rules from other accounting = rule_copy
+Accounting: Run all rules: logic
+Accounting: Try writing 'pivot'
+Accounting: Try writing 'plot ACCOUNT'
+Accounting: Account card Period = 'l r ACCOUNT'
+Accounting: Account card All time = 'll r ACCOUNT'
+Accounting: Create rule = 'rule'
+Accounting: Run all rule sets = 'logic'
+Accounting: Import bank = 'csv'
+Accounting: Export csv Period = 'l csv Account > ~/tmp/filename'
+Accounting: Export csv All time= 'll csv Account > ~/tmp/filename'
+Accounting: Export html='html'
+Accounting: Change accounting='sr'
+Accounting: Change parameters='lp'
+Accounting: Open menu='m' (Alt-m)
+Accounting: Change period=dp (Alt-p)
+Accounting: Account card Period=l r [account]
+Accounting: Account card All time=ll r [account]
+Accounting: Account card Period (sort amount)=l r [account] -S amount
+Accounting: Account card Period (sort amount)=ll r [account] -S amount
+Accounting: Income per month=l r Revenue -M
+Accounting: Expenses per month=l r Expenses -M
+Accounting: Income per week=l r Expenses -W
+Accounting: Income per year=ll r Revenue -M
+Accounting: Search Period='s WHAT DO YOU WANT TO SEARCH'
+Accounting: Search All time='ss WHAT DO YOU WANT TO SEARCH'
+Accounting: Sort entries amount='l r bank -S amount' (Period) or 'll r bank -S amount' (All time)'
+Accounting: Sort entries text='l r bank -S payee' (Period) or 'll r bank -S payee' (All time)'
+Accounting: Sorting can take several parameters, e.g. 'l r bank -S date,payee'
+Accounts: Every time you open an account, a backup is automatically taken before you start your work
+Accounting: Generate proposals for automatic compensation of error account against deb/kred: 'autocompensate'
+N4S: N4S can run on Ipad, Phone, Laptop, computer and share the same screen via an SSH connection
+N4S: A cheap and secure hosting solution is linode - n4s can be hosted from 5USD per month
+Legislation: A quarter of VAT on representation is met with the 'rep' function
+N4S: In N4S we call VAT codes functions and each transaction has a Func property
+N4S: You get a new tip on how to use the system for each attachment you post
+VIM: SEARCH = What do you want to search - NB spaces are escaped with '\' (normal)
+VIM: Replace :%s/What do you want to search/REPLACE/ - NB Spaces are escaped with '\' (normal)
+VIM: Learn to use vim - write vimtutor
+VIM: Search for string among previous transactions = Ctrl-o (normal)
+Gnome Terminal: Ctrl-Shift-n = new terminal - you can run multiple terminals at once
+Gnome shortcuts: Windows+1-9 = switch activity (terminal, files, etc)
 Terminal zoom: Ctrl + +/-
-N4S: Hovedbogen har kryptografisk bevis for bogføringen indbygget (md5 hash) ?
-Ordsprog: Jeg vil hellere se kartoflerne ovenfra end nedefra
-Ordsprog: Lige så meget værd som en tændstik under vand
-Ordsprog: The upper hand is better than the lower hand
-Ordsprog: The whiter the bread, the quicker You're dead
-Ordsprog: For windows problems, reboot, for linux problems, be root
-Ordsprog: The man who chases two rabbits, catches neither
-Regnskab: Prøv vores ui = 'ui'
-Regnskab: Forslag til rubrik 111 overskud = '111'
-Regnskab: Forslag til rubrik 320 omsætning = '320'
-Regnskab: Vis passiver = 'Passiver'
-Regnskab: Vis aktiver = 'Aktiver'
-N4S: CVR opslag = 'cvr [søgefrase]'
+N4S: The ledger has cryptographic proof of the bookkeeping built in (md5 hash) ?
+Proverb: I'd rather see the potatoes from above than from below
+Proverb: Worth as much as a match under water
+Proverb: The upper hand is better than the lower hand
+Proverb: The whiter the bread, the quicker You're dead
+Proverb: For windows problems, reboot, for linux problems, be root
+Proverb: The man who chases two rabbits, catches neither
+Accounting: Try our ui = 'ui'
+Accounting: Proposal for box 111 profit = '111'
+Accounting: Proposal for box 320 revenue = '320'
+Accounting: Show liabilities = 'Liabilities'
+Accounting: Show assets = 'Assets'
+N4S: CVR search = 'cvr [search phrase]'
