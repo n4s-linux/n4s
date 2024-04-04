@@ -568,6 +568,9 @@ mkdir -p $tpath/.logs/
 if [ -f .init.bash ]; then
     source .init.bash
 fi
+if [ ! -f aliases ]; then
+    touch aliases
+fi
 }
 
 bar_size=40
