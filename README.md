@@ -146,20 +146,20 @@ N4S can be run from a central server and you can connect with the Windows Termin
 
 ## Examples of remote driving from Windows 11
 
-![Win11 Screenshot2 n4s double bookkeeping](https://github.com/n4s-linux/n4s-gratis-regnnings/blob/main/png/win11_2.png?raw=true)
+![Win11 Screenshot2 n4s double bookkeeping](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_2.png?raw=true)
 ![Win11 Screenshot3 n4s tax account](https://github.com/n4s-linux/n4s-gratis-accounting/blob/main/png/win11_3.png?raw=true)
 ![Win11 Screenshot4 n4s account](https://github.com/n4s-linux/n4s-gratis-accounts/blob/main/png/win11_4.png?raw=true)
 ![Win11 Screenshot1 n4s free accounting](https://github.com/n4s-linux/n4s-gratis-accounting/blob/main/png/win11_1.png?raw=true)
 
 ## Video demonstrations where demo accounts are posted
 [![n4s demo](demo.gif 'n4s demo')](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/)
-[![n4s demo](https://github.com/n4s-linux/n4s-gratis-regnnings/blob/main/png/demo1.gif 'n4s demo')](https://drive.google.com /file/d/1D7PW7Te92-4RvlXTPedoDU3QIuC-bMNp/view?usp=sharing)
+[![n4s demo](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/demo1.gif 'n4s demo')](https://drive.google.com /file/d/1D7PW7Te92-4RvlXTPedoDU3QIuC-bMNp/view?usp=sharing)
 
 
 # Example of reporting
 Reporting of results & balance at overall account level with associated notes in a neat layout.
 ![Example of balance balance in free accounting program n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-reksandag/main/png/res.png)
-![Example of notes in the free accounting program n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnnings/main/png/not.png)
+![Example of notes in the free accounting program n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/main/png/not.png)
 
 
 [Example account Jensens Murer ApS 2020 (fictitious company)](https://github.com/n4s-linux/n4s-gratis-accounting/tree/main/examples)
