@@ -88,7 +88,7 @@ It's important to note that although the n4s is based on a terminal, don't be fo
 
 💼 *Your Data, Your Control*: One of the most compelling features of N4S is that you have full control over your data. You host it on your own server, which means your information is always in your hands. And the best of all? You can do it for as little as $5 a month on Linode!
 
-# Do you miss the good old DOS days without so much gas or expensive subscriptions?
+# Do you miss the good old DOS days without so much BS or expensive subscriptions?
 Today, when technology and computers are constantly evolving 🚀, it can be tempting to look back to the good old days of the 1990s 🕰️ when the DOS operating system and early accounting systems were dominant 💾. There is something nostalgic about the time when computers and software worked in a simpler way and the user experience had its own charming qualities.
 
 **Stability and Reliability:**
