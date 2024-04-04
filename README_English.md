@@ -4,7 +4,7 @@ The vision of future accounting is that past, present and future merge.
 So if you dream of a live account that is not just up to date for the here and now, but with a built-in crystal ball, n4s could be the framework around this.
 
 If we are to make a technological quantum leap, we have to work together.
-Instead of many providers of accounting systems having to be sold SAAS solutions in their own camps and solving the same problems, we can help each other build a strong system that is jointly owned for now and forever.
+Instead of many providers of accounting systems having to be sell SAAS solutions in their own camps and solving the same problems aka reinventing the wheel over and over, we can help each other build a strong system that is commonly owned for now and forever.
 That's why n4s is launched as **free software** - free software is often confused with being free, but that's not always the case. Free therefore does not refer to price, but to freedom, as in that the software respects some basic rights that we believe should accompany all software:
 * The freedom to use the program for any purpose (freedom 0).
 * The freedom to learn how the program works and change it according to your own needs (freedom 1). Access to the source code is a condition for this.
@@ -16,17 +16,13 @@ There is a time cost with starting up a new system, and if you need to use the s
 If you are missing a feature, you can offer a bounty for such a feature. If several people offer a bounty for the same feature, the bounty can increase and make it more attractive for a developer to make it.
 
 # A simple and free accounting program
-Here, no bindings or payment cards are necessary.
 N4S is a free and open source accounting system, and thus free to use now and forever.
 
 It is almost safe to say that n4s is one of the cheapest accounting programs on the market.
 It only costs the time you have to invest in working in a more efficient way.
-And possibly hosting service which is available down to < 50 DKK/month if you want your accounts to be in the cloud and can be accessed from all over the world. For that price, you get an almost unlimited number of transactions, an unlimited number of accounts, unlimited snapshots and backups of your accounts, etc. You only pay for the space you used.
-If you choose to host your system, you should seek qualified help to secure the server. We recommend that a server's firewall is completely closed, with the exception of the port for the terminal's secure connection, which is encrypted with AES/Blowfish.
-
 You can get started by downloading and trying our OVA version on your machine, absolutely free.
 
-When you book in N4S, your accounting becomes a breeze. Once you learn it... !
+When you do bookeeping in N4S, your accounting becomes a breeze. Once you learn it... !
 
 Whether you have a brand new company, an association or just your household accounts, here you have an accounting program that can support your activities from now on and always.
 
