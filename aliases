@@ -1,3 +1,5 @@
+alias o="bash /svn/svnroot/Applications/journalviewer.bash"
+
 alias farvelæg="n4s_setcolors=1 n4s_colorset=1 l b"
 alias farvelægkontokort="n4s_setcolors=1 n4s_colorset=1 l r"
 function nmenu() {
@@ -19,7 +21,7 @@ function updatebudget() {
         return
     fi
     acc=$(cat $tpath/.budgetkonto 2>/dev/null)
-    acc=$(php /svn/svnroot/Applications/newl.php accounts|grep -v ^Fejl|grep -v ^Egenkapital:|grep -v ^Udgifter|grep -v ^Indtægter|grep -v ^Resultatdisponering|fzf --header="Vælg konto til fremskrivning" --query="$acc")
+    acc=$(php /svn/svnroot/Applications/newl.php accounts|grep -v ^Fejl|grep -v ^Egenkapital:|grep -v ^Udgifter|grep -v ^Indtægter|grep -v ^Resultatdisponering|fzf --ansi --header="Vælg konto til fremskrivning" --query="$acc")
     echo -n "$acc" > $tpath/.budgetkonto
     pushd . >/dev/null
     gobackmonths=$(cat $tpath/.budgetgobackmonths 2>/dev/null)
@@ -221,6 +223,7 @@ bind '"\er":"r\n"' 2>/dev/null
 bind '"\eb":"b\n"' 2>/dev/null
 bind '"\ep":"dp\n"' 2>/dev/null
 bind '"\es":"ds\n"' 2>/dev/null
+bind '"\eo":"o\n"' 2>/dev/null
 bind '"\eq":"changetermcmd\n"' 2>/dev/null
 shopt -s histappend
 mkdir -p ~/tmp/ /svn/svnroot/tmp/
@@ -470,7 +473,7 @@ echo "$(whoami) $(date '+%Y-%m-%dT%H:%m') $bnpwd : $cmd" >> /data/regnskaber/.lo
 BPWD="$(basename "$PWD")"
 	tips=$(shuf -n 1 /svn/svnroot/Libraries/tipsogtricks);
 	diff3=$(grep $(date +%Y-%m-%d --date="-2 days") ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
-	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=black,bg=#594a18]🐃 Vidste du at: 🐃 $tips#[fg=colour50,bg=colour95]" 2>/dev/null
+	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=black,bg=#594a18]🐃 #didyouknow 🐃 $tips#[fg=colour50,bg=colour95]" 2>/dev/null
 	tmux set-option status-right "#[fg=black,bg=white] $params %Y-%m-%dT%H:%M #[fg=colour233,bg=colour8]n4s v$version"
 	pushd . >/dev/null
 	cd "$tpath"
