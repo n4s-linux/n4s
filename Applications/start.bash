@@ -89,6 +89,14 @@ elif [ "$argument" == "watch" ]; then
 		./.watch.bash 
 		sleep 360
 	done
+
+
+
+elif [ "$argument" == "search2" ]; then
+	(
+	php /svn/svnroot/Applications/newl.php r|grep -v Resultatdisponering|grep -v Egenkapital:Periodens|fzf --tac --ansi --multi|vi -  -c 'if !argc() | qa | endif'
+	)
+
 elif [ "$argument" == "search" ]; then
 	(
 	LEDGER_BEGIN=1970-01-01 LEDGER_END=2099-12-31 ledger -f $2/curl -S payee,date select date,account,amount,payee "where payee=~/$3/" -S date
@@ -161,7 +169,7 @@ echo
 elif [ "$argument" == "regnskab" ]; then
 	bash --rcfile <(echo '. ~/.bashrc; local="Åbn lokal" sr')
 elif [ "$argument" == "nyregnskab" ]; then
-	bash --rcfile <(echo '. ~/.bashrc; local="Åbn lokal" sr NY')
+	bash --rcfile <(echo '. ~/.bashrc; local="Åbn lokal" sr NEW')
 elif [ "$argument" == "edit" ]; then
 	bn="$2"
 	fn="$3"
