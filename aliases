@@ -526,17 +526,17 @@ function scrips() {
 function sr() {
 clear&&tmux clear-history
 if [ -z "$1" ] ; then
-	export tpath=~/regnskaber/$((echo NY;ls -t ~/regnskaber)|fzf --no-mouse --cycle)
+	export tpath=~/regnskaber/$((echo NEW;ls -t ~/regnskaber)|fzf --no-mouse --cycle)
 else
 	export tpath=~/regnskaber/"$1"
 fi
 bn=$(basename "$tpath")
-if [ "$bn" == "NY" ]; then
-	echo -n "Nyt regnskab - Navn: "
+if [ "$bn" == "NEW" ]; then
+	echo -n "New Account - Name: "
 	read navn < /dev/tty
 	navn=$(echo "$navn"| tr -cd '[:alnum:]._-'|sed 's/\ /_/g')
 	if [ "$navn" != "" ]; then
-		path=$(echo -e "/data/regnskaber\n~/regnskaber"|fzf --header="Vælg sti")
+		path=$(echo -e "/data/regnskaber\n~/regnskaber"|fzf --header="Chose Your Path")
 		newfolder=$path/"$navn"
 		mkdir -p "$newfolder"
 		tpath="$newfolder"
@@ -561,7 +561,7 @@ LEDGER_END=$(date +%Y-01-01 --date="+1 year")
 if [ "$noperiod" != 1 ]; then
 dp
 fi
-echo -e "\e[42mÅbnet $(basename "$tpath") OK - Tryk Alt-m eller skriv 'm' [Enter] \e[0m"
+echo -e "\e[42mOpened $(basename "$tpath") OK - Press Alt-m or write 'm' [Enter] for accounting menu\e[0m"
 echo "Full log = $logging"
 mkdir -p $tpath/.logs/
 
