@@ -158,7 +158,7 @@ N4S can be run from a central server and you can connect with the Windows Termin
 
 # Example of reporting
 Reporting of results & balance at overall account level with associated notes in a neat layout.
-![Example of balance balance in free accounting program n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-reksandag/main/png/res.png)
+![Example of balance balance in free accounting program n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/main/png/res.png)
 ![Example of notes in the free accounting program n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/main/png/not.png)
 
 
