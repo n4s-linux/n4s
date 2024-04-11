@@ -1,3 +1,4 @@
+source /svn/svnroot/Libraries/aliases
 function symbols() {
 fn=$(find $tpath/.tags/.*.sym|fzf)
 vi "$fn"
@@ -528,7 +529,6 @@ alias e="php /svn/svnroot/Applications/newl.php entry"
 alias eu="php /svn/svnroot/Applications/key.php entry bilag"
 
 unalias l 2>/dev/null #ubuntu default alias
-source /svn/svnroot/Libraries/aliases
 function scrips() {
 		ls -a /svn/svnroot/Applications/scrips/|fzf --multi --header="Vælg plugins"|while read choice
 		do
