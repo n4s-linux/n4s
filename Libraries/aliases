@@ -13,15 +13,20 @@ function rente() {
 
     LEDGER_DEPTH=999 LEDGER_BEGIN=1970-01-01 noend=1 php /svn/svnroot/Applications/newl.php csv|rente=$rente php /svn/svnroot/Applications/rente.php "$konto" 
 }
+function lastsym() {
+	echo -n "$1" >> ~/.lastsym
+}
 function l() {
     php /svn/svnroot/Applications/newl.php $@
+	lastsym 📒
 }
 function lll() {
-
     noend=1 LEDGER_END=2099-12-31 LEDGER_BEGIN=1970-01-01 l $@
+	lastsym 🗃️
 }
 unalias ll 2>/dev/null #ubuntu default alias
 function ll() {
+	lastsym 📚
     noend=1 LEDGER_BEGIN=1970-01-01 l $@
 }
 function lc() {
