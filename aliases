@@ -1,3 +1,7 @@
+function symbols() {
+fn=$(find $tpath/.tags/.*.sym|fzf)
+vi "$fn"
+}
 alias o="bash /svn/svnroot/Applications/journalviewer.bash"
 
 alias farvelæg="n4s_setcolors=1 n4s_colorset=1 l b"
@@ -186,6 +190,7 @@ function dp() {
 	php /svn/svnroot/Applications/datepick.php
 	source ~/tmp/.datepick_$bn
 	end=$LEDGER_BEGIN
+	lastsym 🕒
 	begin=1970-01-01 
     tmux split-window -l2 -v "cd $tpath; tpath=$tpath LEDGER_DEPTH=999 LEDGER_BEGIN=$begin LEDGER_END=$end noend=1 php /svn/svnroot/Applications/newl.php csv|LEDGER_BEGIN=$LEDGER_BEGIN tpath=$tpath php /svn/svnroot/Applications/calcopening.php"
     tmux last-pane
@@ -314,18 +319,21 @@ function srb()
 }
 
 function csv() {
+	lassym 💾
 	echo Starting CSV import
 	php /svn/svnroot/Applications/key_csv.php load
 	echo Loading possible account and func suggestions
 	php /svn/svnroot/Applications/newl.php suggestions
+	lastsym 🤖
 	#php /svn/svnroot/Applications/newl.php openentries
 	echo Applying rules if any - you can define rules with 'rule' or 'rule_copy'
 	logic
+	lastsym 🛸
 }
 function cvr() {
 	php /svn/svnroot/Applications/cvr.php "$@"|less
 }
-alias rule="php /svn/svnroot/Applications/key_condgen.php"
+alias rule="lastsym 📜;php /svn/svnroot/Applications/key_condgen.php"
 function rule_copy() {
 	cp $(ls ~/regnskaber/*/logic*|fzf -e --no-mouse --cycle) "$tpath"
 }
@@ -450,13 +458,18 @@ function getcolor() {
 prompt_function () {
 cmd=$(fc -ln -0)
 bn=$(basename "$tpath");
+if [ ! -f  ~/.lastsym ]; then 
+	touch ~/.lastsym 
+fi
+syms=$(cat ~/.lastsym|tail -c95)
+
 update_title "#[bg=yellow]$cmd #[bg=blue]$LEDGER_BEGIN - $LEDGER_END"
 if [ "$tpath" != "" ]; then
 	showpath="#[fg=black,bg=white]$(basename "$tpath")"
 else
 	showpath=n4s
 fi
-tmux set -g pane-border-format "#[fg=black,bg=gray]$env$showpath#[fg=black,bg=orange]#T"
+tmux set -g pane-border-format "#[fg=black,bg=gray]$env$showpath#[fg=black,bg=orange]#T #[fg=black bg=gray]$syms"
 if [ "$tpath" != "" ]; then
     if [ "$tpath" == "$PWD" ]; then
         if [ "$logging" == "on" ]; then
@@ -500,12 +513,14 @@ function s() {
 	fi
 	echo "searching for $@  in $LEDGER_BEGIN - $LEDGER_END - use ss for searching in all time"
 	php /svn/svnroot/Applications/key.php search $LEDGER_BEGIN $LEDGER_END "$@"
+	lastsym 🔎
 }
 function ss() {
 	if [ "$1" == "" ]; then
 		echo "s kræver søgefrase, f.eks. 's 2022-01 løn'"
 		return
 	fi
+	lastsym 🔬
 	echo "searching for $@  in 1970-01-01 - 2019-12-31 - use s for searching only in $LEDGER_BEGIN - $LEDGER_END"
 	php /svn/svnroot/Applications/key.php search 1970-01-01 2099-12-31 "$@" 
 }
@@ -524,6 +539,7 @@ function scrips() {
 		done
 }
 function sr() {
+lastsym 🚀
 clear&&tmux clear-history
 if [ -z "$1" ] ; then
 	export tpath=~/regnskaber/$((echo NEW;ls -t ~/regnskaber)|fzf --no-mouse --cycle)
@@ -539,6 +555,7 @@ if [ "$bn" == "NEW" ]; then
 		path=$(echo -e "/data/regnskaber\n~/regnskaber"|fzf --header="Chose Your Path")
 		newfolder=$path/"$navn"
 		mkdir -p "$newfolder"
+		touch "$newfolder/aliases"
 		tpath="$newfolder"
 		bn=$(basename "$tpath")
 		ln -s "$tpath" ~/regnskaber/"$bn"
