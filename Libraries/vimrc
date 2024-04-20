@@ -71,7 +71,12 @@ nnoremap <C-u> :exe "ter ++close bash " . $tpath . "/.menu.bash tags <c-r><c-w>"
 nnoremap <C-p> :!tmux new-window "noperiod=1 notitle=1 bash /svn/svnroot/Applications/start.bash tag <c-r><c-w>"<CR><CR>
 nnoremap <C-t> :silent let f = system("tmux split-window -h 'bash /svn/svnroot/Applications/showrt.bash <c-r><c-w>'")<CR>
 " :silent let f = system('ls *.vim')
-nnoremap <C-o> :!tmux new-window bash /svn/svnroot/Applications/start.bash search $tpath <c-r><c-w><CR><CR>
+nnoremap <C-o> :!tmux new-window tpath=$tpath bash /svn/svnroot/Applications/start.bash search $tpath 
+
+
+nnoremap <C-o> :silent !bash /svn/svnroot/Applications/journalviewer.bash <CR><CR>:redraw:<cr>
+
+
 " :!tmux new-window bash /svn/svnroot/Applications/start.bash igangv
 
 nnoremap <C-j> /#<CR>
