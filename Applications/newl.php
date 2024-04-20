@@ -190,7 +190,7 @@
 	else if ($nargs[0] != "entry") { // this is where we pass the ledger commands - todo pass them properly even with quotes and stuff, to make it a proper working full wrapper
 		foreach ($nargs as $curarg)
 			$cmd .= " $curarg";
-			$cmd .="|php /svn/svnroot/Applications/colorizer.php";
+			if (getenv("color") != "none") $cmd .="|php /svn/svnroot/Applications/colorizer.php";
 		system("$cmd");
 		if ($undefined_aliascount > 0)fwrite(STDERR,"$undefined_aliascount manglende aliases - skriv 'aliases'\n");
 	}
@@ -243,6 +243,7 @@
 		file_put_contents("$tpath/$f[Filename]",json_encode($f,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		echo "Gemt $tpath/$f[Filename]\n";
 		system("php /svn/svnroot/Applications/newl.php b >/dev/null");
+		file_put_contents("/home/$op/.lastsym","📝$f[Reference]",FILE_APPEND);
 	}
 	function askamount($konto,$bal) {
 		require_once("/svn/svnroot/Applications/math.php");
@@ -284,8 +285,10 @@
 			$curdesc = file_get_contents("$tpath/.lastdesc_$hash");
 		}
 		else $curdesc = "";
-		if ($curdesc != "")
+		if ($curdesc != "") {
 			$rv = getstdin("Indtast tekst [$curdesc]");
+			if (trim($rv) == "") $rv = $curdesc;
+		}
 		else
 			$rv = getstdin("Indtast tekst");
 		file_put_contents("$tpath/.lastdesc_$hash",$rv);
