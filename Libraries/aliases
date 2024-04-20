@@ -1,6 +1,6 @@
 function rente() {
 	if [ "$1" == "" ]; then
-		konto=$(php /svn/svnroot/Applications/newl.php accounts|fzf --header="Vælg konto til renteberegning")
+		konto=$(php /svn/svnroot/Applications/newl.php accounts|sed -e 's/\x1b\[[0-9;]*m//g'|fzf --header="Vælg konto til renteberegning")
 	else
 		rente="$1"
 	fi
@@ -14,7 +14,7 @@ function rente() {
     LEDGER_DEPTH=999 LEDGER_BEGIN=1970-01-01 noend=1 php /svn/svnroot/Applications/newl.php csv|rente=$rente php /svn/svnroot/Applications/rente.php "$konto" 
 }
 function lastsym() {
-	echo -n "$1" >> ~/.lastsym
+	echo -n "- $1" >> ~/.lastsym
 }
 function l() {
     php /svn/svnroot/Applications/newl.php $@
