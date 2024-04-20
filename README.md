@@ -228,6 +228,9 @@ Features:
 * [How to color your reports in n4s?](https://www.youtube.com/watch?v=Id8-jAB-Q8c)
 * [How to add comments to your reports in n4s?](https://www.youtube.com/watch?v=iqgOCXVCxf0)
 
+# About Unicode
+    In the old days the number of characters were pretty limited, but now we are using unicode, so to get the full n4s experience we recommend You visit [Nerd Fonts](https://nerdfonts.com)
+
 # TLDR - Let me download your OVA
 * Link to [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
 * Link to [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (remember to get the Extension Pack too)
