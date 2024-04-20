@@ -320,7 +320,7 @@ function srb()
 }
 
 function csv() {
-	lassym 💾
+	lastsym 💾
 	echo Starting CSV import
 	php /svn/svnroot/Applications/key_csv.php load
 	echo Loading possible account and func suggestions
@@ -487,7 +487,10 @@ echo "$(whoami) $(date '+%Y-%m-%dT%H:%m') $bnpwd : $cmd" >> /data/regnskaber/.lo
 BPWD="$(basename "$PWD")"
 	tips=$(shuf -n 1 /svn/svnroot/Libraries/tipsogtricks);
 	diff3=$(grep $(date +%Y-%m-%d --date="-2 days") ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
-	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=black,bg=#594a18]🐃 #didyouknow 🐃 $tips#[fg=colour50,bg=colour95]" 2>/dev/null
+	if [ -f /data/.custom ]; then
+		custom=$(cat /data/.custom)
+	fi
+	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=black,bg=#594a18] $custom 🐃 #didyouknow 🐃 $tips#[fg=colour50,bg=colour95]" 2>/dev/null
 	tmux set-option status-right "#[fg=black,bg=white] $params %Y-%m-%dT%H:%M #[fg=colour233,bg=colour8]n4s v$version"
 	pushd . >/dev/null
 	cd "$tpath"
@@ -539,7 +542,7 @@ function scrips() {
 		done
 }
 function sr() {
-lastsym 🚀
+lastsym 🖫
 clear&&tmux clear-history
 if [ -z "$1" ] ; then
 	export tpath=~/regnskaber/$((echo NEW;ls -t ~/regnskaber)|fzf --no-mouse --cycle)
@@ -552,13 +555,15 @@ if [ "$bn" == "NEW" ]; then
 	read navn < /dev/tty
 	navn=$(echo "$navn"| tr -cd '[:alnum:]._-'|sed 's/\ /_/g')
 	if [ "$navn" != "" ]; then
-		path=$(echo -e "/data/regnskaber\n~/regnskaber"|fzf --header="Chose Your Path")
+		path=$(echo -e "/data/regnskaber\n/home/$(whoami)/regnskaber"|fzf --header="Chose Your Path")
 		newfolder=$path/"$navn"
 		mkdir -p "$newfolder"
 		touch "$newfolder/aliases"
 		tpath="$newfolder"
 		bn=$(basename "$tpath")
+        if [ ! -f ~/regnskaber/"$bn" ]; then
 		ln -s "$tpath" ~/regnskaber/"$bn"
+        fi
 	fi
 fi
 bn=$(basename "$tpath")
