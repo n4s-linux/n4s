@@ -149,6 +149,7 @@ Udgifter:Personaleomkostninger:Pensioner
 Udgifter:Personaleomkostninger:Vederlag til afløsning af pensionstilsagn 
 Udgifter:Personaleomkostninger:Omkostninger til social sikring
 Udgifter:Personaleomkostninger:AER & AUB
+Udgifter:Personaleomkostninger:Barsel
 Udgifter:Personaleomkostninger:ATP
 Udgifter:Personaleomkostninger:Andre personaleomkostninger
 Udgifter:Personaleomkostninger:Personalegoder 
