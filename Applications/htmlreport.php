@@ -153,7 +153,7 @@ function ledgerhack() {
 function getdata($begin,$end) {
 	$op = exec("whoami");
 	$lh = ledgerhack();
-	$cmd = "$lh; LEDGER_BEGIN=$begin LEDGER_END=$end php /svn/svnroot/Applications/newl.php csv -S account,date,payee > /home/$op/htmlreport.csv";
+	$cmd = "$lh; LEDGER_BEGIN=$begin LEDGER_END=$end color=none php /svn/svnroot/Applications/newl.php csv -S account,date,payee> /home/$op/htmlreport.csv";
 	exec($cmd);
 	$row = 1;
 	$darray = array();
@@ -229,7 +229,8 @@ function getdata($begin,$end) {
 		$ptotal = prettynum($total);
 		echo "<tr><td>&nbsp;</td><td style='background: white;'><b><u>$header i alt</b></u></td><td style='background:white'><b><u>$ptotal</u></b></td></tr>";
 		echo "</tbody></table>";
-		file_put_contents("/home/joo/tmp/notes.json",json_encode($notes,JSON_PRETTY_PRINT));
+		$op = exec("whoami");
+		file_put_contents("/home/$op/tmp/notes.json",json_encode($notes,JSON_PRETTY_PRINT));
 	}
 	function prettynum($a) { return "<p align=right>" . number_format($a,0,",",".") . "</p>";}
 function getw($col) {
