@@ -21,6 +21,7 @@ foreach ($files as $file) {
     $orghash = md5(json_encode($data));
     $t1 = $data['Transactions'][0];
     $t2 = $data['Transactions'][1];
+	if ($data['Transactions'][0]['Amount'] == 0) continue;
     if (!is_file("$lpath/$file")) continue;
 $code = file_get_contents("$lpath/$file");
     eval($code);
