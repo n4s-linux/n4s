@@ -3,7 +3,6 @@ php /svn/svnroot/Applications/key.php ledger b > /dev/null&
 source /svn/svnroot/Applications/nicebal.bash
 #aktivitet=$(head -n1 "$tpath/.doing.txt")
 source $tpath/.tags.bash
-source /svn/svnroot/Applications/ol.bash
 source /svn/svnroot/Applications/vitouch.bash
 function regnstyk() {
 	uuid=$(uuidgen)
@@ -191,7 +190,13 @@ elif [ "$valg" == "tags" ]; then
 	fn=$(echo -n $(echo "$tpath/.tags/$fn"|awk '{print $1}')) 
 	bn=$(basename "$fn")
 	bbn=${bn:0:5}
-	notitle=$notitle vitouch "$fn" "$tpath/.tags/.$ofn.lr" "$tpath/.tags/$ofn.diff" "$tpath/.tags/.$ofn.lr.diff"
+	if [ -f "$tpath/.tags/.$ofn.sym" ]; then
+		sym=$(cat "$tpath/.tags/.$ofn.sym")
+		echo -n "- $sym" >> ~/.lastsym
+	else
+		echo -n - ❓ > "$tpath/.tags/.$ofn.sym"
+	fi
+	notitle=$notitle vitouch "$fn" "$tpath/.tags/.$ofn.sym" "$tpath/.tags/.$ofn.lr" "$tpath/.tags/$ofn.diff" "$tpath/.tags/.$ofn.lr.diff"
 	exit
 elif [ "$valg" == "tag" ] || [ "$valg" == "Tag" ]; then #only for command line entering of an extra search param
 	fn=$(echo -n $(grep -L "#dupl" $tpath/.tags/*|grep -i "$2"|while read i; do echo -n $( basename "$i")" ";stat --printf="%s (%y)\n" "$i"; done|fzf)|awk '{print $1}')
