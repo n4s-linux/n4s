@@ -3,7 +3,7 @@ include("/svn/svnroot/Applications/common/SimpleTpl.php");
 include("ledger_token.php");
 session_start();
 
-
+die("nisse");
 class Auth
 {
 	public function __construct()
@@ -21,7 +21,7 @@ class Auth
 
 	public function loginPerform()
 	{
-
+		error_log("HEST");
 
 		$dir = "/data/regnskaber/".$_REQUEST["regnskab"];
 		if (!preg_match("/[a-z0-9]+/", $_REQUEST["regnskab"]))

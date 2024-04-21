@@ -55,7 +55,7 @@ class core
     {
         $this->stpl = $stpl;
 
-        if ($_REQUEST["logout"] == "true")
+        if ((isset($_REQUEST["logout"])) and ($_REQUEST["logout"] == "true"))
         {
             $this->logout();
             header("location: /");
@@ -83,7 +83,7 @@ class core
 		$this->stpl->assign("input", $_REQUEST);
 		if ($this->loginPerform())
 		{
-			$_SESSION["tpath"]="/home/joo/regnskaber/transactions_".$this->regnskab;
+			$_SESSION["tpath"]="/data/regnskaber/regnskaber/".$this->regnskab;
 			$_SESSION["regnskab"]=$this->regnskab;
 			$_SESSION["username"]=$this->username;
 		
@@ -111,14 +111,15 @@ class core
 
     public function loginPerform()
     {
-            if (!preg_match("/[a-z0-9]+/", $_REQUEST["regnskab"]))
-                    return $this->loginError("Ugyldige regnskab");
-            elseif (!is_dir("/home/joo/regnskaber/transactions_".$_REQUEST["regnskab"]) && ! is_link("/home/joo/regnskaber/transactions_".$_REQUEST["regnskab"]))
-                    return $this->loginError("Ugyldigt regnskab");
-            elseif (file_exists("/home/joo/regnskaber/transactions_".$_REQUEST["regnskab"]."/credentials.json"))
+	    error_log("Tak for kaffe");
+            if (!preg_match("/^[a-z0-9\_]+$/", $_REQUEST["regnskab"]))
+                    return $this->loginError("Ugyldigt regnskab [regexp]");
+            elseif (!is_dir("/data/regnskaber/".$_REQUEST["regnskab"]) && ! is_link("/data/regnskaber/".$_REQUEST["regnskab"]))
+                    return $this->loginError("Ugyldigt regnskab [notfound]");
+            elseif (file_exists("/data/regnskaber/".$_REQUEST["regnskab"]."/credentials.json"))
             {
                     $pwdb = json_decode(file_get_contents(
-                            "/home/joo/regnskaber/transactions_".$_REQUEST["regnskab"]."/credentials.json"),true);
+                            "/data/regnskaber/".$_REQUEST["regnskab"]."/credentials.json"),true);
 
                     if (!isset($pwdb[$_REQUEST["username"]])) // username not found
                             return $this->loginError("Forkert brugernavn eller password");
@@ -130,9 +131,9 @@ class core
                                             "regnskab"=>$_REQUEST["regnskab"]);
                     return true; // SUCCESS
             }
-            elseif (file_exists("/home/joo/regnskaber/transactions_".$_REQUEST["regnskab"]."/password"))
+            elseif (file_exists("/data/regnskaber/".$_REQUEST["regnskab"]."/password"))
             {
-                    $pwd = trim(file_get_contents("/home/joo/regnskaber/transactions_".$_REQUEST["regnskab"]."/password"));
+                    $pwd = trim(file_get_contents("/data/regnskaber/".$_REQUEST["regnskab"]."/password"));
                     if (($_REQUEST["password"] == $pwd) and ($_REQUEST["username"] != ""))
                     {
                         $_SESSION["authed"]=array("username"=>"nobody", "regnskab"=>$_REQUEST["regnskab"]);
@@ -186,7 +187,7 @@ class core
     public function render()
     {
 
-        if ($module=$_REQUEST["m"])
+        if ((isset($_REQUEST["m"])) and ($module=$_REQUEST["m"]))
         {
             if (preg_match("/^[a-z]+$/", $module))
                 if (file_exists($file = (getcwd()."/modules/$module/$module.class.php")))
