@@ -41,18 +41,9 @@ $op=exec("whoami");
            foreach ($mappings as $csvheader => $datafield) {
                    $c[$datafield] = $row[$csvheader];
            }
-      $c['Amount'] = str_replace(".","",$c['Amount']);
-      $c['Amount'] = str_replace(",",".",($c['Amount']));
-	$c['Date'] = str_replace(".","-",$c['Date']);
-	$c['Date'] = str_replace("/","-",$c['Date']);
-if (isset($c['Func']))
-	$curfunc = $c['Func'];
-else
-	$curfunc = "";
-if (isset($c['Account']))
-	$curacc = $c['Account'];
-else
-	$curacc = "";
+      $c['Amount'] = str_replace(".","",$c['Amount']);       $c['Amount'] = str_replace(",",".",($c['Amount'])); 	$c['Date'] = str_replace(".","-",$c['Date']); 	$c['Date'] = str_replace("/","-",$c['Date']);
+if (isset($c['Func'])) 	$curfunc = $c['Func']; else 	$curfunc = "";
+if (isset($c['Account'])) 	$curacc = $c['Account']; else 	$curacc = "";
            $curtrans['Transactions'] = array();
 	$curtrans['Comment'] = "";
          $curtrans['Description'] = clean($c['Description']);
@@ -65,8 +56,12 @@ else
 		$curtrans['Date'] = date("Y-m-d",strtotime($c['Date']));
 	if (strtotime($curtrans['Date']) < strtotime("1986-12-25"))
 		die("Aborting, this is some old stuff that should probably not be imported- cant understand date format $c[Date]...\n");
-	if (strtotime($curtrans['Date']) > strtotime("+1 days") && getenv("future") != "1")
+	if (strtotime($curtrans['Date']) > strtotime("+1 days") && getenv("future") != "1") {
+		$jsondata = json_encode($curtrans);
+		fwrite(STDERR, “Not importing into future [$jsondata]\n”);
+		continue;
 		die("Aborting, we should not import future transactions $c[Date]...\n");
+	}
          $curtrans['UID'] = uniqid();
 	if (isset($c["Reference"]))
 		 $curtrans['Reference'] = $c['Reference'];
