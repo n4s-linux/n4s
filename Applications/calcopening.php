@@ -32,10 +32,13 @@ while ($line = fgetcsv($fd,null,",","\"","\\")) { // GET DATA
 $y = 0;
 $s = "";
 foreach ($saldo as $konto => $cursaldo) {
+	$orgkonto = $konto;
+	$kkkeep = array("Egenkapital:Selskabskapital","Egenkapital:Mellemregning");
 	$y += $cursaldo;
 	if (intval($cursaldo) == 0) continue;
 	$cursaldo = number_format($cursaldo,2,".","");
-	$s .= "$begin ☀ $konto\n";
+	if (!stristr($konto,"reserve") && !in_array($konto,$kkkeep)) continue; // dont reset reserves and keep kkkeep account (capital and mellemregning)
+	$s .= "$begin ☀ $orgkonto\n";
 	$s .= "\t$konto  $cursaldo\n\tEgenkapital:Overført resultat\n\n";
 }
 file_put_contents("$tpath/.Åbning_$begin.ledger",$s);
