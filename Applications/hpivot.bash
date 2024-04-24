@@ -1,3 +1,4 @@
+export color=none
 if [ "$retning" == "" ]; then
 	retning=$(echo -e "lodret\nvandret\n"|fzf)
 fi
