@@ -32,10 +32,16 @@ function getbg() {
 function vitouch() {
         bn="$(basename "$1")"
 	update_title "$bn"
+	if [ -f "$tpath/.tags/.$bn.sym" ]; then
+		sym=$(cat $tpath/.tags/.$bn.sym)
+	else
+		sym=""
+	fi
+	
 	if [ "$notitle" == "" ]; then
 		shortbn="${bn:0:6}" #credits #chatgpt
 		bg=$(getbg $shortbn)
-		tmux rename-window "$shortbn"
+		tmux rename-window "$sym $shortbn"
 	fi
 	bnt="$(basename "$tpath")"
 	lockfile="$tpath/.tags/.$bn"".lock"
