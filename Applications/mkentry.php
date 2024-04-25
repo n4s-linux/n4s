@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Europe/Copenhagen');
 	$op = exec("whoami");
 	function filebydate($a,$b) {
 		return (($a['Date']) > ($b['Date']));
@@ -56,7 +57,7 @@
 	$data['Filename'] = basename($nfn);
 	$data['Date'] = date("Y-m-d");
 	unset($data['Fn']);unset($data['Fullfn']);
-	$data['History'] = array('Date'=>date("Y-m-d H:m"),'op'=>exec("whoami"),"Description"=>"Duplikeret transaktion");
+	$data['History'] = array('Date'=>date("Y-m-d H:i"),'op'=>exec("whoami"),"Description"=>"Duplikeret transaktion");
 	require_once("/svn/svnroot/Applications/proc_open.php");
 	$data["UID"] = uniqid();
 	if (!isset($data['Comment'])) $data['Comment'] = "";
