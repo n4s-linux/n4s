@@ -3,63 +3,46 @@ Accounts are typically historical, i.e. they describe things that happened in th
 The vision of future accounting is that past, present and future merge.
 So if you dream of a live account that is not just up to date for the here and now, but with a built-in crystal ball, n4s could be the framework around this.
 
-If we are to make a technological quantum leap, we have to work together.
-Instead of many providers of accounting systems having to be sell SAAS solutions in their own camps and solving the same problems aka reinventing the wheel over and over, we can help each other build a strong system that is commonly owned for now and forever.
-That's why n4s is launched as **free software** - free software is often confused with being free, but that's not always the case. Free therefore does not refer to price, but to freedom, as in that the software respects some basic rights that we believe should accompany all software:
-* The freedom to use the program for any purpose (freedom 0).
-* The freedom to learn how the program works and change it according to your own needs (freedom 1). Access to the source code is a condition for this.
-* The freedom to redistribute copies (freedom 2).
-* The freedom to improve the software and release the improvements to the public for the benefit of society as a whole (freedom 3). Access to the source code is also a condition for this.
-
-There is a time cost with starting up a new system, and if you need to use the system professionally and have it set up to comply with current legislation, you should seek expert guidance. However, this does not apply to small businesses with a turnover of less than 300,000
-
-If you are missing a feature, you can offer a bounty for such a feature. If several people offer a bounty for the same feature, the bounty can increase and make it more attractive for a developer to make it.
-
 # A simple and free accounting program
 N4S is a free and open source accounting system, and thus free to use now and forever.
-
-It is almost safe to say that n4s is one of the cheapest accounting programs on the market.
-It only costs the time you have to invest in working in a more efficient way.
-You can get started by downloading and trying our OVA version on your machine, absolutely free.
 
 When you do bookeeping in N4S, your accounting becomes a breeze. Once you learn it... !
 
 Whether you have a brand new company, an association or just your household accounts, here you have an accounting program that can support your activities from now on and always.
 
-Our vision is that it should be simple and efficient to do your bookkeeping, VAT accounting, household accounting and more.
+You can easily build in custom logic to optimize and refine your processes. 
 
 Your data can be easily exported to an open format that you can take with you later to any other system.
 
-## Key selling points
-### Lord in his own house
+# Lord in his own house
 With n4s you have full control over your own data.
 
-### Velocity
+# Velocity
 n4s is faster than other systems on the market. Most operations take place in a split second. Only your processing power and hard disk/ram set the limit to how quickly the system is run, and for most small accounts you won't blink until you get the data you ask for on the screen.
 
-### Possibility of automatic consolidation and allocation between subsidiaries
+# Possibility of automatic consolidation and allocation between subsidiaries
 n4s can easily be set up to automatically consolidate your accounts below:
 * Automatic transfer of result
 * Automatic reconciliation of interim accounts
 
-### Automatic accounting based on own defined rules *
+# Automatic accounting based on own defined rules *
 in n4s you can define rules yourself for how your new postings are to be accounted for.
 This means you can get rid of manual posting again and again of the same type of items
 eg. IF Text = 'Fee' THEN Account = 'Expenses:Administration:Fees'
 
-### Secured against acquisition
+# Secured against acquisition
 n4s stands for Not 4 Sale - translated 'not for sale'. Therefore, it is secured against acquisition, so that the system will always be free.
 You are welcome to clone our system and sell it on, but on the condition that you respect the basic rights of the users...
 ... Conditions which are described in more detail in the software's license which is GPL v3
 
 
-### Save time - automatic posting suggestions
+# Save time - automatic posting suggestions
 When loading new entries, you can save time because the system itself can make suggestions based on your previous history.
 Even with very little data, you quickly get suggestions for accounting - based on similar_text, which is often referred to as one of the world's best algorithms.
 Many entries with the same text end up in the same place every time - the system even detects when there are deviations and requires great precision to make suggestions
 That is, you do not need to go in and define rules for simple fee postings, because the system automatically detects that they always end up on the same account... !
 
-### Running updates
+# Running updates - rolling release
 You don't have to wait years for a new version to be released. You can continuously download patches with improvements to the system.
 Follow this link to see the latest changes to the system.
 It takes under a minute to update the n4s to the latest version.
@@ -68,10 +51,7 @@ You can see how easily the system is updated in our Quick Start Videos
 
 
 # N4S - a free and free accounting and ERP solution for small businesses and individuals
-However, N4S is more than just an accounting system; it is a powerful ally on your journey to business success. Whether you're an accounting professional, an entrepreneur or a business owner, N4S has the tools you need to gain superior control over your finances and business processes.
-
-**Ownership:**
-Another advantage of the early software was ownership 📜. Once you paid for a program 💰, it was yours. There were no subscription models, no ongoing costs and no need for a constant internet connection 🌐. You could use the software whenever you wanted without worrying about extensive restrictions or licensing restrictions. However, it should be mentioned that these days most commercial programs were under a strict license that denied the user each of the previously mentioned basic software rights. This can be seen as a necessity to promote the development of software, as it was difficult to find models for revenue beyond copyright and its enforcement - and that secrecy of the source code was a necessity as a defense against pirates.
+N4S is more than just an accounting system; it is a powerful ally on your journey to business success. Whether you're an accounting professional, an entrepreneur or a business owner, N4S has the tools you need to gain superior control over your finances and business processes.
 
 **Source Code Access and Customization:**
 Although modern accounting systems have their own advantages, there is still something unique about n4s 🤖. A notable advantage of n4s is the access to the source code 🧩. This allows companies to adapt n4s precisely to their needs 🧰. With access to the source code, companies can make changes, add features and optimize the system according to their unique requirements 🛠️n. This degree of customization gives unprecedented control over the company's accounting system and ensures that it meets their specific needs. Even if you are not a programmer and do not want to invest in using one, you can easily make simple changes by searching the source code, e.g. changing the text of buttons, colors and the like.
