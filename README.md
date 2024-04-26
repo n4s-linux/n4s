@@ -12,8 +12,6 @@ Whether you have a brand new company, an association or just your household acco
 
 You can easily build in custom logic to optimize and refine your processes. 
 
-Your data can be easily exported to an open format that you can take with you later to any other system.
-
 # Lord in his own house
 With n4s you have full control over your own data.
 
@@ -157,11 +155,8 @@ To generate corresponding reporting for your accounts, follow the following inst
 N4S not only excels in handling your day-to-day accounting needs, it also allows you to take your data where you need it, effortlessly. Exporting your data from N4S is a breeze, making it available to other online systems, even those with less extensive functionality.
 Our system supports loading and unloading of CSV files, which is why it is easy to migrate to/from another system.
 
-# Let's get down to business 🐝
-So why wait? Start your journey to financial success today with N4S. Don't let anything limit you - not even your accounting software. N4S is your key to unlocking your accounting potential and is ready to help you succeed no matter where you are or what device you use. Set the course for success and let N4S take you there!
-
 # n4s - Open Source / Free Software GNU/Linux based double bookkeeping and ERP
-n4s is a terminal-based system for double bookkeeping (finance, debtor, creditor).
+n4s is a terminal-based system for double bookkeeping (finance, debtor, creditor). - And as a company database to manage any kind of data.
 It can run on any computer - or in the cloud.
 The system is built in PHP and BASH and uses the popular text editor vim (VI Improved), the terminal multiplexer tmux, and the text-based double entry accounting program ledger-cli and hledger
 
@@ -210,6 +205,7 @@ Features:
 
 # About Unicode
 In the old days the number of characters were pretty limited, but now we are using unicode, so to get the full n4s experience we recommend You visit [Nerd Fonts](https://nerdfonts.com)
+Also You will need a terminal that has 256 colors to enjoy the full n4s experience. Most terminal emulators like the one in windows (cmd.exe) supports this, however for windows based users we recommend downloading the Windows Terminal from Windows App Store
 
 # TLDR - Let me download your OVA
 * Link to [Virtualbox OVA appliance](https://drive.google.com/file/d/1xXEZJA-olt_NsVIXKmzxiJH8xKX38ydh/view?usp=drive_link)
