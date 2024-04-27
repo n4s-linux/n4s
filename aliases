@@ -351,9 +351,13 @@ function html2() {
 	end=$LEDGER_END
 	bn=$(basename "$tpath")
 	vim $tpath/.companyname.txt
+	
+	tmux new-window cmatrix
+	tmux split-window -l 2 "bash /svn/svnroot/Applications/progressbar.bash;sleep 1"
 	php /svn/svnroot/Applications/htmlreport.php > ~/tmp/out.html
 	pushd . 2>/dev/null > /dev/null
 	cd ~/tmp/
+(
     google-chrome --headless out.html --print-to-pdf=Saldobalance-$bn-$begin-$end.pdf
     mv Saldobalance-$bn-$begin-$end.pdf ~/n4s-export
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Saldobalance-$bn-$begin-$end.pdf&)
@@ -377,8 +381,11 @@ function html2() {
     google-chrome --headless manglendebilag.html --print-to-pdf=Manglendebilag-$bn-$begin-$end.pdf
     mv Manglendebilag-$bn-$begin-$end.pdf ~/n4s-export
 	(/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Manglendebilag-$bn-$begin-$end.pdf &)
+) >/dev/null
+	tmux new-window "LEDGER_BEGIN=$LEDGER_BEGIN LEDGER_END=$LEDGER_END tpath=$tpath php /svn/svnroot/Applications/nyfejl.php"
 
 	popd 2>/dev/null > /dev/null
+	killall cmatrix;clear
 }
 function html() {
 	html2 2>/dev/null
@@ -489,6 +496,9 @@ BPWD="$(basename "$PWD")"
 	diff3=$(grep $(date +%Y-%m-%d --date="-2 days") ~/regnskaber/*/.tags/*.diff 2>/dev/null|grep $(whoami) 2>/dev/null|wc -l 2>/dev/null)
 	if [ -f /data/.custom ]; then
 		custom=$(cat /data/.custom)
+	fi
+	if [ -f ~/.customtmux ]; then
+		custom="$custom $(cat ~/.customtmux)"
 	fi
 	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=black,bg=#594a18] $custom 🐃 #didyouknow 🐃 $tips#[fg=colour50,bg=colour95]" 2>/dev/null
 	tmux set-option status-right "#[fg=black,bg=white] $params %Y-%m-%dT%H:%M #[fg=colour233,bg=colour8]n4s v$version"
