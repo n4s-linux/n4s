@@ -63,7 +63,7 @@ date_default_timezone_set('Europe/Copenhagen');
 	require_once("/svn/svnroot/Applications/proc_open.php");
 	$data["UID"] = uniqid();
 	if (!isset($data['Comment'])) $data['Comment'] = "";
-	$data["Description"] = "⏲" . date("H:i");
+	$data["Description"] = "⏲ - " . date("H:i");
 	file_put_contents($nfn,json_encode($data,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
 	exec_app("vi \"$nfn\"");
 	$cmd = ("find /data/regnskaber ~/regnskaber/ -mtime -90 -printf \"%T@|||||%p\\n\" |grep .trans$ > /home/$op/tmp/mkentry.php.list");
