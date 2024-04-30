@@ -38,6 +38,7 @@ foreach ($files as $curfile) {
 	if (!file_exists($curfile)) continue;
 	$data = json_decode(file_get_contents($curfile),true);
 	$konti = json_encode($data["Transactions"]);
+	if (strtotime($data["Date"]) < strtotime(getenv("LEDGER_BEGIN")) || strtotime($data["Date"]) > strtotime(getenv("LEDGER_END") . " -1 day")) continue;
 	if (stristr($konti,"Fejlkonto:")) {
 		$html .= gettrans($data,$curfile);
 	}
