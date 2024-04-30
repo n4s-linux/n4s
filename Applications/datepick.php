@@ -23,6 +23,8 @@
 	
 	}
 	$fzf .= "Altid\n";
+	$fzf .= "Idag\n";
+	$fzf .= "ÅTD";
 	$fzf .= "MANUEL\n";
 	$fzf .= date("Y");
 	$valg = fzf($fzf,"vælg periode","--height=10 --tac --exact");
@@ -31,6 +33,14 @@
 	else if ($valg == "MANUEL") {
 		echo "Begin: "; $fd = fopen("PHP://stdin","r");$begin = trim(explode("\n",fgets($fd))[0]);fclose($fd);
 		echo "End: "; $fd = fopen("PHP://stdin","r");$end = trim(fgets($fd));fclose($fd);
+	}
+	else if ($valg == "Idag") {
+		$begin = date("Y-m-d",strtotime("today"));
+		$end = date("Y-m-d",strtotime("tomorrow"));
+	}
+	else if ($valg == "ÅTD") {
+		$begin = date("Y") . "-01-01";
+		$end = date("Y-m-d",strtotime("tomorrow"));
 	}
 	else if (strlen($valg) == 4) {
 		$begin = $valg . "-01-01";
