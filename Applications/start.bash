@@ -29,6 +29,8 @@ argument="$1"
 if [ "$argument" == "igangv" ]; then
 	export nochange=1
 	local="Åbn Lokal"
+	export noperiod=1
+	export LEDGER_BEGIN=1970-01-01;export LEDGER_END=2099-12-31
 	if [ "$select_regnskab" == 1 ]; then
 		sr
 	else
