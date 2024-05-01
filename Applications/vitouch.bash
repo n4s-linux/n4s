@@ -41,7 +41,7 @@ function vitouch() {
 	if [ "$notitle" == "" ]; then
 		shortbn="${bn:0:6}" #credits #chatgpt
 		bg=$(getbg $shortbn)
-		tmux rename-window "$sym $shortbn"
+		tmux rename-window "$shortbn"
 	fi
 	bnt="$(basename "$tpath")"
 	lockfile="$tpath/.tags/.$bn"".lock"
@@ -57,7 +57,7 @@ function vitouch() {
 		echo exitexit
 		exit
 	fi
-	cmd="fn="$1" bn="$bn" tpath="$tpath" vitouch "$1" "$2" "$3" "$4""
+	cmd="fn="$1" bn="$bn" tpath="$tpath" vitouch "$1" "$2" "$3" "$4" "$5""
 	mkdir -p ~/tmp/vitouch/
 	fn="$bnt"_"$bn"
 	(
