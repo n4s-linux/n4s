@@ -179,10 +179,12 @@ elif [ "$valg" == "tags" ]; then
 	fi
 	bn=$(basename "$fn")
 	echo "$bn" >> ~/tmp/lastbn_menu
-	echo -e "Logger: " > "$tpath/.tags/.$fn.lr"
+	echo -e "Mentions: " > "$tpath/.tags/.$fn.lr"
 	pushd . >/dev/null
 	cd $tpath/.tags/
-	grep "$fn" *|sort >> "$tpath/.tags/.$fn.lr"
+	grep "$fn" *|grep -v "$fn"$|sort|sed 's/^/\t/'  >> "$tpath/.tags/.$fn.lr"
+	echo -e "Edit History: " >> "$tpath/.tags/.$fn.lr"
+	cat "$fn".diff|sed 's/^/\t/'  >> "$tpath/.tags/.$fn.lr"
 	popd >/dev/null
 
 	timebefore=$(date +%s)
