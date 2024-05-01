@@ -4,7 +4,7 @@ function fzf($list,$header = "",$flags = "",$cols = false,$trim = true) {
 	$op = posix_getpwuid(posix_geteuid())['name'];
 	if ($trim) $list = trim($list);
 	file_put_contents("/home/$op/tmp/list",$list);
-	$cmd = "echo \"" . str_replace("\n","\\n",$list);
+	$cmd = "echo -e \"" . str_replace("\n","\\n",$list);
 	if (!$cols)
 		$cmd .= "\"|fzf --header=\"$header\" --ansi $flags> /home/$op/tmp/fzf";
 	else
