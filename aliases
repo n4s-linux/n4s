@@ -461,6 +461,7 @@ function html() {
 	fi
 	echo "se $url/tmp/Resultat & Balance $id.html"
 }
+alias pdf=html
 source /svn/svnroot/Applications/nicebal.bash
 alias plot="bash /svn/svnroot/Applications/key_plot.bash"
 alias plotg="png='set terminal png' bash /svn/svnroot/Applications/key_plot.bash $@ > /svn/svnroot/tmp/plotg.png"
