@@ -547,6 +547,9 @@ if [ "$tpath" != "" ]; then
 	else
 		PS1="\[\e[1;32m\]$(echo $lenv)$time $(basename $tpath) / \W]\$\[\e[0m "
 	fi
+else
+		
+		PS1="\[\e[1;32m\]$(echo $lenv)$time n4sv$version / \W]\$\[\e[0m "
 fi
 }
 PROMPT_COMMAND=prompt_function
