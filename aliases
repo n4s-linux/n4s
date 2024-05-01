@@ -1,4 +1,4 @@
-function b() {
+function b() { 
 	pushd 2>/dev/null
 	if [ "$kddir" == "" ]; then
 		echo "set customer dir first with kd"
@@ -508,11 +508,12 @@ if [ "$tpath" != "" ]; then
 else
 	showpath=n4s
 fi
-tmux set -g pane-border-format "#[fg=black,bg=gray]$env$showpath#[fg=black,bg=orange]#T #[fg=black bg=gray]$syms"
+tmux set -g pane-border-format "#[fg=black,bg=gray]$env$showpath#[fg=black,bg=orange]#T #[fg=black bg=gray]$syms" >/dev/null
 if [ "$tpath" != "" ]; then
     if [ "$tpath" == "$PWD" ]; then
         if [ "$logging" == "on" ]; then
-            tmux capture-pane -pS - > $tpath/.logs/$(whoami)-$(date +%Y-%m-%dT%H:%M).log
+		mkdir -p $tpath/.logs/
+            tmux capture-pane -pS - > $tpath/.logs/$(whoami)-$(date +%Y-%m-%dT%H:%M).log >/dev/null
         fi
     elif [ "$logging" == "on" ]; then
         export logging=off
