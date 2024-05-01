@@ -198,7 +198,7 @@ elif [ "$valg" == "tags" ]; then
 	else
 		echo -n - ❓ > "$tpath/.tags/.$ofn.sym"
 	fi
-	notitle=$notitle vitouch "$fn" "$tpath/.tags/.$ofn.sym" "$tpath/.tags/.$ofn.lr" "$tpath/.tags/$ofn.diff" "$tpath/.tags/.$ofn.lr.diff"
+	notitle=$notitle vitouch "$fn" "$tpath/.tags/.$ofn.lr" 
 	exit
 elif [ "$valg" == "tag" ] || [ "$valg" == "Tag" ]; then #only for command line entering of an extra search param
 	fn=$(echo -n $(grep -L "#dupl" $tpath/.tags/*|grep -i "$2"|while read i; do echo -n $( basename "$i")" ";stat --printf="%s (%y)\n" "$i"; done|fzf)|awk '{print $1}')
