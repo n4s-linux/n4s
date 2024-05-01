@@ -508,12 +508,12 @@ if [ "$tpath" != "" ]; then
 else
 	showpath=n4s
 fi
-tmux set -g pane-border-format "#[fg=black,bg=gray]$env$showpath#[fg=black,bg=orange]#T #[fg=black bg=gray]$syms" >/dev/null
+tmux set -g pane-border-format "#[fg=black,bg=gray]$env$showpath#[fg=black,bg=orange]#T #[fg=black bg=gray]$syms" 2>/dev/null
 if [ "$tpath" != "" ]; then
     if [ "$tpath" == "$PWD" ]; then
         if [ "$logging" == "on" ]; then
 		mkdir -p $tpath/.logs/
-            tmux capture-pane -pS - > $tpath/.logs/$(whoami)-$(date +%Y-%m-%dT%H:%M).log >/dev/null
+            tmux capture-pane -pS - > $tpath/.logs/$(whoami)-$(date +%Y-%m-%dT%H:%M).log 2>/dev/null
         fi
     elif [ "$logging" == "on" ]; then
         export logging=off
