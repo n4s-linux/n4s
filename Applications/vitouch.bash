@@ -57,7 +57,7 @@ function vitouch() {
 		echo exitexit
 		exit
 	fi
-	cmd="fn=\"$1\" bn=\"$bn\" tpath=\"$tpath\" vitouch \"$1\" "\$2\" \"$\3" \"$4\" \"$5\""
+	cmd="fn="$1" bn="$bn" tpath="$tpath" vitouch "$1" "$2" "$3" "$4" "$5""
 	mkdir -p ~/tmp/vitouch/
 	fn="$bnt"_"$bn"
 	(
