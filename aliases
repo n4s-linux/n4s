@@ -1,3 +1,44 @@
+function b() {
+	pushd 2>/dev/null
+	if [ "$kddir" == "" ]; then
+		echo "set customer dir first with kd"
+		return
+	fi
+	if [ ! -f "$kddir/.nextbilag" ]; then
+		echo -n "Start at bilag number: "
+		read bilag
+		echo -n $bilag > "$kddir/.nextbilag"
+	else
+		bilag=$(cat "$kddir/.nextbilag")
+	fi
+	curbilag=$((
+	ls -t|sort -r|grep -i .pdf
+	ls -t|sort -r |grep -i .png
+	ls -t |sort -r|grep -i .jpg
+	)|head -n1)
+	sixel "$curbilag" $1
+	extension="${curbilag#*.}"
+	echo "Brug $curbilag som $bilag (j/n): "
+	stty -icanon -echo
+	read valg
+	stty sane
+	if [ "$valg" == "j" ]; then
+		mv "$curbilag" "$kddir/Bilag/$bilag - $curbilag"
+		((bilag++))
+		echo -n $bilag > "$kddir/.nextbilag"
+	else
+		touch "$curbilag"
+	fi
+}
+
+function sixel() {
+	mkdir -p ~/tmp/sixout
+	rm ~/tmp/sixout/* -f
+	convert -quality 90 -density 150 "$1" ~/tmp/sixout/out.jpg
+	/svn/svnroot/Applications/vv  --preview-size=500 -f ~/tmp/sixout/*
+#  -P, --preview-size=PIXELS     # Set height of previews (pixels). (264).                 │
+  #-p, --preview-lines=LINES     # Same, but specify in lines of text. (8).
+}
 source /svn/svnroot/Libraries/aliases
 function symbols() {
 fn=$(find $tpath/.tags/.*.sym|fzf)
@@ -117,6 +158,7 @@ function kd() {
 	path=$(echo ~/Dropbox/"$(ls ~/Dropbox|fzf)")
     echo "$path" > ~/tmp/.curbpath
     cd "$path"
+	export kddir=$path
 }
 function i() {
 	cd Bilag/Incoming
@@ -130,17 +172,6 @@ do
     filemtime=$(stat -c %Y "$i")
     img2pdf --rotation=ifvalid "$i" -o "$i.pdf" && rm "$i" && touch -d @$filemtime "$i.pdf"
     done
-}
-function b() {
-pushd . >/dev/null
-path="$(cat ~/tmp/.curbpath)"
-cd "$path"
-echo "looking in \"$path\""
-convertimages
-file=$(ls *.pdf|head -n1)
-realpath "$file" > ~/tmp/.curfile
-scp -P 8888 "$file" localhost:~/Preview/current.pdf
-popd >/dev/null
 }
 op=$(whoami)
 alias p="tmux split -h \"w3m -dump /home/$op/tmp/ft.html|vi - \""
@@ -500,8 +531,10 @@ BPWD="$(basename "$PWD")"
 	if [ -f ~/.customtmux ]; then
 		custom="$custom $(cat ~/.customtmux)"
 	fi
-	tmux set -g status 2 2>/dev/null; tmux set -g status-format[1] "#[fg=black,bg=#594a18] $custom 🐃 #didyouknow 🐃 $tips#[fg=colour50,bg=colour95]" 2>/dev/null
-	tmux set-option status-right "#[fg=black,bg=white] $params %Y-%m-%dT%H:%M #[fg=colour233,bg=colour8]n4s v$version"
+	tmux set -g status-format[1] "#[fg=#71c242,bg=#0d2f9e]🐃$tips🐃" 2>/dev/null
+	tmux set -g status 4 2>/dev/null; tmux set -g status-format[2] "#[fg=black,bg=#594a18] $custom" 2>/dev/null
+	hist=$(history|tail -n10|sort --rev|while read i; do echo -n " $i"; done)
+	tmux set -g status 4 2>/dev/null; tmux set -g status-format[3] "#[fg=black,bg=#26bd19]$hist" 2>/dev/null
 	pushd . >/dev/null
 	cd "$tpath"
 	popd >/dev/null
@@ -571,6 +604,10 @@ if [ "$bn" == "NEW" ]; then
 		touch "$newfolder/aliases"
 		tpath="$newfolder"
 		bn=$(basename "$tpath")
+	else
+		echo "No account selected - exiting sr"
+		return
+	fi
         if [ ! -f ~/regnskaber/"$bn" ]; then
 		ln -s "$tpath" ~/regnskaber/"$bn"
         fi
