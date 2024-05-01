@@ -110,8 +110,8 @@ else if ($argv[1] == "history" ) {
 	}
 }
 else if ($argv[1] == "CRM" ) {
-	$menu['Åbn Journal'] = array('key'=>'j','Text'=>'Åbn Journal','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash business');
-	$menu["Søgning"] = array('key'=>'s','Text'=>'Søg','cmd'=>"new-window -n Søgning 'bash /svn/svnroot/Applications/newsearchgrep.bash momskvartal'");
+	$menu['Open Journal'] = array('key'=>'j','Text'=>'Åbn Journal','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash business');
+	$menu["Search"] = array('key'=>'s','Text'=>'Søg','cmd'=>"new-window -n Søgning 'bash /svn/svnroot/Applications/newsearchgrep.bash momskvartal'");
 
 }
 $cmd = 'tmux display-menu -T "#[align=middle fg=brown]n4s $bn" ';
