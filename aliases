@@ -604,10 +604,6 @@ if [ "$bn" == "NEW" ]; then
 		touch "$newfolder/aliases"
 		tpath="$newfolder"
 		bn=$(basename "$tpath")
-	else
-		echo "No account selected - exiting sr"
-		return
-	fi
         if [ ! -f ~/regnskaber/"$bn" ]; then
 		ln -s "$tpath" ~/regnskaber/"$bn"
         fi
