@@ -39,9 +39,7 @@ function! s:numbertog()
 		    endfunction
 
 		    
-"set number
 
-set number!
 
 "nnoremap <C-g> :call matchadd('ErrorMsg', printf('\%%%dl', line('.')),printf('\%%%dl',line('.')))<CR>
 "nnoremap <C-g> :call TogLineMark()<CR>
@@ -345,7 +343,7 @@ let php_sql_query = 1      "Syntax highlight SQL code inside PHP strings.
 let php_noShortTags = 1    "Disable PHP short tags.
 
 source /svn/svnroot/Libraries/adam/transplant.vim
-set number
+set nonumber
 let g:markdown_folding = 1
 set ft=markdown
 set foldmethod=expr
