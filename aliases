@@ -530,11 +530,13 @@ BPWD="$(basename "$PWD")"
 	fi
 	if [ -f ~/.customtmux ]; then
 		custom="$custom $(cat ~/.customtmux)"
+	else
+		custom="🐃#didyouknow You can customize this line with custom data in ~/.customtmux🐃"
 	fi
 	tmux set -g status-format[1] "#[fg=#71c242,bg=#0d2f9e]🐃$tips🐃" 2>/dev/null
 	tmux set -g status 4 2>/dev/null; tmux set -g status-format[2] "#[fg=black,bg=#594a18] $custom" 2>/dev/null
 	hist=$(history|tail -n10|sort --rev|while read i; do echo -n " $i"; done)
-	tmux set -g status 4 2>/dev/null; tmux set -g status-format[3] "#[fg=black,bg=#26bd19]$hist" 2>/dev/null
+	tmux set -g status 3 2>/dev/null; tmux set -g status-format[3] "#[fg=black,bg=#26bd19]$hist" 2>/dev/null
 	pushd . >/dev/null
 	cd "$tpath"
 	popd >/dev/null
