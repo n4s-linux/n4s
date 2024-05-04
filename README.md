@@ -12,9 +12,6 @@ Whether you have a brand new company, an association or just your household acco
 
 You can easily build in custom logic to optimize and refine your processes. 
 
-# Lord in his own house
-With n4s you have full control over your own data.
-
 # Velocity
 n4s is faster than other systems on the market. Most operations take place in a split second. Only your processing power and hard disk/ram set the limit to how quickly the system is run, and for most small accounts you won't blink until you get the data you ask for on the screen.
 
@@ -28,17 +25,15 @@ in n4s you can define rules yourself for how your new postings are to be account
 This means you can get rid of manual posting again and again of the same type of items
 eg. IF Text = 'Fee' THEN Account = 'Expenses:Administration:Fees'
 
-# Secured against acquisition
-n4s stands for Not 4 Sale - translated 'not for sale'. Therefore, it is secured against acquisition, so that the system will always be free.
-You are welcome to clone our system and sell it on, but on the condition that you respect the basic rights of the users...
-... Conditions which are described in more detail in the software's license which is GPL v3
-
-
 # Save time - automatic posting suggestions
 When loading new entries, you can save time because the system itself can make suggestions based on your previous history.
 Even with very little data, you quickly get suggestions for accounting - based on similar_text, which is often referred to as one of the world's best algorithms.
 Many entries with the same text end up in the same place every time - the system even detects when there are deviations and requires great precision to make suggestions
 That is, you do not need to go in and define rules for simple fee postings, because the system automatically detects that they always end up on the same account... !
+
+# Supports any currency 
+Find your transactions easily based on the currency amount, not Your base currency... !
+Is available when You import currency code and currency amount on Your transactions.
 
 # Running updates - rolling release
 You don't have to wait years for a new version to be released. You can continuously download patches with improvements to the system.
@@ -162,6 +157,7 @@ The system is built in PHP and BASH and uses the popular text editor vim (VI Imp
 
 Features:
 * Automatic projection of accounts (forecasting) infinite number of months, so far the future monthly balances are calculated as an average of previous months, so is only useful for stable ongoing operations without seasonal fluctuations, e.g. service companies that sell all year round, or shops with stable turnover (Select budget in menu)
+* Unlimited amount of currencies / commodities
 * Advanced extended file structure and versioning and tracking on data/transactions.
 * Automatic Periodization when specifying the period for transactions
 * Automatic depreciation when specifying the lifetime of transactions
