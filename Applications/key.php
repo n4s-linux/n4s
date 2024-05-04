@@ -200,7 +200,12 @@ require_once("sortsearch.php");
 		if (count($curres['Transactions']) > 2) $mk = "FLERE";
 		$a = str_pad(number_format($curres['Transactions'][0]['Amount'],2,",","."),10," ",STR_PAD_LEFT);
 		error_reporting(0);
-		$fzf .= "$curres[Date]\t$curres[Reference]\t$curres[Description]\t$a\t$konto ($m1) \t$mk ($m2)\t⚡$curres[Filename]\n";
+		$cd1 = ""; $cd2 = ""; //cd = currentydata
+		if (isset($curres["Transactions"][0]["Currency"]) && isset($curres["Transactions"][0]["AmountCurrency"])) {
+			$cd1= str_pad($curres["Transactions"][0]['AmountCurrency'] . " " . $curres["Transactions"][0]['Currency'],12, " ",STR_PAD_LEFT);
+		}
+		else $cd1="";
+		$fzf .= "$curres[Date]\t$curres[Reference]\t$curres[Description]\t$a\t$cd1\t$konto ($m1) \t$mk ($m2)\t⚡$curres[Filename]\n";
 		error_reporting(E_ALL);
 	}
 	require_once("fzf.php");

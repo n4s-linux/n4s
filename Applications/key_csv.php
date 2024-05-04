@@ -12,7 +12,7 @@ if (isset($argv[1]) && $argv[1] == "load") {
 function loadfile() {
 	$path = getenv("tpath");
   global $accounts;
-  $availablefields =array( "Date","Description","Reference","Amount","Account","Func","Comment","Choose");;
+  $availablefields =array("Date","Description","Reference","Amount","Account","Func","Comment","Choose","Currency","AmountCurrency");;
        array_push($availablefields,"No match");
 $op=exec("whoami");
 	global $argv;
@@ -58,7 +58,6 @@ if (isset($c['Account'])) 	$curacc = $c['Account']; else 	$curacc = "";
 		die("Aborting, this is some old stuff that should probably not be imported- cant understand date format $c[Date]...\n");
 	if (strtotime($curtrans['Date']) > strtotime("+1 days") && getenv("future") != "1") {
 		$jsondata = json_encode($curtrans);
-		fwrite(STDERR, “Not importing into future [$jsondata]\n”);
 		continue;
 		die("Aborting, we should not import future transactions $c[Date]...\n");
 	}
@@ -79,6 +78,8 @@ $curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d H:m"),'Desc'=>'
                          (( $c['Amount'] < 0) ? "Fejlkonto:Uhåndterede kreditorbetalinger" : "Fejlkonto:Uhåndterede debitorbetalinger") : $curacc
                          ,'Func'=>$curfunc,'Amount'=> $c['Amount'] * -1)
                    );
+		if (isset($c["Currency"]) && $c["Currency"] != "") $curtrans["Transactions"][0]['Currency'] = $c["Currency"];
+		if (isset($c["AmountCurrency"]) && $c["AmountCurrency"] != "") $curtrans["Transactions"][0]['AmountCurrency'] = number_format($c["AmountCurrency"],2,".","");
          file_put_contents($fn,json_encode($curtrans,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n");
          }
 
