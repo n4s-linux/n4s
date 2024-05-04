@@ -7,6 +7,7 @@ date_default_timezone_set('Europe/Copenhagen');
 	ob_start();
 	system("gum input --header 'Søg efter'");
 	$search = trim(ob_get_clean());
+	if ($search == "") die();
 	$filez = explode("\n",trim(file_get_contents("/home/$op/tmp/mkentry.php.list")));
 	foreach ($filez as $curfile) {
 		$sortfilez[] = array('Date' => explode("|||||",$curfile)[0],		'Fn' => explode("|||||",$curfile)[1]);
@@ -24,7 +25,7 @@ date_default_timezone_set('Europe/Copenhagen');
 		if (!isset($data["Description"])) $data["Description"] = "";
 		if (!isset($data["Transactions"][0]) || !isset($data["Transactions"][0]['Account'])) continue;
 		if (!isset($data["Transactions"][1]) || !isset($data["Transactions"][1]['Account'])) continue;
-		if (!stristr(json_encode($data),$search)) continue;
+		if (!stristr(json_encode($data,JSON_UNESCAPED_UNICODE),$search)) continue;
 		$d['data'] = $data;
 		$farray[$i] = $d;
 		$farray[$i]['Fn'] = basename($file);
