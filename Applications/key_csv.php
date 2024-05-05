@@ -12,7 +12,7 @@ if (isset($argv[1]) && $argv[1] == "load") {
 function loadfile() {
 	$path = getenv("tpath");
   global $accounts;
-  $availablefields =array("Date","Description","Reference","Amount","Account","Func","Comment","Choose","Currency","AmountCurrency");;
+  $availablefields =array("Date","Description","Reference","Amount","Account","Func","Comment","Choose","Currency","AmountCurrency","Bankfee");;
        array_push($availablefields,"No match");
 $op=exec("whoami");
 	global $argv;
@@ -80,6 +80,13 @@ $curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d H:m"),'Desc'=>'
                    );
 		if (isset($c["Currency"]) && $c["Currency"] != "") $curtrans["Transactions"][0]['Currency'] = $c["Currency"];
 		if (isset($c["AmountCurrency"]) && $c["AmountCurrency"] != "") $curtrans["Transactions"][0]['AmountCurrency'] = number_format($c["AmountCurrency"],2,".","");
+		if (isset($c["Bankfee"]) && $c["Bankfee"] != "") {
+			$c["Bankfee"] = floatval(str_replace(",",".",$c["Bankfee"]));
+			if ($c["Bankfee"] != 0) {
+				array_push($curtrans["Transactions"],array("Account"=>"Bankfee","Amount"=>$c["Bankfee"]*-1,"Func"=>""));
+				array_push($curtrans["Transactions"],array("Account"=>$contraacc,"Amount"=>$c["Bankfee"] ,"Func"=>""));
+			}
+		}
          file_put_contents($fn,json_encode($curtrans,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n");
          }
 
