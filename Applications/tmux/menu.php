@@ -65,7 +65,7 @@ else if ($argv[1] == "rmenu") {
 	$menu["Automation"] = array('key'=>'a','Text'=>'Automatisering','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Automatisering' ");
 }
 else if ($argv[1] == "Manual" ) {
-	$menu["n4s - Bogføringssystem"] = array('key'=>'t','Text'=>'Tmux - Vinduesystem','cmd'=>"new-window 'vi /svn/svnroot/MANUAL'");
+	$menu["n4s"] = array('key'=>'t','Text'=>'Tmux - Vinduesystem','cmd'=>"new-window 'tag=README bash /svn/svnroot/Applications/start.bash business'");
 	$menu["LICENS"] = array('key'=>'l','Text'=>'LICENS','cmd'=>"new-window 'vi /svn/svnroot/LICENSE'");
 	$menu["Vim - Editor"] = array('key'=>'v','Text'=>'Vim - Editor','cmd'=>"new-window 'vimtutor'");
 	$menu["tmux - Vinduesystem"] = array('key'=>'u','Text'=>'Tmux - Vinduesystem','cmd'=>"new-window 'man tmux'");
