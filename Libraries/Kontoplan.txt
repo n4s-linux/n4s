@@ -92,6 +92,7 @@ Udgifter:Administration:Faglitteratur
 Udgifter:Administration:Porto og gebyrer
 Udgifter:Administration:Telefon og internet mv. (kun virksomhed)
 Udgifter:Administration:Telefon og internet mv. (delvist privat)
+Udgifter:Administration:Webhosting
 Udgifter:Administration:Kontorartikler
 Udgifter:Administration:Leje og operationelle leasingydelser (ekskl. husleje)
 Udgifter:Administration:Rejseudgifter
