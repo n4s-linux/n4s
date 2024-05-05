@@ -429,12 +429,13 @@ function getmanglendebilag($darray) {
 	return ob_get_clean();
 }
 function getstatistik($darray) {
+	global $op;
 	ob_start();
 	printheader("Statistik");
 	echo "<center>";
 	require_once("/svn/svnroot/Applications/chart.php");
 	$piedata = getoms($darray);
-	file_put_contents("/home/joo/tmp/data.json",json_encode($piedata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+	file_put_contents("/home/$op/tmp/data.json",json_encode($piedata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 	echo pie($piedata,("Omsætning"));
 	$piedata = getomk($darray);
 	echo pie($piedata,"Udgifter");
