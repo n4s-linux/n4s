@@ -1,4 +1,5 @@
 <?php
+require_once("/svn/svnroot/Applications/prettyname.php");
 $decimals = 0;
 $tpath=getenv("tpath");
 
@@ -290,7 +291,6 @@ if (strlen(trim($notes_back))) {
 	}
 	echo "</table><br>";
 }
-require_once("/svn/svnroot/Applications/prettyname.php");
 function kk_header($toplevel)  {
 ?>
 <tr>
