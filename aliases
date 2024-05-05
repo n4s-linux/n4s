@@ -388,7 +388,6 @@ function html2() {
 	end=$LEDGER_END
 	bn=$(basename "$tpath")
 	vim $tpath/.companyname.txt
-	
 	tmux new-window cmatrix
 	tmux split-window -l 2 "bash /svn/svnroot/Applications/progressbar.bash;sleep 1"
 	php /svn/svnroot/Applications/htmlreport.php > ~/tmp/out.html
@@ -423,6 +422,7 @@ function html2() {
 
 	popd 2>/dev/null > /dev/null
 	killall cmatrix;clear
+	echo "Please look for Your reports in ~/n4s-export"
 }
 function html() {
 	html2 2>/dev/null
