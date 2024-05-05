@@ -37,9 +37,17 @@ foreach ($saldo as $konto => $cursaldo) {
 	$y += $cursaldo;
 	if (intval($cursaldo) == 0) continue;
 	$cursaldo = number_format($cursaldo,2,".","");
-	//if (stristr($konto,"reserve") || in_array($konto,$kkkeep)) continue; // dont reset reserves and keep kkkeep account (capital and mellemregning)
+	$reset = true;
+	if (substr($konto,0,strlen("Egenkapital:")) == "Egenkapital:") {
+		if (stristr($konto,"reserve") || !in_array($konto,$kkkeep)) {
+			print_r($konto);
+			$reset = false;
+		}
+	}
+	if ($reset) {
 	$s .= "$begin ☀ $orgkonto\n";
 	$s .= "\t$konto  $cursaldo\n\tEgenkapital:Overført resultat\n\n";
+	}
 }
 file_put_contents("$tpath/.Åbning_$begin.ledger",$s);
 fwrite(STDERR, "Åbning $begin genereret !\n");
