@@ -169,7 +169,7 @@ Features:
 * Automatic calculation of interest where you can specify the interest rate on a given account
 * Automatic periodization where you can specify a start and end date for each expense
 * Automatic consolidation
-* Bank reconciliation
+* Account reconciliation / Bank Reconciliation - compare any account with the corresponding statement (CSV) and display disrepancies
 * Logic / rules – option to define rules for automatic accounting of postings
 * Search for transactions and mass update based on specified criteria
 * Presentable reporting (balances and account cards)
