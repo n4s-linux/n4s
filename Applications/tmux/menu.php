@@ -58,6 +58,7 @@ else if ($argv[1] == "Bogføring") {
 	$menu["Adjust Period"] = array('key'=>'P','Text'=>'Ændre periode','cmd'=>"send-keys 'dp' Enter");
 	$menu["Adjust Sort"] = array('key'=>'S','Text'=>'Ændre periode','cmd'=>"send-keys 'ds' Enter");
 	$menu["Forecasting"] = array('key'=>'f','Text'=>'forecasting','cmd'=>"send-keys 'updatebudget' Enter");
+	$menu["Reconciliation account vs statement"] = array('key'=>'r','Text'=>'forecasting','cmd'=>"send-keys 'reconcile' Enter");
 }
 else if ($argv[1] == "rmenu") {
 	$menu["Bookkeeping"] = array('key'=>'b','Text'=>'Bogføring','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Bogføring' ");

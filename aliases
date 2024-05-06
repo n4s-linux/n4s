@@ -221,7 +221,7 @@ export LEDGER_ACCOUNT_WIDTH=36
 export LEDGER_AMOUNT_WIDTH=12
 export LEDGER_TOTAL_WIDTH=12
 
-alias reconcile="php /svn/svnroot/Applications/recon.php"
+alias reconcile="php /svn/svnroot/Applications/bankreconcile.php"
 alias debtorreport="/svn/svnroot/Applications/browsedebitors.bash"
 function dp() {
     bn=$(basename "$tpath")
