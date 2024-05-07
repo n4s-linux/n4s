@@ -75,6 +75,8 @@ if ($handle) {
 	$diff = 0;
 
 		$specsbal =0;
+	echo "\nResult:\n";
+	ksort($spec);
 	foreach ($spec as $curspec) {
 		foreach ($curspec as $key) {
 			$curbal = 0;
@@ -86,7 +88,10 @@ if ($handle) {
 				$spectext = "$c[Date]\t$c[Description]\t$c[Amount]\n";
 				if ($curval["Source"] == "CSV") { $specsbal += floatval($c["Amount"]); $curbal += floatval($c["Amount"]);}  else { $specsbal -= floatval($c["Amount"]);  $curbal -= floatval($c["Amount"]);}
 				$balp = number_format($specsbal,2,",",".");
-				$amountp = number_format(floatval($curval["Amount"]),2,",",".");
+				if ($curval["Source"] == "CSV")
+					$amountp = number_format(-floatval($curval["Amount"]),2,",",".");
+				else
+					$amountp = number_format(floatval($curval["Amount"]),2,",",".");
 				$shortdesc = substr($c["Description"],0,20);
 				$spectext = str_pad($c["Date"],12) . mb_str_pad($shortdesc,38) . str_pad($amountp,15," ",STR_PAD_LEFT) . str_pad($balp,15," ",STR_PAD_LEFT);
 				if ($curval["Source"] == "CSV") 
@@ -96,7 +101,7 @@ if ($handle) {
 
 				$curtxt .= $spectext;
 			}
-			if (intval($curbal)!= 0) echo $curtxt;
+			if (intval($curbal)!= 0) { echo $curtxt; $curtxt="";}
 		}
 	}
 	die();
