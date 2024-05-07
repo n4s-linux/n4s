@@ -1,3 +1,4 @@
+alias adjust="adjustbalance=1 php /svn/svnroot/Applications/mkentry.php"
 function upd8() {
     pushd . >/dev/null
     cd /svn/svnroot
@@ -539,7 +540,7 @@ BPWD="$(basename "$PWD")"
 	if [ -f ~/.customtmux ]; then
 		custom="$custom $(cat ~/.customtmux)"
 	else
-		custom="🐃#didyouknow You can customize this line with custom data in ~/.customtmux🐃"
+		custom="$custom 🐃#didyouknow You can customize this line with custom data in ~/.customtmux🐃"
 	fi
 	tmux set -g status-format[1] "#[fg=#71c242,bg=#0d2f9e]🐃$tips🐃" 2>/dev/null
 	tmux set -g status 4 2>/dev/null; tmux set -g status-format[2] "#[fg=black,bg=#594a18] $custom" 2>/dev/null
@@ -636,10 +637,14 @@ fi
 LEDGER_BEGIN=$(date +%Y-01-01)
 LEDGER_END=$(date +%Y-01-01 --date="+1 year")
 if [ "$noperiod" != 1 ]; then
+echo
 dp
 fi
-echo -e "\e[42mOpened $(basename "$tpath") OK - Press Alt-m or write 'm' [Enter] for accounting menu\e[0m"
-echo "Full log = $logging"
+echo "Opened $(basename "$tpath") OK "
+echo $(tput setab 190)✌ Opened $tpath 
+echo $(tput setab 190)✌ Full Log $logging
+echo $(tput setab 190)✌ Accounting menu $(tput setab 190)Press Alt-m
+echo
 mkdir -p $tpath/.logs/
 
 if [ -f .init.bash ]; then

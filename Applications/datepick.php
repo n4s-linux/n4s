@@ -3,7 +3,7 @@
 	if (getenv("tpath") == "") die("dp Kræver du er i et regnskab\n");
 	require_once("ansi-color.php");
 	$begin = getenv("LEDGER_BEGIN"); $end = getenv("LEDGER_END");
-	echo set("Udskifter periode\t$begin - $end\n","yellow");
+	echo set("\nUdskifter periode\t$begin - $end\n","yellow");
 	$begin = null;
 	$end = null;
 	require_once("fzf.php");
@@ -24,7 +24,7 @@
 	}
 	$fzf .= "Altid\n";
 	$fzf .= "Idag\n";
-	$fzf .= "ÅTD";
+	$fzf .= "ÅTD\n";
 	$fzf .= "MANUEL\n";
 	$fzf .= date("Y");
 	$valg = fzf($fzf,"vælg periode","--height=10 --tac --exact");
