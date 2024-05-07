@@ -8,8 +8,10 @@
 	$fzf = "";
 	$fzf .= "date\namount\npayee";
 	$sortmethod = fzf($fzf,"vælg sortering","--height=10 --tac --exact");
-	$op = 	exec("whoami");
-	file_put_contents("/home/$op/tmp/.sortpick","export LEDGER_SORT=$sortmethod\n");	
-	echo set("Ny sortering:  $sortmethod\n","green");
+	if ($sortmethod != "") {
+		$op = 	exec("whoami");
+		file_put_contents("/home/$op/tmp/.sortpick","export LEDGER_SORT=$sortmethod\n");	
+		echo set("Ny sortering:  $sortmethod\n","green");
+	}
 ?>
 
