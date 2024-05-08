@@ -48,6 +48,7 @@ else if ($argv[1] == "Ledger") {
 }
 else if ($argv[1] == "Bogføring") {
 	$menu["New Posting"] = array('key'=>'p','Text'=>'Python - regnemaskine','cmd'=>"send-keys 'e' Enter");
+	$menu["Adjust account balance"] = array('key'=>'a','Text'=>'Python - regnemaskine','cmd'=>"send-keys 'adjust' Enter");
 	$menu["Balance Painter"] = array('key'=>'F','Text'=>'Farvelægning Balance','cmd'=>"send-keys 'farvelæg ' ");
 	$menu["Account Painter"] = array('key'=>'F','Text'=>'Farvelægning Kontokort','cmd'=>"send-keys 'farvelægkontokort ' ");
 	$menu["Book Postings"] = array('key'=>'B','Text'=>'Bogføring af poster','cmd'=>"send-keys 'bookledger' Enter");
