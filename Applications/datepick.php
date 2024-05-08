@@ -1,9 +1,10 @@
 <?php
+	if (!isset($datepicktext)) $datepicktext="";
 	require_once("nicem.php");
 	if (getenv("tpath") == "") die("dp Kræver du er i et regnskab\n");
 	require_once("ansi-color.php");
 	$begin = getenv("LEDGER_BEGIN"); $end = getenv("LEDGER_END");
-	echo set("\nUdskifter periode\t$begin - $end\n","yellow");
+	if (!isset($quiet)) echo set("\nUdskifter periode\t$begin - $end\n","yellow");
 	$begin = null;
 	$end = null;
 	require_once("fzf.php");
@@ -27,7 +28,7 @@
 	$fzf .= "ÅTD\n";
 	$fzf .= "MANUEL\n";
 	$fzf .= date("Y");
-	$valg = fzf($fzf,"vælg periode","--height=10 --tac --exact");
+	$valg = fzf($fzf,"vælg periode $datepicktext","--height=10 --tac --exact");
 	if ($valg =="")die();
 	else if ($valg == "Altid") {$begin = "1970-01-01"; $end=date("Y-m-d",strtotime("tomorrow"));}
 	else if ($valg == "MANUEL") {
@@ -77,7 +78,10 @@
 	}
 	$op = 	exec("whoami");
 	$bn = basename(getenv("tpath"));
-	file_put_contents("/home/$op/tmp/.datepick_$bn","export LEDGER_BEGIN=$begin\nexport LEDGER_END=$end\n");	
-	echo set("Ny periode\t\t$begin - $end\n","green");
+	if (!isset($quiet))
+		file_put_contents("/home/$op/tmp/.datepick_$bn","export LEDGER_BEGIN=$begin\nexport LEDGER_END=$end\n");	
+	else
+		file_put_contents("/home/$op/tmp/.datepick_$bn","LEDGER_BEGIN=$begin LEDGER_END=$end\n");	
+	if (!isset($quiet)) echo set("Ny periode\t\t$begin - $end\n","green");
 ?>
 
