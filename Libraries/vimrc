@@ -447,3 +447,6 @@ let g:HelpMeItems = [
     \ "F10		Insert date and timestamp with username",
     \ ]
 nnoremap ? :HelpMe<CR>
+set statusline=shortcutlist
+set statusline+==
+set statusline+=press?
