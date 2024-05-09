@@ -1,4 +1,5 @@
 alias adjust="adjustbalance=1 php /svn/svnroot/Applications/mkentry.php"
+alias letregnskab="php /svn/svnroot/Applications/letregnskab.php"
 function upd8() {
     pushd . >/dev/null
     cd /svn/svnroot
@@ -53,8 +54,8 @@ vi "$fn"
 }
 alias o="bash /svn/svnroot/Applications/journalviewer.bash"
 
-alias farvelæg="n4s_setcolors=1 n4s_colorset=1 l b"
-alias farvelægkontokort="n4s_setcolors=1 n4s_colorset=1 l r"
+alias colorize="n4s_setcolors=1 n4s_colorset=1 l b"
+alias colorizetransactions="n4s_setcolors=1 n4s_colorset=1 l r"
 function nmenu() {
     valg=$(php /svn/svnroot/Applications/menu.php)
     if [ "$valg" != "" ]; then
@@ -545,7 +546,10 @@ BPWD="$(basename "$PWD")"
 	tmux set -g status-format[1] "#[fg=#71c242,bg=#0d2f9e]🐃$tips🐃" 2>/dev/null
 	tmux set -g status 4 2>/dev/null; tmux set -g status-format[2] "#[fg=black,bg=#594a18] $custom" 2>/dev/null
 	hist=$(history|tail -n10|sort --rev|while read i; do echo -n " $i"; done)
-	tmux set -g status 3 2>/dev/null; tmux set -g status-format[3] "#[fg=black,bg=#26bd19]$hist" 2>/dev/null
+	tmux set -g status 4 2>/dev/null; tmux set -g status-format[3] "#[fg=black,bg=#26bd19]$hist" 2>/dev/null
+
+	last=$(grep -h ✔ /data/regnskaber/transactions_crm/.tags/*.diff|grep "\["|grep "\]"|sort|tail -n1)
+	tmux set -g status 5 2>/dev/null; tmux set -g status-format[4] "#[fg=black,bg=#ebde34]$last" 2>/dev/null
 	pushd . >/dev/null
 	cd "$tpath"
 	popd >/dev/null
