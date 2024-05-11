@@ -43,7 +43,7 @@ file_put_contents("/home/$op/tmp/kommentarer.html",getcomments($darray));
 file_put_contents("/home/$op/tmp/kommentarer.html",getcomments($darray));
 require_once("/svn/svnroot/Applications/moneyflow.php");
 ob_start();
-printheader("Moneyflow");
+printheader("Pengestrømsopgørelse");
 $headermoney = ob_get_clean();
 file_put_contents("/home/$op/tmp/moneyflow.html",$headermoney.moneyflow());
 
