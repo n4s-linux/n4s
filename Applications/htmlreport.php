@@ -40,6 +40,12 @@ file_put_contents("/home/$op/tmp/nøgletal.html",getnøgletal($darray));
 file_put_contents("/home/$op/tmp/statistik.html",getstatistik($darray));
 file_put_contents("/home/$op/tmp/manglendebilag.html",getmanglendebilag($darray));
 file_put_contents("/home/$op/tmp/kommentarer.html",getcomments($darray));
+file_put_contents("/home/$op/tmp/kommentarer.html",getcomments($darray));
+require_once("/svn/svnroot/Applications/moneyflow.php");
+ob_start();
+printheader("Moneyflow");
+$headermoney = ob_get_clean();
+file_put_contents("/home/$op/tmp/moneyflow.html",$headermoney.moneyflow());
 
 
 foreach (array('Indtægter','Udgifter','Aktiver','Egenkapital','Passiver') as $curf) {

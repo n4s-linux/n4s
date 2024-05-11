@@ -1,3 +1,19 @@
+function hmm() {
+fn=$(
+(
+echo NEW
+ls -t */.*.hmm 2>/dev/null)|fzf --header="Chose mindmap")
+if [ "$fn" == "" ]; then
+	return
+fi
+if [ "$fn" == "NEW" ]; then
+	echo -n "Type mindmap name: ";
+	read name
+	fn="~/.$name.hmm"
+fi
+echo fn=$fn
+/svn/svnroot/Applications/h-m-m "$fn"
+}
 alias adjust="adjustbalance=1 php /svn/svnroot/Applications/mkentry.php"
 alias letregnskab="php /svn/svnroot/Applications/letregnskab.php"
 function upd8() {
@@ -414,6 +430,11 @@ function html2() {
     google-chrome --headless statistik.html --print-to-pdf=Lagkagediagrammer-$bn-$begin-$end.pdf
     mv Lagkagediagrammer-$bn-$begin-$end.pdf ~/n4s-export
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Lagkagediagrammer-$bn-$begin-$end.pdf &)
+
+
+    google-chrome --headless moneyflow.html --print-to-pdf=Pengestrømme-$bn-$begin-$end.pdf
+    mv Pengestrømme-$bn-$begin-$end.pdf ~/n4s-export
+(	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Pengestrømme-$bn-$begin-$end.pdf &)
 
 
     google-chrome --headless manglendebilag.html --print-to-pdf=Manglendebilag-$bn-$begin-$end.pdf
