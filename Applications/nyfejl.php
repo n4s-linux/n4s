@@ -86,7 +86,7 @@ function askcomment($trans) {
 	$table .= "</table>";
 	file_put_contents("/home/$op/tmp/nyfejl.php.html",$table);
 	system("w3m -dump ~/tmp/nyfejl.php.html");
-	$valg = fzf("Mangler bilag\nHvordan betalt\nAndet\nRediger\nSkip","Vælg kommentar/spørgsmål til fejlliste","--tac --height=8");
+	$valg = fzf("Hvad er det\nMangler bilag\nHvordan betalt\nAndet\nRediger\nSkip","Vælg kommentar/spørgsmål til fejlliste","--tac --height=9");
 	if ($valg == "Skip") return "";
 	else if ($valg == "Andet") {
 		echo "Indtast kommentar/spørgsmål til kunde: ";
