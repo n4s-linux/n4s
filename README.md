@@ -61,58 +61,9 @@ It's important to note that although the n4s is based on a terminal, don't be fo
 
 💼 *Your Data, Your Control*: One of the most compelling features of N4S is that you have full control over your data. You host it on your own server, which means your information is always in your hands. And the best of all? You can do it for as little as $5 a month on Linode!
 
-# Do you miss the good old DOS days without so much BS or expensive subscriptions?
-Today, when technology and computers are constantly evolving 🚀, it can be tempting to look back to the good old days of the 1990s 🕰️ when the DOS operating system and early accounting systems were dominant 💾. There is something nostalgic about the time when computers and software worked in a simpler way and the user experience had its own charming qualities.
-
-**Stability and Reliability:**
-In the DOS days there were rarely worries about server downtime ⏳. The old accounting systems were usually run locally on a single computer 💻, which meant you had full control over your system 🛠️. There was no dependency on complex server infrastructures that could fail, and it provided a sense of stability and reliability 🏢.
-
-**Responsiveness:**
-One of the remarkable things about the DOS era was the instant response you got from your computer ⚡. When you pressed a button 🎮 or wanted to generate a report 📊 in the old accounting systems, there was no waiting time ⌛. The software responded almost instantly, making the work process fast and efficient 💨.
-
-
-
-# VT100 - The only terminal based program on the market
-## Modern System built on legendary VT100 Technology 💻
-Our system draws on the venerable VT100 technology, which saw the light of day back in 1978. This is not just a technology; it's a legacy, a source of speed and portability, and it's the key to an efficient and smooth working experience.
-
-## 🚀 **Blazing Fast Performance**
-The VT100 technology that forms the basis of our system is known for its extreme speed. Its simple and efficient design enables our system to perform tasks at lightning speed. This means you can work more efficiently and focus on what really matters.
-
-Imagine you are sitting on the train and you lose the connection between two masts - this can e.g. be there is a blackout while passing Øresund. You can continue typing in the terminal without worrying about this, as your keystrokes will be reflected on the other side of the strait when the connection is re-established. It could also be that you are on a 5G connection in the city, and 50,000 protesters and their mobile phones strain the network to such an extent that there are outages. This is no obstacle for a terminal-based system.
-
-Regarding the speed, we can state that there is no spinning symbol while it waits for a response from the server, likewise you do not have to go out and get coffee while you wait for the cash register to be posted. Our vision is that everything you do in the system is reflected immediately.
-There is also no limit on how many entries you can display at a time.
-
-If you e.g. have a small account with a little 20,000 entries, it takes approximately 300-400ms (0.3-0.4 seconds) to produce a full balance balance or account card on the screen. A classic problem with balances and credit cards is that you wear out your eyes and the mouse's scroll wheel. In n4s you don't need to show a full balance. You can just show the section of the balance you need, e.g. cash or all assets.
-Likewise with credit cards - you can quickly generate credit cards for any given account or main category.
-The following command will show you the breakdown of all your expenses in order of magnitude:
-
-> l r expenses -S amount
-
-
-The following command will show you the specification of your administration costs in text order
-> l r admin -S payee
-
-
-You don't even need to type the same command more than once. The system remembers your previously used commands so they can be easily reused.
-
-## 🌐 **Portability at its Core**
-
-With the VT100 technology as a foundation, our system has built-in portability. No matter where you are, you can easily access the system and perform your tasks without any hassle. This makes it the ideal choice for modern professionals who are constantly on the go.
-If you can do without fancy unicode symbols and æ, ø and å, you can actually run the system via a serial connection to an old terminal from the 80s.
-You can connect via PC, Mac, Linux, Android, iPhone - You name it.
-
-## 🧑💻 **Learning curve like a Ninjitsu master**
-Many former key operators, aka data nauts, who have now retired, have embraced and embraced this technology with no problems. VT100 technology has proven to be exceptionally easy to learn, even for those with no prior knowledge. Those who have taken the plunge have experienced a transformation and become as fast as ninjas within a short time.
+# 🧑💻 **Learning curve like a Ninjitsu master**
+Many former key operators, aka datanauts, who have now retired, have embraced and embraced this technology with no problems. VT100 technology has proven to be exceptionally easy to learn, even for those with no prior knowledge. Those who have taken the plunge have experienced a transformation and become as fast as ninjas within a short time.
 The advantage of our text-based system is, among other things, that when you know the system you can enter data without looking - you know where you are in the program based on your keystrokes and various outputs from the system.
-
-## 🌟 **Choose the Future with VT100-Anchored Technology**
-Dive into the past and embrace the future with our system that honors the legendary VT100 technology. Experience the speed, portability and simplicity of a terminal-based system and see how it can transform your workday.
-
-Read on if that sounds interesting!
-
-
 
 ## Can be run on any operating system without installation
 N4S can be run from a central server and you can connect with the Windows Terminal, OS X terminal Application or similar.
@@ -150,12 +101,7 @@ To generate corresponding reporting for your accounts, follow the following inst
 N4S not only excels in handling your day-to-day accounting needs, it also allows you to take your data where you need it, effortlessly. Exporting your data from N4S is a breeze, making it available to other online systems, even those with less extensive functionality.
 Our system supports loading and unloading of CSV files, which is why it is easy to migrate to/from another system.
 
-# n4s - Open Source / Free Software GNU/Linux based double bookkeeping and ERP
-n4s is a terminal-based system for double bookkeeping (finance, debtor, creditor). - And as a company database to manage any kind of data.
-It can run on any computer - or in the cloud.
-The system is built in PHP and BASH and uses the popular text editor vim (VI Improved), the terminal multiplexer tmux, and the text-based double entry accounting program ledger-cli and hledger
-
-Features:
+# Features
 * Automatic projection of accounts (forecasting) infinite number of months, so far the future monthly balances are calculated as an average of previous months, so is only useful for stable ongoing operations without seasonal fluctuations, e.g. service companies that sell all year round, or shops with stable turnover (Select budget in menu)
 * Unlimited amount of currencies / commodities
 * Advanced extended file structure and versioning and tracking on data/transactions.
@@ -198,10 +144,6 @@ Features:
 * [Updating system to latest version](https://asciinema.org/a/UFD86HqcTk5vXmpJ9slOu4W2I)
 * [How to color your reports in n4s?](https://www.youtube.com/watch?v=Id8-jAB-Q8c)
 * [How to add comments to your reports in n4s?](https://www.youtube.com/watch?v=iqgOCXVCxf0)
-
-# About Unicode
-In the old days the number of characters were pretty limited, but now we are using unicode, so to get the full n4s experience we recommend You visit [Nerd Fonts](https://nerdfonts.com)
-Also You will need a terminal that has 256 colors to enjoy the full n4s experience. Most terminal emulators like the one in windows (cmd.exe) supports this, however for windows based users we recommend downloading the Windows Terminal from Windows App Store
 
 # TLDR - Let me download your OVA
 * Link to [Virtualbox OVA appliance](https://drive.google.com/file/d/1i-VhkUzbIyoZOtJRZ0Fz1MS90s0AJE72/view)
