@@ -1,3 +1,17 @@
+function updatenews() {
+pushd .>/dev/null
+cd /svn/svnroot/
+git log --graph --pretty=format:'%C(auto)%h%d (%ci) %s'|grep -e 🐛 -e 💡>Changelog.md
+tail -n15 Changelog.md|while read line
+do
+grep "$line" README.md|wc -l >/dev/null
+if [ "$?" == 0 ]; then
+    echo "$line" >> README.md
+fi
+done
+popd >/dev/null
+}
+updatenews
 function newfeatures() {
 if [ "$1" == "load" ]; then
 	pushd . >/dev/null
