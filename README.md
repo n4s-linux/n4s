@@ -37,11 +37,10 @@ Is available when You import currency code and currency amount on Your transacti
 
 # Running updates - rolling release
 You don't have to wait years for a new version to be released. You can continuously download patches with improvements to the system.
-Follow this link to see the latest changes to the system.
+Most recent updates, You can also view the [Changelog](Changelog.md) or browse [All commits](https://github.com/n4s-linux/n4s-gratis-regnskab/commits/main/)
 It takes under a minute to update the n4s to the latest version.
-You can also make changes to the code yourself and suggest that these changes become part of n4s.
-You can see how easily the system is updated in our Quick Start Videos
-
+This is how you update the system
+> upd8
 
 # N4S - a free and free accounting and ERP solution for small businesses and individuals
 N4S is more than just an accounting system; it is a powerful ally on your journey to business success. Whether you're an accounting professional, an entrepreneur or a business owner, N4S has the tools you need to gain superior control over your finances and business processes.
@@ -149,5 +148,3 @@ Our system supports loading and unloading of CSV files, which is why it is easy 
 * Link to [Virtualbox OVA appliance](https://drive.google.com/file/d/1i-VhkUzbIyoZOtJRZ0Fz1MS90s0AJE72/view)
 * Link to [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (remember to get the Extension Pack too)
 
-# News
-Most recent updates, You can also view the [Full Changelog](Changelog.md) or browse [All commits](https://github.com/n4s-linux/n4s-gratis-regnskab/commits/main/)
