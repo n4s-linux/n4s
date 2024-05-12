@@ -1,4 +1,4 @@
-* a9de901 (origin/main) (2024-05-12 20:01:50 +0200) 💡 New feature: Scheduled transactions
+* a9de901 (2024-05-12 20:01:50 +0200) 💡 New feature: Scheduled transactions
 * d959812 (2024-05-12 19:56:14 +0200) 💡 New Feature: Automated questionaire based on fejlkonto to customers
 * 4fc27fa (2024-05-12 19:49:21 +0200) 💡 New Feature: Mindmap
 * 3cc2f8c (2024-05-11 13:16:40 +0200) 💡 New Feature: Moneyflow report
