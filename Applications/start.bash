@@ -40,6 +40,10 @@ if [ "$argument" == "igangv" ]; then
 	php /svn/svnroot/Applications/key.php entry
 	export LEDGER_ADD_TIME_TO_PAYEE=1
 	php /svn/svnroot/Applications/key.php ledger b 
+
+elif [ "$argument" == "mindmap" ]; then
+	hmm
+
 elif [ "$argument" == "screenshots" ]; then
 	mkdir -p /data/screens
 	vi /data/screens/
