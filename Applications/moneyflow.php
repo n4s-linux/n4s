@@ -25,8 +25,11 @@
 		foreach ($moneyflow as $key => $val) {
 			if (substr($key,0,strlen($curgroup)) == $curgroup) {
 				$key = substr($key,strlen($curgroup)+1);
-				$x = explode(":",$key);
+				$key=str_replace(":","⇒",$key);
+				/* $x = explode(":",$key);
 				$key = (isset($x[1])) ? "$x[0]⇒$x[1]" : $x[0];
+				$key = (isset($x[2])) ? "$x[0]⇒$x[1]" : $x[0];
+				*/
 				$pval = number_format($val,0,",",".");
 				$totalsum += $val;
 				$ptotal = number_format($totalsum,0,",",".");
