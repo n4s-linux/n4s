@@ -1,3 +1,17 @@
+function newfeatures() {
+if [ "$1" == "load" ]; then
+	pushd . >/dev/null
+	cd /svn/svnroot/
+	(
+	git log|grep 💡|head -n25
+	git log|grep 🐛|head -n25
+	)> ~/tmp/newfeatures
+	popd > /dev/null
+else
+	cat ~/tmp/newfeatures|shuf -n1
+fi
+}
+newfeatures load
 function hmm() {
 fn=$(
 (
@@ -569,7 +583,8 @@ BPWD="$(basename "$PWD")"
 	hist=$(history|tail -n10|sort --rev|while read i; do echo -n " $i"; done)
 	tmux set -g status 4 2>/dev/null; tmux set -g status-format[3] "#[fg=black,bg=#26bd19]$hist" 2>/dev/null
 
-	last=$(grep -h ✔ /data/regnskaber/transactions_crm/.tags/*.diff|grep "\["|grep "\]"|sort|tail -n1)
+	#last=$(grep -h ✔ /data/regnskaber/transactions_crm/.tags/*.diff|grep "\["|grep "\]"|sort|tail -n1)
+    last=$(newfeatures)
 	tmux set -g status 5 2>/dev/null; tmux set -g status-format[4] "#[fg=black,bg=#ebde34]$last" 2>/dev/null
 	pushd . >/dev/null
 	cd "$tpath"
