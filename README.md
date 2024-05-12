@@ -151,9 +151,3 @@ Our system supports loading and unloading of CSV files, which is why it is easy 
 
 # News
 Most recent updates, You can also view the [Full Changelog](Changelog.md) or browse [All commits](https://github.com/n4s-linux/n4s-gratis-regnskab/commits/main/)
-
-* c3d3fde (2024-05-05 00:19:33 +0200) 💡Sort results by date column when displaying matching journals
-* 3a0eb2c (2024-05-05 00:18:30 +0200) 🐛 Bugfix attempt related to vitouch on fedora, make sure running same version of echo on all systems
-* 398b9ee (2024-05-05 00:17:35 +0200) 🐛 Bugfix Fault tolerance quick entry + unescaped unicode allows or searching non ascii based transactions like danish letters æ,ø,å, but also unicode in general
-* 5c3b7fd (2024-05-05 00:16:30 +0200) 🐛 Bugfix: New private accounts symlink problem
-* 710615f (2024-05-05 00:14:34 +0200) 💡 New feature: Support import, search and display for currency amounts
