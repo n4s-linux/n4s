@@ -14,6 +14,7 @@ if (!isset($argv[1])) {
 	$menu["Manual"] = array('key'=>'m','Text'=>'Manual','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Manual'");
 	if ($op == "joo") $menu['Ugeoverblik2'] = array('key'=>'E','Text'=>'mail','cmd'=>"new-window 'tpath=/data/regnskaber/regnskabsdeadlines/ LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 php /svn/svnroot/Applications/key.php ledger r opgaver -S date --account-width=15|less' ");
 	$menu["Session"] = array('key'=>'S','Text'=>'newsession','cmd'=>"display-popup -h 4 -E 'bash /svn/svnroot/Applications/newsesv2.bash");
+	$menu["Mindmap - hmm"] = array('key'=>'S','Text'=>'newsession','cmd'=>"new-window 'bash /svn/svnroot/Applications/start.bash mindmap");
 }
 else if ($argv[1] == "Vim") {
 	$menu["Account1"] = array('key'=>'a','Text'=>'Account1','cmd'=>"send-keys \"escape\" gg/Account ENTER wwwå");
