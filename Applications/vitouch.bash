@@ -39,7 +39,7 @@ function vitouch() {
 	fi
 	
 	if [ "$notitle" == "" ]; then
-		shortbn="${bn:0:6}" #credits #chatgpt
+		shortbn="${bn:0:4}" #credits #chatgpt
 		bg=$(getbg $shortbn)
 		tmux rename-window "$shortbn"
 	fi
