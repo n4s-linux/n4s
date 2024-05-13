@@ -493,6 +493,8 @@
 			return;
 		}
 		$newtrans = json_decode(fgc($tpath."/".$file),true);
+		$newtrans["Date"] = str_replace(".","-",$newtrans["Date"]);
+		if (!strtotime($newtrans["Date"])) die("Date problem in $newtrans[Filename] - type vi \"$newtrans[Filename]\" ...\n");
 		if ($newtrans == false) {
 			file_put_contents("$tpath/.log",date("Y-m-d H:m") . "Could not json decode $tpath/$file\n",FILE_APPEND);
 			FWRITE(STDERR,set("Error: for at se fejl skriv 'fejl'\n","red"));
