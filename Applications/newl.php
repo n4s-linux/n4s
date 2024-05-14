@@ -241,7 +241,8 @@
 		$f['Description'] = askdesc(md5($hashkonti));
 		$f['Filename'] = $filename . "_" . filter_filename($f['Description']) . ".trans";
 		file_put_contents("$tpath/$f[Filename]",json_encode($f,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
-		echo "Gemt $tpath/$f[Filename]\n";
+		$msg = "Saved $f[Filename] 🗸 ";
+		echo "\033[38;5;46m$msg\033[0m\n";
 		system("php /svn/svnroot/Applications/newl.php b >/dev/null");
 		file_put_contents("/home/$op/.lastsym","📝$f[Reference]",FILE_APPEND);
 	}
