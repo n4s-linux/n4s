@@ -34,6 +34,7 @@ Aktiver:Periodeafgrænsningsposter
 Aktiver:Tilgode skat
 Aktiver:Udvikling
 Egenkapital:Overført resultat
+Egenkapital:Mellemregning
 Egenkapital:Øvrige hævnigner
 Egenkapital:Årets indskud
 Egenkapital:Årets hævninger
@@ -142,6 +143,7 @@ Udgifter:Lokaleomkostninger:Ejendomsskatter
 Udgifter:Lokaleomkostninger:Andre lokaleomkostninger
 Udgifter:Personaleomkostninger:Lønninger
 Udgifter:Personaleomkostninger:Feriepengeforpligtelse
+Udgifter:Personaleomkostninger:Personalegoder
 Udgifter:Personaleomkostninger:Jubilæumsgratiale og fratrædelsesgodtgørelse 
 Udgifter:Personaleomkostninger:Bestyrelseshonorar
 Udgifter:Personaleomkostninger:AM Bidragspligtig A-Indkomst
