@@ -5,10 +5,11 @@
 	$rv = "<center>";
 	$rv .= moneyspec();
 	ob_start();
-	system("color=none php /svn/svnroot/Applications/newl.php csv --related ^Aktiver:Likvider");
+	system("color=none php /svn/svnroot/Applications/newl.php csv --related ^Aktiver:Likvider ^Passiver:Kassekredit");
 	$data = explode("\n",trim(ob_get_clean()));
 	foreach ($data as $curline) {
 		$d = str_getcsv($curline);
+		if (!isset($d[3])) continue;
 		$acc = $d[3];
 		$amount = -$d[5];
 		error_reporting(0);
@@ -47,12 +48,13 @@
 	return $rv;
 	}
 	function moneyspec() {
+	$rv = "";
 	global $totalsum;
 		$rv .= "<br><h3>Bevægelser</h3>";
 	$rv .= "<table style='white-space:nowrap' width=600 class=table>";
 		$rv .= "<td width=550>Konto</td><td width=100><p align=right>Ind/Ud</p></td><td><p align=right>Nulkontrol</p></td></tr>";
 	ob_start();
-	system("color=none php /svn/svnroot/Applications/newl.php csv ^Aktiver:Likvider");
+	system("color=none php /svn/svnroot/Applications/newl.php csv ^Aktiver:Likvider ^Passiver:Kassekredit");
 	$data = explode("\n",trim(ob_get_clean()));
 	$moneyflow=array();
 	foreach ($data as $curline) {
