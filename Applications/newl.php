@@ -1,4 +1,5 @@
 <?php
+require_once("/svn/svnroot/Applications/readonly.php");
 	$tpath = getenv("tpath");
 	$alreadyused = array();
 	require_once("/svn/svnroot/Applications/short.php");
@@ -141,7 +142,6 @@
 		else
 			$curbook = "";
 		$ledgerdata = getledgerdata($x,true,false,$curbook);
-		
 		require_once("/svn/svnroot/Applications/proc_open.php");
 		file_put_contents("$tpath/.bookpreview",$ledgerdata);
 		exec_app("less $tpath/.bookpreview");
@@ -153,14 +153,13 @@
 			echo set(strtoupper("Bekræftet bogføring af $antal poster ($begin - $end)\n"),"inverse");
 			$nextnumber = $orgnextnumber; // global nummercounter skal genstartes fordi vi har kørt data før
 			$ledgerdata = getledgerdata($x,true,false,$curbook);
-			file_put_contents("$tpath/Mainbook.ledger",$ledgerdata);
+			//file_put_contents("$tpath/Mainbook.ledger",$ledgerdata);
 			file_put_contents("$tpath/.nextnumber",$nextnumber);
 			file_put_contents("$tpath/.nextcbnumber",$nextcbnumber +1);
 			foreach (array_unique($lockthesefiles) as $curfile) {
 				$data = json_decode(fgc($curfile),true);
-				$data['Description'] = "🔒" . $data['Description'];
 				$data['Status'] = "Locked";
-				$data['History'][] = array("Desc" => 'Bogført','op'=>$op,'tidspunkt'=>date("Y-m-d H:m"));
+				$data['History'][] = array("Desc" => 'Booked','op'=>$op,'tidspunkt'=>date("Y-m-d H:m"));
 				file_put_contents("$tpath/$curfile",json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 				foreach ($data['Transactions'] as $ct) {
 					$str = str_pad($data['Filename'],25," ",STR_PAD_RIGHT) . "\t";
@@ -168,7 +167,6 @@
 					$str .= str_pad($ct['Amount'],10," ",STR_PAD_LEFT);
 					echo set(strtoupper("🔒 $str\n"),"green");
 				}
-				system("chmod a=r $tpath/$curfile");
 			}
 		}
 		else
@@ -191,7 +189,8 @@
 		foreach ($nargs as $curarg)
 			$cmd .= " $curarg";
 			if (getenv("color") != "none") $cmd .="|php /svn/svnroot/Applications/colorizer.php";
-		system("$cmd");
+		$lh = ledgerhack();
+		system("$lh;$cmd");
 		if ($undefined_aliascount > 0)fwrite(STDERR,"$undefined_aliascount manglende aliases - skriv 'aliases'\n");
 	}
 	else {
@@ -383,7 +382,7 @@
 		global $lockthesefiles;
 		$ledgerdata = $currentledger;
 		$begin =getenv("LEDGER_BEGIN");
-		$end =getenv("LEDGER_BEGIN");
+		$end =getenv("LEDGER_END");
 		require_once("/svn/svnroot/Applications/ansi-color.php");
 		if ($book == true) echo set(strtoupper("Starter bogføring af poster [ $begin - $end ]\n\n"),"inverse");
 		if ($book == true && $ledgerdata == "") $ledgerdata = "\n; Dette er hovedbogen. Hver transaktion bekræfter alle transaktioner forinden med deres samlede md5 checksum - det vil sige hvis du ændrer i denne bog bliver checksummen ugyldig og bogen er manipuleret - efter denne besked starter transaktionerne fra Løbenummer 1 og frem\n\n";
@@ -391,25 +390,27 @@
 		foreach ($x as $c) { // for hver transaktion der skal bogføres
 			if (strtotime($c['Date'] >= strtotime($end) || strtotime($c['Date']) <= strtotime($begin))) continue; // skip periods we are not in - only book current period
 			if (isset($c['Reference'])) $ref = $c['Reference']; else $ref = "";
-			if ($book == true) { 
-				$hash = md5(trim($ledgerdata)); 
-				$ledgerdata .= "$c[Date] ($ref) ☀ $c[Description]\n";
-			}
+			if (readonly($c["Filename"]))
+				$ledgerdata .= "$c[Date] ($ref) 🔒$c[Description]\n";
 			else {
 				$ledgerdata .= "$c[Date] ($ref) ✎ $c[Description]\n";
 			}
 		$counter = 0;
 		foreach ($c['Transactions'] as $ct) {
+			if (strtotime($c['Date'] >= strtotime($end) || strtotime($c['Date']) <= strtotime($begin))) continue; // skip periods we are not in - only book current period
 			array_push($lockthesefiles,$c['Filename']);
 			$ledgerdata .= "\t$ct[Account]  $ct[Amount] ";
 			$tid = (isset($ct['id'])) ? $ct['id'] : $counter;
-			$comment = " ; Filename: $c[Filename] |||| TransID: $tid "; 
+			if (isset($c["Status"])) $status = $c["Status"]; else $status = "Normal";
+			if (isset($ct["id"]) && $ct["id"] == "virt") $status = "Locked";
+			$comment = " ; Filename: $c[Filename] |||| TransID: $tid |||| Status: $status"; 
 			if (isset($c['Comment']) && strlen($c['Comment']))
-				$comment .= "||| Comment: $c[Comment] ";
+				$comment .= "|||| Comment: $c[Comment] ";
 			if ($book) {
 				$comment .= " |||| Løbenr $nextnumber |||| Hash $hash";
 				$nextnumber++;
 			}
+			if (isset($ct["SourceFunc"])) $comment .= " |||| SourceFunc: $ct[SourceFunc]";
 			if (!$pretty) $ledgerdata .= $comment; 
 			$ledgerdata .= "\n";
 			if (!isset($ct['id'])) $counter++;
@@ -489,10 +490,6 @@
 		global $transactions;
 		global $op;
 		global $deletebilag;
-		if (!is_writable("$tpath/$file")) {
-			//fwrite(STDERR,"$file is readonly (booked) - skipping");
-			return;
-		}
 		$newtrans = json_decode(fgc($tpath."/".$file),true);
 		$newtrans["Date"] = str_replace(".","-",$newtrans["Date"]);
 		if (!strtotime($newtrans["Date"])) die("Date problem in $newtrans[Filename] - type vi \"$newtrans[Filename]\" ...\n");
@@ -618,4 +615,9 @@ function getops($trans) {
 	}
 	return trim($r);
 }
+function ledgerhack() {
+        // ledger csv problem workaround unset ledger-depth, then set it again - irc no response 2023-11-01
+        return "unset LEDGER_DEPTH;LEDGER_DEPTH=999";
+}
+
 ?>
