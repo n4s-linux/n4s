@@ -1,4 +1,5 @@
 <?php
+require_once("/svn/svnroot/Applications/readonly.php");
 require_once("/svn/svnroot/Applications/str_file_filter.php");
 require_once("/svn/svnroot/Applications/print_array.php");
 // 2023-11-20T22:38 joo	this file is being used for searching, but is deprecated, everything should be ported to newl.php
@@ -174,7 +175,10 @@ unset($curtrans["History"]); // dont search in history please
 			array_push($sresult,$curtrans);
 			$count++;
 			$results .= "\"$path/$curtrans[Filename]\" ";
-			$resultvim .= ":e \"$path/$curtrans[Filename]\"\n";
+			if (readonly($curtrans["Filename"]))
+				$resultvim .= ":view \"$path/$curtrans[Filename]\"\n";
+			else
+				$resultvim .= ":e \"$path/$curtrans[Filename]\"\n";
 			$cmd = "cp \"$path/$curtrans[Filename]\" \"$path/.$curtrans[Filename].old\";chmod 777 \"$path/.$curtrans[Filename].old\"";
 			system($cmd);
 
@@ -205,25 +209,38 @@ require_once("sortsearch.php");
 			$cd1= str_pad($curres["Transactions"][0]['AmountCurrency'] . " " . $curres["Transactions"][0]['Currency'],12, " ",STR_PAD_LEFT);
 		}
 		else $cd1="";
-		$fzf .= "$curres[Date]\t$curres[Reference]\t$curres[Description]\t$a\t$cd1\t$konto ($m1) \t$mk ($m2)\t⚡$curres[Filename]\n";
+		$bg_yellow = "\033[48;5;226m"; // 226 is the ANSI code for yellow background color
+		$bg_purple = "\033[48;5;93m"; // 93 is the ANSI code for a shade of purple
+		$reset_color = "\033[0m"; // Reset color to default			
+		$bg_gray = "\033[48;5;240m"; // 240 is the ANSI code for a shade of gray
+		if (readonly($curres["Filename"]))
+			$fzf .= "$bg_gray" . "$curres[Date]\t$curres[Reference]\t$curres[Description]\t$a\t$cd1\t$konto ($m1) \t$mk ($m2)\t⚡$curres[Filename]$reset_color\n";
+		else
+			$fzf .= "$bg_purple" . "$curres[Date]\t$curres[Reference]\t$curres[Description]\t$a\t$cd1\t$konto ($m1) \t$mk ($m2)\t⚡$curres[Filename]$reset_color\n";
 		error_reporting(E_ALL);
 	}
 	require_once("fzf.php");
 	if (getenv("justshowall") == "1") 
 		{ $res = array(); $res[0] = "Alle"; }
 	else
-		$res = explode("\n",fzf($fzf,"Vælg søgeresultat","--multi --exact --height=24",true));
+		$res = explode("\n",fzf($fzf,"Vælg søgeresultat","--ansi --multi --exact --height=24",true));
 	if (trim($res[0]) == "Alle") {
 		foreach ($sresult as $curres) {
 			$fn = $curres['Filename'];
-			$resultvim .= ":e $fn\n";
+			if (readonly($curres["Filename"]))
+				$resultvim .= ":view $fn\n";
+			else
+				$resultvim .= ":e $fn\n";
 		}
 	}
 	else {
 		foreach ($res as $line) {
 			if (trim($line) == "") continue;
 			$fn= explode("⚡",$line)[1];
-			$resultvim .= ":e $fn\n";
+			if (!readonly($fn))
+				$resultvim .= ":e $fn\n";
+			else
+				$resultvim .= ":view $fn\n";
 		}
 	}
 	require_once("/svn/svnroot/Applications/ansi-color.php");
@@ -742,4 +759,5 @@ function sanitize($string = '', $is_filename = FALSE)
  // Only allow one dash separator at a time (and make string lowercase)
  return mb_strtolower(preg_replace('/--+/u', '-', $string), 'UTF-8');
 }
+
 ?>
