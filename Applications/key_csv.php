@@ -54,8 +54,6 @@ if (isset($c['Account'])) 	$curacc = $c['Account']; else 	$curacc = "";
 		$curtrans['Date'] = date("Y-m-d",strtotime(2000+$x[2]."-" . $x[1] . "-" . $x[0])); // could be problematic for the next generation
 	else // assume iso
 		$curtrans['Date'] = date("Y-m-d",strtotime($c['Date']));
-	if (strtotime($curtrans['Date']) < strtotime("1986-12-25"))
-		die("Aborting, this is some old stuff that should probably not be imported- cant understand date format $c[Date]...\n");
 	if (strtotime($curtrans['Date']) > strtotime("+1 days") && getenv("future") != "1") {
 		$jsondata = json_encode($curtrans);
 		continue;
