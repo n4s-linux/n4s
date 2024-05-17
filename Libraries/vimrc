@@ -114,8 +114,8 @@ imap <F10> <C-R>=printf("%s %s\t", strftime("%Y-%m-%dT%H:%M"), $USER)<CR>
 imap <F9> <C-R>=strftime("%Y-%m-%d")<CR>
 
 
-nnoremap <C-l> :w<CR>:bn<CR>
-nnoremap <C-k> :w<CR>:bp<CR>
+nnoremap <C-l> :w!<CR>:bn<CR>
+nnoremap <C-k> :w!<CR>:bp<CR>
 map <F5> :'<,'>!awk '{ sum += $1; print; } END { printf("Total:\n----------\n\%.2f\n----------\n", sum) }'<cr>
 
 
@@ -357,8 +357,23 @@ endfunc
 nnoremap ? :!php /svn/svnroot/Applications/tmux/menu.php Vim& <CR><CR>
 :highlight Pmenu ctermbg=blue guibg=blue guifg=black
 
-autocmd BufReadPost * if &readonly | setlocal nomodifiable | endif
-autocmd BufReadPost * if &readonly | highlight Normal guifg=#2b6e4b guibg=#a7d4b3 | endif
+"autocmd TextChanged * if &readonly | setlocal nomodifiable | endif
+" autocmd TextChanged * if &readonly | highlight Normal guifg=#2b6e4b guibg=#a7d4b3 | endif
+
+" Define a function to check if the file is readonly
+function! CheckReadOnly()
+    if &readonly
+        set background=light
+    else
+        set background=dark
+    endif
+endfunction
+
+" Define an autocmd to call the function when the buffer changes
+autocmd BufEnter,BufNewFile,BufReadPost * call CheckReadOnly()
+
+
+
 " belowright term less /svn/svnroot/Libraries/vimguide
 " belowright resize 2
 " wincmd h
@@ -447,3 +462,42 @@ let g:HelpMeItems = [
     \ "F10		Insert date and timestamp with username",
     \ ]
 nnoremap ? :HelpMe<CR>
+autocmd BufReadPost * if &readonly | setlocal nomodifiable | endif
+" Define a function to set the statusline color and content based on file mode and locked status
+function! UpdateStatusLine()
+    " Check if the file is in read-only mode
+    if &readonly
+        " Set statusline color to yellow if file is read-only
+        hi StatusLine guifg=black guibg=yellow
+        " Update statusline to indicate read-only mode
+        let &statusline='%{IsLocked()} [RO] %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P'
+    else
+        " Set statusline color to default if file is read-write
+        hi StatusLine guifg=NONE guibg=NONE
+        " Update statusline to indicate read-write mode
+        let &statusline='%{IsLocked()} %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P'
+    endif
+endfunction
+
+" Define a function to check if the buffer is locked
+function! IsLocked()
+    " Loop through each line in the buffer
+    for i in range(1, line('$'))
+        " Check if the line contains 'Status' and 'Locked'
+        if getline(i) =~# 'Status' && getline(i) =~# 'Locked'
+            " Return "Locked" if found
+            return "[Locked]"
+        endif
+    endfor
+    " Return empty string if not found
+    return ""
+endfunction
+
+" Automatically call the function when the buffer or window is entered
+autocmd BufEnter,BufWinEnter * call UpdateStatusLine()
+
+" Automatically call the function when the buffer is changed
+autocmd BufEnter,BufWinEnter,BufWritePost * call UpdateStatusLine()
+
+" Set the statusline formatting initially
+call UpdateStatusLine()
