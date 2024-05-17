@@ -29,24 +29,23 @@ while ($line = fgetcsv($fd,null,",","\"","\\")) { // GET DATA
 	else
 		$saldo[$konto] = $belob;
 }
-$y = 0;
 $s = "";
 foreach ($saldo as $konto => $cursaldo) {
 	$orgkonto = $konto;
 	$kkkeep = array("Egenkapital:Selskabskapital","Egenkapital:Mellemregning");
-	$y += $cursaldo;
 	if (intval($cursaldo) == 0) continue;
 	$cursaldo = number_format($cursaldo,2,".","");
-	$reset = true;
+	$keep= true;
 	if (substr($konto,0,strlen("Egenkapital:")) == "Egenkapital:") {
 		if (!stristr($konto,"reserve") && !in_array($konto,$kkkeep)) {
-			print_r($konto);
-			$reset = false;
+			$keep= true;
 		}
+		else
+			$keep = false;
 	}
-	if ($reset) {
+	if ($keep) {
 	$s .= "$begin ☀ $orgkonto\n";
-	$s .= "\t$konto  $cursaldo\n\tEgenkapital:Overført resultat\n\n";
+	$s .= "\t$konto  $cursaldo ; Filename: calcopening.php |||| TransID: virt |||| Status: Locked\n\tEgenkapital:Overført resultat  ; Filename: calcopening.php |||| TransID: virt |||| Status: Locked\n\n";
 	}
 }
 file_put_contents("$tpath/.Åbning_$begin.ledger",$s);
