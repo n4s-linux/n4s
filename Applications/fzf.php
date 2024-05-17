@@ -16,6 +16,12 @@ function fzf($list,$header = "",$flags = "",$cols = false,$trim = true) {
 	if ($trim) $d = trim($d);
 	
 //	unlink("/home/$op/tmp/fzf");
-	return trim($d);
+	return trim(removeNonPrintableCharacters($d));
+}
+function removeNonPrintableCharacters($string) {
+    // Remove ANSI escape codes
+    $string = preg_replace('/\033\[[\d;]*m/', '', $string);
+    
+    return $string;
 }
 ?>
