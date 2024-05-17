@@ -42,7 +42,17 @@ function upd8() {
     git pull 
     popd > /dev/null
 }
-function b() { 
+function b() {
+depth=$(echo -e "1\n2"|fzf --header="Choose depth")
+if [ "$depth" == ""]; then return; fi
+acc=$(php /svn/svnroot/Applications/newl.php accounts --depth=$depth|fzf --ansi)
+if [ "$acc" == "" ]; then
+	return
+fi
+php /svn/svnroot/Applications/newl.php b ^"$acc" --flat
+
+}
+function bilag() { 
 	pushd 2>/dev/null
 	if [ "$kddir" == "" ]; then
 		echo "set customer dir first with kd"
@@ -179,10 +189,8 @@ fi
 function u() {
 ssh -p 8888 localhost DISPLAY=:1 xdg-open "$1" 2>/dev/null
 }
-function r() {
-ssh -p 8888 localhost DISPLAY=:1 $@
-}
-
+alias register="php /svn/svnroot/Applications/register.php"
+alias r=register
 alias autoudlign="php /svn/svnroot/Applications/newl.php openentries"
 alias ui="php /svn/svnroot/Applications/newl.php ui"
 function lt() {
@@ -242,7 +250,7 @@ export LEDGER_SORT=date
 function pivot() {
 bash /svn/svnroot/Applications/hpivot.bash $@
 }
-alias ppivot="LEDGER_BEGIN=1970-1-1 LEGDER_END=2099-12-31 bash /svn/svnroot/Applications/hpivot.bash $@"
+alias ppivot="LEDGER_BEGIN=1900-1-1 LEGDER_END=2099-12-31 bash /svn/svnroot/Applications/hpivot.bash $@"
 
 mkdir -p ~/n4s-sockets/
 export TMUX_TMPDIR=~/n4s-sockets/
@@ -267,10 +275,10 @@ function dp() {
 	source ~/tmp/.datepick_$bn
 	end=$LEDGER_BEGIN
 	lastsym 🕒
-	begin=1970-01-01 
+	begin=1900-01-01 
     tmux split-window -l2 -v "cd $tpath; tpath=$tpath LEDGER_DEPTH=999 LEDGER_BEGIN=$begin LEDGER_END=$end noend=1 php /svn/svnroot/Applications/newl.php csv|LEDGER_BEGIN=$LEDGER_BEGIN tpath=$tpath php /svn/svnroot/Applications/calcopening.php"
     tmux last-pane
-    tmux split-window -l1 -v "echo -n $(basename "$tpath"): Henter kontoplan;cd $tpath; tpath=$tpath LEDGER_DEPTH=999 LEDGER_END=2099-12-31 LEDGER_BEGIN=1970-01-01 noend=1 php /svn/svnroot/Applications/newl.php accounts > $tpath/.accounts.tmp;cp $tpath/.accounts.tmp $tpath/.accounts;rm $tpath/.accounts.tmp;clear;echo -n Kontoplan hentet;sleep 1"
+    tmux split-window -l1 -v "echo -n $(basename "$tpath"): Henter kontoplan;cd $tpath; tpath=$tpath LEDGER_DEPTH=999 LEDGER_END=2099-12-31 LEDGER_BEGIN=1900-01-01 noend=1 php /svn/svnroot/Applications/newl.php accounts > $tpath/.accounts.tmp;cp $tpath/.accounts.tmp $tpath/.accounts;rm $tpath/.accounts.tmp;clear;echo -n Kontoplan hentet;sleep 1"
     tmux last-pane
 }
 function ds() {
@@ -628,8 +636,8 @@ function ss() {
 		return
 	fi
 	lastsym 🔬
-	echo "searching for $@  in 1970-01-01 - 2019-12-31 - use s for searching only in $LEDGER_BEGIN - $LEDGER_END"
-	php /svn/svnroot/Applications/key.php search 1970-01-01 2099-12-31 "$@" 
+	echo "searching for $@  in 1900-01-01 - 2019-12-31 - use s for searching only in $LEDGER_BEGIN - $LEDGER_END"
+	php /svn/svnroot/Applications/key.php search 1900-01-01 2099-12-31 "$@" 
 }
 alias e="php /svn/svnroot/Applications/newl.php entry"
 alias eu="php /svn/svnroot/Applications/key.php entry bilag"
@@ -748,7 +756,7 @@ function sync() {
 }
 
 LEDGER_END=2099-12-31
-LEDGER_BEGIN=1970-01-01
+LEDGER_BEGIN=1900-01-01
 export DISPLAY=:1
 # HSTR configuration - add this to ~/.bashrc
 alias hh=hstr                    # hh to be alias for hstr
