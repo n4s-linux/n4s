@@ -27,6 +27,7 @@ foreach ($darray as $dataarray) {
 
 		if ($trans['Func'] == "iy-abr") {
 			$ot = $trans;
+			$trans["SourceFunc"] = "iy-abr";
 			$trans['Amount'] = $trans['Amount'] * -0.25;
 			$trans['Account'] = "Passiver:Moms:Moms af ydelseskøb Udland";
 			$trans['id'] = "virt";
@@ -39,6 +40,7 @@ foreach ($darray as $dataarray) {
 		}
 		if ($trans['Func'] == "iv-abr") {
 			$ot = $trans;
+			$trans["SourceFunc"] = "iv-abr";
 			$trans['Amount'] = $trans['Amount'] * -0.25;
 			$trans['Account'] = "Passiver:Moms:Moms af varekøb Udland";
 			$trans['id'] = "virt";
@@ -54,6 +56,7 @@ foreach ($darray as $dataarray) {
 
 		if ($trans['Func'] == "iy-eu") {
 			$ot = $trans;
+			$trans["SourceFunc"] = "iy-eu";
 			$trans['Amount'] = $trans['Amount'] * -0.25;
 			$trans['Account'] = "Passiver:Moms:Moms af ydelseskøb EU";
 			$trans['id'] = "virt";
@@ -66,6 +69,7 @@ foreach ($darray as $dataarray) {
 		}
 		if ($trans['Func'] == "iv-eu") {
 			$ot = $trans;
+			$trans["SourceFunc"] = "iv-eu";
 			$trans['Amount'] = $trans['Amount'] * -0.25;
 			$trans['Account'] = "Passiver:Moms:Moms af varekøb EU";
 			$trans['id'] = "virt";
@@ -78,6 +82,7 @@ foreach ($darray as $dataarray) {
 		}
 		if ($trans['Func'] == "iv" || $trans['Func'] == "iv25") {
 			$ot = $trans;
+			$trans["SourceFunc"] = "iv";
 			$trans['Amount'] = $trans['Amount'] * -0.25;
 			$trans['Account'] = "Passiver:Moms:Moms af varekøb udland";
 			$trans['id'] = "virt";
@@ -90,6 +95,7 @@ foreach ($darray as $dataarray) {
 		}
 		if ($trans['Func'] == "iy" || $trans['Func'] == "iy25") {
 			$ot = $trans;
+			$trans["SourceFunc"] = "iy";
 			$trans['Amount'] = $trans['Amount'] * -0.25;
 			$trans['Account'] = "Passiver:Moms:Moms af ydelser udland";
 			$trans['id'] = "virt";
@@ -108,6 +114,7 @@ foreach ($darray as $dataarray) {
 			$trans['Amount'] = $trans['Amount'] /4;
 			$trans['Account'] = "Passiver:Moms:Salgsmoms";
 			$trans['id'] = "virt";
+			$trans["SourceFunc"] = "u";
 			array_push($newtrans,$trans);
 		}
 			else	if ($trans['Func'] == "i" || $trans['Func'] == "I") {
@@ -118,6 +125,7 @@ foreach ($darray as $dataarray) {
 			$trans['Amount'] = $trans['Amount'] /4;
 			$trans['Account'] = "Passiver:Moms:Købsmoms";
 			$trans['id'] = "virt";
+			$trans["SourceFunc"] = "i";
 			array_push($newtrans,$trans);
 		}
 
@@ -130,6 +138,7 @@ foreach ($darray as $dataarray) {
 			$trans['Amount'] = $vatamount;
 			$trans['Account'] = "Passiver:Moms:Købsmoms";
 			$trans['id'] = "virt";
+			$trans["SourceFunc"] = "rep";
 			array_push($newtrans,$trans);
 		}
 
