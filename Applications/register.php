@@ -40,6 +40,8 @@ function copytrans($selected,$mode="Copy") {
 		else {
 			echo "Reversing $tpath/$tags[Filename]\n";
 			$j = json_decode(file_get_contents("$tpath/$tags[Filename]"),true);
+			unset($j["Status"]);
+			foreach ($j["Transactions"] as & $ct) unset($ct["TransactionNo"]);
 			$j["SourceTrans"] = $tags["Filename"];
 			if ($mode == "Reverse") {
 				foreach ($j["Transactions"] as & $ct) {
