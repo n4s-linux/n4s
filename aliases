@@ -42,16 +42,7 @@ function upd8() {
     git pull 
     popd > /dev/null
 }
-function b() {
-depth=$(echo -e "1\n2"|fzf --header="Choose depth")
-if [ "$depth" == ""]; then return; fi
-acc=$(php /svn/svnroot/Applications/newl.php accounts --depth=$depth|fzf --ansi)
-if [ "$acc" == "" ]; then
-	return
-fi
-php /svn/svnroot/Applications/newl.php b ^"$acc" --flat
-
-}
+alias b="php /svn/svnroot/Applications/nicerbal.php"
 function bilag() { 
 	pushd 2>/dev/null
 	if [ "$kddir" == "" ]; then
@@ -306,6 +297,7 @@ function lm() {
 		return
 	fi
 }
+bind '"\ee":"e\n"' 2>/dev/null
 bind '"\em":"m\n"' 2>/dev/null
 bind '"\eå":"lm\n"' 2>/dev/null
 bind '"\er":"r\n"' 2>/dev/null
@@ -695,9 +687,10 @@ echo
 dp
 fi
 echo "Opened $(basename "$tpath") OK "
-echo $(tput setab 190)✌ Opened $tpath 
-echo $(tput setab 190)✌ Full Log $logging
-echo $(tput setab 190)✌ Accounting menu $(tput setab 190)Press Alt-m
+echo ✌ Opened $tpath 
+echo ✌ Full Log $logging
+shortcuts="✌ Common shortcuts: Menu [Alt-m] - Entry [Alt-e] - Balance [Alt-b] - Register [Alr-r]"
+echo  -e "\033[33;5m$shortcuts\033[0m"
 echo
 mkdir -p $tpath/.logs/
 
