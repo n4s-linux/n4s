@@ -13,23 +13,21 @@
                 if (!isset($data[$bn]["Status"]) || $data[$bn]["Status"] != "Locked") unset($data[$bn]);
         }
 	$corrupted = array();
+	$fnumber = 1;
+	$count = count($data);
 	foreach ($data as $fn => $j) {
-		fprintf(STDERR,"Validating $fn...\n");
 		$lowest_id = lowestid($j);
 		$hash = gethash($lowest_id);
-		echo "got hash $hash\n";
 		if (isset($j["HashOfPreviousLyBookedFiles"])) {
 			$hashfile = $j["HashOfPreviousLyBookedFiles"];
-			echo "hashfile=$hashfile\n";
 			if ($hash != $hashfile) {
-				array_push($corrupted,$lowest_id -1);
+				$id = $lowest_id-1;
+				die("Account corruption detected at TransactionNo $id\n");
 			}
+			else fprintf(STDERR,"[$fnumber / $count] Validated $fn ✔\n");
 		}
+		$fnumber++;
 	}
-	if (!empty($corrupted)) {
-		$id = min($corrupted);
-		echo "Account corruption detected at TransactionNo $id\n";
-	}
-	else echo "Book Validated\n";
+	echo "Book Validated !\n";
 
 ?>

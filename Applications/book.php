@@ -26,8 +26,9 @@
 		$amount = $curdata["Transactions"][0]["Amount"];
 		$pamount = str_pad(number_format($amount,2,".",","),15," ",STR_PAD_LEFT);
 		$acc = $curdata["Transactions"][0]["Account"];
-		$f1= $curdata["Transactions"][0]["Func"];
-		$f2= $curdata["Transactions"][1]["Func"];
+		$f1= (isset($curdata["Transactions"][0]["Func"])) ? $curdata["Transactions"][0]["Func"] : "";
+		$f2= (isset($curdata["Transactions"][1]["Func"])) ? $curdata["Transactions"][1]["Func"] : "";
+		if (!isset($curdata["Transactions"][1])) continue;
 		$acc2 = $curdata["Transactions"][1]["Account"];
 		$fzf .= "$i 💰\t$curdata[Date]\t$curdata[Description]\t$acc [$f1]\t$pamount\t$acc2 [$f2]\n";
 		$selection[$i] = array("fn"=>$fn,"data"=>$curdata);

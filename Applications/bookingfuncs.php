@@ -8,6 +8,7 @@ function lowestid($data) {
 	return $curid;
 }
 function gethash($tid) {
+		global $tpath;
                 global $files;
                 $hashdata = "";
                 foreach ($files as $curfile) {
@@ -18,7 +19,8 @@ function gethash($tid) {
                                 else $hashdata .= trim(file_get_contents($curfile));
                         }
                 }
-                return md5($hashdata) . "a";
+		$hash = hash('xxh32', $hashdata);
+                return $hash;
 
         }
         function nextbookingnumber() {
