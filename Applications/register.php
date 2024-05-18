@@ -14,7 +14,7 @@ if (empty($accounts)) die("Empty search result\n");
 $selected = explode("\n",showmatches($accounts,$matches,$t));
 $action = getaction($selected);
 if ($action == "") die("No action selected\n");
-if ($action == "Edit") edit($selected);
+if ($action == "View/Edit") edit($selected);
 else if ($action == "Reverse") copytrans($selected,"Reverse");
 else if ($action == "Copy") copytrans($selected,"Copy");
 function copytrans($selected,$mode="Copy") {
@@ -106,7 +106,7 @@ function edit($selected) {
 	}
 }
 function getaction($selection){
-	$valg = fzf("Edit\nCopy\nReverse","Chose action for transactions");
+	$valg = fzf("View/Edit\nCopy\nReverse","Chose action for transactions");
 	if ($valg == "") die("Didnt select action, aborting...\n");
 	return $valg;
 }
@@ -141,16 +141,28 @@ return $matches;
 function bydate($a,$b) {
 	return strtotime($a[0]) > strtotime($b[0]);
 }
+function getbal($t,$acc) {
+	$bal = 0;
+	foreach ($t as $curt) {
+		if ($curt[3] == $acc) $bal += $curt[5];
+	}
+	return $bal;
+}
 function showmatches($accounts,$matches,$t) {
 	global $currenttransactions;
 	$fzf = "";
-	foreach ($accounts as $ca) $fzf .= "$ca\n";
+	foreach ($accounts as $ca) {
+		$bal = getbal($t,$ca);
+		$nicebal = str_pad(number_format($bal,2,".",","),15," ",STR_PAD_LEFT);
+		$fzf .= "$ca\t💰$nicebal\n";
+	}
 	$fzf = trim($fzf);
-	$acc = fzf($fzf,"Select account that has matches - SPACE to select all","--multi --bind space:select-all");
+	$acc = fzf($fzf,"Select account that has matches - SPACE to select all","--multi --bind space:select-all",true);
 	if ($acc == "") die("No account(s) selected\n");
 	$accs = explode("\n",$acc);
 	$show = array();
 	foreach ($accs as $ca) {
+		$ca = explode("💰",$ca)[0];$ca = trim($ca);
 		foreach ($t as $ct) {
 			if ($ct[3] == $ca) {
 				array_push($show,$ct);
@@ -192,7 +204,15 @@ function showmatches($accounts,$matches,$t) {
 }
 function getaccounts($t) {
 	$accs = array();
-	foreach ($t as $ct) if (!in_array($ct[3],$accs)) array_push($accs,$ct[3]);
+	global $argv;
+	$args = $argv;unset($args[0]);
+	foreach ($t as $ct) {
+		$match = true;
+		foreach ($args as $curarg) {
+			if (!stristr($ct[3],$curarg)) $match = false;
+		}
+		if ($match && !in_array($ct[3],$accs)) array_push($accs,$ct[3]);
+	}
 	return $accs;
 }
 function ledgerhack() {
