@@ -1,4 +1,5 @@
-* 719bd34 (HEAD -> main) (2024-05-18 12:25:25 +0200) 💡New Feature: Nicer balance with integration to register
+* 9018a22 (HEAD -> main) (2024-05-18 13:56:57 +0200) 💡 New Feature: Guide that allows to book specific or all transactions, and verify the book later on to see if any of the booked transactions has changed #blockchain
+* 719bd34 (2024-05-18 12:25:25 +0200) 💡New Feature: Nicer balance with integration to register
 * b34c5c0 (2024-05-17 22:37:00 +0200) 💡New Feature: More efficent account entry browser - with edit, copy, reverse function
 * 9fec162 (2024-05-13 17:44:21 +0200) 🐛 Fault tolerance and reporting for invalid date formats in ledger files
 * a9de901 (2024-05-12 20:01:50 +0200) 💡 New feature: Scheduled transactions
