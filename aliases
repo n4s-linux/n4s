@@ -1,3 +1,4 @@
+alias book=" php /svn/svnroot/Applications/book.php"
 function updatenews() {
     pushd .>/dev/null
     cd /svn/svnroot/
@@ -304,7 +305,7 @@ bind '"\er":"r\n"' 2>/dev/null
 bind '"\eb":"b\n"' 2>/dev/null
 bind '"\ep":"dp\n"' 2>/dev/null
 bind '"\es":"ds\n"' 2>/dev/null
-bind '"\eo":"o\n"' 2>/dev/null
+bind '"\eo":"book\n"' 2>/dev/null
 bind '"\eq":"changetermcmd\n"' 2>/dev/null
 shopt -s histappend
 mkdir -p ~/tmp/ /svn/svnroot/tmp/
@@ -689,7 +690,7 @@ fi
 echo "Opened $(basename "$tpath") OK "
 echo ✌ Opened $tpath 
 echo ✌ Full Log $logging
-shortcuts="✌ Common shortcuts: Menu [Alt-m] - Entry [Alt-e] - Balance [Alt-b] - Register [Alr-r]"
+shortcuts="✌ Common shortcuts: Menu [Alt-m] - Entry [Alt-e] - Balance [Alt-b] - Register [Alr-]r - Book/validate book hashes [Alt-o]"
 echo  -e "\033[33;5m$shortcuts\033[0m"
 echo
 mkdir -p $tpath/.logs/

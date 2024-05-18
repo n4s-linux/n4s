@@ -134,47 +134,6 @@ require_once("/svn/svnroot/Applications/readonly.php");
 		}
 		echo "no entries to match\n";
 	}
-	else if ($nargs[0] == "book") {
-		require_once("/svn/svnroot/Applications/nextnumber.php");
-		$nextnumber = getnextnumber($tpath);
-		if (file_exists("$tpath/Mainbook.ledger"))
-			$curbook = fgc("$tpath/Mainbook.ledger");
-		else
-			$curbook = "";
-		$ledgerdata = getledgerdata($x,true,false,$curbook);
-		require_once("/svn/svnroot/Applications/proc_open.php");
-		file_put_contents("$tpath/.bookpreview",$ledgerdata);
-		exec_app("less $tpath/.bookpreview");
-		$jn = "Nej\nJa";
-		require_once("/svn/svnroot/Applications/fzf.php");
-		$jn = fzf($jn,"Vil du bogføre den viste kladde?");
-		if ($jn == "Ja") {
-			$antal = count(array_unique($lockthesefiles));
-			echo set(strtoupper("Bekræftet bogføring af $antal poster ($begin - $end)\n"),"inverse");
-			$nextnumber = $orgnextnumber; // global nummercounter skal genstartes fordi vi har kørt data før
-			$ledgerdata = getledgerdata($x,true,false,$curbook);
-			//file_put_contents("$tpath/Mainbook.ledger",$ledgerdata);
-			file_put_contents("$tpath/.nextnumber",$nextnumber);
-			file_put_contents("$tpath/.nextcbnumber",$nextcbnumber +1);
-			foreach (array_unique($lockthesefiles) as $curfile) {
-				$data = json_decode(fgc($curfile),true);
-				$data['Status'] = "Locked";
-				$data['History'][] = array("Desc" => 'Booked','op'=>$op,'tidspunkt'=>date("Y-m-d H:m"));
-				file_put_contents("$tpath/$curfile",json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
-				foreach ($data['Transactions'] as $ct) {
-					$str = str_pad($data['Filename'],25," ",STR_PAD_RIGHT) . "\t";
-					$str .= str_pad($ct['Account'] . " (" . $ct['Func'] . ")",25," ",STR_PAD_RIGHT) . "\t";
-					$str .= str_pad($ct['Amount'],10," ",STR_PAD_LEFT);
-					echo set(strtoupper("🔒 $str\n"),"green");
-				}
-			}
-		}
-		else
-			echo set(strtoupper("Afbrudt bogføring\n\n"),"inverse");
-	}
-	else if ($nargs[0] == "preview") {
-
-	}
 	else if ($nargs[0] == "ui") {
 		echo "launching ui... we should load csv as datasource for ledger backwards compatiblity - or get rid of ledger completely\n";
 		require_once("/svn/svnroot/Applications/nc.php");
