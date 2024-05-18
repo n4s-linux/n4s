@@ -21,7 +21,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 	$nextcbnumber = getnextcbnumber($tpath);
 	$orgnextnumber = $nextnumber;
 	$op = exec("whoami");
-	if ($tpath == "") die("new.php kræver tpath\n");
+	if ($tpath == "") die("newl.php kræver tpath\n");
 	$transactions = array();
 	if (getenv("noend") != "1" && $nargs[0] != "book")
 		$ledgerdata = getopening();
