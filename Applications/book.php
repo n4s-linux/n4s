@@ -1,4 +1,6 @@
 <?php
+	$tpath = getenv("tpath");
+	if ($tpath == "") die("booking funcs requires tpath set\n");
 	require_once("/svn/svnroot/Applications/bookingfuncs.php");
 	require_once("/svn/svnroot/Applications/fzf.php");
 	$valg = fzf("Book\nValidate book hashes","Chose action");
@@ -8,7 +10,6 @@
 		die();
 	}
 	$op = exec("whoami");
-	$tpath = getenv("tpath");
 	ob_start();
 	system("find $tpath/ -name \*.trans");
 	$files = trim(ob_get_clean());$files = explode("\n",$files);
@@ -23,6 +24,7 @@
 	$i = 0;
 	$fzf = "";
 	foreach ($data as $fn => $curdata) {
+		if (strtotime($curdata["Date"]) > strtotime(getenv("LEDGER_END"))) continue;
 		$amount = $curdata["Transactions"][0]["Amount"];
 		$pamount = str_pad(number_format($amount,2,".",","),15," ",STR_PAD_LEFT);
 		$acc = $curdata["Transactions"][0]["Account"];
