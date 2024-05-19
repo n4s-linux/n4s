@@ -1,3 +1,21 @@
+function displayaccshortcuts() {
+	echo -e "❚#[bg=yellow]v$version shortcutz:"
+	echo -e "❚#[bg=gray]F1 ⭈ Headmenu🎹"
+	echo -e "❚#[bg=purple]Alt+b⭈ #[bg=purple]Balance"
+	echo -e "❚#[bg=gray]Alt+r⭈ #[bg=gray]Register"
+	echo -e "❚#[bg=purple]Alt+o⭈ #[bg=purple]Book"
+	echo -e "❚#[bg=gray]Alt+m⭈ #[bg=gray]Menu"
+	echo -e "❚#[bg=purple]Alt+o⭈ #[bg=purple]Book"
+	echo -e "❚#[bg=gray]Alt+m⭈ #[bg=gray]Menu"
+}
+function u() {
+clear
+(LC_ALL=C date
+echo
+gum write --prompt=🤑 --placeholder="#followtherabbit")|cowsay|lolcat -d 5
+sleep 7;clear
+}
+
 alias book=" php /svn/svnroot/Applications/book.php"
 function updatenews() {
     pushd .>/dev/null
@@ -178,9 +196,6 @@ else
     u "https://pdcs.skat.dk/dcs-atn-gateway/login/tsk"
 fi
 }
-function u() {
-ssh -p 8888 localhost DISPLAY=:1 xdg-open "$1" 2>/dev/null
-}
 alias register="php /svn/svnroot/Applications/register.php"
 alias r=register
 alias autoudlign="php /svn/svnroot/Applications/newl.php openentries"
@@ -268,9 +283,9 @@ function dp() {
 	end=$LEDGER_BEGIN
 	lastsym 🕒
 	begin=1900-01-01 
-    tmux split-window -l2 -v "cd $tpath; tpath=$tpath LEDGER_DEPTH=999 LEDGER_BEGIN=$begin LEDGER_END=$end noend=1 php /svn/svnroot/Applications/newl.php csv|LEDGER_BEGIN=$LEDGER_BEGIN tpath=$tpath php /svn/svnroot/Applications/calcopening.php"
+    tmux split-window -l2 -v "cd $tpath; tpath=$tpath LEDGER_DEPTH=999 LEDGER_BEGIN=$begin LEDGER_END=$end noend=1 color=none php /svn/svnroot/Applications/newl.php csv|LEDGER_BEGIN=$LEDGER_BEGIN tpath=$tpath php /svn/svnroot/Applications/calcopening.php"
     tmux last-pane
-    tmux split-window -l1 -v "echo -n $(basename "$tpath"): Henter kontoplan;cd $tpath; tpath=$tpath LEDGER_DEPTH=999 LEDGER_END=2099-12-31 LEDGER_BEGIN=1900-01-01 noend=1 php /svn/svnroot/Applications/newl.php accounts > $tpath/.accounts.tmp;cp $tpath/.accounts.tmp $tpath/.accounts;rm $tpath/.accounts.tmp;clear;echo -n Kontoplan hentet;sleep 1"
+    tmux split-window -l1 -v "echo -n $(basename "$tpath"): Henter kontoplan;cd $tpath; tpath=$tpath LEDGER_DEPTH=999 LEDGER_END=2099-12-31 LEDGER_BEGIN=1900-01-01 noend=1 color=none php /svn/svnroot/Applications/newl.php accounts > $tpath/.accounts.tmp;cp $tpath/.accounts.tmp $tpath/.accounts;rm $tpath/.accounts.tmp;clear;echo -n Kontoplan hentet;sleep 1"
     tmux last-pane
 }
 function ds() {
@@ -306,6 +321,7 @@ bind '"\eb":"b\n"' 2>/dev/null
 bind '"\ep":"dp\n"' 2>/dev/null
 bind '"\es":"ds\n"' 2>/dev/null
 bind '"\eo":"book\n"' 2>/dev/null
+bind '"\eu":"u\n"' 2>/dev/null
 bind '"\eq":"changetermcmd\n"' 2>/dev/null
 shopt -s histappend
 mkdir -p ~/tmp/ /svn/svnroot/tmp/
@@ -427,7 +443,6 @@ function html2() {
 	end=$LEDGER_END
 	bn=$(basename "$tpath")
 	vim $tpath/.companyname.txt
-	tmux new-window cmatrix
 	tmux split-window -l 2 "bash /svn/svnroot/Applications/progressbar.bash;sleep 1"
 	php /svn/svnroot/Applications/htmlreport.php > ~/tmp/out.html
 	pushd . 2>/dev/null > /dev/null
@@ -458,6 +473,12 @@ function html2() {
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Pengestrømme-$bn-$begin-$end.pdf &)
 
 
+php /svn/svnroot/Applications/skatexport.php >~/tmp/skat.html
+    google-chrome --headless ~/tmp/skat.html --print-to-pdf=Skat-$bn-$begin-$end.pdf
+    mv Skat-$bn-$begin-$end.pdf ~/n4s-export
+(	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Skat-$bn-$begin-$end.pdf &)
+
+
     google-chrome --headless manglendebilag.html --print-to-pdf=Manglendebilag-$bn-$begin-$end.pdf
     mv Manglendebilag-$bn-$begin-$end.pdf ~/n4s-export
 	(/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Manglendebilag-$bn-$begin-$end.pdf &)
@@ -465,7 +486,6 @@ function html2() {
 	tmux new-window "LEDGER_BEGIN=$LEDGER_BEGIN LEDGER_END=$LEDGER_END tpath=$tpath php /svn/svnroot/Applications/nyfejl.php"
 
 	popd 2>/dev/null > /dev/null
-	killall cmatrix;clear
 	echo "Please look for Your reports in ~/n4s-export"
 }
 function html() {
@@ -580,7 +600,9 @@ BPWD="$(basename "$PWD")"
 	if [ -f /data/.custom ]; then
 		custom=$(cat /data/.custom)
 	fi
-	if [ -f ~/.customtmux ]; then
+	if [ "privatesession" != "" ]; then
+		custom="#terminatrix 🐃#didyouknow You can customize this line with custom data in ~/.customtmux🐃"
+	elif [ -f ~/.customtmux ]; then
 		custom="$custom $(cat ~/.customtmux)"
 	else
 		custom="$custom 🐃#didyouknow You can customize this line with custom data in ~/.customtmux🐃"
@@ -588,11 +610,14 @@ BPWD="$(basename "$PWD")"
 	tmux set -g status-format[1] "#[fg=#71c242,bg=#0d2f9e]🐃$tips🐃" 2>/dev/null
 	tmux set -g status 4 2>/dev/null; tmux set -g status-format[2] "#[fg=black,bg=#594a18] $custom" 2>/dev/null
 	hist=$(history|tail -n10|sort --rev|while read i; do echo -n " $i"; done)
-	tmux set -g status 4 2>/dev/null; tmux set -g status-format[3] "#[fg=black,bg=#26bd19]$hist" 2>/dev/null
+	if [ "$tpath"] != "" ]; then
+		hist=$(displayaccshortcuts)
+	fi
+	tmux set -g status 4 2>/dev/null; tmux set -g status-format[3] "#[fg=black,bg=blue]$hist" 2>/dev/null
 
 	#last=$(grep -h ✔ /data/regnskaber/transactions_crm/.tags/*.diff|grep "\["|grep "\]"|sort|tail -n1)
     last=$(newfeatures)
-	tmux set -g status 5 2>/dev/null; tmux set -g status-format[4] "#[fg=black,bg=#ebde34]$last" 2>/dev/null
+	tmux set -g status 5 2>/dev/null; tmux set -g status-format[4] "#[fg=black,bg=green]#whatschanged 🍃 $last" 2>/dev/null
 	pushd . >/dev/null
 	cd "$tpath"
 	popd >/dev/null
