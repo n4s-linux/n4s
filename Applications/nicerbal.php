@@ -1,4 +1,5 @@
 <?php
+if (getenv("tpath") == "") die("nicerbal requires tpath set\n");
 require_once("/svn/svnroot/Applications/proc_open.php");
 $op = exec("whoami");
 // #godide lade bruger tilføje flere datasets som hentes automatisk til hukommelse og loades i balancerapporter - kræver vi normaliserer datasættene således at vi nuller de balancer der ikke har værdier der er i andre balancer, så de er sammenlignelige
@@ -77,7 +78,9 @@ function gettlabal($tla) {
 	foreach ($ds as $currow) {
 		$x = explode(":",$currow['Account']);
 		if ($x[0] == $tla) {
+			error_reporting(0);
 			$l2 = $x[0] . ":".$x[1];
+			error_reporting(E_ALL);
 			if (!isset($bal[$l2])) $bal[$l2] = 0;
 			if (substr($currow['Account'],0,strlen($l2)) == $l2)
 				$bal[$l2] += $currow['Amount'];
