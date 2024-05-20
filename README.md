@@ -1,5 +1,5 @@
 # Blockchain based bookkeeping
-[![Blockchain Based Bookkeeping](/png/demovideoblockchain.png 'Demo Video')](https://www.google.com)
+[![Blockchain Based Bookkeeping](/png/demovideoblockchain.png 'Demo Video')](https://www.youtube.com/watch?v=O1ZYebR8oFQ?vq=hd1440)
 
 # The triple bookkeeping - the accounting of the future
 Accounts are typically historical, i.e. they describe things that happened in the past.
