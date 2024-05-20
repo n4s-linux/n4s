@@ -1,6 +1,7 @@
 <?php
 	require_once("/svn/svnroot/Applications/bookingfuncs.php");
         $tpath = getenv("tpath");
+	if ($tpath == "") die("booking validation requires tpath set\n");
         ob_start();
         system("find $tpath/ -name \*.trans");
         $files = trim(ob_get_clean());$files = explode("\n",$files);
@@ -16,9 +17,9 @@
 	$fnumber = 1;
 	$count = count($data);
 	foreach ($data as $fn => $j) {
+		if (isset($j["HashOfPreviousLyBookedFiles"])) {
 		$lowest_id = lowestid($j);
 		$hash = gethash($lowest_id);
-		if (isset($j["HashOfPreviousLyBookedFiles"])) {
 			$hashfile = $j["HashOfPreviousLyBookedFiles"];
 			if ($hash != $hashfile) {
 				$id = $lowest_id-1;
