@@ -37,6 +37,7 @@ $files = explode("\n",trim(ob_get_clean()));
 foreach ($files as $curfile) {
 	if (!file_exists($curfile)) continue;
 	$data = json_decode(file_get_contents($curfile),true);
+	if (isset($data["Status"]) && $data["Status"] == "Locked") continue;
 	$konti = json_encode($data["Transactions"]);
 	if (strtotime($data["Date"]) < strtotime(getenv("LEDGER_BEGIN")) || strtotime($data["Date"]) > strtotime(getenv("LEDGER_END") . " -1 day")) continue;
 	if (stristr($konti,"Fejlkonto:")) {
@@ -86,11 +87,11 @@ function askcomment($trans) {
 	$table .= "</table>";
 	file_put_contents("/home/$op/tmp/nyfejl.php.html",$table);
 	system("w3m -dump ~/tmp/nyfejl.php.html");
-	$valg = fzf("Hvad er det\nMangler bilag\nHvordan betalt\nAndet\nRediger\nSkip","Vælg kommentar/spørgsmål til fejlliste","--tac --height=9");
+	$valg = fzf("Hvad er det\nMangler bilag\nHvordan betalt\nCustom\nRediger\nSkip","Please: A comment for each posting on the account for unhandled transactions","--tac --height=9");
 	if ($valg == "") die("Afbrudt\n");
 	if ($valg == "Skip") return "";
-	else if ($valg == "Andet") {
-		echo "Indtast kommentar/spørgsmål til kunde: ";
+	else if ($valg == "Custom") {
+		echo "Enter Custom Comment: ";
 		$fd = fopen("/dev/tty","r");$valg = trim(fgets($fd)); fclose($fd);
 	}
 	else if ($valg == "Rediger") {
