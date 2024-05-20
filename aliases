@@ -434,7 +434,7 @@ function standardkontoplan() {
     bn=$(basename "$tpath")
     end=$LEDGER_BEGIN
     begin=$LEDGER_BEGIN
-    php /svn/svnroot/Applications/skatexport.php > ~/tmp/stdkto.html
+    php /svn/svnroot/Applications/skatexport.php
     google-chrome --headless ~/tmp/stdkto.html --print-to-pdf=Standard-export-$bn-$begin-$end.pdf 2>/dev/null
     mv Standard-export-$bn-$begin-$end.pdf ~/n4s-export/
 }
@@ -443,46 +443,48 @@ function html2() {
 	end=$LEDGER_END
 	bn=$(basename "$tpath")
 	vim $tpath/.companyname.txt
-	tmux split-window -l 2 "bash /svn/svnroot/Applications/progressbar.bash;sleep 1"
 	php /svn/svnroot/Applications/htmlreport.php > ~/tmp/out.html
 	pushd . 2>/dev/null > /dev/null
 	cd ~/tmp/
-(
+
+echo generating balance
     google-chrome --headless out.html --print-to-pdf=Saldobalance-$bn-$begin-$end.pdf
     mv Saldobalance-$bn-$begin-$end.pdf ~/n4s-export
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Saldobalance-$bn-$begin-$end.pdf&)
 
+echo generating kontokort
     google-chrome --headless kontokort.html --print-to-pdf=Kontokort-$bn-$begin-$end.pdf
 
     mv Kontokort-$bn-$begin-$end.pdf ~/n4s-export
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Kontokort-$bn-$begin-$end.pdf &)
 
+echo generating Nøgletal
     google-chrome --headless nøgletal.html --print-to-pdf=Nøgletal-$bn-$begin-$end.pdf
 
     mv Nøgletal-$bn-$begin-$end.pdf ~/n4s-export
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Nøgletal-$bn-$begin-$end.pdf &)
 
 
+echo generating Stats
     google-chrome --headless statistik.html --print-to-pdf=Lagkagediagrammer-$bn-$begin-$end.pdf
     mv Lagkagediagrammer-$bn-$begin-$end.pdf ~/n4s-export
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Lagkagediagrammer-$bn-$begin-$end.pdf &)
 
 
+echo generating Moneyflow
     google-chrome --headless moneyflow.html --print-to-pdf=Pengestrømme-$bn-$begin-$end.pdf
     mv Pengestrømme-$bn-$begin-$end.pdf ~/n4s-export
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Pengestrømme-$bn-$begin-$end.pdf &)
 
+echo generating skat export
+standardkontoplan
 
-php /svn/svnroot/Applications/skatexport.php >~/tmp/skat.html
-    google-chrome --headless ~/tmp/skat.html --print-to-pdf=Skat-$bn-$begin-$end.pdf
-    mv Skat-$bn-$begin-$end.pdf ~/n4s-export
-(	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Skat-$bn-$begin-$end.pdf &)
-
-
+echo generating manglendebilag
     google-chrome --headless manglendebilag.html --print-to-pdf=Manglendebilag-$bn-$begin-$end.pdf
     mv Manglendebilag-$bn-$begin-$end.pdf ~/n4s-export
 	(/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Manglendebilag-$bn-$begin-$end.pdf &)
-) >/dev/null
+
+	echo generating nyfejl
 	tmux new-window "LEDGER_BEGIN=$LEDGER_BEGIN LEDGER_END=$LEDGER_END tpath=$tpath php /svn/svnroot/Applications/nyfejl.php"
 
 	popd 2>/dev/null > /dev/null
