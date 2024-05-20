@@ -80,7 +80,12 @@ function edit($selected) {
 		$x = explode(" ",$curselect);
 		$x = trim($x[0]);
 		if ($x != "" && is_numeric($x)) {
-			array_push($toedit,$currenttransactions[$x]);
+			if (stristr($curselect,"☀")) {
+				$acc = $currenttransactions[0][3];
+				exec_app("LEDGER_BEGIN=1900-01-01 php /svn/svnroot/Applications/register.php \"$acc\"");
+				die();
+			}
+			else array_push($toedit,$currenttransactions[$x]);
 		}
 	}
 	$vim = "";
@@ -159,7 +164,7 @@ function showmatches($accounts,$matches,$t) {
 		$fzf .= "$ca\t💰$nicebal\n";
 	}
 	$fzf = trim($fzf);
-	$acc = fzf($fzf,"Select account that has matches - SPACE to select all","--multi --bind space:select-all",true);
+	$acc = fzf($fzf,"Select account that has matches - SPACE to select all","--multi --bind space:select-all -1",true);
 	if ($acc == "") die("No account(s) selected\n");
 	$accs = explode("\n",$acc);
 	$show = array();
@@ -183,8 +188,8 @@ function showmatches($accounts,$matches,$t) {
 		$text = $currow[2];
 		$amount = str_pad($currow[5],15," ",STR_PAD_LEFT);
 		$bal += $currow[5];
-		$pamount= str_pad(number_format($amount,2,".",","),15," ",STR_PAD_LEFT);
-		$pbal = str_pad(number_format($bal,2,".",","),15," ",STR_PAD_LEFT);
+		$pamount= str_pad(number_format($amount,2,".",","),16," ",STR_PAD_LEFT);
+		$pbal = str_pad(number_format($bal,2,".",","),16," ",STR_PAD_LEFT);
 		$tags = tagz($currow[7]);
 		if (isset($tags["Filename"])) {
 			$contra = shortacc(getcontra($tags["Filename"],$acc));
@@ -193,9 +198,9 @@ function showmatches($accounts,$matches,$t) {
 			$contra = "NA";
 		if (isset($tags["SourceFunc"])) $moms = "[" .$tags["SourceFunc"]."]"; else $moms = "";
 		if (isset($tags["Filename"]) && !readonly($tags["Filename"]))
-			$fzf .= "\033[38;5;16;48;5;226m$i\t$date\t$acc\t$moms\t$contra\t$text\tp$pamount\t$pbal\t\033[0m\n";
+			$fzf .= "\033[38;5;16;48;5;226m$i\t$date\t$acc\t$moms\t$contra\t$text\t$pamount\t$pbal\033[0m\n";
 		else
-			$fzf .= "\033[38;5;96;48;5;247m$i\t$date\t$acc\t$moms\t$contra\t$text\t$pamount\t$pbal\t$\033[0m\n";
+			$fzf .= "\033[38;5;96;48;5;247m$i\t$date\t$acc\t$moms\t$contra\t$text\t$pamount\t$pbal\033[0m\n";
 	
 		$i++;
 	}
