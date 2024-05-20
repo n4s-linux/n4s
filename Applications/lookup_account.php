@@ -4,17 +4,16 @@ function lookup_acc($accounts,$bal,$alias = "",$multi = "--multi") {
 	$path = getenv("tpath");
 	$accountstring = "";
 	ob_start();
-	$cmd = ("((updatealiases= LEDGER_BEGIN=1970-01-01 LEDGER_END=2099-12-31 noend=1 color=none php /svn/svnroot/Applications/newl.php accounts;cat /svn/svnroot/Libraries/Kontoplan.txt)|sort|uniq|grep :;echo NEW;echo 'Fejlkonto:Ved ikke')|fzf --ansi --tac --header-first --header=\"$alias\" --scrollbar=* $multi --margin 1% --padding 1% --border --preview-label='Seneste posteringer' --preview-window 35%:bottom --preview 'LEDGER_SORT=date LEDGER_PAYEE_WIDTH=15 updatealiases= color=none php /svn/svnroot/Applications/newl.php register ^\"{}\" |tac'");
+	$cmd = ("((updatealiases= noend=1 color=none php /svn/svnroot/Applications/newl.php accounts;cat /svn/svnroot/Libraries/Kontoplan.txt)|sort|uniq|grep :;echo MANUAL;echo 'Fejlkonto:Ved ikke')|fzf --ansi --tac --header-first --header=\"$alias\" --scrollbar=* $multi --border --preview-label='Seneste posteringer' --preview-window 50%:bottom  --preview 'LEDGER_PAYEE_WIDTH=20 LEDGER_ACCOUNT_WIDTH=15 updatealiases= color=none php /svn/svnroot/Applications/newl.php register ^\"{}\" |tac'");
 	system($cmd);
 	$accountstring = trim(ob_get_clean());
-	if ($accountstring == "") die("Afbrudt lookup_account intet valgt");
-	if ($accountstring=="NEW") {
-		echo "Ingen konto valgt ved opslag...\n";
+	if ($accountstring == "") die("Lookupaccount Interrupted - Aborting...\n");
+	if ($accountstring=="MANUAL") {
 		$accountstring = "";
 		while ($accountstring == "") {
-			echo "Indtast manuel konto: ";
-			$fd = fopen("/dev/tty","r");
+			echo "\033[48;5;226mEnter Manual Account - Full Account string: \033[0m";
 			system("stty sane");
+			$fd = fopen("PHP://Stdin","r");
 			$accountstring = trim(explode("\n",fgets($fd))[0]);
 			fclose($fd);
 		}
