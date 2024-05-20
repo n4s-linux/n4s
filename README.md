@@ -1,5 +1,4 @@
 # Blockchain based bookkeeping
-![Blockchain Based Bookkeeping Demo Video](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/demovideoblockchain.png?raw=true)
 [![Blockchain Based Bookkeeping](/png/demovideoblockchain.png 'Demo Video')](https://www.google.com)
 
 # The triple bookkeeping - the accounting of the future
