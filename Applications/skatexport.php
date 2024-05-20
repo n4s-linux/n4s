@@ -1,20 +1,30 @@
 <?php
 require_once("/svn/svnroot/Applications/accountheader.php");
+$begin = getenv("LEDGER_BEGIN");
+$end = getenv("LEDGER_END");
 $tpath = getenv("tpath");
+if ($tpath == "") die("skatexport requires tpath\n");
 require_once("/svn/svnroot/Applications/fzf.php");
 $map = getmap();
 $stdkto = getstandardkontoplan();
 $t = gettransactions();
 $newtrans = rewritetrans($t);
+ob_start();
 bootstrap();
-$begin = getenv("LEDGER_BEGIN");
-$end = getenv("LEDGER_END");
+$output = ob_get_clean();
+ob_start();
 printheader("Ekstern rapportering");
 saldobalance($newtrans,$stdkto);
-echo "<p style=\"page-break-before: always\"></p>";
+$output .= ob_get_clean();
+$output.= "<p style=\"page-break-before: always\"></p>";
+ob_start();
 kontokort($newtrans,$stdkto);
+$output .= ob_get_clean();
+$op = exec("whoami");
+file_put_contents("/home/$op/tmp/stdkto.html",$output);
 function kontokort($newtrans,$stdkto) {
-	echo "<h1><center>Kontokort</center></h1>";
+	global $output;
+	$output.= "<h1><center>Kontokort</center></h1>";
 	$konti = array();
 	foreach ($newtrans as $nt) {
 		$konti[$nt["Account"]][] = $nt;	
@@ -22,24 +32,25 @@ function kontokort($newtrans,$stdkto) {
 	ksort($konti,SORT_NUMERIC);
 	foreach ($konti as $curkonto => $transactions) {
 		if (!is_numeric($curkonto)) continue;
-		echo "<b>$curkonto - ";
+		$output.= "<b>$curkonto - ";
 		foreach ($stdkto as $c) {
-			if ($curkonto == $c[0]) echo $c[2];
+			if ($curkonto == $c[0]) $output.= $c[2];
 		}
-		echo "</b><br>";
-		echo "<table class='table-sm' width=700>";
+		$output.= "</b><br>";
+		$output.= "<table class='table table-striped' width=700>";
 		kk($curkonto,$transactions);
-		echo "</table>";
+		$output.= "</table>";
 	}
 }
 function kk($curkonto,$transactions) {
+	global $output;
 	$bal = 0;
 	foreach ($transactions as $curtrans) {
 		$bal += $curtrans['Amount'];
 		$trimmed = substr($curtrans["Tekst"],0,25);
 		$pretty=number_format($curtrans['Amount'],2,",",".");
 		$prettybal=number_format($bal,2,",",".");
-		echo "<tr><td width=70>$curtrans[Date]</td><td width=70>$curtrans[Bilag]</td><td width=250>$trimmed</td><td width=70><p align=right>$pretty</p></td><td width=70><p align=right>$prettybal</p></td></tr>\n";
+		$output.= "<tr><td width=70>$curtrans[Date]</td><td width=70>$curtrans[Bilag]</td><td width=250>$trimmed</td><td width=70><p align=right>$pretty</p></td><td width=70><p align=right>$prettybal</p></td></tr>\n";
 	}
 }
 function bootstrap() {?><meta charset=utf8><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"><?php }
@@ -49,18 +60,19 @@ function printheader_ktoplan($header) {
 }
 
 function saldobalance($t,$stdkto) {
-	echo "<h1><center>Saldobalance</center></h1>";
+	global $output;
+	$output.= "<h1><center>Saldobalance</center></h1>";
 	global $nulkontrol;
-	echo "<table class='table-sm ' width=700>";
+	$output.= "<table class='table table-striped' width=700>";
 	$curheader="";
 	foreach ($stdkto as $curkto) {
 		if ($curkto[1] == "Overskrift") $curheader = printheader_ktoplan($curkto);
 		else if ($curkto[1] == "" ) {
 			$p = printaccbal($curkto);
 			if ($p != "" ) {
-				echo $curheader;
+				$output.= $curheader;
 				$curheader = "";
-				echo $p;
+				$output.= $p;
 			}
 		}
 		else if (substr($curkto[1],0,4) == "Sum ") {
@@ -68,19 +80,19 @@ function saldobalance($t,$stdkto) {
 			$x = explode("-",$x);
 			$p = printsumbal($curkto,$x[0],$x[1]);
 			if ($p != "") {
-				echo $curheader;
+				$output.= $curheader;
 				$curheader = "";
-				echo $p;
+				$output.= $p;
 			}
 		}
 		else {
-			echo "Unhandled:\n";
+			$output.= "Unhandled:\n";
 			print_r($curkto);die();
 		}
 	}
 	$prettynul=number_format($nulkontrol,2,".",",");
-	echo "<tr><td>&nbsp;</td><td><b><u>Nulkontrol</u></b></td><td><b><u><p align=right>$prettynul</u></b></p></td></tr>";
-	echo "</table>";
+	$output.= "<tr><td>&nbsp;</td><td><b><u>Nulkontrol</u></b></td><td><b><u><p align=right>$prettynul</u></b></p></td></tr>";
+	$output.= "</table>";
 }
 function printsumbal($curkto,$begin,$end) {
 	ob_start();
@@ -98,6 +110,7 @@ function printsumbal($curkto,$begin,$end) {
 	return ob_get_clean();
 }
 function printaccbal($curkto) {
+	global $output;
 	global $nulkontrol;
 	ob_start();
 	$konto = trim(explode("\t",$curkto[0])[0]);
@@ -109,7 +122,7 @@ function printaccbal($curkto) {
 	$nulkontrol += $bal;
 	if (intval($bal) != 0) {
 		$pretty = number_format($bal,2,".",",");
-		echo "<tr><td>$konto</td><td>$curkto[2]</td><td><p align=right>$pretty</p></td></tr>\n";
+		$output.= "<tr><td>$konto</td><td>$curkto[2]</td><td><p align=right>$pretty</p></td></tr>\n";
 	}
 	return ob_get_clean();
 }
@@ -134,7 +147,7 @@ function changeacc($acc) {
 	global $tpath;
 	if (!isset($map[$acc])) {
 		$map[$acc] = selectaccount($acc);
-		file_put_contents("$tpath/.standardmapping",json_encode($map,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+		file_put_contents("/data/regnskaber/.skatmap.dat",json_encode($map,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		return $map[$acc];
 	}
 	else
@@ -155,7 +168,7 @@ function selectaccount($acc) {
 }
 function gettransactions() {
 	ob_start();
-	system("skipresult=1 php /svn/svnroot/Applications/newl.php csv");
+	system("skipresult=1 color=none php /svn/svnroot/Applications/newl.php csv");
 	$str = ob_get_clean();
 	$x = str_getcsv($str,"\n");
 	foreach ($x as $curx) {
@@ -166,7 +179,7 @@ function gettransactions() {
 }
 function getmap() {
 	global $tpath;
-	$mapfile = "$tpath/.standardmapping";
+	$mapfile = "/data/regnskaber/.skatmap.dat";
 	if (!file_exists($mapfile)) {
 		$map = array();
 		file_put_contents($mapfile,json_encode(array()));
