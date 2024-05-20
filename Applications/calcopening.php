@@ -32,18 +32,18 @@ while ($line = fgetcsv($fd,null,",","\"","\\")) { // GET DATA
 $s = "";
 foreach ($saldo as $konto => $cursaldo) {
 	$orgkonto = $konto;
-	$kkkeep = array("Egenkapital:Selskabskapital","Egenkapital:Mellemregning");
+	$kkkeep = array("Egenkapital:Selskabskapital","Egenkapital:Mellemregning","Egenkapital:Overførte hævninger");
 	if (intval($cursaldo) == 0) continue;
 	$cursaldo = number_format($cursaldo,2,".","");
 	$keep= true;
 	if (substr($konto,0,strlen("Egenkapital:")) == "Egenkapital:") {
-		if (!stristr($konto,"reserve") && !in_array($konto,$kkkeep)) {
+		if (stristr("$konto","indberettet") ||stristr($konto,"reserve") || in_array($konto,$kkkeep)) {
 			$keep= true;
 		}
 		else
 			$keep = false;
 	}
-	if ($keep) {
+	if ($keep ) {
 	$s .= "$begin ☀ $orgkonto\n";
 	$s .= "\t$konto  $cursaldo ; Filename: calcopening.php |||| TransID: virt |||| Status: Locked\n\tEgenkapital:Overført resultat  ; Filename: calcopening.php |||| TransID: virt |||| Status: Locked\n\n";
 	}
