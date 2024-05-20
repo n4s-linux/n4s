@@ -1,4 +1,9 @@
 # Blockchain based bookkeeping
+In n4s, when You lock Your transactions, they are protected forever from changes 🛡️
+A malicious user may try and alter the book outside the scope of this system.
+Which could go unnoticed in a system that is not blockchain based.
+But since n4s is based on blockchain verification, it means that any changes to previously booked transations will not go undetected 🕵
+Blow You will find a short video demonstrating this capability.
 [![Blockchain Based Bookkeeping](/png/demovideoblockchain.png 'Demo Video')](https://www.youtube.com/watch?v=O1ZYebR8oFQ?vq=hd1440)
 
 # The triple bookkeeping - the accounting of the future
