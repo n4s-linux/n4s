@@ -473,7 +473,10 @@ function getnøgletal($darray)  {
 		$dækningsgrad = 0;
 	$kortfristetgæld = kortfristetgæld($darray);
 	$omsætningsaktiver = omsætningsaktiver($darray);
-	$likviditetsgrad = prettynum($omsætningsaktiver / $kortfristetgæld * 100);
+	if ($omsætningsaktiver != 0 && $kortfristetgæld != 0)
+		$likviditetsgrad = prettynum($omsætningsaktiver / $kortfristetgæld * 100);
+	else
+		$likviditetsgrad = 0;
 	$afkastningsgrad = prettynum(resultat($darray) * 100 / aktiver($darray));
 	$soliditet =  prettynum(egenkapital($darray) / aktiver($darray) * 100);
 	$ekforrent = prettynum(resultat($darray) * 100 / egenkapital($darray));
