@@ -112,8 +112,8 @@ function vitouch() {
         cat "$tmpf" >> "$1.diff"
 	cat "$tmpf"|while read line
 	do
-		echo -n $(whoami) $(date) "( $bnt -  $bn) " >> /data/regnskaber/.log
-		echo $line >> /data/regnskaber/.log
+		echo -n $(whoami) $(date) "( $bnt -  $bn) " >> ~/.n4s.log
+		echo $line >> ~/n4s.log
 	done
 # Fzf udskrift 
 	if [ "$print" != "yes" ]; then
