@@ -5,6 +5,7 @@
         ob_start();
         system("find $tpath/ -name \*.trans");
         $files = trim(ob_get_clean());$files = explode("\n",$files);
+	$tids = array();
         $data = array();
         foreach ($files as $curfile) {
 		if ($curfile == "") continue;
@@ -12,6 +13,11 @@
                 $data[$bn] = json_decode(file_get_contents("$curfile"),true);
 		if ($data[$bn] == null) unset($data[$bn]);
                 if (!isset($data[$bn]["Status"]) || $data[$bn]["Status"] != "Locked") unset($data[$bn]);
+		if (isset($data[$bn])) {
+		foreach ($data[$bn]["Transactions"] as $curtrans) {
+			$tids[$curtrans["TransactionNo"]] = $data[$bn];	
+		}
+		}
         }
 	$corrupted = array();
 	$fnumber = 1;
@@ -23,12 +29,15 @@
 			$hashfile = $j["HashOfPreviousLyBookedFiles"];
 			if ($hash != $hashfile) {
 				$id = $lowest_id-1;
-				die("Account corruption detected at TransactionNo $id\n");
+				$data = $tids[$id];
+				$fn = $data["Filename"];
+				die("\033[38;5;9mAccount corruption detected @ $fn\033[0m\n");
+			
 			}
-			else fprintf(STDERR,"[$fnumber / $count] Validated $fn ✔\n");
+			else fprintf(STDERR,"\033[38;5;10[$fnumber / $count] Validated $fn ✔\033[0m\n");
 		}
 		$fnumber++;
 	}
-	echo "Book Validated !\n";
+	echo "\033[38;5;10mBook Validated\033[0m!\n";
 
 ?>
