@@ -44,7 +44,7 @@ git-log-to-markdown () {
   
   if [ -z "$AUTHOR" ]
   then
-    LOG_FORMAT="$LOG_FORMAT %Cblue(%an)%Creset"
+    LOG_FORMAT="$LOG_FORMAT"
   else
     echo "# Gitlog"
   fi
@@ -65,4 +65,4 @@ git-log-to-markdown () {
 }
 
 echo -e "# About this changelog\n\tThis changelog is automatically generated. You can find the most recent news in the bottom of this file" > /svn/svnroot/Changelog.md
-git-log-to-markdown "$@" >>/svn/svnroot/Changelog.md
+git-log-to-markdown "$@"|grep -v Autocommit>>/svn/svnroot/Changelog.md
