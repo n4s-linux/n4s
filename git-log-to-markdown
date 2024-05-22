@@ -64,4 +64,5 @@ git-log-to-markdown () {
 
 }
 
-git-log-to-markdown "$@" >/svn/svnroot/Changelog.md
+echo -e "# About this changelog\n\tThis changelog is automatically generated. You can find the most recent news in the bottom of this file" > /svn/svnroot/Changelog.md
+git-log-to-markdown "$@" >>/svn/svnroot/Changelog.md
