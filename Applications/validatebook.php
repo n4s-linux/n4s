@@ -38,6 +38,6 @@
 		}
 		$fnumber++;
 	}
-	echo "\033[38;5;10mBook Validated\033[0m!\n";
+	echo "\033[38;5;10mBook Validated !\033[0m\n";
 
 ?>
