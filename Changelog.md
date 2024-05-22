@@ -970,3 +970,5 @@
  * Bugfix datetime format (Jørgen)
  * Bugfix datetime format (Jørgen)
  * Automatic questionarire improved with uids to match answers with (Jørgen)
+ * Autocommit (Jørgen)
+ * Add a header (Jørgen)
