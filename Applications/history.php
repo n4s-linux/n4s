@@ -28,7 +28,7 @@ else {
 	require_once("/svn/svnroot/Applications/fzf.php");
 	$list = "";
 	foreach ($hf as $curhf) {
-		$list .= date("Y-m-d H:M",$curhf["Timestamp"]) . "\t" . $curhf["Description"] . "\n";
+		$list .= date("Y-m-d H:i",$curhf["Timestamp"]) . "\t" . $curhf["Description"] . "\n";
 	}
 	$retval = fzf($list);
 }
