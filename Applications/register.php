@@ -205,7 +205,7 @@ function showmatches($accounts,$matches,$t) {
 		$i++;
 	}
 	$fzf = trim($fzf);
-	$rv = fzf($fzf,"Browse entries - SPACE to select all","--tac --ansi --multi --bind space:select-all",true);
+	$rv = fzf($fzf,"Browse entries - SPACE to select all","--tac --ansi --multi --bind space:select-all -e",true);
 	if (trim($rv) == "") die("No matches selected\n");
 	return $rv;
 }
