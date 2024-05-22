@@ -43,7 +43,7 @@ if (!empty($diff)) {
 		$sk = substr($key,0,4);
 	}	
 	$diff = array_merge_recursive($diff,$diff2);
-	$time = date("Y-m-d H:m");
+	$time = date("Y-m-d H:i");
 	foreach ($diff as $curdiff) {
 		if (!is_array($curdiff)) continue;
 		foreach ($curdiff as $k => $val) {
@@ -54,7 +54,7 @@ if (!empty($diff)) {
 	foreach ($diff as $key){
 		if (!is_array($key)) continue;
 		foreach ($key as $k => $val) {
-			$h = array("desc"=>$val,"date"=>date("Y-m-d H:m:s"),'updatedby'=>$op,'updatedby'=>$op,'updatedby'=>$op,'updatedby'=>$op,'updatedby'=>$op,'updatedby'=>$op,'updatedby'=>$op,'updatedby'=>$op,'updatedby'=>$op);
+			$h = array("desc"=>$val,"date"=>date("Y-m-d H:i:s"),'updatedby'=>$op);
 			array_push($history,$h);
 		}
 	}
@@ -68,7 +68,7 @@ if (!empty($diff)) {
 	if (isset($darray['USEFILE'])) {
 		$fn = file_get_contents("/tmp/.current_voucher");
 		$fn = "vouchers/$fn";
-		$fileh = array('desc'=>"attached file manually: $fn",'date'=>date("Y-m-d H:m:s"),'updatedby'=>$op);
+		$fileh = array('desc'=>"attached file manually: $fn",'date'=>date("Y-m-d H:i:s"),'updatedby'=>$op);
 		$darray["Filereferences"][] = array('filepath'=>$fn,'upload_date'=>date("Y-m-d"),'upload_by'=>$op);
 		unset($darray["USEFILE"]);
 		array_push($darray["History"],$fileh);
