@@ -69,7 +69,7 @@ if (isset($c['Account'])) 	$curacc = $c['Account']; else 	$curacc = "";
          $curtrans['Filename'] =  $path . "/" . str_file_filter($c['Description'] . " - " . $curtrans['Date']) . "-$curtrans[UID].trans";
          $fn = $curtrans['Filename'];
          $curtrans['Filename'] =  str_file_filter($c['Description'] . " - " . $curtrans['Date']) . "-$curtrans[UID].trans";
-$curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d H:m"),'Desc'=>'Indlæst CSV'));
+$curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d H:i"),'Desc'=>'Indlæst CSV'));
                  $curtrans['Transactions'] = array(
                    array('Account'=>$contraacc,'Amount'=> $c['Amount'],'Func'=>''),
                    array('P-Start'=>'','P-End'=>'','Account'=> ($curacc == "") ? 
