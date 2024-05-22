@@ -168,21 +168,16 @@
 ## 2023-10-20
  * Calcurse - nok en joo ting
  * Datepicker har også altid nu  - tager fra 1970-01-01 og frem til dags dato
- * Changelog
  * Ny changelog
  * Opdateret changelog
  * N4s-relaterede ideer publiceres løbende
- * Changelog
  * Flere ideer taget med
  * joo bindings kalender
- * Changelog
 
 ## 2023-10-21
  * Naturlig retning på perioderegnskab
  * Forbedring - lad ikke program fejle hvis man taster et space ved input af tal
  * Disabler budgetscript midlertidigt
- * Changelog
- * Changelog justering
  * Diverse noter
 
 ## 2023-10-22
@@ -202,7 +197,6 @@
 
 ## 2023-10-23
  * Truecolors til journaler og vim
- * Changelog mv
  * Status konti saldi opdateres ved l på tmux line
  * Readme key selling points
  * Readme
@@ -235,7 +229,6 @@
  * Manglende bilag funktion tilføjet og et par andre smårettelser
  * Hvis tomt array til piechart, abort mission
  * Nye bindings til at sætte posteringer ind i thenow
- * Changelog
  * readme stuff
  * readme stuff
  * Lidt oprydning gamle uaktuelle scripts - samt nyt fzf tema
@@ -881,8 +874,6 @@
  * Textbased UI draft
  * Symlink to mail script
  * New session manager stuff
- * Changelog with updates about bugfixes and new features
- * Changelog stuff
  * automatic changelog stuff
  * changelof stuff
  * Readme stuff about changelog
@@ -914,19 +905,15 @@
  * Files that are locked should be opened as readonly, check using this func
  * Autospørg fejlkotno questionarire css file
  * 💡New Feature: More efficent account entry browser - with edit, copy, reverse function
- * Changelog
 
 ## 2024-05-18
  * Take account as argument and add balance to the accounts displayed
  * Nicer balance, and display relevant shortcuts on sr
  * 💡New Feature: Nicer balance with integration to register
- * Changelog
  * Typo in error message
  * Copyed and reersed transactions should not be locked or have a number
  * 💡 New Feature: Guide that allows to book specific or all transactions, and verify the book later on to see if any of the booked transactions has changed #blockchain
- * Changelog
  * Improved booking function
- * Changelog
 
 ## 2024-05-19
  * Dont book anything outside the scope of the current period. Also check if no tpath
@@ -952,11 +939,8 @@
 
 ## 2024-05-21
  * Gitlog markdown
- * Changelog stuff
- * Changelog stuff
 
 ## 2024-05-22
- * A new alias for full journal, remove old stuff about Changelog, print shortcuts
  * 💡 New Feature: Easier transaction edit and add new transaction
  * Make it callable
  * Logging to own users logfiles
@@ -971,3 +955,4 @@
  * Bugfix datetime format
  * Automatic questionarire improved with uids to match answers with
  * Add a header
+ * Small change in changelog generator
