@@ -32,7 +32,7 @@ $code = file_get_contents("$lpath/$file");
 		$bn = basename($fn);
 		echo "$bn changed\n";
 		$fns .= "\"$fn\" ";
-		array_push($data['History'],array('Date'=>date("Y-m-d"),'Desc'=>"Changed by logic ($file)"));
+		array_push($data['History'],array('op'=>$op,'Date'=>date("Y-m-d H:i"),'Desc'=>"Changed by logic ($file)"));
 		file_put_contents("$fn", json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     	}
 }
