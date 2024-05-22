@@ -1,3 +1,5 @@
+# About this changelog
+	This changelog is automatically generated. You can find the most recent news in the bottom of this file
 
 ## 2023-09-30
  * Version 0.1b (Jørgen)
@@ -950,3 +952,21 @@
 
 ## 2024-05-21
  * Gitlog markdown (Jørgen)
+ * Changelog stuff (Jørgen)
+ * Changelog stuff (Jørgen)
+
+## 2024-05-22
+ * A new alias for full journal, remove old stuff about Changelog, print shortcuts (Jørgen)
+ * 💡 New Feature: Easier transaction edit and add new transaction (Jørgen)
+ * Make it callable (Jørgen)
+ * Logging to own users logfiles (Jørgen)
+ * Print filename of corrupted file (Jørgen)
+ * Fixed dateformatting problem in history, added uid to new transactions (Jørgen)
+ * Small cosmetic change (Jørgen)
+ * Exact matches in fzf viewer (Jørgen)
+ * New Transactions gets a UID and is NOT locked (Jørgen)
+ * 🐛 Bugfix: Error in date format (Jørgen)
+ * Bugfix: Fix date format (Jørgen)
+ * Bugfix datetime format (Jørgen)
+ * Bugfix datetime format (Jørgen)
+ * Automatic questionarire improved with uids to match answers with (Jørgen)
