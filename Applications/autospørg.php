@@ -1,8 +1,10 @@
 <?php
+	require_once("/svn/svnroot/Libraries/gen_uuid.php");
 	ob_start();
-	system('find /data/regnskaber|grep .trans$');
+	system("find /data/regnskaber -name \*.trans -mtime -3");
 	$files = explode("\n",trim(ob_get_clean()));
 	$ask = array();
+	print_r(count($files));
 	foreach ($files as $curfile) {
 		$fgc = file_get_contents($curfile);
 		$data = json_decode($fgc,true);
@@ -20,7 +22,7 @@
 //		$html = '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">';
 		$html = "<style>"  .file_get_contents("/svn/svnroot/Applications/bs.css") . "</style>";
 		$html .= "<h3>Autogenereret Fejlkonto $bn - $version</h3><br>\n";
-		$html .= "<table class=table border=1><tr><td>Ref</td><td>Date</td><td>Text</td><td>Account</td><td>Contra</td><td>Amount</td><td>Comment</td><td bgcolor=yellow>Answer</td></tr>\n";
+		$html .= "<table class=table border=1><tr><td>UID</td><td>Ref</td><td>Date</td><td>Text</td><td>Account</td><td>Contra</td><td>Amount</td><td>Comment</td><td bgcolor=yellow>Answer</td></tr>\n";
 		foreach ($questions as $curquestion) {
 			if (strtotime($curquestion["Date"]) < strtotime("2024-01-01")) continue; //ignore old postings
 			if (!isset($curquestion["Transactions"]) || count($curquestion["Transactions"]) < 1) continue;
@@ -31,12 +33,21 @@
 				$pamount = number_format($curtrans["Amount"],2,",",".");
 				$shortcontra = getcontra($curquestion);
 				if (!isset($curquestion["Comment"]))$curquestion["Comment"] = ""; 
-				$html .= "<tr><td>$curquestion[Reference]&nbsp;</td><td>$curquestion[Date]</td><td>$curquestion[Description]</td><td>$shortacc</td><td>$shortcontra</td><td><p align=right>$pamount</p></td><td>$curquestion[Comment]</td><td bgcolor=yellow>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>\n";
+				echo "calculaging uid\n";
+				if (!isset($curquestion["UID"])) {
+					$curquestion["UID"] = "NA";
+				}
+				$uid = substr($curquestion["UID"],0,4);
+				echo "calculated\n";
+				$html .= "<tr><td>$uid</td><td>$curquestion[Reference]&nbsp;</td><td>$curquestion[Date]</td><td>$curquestion[Description]</td><td>$shortacc</td><td>$shortcontra</td><td><p align=right>$pamount</p></td><td>$curquestion[Comment]</td><td bgcolor=yellow>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>\n";
 				$count++;
 			}
 		}
 		$html .= "</table>";
-		if ($count>0) sendmail("joo@0lsen.com","Fejlkonto $bn",$html);
+		if ($count>0) {
+			echo "mailing\n";
+			sendmail("joo@0lsen.com","Fejlkonto $bn",$html);
+		}
 	}
 function sendmail($to,$subject,$message) {
 $headers[] = 'MIME-Version: 1.0';
