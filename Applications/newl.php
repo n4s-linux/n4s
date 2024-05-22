@@ -193,7 +193,8 @@ require_once("/svn/svnroot/Applications/readonly.php");
 			}
 		}
 		$filename = date("Ymd") . uniqid();
-		$f['History'] = array(array('Date'=>date("Y-m-d H:m"),'Desc'=>"Manual entry $op"));
+		$f['History'] = array(array('Date'=>date("Y-m-d H:i"),'Desc'=>"Manual entry $op"));
+		$f["UID"] = substr(uniqid(),0,8);
 		$f['Date'] = askdate();
 		$f['Reference'] = askref();
 		$f['Description'] = askdesc(md5($hashkonti));
