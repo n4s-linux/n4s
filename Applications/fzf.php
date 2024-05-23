@@ -1,6 +1,6 @@
 <?php
 require_once("proc_open.php");
-function fzf($list,$header = "",$flags = "",$cols = false,$trim = true) {
+function fzf($list,$header = "",$flags = "",$cols = false,$trim = true,$sort="") {
 	$op = posix_getpwuid(posix_geteuid())['name'];
 	if ($trim) $list = trim($list);
 	file_put_contents("/home/$op/tmp/list",$list);
