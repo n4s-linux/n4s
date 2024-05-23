@@ -1,5 +1,5 @@
 #!/bin/bash
-
+(
 [ $# -eq 1 ] || { echo >&2 "This script requires exactly one argument. Use it as follows: ./remove-blank-pages 'input with blank pages.pdf' 'output without blank pages.pdf'. Aborting."; exit 1; }
 command -v gs >/dev/null 2>&1 || { echo >&2 "This script requires ghostscript but it's not installed.  Aborting."; exit 1; }
 command -v pdftk >/dev/null 2>&1 || { echo >&2 "This script requires pdftk but it's not installed.  Aborting."; exit 1; }
@@ -23,3 +23,4 @@ echo "These pages are not empty: $nonEmptyPagesStr"
 pdftk "$1" cat $nonEmptyPagesStr output "$1.nonblank.pdf"
 cp "$1.nonblank.pdf" "$1"
 rm "$1.nonblank.pdf"
+)>/dev/null
