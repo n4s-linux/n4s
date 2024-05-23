@@ -1,5 +1,5 @@
 # About this changelog
-	This changelog is automatically generated on 2024-05-23 11:10.
+	This changelog is automatically generated on 2024-05-23 12:00.
 
 ## 2024-05-23
  * New alias for export accounts, and a shortcut... !
@@ -13,6 +13,7 @@
  * Fault tolerance in skat export
  * Improved transactions editor
  * Add errror account and tax account to the standard chart of accounts
+ * Sort accounts in register account chooser
 
 ## 2024-05-22
  * 💡 New Feature: Easier transaction edit and add new transaction
