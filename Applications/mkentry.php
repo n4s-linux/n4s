@@ -51,10 +51,11 @@ date_default_timezone_set('Europe/Copenhagen');
 	if ($valg == "") die("Intet valgt\n");
 	}
 	if (getenv("adjustbalance") == "1") {
-		$cmd = "php /svn/svnroot/Applications/newl.php accounts|fzf --height=8 --ansi --header=\"Pick Account to adjust\"";
+		$cmd = "color=none php /svn/svnroot/Applications/newl.php accounts|fzf --ansi --header=\"Pick Account to adjust\"";
 		ob_start();
 		system("$cmd");
 		$konto = trim(ob_get_clean());
+		if ($konto == "") die("Aborted no account selected to adjust balance for\n");
 		$tpath = getenv("tpath");
 		echo "tpath=$tpath\n";
 		$bal = getbal($konto,$tpath);
