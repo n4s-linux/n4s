@@ -1,13 +1,15 @@
 alias journal="color=none l print|vi -"
 function displayaccshortcuts() {
-	echo -e "❚#[bg=yellow]v$version shortcutz:"
-	echo -e "❚#[bg=gray]F1 ⭈ Headmenu🎹"
-	echo -e "❚#[bg=purple]Alt+b⭈ #[bg=purple]Balance"
-	echo -e "❚#[bg=gray]Alt+r⭈ #[bg=gray]Register"
-	echo -e "❚#[bg=purple]Alt+o⭈ #[bg=purple]Book"
-	echo -e "❚#[bg=gray]Alt+m⭈ #[bg=gray]Menu"
-	echo -e "❚#[bg=purple]Alt+o⭈ #[bg=purple]Book"
-	echo -e "❚#[bg=gray]Alt+m⭈ #[bg=gray]Menu"
+	echo -e " #[bg=black fg=yellow]💡n4s v$version"
+	echo -e " #[bg=gray]❴F1❵ → Headmenu"
+	echo -e " #[bg=white]❴Alt+b❵→ #[bg=white]Balance"
+	echo -e " #[bg=gray]❴Alt+r❵→ #[bg=gray]Register"
+	echo -e " #[bg=white]❴Alt+o❵→ #[bg=whitet]Book"
+	echo -e " #[bg=gray]❴Alt+m❵→ #[bg=gray]Menu"
+	echo -e " #[bg=white]❴Alt+o❵→ #[bg=white]Book"
+	echo -e " #[bg=gray]❴Alt+m❵→ #[bg=gray]Menu"
+	echo -e " #[bg=white]❴Alt+a❵→ #[bg=white]Adjust balance"
+	echo -e " #[bg=gray]❴Alt+x❵→ #[bg=gray]Export"
 }
 function u() {
 clear
@@ -315,6 +317,7 @@ function lm() {
 	fi
 }
 bind '"\ee":"e\n"' 2>/dev/null
+bind '"\ea":"adjust\n"' 2>/dev/null
 bind '"\em":"m\n"' 2>/dev/null
 bind '"\eå":"lm\n"' 2>/dev/null
 bind '"\er":"r\n"' 2>/dev/null
@@ -324,6 +327,7 @@ bind '"\es":"ds\n"' 2>/dev/null
 bind '"\eo":"book\n"' 2>/dev/null
 bind '"\eu":"u\n"' 2>/dev/null
 bind '"\eq":"changetermcmd\n"' 2>/dev/null
+bind '"\ex":"exportaccounts\n"' 2>/dev/null
 shopt -s histappend
 mkdir -p ~/tmp/ /svn/svnroot/tmp/
 LEDGER_DEPTH=5
@@ -439,6 +443,7 @@ function standardkontoplan() {
     google-chrome --headless ~/tmp/stdkto.html --print-to-pdf=Standard-export-$bn-$begin-$end.pdf 2>/dev/null
     mv Standard-export-$bn-$begin-$end.pdf ~/n4s-export/
 }
+alias exportaccounts=html2
 function html2() {
 	begin=$LEDGER_BEGIN
 	end=$LEDGER_END
