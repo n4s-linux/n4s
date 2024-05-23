@@ -7,9 +7,9 @@ function fzf($list,$header = "",$flags = "",$cols = false,$trim = true,$sort="")
 	$cmd = "/usr/bin/echo -e \"" . $list;
 	file_put_contents("/home/$op/tmp/fzf.list",$list);
 	if (!$cols)
-		$cmd = "cat ~/tmp/fzf.list|fzf --header=\"$header\" --ansi $flags> /home/$op/tmp/fzf";
+		$cmd = "cat ~/tmp/fzf.list$sort|fzf --header=\"$header\" --ansi $flags> /home/$op/tmp/fzf";
 	else
-		$cmd = "cat ~/tmp/fzf.list|column -ts $'\t'|fzf --header=\"$header\" $flags> /home/$op/tmp/fzf";
+		$cmd = "cat ~/tmp/fzf.list$sort|column -ts $'\t'|fzf --header=\"$header\" $flags> /home/$op/tmp/fzf";
 	exec_app($cmd);
 	file_put_contents("/home/$op/tmp/fejl",$cmd);
 	//$d = explode("\n",file_get_contents("/home/$op/tmp/fzf"))[0]; // POTENTIAL BIG PRAWBLEM THIS USED TO WORK

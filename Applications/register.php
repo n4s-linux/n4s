@@ -166,7 +166,7 @@ function showmatches($accounts,$matches,$t) {
 		$fzf .= "$ca\t💰$nicebal\n";
 	}
 	$fzf = trim($fzf);
-	$acc = fzf($fzf,"Select account that has matches - SPACE to select all","--multi --bind space:select-all -1",true,"|sort");
+	$acc = fzf($fzf,"Select account that has matches - SPACE to select all","--multi --bind space:select-all -1",true,true,"|sort");
 	if ($acc == "") die("No account(s) selected\n");
 	$accs = explode("\n",$acc);
 	$show = array();
