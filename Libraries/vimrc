@@ -114,8 +114,130 @@ imap <F10> <C-R>=printf("%s %s\t", strftime("%Y-%m-%dT%H:%M"), $USER)<CR>
 imap <F9> <C-R>=strftime("%Y-%m-%d")<CR>
 
 
+" Define the list of patterns for filenames to skip
+let g:skip_buffers = ['vimtips', 'veryadvancedpattern2', 'veryadvancedpattern3']
+
+" Function to check if a buffer should be skipped
+function! ShouldSkipBuffer(buffer)
+    let l:bufname = bufname(a:buffer)
+    for pattern in g:skip_buffers
+        if match(l:bufname, pattern) >= 0
+            return 1
+        endif
+    endfor
+    return 0
+endfunction
+
+" Function to go to the next buffer, skipping unwanted ones
+function! NextBuffer()
+    let l:current = bufnr('%')
+    let l:total_buffers = bufnr('$')
+    let l:next = l:current + 1
+    while l:next != l:current
+        if l:next > l:total_buffers
+            let l:next = 1
+        endif
+        if !ShouldSkipBuffer(l:next)
+            exec 'buffer ' . l:next
+            return
+        endif
+        let l:next += 1
+    endwhile
+endfunction
+
+" Function to go to the previous buffer, skipping unwanted ones
+function! PrevBuffer()
+    let l:current = bufnr('%')
+    let l:total_buffers = bufnr('$')
+    let l:prev = l:current - 1
+    while l:prev != l:current
+        if l:prev < 1
+            let l:prev = l:total_buffers
+        endif
+        if !ShouldSkipBuffer(l:prev)
+            exec 'buffer ' . l:prev
+            return
+        endif
+        let l:prev -= 1
+    endwhile
+endfunction
+
+" Function to go to the next buffer and open as read-only if it matches the skip pattern
+function! NextBufferReadonly()
+    let l:current = bufnr('%')
+    let l:total_buffers = bufnr('$')
+    let l:next = l:current + 1
+    while l:next != l:current
+        if l:next > l:total_buffers
+            let l:next = 1
+        endif
+        if !ShouldSkipBuffer(l:next)
+            exec 'buffer ' . l:next
+            return
+        endif
+        if ShouldSkipBuffer(l:next)
+            exec 'buffer ' . l:next
+            setlocal readonly
+            return
+        endif
+        let l:next += 1
+    endwhile
+endfunction
+
+" Function to go to the previous buffer and open as read-only if it matches the skip pattern
+function! PrevBufferReadonly()
+    let l:current = bufnr('%')
+    let l:total_buffers = bufnr('$')
+    let l:prev = l:current - 1
+    while l:prev != l:current
+        if l:prev < 1
+            let l:prev = l:total_buffers
+        endif
+        if !ShouldSkipBuffer(l:prev)
+            exec 'buffer ' . l:prev
+            return
+        endif
+        if ShouldSkipBuffer(l:prev)
+            exec 'buffer ' . l:prev
+            setlocal readonly
+            return
+        endif
+        let l:prev -= 1
+    endwhile
+endfunction
+
+" Create custom commands
+command! NextBuffer call NextBufferReadonly()
+command! PrevBuffer call PrevBufferReadonly()
+
+
 nnoremap <C-l> :w!<CR>:bn<CR>
 nnoremap <C-k> :w!<CR>:bp<CR>
+
+
+" Create custom commands
+command! NextBuffer call NextBuffer()
+command! PrevBuffer call PrevBuffer()
+
+" Map keys to custom commands
+
+nnoremap <C-l> :w!<CR>:NextBuffer<CR>
+nnoremap <C-k> :w!<CR>:PrevBuffer<CR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 map <F5> :'<,'>!awk '{ sum += $1; print; } END { printf("Total:\n----------\n\%.2f\n----------\n", sum) }'<cr>
 
 
@@ -501,5 +623,34 @@ autocmd BufEnter,BufWinEnter,BufWritePost * call UpdateStatusLine()
 
 " Set the statusline formatting initially
 call UpdateStatusLine()
-nnoremap e :% !php /svn/svnroot/Applications/trans_action.php<CR>:redraw<CR>
+nnoremap e :% !php /svn/svnroot/Applications/trans_action.php<CR>:redraw!<CR>
+
+
+let g:MyVimTips = "off"
+
+function! ToggleVimTips()
+  if g:MyVimTips == "on"
+    let g:MyVimTips = "off"
+    " Close the tips window if it's open
+    if bufexists('MyVimTips')
+      execute 'bwipeout MyVimTips'
+    endif
+  else
+    let g:MyVimTips = "on"
+    " Open a new buffer at the bottom, set it to read-only, and make it 1 row high
+    botright new
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    setlocal noswapfile
+    setlocal readonly
+    file MyVimTips
+    resize 2
+    " Read the contents of the file into the buffer
+    execute 'silent! r /svn/svnroot/Libraries/vimtips'
+    " Prevent editing of the buffer
+    setlocal nomodifiable
+  endif
+endfunction
+
+silent call ToggleVimTips()
 
