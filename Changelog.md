@@ -958,3 +958,14 @@
  * Small change in changelog generator
 
 ## 2024-05-23
+ * New alias for export accounts, and a shortcut... !
+ * More date standard periods
+ * Add sortinng option to fzf
+ * Chose to report for just period or with carryover account values
+ * Fault tolerance in mkentry
+ * Some changelog stuff
+ * Vim tooltips
+ * Remove blank pages runs quietly
+ * Fault tolerance in skat export
+ * Improved transactions editor
+ * Add errror account and tax account to the standard chart of accounts
