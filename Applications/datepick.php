@@ -23,25 +23,34 @@
 			$fzf .= "$år\n";
 	
 	}
-	$fzf .= "Altid\n";
-	$fzf .= "Idag\n";
-	$fzf .= "ÅTD\n";
-	$fzf .= "MANUEL\n";
+	$fzf .= "Longtime\n";
+	$fzf .= "Today\n";
+	$fzf .= "YearToDate\n";
+	$fzf .= "WeekToDate\n";
+	$fzf .= "MANUAL\n";
 	$fzf .= date("Y");
-	$valg = fzf($fzf,"vælg periode $datepicktext","--height=10 --tac --exact");
+	$valg = fzf($fzf,"vælg periode $datepicktext","--height=12 --tac --exact");
 	if ($valg =="")die();
-	else if ($valg == "Altid") {$begin = "1900-01-01"; $end=date("Y-m-d",strtotime("tomorrow"));}
-	else if ($valg == "MANUEL") {
+	else if ($valg == "All Time") {$begin = "1900-01-01"; $end=date("Y-m-d",strtotime("tomorrow"));}
+	else if ($valg == "MANUAL") {
 		echo "Begin: "; $fd = fopen("PHP://stdin","r");$begin = trim(explode("\n",fgets($fd))[0]);fclose($fd);
 		echo "End: "; $fd = fopen("PHP://stdin","r");$end = trim(fgets($fd));fclose($fd);
 	}
-	else if ($valg == "Idag") {
+	else if ($valg == "Today") {
 		$begin = date("Y-m-d",strtotime("today"));
 		$end = date("Y-m-d",strtotime("tomorrow"));
 	}
-	else if ($valg == "ÅTD") {
+	else if ($valg == "YearToDate") {
 		$begin = date("Y") . "-01-01";
 		$end = date("Y-m-d",strtotime("tomorrow"));
+	}
+	else if ($valg == "WeekToDate") {
+		$begin= date("Y-m-d",strtotime("-7 days"));
+		$end = date("Y-m-d",strtotime("tomorrow"));
+	}
+	else if ($valg == "LastWeek") {
+		$begin= date("Y-m-d",strtotime("-14 days"));
+		$end = date("Y-m-d",strtotime("-7 days"));
 	}
 	else if (strlen($valg) == 4) {
 		$begin = $valg . "-01-01";
