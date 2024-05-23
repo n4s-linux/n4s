@@ -14,10 +14,11 @@ bootstrap();
 $output = ob_get_clean();
 ob_start();
 printheader("Ekstern rapportering");
+echo "<br>";
 saldobalance($newtrans,$stdkto);
 $output .= ob_get_clean();
-$output.= "<p style=\"page-break-before: always\"></p>";
 ob_start();
+$output.= "<p style=\"page-break-before: always\"></p>";
 kontokort($newtrans,$stdkto);
 $output .= ob_get_clean();
 $op = exec("whoami");
@@ -162,7 +163,7 @@ function selectaccount($acc) {
 		if (substr($curkto[1],0,4) == "Sum ") continue;
 		$fzf .= $curkto[0] . "\t" . str_pad(substr($overskrift,0,55),55," ",STR_PAD_RIGHT) . "\t".$curkto[2] . "\n";
 	}
-	$valg = fzf($fzf,"Vælg konto for $acc");
+	$valg = fzf($fzf,"Skatte-eksport - ÅRL Model: Vælg konto for $acc");
 	if ($valg == "") die("Afbrudt ved valg af konto\n");
 	else return $valg;
 }
