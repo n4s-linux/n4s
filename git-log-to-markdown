@@ -49,7 +49,7 @@ git-log-to-markdown () {
     echo "# Gitlog"
   fi
 
-  git log --no-merges --author="${AUTHOR}" --since="${SINCE}" --until="${UNTIL}" --format="%cd" --date=short | sort -u | while read DATE ; do
+  git log --no-merges --author="${AUTHOR}" --since="${SINCE}" --until="${UNTIL}" --format="%cd" --date=short | sort -u |sort -r|while read DATE ; do
 
     local GIT_PAGER=$(git log --no-merges --reverse --format="${LOG_FORMAT}" --since="${DATE} 00:00:00" --until="${DATE} 23:59:59" --author="${AUTHOR}")
 
@@ -64,5 +64,5 @@ git-log-to-markdown () {
 
 }
 
-echo -e "# About this changelog\n\tThis changelog is automatically generated. You can find the most recent news in the bottom of this file" > /svn/svnroot/Changelog.md
+echo -e "# About this changelog\n\tThis changelog is automatically generated on $(date +"%Y-%m-%d %H:%M")." > /svn/svnroot/Changelog.md
 git-log-to-markdown "$@"|grep -v Changelog|grep -v Autocommit>>/svn/svnroot/Changelog.md
