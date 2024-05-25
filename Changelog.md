@@ -1,7 +1,15 @@
 # About this changelog
-	This changelog is automatically generated on 2024-05-25 10:00.
+	This changelog is automatically generated on 2024-05-25 10:19.
 
 ## 2024-05-25
+ * More periods
+ * Abort when not picking from the available fields
+ * Vim tips updated
+ * different kind of stuffz
+ * Boxes added as dependency
+ * Edit handler for accept suggestions, and new transaction
+ * Statusline instead of cwindow for the helpful tips in vim
+ * newl_csv fault tolerance and use tpath parameter
 
 ## 2024-05-24
 
