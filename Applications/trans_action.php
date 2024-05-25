@@ -24,6 +24,9 @@ else {
 	$fzf .= str_pad("🕮  [$curprop]",20) . $json[$curprop] . "\n";
 }	
 	$bal = 0;
+
+	if (stristr(json_encode($json["Transactions"]),"AccountSuggestion"))
+		$fzf .= "Accept suggestion(s)\n";
 	foreach ($json["Transactions"] as $ct) {
 		$bal += $ct["Amount"];
 		$prettyamount = str_pad(number_format($ct["Amount"],2,".",","),15, " ",STR_PAD_LEFT);
@@ -36,6 +39,22 @@ else {
 	if ($valg != "") {
 		if ($valg == "Invert account order") {
 			$json["Transactions"] = array_reverse($json["Transactions"]);
+		}
+		else if ($valg == "Accept suggestion(s)") {
+		$i = 0;
+		foreach ($json["Transactions"] as &$curtrans) {
+			if (isset($curtrans["AccountSuggestion"])) {
+				$curtrans["Account"] = $curtrans["AccountSuggestion"];
+				$json["History"][] = array("date"=>date("Y-m-d H:i"),"op"=>$op,"Desc"=>"Accepted account suggestion for transaction $i");
+			}
+			if (isset($curtrans["FuncSuggestion"])) {
+				$curtrans["Func"] = $curtrans["FuncSuggestion"];
+				$json["History"][] = array("date"=>date("Y-m-d H:i"),"op"=>$op,"Desc"=>"Accepted func suggestion for transaction $i");
+			}
+			$i++;
+		}
+//                                        $data["Transactions"][$id]['AccountSuggestion'] = $similar["Kontoforslag"];
+//					$data["Transactions"][$id]['FuncSuggestion'] = $similar["Momsforslag"];
 		}
 		else if ($valg == "Change amount") {
 			exec("tmux display-popup -h3 -E 'gum input --prompt=\"new amount: \">~/tmp/gumout'");
@@ -55,7 +74,7 @@ else {
 			$json = changetrans($json,$x);
 		}
 		else if ($valg == "New Transaction") {
-
+			$json["Transactions"][] = array("Account"=>"","Amount"=>0,"Func"=>"");
 		}
 		else {
 			$x = explode("[",explode("]",$valg)[0])[1];
