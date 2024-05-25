@@ -15,12 +15,6 @@ let LEDGER_DEPTH=99
  let LEDGER_PAYEE_WIDTH="15"
  let LEDGER_ACCOUNT_WIDTH="15"
 set ignorecase
-function! GitStatus() 
-	  let [a,m,r] = GitGutterGetHunkSummary()
-	    return printf('+%d ~%d -%d', a, m, r)
-    endfunction
-    set statusline+=%{GitStatus()}
-
 nnoremap <Space> :cnext<cr>
 
 set hlsearch
@@ -252,6 +246,7 @@ nnoremap <C-s> :'<,'>w !awk '{ sum += $1 } END { print sum }'
 
 :set laststatus=2
 set statusline=%!StatusLine()
+set statusline=hejsa
 function! StatusLine()
     if &ft == 'help'
         let l:status = "%#error#[HELP]%*"
@@ -587,18 +582,8 @@ nnoremap ? :HelpMe<CR>
 autocmd BufReadPost * if &readonly | setlocal nomodifiable | endif
 " Define a function to set the statusline color and content based on file mode and locked status
 function! UpdateStatusLine()
-    " Check if the file is in read-only mode
-    if &readonly
-        " Set statusline color to yellow if file is read-only
-        hi StatusLine guifg=black guibg=yellow
-        " Update statusline to indicate read-only mode
-        let &statusline='%{IsLocked()} [RO] %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P'
-    else
-        " Set statusline color to default if file is read-write
-        hi StatusLine guifg=NONE guibg=NONE
-        " Update statusline to indicate read-write mode
-        let &statusline='%{IsLocked()} %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P'
-    endif
+        hi StatusLine guifg=#eaf03e guibg=black
+        let &statusline='🔥 CMD[Esc] 🬅  ✎[e]dit 🬅 🔍Find[/] 🬅 Save[W] 🬅 Quit[Q] 🬅  [u]ndo  🬅 [r]edo 🬅 Ins/App/Nl [iao] 🬅 TS[F10]'
 endfunction
 
 " Define a function to check if the buffer is locked
@@ -624,33 +609,4 @@ autocmd BufEnter,BufWinEnter,BufWritePost * call UpdateStatusLine()
 " Set the statusline formatting initially
 call UpdateStatusLine()
 nnoremap e :% !php /svn/svnroot/Applications/trans_action.php<CR>:redraw!<CR>
-
-
-let g:MyVimTips = "off"
-
-function! ToggleVimTips()
-  if g:MyVimTips == "on"
-    let g:MyVimTips = "off"
-    " Close the tips window if it's open
-    if bufexists('MyVimTips')
-      execute 'bwipeout MyVimTips'
-    endif
-  else
-    let g:MyVimTips = "on"
-    " Open a new buffer at the bottom, set it to read-only, and make it 1 row high
-    botright new
-    setlocal buftype=nofile
-    setlocal bufhidden=hide
-    setlocal noswapfile
-    setlocal readonly
-    file MyVimTips
-    resize 2
-    " Read the contents of the file into the buffer
-    execute 'silent! r /svn/svnroot/Libraries/vimtips'
-    " Prevent editing of the buffer
-    setlocal nomodifiable
-  endif
-endfunction
-
-silent call ToggleVimTips()
 
