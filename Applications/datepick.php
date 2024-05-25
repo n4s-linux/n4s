@@ -25,6 +25,8 @@
 	}
 	$fzf .= "Longtime\n";
 	$fzf .= "Today\n";
+	$fzf .= "Current 30 day period\n";
+	$fzf .= "Yesterday\n";
 	$fzf .= "YearToDate\n";
 	$fzf .= "WeekToDate\n";
 	$fzf .= "MANUAL\n";
@@ -35,6 +37,14 @@
 	else if ($valg == "MANUAL") {
 		echo "Begin: "; $fd = fopen("PHP://stdin","r");$begin = trim(explode("\n",fgets($fd))[0]);fclose($fd);
 		echo "End: "; $fd = fopen("PHP://stdin","r");$end = trim(fgets($fd));fclose($fd);
+	}
+	else if ($valg == "Current 30 day period") {
+		$begin = date("Y-m-d",strtotime("-30 days"));
+		$end = date("Y-m-d",strtotime("tomorrow"));
+	}
+	else if ($valg == "Yesterday") {
+		$begin = date("Y-m-d",strtotime("yesterday"));
+		$end = date("Y-m-d",strtotime("today"));
 	}
 	else if ($valg == "Today") {
 		$begin = date("Y-m-d",strtotime("today"));
