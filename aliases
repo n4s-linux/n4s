@@ -1,15 +1,15 @@
 alias journal="color=none l print|vi -"
 function displayaccshortcuts() {
 	echo -e " #[bg=black fg=yellow]💡n4s v$version"
-	echo -e " #[bg=gray]❴F1❵ → Headmenu"
-	echo -e " #[bg=white]❴Alt+b❵→ #[bg=white]Balance"
-	echo -e " #[bg=gray]❴Alt+r❵→ #[bg=gray]Register"
-	echo -e " #[bg=white]❴Alt+o❵→ #[bg=whitet]Book"
-	echo -e " #[bg=gray]❴Alt+m❵→ #[bg=gray]Menu"
-	echo -e " #[bg=white]❴Alt+o❵→ #[bg=white]Book"
-	echo -e " #[bg=gray]❴Alt+m❵→ #[bg=gray]Menu"
-	echo -e " #[bg=white]❴Alt+a❵→ #[bg=white]Adjust balance"
-	echo -e " #[bg=gray]❴Alt+x❵→ #[bg=gray]Export"
+	echo -e " #[bg=#5480ba]❴F1❵ → Headmenu"
+	echo -e " #[bg=#4e6e6a]❴Alt+e❵→ #[bg=#4e6e6a]Entry"
+	echo -e " #[bg=#5480ba]❴Alt+b❵→ #[bg=#5480ba]Balance"
+	echo -e " #[bg=#4e6e6a]❴Alt+r❵→ #[bg=#4e6e6a]Register"
+	echo -e " #[bg=#5480ba]❴Alt+o❵→ #[bg=#5480ba]Book"
+	echo -e " #[bg=#4e6e6a]❴Alt+m❵→ #[bg=#4e6e6a]Menu"
+	echo -e " #[bg=#5480ba]❴Alt+a❵→ #[bg=#5480ba]Adjust balance"
+	echo -e " #[bg=#4e6e6a]❴Alt+x❵→ #[bg=#4e6e6a]Export"
+	echo -e " #[bg=#5480ba]❴Alt+i❵→ #[bg=#5480ba]Pivot"
 }
 function u() {
 clear
@@ -64,7 +64,12 @@ function upd8() {
     git pull 
     popd > /dev/null
 }
-alias b="php /svn/svnroot/Applications/nicerbal.php"
+function b() {
+	 if [ "$tpath" == "" ]; then
+		sr
+	fi
+	php /svn/svnroot/Applications/nicerbal.php
+}
 function bilag() { 
 	pushd 2>/dev/null
 	if [ "$kddir" == "" ]; then
@@ -200,7 +205,12 @@ else
 fi
 }
 alias register="php /svn/svnroot/Applications/register.php"
-alias r=register
+function r() {
+	if [ "$tpath" == "" ]; then
+		sr
+	fi
+	register
+}
 alias autoudlign="php /svn/svnroot/Applications/newl.php openentries"
 alias ui="php /svn/svnroot/Applications/newl.php ui"
 function lt() {
@@ -328,6 +338,7 @@ bind '"\eo":"book\n"' 2>/dev/null
 bind '"\eu":"u\n"' 2>/dev/null
 bind '"\eq":"changetermcmd\n"' 2>/dev/null
 bind '"\ex":"exportaccounts\n"' 2>/dev/null
+bind '"\ei":"pivot "' 2>/dev/null
 shopt -s histappend
 mkdir -p ~/tmp/ /svn/svnroot/tmp/
 LEDGER_DEPTH=5
@@ -625,7 +636,7 @@ BPWD="$(basename "$PWD")"
 
 	#last=$(grep -h ✔ /data/regnskaber/transactions_crm/.tags/*.diff|grep "\["|grep "\]"|sort|tail -n1)
     last=$(newfeatures)
-	tmux set -g status 5 2>/dev/null; tmux set -g status-format[4] "#[fg=black,bg=green]#whatschanged 🍃 $last" 2>/dev/null
+	tmux set -g status 5 2>/dev/null; tmux set -g status-format[4] "#[fg=black,bg=yellow]#whatschanged 🍃 $last" 2>/dev/null
 	pushd . >/dev/null
 	cd "$tpath"
 	popd >/dev/null
@@ -665,7 +676,12 @@ function ss() {
 	echo "searching for $@  in 1900-01-01 - 2019-12-31 - use s for searching only in $LEDGER_BEGIN - $LEDGER_END"
 	php /svn/svnroot/Applications/key.php search 1900-01-01 2099-12-31 "$@" 
 }
-alias e="php /svn/svnroot/Applications/newl.php entry"
+function e() {
+	if [ "$tpath" == "" ]; then
+		sr
+	fi
+	php /svn/svnroot/Applications/newl.php entry
+}
 alias eu="php /svn/svnroot/Applications/key.php entry bilag"
 
 unalias l 2>/dev/null #ubuntu default alias
@@ -680,12 +696,18 @@ function scrips() {
 }
 function sr() {
 lastsym 🖫
-clear&&tmux clear-history
+pushd . >/dev/null
 if [ -z "$1" ] ; then
-	export tpath=~/regnskaber/$((echo NEW;ls -t ~/regnskaber)|fzf --no-mouse --cycle)
+	valg=$((echo NEW;ls -t ~/regnskaber)|fzf --no-mouse --cycle)
+	if [ "$valg" == "" ]; then
+		echo didnt select account, exiting
+		return
+	fi
 else
-	export tpath=~/regnskaber/"$1"
+	valg="$1"
 fi
+export tpath=~/regnskaber/"$valg"
+popd >/dev/null
 bn=$(basename "$tpath")
 if [ "$bn" == "NEW" ]; then
 	echo -n "New Account - Name: "
@@ -720,11 +742,13 @@ if [ "$noperiod" != 1 ]; then
 echo
 dp
 fi
+(
 echo "Opened $(basename "$tpath") OK "
 echo ✌ Opened $tpath 
 echo ✌ Full Log $logging
 shortcuts="✌ Common shortcuts: Menu [Alt-m] - Entry [Alt-e] - Balance [Alt-b] - Register [Alr-]r - Book/validate book hashes [Alt-o]"
 echo  -e "$shortcuts"
+)|boxes -d parchment
 echo
 mkdir -p $tpath/.logs/
 
