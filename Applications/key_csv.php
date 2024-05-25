@@ -30,6 +30,7 @@ $op=exec("whoami");
 	require_once("/svn/svnroot/Applications/fzf.php");
        foreach ($data['header'] as $header) {
 		$mappings[$header] = fzf(implode("\n",$availablefields),"chose what field $header maps to");
+		if ($mappings[$header] == "") die("Aborted the csv import\n");
 		if ($mappings[$header] == "Choose") {
 			echo "Indtast navn på felt du ønsker at indlæse '$header' i: ";
 			$fd = fopen("PHP://stdin","r");$str = trim(fgets($fd));fclose($fd);
