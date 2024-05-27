@@ -1,5 +1,5 @@
 |at|hash|desc|
-|---|---|
+|---|---|---|
 | 2024-05-28 00:57:27 +0200 | e706023e0f8afbf454fc47de52c43a416b5859f2 | CarryOverfunktion implemented in dp(), removing from register |
 | 2024-05-28 00:56:37 +0200 | 270dd0592ba929028448ef396f1de30458a91fa1 | Going with past 30 days instead of 90 days for buffer |
 | 2024-05-28 00:56:22 +0200 | bbbad819a80564828d8152b16d2114c2130b8a11 | 💡 New Feature: Manual accounts support debitor/creditor |
