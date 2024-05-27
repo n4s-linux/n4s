@@ -1,3 +1,5 @@
+|hash|desc|
+|---|---|
 | 609b8e56420ec9a0c23cf064720bec47dca630ad | Version 0.1b |
 | d49292621aa29e8ec2bca6e87d225ee8a7574b90 | TLDR skal også have virtualbox links |
 | 91f3e490f7f760fa1886f1d43d79a5ac87e59d22 | Tabel med produktsammenligning var for bred til at kunne vises |
