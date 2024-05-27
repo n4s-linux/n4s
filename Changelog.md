@@ -1,787 +1,787 @@
 |at|hash|desc|
 |---|---|
-| retsiger morf gnivomer ,)(pd ni detnemelpmi noitknufrevOyrraC | 2f9585b614a34c25ed74cf454fbfa8f0e320607e | 0020+ 72:75:00 82-50-4202 |
-| reffub rof syad 09 fo daetsni syad 03 tsap htiw gnioG | 1af19a85403ed1f693fe844820929ab2950dd072 | 0020+ 73:65:00 82-50-4202 |
-| rotiderc/rotibed troppus stnuocca launaM :erutaeF weN 💡 | 11a8b0312c4112d61b2518d82846508a918dabbb | 0020+ 22:65:00 82-50-4202 |
-| stnuocca fo trahc lasrevinu troppus - cimanyd erom troper lmtH | 613e16824a728da0b0d8dcecb1299e296252f8d8 | 0020+ 95:55:00 82-50-4202 |
-| stnuoma revoyrrac omirp tuohtiw/htiw troper - erutaef weN 💡 | 3c65d0c58161f87c24733a53f1ba135faa6ab2a0 | 0020+ 13:55:00 82-50-4202 |
-| xif tnuomA ycnerruCtnuomA :xifguB 🐛 | acebc823b1088b21115eb05dd73be5afb4050d89 | 0020+ 95:13:12 72-50-4202 |
-| tegrat tropxe lmth ot noitacifidom thgilS :pamdniM | f78604afc8d037b049c9f95d0bedc339bcf3bfee | 0020+ 60:14:71 72-50-4202 |
-| retrhac dradnats hsinad eht rof stnuocca wen elpuoc A | d5c9701b3ddec6041a5b40c46267349919be0d8e | 0020+ 15:04:71 72-50-4202 |
-| retemarap htapt esu dna ecnarelot tluaf vsc_lwen | d7874a78ed31c86794bf15ccb4e13327d0f997da | 0020+ 60:91:01 52-50-4202 |
-| miv ni spit lufpleh eht rof wodniwc fo daetsni enilsutatS | e881db7f115514ac0577fd1e859fb000febcc567 | 0020+ 14:71:01 52-50-4202 |
-| noitcasnart wen dna ,snoitseggus tpecca rof reldnah tidE | 5c1bc0d18800f27f809e8c8077eb466bc2d0109c | 0020+ 42:61:01 52-50-4202 |
-| ycnedneped sa dedda sexoB | dce69888c62eb71cbe762b33e5ddd76d2097d095 | 0020+ 50:61:01 52-50-4202 |
-| zffuts fo dnik tnereffid | 670bc867f850280a9723d5a96947648e6313985a | 0020+ 54:51:01 52-50-4202 |
-| detadpu spit miV | 0b3cd41ddc2ed7ab0408fb88f017ba801b261563 | 0020+ 60:51:01 52-50-4202 |
-| sdleif elbaliava eht morf gnikcip ton nehw trobA | eee7062b304678e8f14362d6456b5a7ae22f69b1 | 0020+ 73:41:01 52-50-4202 |
-| sdoirep eroM | 28fee8e7a45d11879586cf12bb110ef92916de1c | 0020+ 01:41:01 52-50-4202 |
-| resoohc tnuocca retsiger ni stnuocca troS | 6b42e5c13616b6ea9e42ecc6a15e80655643a03c | 0020+ 34:95:11 32-50-4202 |
-| snoitcerroc golegnahC | 0257be132d0e2d900abb77f7ea3838a4bd4f666d | 0020+ 03:01:11 32-50-4202 |
-| stnuocca fo trahc dradnats eht ot tnuocca xat dna tnuocca rorrre ddA | 16a6e7784132f2f5728a9dd7ffe8d84c57f12769 | 0020+ 92:60:11 32-50-4202 |
-| rotide snoitcasnart devorpmI | fa51ec0c3d779320073854fa5b662e20046f3026 | 0020+ 90:60:11 32-50-4202 |
-| tropxe taks ni ecnarelot tluaF | 7117deaaf912555a31a7964194f66b90dfb89b9a | 0020+ 94:50:11 32-50-4202 |
-| ylteiuq snur segap knalb evomeR | b5b4e349fe36eb6af153b169566fa2f396de382d | 0020+ 82:50:11 32-50-4202 |
-| spitloot miV | 9d3e3e9d05ac33aeb19b081f1e9c3a14dbd32a44 | 0020+ 01:50:11 32-50-4202 |
-| ffuts golegnahc emoS | 947b9ec8ce9ae831ea61a4a0ffdf541333c2df3d | 0020+ 52:40:11 32-50-4202 |
-| yrtnekm ni ecnarelot tluaF | d8f90c54058beb7c384150cfa4d768300d0dde7a | 0020+ 10:40:11 32-50-4202 |
-| seulav tnuocca revoyrrac htiw ro doirep tsuj rof troper ot esohC | 5272eb7740d0d0d21d05ec604ff1578dd11bf05b | 0020+ 04:30:11 32-50-4202 |
-| fzf ot noitpo gnnitros ddA | 7648d3cb774ce2fb0bcba95df366de2ae891475e | 0020+ 21:30:11 32-50-4202 |
-| sdoirep dradnats etad eroM | 70943123a3df165361ab6bee6f5e2d8a9936967c | 0020+ 65:20:11 32-50-4202 |
-| ! ...tuctrohs a dna ,stnuocca tropxe rof saila weN | 18ee1ad21c83df031f757e44f46072f7edac5dae | 0020+ 73:20:11 32-50-4202 |
-| rotareneg golegnahc ni egnahc llamS | a27e62f9663dde94b2301a3abb4ec9657e3eb69d | 0020+ 60:94:02 22-50-4202 |
-| redaeh a ddA | cdb2cda234100fd8939f180050c1c895722c1252 | 0020+ 35:72:02 22-50-4202 |
-| htiw srewsna hctam ot sdiu htiw devorpmi eriranoitseuq citamotuA | c3a381bae979fbb421b8d3ff8cd0d830ef1ec508 | 0020+ 91:32:02 22-50-4202 |
-| tamrof emitetad xifguB | 58ac3d15ae8482eaf625bcd1b5fd72b9c67e5458 | 0020+ 13:22:02 22-50-4202 |
-| tamrof emitetad xifguB | 8cc0b80c49f2c712ade269499c9695d0ef3aa921 | 0020+ 51:22:02 22-50-4202 |
-| tamrof etad xiF :xifguB | 226b7131d381a96790766867474fe9246c5588ce | 0020+ 65:12:02 22-50-4202 |
-| tamrof etad ni rorrE :xifguB 🐛 | b3cdac77c16d8ec04eb9cbd8ac87e4db4cf9355a | 0020+ 03:12:02 22-50-4202 |
-| dekcol TON si dna DIU a steg snoitcasnarT weN | 5e5b8ba7a008e8c566e31e6040346524ddece055 | 0020+ 85:02:02 22-50-4202 |
-| reweiv fzf ni sehctam tcaxE | ac256a3db6e869f98cb7839f8e6c1bd6b9076c6d | 0020+ 63:02:02 22-50-4202 |
-| egnahc citemsoc llamS | ff8977ae9f8b9721d2a72f321d7bd2b34762569d | 0020+ 81:02:02 22-50-4202 |
-| snoitcasnart wen ot diu dedda ,yrotsih ni melborp gnittamrofetad dexiF | c759ded60ce7a1078bbd9cbfd683a9e119524d36 | 0020+ 85:91:02 22-50-4202 |
-| elif detpurroc fo emanelif tnirP | 5cdc927f915ae02e3b85ed38b22c0e978c1a12f7 | 0020+ 21:21:10 22-50-4202 |
-| selifgol sresu nwo ot gniggoL | 4c7e04a03537609b2ae1fec32f3af62ccb07fcaa | 0020+ 25:11:10 22-50-4202 |
-| elballac ti ekaM | 1cbd321897840fd0d9391fbc7a4d28b02a3f7916 | 0020+ 92:11:10 22-50-4202 |
-| noitcasnart wen dda dna tide noitcasnart reisaE :erutaeF weN 💡 | 1390fc8d77a62b14a5243cbbd1620c2a38f50b94 | 0020+ 31:11:10 22-50-4202 |
-| stuctrohs tnirp ,golegnahC tuoba ffuts dlo evomer ,lanruoj lluf rof saila wen A | 849c6ed7d7ac741774647a538d4bd7fc9456aba1 | 0020+ 43:01:10 22-50-4202 |
-| ffuts golegnahC | 353a204a54f6ee247699812f6f8e78ada65ea6a1 | 0020+ 53:13:41 12-50-4202 |
-| ffuts golegnahC | 046d2be322fe5860d3671e39e2a8ce5ee5fd0743 | 0020+ 01:13:41 12-50-4202 |
-| nwodkram goltiG | f8553ffcbe349d4dc027a898ff70326ca95e3823 | 0020+ 50:92:41 12-50-4202 |
-| omed oediv tuoba txet emdaeR | f71f8434ac2b4a3cdbf1207e425c8279eafbbf03 | 0020+ 41:05:61 02-50-4202 |
-| omed oediv tuoba txet emdaeR | 72363b75ecae6701c8b085009fa590dd579cb964 | 0020+ 25:84:61 02-50-4202 |
-| xifkniL | a0050778dd63a2174dc9026c08894d5739f6c28f | 0020+ 03:14:61 02-50-4202 |
-| xif enil etaacilpuD | a224b7ff13e0cbd1a346cbf9ab0429767248c215 | 0020+ 34:93:61 02-50-4202 |
-| oediv omed A | a6e551bd870718ab174635f3804e64261ea07924 | 0020+ 71:93:61 02-50-4202 |
-| stnemevorpmi tropxe takS | 0b3eac28bc614ca5ea0fe62d9352ec2219131779 | 0020+ 90:80:51 02-50-4202 |
-| noitalsnart laitrap dna tnemevorpmi tropxe otnokljeF | e179417648898acf371ff78fb1d0ad4a0153a50b | 0020+ 05:70:51 02-50-4202 |
-| xif rebmun tnuocca etailpud a dna ,stnuocca wen elpuoc A | e4432d4292b8a8505f70927411dbfbd361dfb86d | 0020+ 11:60:51 02-50-4202 |
-| sdi gnikoob evah tnseod taht snoitcasnart dlo emos rof troppuS | 030bf1ce39b5432cfb82ef407d121c4a133e5ecd | 0020+ 74:50:51 02-50-4202 |
-| ecnarelot tluaF | 8dfff7111c00cef7e44eee3279b6cf02d1550ea3 | 0020+ 32:50:51 02-50-4202 |
-| gninepo na si taht noitcasnart a gniretne nehw snoitcasnart lla weiV :erutaeF weN 💡 | aa84e40f1e1a064ff64f6b04a3d19a4b82d24dfa | 0020+ 90:50:51 02-50-4202 |
-| noitalsnart dna tnemevorpmi tnuocca pukool llamS | a10ccc1d33c2418092e4e2828d9801a69ea9e969 | 0020+ 11:40:51 02-50-4202 |
-| stnuocca emos ni gnissim eb lliw srebmun yek emos ecnarelot tluaF 🐛 | 48f4a5783632bd441cd180fa55afad5267257304 | 0020+ 05:30:51 02-50-4202 |
-| stnemevorpmi tropxe fdp/lmth emoS | ae3145a3b9114bed7991d20b223bfdf2affbf1ed | 0020+ 42:30:51 02-50-4202 |
-| epip ot gib oot si atad emos esuaceb ,elif ot etirw fzF | 27c65b3cc71d87fe9e87546fe238a19ac984e2db | 0020+ 95:20:51 02-50-4202 |
-| stnuocca gnillor devreser erom clac gninepO | 26569c396fcb0dbf534a719cfc50bfa8cec37155 | 0020+ 14:20:51 02-50-4202 |
-| tropxe dradnats ni dedulcni gnippam htiw troper xat dna punaelc lanimret emoS | f4eb5c0085c4eb59a7253fbd96afd99604ffd436 | 0020+ 82:15:32 91-50-4202 |
-| htapt on fi kcehc oslA .doirep tnerruc eht fo epocs eht edistuo gnihtyna koob tnoD | 65ee288e1aed4043d92e83daeec5c79af51fa9bc | 0020+ 62:05:32 91-50-4202 |
-| golegnahC | 5e3b06fa287526d0ef974c0875392dca34260926 | 0020+ 42:60:71 81-50-4202 |
-| noitcnuf gnikoob devorpmI | e07ee98e523ebe095fbbf3f000d9f8f92ed5e0d2 | 0020+ 50:60:71 81-50-4202 |
-| golegnahC | b6a61e5ead8049f976d5907895341cccf688506e | 0020+ 11:75:31 81-50-4202 |
-| niahckcolb# degnahc sah snoitcasnart dekoob eht fo yna fi ees ot no retal koob eht yfirev dna ,snoitcasnart lla ro cificeps koob ot swolla taht ediuG :erutaeF weN 💡 | 4e4a80775ec366a2cbceea37c702b2b3022a8109 | 0020+ 75:65:31 81-50-4202 |
-| rebmun a evah ro dekcol eb ton dluohs snoitcasnart desreer dna deypoC | 584e0be97ed02dc3627cb0528438aacb391f1cdd | 0020+ 43:55:31 81-50-4202 |
-| egassem rorre ni opyT | fca9ce7fbff84529d41aaef709c923ca96df5eae | 0020+ 44:62:21 81-50-4202 |
-| golegnahC | a0811478e750a3786e25ceae5c4f79a3db770632 | 0020+ 24:52:21 81-50-4202 |
-| retsiger ot noitargetni htiw ecnalab reciN :erutaeF weN💡 | 6ea963d0a5c74a7670f5d22184854233243db917 | 0020+ 52:52:21 81-50-4202 |
-| rs no stuctrohs tnaveler yalpsid dna ,ecnalab reciN | a1ce87b97c602627294c8fb334f6a2bbbf0cd1dc | 0020+ 15:42:21 81-50-4202 |
-| deyalpsid stnuocca eht ot ecnalab dda dna tnemugra sa tnuocca ekaT | 4a59ee17977435bcfc659e668c1038c657d420e8 | 0020+ 21:42:21 81-50-4202 |
-| golegnahC | 715ad01e6189acbed03872b53b340b447accd7d4 | 0020+ 13:73:22 71-50-4202 |
-| noitcnuf esrever ,ypoc ,tide htiw - resworb yrtne tnuocca tneciffe eroM :erutaeF weN💡 | e5ee0b9b40950fb0b7562c5703fd2dd2a0c5c43b | 0020+ 00:73:22 71-50-4202 |
-| elif ssc eriranoitseuq ontokljef grøpsotuA | 93e5537b1b8dbec29ec6bdaffe263a2306a38e96 | 0020+ 82:53:22 71-50-4202 |
-| cnuf siht gnisu kcehc ,ylnodaer sa denepo eb dluohs dekcol era taht seliF | b4faf95b09c51173d18d7d87581b695168cad6af | 0020+ 25:43:22 71-50-4202 |
-| ecnarelot tluaF | 7184e81c9b7fe8a84bfaf2660dd66451410bd9c2 | 0020+ 03:43:22 71-50-4202 |
-| tropxe vsc tcerroc rof kcahregdel eht tnemelpmi osla ,skrow snoitcasnart gnikcol woh ot segnahC | 793404baf10f6d1585eb94f59760c85a97bcaced | 0020+ 81:43:22 71-50-4202 |
-| troper wolfyenom ot stnemevorpmi llamS | 0eca2dadac7b8f1830af17f5eaff16d6bbfec8b4 | 0020+ 74:33:22 71-50-4202 |
-| ?stnuocca tneicna rof snoitcasnart tneicna wolla ton yhW | 39bef51f1b0db538583f2bc1fc3058af1cf8e67c | 0020+ 21:33:22 71-50-4202 |
-| ton ro dekoob no desab - stluser hcraes rof sedoc roloC | eb82253158209089e6f9a1840d95a21dd4186cb1 | 0020+ 15:23:22 71-50-4202 |
-| sccatrohs rof retimiled sa lobmys ⇒ | 00492acda057205fab63187c57a87d741e4ab72e | 0020+ 41:23:22 71-50-4202 |
-| stpmorp fzf morf elbatnirpnon evomeR | 787d3e17a7bef66f0aaf3a3d0ccec0bf11603553 | 0020+ 80:13:22 71-50-4202 |
-| TAV ekil noitcnuf a morf semoc taht snoitcasnart ot atadatem ddA | 32ed7289034475b7e16276f029c8ad399d9a90f0 | 0020+ 74:03:22 71-50-4202 |
-| 0791 erofeb setad stroppus kcipetaD | 881617fb1ffb9d30df39ba18d913a2fed7d9bf5f | 0020+ 12:03:22 71-50-4202 |
-| erianoitseuq liame otnokljef devorpmI | 570c0d7c8404fb4b6129a2df16fafc5a4593598c | 0020+ 70:03:22 71-50-4202 |
-| miv ni selif dekcol fo tide wollasiD | 049fb265a80cf1ccff0257d5501ce6e599d9bad0 | 0020+ 74:92:22 71-50-4202 |
-| )emit xinu( 10-10-0791 erofeb setad troppus dluohs metsyS | 74d90bea4a42116cd9a94899fb82f4f65329b90a | 0020+ 52:92:22 71-50-4202 |
-| snoitcasnart gninepo ot atadtatem gniddA | 48e4b962f4feac7231b38300baf6034e29b0ad5c | 0020+ 14:82:22 71-50-4202 |
-| golegnahc detadpU | 68867b591b8088e54bd0167b0f4005f367ddef39 | 0020+ 33:35:70 41-50-4202 |
-| stnuocca wen owT | 57aab7c7e1b3f61abcfd8906d854a18ba998849f | 0020+ 41:35:70 41-50-4202 |
-| elbairav dezilaitininu xifgub ronim dna tiderc gnidulcnI | bbd780a6a89f183cb2896032a6b70649db88e2d8 | 0020+ 50:25:70 41-50-4202 |
-| seirtne gniod nehw tuptuo roloC | 1e058d9c47c98060e66a52466b0efc39a20ac4a9 | 0020+ 13:15:70 41-50-4202 |
-| selif regdel ni stamrof etad dilavni rof gnitroper dna ecnarelot tluaF 🐛 | 843d2c93064cb5b3cf2b8bdbbee45646c261cef9 | 0020+ 12:44:71 31-50-4202 |
-| neercs eht no swodniw erom rof ,seman wodniw gninetrohs rehtruF | bcfdfc8e61fa88a1e6fe2960a1dec5ce5b8b31a0 | 0020+ 73:24:41 31-50-4202 |
-| golegnahc tuoba ffuts emdaeR | 6b71142eb878316c559d7843f42c4dc58537f99d | 0020+ 91:85:12 21-50-4202 |
-| ffuts folegnahc | e8ac9a37da2ff328e16d703901c567103bb79d24 | 0020+ 20:75:12 21-50-4202 |
-| ffuts golegnahc citamotua | f8aaa7efd19a483380b0fcfee810f31aae1679f4 | 0020+ 33:45:12 21-50-4202 |
-| ffuts golegnahC | 24477a8af2a50561255dd39998d5f43c528c47b8 | 0020+ 00:15:12 21-50-4202 |
-| serutaef wen dna sexifgub tuoba setadpu htiw golegnahC | 082e18a3d4f2861cb1b8f399e59c6ef48dd370d9 | 0020+ 00:84:12 21-50-4202 |
-| ffuts reganam noisses weN | 9d144368c525de0207dad68296f0ee62dc69f6ba | 0020+ 84:12:02 21-50-4202 |
-| tpircs liam ot knilmyS | ed7fa79de5fefa862585ba477971e00d014dc61f | 0020+ 30:80:02 21-50-4202 |
-| tfard IU desabtxeT | 97ede64bfee98d1f4b07d1b1002b135cf933838a | 0020+ 32:70:02 21-50-4202 |
-| snoitcasnart deludehcS :erutaef weN 💡 | 0227a050389ccce29d3f79a034e785566109ed9a | 0020+ 05:10:02 21-50-4202 |
-| ylgu saw ti - xif enilsutats miV | b89b7ab91e3f04f02dd997215d7591e62794a17f | 0020+ 72:95:91 21-50-4202 |
-| rabsutats ni sexifgub dna serutaef weN | 16adc118294f5988c59ce40387ad636f96637549 | 0020+ 95:85:91 21-50-4202 |
-| troper wolfyenom ni stnuocca reitterP | 12ef64f4c034424e2cabe7eb3b9469d674347fb0 | 0020+ 54:65:91 21-50-4202 |
-| sremotsuc ot otnokljef no desab erianoitseuq detamotuA :erutaeF weN 💡 | 122b7b3ba7dc670b31b4b2898efb3e507218959d | 0020+ 41:65:91 21-50-4202 |
-| cnuf trats pamdniM | f99c98930c13e7bf123e827a5bdaa3962c74f262 | 0020+ 81:45:91 21-50-4202 |
-| pamdnim rof yrtne uneM | cd1b4aec0523ae26566050a083442093ce142a16 | 0020+ 74:35:91 21-50-4202 |
-| pamdniM :erutaeF weN 💡 | 195d13b94d818a2e0b8aec38e3be22486af72cf4 | 0020+ 12:94:91 21-50-4202 |
-| tluafed yb dedulcni eb ot ton stnuocca ytpme - dnim ym degnahC | 168c85c541249d166dee6d53f856146784251776 | 0020+ 21:52:41 11-50-4202 |
-| "noitcerid" tnuoma latuan rof stnuoma gnisreveR | 7d03e5b6fec9ce001decebe6b5f6f94eb521737d | 0020+ 15:31:41 11-50-4202 |
-| hsinad ni siht gnipeek - noitalsnarT | 90daaa52a7ba2897dfc79ee8e14cdce0cbb69f57 | 0020+ 52:31:41 11-50-4202 |
-| emdaer fo noitacifilpmiS | 32f2610ea17b8b5917e0d58511881489a8da5d9e | 0020+ 83:12:31 11-50-4202 |
-| ted re davH - elbaliava otnokljef rof noitseuq weN | 83944fc61b0f76c3ba17f4fed5cbcde31acf4c39 | 0020+ 12:81:31 11-50-4202 |
-| stnuocca ytpme sedulcni pool tnuoccA | 038d03d754327d0f4b69e533b3f2ac60e780bf57 | 0020+ 81:71:31 11-50-4202 |
-| etad omirp no tnemtsujda ecnalaB | 3e33f4839da49a13833101d8ac65bbd316d3361b | 0020+ 10:71:31 11-50-4202 |
-| troper wolfyenoM :erutaeF weN 💡 | 8ba9b9ce0301ef24f3988f20b689c76d2c8f2cc3 | 0020+ 04:61:31 11-50-4202 |
-| "detalernu" snoitcasnart tluser ekaM | 90d43b43601c0365b333ce660d604328e546f7fc | 0020+ 55:51:31 11-50-4202 |
-| saila retniap ecnalab fo noitalsnarT | f67528c4cdd2c79b59fe8f4c30c4f1eea3231f71 | 0020+ 25:50:61 90-50-4202 |
-| unem pleh rof tuctrohs wohS | 0afc625834c7103fb00fe320c19b261025ae5549 | 0020+ 73:50:61 90-50-4202 |
-| saila reziroloc fo noitalsnart dna ,ffuts rab stats emoS | 44f7fcc4d97cefa5a36074b1561528f502817ac0 | 0020+ 91:50:61 90-50-4202 |
-| nosj morf selif nwodkram eht gniterpretni ni pets llams ,ssergorp ni kroW | da293a6784be5e38be876eff29a671f1d610b247 | 0020+ 25:80:10 90-50-4202 |
-| sretemarap tnereffid htiw ,stpircs rehto ni desu gnieb rekcipetaD | 326216e4a7c5de6ff2d0bbddf1e63a9714f08ade | 0020+ 72:80:10 90-50-4202 |
-| cimonoc-E ekil tamrof stcepxe taht baksngerteL metsys gnitnuoccA hsinad ot tropxE - erutaeF weN 💡 | 002b9360704e66348e39dbb31810e43152a50a89 | 0020+ 00:80:10 90-50-4202 |
-| unem gnipeekkoob eht ot noitcnuf tnemsujda tnuocca ddA | 6ce0e086505e459e6582d96e246865c5db4bd1d2 | 0020+ 10:14:11 80-50-4202 |
-| senil detcejer wohs tnod slanruoj ,gnihcraes nehW | 8e5af167df2156e016612a4820932537be65500a | 0020+ 53:04:11 80-50-4202 |
-| ztuctrohs miv motsuc rof noitcnuf pleH | ba2b82eacca1be0047b1c6571a3a709a55f66ce3 | 0020+ 45:93:11 80-50-4202 |
-| noissim troba ,detceles si enon fi rekcip etaD ni ecnareloT tluaF dexiF 🐛 | 748f6c5fb23227aaf264850d9f0298b0b509a564 | 0020+ 93:03:32 70-50-4202 |
-| sevreser latipac stcepser won ylreporp gninepoclaC :xifguB 💡 | 91b93e66b2d962e02258757015ba4cdda617be7f | 0020+ 55:92:32 70-50-4202 |
-| snoitailicnocer knab fo noitaluclac dna gnitamrof fo tnemevorpmi roniM 💡 | 75960595a7676822437f1d21d7fbf23b59a2341e | 0020+ 82:92:32 70-50-4202 |
-| tnuoma ot tnuocca na fo ecnalab eht tsujdA :erutaeF weN 💡 | df6988a74a73c69560494d92457cb925122a5b10 | 0020+ 13:82:32 70-50-4202 |
-| AVO desab arodeF | 84657e85ae829f52016a3563e9c73461f72ea890 | 0020+ 54:35:11 60-50-4202 |
-| noitailicnocer knab tuobA | f2e02e10357b5d180450b154842d6c9980f57ba3 | 0020+ 25:25:90 60-50-4202 |
-| VSC sv stnuocca yna fo noitailicnocer tsaF :erutaeF weN 💡 | f28182982b516cd9449eed8f6b765f33286592b3 | 0020+ 22:74:90 60-50-4202 |
-| snart 1 ylno htiw selif nosj dilavni pikS | 9cd9f53fa606b9a5a943c933948e2d30282b1e69 | 0020+ 13:55:91 50-50-4202 |
-| gniogno era taht stnuocca ytiuqe gnitcepser gninepo retteB | 3f52d7ae99f1e6acd5e552f8130256bad97649b6 | 0020+ 41:71:91 50-50-4202 |
-| tnemeriuqer a suht ,stroper gnitareneg elihw deyalpsid si xirtamC | 9e29d36043d52595e70ff5cb8dbbb18d017a55b6 | 0020+ 34:61:91 50-50-4202 |
-| stnuocca fo trahc ot dedda gnitsohbeW | 59a1dac2a4ccfcf6e6be40a39ffa77dc37e94355 | 0020+ 32:61:91 50-50-4202 |
-| tropmi elifknab tulover reisae rof nmuloc eef knaB | 18d7f84082a1721153cab4904096f15804c3abfd | 0020+ 80:61:91 50-50-4202 |
-| enod tropxe tuoba ofni ddA | 900218a2c2c2563d561daa63309ae91069e2148b | 0020+ 65:30:91 50-50-4202 |
-| xif edocdrah elif pmt troper LMTH xifguB 🐛 | 29fb5eb850073d12826509813598425a766860a3 | 0020+ 85:55:81 50-50-4202 |
-| troperlmth - elbaliava syawla erusne ot pot no dedulcni emanytterP xifguB 🐛 | 522dc4bbd74eeb04c6a966e5b614f41f57896124 | 0020+ 53:35:81 50-50-4202 |
-| lanruoj EMDAER = emdaeR | 178e1631f3905d97d8b3612dd16f50a17a7d8ea5 | 0020+ 23:70:81 50-50-4202 |
-| ycnerruc tuobA | 6a4ccb5b7ea8b109b059a821237755bb8ca4eaa3 | 0020+ 32:32:00 50-50-4202 |
-| elpmis erom hcuotiv ekaM | d2c1e6dc7c9bd401b2745eff3f75861c0d82bf2f | 0020+ 02:02:00 50-50-4202 |
-| slanruoj gnihctam gniyalpsid nehw nmuloc etad yb stluser troS💡 | cafd731ffdc84e5141cc9b4ed97e0b2d2edf3d3c | 0020+ 33:91:00 50-50-4202 |
-| smetsys lla no ohce fo noisrev emas gninnur erus ekam ,arodef no hcuotiv ot detaler tpmetta xifguB 🐛 | 769efdcd7934f0459d58e616dc1e042adc2be0a3 | 0020+ 03:81:00 50-50-4202 |
-| lareneg ni edocinu osla tub ,å,ø,æ srettel hsinad ekil snoitcasnart desab iicsa non gnihcraes ro swolla edocinu depacsenu + yrtne kciuq ecnarelot tluaF xifguB 🐛 | 55974bdb59d065f2798a2e4afd378558eee9b893 | 0020+ 53:71:00 50-50-4202 |
-| melborp knilmys stnuocca etavirp weN :xifguB 🐛 | 0333bb61ac8b4c02ea30fdcb1603f2abfdf7b3c5 | 0020+ 03:61:00 50-50-4202 |
-| stnuoma ycnerruc rof yalpsid dna hcraes ,tropmi troppuS :erutaef weN 💡 | d145d6b6bfa504597de5879e8b2e16e93f516017 | 0020+ 43:41:00 50-50-4202 |
-| gnipacsenu | caced0933eec4d94f74ff8550602be94fbe47033 | 0020+ 95:63:12 10-50-4202 |
-| reggol devorpmI | 7a4e1a4a49d82369a71afff80794597b213a87f6 | 0020+ 71:43:12 10-50-4202 |
-| reggol devorpmI | 1a23fda0e1f2788116d0aeb99e3609eb084c1e89 | 0020+ 71:33:12 10-50-4202 |
-| setouq gniepacsE | 3dfed5710bd28b1327b1ea92349ccd58a02e2b05 | 0020+ 34:52:12 10-50-4202 |
-| noitcnuf 8dpu | 108752864d10ce0ebcb1b9bc7a3abd5833e293c6 | 0020+ 93:94:02 10-50-4202 |
-| saila fdp | bd7d200168f77ea76a1f1cc285c8e049718331a4 | 0020+ 64:84:02 10-50-4202 |
-| hcuotiv elif artskE | 8b18e47b94db3ff5efdb7079e12ec743f7405956 | 0020+ 44:95:81 10-50-4202 |
-| noitalsnarT | 394ae780778d55a75c5a48f937cdd711c9b8c25b | 0020+ 51:25:81 10-50-4202 |
-| sb00n rof rebmunoN | 4406e312f8672a4ec3fca570c3c52c3c1f3f134e | 0020+ 62:94:81 10-50-4202 |
-| ffuts | 6075a423740d5a704dd675de36528e213633ea45 | 0020+ 32:34:81 10-50-4202 |
-| ffuts xumt | 5df0f80e7aaea3405c5d115ddc349ac86e37d92c | 0020+ 83:83:81 10-50-4202 |
-| htapt on fi 1sp ni noisrev wohS | fee250a79573eb145381a06645e859e2a9f19f3f | 0020+ 70:61:81 10-50-4202 |
-| ffuts enilsutats | 7878a9785f69a51baebbe096c5ea8c207d412643 | 0020+ 91:61:51 10-50-4202 |
-| kcabllor cigol ytluaF | 2dd5beacdcc95fd6263eeb6e9568c9ac5bb4eb75 | 0020+ 31:14:41 10-50-4202 |
-| rs efastluaf ,stnemevorpmi enilsutats ,ffuts lexiS | 75a80310d2cb1370753770768ddc9878a9421ac0 | 0020+ 73:53:41 10-50-4202 |
-| hsilgne ot noitalsnarT | 5074f3b007fe2664c47923eb94535e466df3fa31 | 0020+ 91:03:41 10-50-4202 |
-| arodef no yltcerroc senilwen epacse ot e- ohce xifguB | dec29ead28156553bb34d711c2e4c8d67b2ac715 | 0020+ 20:42:41 10-50-4202 |
-| wodniw wen ni emit retnE | 41fad04d17ebf6aa677d5436e242294d602c6e5c | 0020+ 40:81:91 03-40-4202 |
-| doirep ksa on - snartkciuQ | ea0e1a7c4d32362c7c4b60bf0757a278f4450ddc | 0020+ 64:71:91 03-40-4202 |
-| xifgub edocinU | 84cf140e4859609e6a9e5a66c43b347e65259e68 | 0020+ 41:71:91 03-40-4202 |
-| otnokljef rof troperlmth - gninsnærgfaedoireP | f981d41019dd6f48c6ea5f01adcc2afaf6941d87 | 0020+ 00:71:91 03-40-4202 |
-| snoitpo rekcipetad eroM | fa1ff974f6d2fc51ecbfb3dd2f7880af06efc9c4 | 0020+ 23:61:91 03-40-4202 |
-| troper lmth rof rabssergorp elpmis yreV | d0b2b571e47ab127e172e3dce3b25906b6eac064 | 0020+ 34:60:31 72-40-4202 |
-| sremotsuc ot tsil noitseuq tropxe ot tpircS | c8681650dbb748bcbc2e269e2e486fdebf8a0b15 | 0020+ 54:50:31 72-40-4202 |
-| margorp noitcasnart etacilpud xifgub roniM | 32157ef80dee1952276843678ef8ce5db623831a | 0020+ 91:50:31 72-40-4202 |
-| tsil otnokljef setareneg lmth + ffutsenilsutats motsuC | a078018d4f3a6d89094330718988bd8dc029b402 | 0020+ 92:40:31 72-40-4202 |
-| egnahc emdaer elttil A | 5139cfa95cd5d554160f3906c4a2d79c3bb0d365 | 0020+ 22:44:02 62-40-4202 |
-| egnahc emdaer elttil A | cbf7e9692a95da81a864485af7ee4cd23d592791 | 0020+ 24:14:02 62-40-4202 |
-| tamrofetad xifgub roniM | 390f72627798f214a2c0e1e0a7053838809c0441 | 0020+ 74:45:31 52-40-4202 |
-| ytiuqe refsnart ni xifgub roniM | 35cbac37a86649d1b8af82ef301902f708935ead | 0020+ 43:45:31 52-40-4202 |
-| kraps gniddA | f1e86c1790bde179f41962a138a370eb068fc88b | 0020+ 83:42:00 52-40-4202 |
-| yrtne gnitsixe etacilpud kciuQ | 15d73c2552e3de4e12e8439a93d7c067d28782f8 | 0020+ 15:31:00 52-40-4202 |
-| tuctrohs noitcasnarT kciuQ | fd8bb0e57a97d71753048a840e430014e52c1bef | 0020+ 42:31:00 52-40-4202 |
-| tupni atad sselroloc eriuqer stoviP | f2288f3681fb038ef44f31cf5c55581b6a996cc7 | 0020+ 70:31:00 52-40-4202 |
-| gningermellem dna latipac ,sevreser tpecxe ,doirep gnitnuocca wen no stnuocca ytiuqe teseR | 56f668bf9dba4e9ebfaf1e9fd5a0cec5a25d24b0 | 0020+ 54:21:00 52-40-4202 |
-| egap eno tif pool eht ekam ot puanelc llams - sgnitsop erutuf dettimo tuoba gninraW | d60f085c346818889a1d690facf2c2af4e6becb9 | 0020+ 01:21:00 52-40-4202 |
-| smelborp epip tneverp ot nidts fo daetsni ytt xifgub + noitalsnarT | a44a61935403d4c08fb17589c61762c80dfcdd52 | 0020+ 44:11:00 52-40-4202 |
-| seman i slobmyS | acdcf2810576e54b89bfbdd343450281e13dab9b | 0020+ 45:11:02 42-40-4202 |
-| 8php rof ecafretnibew eht eviver ot gniyrt pleh elttil gnitteG | cea6fc93917038b9c70e5e5992d98be345fb1cbe | 0020+ 25:40:61 12-40-4202 |
-| slobmys tsal fo gnildnaH | a28e05c79c625bcc60c6a4cbe5442022369f5f8c | 0020+ 51:60:10 12-40-4202 |
-| xifgub llams a dna troperlmth rof delbasid reziroloC | bcd2b0d3c66d0f9be87eb15aa0e73dca1cd0c863 | 0020+ 15:50:10 12-40-4202 |
-| troppus elbasid reziroloc dna ffuts lobmys + gnildnah noitpircsed ytpme xifguB | 399c2c9f2754e0d423d817bd9febde3c2f5d63f2 | 0020+ 65:40:10 12-40-4202 |
-| ecnarelot tluaf elttil A | cc9a550dee7fb3fb75de839a92275a723b29b795 | 0020+ 81:40:10 12-40-4202 |
-| opyT | 5e1a9c5bf62240c7d83a98d24660684c5ecc0a3b | 0020+ 35:00:10 12-40-4202 |
-| snoitcasnart orez htiw ssem tnod - cigoL | 210692a3aaaf50c0144df96110c04b09e312ac0c | 0020+ 91:00:10 12-40-4202 |
-| ....bew eht esu ot ekil elpoep emos sseug - ecafretnibew eht eviver ot gniyrT | 057dc246349231bfdf0f8e2cfa6efd150d796a73 | 0020+ 65:95:00 12-40-4202 |
-| ecnerefer tnirp ot kcah regdeL | 40104d320f5be1a6b646aa1111e609367f6b03a1 | 0020+ 62:95:00 12-40-4202 |
-| rekcip tnuocca eht ni sroloc oN | f3fc5bcd89ca4f03429b0e31a3440b7db3167b69 | 0020+ 63:85:00 12-40-4202 |
-| sroloc 652 ti gnikam fo trats | 70c68120caf644e8d1213d8caf2aa4f2b09303ca | 0020+ 94:75:00 12-40-4202 |
-| 8ftu tuobA | 212e0b7715a1b2bd553cdd624270e8bd2ead9f8e | 0020+ 91:75:00 12-40-4202 |
-| emeht k2xumt & fzf-xumt | c9b84076504aead718a82f445e8226e4f1b43a3f | 0020+ 42:55:00 12-40-4202 |
-| slobmys dna stats motsuC | 46356e82ca39b3e35c1d74e6c5f6aceac2113acf | 0020+ 65:45:00 12-40-4202 |
-| nalpotnok lit sejøflit lesraB | dcbdf7a4514b8147d4aa642c21c8efeb92a7b248 | 0020+ 92:45:00 12-40-4202 |
-| regningerebetner lit sedoc epacse roloc renrejf - ,xif erdnim mystsaL | ad000b3038f0f014da7e6965bf1e7d2eeabcb781 | 0020+ 80:45:00 12-40-4202 |
-| o-C xif reweivlanruoJ | 5e4dfdf8392b3e390a51f0d8672c016ed35d43b3 | 0020+ 05:35:00 12-40-4202 |
-| fzf-xumt | af596956d1a46b58f7284769c895d0495234e06e | 0020+ 31:35:00 12-40-4202 |
-| k2xumt | 823dd6d0ea0318b7486a16ced93552017ac3bb1a | 0020+ 52:25:00 12-40-4202 |
-| ffuts edocinU | 5f921e168db0caae5a8c41e57b9d727e8743bb23 | 0020+ 51:20:02 11-40-4202 |
-| mystsal fa gnintylF | 6ce7f8a274b478ff194c335e4eb589792682dcef | 0020+ 72:10:02 11-40-4202 |
-| rebaksnger eyn i relgnam lif se sesaila esletterljef rs + ffuts edocinu esrevid | c1ddfc4254145c55a08cd63860dba47b74863ad9 | 0020+ 13:85:91 11-40-4202 |
-| noitalsnarT | 342b521fe26b42b054b5f325929cd019816bcbd6 | 0020+ 33:40:61 40-40-4202 |
-| ffuts efas tluaF | 497b87a9a6705d1aa3d3d84e6123e235d2cfb198 | 0020+ 44:20:61 40-40-4202 |
-| noitalsnarT | 552a556215b620a07638457f75bd522e9af3c798 | 0020+ 05:10:61 40-40-4202 |
-| noitalsnart hsilgnE | aae11b1649f5767528becad0a134f15515913514 | 0020+ 42:95:51 40-40-4202 |
-| hsilgne ot noitalsnarT | 3ea87d63da15cbb12421e026dfc6d59f5ef915b9 | 0020+ 84:64:51 40-40-4202 |
-| xif noitalsnarT | d57643cf5412b06b26c14a6a7264200351286afb | 0020+ 43:63:41 40-40-4202 |
-| sexifkniL | c551c26d914f140c4e7a02c6b38010f3d5e45e12 | 0020+ 54:43:41 40-40-4202 |
-| sexifkniL | 40ecd2a2e017fd74ab3565846f536a8eb479140c | 0020+ 81:43:41 40-40-4202 |
-| sexifkniL | c58468ac89dee3b1d96b8b61a789ede5b78ec598 | 0020+ 45:33:41 40-40-4202 |
-| sexifkniL | 031d5c7a68cc78c7aac8a79e640ac779f18cfb62 | 0020+ 21:33:41 40-40-4202 |
-| noitalsnart hsilgnE | 662793b84f6dd0919bf06f8c97075b83d631b074 | 0020+ 22:13:41 40-40-4202 |
-| emdaer stnemtsujda roniM | bee1212ed45808350d5759e26d233707208cd558 | 0020+ 10:92:41 40-40-4202 |
-| emdaer hsilgnE | 3237c2f25087b90daddd5a1b918c516b60689128 | 0020+ 53:62:41 40-40-4202 |
-| htaplluf ton ,emanelif wohs ylno selif degnahc cigoL | 530414adeb781a50486c263b7fecd1899ec0bc99 | 0010+ 75:52:41 03-30-4202 |
-| seton enilnI | 2ce80415ff418d74d4ef6e46f21158b47a35002e | 0010+ 63:52:41 03-30-4202 |
-| gnimaner dna noitacifilpmis sroloc isnA | e82ead7709df8349c4b5c7e9a557d7f6ac12894d | 0010+ 42:52:41 03-30-4202 |
-| stroper lit reratnemmok dem oediV | fcef2e680dff53c805c1dc0ed7efbb6f76824f92 | 0010+ 05:42:41 03-30-4202 |
-| tsket dem retsop eregildit fa gninisiv o-lrtc terecifilpmiS | 14e2d552b6b081a3e7288e3d66944ee6554af9a5 | 0010+ 42:42:41 03-30-4202 |
-| reziroloc i teretnemelpmi stnemmoc enilnI | 10c33e41c8e65293d8791064a91af82491d92ef2 | 0010+ 42:20:31 92-30-4202 |
-| elohmroW xobporD yraropmet a nepo ot sresu wollA | fa25eccb274d0bc6176c828e0ba9a5bc2d342f45 | 0010+ 64:63:00 92-30-4202 |
-| tpircs tropmiknab lit resletteråmS | 2b8c0114028a216564bfe7a0ad3dd002bf8ceeb5 | 0010+ 73:34:22 82-30-4202 |
-| revraf ettøtsrednu åsgo laks tnuocca pukooL | 624bb2c9c46f93fd1a9714fea849ff3ac176b3fb | 0010+ 22:34:22 82-30-4202 |
-| retadpussam åp gniretdnåhljef tdiL | ae0e81b8e6dd09fd4d18cccf784584ca0a76fde8 | 0010+ 72:13:91 82-30-4202 |
-| ljef je seworht segat re ekki red sivh ffuts efas tluaf tdiL | a6062d1e179aa152fd8cff5a756f4e5a4e81d07b | 0010+ 75:03:91 82-30-4202 |
-| tuptuo/ni fzf fa gnimirt edaldnu ta rof dehgiluM | b59e0c4731d431783cf6ed299f736eb861d3c966 | 0010+ 43:03:91 82-30-4202 |
-| reziroloc åp pu lwen rekooH | 8884906af3e2e25f7e95a42591782c92456b811a | 0010+ 40:03:91 82-30-4202 |
-| unem ot dedda retniap teehs tnuocca dna ecnalaB | 86d091997062b569dcf129234f7815b21a81f499 | 0010+ 54:92:91 82-30-4202 |
-| gningælevraf lit ediugoediV | a493f6da5b5a9cf901b4211f798e00ae252fae79 | 0010+ 22:92:91 82-30-4202 |
-| rekcip roloc terdebroF | 1ee1d6a6d5aceaef47bc088a7f43a3ee1ec6ce71 | 0010+ 70:92:91 82-30-4202 |
-| secnerefer tpircs reziroloc ,tropmi vsc esletter erdniM | 6afb06b266faa212dd422577060fa7210a96ec68 | 0010+ 74:82:91 82-30-4202 |
-| tpircs reziroloC | a345cda6de8dedcd0e76fd3e9db6612a75c38ab8 | 0010+ 62:82:91 82-30-4202 |
-| lesrøk emmas i egnag erelf saila emmas retfe regrøps ekki ned ås texif gninpam sailA | 8f2144465ae5d1ad70b619ff097d3d2b5bb93d1c | 0010+ 31:31:41 62-30-4202 |
-| tuptuo i ljef ågdnu ta rof retroppar lmth i gnikcehc rorre tdiL | e0e6ffdce90045c9be088ee50112fae5889f8ce6 | 0010+ 95:20:41 52-30-4202 |
-| renoisses eyn i unem pupop elbasiD | 7246bd0ddd672990fbe33d703afe31b1e1574074 | 0010+ 83:20:41 52-30-4202 |
-| erocsrednu dem settatsre - envanleger i murmellem evirks ta regurb dalliT | 34ea81ff4b15efc8ffb78ba0abb533d3a1113e39 | 0010+ 12:20:41 52-30-4202 |
-| retfikssnoisses terdebroF | e0095ad1f620beeb350c4a8cf1c04a43e41dfec2 | 0010+ 65:10:41 52-30-4202 |
-| tropmi vsc retfe cigol røk | d7c5898b4af98caf40f0358d035718b9d098961f | 0010+ 33:10:41 52-30-4202 |
-| 1F-tlA åp diu tæsdnI | c0d5cfedf8af34672812486f07de214b85753f50 | 0010+ 70:42:21 32-30-4202 |
-| melborp noitled fo esuac elbissop sevihcraerongI | 29dacca1497d143a8b1d81d59e6b7a7dcc428d6e | 0010+ 20:65:12 02-30-4202 |
-| tpircs cnys nosinU | 440d92caade3201d296ada251b058899c72d9733 | 0010+ 64:84:02 02-30-4202 |
-| troppar stnemmoc lit tsakdU | 87b6b6a33f55bdfcdff630a3cb69ba5ae0946a4a | 0010+ 52:80:31 11-30-4202 |
-| gnirerotinom åp dyl ekki revøheB | 442947ebaa70591c057f5b5e3a919b8fb4c38c5a | 0010+ 15:70:31 11-30-4202 |
-| troper-stnemmoc lit dem åsgo segat stnemmoC | 177c489b21edf56cea338dcaeebfbcb8eb601efb | 0010+ 52:70:31 11-30-4202 |
-| rebaksnger eyn fa esletterpo dev its eglæv regurb daL | a867ed46d73b4479971a12ef46c0d30549a44b05 | 0010+ 64:60:31 11-30-4202 |
-| teudniv miv fa neppot i relle nednub i ediug miv ellil nE | a32e007967104a921d85f4d3211f84ac39436118 | 0010+ 10:60:31 11-30-4202 |
-| eslettæsrevo erdniM | 3639be9cba80ed7a4318b2c47a7c611b1d2a565b | 0010+ 62:35:91 60-30-4202 |
-| galsrof åsgo un resiV | 32c827bf94b0742188679800dba807773d630bf1 | 0010+ 70:35:91 60-30-4202 |
-| nenoitkasnart åp ksitamotua selbok galsroF | b7befa4f474adb8d1a86b62ddf1ebbdf0848c722 | 0010+ 21:02:61 20-30-4202 |
-| xifkciuq# tnretni regnirertsigersdit rof otad sgad ditlA | 5e3e152359b9ad7e6ca90cb935853071878d8ab3 | 0010+ 91:25:12 92-20-4202 |
-| envanitnok ekki ,hsah i galsrof remmeg csedksA | 9644699be719dce0144a2a1eb5802a3267d92da0 | 0010+ 41:11:90 82-20-4202 |
-| negniretsop åp itnok ella edlohedni ta lit tetter hsahotnoK | be88fbaa29516d25de26c10c1af3213e306eec68 | 0010+ 70:93:01 72-20-4202 |
-| galsrof mos rnsgalib etsenes fa eslegørof go - glav egippyh lit galsrof egittyn - yrtne ataD | a22dbec62e91bcce3e6bfa224720671d47a152e1 | 0010+ 23:53:02 62-20-4202 |
-| sererongi ljef htuaX | a7439efb8b7b002901270b6d2f71413e1d23a7db | 0010+ 92:44:21 32-20-4202 |
-| repparw regdel eyn ned i negi rekriv sesaila :xifguB | ccac19cbd613d5f5f2bc5bdd2d94ea5cb51ce4fe | 0010+ 45:43:41 02-20-4202 |
-| renoisses fa gniretroirpden relle po gitruh lit tpircS | 41332a08581a88d84ba14b1909471f4cb68dd76f | 0010+ 34:40:81 41-20-4202 |
-| edjebra desabkcats lamitpo erem rof egløfekkærenvan i sesiv renoisseS | 9dcf4521d0a47c28dd27250d5d9a8014238548b5 | 0010+ 31:40:81 41-20-4202 |
-| renoisses fa gniretroirpmo gitruh rof dehgiluM | 47000aa7f7765e0da2adc5a102aa261ae15c1e04 | 0010+ 72:30:81 41-20-4202 |
-| lamitpo ekki ,unem teresab-fzf | 630df1a306b920ba1540ed5bdb4761116d1c4485 | 0010+ 75:20:81 41-20-4202 |
-| tamrofmetsys lit vles retafrofmo ,bøleb i ammok retsat nam ta dalliT | 92c7ead2ec65a175bd231c0d32dea82e38dc0cd4 | 0010+ 41:41:81 21-20-4202 |
-| noitknufegøs i esletterljef erdniM | 2a94ea072e763b662f1650f917d78d56ed9e5945 | 0010+ 93:03:21 21-20-4202 |
-| ofni gubed tenrejf | 3d683bd0ba9433e32e7d713808a25cf758bda9f4 | 0010+ 32:03:21 21-20-4202 |
-| xifgub# ekki edekriv otnok yN | dc59be999cb743529f4ee966f77fdedc95d0be57 | 0010+ 42:65:01 21-20-4202 |
-| xiferp nedu setnirp envanetoN | e0aa670ea2bfda6b756a7c8662f3159d0727207a | 0010+ 00:65:01 21-20-4202 |
-| noitknuf detadtuo enrejF | 588aa2c9ccf21e9890a5521462d5a7aca99d5ca7 | 0010+ 51:03:12 90-20-4202 |
-| nedoirep rof remmokmerf red med nuk ekki ,dem reoirep ella arf itnok segat galspootnok deV | daafbaf265fa2bbf6fb8c91d4f51475c44db0edd | 0010+ 54:92:12 90-20-4202 |
-| regnirdebrof esrevid dem php.yek arf dem noitknufegøs fa gninvirksmo lwen tdnygebåP | 0ea7b593d76b121bfdf5087006c35d72e5e22977 | 0010+ 90:92:12 90-20-4202 |
-| terdnæ lobmyssgninbÅ | 9e027d58218a91e22421fde159e12161877e0ddf | 0010+ 52:82:12 90-20-4202 |
-| : ednedlohedni itnok egitgir nuk ,sesaila sesiv ekki laks tnuoccapukool | 545accb8f6171136e2b2abbcee3587e6acbb5ed3 | 0010+ 33:54:81 12-10-4202 |
-| esletterljeF erdniM | fd380d38f08c88c2a04e4a8113d6d4b3a164d8cb | 0010+ 70:54:81 12-10-4202 |
-| sweiv egittyn go edog erediv litdni dem unemsbaksnger teresab-fzf yn lit tsakdU | a70e103056e0f0c1b8bc022708c194590dcf2e05 | 0010+ 14:53:40 12-10-4202 |
-| noisses xumt gitruh lit tpircS | b38e9dd68c14b987fcafd3ba2820c1e48d7865a5 | 0010+ 24:43:40 12-10-4202 |
-| unem i ateb resælsbaksnger yn tejøfliT | 6cecaff68c8a5f93a0b12c98e3762269f2eeb75b | 0010+ 34:33:40 12-10-4202 |
-| trøfgob relle eddalk - repytsnoitkasnart esiv ta lit relobmys edocinu fa gurB | d55e9643c40b270da75709c80095a0d060505ecd | 0010+ 32:33:40 12-10-4202 |
-| unemn & regdelkoob :sesaila eyn 2 | bbb1a5fed92fa1ee3718fb4da9dca87f8f1b1064 | 0010+ 25:23:40 12-10-4202 |
-| tnuocca level pot = alt - gurbneg rof noitknuf tarepes i selliksdu gniretros alt | 9c4ecc81224e336742653fd075eb55154c6ae11f | 0010+ 53:23:40 12-10-4202 |
-| tatluser trøfrevo dem nemmas tolb un selbok - nemmas telbok revilb srelle ed ad retsop ednegnæhnemmas fa dehrabrops erdeb rof tarepes seval retsopsgninbÅ | 19a0498842489a1852ab18f00ac9629d7642d620 | 0010+ 00:23:40 12-10-4202 |
-| nosaer emos rof rav labolg eht pukool tndluoc - xiftoh yraropmet siht xiF :ODOT | a50b813ea0d95cf296120b6a8ad5381927b81095 | 0010+ 70:13:40 12-10-4202 |
-| yrtne yn gniretsopeddalk røfgob ,opyt tetter retsop enbå ,terdnæ tsatsjevneg gniretroS | cf981ceed41ec0ccb7ef7b549547e2b7e0798b80 | 0010+ 95:93:22 02-10-4202 |
-| vm retsop etrøfgob fa tellatna fa gninsiv gnirøfgob terdebroF | 03590e0053311154ea5819801aaa096fe9a503f5 | 0010+ 90:93:22 02-10-4202 |
-| relif ylnodaer fa gninsiv sedelrednA | 519591ddfbd7e50e46328690bf9fc8008defe6ab | 0010+ 25:50:22 02-10-4202 |
-| un sesål - renoitkasnart etrøfgob eregider ennuk ekki gidats nam laks renoitkasnart fa kejthsah niahckcolb re red movleS | 05c4989a3c694fa2ff07bd1c5d8d021240b73dd3 | 0010+ 04:50:22 02-10-4202 |
-| xumt erelipmok ta lit segurb ccaY | cb8b85632cdca540954b8fa87aeb6401d2923595 | 0010+ 90:92:02 61-10-4202 |
-| ecafretnibew eviver ta regøsroF | 1f82d3b8976cf726d7afd9d187066a52e7e0330c | 0010+ 13:50:21 01-10-4202 |
-| knil lit serdnæ lif takilpuD | 315aeac70719910e19872b51b54e6092c9a65327 | 0010+ 40:50:21 01-10-4202 |
-| lat ederetttegdub mo elat re red mo gniretroppar i siV | d88369ed9eb4ea2cad762e42ad82956e4c24305f | 0010+ 14:40:21 01-10-4202 |
-| setouq elbuod i redaeh esletter erdniM | b8c158f831e5228632855da2978814009bf2648b | 0010+ 55:30:21 01-10-4202 |
-| golaid liatpihw i mo reldnah ted otnok neklivh siv - gninpamotnoK | 3f3da15fbb2801d92936a7b994bc8b89c0420461 | 0010+ 02:30:21 01-10-4202 |
-| gniretnok litgalsrof - tropmI VSC - esletterljef erdniM | 6d8fb27d900ff1e7a490f819d17ff656f4c19df0 | 0010+ 92:20:21 01-10-4202 |
-| reretsiske ekki sivh noisses yn retterpo - retfiks noisseS | 5910787ceff6b573d49fee7ee4fb5163397e214b | 0010+ 23:82:01 80-10-4202 |
-| rekcipetad - rå i re tluafeD | b77b623d562e7fd65f783b1cdf5005ba97db2e5e | 0010+ 91:82:01 80-10-4202 |
-| tnuocca pukool lit esletter erdniM | 9943a902c5ec140952837677086e9d518d78d0d2 | 0010+ 60:82:01 80-10-4202 |
-| regniretsoptatluser i dem åsgo laks latipaknege i tatluser snedoireP | e02301d250ce17cd95b9fc98192e88df6a450a0e | 0010+ 80:05:81 60-10-4202 |
-| tnuocca pukool telpmisroF | 58d5d354c5c8200026139f9c7f2815b6f30fdbae | 0010+ 81:85:90 50-10-4202 |
-| gnildnahrorrE | c84906a66d384e8d4b1b76cd47089c158c92cad8 | 0010+ 30:85:90 50-10-4202 |
-| noitknuf ljef teverksmo - gninpamotnok reværk ted ad tgiditreldim tervitkaed tropxe-dradnatS | e8a0023df2093712e2ab31051a9001f5bd183a81 | 0010+ 90:75:90 50-10-4202 |
-| seicnednepeD | 2a78aac920079ab60094b2ff01414cfeced14180 | 0010+ 80:63:32 10-10-4202 |
-| stpircs erdna i gurbneg lit selliksdu retlifelif | 24860832a9e913ede29796ce5f662b904ba446fd | 0010+ 22:40:10 03-21-3202 |
-| tegdub i relamiced 2 lit den sednur reD | 84fcac6a79b22e3a27e6643c1deed9634251cd74 | 0010+ 30:40:10 03-21-3202 |
-| tnuocca-pukool fa gniresidradnats go gninsældni vsc terdebroF | d581a4d212276960bedf2901b52d0eed9f216e3f | 0010+ 04:30:10 03-21-3202 |
-| lif tarapes lit selliksdu yarra_tnirp | dc19e23136831c9e2405fcfded9538d8b560218a | 0010+ 55:20:10 03-21-3202 |
-| stpircs erdna i gurbneg lit selliksdu noitknuf redaeH | 1908d7258890ed19e7668aaa6f946dd04dcf8bcc | 0010+ 03:20:10 03-21-3202 |
-| wolfsgninsældni vsc terdebroF | 055941926026c4d05bf86f32feb8171d4c6c15ab | 0010+ 41:10:10 03-21-3202 |
-| adågdalås# gnirevitkaneg troppusesum tgrupsretfe velb reD | 94e989adfeee2a4a3a1951f9900b0f30047e5177 | 0010+ 01:95:00 03-21-3202 |
-| ffuts emdaer esreviD | 83e15d023445a1c575acf2f6ec08b0da11860677 | 0010+ 84:81:31 92-21-3202 |
-| EMDAER i regnirdnæ esreviD | 7dc57dc9b20b514538b7337f03afe3bcc4fd4d2b | 0010+ 01:61:31 92-21-3202 |
-| erdnim emdaer erøG | 32064b9e351b470fb9450b5fc6ab8eef7800933a | 0010+ 32:01:11 92-21-3202 |
-| gnirettamroF | c6d4c84d5ac174f059d868efba29b3c968e9f991 | 0010+ 03:80:11 92-21-3202 |
-| tetter opyt erdniM | 92ac93eef726143c5c38ff896975a3b926fce10f | 0010+ 15:70:11 92-21-3202 |
-| erawtfos irf mo tdiL | 34f10830c78bab586452be42b1402fa7e1f25bb8 | 0010+ 30:70:11 92-21-3202 |
-| dehirf erawtfos mO | f4c60cfa32b3f05cae9811292ac363c7e1fec15b | 0010+ 91:50:11 92-21-3202 |
-| oediv etadpu metsyS | ce9975ad8533eea9bfa219afbf48f499356b0adf | 0010+ 22:11:20 82-21-3202 |
-| baksnger sneditmerf mO | b16345981d5422d78006238ff54faa527e384651 | 0010+ 72:40:20 82-21-3202 |
-| tegdub ednellur ted lit regnirdebrof esreviD | 9b197d96e7c038326b8f2fde847c4177ecdf93c9 | 0010+ 64:65:10 82-21-3202 |
-| gnirettamrof tdiL | 403e1bbe305ff19f317fee907b7e568e95771158 | 0010+ 73:75:22 72-21-3202 |
-| tegdub ednellur / gnitsacerof mO | ee1704157dc622478eb79874780909778c9c5480 | 0010+ 03:55:22 72-21-3202 |
-| unemsbaksnger arf serevitka nak latstinsmenneg dem tegdub ednelluR | c4f789c84a0bbad4ce2b5d1fe2b911ff0eb3d76b | 0010+ 02:45:22 72-21-3202 |
-| tegdub ednellur / gnitsacerof :tknupunem tyN | ffedfd58d2995d70384e0e8da1eece997883432c | 0010+ 25:35:22 72-21-3202 |
-| saila tegdub ednelluR | 07b57a4107f328a8624593979cd401b74bff3ede | 0010+ 32:35:22 72-21-3202 |
-| rettegdub ednellur eksitamotua dev liftegdub rettøtsrednU | b01807adefde9c75be161d4ab3b68f33dab0f6dd | 0010+ 21:35:22 72-21-3202 |
-| tmosplæjh ekki re ,senrejf troppusesuM | d5c7a1f106e02533b5233b52193110b171fd1869 | 0010+ 30:50:02 62-21-3202 |
-| volfb mO | 914f19e60ff2a072658309cefb9edb28d011eeb8 | 0010+ 84:40:81 62-21-3202 |
-| gninpam go redoksmom mO | af1772507e9df677141f3a4aa3e4d7f548b0c74f | 0010+ 00:70:00 62-21-3202 |
-| nalpotnokdradnats sneslerytssvrevhrE arf itnok erelf tejøfliT | 307442a42663f598a6576d804151b699b42a61e8 | 0010+ 02:50:00 62-21-3202 |
-| tropxe nalpotnokdradnatS | 9834e17cd740d8d5d4600c25d64d7afe5ad61e9b | 0010+ 11:50:00 62-21-3202 |
-| tropxe taks lit gnit erdna esrevid + edisroF | 8b603490cb216411e8a29c77b84c011052f075ec | 0010+ 45:40:00 62-21-3202 |
-| lesrøk labolg lit selliksdu renoitknuF | adafc6701e2116923f089df243e30b21c75d3f19 | 0010+ 03:40:00 62-21-3202 |
-| recnereffid .tve erølsfa edrub lortnoklun ,dem segat itnok eksiremun nuK | 164a828b7edcd848a5dfc5408018fb8d63dfdd2e | 0010+ 53:20:71 52-21-3202 |
-| redoksmom eksdnalnedu - rba-vi ,ue-vi tmas rba-yi ,ue-yi dem settatsre vi & yi | 580cea099d1f2af0ed559a5151c5e1e3e46dfe1d | 0010+ 00:20:71 52-21-3202 |
-| noitknuf labolg lit selliksdu sgatteG | 9c748c2cc7f6ddb1f2fa8f652bce641ca074b5f2 | 0010+ 10:94:61 52-21-3202 |
-| 🎄 tropxe nalpotnok ksiremun - tropxe taks terdebroF | b302485bda05ecd7432b28f886e67bd5d597b92d | 0010+ 35:11:41 52-21-3202 |
-| gninsdupnif tdil lit regnært - gotduotnok dem uN | 8c55024c94a8e4473850d505f48ec56c35366b84 | 0010+ 20:24:20 52-21-3202 |
-| neslerytssvrevhre åp retnev iv snem nenalpotnok lit itnok a essalk 2 tejøflit sbo - nalpotnokdradnats sneslerytssvrevhre regløf red ecnalabodlas fa tropske rof dehgiluM | 8e5496e6c5e5f2009a27ec8662800e654c08f5e6 | 0010+ 42:21:20 52-21-3202 |
-| ffuts efasliaf tdil tmas teretnemelpmi galsrof ella lit aJ | 2929bfac1f5a27c94d88b30fd46671024bc83939 | 0010+ 65:11:20 52-21-3202 |
-| retsopstfird fa gniresidoirep nedu lesrøk rof dehgiluM | 8cca998e6566292784171c002387cf1af524dfcc | 0010+ 72:11:20 52-21-3202 |
-| gnillitspotknuP | 5a5afcde2a192bcf3745b11481ca36ab0f4e4cc0 | 0010+ 60:84:22 32-21-3202 |
-| senrejf - tgmosgnal rof reoedivameniicsa ededdebmE | c09cc80e14a8f5e432f4dad0cc1b8694135189ce | 0010+ 50:74:22 32-21-3202 |
-| %05 revo rehctam red retsop mo rredts lit sivda sevig red tmas ,gningilnemmas røf semmirt retskeT | 8a127ba8472fc5a2246093d7bb06d62bed213654 | 0010+ 12:91:10 22-21-3202 |
-| rednygeb bnihctam rån gninraw liatpihw tmas - lesrøk rp gnag 1 tgidnevdøn nuk ,negatsgnillits eyn dev un seretadpo lif sesailA | 52979de62bf97c9a9ceab7b9de510b1ec4f1d80a | 0010+ 34:81:10 22-21-3202 |
-| sesailaotnok nelgnam fa esletterpo i regurb ediug | 4fb7e33b80a127f4fb86b25cb750a2411dabce0b | 0010+ 34:03:21 12-21-3202 |
-| sesailaotnok fa gniretadpo lit saila sesailaetadpU | dc62f3ee1e1d3fb66f0d2eaf5ec47df8a1e0abea | 0010+ 64:92:21 12-21-3202 |
-| esletterljef erdnim - pool tixe ,sehctam negni deV | d37bfd1c01fad2cfff08b90ea9c123d40cba5140 | 0010+ 94:74:40 12-21-3202 |
-| gniretnok lit galsrof retfe tmas retsop enbå fa gningildu retfe edåb grøps tropmi vsc retfE | 8b8789491ff69ad1b72f9ab5fdc67c93a5eb60b3 | 0010+ 02:74:40 12-21-3202 |
-| erednygebyn lit unemeplæjh - miv lit unem xumt tejøflit tmas - teskif miv revrafuneM | d7932c886965744bc499d0c48545c8ca29f4d0c6 | 0010+ 33:24:40 12-21-3202 |
-| ednegløfretfe galsrof reksnø nam mo regrøps noitknuf VSC .lwen i dni teggyb re ted ad ,baksnger tyn arf senrejf tluserdoireP | a2f577363d00b24b753451032096e9d21760630e | 0010+ 10:24:40 12-21-3202 |
-| erednygebyn rof miv lit unemeplæjH | 7678dac90505f69b095328be86da8e8074a9faaf | 0010+ 32:14:40 12-21-3202 |
-| tsketsgniretsop arfdu otnok fa galsrof ksitamotuA | 869fa076b14f21fd75bbdaf8f446ff2a869fa02e | 0010+ 30:14:40 12-21-3202 |
-| terdebrof rezitinas tsket tropmi VSC | 72817da44c1ba8e70133cdee5b6d9b2f26088304 | 0010+ 61:04:40 12-21-3202 |
-| 1 nuk ted rav røf ,tovip lit sessap un nak itnok erelF | 1c41680e8f4b85e19e6cacc15fe59624c28ce755 | 0010+ 15:93:40 12-21-3202 |
-| tsketsgniretsop i gninvirksfa revh rof sesiv odlastseR | ee761baee40eafe11b7ecf015aaef170bd709c21 | 0010+ 73:93:40 12-21-3202 |
-| ezis hcraes fzf | 764041e9e3c59ac1b4f35d74c3844abff1c57f92 | 0010+ 34:25:22 91-21-3202 |
-| dni arutkaf LBUOIO lmX | 35b01be7a967b010dd5b74d17f881e0e03275e8b | 0010+ 23:54:10 91-21-3202 |
-| rebaksnger lit selbatyek lit tsakdu etsrøF | 978af6934dd3044ae72dc0681999a673b1bf9e0c | 0010+ 15:03:10 91-21-3202 |
-| lwen i teretnemelpmi noitknuf etirweR | e067572ea5a59ea046dea6899786d0910c61f17a | 0010+ 62:03:10 91-21-3202 |
-| )detacerped re mos( php.yek i noitketedljef esreviD | fb1354d1d443e28449fca170c02a4b38c3f9271d | 0010+ 40:03:10 91-21-3202 |
-| noitknuf etirwer tettylf ,reton i envan emmas dem itnok erelf dem melborp teskiF | b9e8809308865d72bb2df4721ebc20fcd2e52428 | 0010+ 54:92:10 91-21-3202 |
-| retsopsgninsnærgfaedoirep rof otnok terdnÆ | 5b652340a023c2d1874c98938c66141269eb6969 | 0010+ 52:05:00 91-21-3202 |
-| retnesseretni enretske lit vm itnok fa gniresimynona - noitknufsgninvirksmO | a14db499bcf69015e110d681cfaf77a98412d6e5 | 0010+ 00:05:00 91-21-3202 |
-| tuodts rofmorf rredts lit ataddu revirkS | 1c9864159cbbc966e632c5a6a39d1d98103091a1 | 0010+ 33:94:00 91-21-3202 |
-| sgat | 4c8fd0584d82be01699e0b7d02c1cf5fccf97d4b | 0010+ 61:60:00 81-21-3202 |
-| tinsfa etteR | 41cbf0d284e6be4bd6086f32b76840c22312b01a | 0010+ 71:90:32 70-21-3202 |
-| dehgitsah mo ereM | 5edb7dc7f0cf20a042ba1033375c773068227b8c | 0010+ 03:80:32 70-21-3202 |
-| redehmoskriv rof nalpotnokdradnats tedivdU | 7f82b31d196391781c2353fa63d8c426392e2b3b | 0010+ 70:80:32 70-21-3202 |
-| noitknuf gniggoL | fe070c2f3c892773d5b0e998cd9aa3720871d721 | 0010+ 32:70:32 70-21-3202 |
-| un galspo i dem nalpotnok elabolg ned regaT | 5e30cb1600f08c455e00fef1eaed2b35251e38d3 | 0010+ 01:70:32 70-21-3202 |
-| retner mo tegoN | e3670b2a00d0119d2ea0cb2f79a2c80a7d6f6bc8 | 0010+ 40:41:22 70-21-3202 |
-| gniresidoirep mO | 7ac55b2d4310e93c2b6f7788165a4f2aba3a4e09 | 0010+ 73:33:21 70-21-3202 |
-| reametevraF | 0ca119a26b249704bee582ffbd2d459ec35d05be | 0010+ 92:52:20 70-21-3202 |
-| vm gningol dem teretadpo emdaeR | a3dd2ce490c9991d4e96d03388763754a3f87626 | 0010+ 81:32:20 70-21-3202 |
-| uaevin regurb åp rebaksnger i edni reodnammok fa gningol ksitamotuA | 802de1c6880cf14938cf0b3e75a454fa0d478c05 | 0010+ 75:22:20 70-21-3202 |
-| detacerpeD | dbb4aaedc4e762c57f725837b20ff0b4766aae06 | 0010+ 11:22:20 70-21-3202 |
-| sehsah niahckcolb rdeV | 8930012ae07c8f3efd1f8caab26d67c96b40d151 | 0010+ 63:55:00 70-21-3202 |
-| renoitknuf erelF | 3add5cd47cc61629f1b5599134aed6955793de17 | 0010+ 33:35:00 70-21-3202 |
-| troppar stohsneercS | 919f0786a59703bbed5b877d48f60523b5f06e28 | 0010+ 01:34:00 70-21-3202 |
-| stohsneercs 2 | 9cfec234a61e68197bd84e5a27505befc32afca9 | 0010+ 03:14:00 70-21-3202 |
-| esletter ksitemsok erdniM | 67df3dadc7e94aa27f71f6a30e9d48f862229d96 | 0010+ 15:73:00 70-21-3202 |
-| emdaer fa gnirecifilpmiS | d0e80bb3ded3e00a9b2b675c0716e48ef509862d | 0010+ 12:53:00 70-21-3202 |
-| enrenoitkes åp tdnur tdil tettylF | 2d3eaf6de2d363ddd158f56423653b47ab76eff9 | 0010+ 12:03:00 70-21-3202 |
-| opyt | 5e3eb470bac8780475e98fa1ab5f6ce1fa5e7046 | 0010+ 33:72:00 70-21-3202 |
-| tfikseinil - esletter ksitemsok erdniM | c886c5e3b6344acecb6d560f78c1cfa638895b19 | 0010+ 50:62:00 70-21-3202 |
-| erenæp ted røg tfikseinil tE | 0d1cbbc8e945739b738ec4dc1369d0032e1bfe76 | 0010+ 43:52:00 70-21-3202 |
-| relpmeske rdeV | 17236ab59a5a5e34a63da5b7a24cd7dd69f0390c | 0010+ 80:52:00 70-21-3202 |
-| relpmeskE | 353a30ab777ab7db8fed2c5636761897712ab327 | 0010+ 63:12:00 70-21-3202 |
-| tleh ogol renrejF | a57c5614656b0ef4425fc92656a162c8b3b5c7c5 | 0010+ 62:71:00 70-21-3202 |
-| xifxatnys nwodkram | fc9c767d12c5e3d74ea3cc8671a425dd202dfa8b | 0010+ 45:51:00 70-21-3202 |
-| lamron ot kcab - gilum ekki gnirertneC | 2b535e69602acd7fd4f154d800615d2e63b7ca43 | 0010+ 52:41:00 70-21-3202 |
-| gnirertneC | 26c4f32898140a9a377ca74654453d4686da2c9a | 0010+ 01:41:00 70-21-3202 |
-| gnirertnec | 4aadf44a004aa2a87c3af0f139a3c4058fea2899 | 0010+ 74:31:00 70-21-3202 |
-| dm derovalf buhtig gøsrof tyn gnirertneC | 1d9d8154b4c739ed052a10e8227aaeb4d8903e4b | 0010+ 91:31:00 70-21-3202 |
-| edellib fa gnirertneC | c42f782495b0daecf3ca6b1c0bf0e3bb97a7cf79 | 0010+ 35:21:00 70-21-3202 |
-| egami rellams | 32efd1858546c07e2ca4d5faf55641f4c59b88fe | 0010+ 95:11:00 70-21-3202 |
-| egami rellams | d47a1294b96cf96cc25d1adc75c2e1ef943f8703 | 0010+ 12:11:00 70-21-3202 |
-| egami eziser | 7d0e702ca12bcf31c21ff5cce919b31365102caa | 0010+ 12:90:00 70-21-3202 |
-| egami eziser | 20e25772cd0e7c197055c1d610bcdad596f4f511 | 0010+ 31:80:00 70-21-3202 |
-| ezis gmi | 36e7a8410d29c95ebd481422dbfd29d6073b869a | 0010+ 40:50:00 70-21-3202 |
-| ezis gmi | e8b5fe8af515b8cb55fbeb97f5030d049a616ffb | 0010+ 51:40:00 70-21-3202 |
-| ffuts emdaer | c1fc9760fc80e96db415f496d48695e6c1a03b2f | 0010+ 91:30:00 70-21-3202 |
-| erem ekki segurb ffuts tig renrejF | 859b9ad7de4cf696962c2e51ae4b563d8f2cd4a9 | 0010+ 72:85:32 60-21-3202 |
-| lif etirwer ne re red mo kejT | b7fec504841aca2f3ad196a5b6522426962455f4 | 0010+ 31:85:32 60-21-3202 |
-| ffuts gubed enrejf | 26591553984646c5ec1435bd37d77db83e2da345 | 0010+ 20:85:32 60-21-3202 |
-| esletter erdnim | 9d67f367dadce0398d366670e2837e4836bc62cf | 0010+ 74:75:32 60-21-3202 |
-| mottob lit rdlt tettylf | 3d1b9501ba1fde93a8b566d737f49f0d8a66f647 | 0010+ 34:55:32 60-21-3202 |
-| 001tv | edb727fbac799575296a9e6469587a9e212f242f | 0010+ 13:35:32 60-21-3202 |
-| opyt | e7ef613556e1e62b08eb61981d75728845b99127 | 0010+ 41:64:32 60-21-3202 |
-| ++ameniicsa | 4be8d1a2b248b24149c7bf7866e57f40ead19d3a | 0010+ 80:54:32 60-21-3202 |
-| oediv legeR | 0ed458aed08c5cc47bf25e8ed7d68a68dd66d30c | 0010+ 83:52:32 60-21-3202 |
-| ameniicsa ne undne | 56b81c39b6c2ca3897b3ef00d03433ac3a190d70 | 0010+ 54:65:22 60-21-3202 |
-| esletter erdniM | 5c0dd1c998e848fe088fe3776b4d7a4acb016488 | 0010+ 92:94:22 60-21-3202 |
-| teretadpo relpmeskE | 9e491568be97053094b7a36b3cb0d07d8cc996cd | 0010+ 41:74:22 60-21-3202 |
-| oediv omed | 2aa816546c539125fa8b0db01761f4c8b809ad4e | 0010+ 63:61:22 60-21-3202 |
-| tset | f1766bc40516dc93b213f5949896b6e57a99c286 | 0010+ 23:51:22 60-21-3202 |
-| rebaksnger egiltneffo lit itnoksbaksnger essiv fa gniresimynona lit tgittyn - troppus etirweR | d24d758f5688bd69e59ce498bfc398923054deae | 0010+ 90:41:12 60-21-3202 |
-| galspootnok tlabolG | c1c22feb332dc518d5cda29fbe5af4a9764163e4 | 0010+ 15:31:12 60-21-3202 |
-| osi go tamrof ksnad edåb rettøtsrednu tropmi VSC | acc53f38e445b9b34c670b91227d890ec56ea2d1 | 0010+ 33:31:12 60-21-3202 |
-| letit teggybdni dem ,edis rp strahc 2 | 37e034ba4926a14016d588b48705daa87405b07a | 0010+ 32:31:12 60-21-3202 |
-| tropxe vsc eggæledø nak ,tropmi i ngetlaiceps ekki dalliT | c975225aee61b260de31e2ea5287f1b57d63256c | 0010+ 60:34:51 60-21-3202 |
-| retlef i reidræv emmot rof kejt - eslerrøts retfe seretros atad strahcraB | ed1a399985714cf428654a71da585cdf7464503d | 0010+ 33:24:51 60-21-3202 |
-| trahcrab lit setfiks red rofrovh ,reidræv evitagen esiv rutan nis i ekki nak nem ,enæp re strahceiP | fe7ffc31fc3ac075d4bb13eda085f9b087e7e86b | 0010+ 30:24:51 60-21-3202 |
-| seludom regdel weN | 88664a49c598e21eff844d3fd07e5909ff6e9f93 | 0010+ 50:44:11 60-21-3202 |
-| gniretroppar lit gniretnemelpmi sj.trahC | 26a30172a62c71bb2de7e03b7b9388196a0ec7b6 | 0010+ 64:34:11 60-21-3202 |
-| gniretadpo ne råf unemsgnirøfgoB | 7547bff600a8d1723c133d2b6383c818c0f936f4 | 0010+ 92:14:11 60-21-3202 |
-| stpircs php rettøtsrednU | 34d5d69b6e8702e37028698df248142dae8ad404 | 0010+ 01:14:11 60-21-3202 |
-| shparg sj.trahc ederesabtpircsavaj dem gniretroppar lmtH | ce77fae975e31eb13a010e6f9beff347b5a8f65c | 0010+ 25:04:11 60-21-3202 |
-| saila resop enbÅ | d1ac95c5dec78bafb9f8df8d0d0d16177ad01823 | 0010+ 42:04:11 60-21-3202 |
-| noisrev sj lit retfiks 2.8php dem ekki rekriv hpargpj renrejF | df36f33f42c4d801c87dc0bf9bba9eaf3319b1ca | 0010+ 10:04:11 60-21-3202 |
-| renoisses mellem etfiks ta rof kilktlebbod ,1 arf retrats ermunsnoisses | 64f52b45d8e6329d48e4f71e2612254e72678365 | 0010+ 85:81:10 50-21-3202 |
-| gningilduotua terdebroF | c864f3518c999e2cbb081fd1cda7bcb31deb1cae | 0010+ 81:81:10 50-21-3202 |
-| galib nedu retgætdni/retfigdu telbud dem åsgo un rekriv - rerotiderk fa gningilduotua terdebroF | e558b1ec845b65af53c11ea7323eadbf7d687852 | 0010+ 15:71:10 50-21-3202 |
-| regniretsopmetsys je regatdem troppasgalib ednelgnaM | bfda6faaf7d37f2fd2c8ac393d66368766535249 | 0010+ 62:71:10 50-21-3202 |
-| negnag fa eppam 1 arf galib dem edjebra nak nuk nam ta gninærgeb ned dem - baksnger enbå ted arf ned egurb nak nam ås semmeg eppamednuK | ded48a7099351d9d0649d2865bfd7ade6ea728fe | 0010+ 85:90:32 30-21-3202 |
-| tpircssgningerebetneR | b64a323f0da0138ac9c11f8da4468d1b4352e9e3 | 0010+ 02:91:71 03-11-3202 |
-| enap etfiks ta lit jevneG | 1c268dcb58f7185d6c60da6f12398de2326deaeb | 0010+ 60:91:71 03-11-3202 |
-| lll/ll åp redoirep i esletterljef erdnim go ,gningerebetneR | 5b979c16ffa981ce99c44eff9762724323e3995a | 0010+ 64:81:71 03-11-3202 |
-| fdp lit redellib eretrevnok ta lit segurb fdp2gmi | eec7b95f6d069d9ee7875f57e09c306d6b6ab3fb | 0010+ 22:81:71 03-11-3202 |
-| gniretdnåhsgaliB | ef230d9b55fcc5de59cef33b92ea1f9b59a2775e | 0010+ 55:71:71 03-11-3202 |
-| daolpusgalib rof dehgiluM .yrtne dev renoitkasnart eyn lit sejøflit retnemeleedoireP | a99d7ca2fd2eab4b3a92e800dde1d9dfb5e414b4 | 0010+ 92:71:71 03-11-3202 |
-| gningøs retfe negob røK | 5eee8cf57d4aa3988791a6a60fca128c07d96e79 | 0010+ 14:61:71 03-11-3202 |
-| egilegurbu stpircs etner elmaG | 194836d547a54e7c20d9b9c9756e3b13334243ab | 0010+ 22:61:71 03-11-3202 |
-| revitkasgælna åp regninvirksfa tejøfliT | ff7d58bce91ad14cfc2d4836c186b441ae3bf5e4 | 0010+ 44:51:71 03-11-3202 |
-| seicnedneped gnindyrpo resopmoC | 838e7fe753ae35afd4cea8faa4b795920d68d5bc | 0010+ 35:05:81 92-11-3202 |
-| seicnedneped gnindyrpo resopmoC | eb5585246ee78ed9a4ab7afa4691b75774eefcb1 | 0010+ 42:05:81 92-11-3202 |
-| sgnitsil lit kramkejt tejøf råf iv lit xif erdniM | a5c1027a200b44b0fe16e89d5b71b59492c17bc6 | 0010+ 23:04:21 92-11-3202 |
-| tluafed mos serøg rtsH | ff13f27b9704e2e6e2fab3dc90d9fc63d1060ec7 | 0010+ 31:04:21 92-11-3202 |
-| akric# dem tekræm regniretsop fa gningildu lit tsakdU | 9ca80dfe4d76010d331dc0bc0f8aba7ae5cb203e | 0010+ 83:93:21 92-11-3202 |
-| galib rof remmun etsæN | 975e606170ad5c5619e9cbe5911adde86df47bee | 0010+ 52:93:21 92-11-3202 |
-| xobpord aiv xf rutkurtseppam emmas rah revres go tneilk edåb ta reværk - pordgard dev galib eksisyf fa gnintynklit redalliT | 9c73ebd2e2e6f0806f71dc8750414ce8ebc24273 | 0010+ 55:83:21 92-11-3202 |
-| esletterljef erdniM | 9b3e688dca8be9709fc9e6635255326ad4e81751 | 0010+ 43:83:21 92-11-3202 |
-| detacerped re edoced8ftu | da9fc0a7f13691315e33f085ea5555b4861a2724 | 0010+ 51:83:21 92-11-3202 |
-| tsaf si regdel taht won stpircs hsab ehcac ot nosaer oN | 51494ee677238642235174cc1bdda4ff61b9b63b | 0010+ 70:21:91 62-11-3202 |
-| ffo srebmun evitaleR | 5c88537ffa9f5235b653664f5bedef22a89810da | 0010+ 05:11:91 62-11-3202 |
-| tuptuo vsc aiv yarra lit regdeL | c61668954bfb77b2f200a8e2c05de52c91b3eeeb | 0010+ 22:05:81 52-11-3202 |
-| margorp dyrbfa ,gniretros redyrbfa nam sivH | 6ba999ceca29428c99a4e733f3dea40bfc91a287 | 0010+ 45:94:81 52-11-3202 |
-| tropxe vsc aiv negob eleh arf dem atad åf ta lit teverksmo seirtnenepO | aae550e1977ed1e73ec6ae7c0fd8c29797f47c94 | 0010+ 62:94:81 52-11-3202 |
-| dem tla råf iv ås vsc arf atad regat seirtnenepo - giditmas itnok erelf eglæv ta rof dehgiluM | cd90bf7ef4d7b8ac8f6a8beb47d22a2254508ca7 | 0010+ 23:84:81 52-11-3202 |
-| erediv litdni renoitkasnart elleutriv = gniresidoireP ,)(dnapxe fa led ne re tluserdoireP | 63b488cd0fa758d8a3a41a0b01e6083530ebe0f5 | 0010+ 20:84:81 52-11-3202 |
-| reodnammok lennut esrever go gnindyrpo tdiL | 9bdc467ebffb7a53164725fe3da5b0ed04762eb7 | 0010+ 55:64:81 52-11-3202 |
-| renoitkasnart elleutriv = tluserddA | c2f338cbe7aa4acab369f112064749b1f9ac3b74 | 0010+ 32:64:81 52-11-3202 |
-| skcirt&spit erelF | 3b87323a50d25d3cbd85bee4c620f82462da3f22 | 0010+ 60:42:32 12-11-3202 |
-| hsab nedu tatluser trøfrevo fa gningereb ksitamotuA | a3af5aed854ee09e7a305f23df80178c2b99979d | 0010+ 74:32:32 12-11-3202 |
-| emmosgnal rof rav stpircs hsab regdel ad s4n fa led ne un tatluser snedoirep fa gnirøfgøb go gningereB | ad869ceb5013ed55c06c820273eb3246f19ce1ab | 0010+ 61:32:32 12-11-3202 |
-| edoirep je reværk relanruoj i galspO | fbea331bfaeb423293751ce15d701e725cb31015 | 0010+ 15:22:32 12-11-3202 |
-| gnindyrpo esrevid + sesaila ngilduotuA | aed5d0c376d7818b00d4659e61fac84528799d9a | 0010+ 53:22:32 12-11-3202 |
-| tnæp tixe - gas ne reglæv ekki nam sivH | b0f2a620de0d73e5fd99a8c4665911d90df522e5 | 0010+ 83:14:02 12-11-3202 |
-| yrtne dev otnok yn rof dehgilum go esletterljef erdniM | a9da140c2130e631b1b9748bc6c26c92dd1b600a | 0010+ 22:14:02 12-11-3202 |
-| rettelbud rav red - sesiv itnok ekkinu nuK | 4d26c862f2319d1662da4094a5b871c57e394d68 | 0010+ 93:04:02 12-11-3202 |
-| .negobdevoh dem selfif nak ekki red ta sedelås renoitkasnart edneågerof ed muskcehc dem reredilav negobdevoh i noitkasnart revH | 973ee0e7a8e0b34d5f43854a531e1c749022233b | 0010+ 80:90:40 12-11-3202 |
-| eslednekdog leunam dem god - retsoprotiderk go rotibed fa gningildu ksitamotuA | d22011a7a32d046490b1a0cd78446cbd554c4d89 | 0010+ 92:52:30 12-11-3202 |
-| ted retfærkeb nam sivh trøfgob revilb nuk red rof regrøs tmas ,retsoprotiderk-rotibed fa gningildu ksitamotua lit dlak tejøfliT | 4e6bc21d69dfb732d0068c5908747fa8131573c2 | 0010+ 75:42:30 12-11-3202 |
-| ljefevats erdniM | 53d2384e49be2167a459b9c12060235a248eb704 | 0010+ 15:32:30 12-11-3202 |
-| ffuts gubed dlo | 6c3af12047247f9d6d4c827c293d561986c496d7 | 0010+ 10:40:32 02-11-3202 |
-| ksans gubed lemmaG | fd0504ca67e61ef7c72c3431aba9fcbe49522059 | 0010+ 02:75:22 02-11-3202 |
-| ofni gubed tenrejf | e7d449851eb6f3ead006b753223f35fa2510ec11 | 0010+ 00:75:22 02-11-3202 |
-| ksans lemmag gnindyrporetniV | e9cad0025bba34aa499f24d5c36e4207476ddcc8 | 0010+ 04:65:22 02-11-3202 |
-| regurb lit gninbå rof sutats siV | a0462a37dae11744419871a067df1d06856b0300 | 0010+ 62:65:22 02-11-3202 |
-| regurb lit sutats resiV | 57508b82c9b964717536f63ed47b2cb2d35165c3 | 0010+ 00:65:22 02-11-3202 |
-| dehgidår lit rah ned nalpotnok ned eleh ned regurb uN | 7599d27b26b880ce441ac6329c520ef300fdce52 | 0010+ 32:22:22 02-11-3202 |
-| stilps dem terdebrof rebaksnger enbå ta lit teretaler esreviD | 004dfbabb4a0626f130691b3681b5c1c947244c9 | 0010+ 85:12:22 02-11-3202 |
-| tkaske serøg gningøs fzf | a6f8a96daa92f49bfb0c5f6f9f9e3af9ebf1d122 | 0010+ 60:42:12 02-11-3202 |
-| unem i po reddyR | 674c466098517e39131d6888e76c2c095d3c7939 | 0010+ 25:32:12 02-11-3202 |
-| eudniv tyn i rerøk gningøS | 39e581dce126c4812f2b84f39f805fa0b160f6f8 | 0010+ 14:91:12 02-11-3202 |
-| hcraestxetlluf relle sgathsah retfe gøs - noitknufegøs terdebroF | 27e05564e933a31ff62338d8e4c47c8cce5a24cc | 0010+ 51:91:12 02-11-3202 |
-| bojdnuorgkcab mos segapknalbevomer erøk ta regøsroF | 5edfc3e733e009920151b9ae446a42340a86a147 | 0010+ 15:81:12 02-11-3202 |
-| gidnyksbaksnger re nam sivh ecnalab åp gninter gilrutan tmas depirts elyts elbaT | 909e523c338aa53ebf9252b235a6ab2fededa02e | 0010+ 01:81:12 02-11-3202 |
-| hsab.segapknalbevomer fa teværkåp re tpirctsohG | aa7de19cf4d13e411b6ccee58195c7d1a86a3faa | 0010+ 50:24:61 02-11-3202 |
-| serøfgob nak reD | ed621e8c0b943d579438b79aabd11bff15825c7f | 0010+ 92:80:21 02-11-3202 |
-| dehgitsah erdeb rof wodniw-tilps te i serøk lesrøksgninbÅ | eebddca443ecc1b647ce019bc4de735bb80c6da1 | 0010+ 54:70:21 02-11-3202 |
-| gninbå arf tuptuo lmth tenrejF | 2f529a7b07ca98822512f9bb9a2a505abfb3a0e5 | 0010+ 12:70:21 02-11-3202 |
-| rn koobhsac go remmunsnoitkasnart etsæn - rebmuntxeN | 57f6d4012b38ff7c920b4ea4c4cf4efd0f55af1b | 0010+ 15:60:21 02-11-3202 |
-| sesrucn åp erediv tedjebrA | f0f35ae92ad8b6a37539cfaed06da5eb837f2779 | 0010+ 10:73:71 91-11-3202 |
-| tetter hsabkoob i ljef erdniM | 03e5f0d6f253d8d23eec6221f7eb6a7a97aa9c18 | 0010+ 92:63:71 91-11-3202 |
-| ffuts cimonoc-e esreviD | ec13e61288fab80cf16c43c4ba9f7cde602c99ce | 0010+ 64:52:61 81-11-3202 |
-| relif dliuB | 91b6ba36bc07b08a02798ae7ca5569abc0ca1370 | 0010+ 82:52:61 81-11-3202 |
-| hsab.tini. ditla røk rs deV | 18503a0af9bac5d09f15d46af1560add37de4cc1 | 0010+ 40:52:61 81-11-3202 |
-| tropxe regdel i dem segat atadatem elif tmas ,iu sesrucn åp telboK | 283d51c5583998e51a376dbf694919a4f7829a1e | 0010+ 22:42:61 81-11-3202 |
-| ecafretni sesrucn terdebroF | 7f1668a649c9109e7bcc681b6cb535a3a9fe67a3 | 0010+ 00:42:61 81-11-3202 |
-| sesrucn | ef02cb9d2ce008faa5dd07915a8ee74d0e0aef1b | 0010+ 03:32:61 81-11-3202 |
-| edjebra sesrucN | ab2a62b2ef061701dea1b2813256ba6ce1bfbf9d | 0010+ 34:03:61 41-11-3202 |
-| noisnetxe php sesrucN | 67c411fbb2f7b2f476725eeface3206e455c3600 | 0010+ 40:03:61 41-11-3202 |
-| saila iU | ac866b5d4542561fad9c6698a6de259a07d75770 | 0010+ 32:92:61 41-11-3202 |
-| seicnedeped esreviD | 0cf66ba5d4c465a056b356bc408d1f60acaf5b73 | 0010+ 01:92:61 41-11-3202 |
-| noitargetni cimonoc-E | 5bf59b795a5d43eaaf0f159c64a7318b8ddacb6f | 0010+ 31:90:51 11-11-3202 |
-| hsab ym ho fa tereripsni - pmatsemit tejøfliT | c257e3538c92aad2b0bd98df73c0d935935a1932 | 0010+ 15:24:31 01-11-3202 |
-| repparw-regdel yn arf rekkært tropparlmtH | 9813d0ecd04e475258e1d3f795cf1ee69220500b | 0010+ 25:60:32 80-11-3202 |
-| xumt reltit seudniv | e1bf081a4e2972841439be1b0bc655608d3e072d | 0010+ 20:74:22 80-11-3202 |
-| atadatem fa gnintsatdni røf renoitkasnart fa gninsiV | 374d08bdd45299d9f2e5e04280ffbc6f607bfea3 | 0010+ 33:64:22 80-11-3202 |
-| gnisiveton terdebroF | f5be64d2082ff839bb4672cb978fcdf2cb40f456 | 0010+ 31:54:22 80-11-3202 |
-| pot i seredulkni htam | 1b45bca947e867be4550b66f534d482e267ef17a | 0010+ 75:44:22 80-11-3202 |
-| reudniv edevraf relbasiD | 87cfadf8d31e5b801d34c1449fc4ea81aae8c9dd | 0010+ 14:44:22 80-11-3202 |
-| lanimret gitgismenneg settøtsrednu red ås roloc gb lamroN | 508b6b71a7adaf4e9d8a0d510c0d3fd67bd8ce66 | 0010+ 32:44:22 80-11-3202 |
-| revrafseudniv renrejF | 83fcb6a4ed98c84a99b94c78ebdf4b51a1462ef8 | 0010+ 60:44:22 80-11-3202 |
-| regnirdebrof yrtne lweN | 56797b7adbff51a8f4e28736c285fa5eac665d28 | 0010+ 52:94:01 60-11-3202 |
-| lwen i sedallit tupni ksitametam | 2eb762d1bbbcba0c6b1803c6ee91180f95b2bf17 | 0010+ 15:84:01 60-11-3202 |
-| rs retfe pd erøk ekki laks | e1675902fc196e2e57cae83678e08ee005f134f6 | 0010+ 33:84:01 60-11-3202 |
-| selbat åp seredrob renrejf | 822be353b7cb9a502b213daeac4c1e4b4353ec87 | 0010+ 44:50:61 50-11-3202 |
-| repparw-regdel yn toviP | f47902d8559bea95f993536cc0b74017cf206592 | 0010+ 62:50:61 50-11-3202 |
-| esreviD | 7b70596e023e9dea6305849c7427653f2a4ff67e | 0010+ 71:50:61 50-11-3202 |
-| repparw regdel yN | e9b41fba39aaa56274f4b99100863a96bca62f77 | 0010+ 43:40:61 50-11-3202 |
-| o-lrtc lit pupop rof merf wodniw-wen | 69db35ae5aab62ff9220ee6a8da55949f49e7a24 | 0010+ 01:40:61 50-11-3202 |
-| llehs lit noitargetni repparw regdelwen + stpircs elmag gnindyrpo eretteL | b08ec43f06e301fb3c4f21c5453229115ecfdadb | 0010+ 83:30:61 50-11-3202 |
-| regdel lit repparw php yn - lwen tsakdU | 76c9b71d31470372336b8b751e9b415386ba5aaf | 0010+ 93:90:71 40-11-3202 |
-| edoirep envig ned erøk ta lit edoirep dem sessaplit 799 | df8bcf281458c2d14bd061760eaaef05f0779f0b | 0010+ 51:90:71 40-11-3202 |
-| cca pukool åp serøk odnammok yN | f34457f3f4df3592a845e01f0195404a30309e20 | 0010+ 14:80:71 40-11-3202 |
-| regniretsuj erdniM | 81f5182fbbae3b557786dc65f44ab14606a77b4c | 0010+ 22:80:71 40-11-3202 |
-| ffuts tig desunu | dc6d74d8d0830beb2c04ad36ef47571833ec65f4 | 0010+ 34:70:71 40-11-3202 |
-| php i erem relbairav emmot egurb ekki - gninkejtljeF | 0ed298c18d759781c9735a9670399f230721c62c | 0010+ 65:60:71 40-11-3202 |
-| selliksdu renoitknuf otad | e55a2c3798e689996daa1378d4240ccea71c8b50 | 0010+ 73:60:71 40-11-3202 |
-| repparwredel - noitknuf yek lg i gnindyrpO | 4487a4a972a58580835ea5505fdf211ac24f6e47 | 0010+ 71:60:71 40-11-3202 |
-| lwen fa segurb nak ned ås lif tliksræs i dnapxE | 01353ffdbe3a7b626f575a393ff773a53711ba36 | 0010+ 55:50:71 40-11-3202 |
-| eyn 2 | 2e8070ff0a8470be5e2538a0d7b0244a47ca5a07 | 0010+ 84:95:90 10-11-3202 |
-| gob teretadpo nedu lesrøk lit lo eskif ta gøsroF | 40cc5f58591f3dbb60a3c120874b5bc84c77f6a2 | 0010+ 21:95:90 10-11-3202 |
-| retkilfnok ågdnu ta rof eppam pmt fa gnirdnÆ | 9424b2d1aa275647b3a032999109d339e5994d73 | 0010+ 94:45:90 10-11-3202 |
-| tropxe vsc tkerrok rof gidnevdøn kcah regdeL | 49798a49a934cbed4bb7e949e25d863c4fb7a578 | 0010+ 91:45:90 10-11-3202 |
-| gningøs o-lrtc dev wodniwwen rof merf pupop xumT | 2c1d75b2858a2e6544339f93e026ce741831ba48 | 0010+ 30:25:90 10-11-3202 |
-| tpircs fa gnindyrpo / regniretsuj erdniM | b8d32db2a18b0534499df45957013ad98709316f | 0010+ 33:74:90 10-11-3202 |
-| esletterljef erdniM | 3f0667db9934da1efab4d05ae6ceb43908f647c1 | 0010+ 52:83:11 13-01-3202 |
-| lesrøk regdel spudeepS | 412fbfb9a94ccf84be6c5ad45fd30e4ee243493b | 0010+ 82:24:12 03-01-3202 |
-| eppam nege nis i xumt regaT | 3024ada21b86349c720c62f7bf6fac44f2ecfee2 | 0010+ 33:14:12 03-01-3202 |
-| unem i dnub lit settylf launam | 01a1c09d45116406d4e1662a7b16d98e91d4ff78 | 0010+ 60:83:02 92-01-3202 |
-| ffuts unem | 86d4836b37bff00a339bdb0e48e0f3884017c5ba | 0010+ 91:53:02 92-01-3202 |
-| edoirep tluafed | 3260de65873cfe6fe7d68f1f66426ca52b92c958 | 0010+ 11:23:02 92-01-3202 |
-| neslihtsmoklev | 2f2e8fc03a1e5ceb9927851ae49858ba90a55f5e | 0010+ 03:91:02 92-01-3202 |
-| tsrøf baksnger - egløfekkær unem åp mo rettyB | 0162b2f2964e14a70d7f61773a4780252615073b | 0010+ 04:80:02 92-01-3202 |
-| pmt rofmerf - tropxe-s4n lit rettylf | 282106b12277e0ca0e771edf0c32a2aed88d85cb | 0010+ 53:50:02 92-01-3202 |
-| gnirenoisrev | 88f9a112f87a4ade08518612c24d10bf6fbb5016 | 0010+ 10:10:02 92-01-3202 |
-| regassgnilkivdu LBUOIO | 6b22f77d27727ecfc8d1b2f5dcc8974fcb4d4eae | 0010+ 44:75:91 92-01-3202 |
-| ffuts resopmoc | f0c61a0e576f011386da4aa5cc6da4382e16a023 | 0010+ 72:75:91 92-01-3202 |
-| etsapf | 549bd5d56c74da88e99769c312222c979d1a4474 | 0010+ 51:75:91 92-01-3202 |
-| knil ld | 68ea4197e73112f0a1cad1fc646de2e981a87d13 | 0010+ 02:55:91 92-01-3202 |
-| regas go gnit eciovni tmas -gnirenoisrev | 5f2085f719ddfbca6d2aac6f94ecb01f914879cb | 0010+ 40:55:91 92-01-3202 |
-| senrejf ffuts xobenas | de25a9aa600e323fc70ade6f7b721cb49b9d7336 | 0020+ 90:03:02 82-01-3202 |
-| senrejf ffuts tr | 4628573280e6b02912bf43f0a69cd8b2775fbcd7 | 0020+ 15:92:02 82-01-3202 |
-| senrejf ffutsliaM | ac98b1983df75c21ff784a8e39b9476e0c0d3f3d | 0020+ 13:92:02 82-01-3202 |
-| ffuts cimonoc-e dlO | 79f9cf3f5edbeb6f062fe915eede0b757b3cf838 | 0020+ 01:15:91 82-01-3202 |
-| sepparcs koobparcS | 041f69658cb173e44ef29cc25c4f3ac4a54453b2 | 0020+ 43:45:22 72-01-3202 |
-| gniciovni lbu lit - ffuts resopmoC | af0d039c36f5ec23c842a8bf0b71143810627f12 | 0020+ 55:51:22 72-01-3202 |
-| gnindyrpo sesailA | b46d915893eb9f6363657d07b9251cb2d8084e16 | 0020+ 30:51:22 72-01-3202 |
-| vm etalpmet lbU | b0287597db9efb7777a601f749003cd028586410 | 0020+ 60:21:22 72-01-3202 |
-| redets erdna gurb lit lif tarapes i du segat cnuf-teG | a3adbfa500aae826e3ff98cdbbdaec334c81c2aa | 0020+ 55:70:22 72-01-3202 |
-| ketoilbib resopmoc te re eciovni lbu | 68d502c5933382ccfdeef56b38a2fabafa69d158 | 0020+ 21:70:22 72-01-3202 |
-| lbuoio lit ffuts resopmoc esreviD | 0cb2dff0c063c4adf6183292ec8cb9d4560f04ff | 0020+ 54:32:41 72-01-3202 |
-| tnemukod tarapes lit noitallatsni tettylF | 8ae97dfb6c58b364f3ef2728671fd7567019a47e | 0020+ 42:55:11 62-01-3202 |
-| gnirenoisrev ksitamotuA | a2a17d3fbab0db55c4e0c2d4de5f8f5080eb1b9d | 0020+ 03:02:00 62-01-3202 |
-| viD | d05f4a449757868d4daaebbfda0eebbd389e4eda | 0020+ 42:71:00 62-01-3202 |
-| retsoprotiderk/rerotibed/redivkil åp edoksmom re red rovh relif fa deksebljef fa gninsiv dem gniregider skarts tmas ,etadpu kluB | 5efe6ea93b876b7dce4d36fe557f6404b57e8e9e | 0020+ 53:61:00 62-01-3202 |
-| miv ffuts nwodkraM | a6c5f652b5d2daabe0f772b77148c308d2f09d6f | 0020+ 71:61:00 62-01-3202 |
-| stnof erelf i re red tegon lit noci edocinu ta ud etsdiv fa gnirdnÆ | 9ad9845dfc78b50cc9ccfaf2ebedf5c63aa68f09 | 0020+ 25:51:00 62-01-3202 |
-| gfc i re ted ,tnemugra enildmc mos epytelif fa eslevigna ekki revøheb gnidlof nwodkraM | 26a4b5b26be16a994424dbba2e6700431ca0e348 | 0020+ 23:51:00 62-01-3202 |
-| tuoyal i gniretsuj erdniM | d87c2f29d6e1d8092c58e0492565a7261d4f109a | 0020+ 62:61:61 52-01-3202 |
-| gniretnedni ekkolbedok renrejF | 3920b3d85168fe1f6cadc2fb3bf3b79d9f1d3e11 | 0020+ 34:31:61 52-01-3202 |
-| buhtig åp seitivitca lit tedets i resivneh jøts tegem rof ,golegnahc ksitamotua tenrejF | ae75a5b1aaa46c8f43db71335375811ed669e518 | 0020+ 53:21:61 52-01-3202 |
-| ffuts emdaer | 4b93786b0bfb4b92ff6d08ba2f663409fc365a59 | 0020+ 11:50:61 52-01-3202 |
-| amet fzf tyn tmas - stpircs elleutkau elmag gnindyrpo tdiL | cd6edcd0db40515f57a796225db7738a1ce23652 | 0020+ 80:95:51 52-01-3202 |
-| ffuts emdaer | 487ca970579d9d759bfc34720f69d731292170f9 | 0020+ 81:92:90 52-01-3202 |
-| ffuts emdaer | c14c9528b4505aca0a357786dc03ff4b7d85c58b | 0020+ 13:02:90 52-01-3202 |
-| golegnahC | 4f019227ad3aedb6eed5cdb0cdd8c4615d36c526 | 0020+ 15:81:90 52-01-3202 |
-| woneht i dni regniretsop ettæs ta lit sgnidnib eyN | 3207afa533369a5edb0d408ebfad5372ab02ef83 | 0020+ 51:81:90 52-01-3202 |
-| noissim troba ,trahceip lit yarra tmot sivH | ef1ae51cbdb7b8f85a0fdd5c0044b95dfbc561a8 | 0020+ 93:71:90 52-01-3202 |
-| resletteråms erdna rap te go tejøflit noitknuf galib ednelgnaM | 4f6ebe85f52cbb69167cedf47ecac870851ecc4b | 0020+ 22:71:90 52-01-3202 |
-| seicnedneped reretadpO | 07cafefc880b29c8cc54a2a31216baac86efc734 | 0020+ 10:71:90 52-01-3202 |
-| fdpotlmthkw dem setfiksdu emorhc-elgoog tmas tropparsgalib ednelgnaM | 15cf1b5c887d0b1f45c4d306303c72233085ad9a | 0020+ 63:61:90 52-01-3202 |
-| woneht i gnintsatdni meN | ffc5cc2e9364cba577b902b202223e397b9664fc | 0020+ 71:61:90 52-01-3202 |
-| codnap fa lesrøk etacilpud tenrejF | 8ed8e26a128efb8f4ac9b3315e10bb89bbdf8c1f | 0020+ 05:80:22 42-01-3202 |
-| tpircs xobpord tyN | 77d3cc799014f770fe38efdd90c21faeb2a69081 | 0020+ 12:44:02 42-01-3202 |
-| revres erergim ta lit tpircS | 08f339734ccfbcbe02661bdd8a74dc1e85777e0b | 0020+ 31:93:02 42-01-3202 |
-| senrejf ,tetni røg -8php lit gniredargpo dev tednuf - xifguB | b33099fa18285585c56c0e2cbf4d6e5bd20f2e77 | 0020+ 94:22:02 42-01-3202 |
-| tgidnevdøn ekki ,hcuotiv arf retlif-enod renrejF | 59a2ffd5db80251ac9c6da3b636f14c5009d280c | 0020+ 41:02:31 42-01-3202 |
-| ameksevraf fa gnirdebroF | 22e80f51f162aa86341ca00774f60dc1d24fc859 | 0020+ 85:91:31 42-01-3202 |
-| du tdog ås res ekki mos regerts elgon renrejF | b8061a37b8e784d7d68688df2de982bee5e72d41 | 0020+ 42:91:31 42-01-3202 |
-| reppankeudniv tgilnys erem rednureh reameksevraf lit gnirdnæ tdil go reunem fa gnindyrpO | 7b1e94e589bfef9d97e0fc876afad77d72fe3b79 | 0020+ 20:91:31 42-01-3202 |
-| ffuts emdaer | facc20ab6194da5d16c3d10cb9288a0d9399c064 | 0020+ 94:84:21 42-01-3202 |
-| ffuts emdaer | b0035668cad51ead035db98ee3b4307d0fbb0fa5 | 0020+ 74:93:12 32-01-3202 |
-| ffuts emdaer | 0812e55302644f6e9ec310bb3c12fc16f723d66a | 0020+ 54:23:12 32-01-3202 |
-| ffuts emdaer | 504ae38e04b3942e8f3b34a7db65cb949ddee6a1 | 0020+ 82:03:12 32-01-3202 |
-| edis enned fa led mos tenrejf launaM | ac5d5da6116854c6fb43a358b59c6c6c240a3f3d | 0020+ 25:72:12 32-01-3202 |
-| ffuts emdaer | e878462e816431ad158b2c86c61ac88187c75bac | 0020+ 40:12:12 32-01-3202 |
-| ffuts emdaer | f1949c4bc5bbb17ac398cc68b06ea9fdaa2c440b | 0020+ 85:81:12 32-01-3202 |
-| oediv omed yN | b5234a0a191203bd7a6af4c9db89a63b4c7d3513 | 0020+ 25:31:12 32-01-3202 |
-| oediv lepmeskE | cd0d2600dbfd39488f98573ae74e91fb626c5cd2 | 0020+ 30:01:12 32-01-3202 |
-| trokotnok mo spit rap tE | 590ef5d5bf9e94dda6a7bf525fbaa2ccff585e03 | 0020+ 21:04:91 32-01-3202 |
-| redoksutats åp redokevraF | bc76d4cfcbdd1c2e9078a7e6624b525625c739fc | 0020+ 64:65:61 32-01-3202 |
-| emdaeR | 9950c72de5d727535ead398a2aa05597710e7274 | 0020+ 53:62:61 32-01-3202 |
-| stniop gnilles yek emdaeR | da2703289de18cbef0867cd6eb3bff43ab1bfc03 | 0020+ 44:52:61 32-01-3202 |
-| enil xumt åp l dev seretadpo idlas itnok sutatS | c4f93dfa415a6a30dba15144e37843c4b363caf7 | 0020+ 71:71:61 32-01-3202 |
-| vm golegnahC | 66946a999aba401af9cbdfd62638e7611f03f9e6 | 0020+ 04:33:21 32-01-3202 |
-| miv go relanruoj lit sroloceurT | 01fe55a0e9a254c88a35098bbae6d2f4c0f25c89 | 0020+ 90:35:10 32-01-3202 |
-| esreviD | 43fe2da52765d057364b65c3baf2eae471b46d30 | 0020+ 82:33:02 22-01-3202 |
-| terecifilpmis - tpircs tluserdoirep tyN | 7b5731d38ce06f05c8f945f43e90f25d6add5301 | 0020+ 41:33:02 22-01-3202 |
-| tcudnoc | b5207f4dfca430cf0c07edfb3923e7db035d111d | 0020+ 52:03:02 22-01-3202 |
-| )tpgtahc tiderc( tcudnoc fo edoc lit tsakdU | 12f00a25364f7dd1f551edead9933329e57837f3 | 0020+ 63:82:02 22-01-3202 |
-| EMDAER | b664a65b54fd0df16329cdf028a1377fbbb74165 | 0020+ 50:62:02 22-01-3202 |
-| EMDAER | 706544e21be16fb2114e8d02181053276e769ae4 | 0020+ 42:32:02 22-01-3202 |
-| EMDAER | eaadc1e1fe5c5efb4b72312bce0d8a50d62ba7ac | 0020+ 81:22:02 22-01-3202 |
-| EMDAER | 07974e3fc3c93a5d0d6c4ffe96be3c3d1b7268f6 | 0020+ 62:60:02 22-01-3202 |
-| EMDAER | 64e7d6cfdf0242bbb1f77be656d9fa993b3ef19b | 0020+ 15:50:02 22-01-3202 |
-| EMDAER | ac2564ad8753cbdea2564aa1c1d93d5072230902 | 0020+ 22:50:02 22-01-3202 |
-| emdaer fa gnirdnæ | a075cf427fc368754cec3a70b35813af94b9ded5 | 0020+ 03:20:02 22-01-3202 |
-| setalpmet eussi etadpU | 9faad7128744f09344f974cd0f6d6341faf38846 | 0020+ 65:52:81 22-01-3202 |
-| gnitubirtnoC | 19e3d8291732e91891e4ada986a754ca67399c33 | 0020+ 95:22:81 22-01-3202 |
-| reton esreviD | 754e186e9aa8b82aefd73906557c4528f836600f | 0020+ 05:00:51 12-01-3202 |
-| gniretsuj golegnahC | 618cd9562f8bfe6c95f126b6078aa77e95999ba7 | 0020+ 53:75:10 12-01-3202 |
-| golegnahC | 9153504689342915e60bad7be46fa3ee991b2246 | 0020+ 21:45:10 12-01-3202 |
-| tgiditreldim tpircstegdub relbasiD | 8f752e4de89976eed0524095b75c3bddccef1252 | 0020+ 55:35:10 12-01-3202 |
-| lat fa tupni dev ecaps te retsat nam sivh eljef margorp ekki dal - gnirdebroF | 8be5d618b99f78664dd51402c5c597583bfb2444 | 0020+ 62:35:10 12-01-3202 |
-| baksngeredoirep åp gninter gilrutaN | 1d35b3b49cc766793451e683b68c071b3e63c7d8 | 0020+ 40:35:10 12-01-3202 |
-| golegnahC | 3886fc176a124883b33e5e1a2f49f5a96e38ea92 | 0020+ 35:01:51 02-01-3202 |
-| rednelak sgnidnib ooj | b23821eb496b99300089da19a097d62058b9c596 | 0020+ 14:01:51 02-01-3202 |
-| dem tegat reedi erelF | 872b7c2c18faffe0bf8e4907e09f86df3a4746ab | 0020+ 50:85:20 02-01-3202 |
-| golegnahC | b8fa2aa3f6684301f4bcf016472792997f8a35cc | 0020+ 10:73:20 02-01-3202 |
-| ednebøl serecilbup reedi ederetaler-s4N | d5ad3b6d37bda55c59d7718f93448958ae8ad71a | 0020+ 65:53:20 02-01-3202 |
-| golegnahc teretadpO | 64d909d26f08b2e26c05295b81bcdee62d2041ec | 0020+ 33:32:20 02-01-3202 |
-| golegnahc yN | 009d3684a8df33375933b8bb4256f2ce9aee9f1a | 0020+ 94:02:20 02-01-3202 |
-| golegnahC | 0c19d729f20a3f5e478dbe42c3abc48df5bb82be | 0020+ 50:31:20 02-01-3202 |
-| otad sgad lit merf go 10-10-0791 arf regat -  un ditla åsgo rah rekcipetaD | 9a4ecd887e8216988900f18366e6db21c7171a99 | 0020+ 61:50:20 02-01-3202 |
-| gnit ooj ne kon - esruclaC | 682ae384a3a7a0ca7ce460fc04991ecc90fddc9c | 0020+ 95:40:20 02-01-3202 |
-| tpircssgningerfasmoM | 809277895f5462580fc6b31814386e0a4df2e7ca | 0020+ 74:11:20 91-01-3202 |
-| tropxe vsc dem essem nak mos ngetlaiceps renrejF | 4ff66c07a971f4039551d22cc825c822c899f06e | 0020+ 13:11:20 91-01-3202 |
-| gniretroppar lit remmargaidegakgaL | d409e92adb644597af6ee6847c6cf95301efc9a3 | 0020+ 31:11:20 91-01-3202 |
-| regnintsokmo ella fa un - terdebrof strahc eiP | 1efcfe7a9b2f420c390e51d301f9ee40eabd18ef | 0020+ 74:32:81 81-01-3202 |
-| terdebrof noitknufsgninbå yN | 88de5af563a9990bc7e93e109f4376fe704790fa | 0020+ 33:32:81 81-01-3202 |
-| resaila eyN | c3f89ac3d76b0eebe68c2bf17f725399d6a6e535 | 0020+ 71:32:81 81-01-3202 |
-| vm gnirenopsidtatluser åsgO | cfa0a162a3fd22a02d497123b22986eb4e3b8504 | 0020+ 81:34:21 81-01-3202 |
-| tatluser trøfrevO = retfigdu go retgætdnI | f296f7312bf791efd648f854acde93bea7e3dfb6 | 0020+ 60:81:11 81-01-3202 |
-| devomer ?ti tegrof i nac woH | 0b77074861f53f6b47aefbedd95f1d5a9e903518 | 0020+ 42:10:00 81-01-3202 |
-| regap esu tnoD | b685b45934a5ea63505432d78775014a7cbc3b10 | 0020+ 74:00:00 81-01-3202 |
-| punaelc ffuts dlo | 8fb063f7b1597fcc303f0f1493d27cea3297c6e3 | 0020+ 23:00:00 81-01-3202 |
-| punaelc ffuts dlo | c4fd6d6314ff6dd77899926a3c95e3aa866ad02a | 0020+ 12:00:00 81-01-3202 |
-| gnirenoisrev tig dem reinil elmag gnindyrpO | 652cdd97ae8ea30e7c3a05e6b8b5824fb6449222 | 0020+ 42:45:32 71-01-3202 |
-| regap i enbå tmas ,ofni gubed tegon enrejF | 32ee375192fdcba65ce49ca202dfb9e9d20520d2 | 0020+ 12:24:32 71-01-3202 |
-| stnuoccabus elgon åp tuptuo telbud vag red ljef ilc-regdel ågmo ta rof tuptuo VSC dem etirweR | d49d6e7138dbd0eeca643b38c449a44ccd52877b | 0020+ 82:83:32 71-01-3202 |
-| tfiksedoirep dev tatluser trøfrevo esiv ekki revøheB | de75015b4667496f47b23a0851531a94f72fbecb | 0020+ 75:24:22 71-01-3202 |
-| edoirep fa gnirdnæ dev ksitamotua - tpircssgnintulsfasrå tyN | 4cdb392ece9bdc5af61a2942f5842d242529cc2a | 0020+ 31:04:22 71-01-3202 |
-| tnaveler ekki kon ås telbasid re tpircs - esletter erdniM | 6f5cd2e0aabd44ae82102a82038c9be0c09bd78d | 0020+ 33:93:22 71-01-3202 |
-| retfigdu trahceip - gnirdebrof gniretroppar - statS | 408e2f88b3d082fdc85b6de0c68b14671eb6b1af | 0020+ 25:62:61 71-01-3202 |
-| seitrohs gnitroper rorre | 231c903cffe6a05386f902df4cff2be4944964c0 | 0020+ 73:62:61 71-01-3202 |
-| sisabsnoitkes åp - relif nwodkram åp kirotsih erdeB | 2c74d8884be1a1049e6c35099426313361331594 | 0020+ 82:71:21 71-01-3202 |
-| sdaolnwod fo tnuoma erusaem - sknil elbakcart trohS | e0158494d9184891ff098cda07559429e5e4dc11 | 0020+ 25:01:81 61-01-3202 |
-| xumt dem kitamelborp hsom erdebdu ta tgøS | 513834fab9f1259177cb3ce69c78fbfc10a8267f | 0020+ 75:90:81 61-01-3202 |
-| nalpotnok tedivdU | 5da109bb2d9b37dbabe681a6eb81f48cb7a019f5 | 0020+ 92:90:81 61-01-3202 |
-| )egløfekkær tkerrok( tuptuo-ffid trabsæl ereM | 0a7a2ea892415402da929f630c8d46bdc7312bce | 0020+ 20:90:81 61-01-3202 |
-| gniretroppar skurtsnI | 8b0bd3cb609ea9ffe2d92a975af10c20379a9f52 | 0020+ 95:70:00 51-01-3202 |
-| xifknil | 9737bf6b912a57f0908a2a6d4782ff66c83e4858 | 0020+ 04:50:00 51-01-3202 |
-| xifknil | fa34f3ca2d4d6a3a47649f7991888c6d39871e38 | 0020+ 74:40:00 51-01-3202 |
-| lepmeske gniretroppar yN | c6242f1d3098867cf9fbeeb34eb407a4c9d97eab | 0020+ 15:20:00 51-01-3202 |
-| gniretroppar lmth esreviD | ac59ab21558f4a09ae8f9401b1656bfdd337115d | 0020+ 82:53:22 41-01-3202 |
-| tdnygebåp tropparslatelgøn rednureh regnirdebrof gniretroppaR | 83c997864a460e144fea78565129f5f702068aa4 | 0020+ 80:40:22 41-01-3202 |
-| ffuts emdaeR | 7ac15a62085e74730debd09fa94ae399f00ca27c | 0020+ 45:30:81 41-01-3202 |
-| niarb dn2 - ffutS mO | e2c48c125bfa95762ef4dbbdd2da57b5baa020be | 0020+ 45:61:71 41-01-3202 |
-| gniretroppar LMTH lit regnirdebroF | fd79624db45ab9d80ac9f4d1b15883a9778626ea | 0020+ 82:30:71 41-01-3202 |
-| 999 åp erediv tedjebrA | 6ef69ed15797f366109e35c734ac1636486e1d3b | 0020+ 21:30:71 41-01-3202 |
-| tenrejf tuptuo esobrev gnirdebrof pukcaB | 30ac3d91b64ab4caff890dc8c24790bde86626ef | 0020+ 25:20:71 41-01-3202 |
-| ffuts emdaeR | de51e235495d8bfb46bae59cf128c3ba5fd36de2 | 0020+ 85:45:61 41-01-3202 |
-| ffuts emdaeR | 2bad9cf2592f4dec8d8a66fc6a27e35e78fbccd1 | 0020+ 62:35:61 41-01-3202 |
-| redelliB | 92afd2496ad663f11f28c05aa8dffe6d0387363e | 0020+ 33:25:61 41-01-3202 |
-| noisses hss stohsneercs 11niW | 835c270f1cba6c9a397a5e89836e5425ffb85acd | 0020+ 90:05:61 41-01-3202 |
-| trokotnok gnilyts esreviD | 42d7e615759fabe49899710df063bc25b4359b48 | 0020+ 73:41:41 41-01-3202 |
-| regnirdebrof regniretroppaR | fb308b3acca4fe8f3036ca477a25ade4c0db9cb8 | 0020+ 20:30:41 41-01-3202 |
-| latipaknege åp redoksmom dev lesravdA | 4b1228abf89302d9a9caf05fc44b58de84faac2d | 0020+ 54:20:41 41-01-3202 |
-| skcirt & spit erelF | ee2e3f0f9aa32e3bdc063b058dfc826fb8663285 | 0020+ 02:82:21 41-01-3202 |
-| skcirt go spit lit evraf erdeB | 2e823e0176a7017cae378823f862b465b7514e36 | 0020+ 30:82:21 41-01-3202 |
-| regnirdebrof trokotnoK | 3acfd7f42ae08f8a0648a4d4e2bd4fbcc043216c | 0020+ 05:72:21 41-01-3202 |
-| temetsys lit skcirt go spiT | 2feaff3a4e4a33664fff00db3a443ee708bc8076 | 0020+ 00:30:81 21-01-3202 |
-| skcirt go spit tejøflit tmas , esletter pukcabgrob tdiL | b9b92379da4348e7711488c6d35953c1286f2bed | 0020+ 61:65:71 21-01-3202 |
-| cp swodniw lit evraf gilnev ereM | 967562936ee4d465e859d11024acc73f905b2eb4 | 0020+ 74:90:91 11-01-3202 |
-| gidnevdønu gifnocrotide | cd3fc3b2575ad8262de205993498a703137f0ae9 | 0020+ 75:95:21 11-01-3202 |
-| sneciL LPG dem tlebitapmok eræv tgilevigna elluks - snecil TIM rednu re ted ad SNECIL tdloheb - tenrejf ketoilbib LBU arf ffuts tgidnevdønu esreviD | e7c5afc8f9554f38cf757842ed4f1d7cade21e1a | 0020+ 41:95:21 11-01-3202 |
-| )reglæv edoirep - pd( p-tlA fa tettatsre - sesaila-edoirep egidnevdønU | 25b5e6744e844a5fe01fb98f1e49c4048830c3e6 | 0020+ 82:45:21 11-01-3202 |
-| gninsylpotkatnok terdnæ | fd290cd8c028b3e03c7bc80cbab8853cac40acfb | 0020+ 72:05:21 11-01-3202 |
-| baksnger renbå nam gnag revh pukcab ksitamotuA | 6a040f5fd3b0b98517f1232014aa7d12f91328af | 0020+ 65:94:21 11-01-3202 |
-| essalk arutkaF LBU | 7ca6ff10de4416e992e2434cfc49be024e5041b0 | 0020+ 21:94:21 11-01-3202 |
-| ffuts emdaeR | 906300a5cb710051b768b74f4af16b4aa26209f6 | 0020+ 02:44:90 11-01-3202 |
-| oediv retfe po rebaksnger lepmeske tettylF | bd2516a23ca451560fd4b244a7d5e99bcaace96d | 0020+ 42:04:90 11-01-3202 |
-| ffuts emdaeR | 2a39ddeb7c4a6500026900755d8377b0b38ca27b | 0020+ 65:71:12 01-01-3202 |
-| ffuts emdaeR | 3275f4c9c6a48265e099a114277e1afb0b056f47 | 0020+ 73:44:02 01-01-3202 |
-| ffuts emdaeR | ce682f133349b45f3cc127c5d90c91482aacbc4b | 0020+ 85:34:02 01-01-3202 |
-| emdaer | 8266e3a4c1cce85575a5bf088d3b74483bc17a4c | 0020+ 81:24:02 01-01-3202 |
-| cot | e2896c3b422e5eac551a601646ba58d469afbac2 | 0020+ 90:93:02 01-01-3202 |
-| cot | e97c0c13bd78e22836c2e3ecb07207287282fea3 | 0020+ 21:83:02 01-01-3202 |
-| elprup rofmerf ogol troS | 2324bb0bab82bd30aca522fa066d65a8f42b9ba5 | 0020+ 44:53:02 01-01-3202 |
-| segnahc emdaer erom | eb53c6f60ba5fbf0f37b23e8195cbbb4e719e099 | 0020+ 05:43:02 01-01-3202 |
-| emdaer | 2768526154bc4490e9b3679ac5da5b09dacc8ab6 | 0020+ 61:23:02 01-01-3202 |
-| ffuts emdaer | c4c91c1b77c77fa01050538fa9695d4c883f8501 | 0020+ 24:92:02 01-01-3202 |
-| fffuts emdaeR | a48a3b4c5b1f7ae1f2b2644ed2efd3f55ae8f78c | 0020+ 25:72:02 01-01-3202 |
-| neunem i tetsil re mos ejevneg tenrejF | 732d9159be6aeb5464103b896af96ee505eea800 | 0020+ 11:42:02 01-01-3202 |
-| ffuts emdaeR | eb9d3d03c9c15f2d0075cd2edc5679b2e79b7cd0 | 0020+ 62:51:02 01-01-3202 |
-| snoitcurtsni etadpu | ef1d3c769e144afbf04e4b049b5a353560b90836 | 0020+ 80:50:02 01-01-3202 |
-| ffuts emdaeR | 227f71cc476e493d1705c7a8155554b0177c036b | 0020+ 35:00:02 01-01-3202 |
-| ffuts emdaeR | efe3b9ad09a00f0d1c6edb8cb47fda0b784d1a3f | 0020+ 63:64:91 01-01-3202 |
-| ffuts emdaeR | e0613ae35198d48ceb6aac60200d3be0611836af | 0020+ 91:64:91 01-01-3202 |
-| ffuts emdaeR | fe3824b5a3e9344132d36da3ffe1bb4224731765 | 0020+ 80:73:91 01-01-3202 |
-| ffuts emdaeR | 9f9e8b320f89dde3b35540ad59821c2b365df394 | 0020+ 14:53:91 01-01-3202 |
-| ffuts emdaeR | e8f2385b1d68f7572f1ea69cff05d97dfe4ced40 | 0020+ 32:52:91 01-01-3202 |
-| ffuts emdaeR | 8417486fb548ba76ce190a7867007d7078870b8c | 0020+ 12:42:91 01-01-3202 |
-| ffuts emdaER | 2eb179f678cf4de2e83bc358abc8efe3b218b395 | 0020+ 95:22:91 01-01-3202 |
-| xifedoc | 623e4733685e1650e73c5809bf47ad640c40f3e0 | 0020+ 30:02:91 01-01-3202 |
-| xifedoc | ab43f92903a1487caffcba195b700ec6c4d18bc4 | 0020+ 52:91:91 01-01-3202 |
-| ffuts nwodkram | 98dfa761053f2bcd29f7306de0e893f893f1594e | 0020+ 33:81:91 01-01-3202 |
-| noitatnemukod vid | 927bf1da68a84c52b96b233dd89e9c3d3303f5e8 | 0020+ 15:71:91 01-01-3202 |
-| ...secaps | 1ff298291818d5245f55d3577e304561cdcd9827 | 0020+ 12:11:91 01-01-3202 |
-| xifknil | 05035118f38f037fee94d74d621f1224dce8a0db | 0020+ 30:01:91 01-01-3202 |
-| knil | 56293a6e2383216c75e58ca61b7bea3947450a33 | 0020+ 24:80:91 01-01-3202 |
-| tsuj | a5207ac9c73f3228779ebaa3e3481fcf39d6d893 | 0020+ 21:70:91 01-01-3202 |
-| hctip selaS | 6fa96725b2b468024db4bdef5d5a6a5c524deeab | 0020+ 22:60:91 01-01-3202 |
-| EMDAER lit regnirdebrof viD | 7e6eb62af888518907ef6ce31b9bfa94988e446f | 0020+ 70:00:91 01-01-3202 |
-| esletter erdniM | cfa030d92df6f295ea303c179080d8279494a67b | 0020+ 65:01:31 01-01-3202 |
-| noisrev-tsid arf tenrejf stats egilnosrep esreivD | e0e61ef693729eb50e19aceabba47b368516e44c | 0020+ 11:50:31 01-01-3202 |
-| esletter erdnim | b51d77b0d4dc18841e50e18c8beb1bd241ef3f21 | 0020+ 42:24:12 80-01-3202 |
-| tfikseinil tE | 2eb03a31cbe423d5455577da6af706b7331e5b91 | 0020+ 85:63:12 80-01-3202 |
-| oediv esletter erdniM | 8e6291aad3bce89fc121ea3d0f42e54b7be81742 | 0020+ 73:63:12 80-01-3202 |
-| tejøflit oedivomeD | d487290da959064a1512ecc20d91a2d603374e7e | 0020+ 45:53:12 80-01-3202 |
-| reggolyeK | 119681d7dacfe02a2a592719c8f0181028c774f2 | 0020+ 01:04:02 80-01-3202 |
-| tluafed mos rebaksnger eyn lit pircs 999 tejøf tmas - itnok eyn tejøfliT | 1383ceccc7350f7fbe5f02eacba747641b0766f2 | 0020+ 75:63:91 80-01-3202 |
-| regniretsuj nalpotnoK | e8075ff4b0177643f99c9a2b83967ef39382063e | 0020+ 15:71:91 80-01-3202 |
-| evisneffo enreg tmas nget 08 xam senutrof | 8f88722edf4f572c7c518822f5ef4ba9e0e0f1f0 | 0020+ 73:21:71 80-01-3202 |
-| rekkitsitatssgnintæsmo go ahsod rofmerf senutrof resiV | c490aa3e7907e308d77db8e6aae3af0392209304 | 0020+ 43:01:71 80-01-3202 |
-| egøs ennuk ta rof otas tas værK | ec38a6aad2ed3b25dca71611d257f459e5958f82 | 0020+ 44:24:61 80-01-3202 |
-| 5 rofmerf egablit rå 51 råg kcipetaD | 7e72fa75b2a104e327cb6c8ba76f3915fe01a980 | 0020+ 62:74:11 80-01-3202 |
-| lanimret yn fa trats dev tig arf etadpuotuA | d330c55bbe99169be6252da67c457f54d861dfb1 | 0020+ 74:40:11 80-01-3202 |
-| ffuts sesrucn elif yranib renrejF | e31ada26ec2ca8eb1ecb13d614f72fb55e5bab21 | 0020+ 81:65:01 80-01-3202 |
-| esreviD | f0141acbddef26f4b7e5107769448c1e4e1f9c1e | 0020+ 10:65:01 80-01-3202 |
-| reamet ekkær nE | c5a3ae6e7e705a6a60e36a582f0dedfb5cccbfeb | 0020+ 80:02:32 60-01-3202 |
-| ekki gidats rekriv - sesrucn åp tdil tedjebrA | 37b30985b224440f744662f2369791e30d57c568 | 0020+ 54:91:32 60-01-3202 |
-| amet tluafed tyN | a85222b3877f2c580d61e52c718f7edf383e54e1 | 0020+ 72:91:32 60-01-3202 |
-| noitkes yn dev noitcesbus ekki edellitslun - esletterljef erdniM | 7e61f604b77dac555c4266a93bd8b62b9359ab73 | 0020+ 65:81:32 60-01-3202 |
-| senrejf crhsab | 77d7b3dc2225729117236ffa4aaf429ae0b63a50 | 0020+ 82:43:12 60-01-3202 |
-| sgnidaehbus go sgnidaeh nwodkram lit nysneh regat elifffid hcuotiv ,tamrof elifgol ot nwodkram | 5bb0305371e24dba177e621be08fb5966d5ee853 | 0020+ 52:33:12 60-01-3202 |
-| renoitknuf erdnal erdna erens - stnetnoc teg elif gnagmo etsrøf - esletrokroF | 4ead10ab52678e64ebb3ed401acace019965dc07 | 0020+ 23:23:12 60-01-3202 |
-| kcap noisnetxe xobv mo ofnI | 2ff93d8dd031d1686cfb6ab0ea199aa7f166f496 | 0020+ 11:31:81 30-01-3202 |
-| tgiditreldim serevitkaed tpircssnoitallatsnI | a46f23a985c585aba71a3a116231d1938aacce0f | 0020+ 20:21:81 30-01-3202 |
-| emdaer lit ogol tejøfliT | b909d47623e8640e5aa9f9625204a537c5295cf1 | 0020+ 84:35:71 30-01-3202 |
-| kifarG | 4505448f3288450edcfd205a33ad64e1a4ccdb03 | 0020+ 61:25:71 30-01-3202 |
-| ffuts resopmoC | d71c02d4834ef297595d1772357a98c25d782b74 | 0020+ 41:53:71 30-01-3202 |
-| seicnedneped elmag - rodnev ttenrejF | 30d0a98de44d7ef28455dd1c9803a4d2beb29a46 | 0020+ 73:43:71 30-01-3202 |
-| deriuqer regnol on lqsyM | c9fdffcf4ad4d2513697ce9143289b78f6de049e | 0020+ 15:33:71 30-01-3202 |
-| litu hcuotiv ffidnwodkram lit tsakdU | 4c2bdef57a4175e1d89ce5dc852dc39721a3a385 | 0020+ 55:23:71 30-01-3202 |
-| devomer ffuts tpgtahc | 4a13af403553fbe2e647d586b74b62bbb5796a23 | 0020+ 20:30:01 20-01-3202 |
-| rotarenegtroppar i trøk je velb codnap - opyt | f11b3a24fdc280e656bec1e21560f406d2e82935 | 0020+ 12:10:01 20-01-3202 |
-| lun re odlas movles merf remmok ned rof ,tgiditreldim arf noitakifiton otnokljef rålS | 0bc58c8a4022a902882d70c4615de597f914ed32 | 0020+ 00:10:01 20-01-3202 |
-| tpircstegdub lit gniretsuJ | 75b33746842541569acc57b485409ee50b1e6c62 | 0020+ 64:00:01 20-01-3202 |
-| gningilnemmastkudorp tnavelerri renrejF | 8b3808a17dbb0d24d7f6da018720e1a10e32d61a | 0020+ 22:00:01 20-01-3202 |
-| dmc gniretroppar lmth arf ofni-gubed renrejF | 15f4721ba573b0f49ea462a8a129f50575b8e6f6 | 0020+ 40:00:01 20-01-3202 |
-| ffuts ronim emdaeR | 1f2cb87ec5f52ee02e219a12f90801f0c462c2bd | 0020+ 45:82:81 03-90-3202 |
-| VSC rdeV | 20707c2a8112ec74245be8c0044ba2f9ed7bfc98 | 0020+ 50:72:81 03-90-3202 |
-| ecnalab/trokotnok åp egløfekkær tettyB | 50b04511e109c08ec7b035929c8075c19cfcc2ba | 0020+ 50:90:81 03-90-3202 |
-| tejøflit relpmeskE | b99f5fb5cc71840fb1ef76e1d074374277963534 | 0020+ 73:60:81 03-90-3202 |
-| nak ekki iv davh tejøflit - emdaeR | a4193d9795d171091cddb598cee23f18247a2a74 | 0020+ 51:54:71 03-90-3202 |
-| gnikoob ortni dem lif emdaer gniretsuJ | cc2cb6b0187d4a3a5670391e5357ebfe2338085d | 0020+ 53:53:71 03-90-3202 |
-| EMDAER lit esletter erdniM | 2a9063b53976d28cda3ac980ef8812ec843e40fb | 0020+ 62:22:71 03-90-3202 |
-| sesiv ennuk ta lit derb rof rav gningilnemmastkudorp dem lebaT | 22d95e78ca5a97d34d1f6881af067f7f094e3f19 | 0020+ 22:61:71 03-90-3202 |
-| sknil xoblautriv evah åsgo laks RDLT | 09b4757a8ee522d78e6acb2ce8e92aa12629294d | 0020+ 70:41:71 03-90-3202 |
-| b1.0 noisreV | da036acd74ceb027460fc32c0a9ce02465e8b906 | 0020+ 64:01:71 03-90-3202 |
+| 2024-05-28 00:57:27 +0200 | e706023e0f8afbf454fc47de52c43a416b5859f2 | CarryOverfunktion implemented in dp(), removing from register |
+| 2024-05-28 00:56:37 +0200 | 270dd0592ba929028448ef396f1de30458a91fa1 | Going with past 30 days instead of 90 days for buffer |
+| 2024-05-28 00:56:22 +0200 | bbbad819a80564828d8152b16d2114c2130b8a11 | 💡 New Feature: Manual accounts support debitor/creditor |
+| 2024-05-28 00:55:59 +0200 | 8d8f252692e9921bcecd8d0b0ad827a42861e316 | Html report more dynamic - support universal chart of accounts |
+| 2024-05-28 00:55:31 +0200 | 0a2ba6aaf531ab1f35a33742c78f16185c0d56c3 | 💡 New feature - report with/without primo carryover amounts |
+| 2024-05-27 21:31:59 +0200 | 98d0504bfa5eb37dd50be51112b8801b328cbeca | 🐛 Bugfix: AmountCurrency Amount fix |
+| 2024-05-27 17:41:06 +0200 | eefb3fcb933cdeb0d59f9c940b730d8cfa40687f | Mindmap: Slight modification to html export target |
+| 2024-05-27 17:40:51 +0200 | e8d0eb91994376264c04b5a1406cedd3b1079c5d | A couple new accounts for the danish standard cahrter |
+| 2024-05-25 10:19:06 +0200 | ad799f0d72331e4bcc51fb49768c13de87a4787d | newl_csv fault tolerance and use tpath parameter |
+| 2024-05-25 10:17:41 +0200 | 765ccbef000bf958e1df7750ca415511f7bd188e | Statusline instead of cwindow for the helpful tips in vim |
+| 2024-05-25 10:16:24 +0200 | c9010d2cb664be7708c8e908f72f00881d0cb1c5 | Edit handler for accept suggestions, and new transaction |
+| 2024-05-25 10:16:05 +0200 | 590d7902d67ddd5e33b267ebc17be26c88896ecd | Boxes added as dependency |
+| 2024-05-25 10:15:45 +0200 | a5893136e84674969a5d3279a082058f768cb076 | different kind of stuffz |
+| 2024-05-25 10:15:06 +0200 | 365162b108ab710f88bf8040ba7de2cdd14dc3b0 | Vim tips updated |
+| 2024-05-25 10:14:37 +0200 | 1b96f22ea7a5b6546d26341f8e876403b2607eee | Abort when not picking from the available fields |
+| 2024-05-25 10:14:10 +0200 | c1ed61929fe011bb21fc68597811d54a7e8eef82 | More periods |
+| 2024-05-23 11:59:43 +0200 | c30a34655608e51a6cce24e9ae6b61631c5e24b6 | Sort accounts in register account chooser |
+| 2024-05-23 11:10:30 +0200 | d666f4db4a8383ae7f77bba009d2e0d231eb7520 | Changelog corrections |
+| 2024-05-23 11:06:29 +0200 | 96721f75c48d8eff7dd9a8275f2f2314877e6a61 | Add errror account and tax account to the standard chart of accounts |
+| 2024-05-23 11:06:09 +0200 | 6203f64002e266b5af458370023977d3c0ce15af | Improved transactions editor |
+| 2024-05-23 11:05:49 +0200 | a9b98bfd09b66f4914697a13a555219faaed7117 | Fault tolerance in skat export |
+| 2024-05-23 11:05:28 +0200 | d283ed693f2af665961b351fa6be63ef943e4b5b | Remove blank pages runs quietly |
+| 2024-05-23 11:05:10 +0200 | 44a23dbd41a3c9e1f180b91bea33ca50d9e3e3d9 | Vim tooltips |
+| 2024-05-23 11:04:25 +0200 | d3fd2c333145fdff0a4a16ae138ea9ec8ce9b749 | Some changelog stuff |
+| 2024-05-23 11:04:01 +0200 | a7edd0d003867d4afc051483c7beb85045c09f8d | Fault tolerance in mkentry |
+| 2024-05-23 11:03:40 +0200 | b50fb11dd8751ff406ce50d12d0d0d0477be2725 | Chose to report for just period or with carryover account values |
+| 2024-05-23 11:03:12 +0200 | e574198ea2ed663fd59abcb0bf2ec477bc3d8467 | Add sortinng option to fzf |
+| 2024-05-23 11:02:56 +0200 | c7696399a8d2e5f6eeb6ba163561fd3a32134907 | More date standard periods |
+| 2024-05-23 11:02:37 +0200 | ead5cade7f27064f44e757f130fd38c12da1ee81 | New alias for export accounts, and a shortcut... ! |
+| 2024-05-22 20:49:06 +0200 | d96be3e7569ce4bba3a1032b49edd3669f26e72a | Small change in changelog generator |
+| 2024-05-22 20:27:53 +0200 | 2521c227598c1c050081f9398df001432adc2bdc | Add a header |
+| 2024-05-22 20:23:19 +0200 | 805ce1fe038d0dc8ff3d8b124bbf979eab183a3c | Automatic questionarire improved with uids to match answers with |
+| 2024-05-22 20:22:31 +0200 | 8545e76c9b27df5b1dcb526fae2848ea51d3ca85 | Bugfix datetime format |
+| 2024-05-22 20:22:15 +0200 | 129aa3fe0d5969c994962eda217c2f94c08b0cc8 | Bugfix datetime format |
+| 2024-05-22 20:21:56 +0200 | ec8855c6429ef47476866709769a183d1317b622 | Bugfix: Fix date format |
+| 2024-05-22 20:21:30 +0200 | a5539fc4bd4e78ca8dbc9be40ce8d61c77cadc3b | 🐛 Bugfix: Error in date format |
+| 2024-05-22 20:20:58 +0200 | 550ecedd4256430406e13e665c8e800a7ab8b5e5 | New Transactions gets a UID and is NOT locked |
+| 2024-05-22 20:20:36 +0200 | d6c6709b6db1c6e8f9387bc89f968e6bd3a652ca | Exact matches in fzf viewer |
+| 2024-05-22 20:20:18 +0200 | d96526743b2db7d123f27a2d1279b8f9ea7798ff | Small cosmetic change |
+| 2024-05-22 20:19:58 +0200 | 63d425911e9a386dfbc9dbb8701a7ec06ded957c | Fixed dateformatting problem in history, added uid to new transactions |
+| 2024-05-22 01:12:12 +0200 | 7f21a1c879e0c22b83de58b3e20ea519f729cdc5 | Print filename of corrupted file |
+| 2024-05-22 01:11:52 +0200 | aacf70bcc26fa3f23cef1ea2b90673530a40e7c4 | Logging to own users logfiles |
+| 2024-05-22 01:11:29 +0200 | 6197f3a20b82d4a7cbf1939d0df048798123dbc1 | Make it callable |
+| 2024-05-22 01:11:13 +0200 | 49b05f83a2c0261dbbc3425a41b26a77d8cf0931 | 💡 New Feature: Easier transaction edit and add new transaction |
+| 2024-05-22 01:10:34 +0200 | 1aba6549cf7db4d835a746477147ca7d7de6c948 | A new alias for full journal, remove old stuff about Changelog, print shortcuts |
+| 2024-05-21 14:31:35 +0200 | 1a6ae56ada87e8f6f218996742ee6f45a402a353 | Changelog stuff |
+| 2024-05-21 14:31:10 +0200 | 3470df5ee5ec8a2e93e1763d0685ef223eb2d640 | Changelog stuff |
+| 2024-05-21 14:29:05 +0200 | 3283e59ac62307ff898a720cd4d943ebcff3558f | Gitlog markdown |
+| 2024-05-20 16:50:14 +0200 | 30fbbfae9728c524e7021fbdc3a4b2ca4348f17f | Readme text about video demo |
+| 2024-05-20 16:48:52 +0200 | 469bc975dd095af900580b8c1076eace57b36327 | Readme text about video demo |
+| 2024-05-20 16:41:30 +0200 | f82c6f9375d49880c6209cd4712a36dd8770500a | Linkfix |
+| 2024-05-20 16:39:43 +0200 | 512c8427679240ba9fbc643a1dbc0e31ff7b422a | Duplicaate line fix |
+| 2024-05-20 16:39:17 +0200 | 42970ae16246e4083f536471ba817078db155e6a | A demo video |
+| 2024-05-20 15:08:09 +0200 | 9771319122ce2539d26ef0ae5ac416cb82cae3b0 | Skat export improvements |
+| 2024-05-20 15:07:50 +0200 | b05a3510a4da0d1bf87ff173fca898846714971e | Fejlkonto export improvement and partial translation |
+| 2024-05-20 15:06:11 +0200 | d68bfd163dbfbd11472907f5058a8b2924d2344e | A couple new accounts, and a dupliate account number fix |
+| 2024-05-20 15:05:47 +0200 | dce5e331a4c121d704fe28bfc2345b93ec1fb030 | Support for some old transactions that doesnt have booking ids |
+| 2024-05-20 15:05:23 +0200 | 3ae0551d20fc6b9723eee44e7fec00c1117fffd8 | Fault tolerance |
+| 2024-05-20 15:05:09 +0200 | afd42d28b4a91d3a40b6f46ff460a1e1f04e48aa | 💡 New Feature: View all transactions when entering a transaction that is an opening |
+| 2024-05-20 15:04:11 +0200 | 969e9ae96a1089d8282e4e2908142c33d1ccc01a | Small lookup account improvement and translation |
+| 2024-05-20 15:03:50 +0200 | 4037527625dafa55af081dc144db2363875a4f84 | 🐛 Fault tolerance some key numbers will be missing in some accounts |
+| 2024-05-20 15:03:24 +0200 | de1fbffa2fdfb322b02d1997deb4119b3a5413ea | Some html/pdf export improvements |
+| 2024-05-20 15:02:59 +0200 | bd2e489ca91a832ef64578e9ef78d17cc3b56c72 | Fzf write to file, because some data is too big to pipe |
+| 2024-05-20 15:02:41 +0200 | 55173cec8afb05cfc917a435fbd0bcf693c96562 | Opening calc more reserved rolling accounts |
+| 2024-05-19 23:51:28 +0200 | 634dff40699dfa69dbf3527a95be4c5800c5be4f | Some terminal cleanup and tax report with mapping included in standard export |
+| 2024-05-19 23:50:26 +0200 | cb9af15fa97c5ceead38e29d3404dea1e882ee56 | Dont book anything outside the scope of the current period. Also check if no tpath |
+| 2024-05-18 17:06:24 +0200 | 62906243acd2935780c479fe0d625782af60b3e5 | Changelog |
+| 2024-05-18 17:06:05 +0200 | 2d0e5de29f8f9d000f3fbbf590ebe325e89ee70e | Improved booking function |
+| 2024-05-18 13:57:11 +0200 | e605886fccc1435987095d679f9408dae5e16a6b | Changelog |
+| 2024-05-18 13:56:57 +0200 | 9018a2203b2b207c73aeecbc2a663ce57708a4e4 | 💡 New Feature: Guide that allows to book specific or all transactions, and verify the book later on to see if any of the booked transactions has changed #blockchain |
+| 2024-05-18 13:55:34 +0200 | ddc1f193bcaa8348250bc7263cd20de79eb0e485 | Copyed and reersed transactions should not be locked or have a number |
+| 2024-05-18 12:26:44 +0200 | eae5fd69ac329c907feaa14d92548ffbf7ec9acf | Typo in error message |
+| 2024-05-18 12:25:42 +0200 | 236077bd3a97f4c5eaec52e6873a057e8741180a | Changelog |
+| 2024-05-18 12:25:25 +0200 | 719bd34233245848122d5f0767a47c5a0d369ae6 | 💡New Feature: Nicer balance with integration to register |
+| 2024-05-18 12:24:51 +0200 | cd1dc0fbbb2a6f433bf8c492726206c79b78ec1a | Nicer balance, and display relevant shortcuts on sr |
+| 2024-05-18 12:24:12 +0200 | 8e024d756c8301c866e956cfcb53477971ee95a4 | Take account as argument and add balance to the accounts displayed |
+| 2024-05-17 22:37:31 +0200 | 4d7dcca744b043b35b27830debca9816e10da517 | Changelog |
+| 2024-05-17 22:37:00 +0200 | b34c5c0a2dd2df3075c2657b0bf05904b9b0ee5e | 💡New Feature: More efficent account entry browser - with edit, copy, reverse function |
+| 2024-05-17 22:35:28 +0200 | 69e83a6032a362effadb6ce92cebd8b1b7355e39 | Autospørg fejlkotno questionarire css file |
+| 2024-05-17 22:34:52 +0200 | fa6dac861596b18578d7d81d37115c90b59faf4b | Files that are locked should be opened as readonly, check using this func |
+| 2024-05-17 22:34:30 +0200 | 2c9db01415466dd0662fafb48a8ef7b9c18e4817 | Fault tolerance |
+| 2024-05-17 22:34:18 +0200 | decacb79a58c06795f49be5851d6f01fab404397 | Changes to how locking transactions works, also implement the ledgerhack for correct csv export |
+| 2024-05-17 22:33:47 +0200 | 4b8cefbb6d61ffae5f71fa0381f8b7cadad2ace0 | Small improvements to moneyflow report |
+| 2024-05-17 22:33:12 +0200 | c76e8fc1fa8503cf1cb2f385835bd0b1f15feb93 | Why not allow ancient transactions for ancient accounts? |
+| 2024-05-17 22:32:51 +0200 | 1bc6814dd12a59d0481a9f6e98090285135228be | Color codes for search results - based on booked or not |
+| 2024-05-17 22:32:14 +0200 | e27ba4e147d78a75c78136baf502750adca29400 | ⇒ symbol as delimiter for shortaccs |
+| 2024-05-17 22:31:08 +0200 | 35530611fb0cecc0d3a3faa0f66feb7a71e3d787 | Remove nonprintable from fzf prompts |
+| 2024-05-17 22:30:47 +0200 | 0f09a9d993da8c920f67261e7b5744309827de23 | Add metadata to transactions that comes from a function like VAT |
+| 2024-05-17 22:30:21 +0200 | f5fb9d7def2a319d81ab93fd03d9bff1bf716188 | Datepick supports dates before 1970 |
+| 2024-05-17 22:30:07 +0200 | c8953954a5cfaf61fd2a9216b4bf4048c7d0c075 | Improved fejlkonto email questionaire |
+| 2024-05-17 22:29:47 +0200 | 0dab9d995e6ec1055d7520ffcc1fc08a562bf940 | Disallow edit of locked files in vim |
+| 2024-05-17 22:29:25 +0200 | a09b92356f4f28bf99849a9dc61124a4aeb09d47 | System should support dates before 1970-01-01 (unix time) |
+| 2024-05-17 22:28:41 +0200 | c5da0b92e4306fab00383b1327caef4f269b4e84 | Adding metatdata to opening transactions |
+| 2024-05-14 07:53:33 +0200 | 93fedd763f5004f0b7610db45e8808b195b76886 | Updated changelog |
+| 2024-05-14 07:53:14 +0200 | f948899ab81a458d6098dfcba16f3b1e7c7baa75 | Two new accounts |
+| 2024-05-14 07:52:05 +0200 | 8d2e88bd94607b6a2306982bc381f98a6a087dbb | Including credit and minor bugfix uninitialized variable |
+| 2024-05-14 07:51:31 +0200 | 9a4ca02a93cfe0b66425a66e06089c74c9d850e1 | Color output when doing entries |
+| 2024-05-13 17:44:21 +0200 | 9fec162c64654eebbdb8b2fc3b5bc46039c2d348 | 🐛 Fault tolerance and reporting for invalid date formats in ledger files |
+| 2024-05-13 14:42:37 +0200 | 0a13b8b5ec5ced1a0692ef6e1a88af16e8cfdfcb | Further shortening window names, for more windows on the screen |
+| 2024-05-12 21:58:19 +0200 | d99f73585cd4c24f3487d955c613878be24117b6 | Readme stuff about changelog |
+| 2024-05-12 21:57:02 +0200 | 42d97bb301765c109307d61e823ff2ad73a9ca8e | changelof stuff |
+| 2024-05-12 21:54:33 +0200 | 4f9761eaa13f018eefcf0b083384a91dfe7aaa8f | automatic changelog stuff |
+| 2024-05-12 21:51:00 +0200 | 8b74c825c34f5d89993dd55216505a2fa8a77442 | Changelog stuff |
+| 2024-05-12 21:48:00 +0200 | 9d073dd84fe6c95e993f8b1bc1682f4d3a81e280 | Changelog with updates about bugfixes and new features |
+| 2024-05-12 20:21:48 +0200 | ab6f96cd26ee0f69286dad7020ed525c863441d9 | New session manager stuff |
+| 2024-05-12 20:08:03 +0200 | f16cd410d00e179774ab585268afef5ed97af7de | Symlink to mail script |
+| 2024-05-12 20:07:23 +0200 | a838339fc531b2001b1d70b4f1d89eefb46ede79 | Textbased UI draft |
+| 2024-05-12 20:01:50 +0200 | a9de901665587e430a97f3d92eccc983050a7220 | 💡 New feature: Scheduled transactions |
+| 2024-05-12 19:59:27 +0200 | f71a49726e1957d512799dd20f40f3e19ba7b98b | Vim statusline fix - it was ugly |
+| 2024-05-12 19:58:59 +0200 | 94573669f636da78304ec95c8895f492811cda61 | New features and bugfixes in statusbar |
+| 2024-05-12 19:56:45 +0200 | 0bf743476d9649b3be7ebac2e424430c4f46fe21 | Prettier accounts in moneyflow report |
+| 2024-05-12 19:56:14 +0200 | d959812705e3bfe8982b4b13b076cd7ab3b7b221 | 💡 New Feature: Automated questionaire based on fejlkonto to customers |
+| 2024-05-12 19:54:18 +0200 | 262f47c2693aadb5a728e321fb7e31c03989c99f | Mindmap start func |
+| 2024-05-12 19:53:47 +0200 | 61a241ec390244380a05066562ea3250cea4b1dc | Menu entry for mindmap |
+| 2024-05-12 19:49:21 +0200 | 4fc27fa68422eb3e83cea8b0e2a818d49b31d591 | 💡 New Feature: Mindmap |
+| 2024-05-11 14:25:12 +0200 | 677152487641658f35d6eed661d942145c58c861 | Changed my mind - empty accounts not to be included by default |
+| 2024-05-11 14:13:51 +0200 | d737125be49f6f5b6ebeced100ec9cef6b5e30d7 | Reversing amounts for nautal amount "direction" |
+| 2024-05-11 14:13:25 +0200 | 75f96bbc0ecdc41e8ee97cfd7982ab7a25aaad09 | Translation - keeping this in danish |
+| 2024-05-11 13:21:38 +0200 | e9d5ad8a98418811585d0e7195b8b71ae0162f23 | Simplification of readme |
+| 2024-05-11 13:18:21 +0200 | 93c4fca13edcbc5def4f71ab3c67f0b16cf44938 | New question for fejlkonto available - Hvad er det |
+| 2024-05-11 13:17:18 +0200 | 75fb087e06ca2f3b335e96b4f0d723457d30d830 | Account loop includes empty accounts |
+| 2024-05-11 13:17:01 +0200 | b1633d613dbb56ca8d10133831a94ad9384f33e3 | Balance adjustment on primo date |
+| 2024-05-11 13:16:40 +0200 | 3cc2f8c2d67c986b02f8893f42fe1030ec9b9ab8 | 💡 New Feature: Moneyflow report |
+| 2024-05-11 13:15:55 +0200 | cf7f645e823406d066ec333b5630c10634b34d09 | Make result transactions "unrelated" |
+| 2024-05-09 16:05:52 +0200 | 17f1323aee1f4c03c4f8ef95b97c2ddc4c82576f | Translation of balance painter alias |
+| 2024-05-09 16:05:37 +0200 | 9455ea520162b91c023ef00bf3017c438526cfa0 | Show shortcut for help menu |
+| 2024-05-09 16:05:19 +0200 | 0ca718205f8251651b47063a5afec79d4ccf7f44 | Some stats bar stuff, and translation of colorizer alias |
+| 2024-05-09 01:08:52 +0200 | 742b016d1f176a92ffe678eb83e5eb4876a392ad | Work in progress, small step in interpreting the markdown files from json |
+| 2024-05-09 01:08:27 +0200 | eda80f4179a36e1fddbb0d2ff6ed5c7a4e612623 | Datepicker being used in other scripts, with different parameters |
+| 2024-05-09 01:08:00 +0200 | 98a05a25134e01813bbd93e84366e4070639b200 | 💡 New Feature - Export to danish Accounting system Letregnskab that expects format like E-conomic |
+| 2024-05-08 11:41:01 +0200 | 2d1db4bd5c568642e69d2856e954e505680e0ec6 | Add account adjusment function to the bookkeeping menu |
+| 2024-05-08 11:40:35 +0200 | a00556eb7352390284a216610e6512fd761fa5e8 | When searching, journals dont show rejected lines |
+| 2024-05-08 11:39:54 +0200 | 3ec66f55a907a3a1756c1b7400eb1accae28b2ab | Help function for custom vim shortcutz |
+| 2024-05-07 23:30:39 +0200 | 465a905b0b8920f9d058462faa72232bf5c6f847 | 🐛 Fixed Fault Tolerance in Date picker if none is selected, abort mission |
+| 2024-05-07 23:29:55 +0200 | f7eb716addc4ab51075785220e269d2b66e39b19 | 💡 Bugfix: Calcopening properly now respects capital reserves |
+| 2024-05-07 23:29:28 +0200 | e1432a95b32fbf7d12d1f7342286767a59506957 | 💡 Minor improvement of formating and calculation of bank reconciliations |
+| 2024-05-07 23:28:31 +0200 | 01b5a221529bc75429d49406596c37a47a8896fd | 💡 New Feature: Adjust the balance of an account to amount |
+| 2024-05-06 11:53:45 +0200 | 098ae27f16437c9e3653a61025f928ea58e75648 | Fedora based OVA |
+| 2024-05-06 09:52:52 +0200 | 3ab75f0899c6d248451b054081d5b75301e20e2f | About bank reconciliation |
+| 2024-05-06 09:47:22 +0200 | 3b29568233f567b6f8dee9449dc615b28928182f | 💡 New Feature: Fast reconciliation of any accounts vs CSV |
+| 2024-05-05 19:55:31 +0200 | 96e1b28203d2e849339c349a5a9b606af35f9dc9 | Skip invalid json files with only 1 trans |
+| 2024-05-05 19:17:14 +0200 | 6b94679dab6520318f255e5dca6e1f99ea7d25f3 | Better opening respecting equity accounts that are ongoing |
+| 2024-05-05 19:16:43 +0200 | 6b55a710d81bbbd8bc5ff07e59525d34063d92e9 | Cmatrix is displayed while generating reports, thus a requirement |
+| 2024-05-05 19:16:23 +0200 | 55349e73cd77aff93a04eb6e6fcfcc4a2cad1a95 | Webhosting added to chart of accounts |
+| 2024-05-05 19:16:08 +0200 | dfba3c40851f6904094bac3511271a28048f7d81 | Bank fee column for easier revolut bankfile import |
+| 2024-05-05 19:03:56 +0200 | b8412e96019ea90336aad165d3652c2c2a812009 | Add info about export done |
+| 2024-05-05 18:55:58 +0200 | 3a068667a52489531890562821d370058be5bf92 | 🐛 Bugfix HTML report tmp file hardcode fix |
+| 2024-05-05 18:53:35 +0200 | 42169875f14f416b5e669a6c40bee47dbb4cd225 | 🐛 Bugfix Prettyname included on top to ensure always available - htmlreport |
+| 2024-05-05 18:07:32 +0200 | 5ae8d7a71a05f61dd2163b8d79d5093f1361e871 | Readme = README journal |
+| 2024-05-05 00:23:23 +0200 | 3aae4ac8bb557732128a950b901b8ae7b5bcc4a6 | About currency |
+| 2024-05-05 00:20:20 +0200 | f2fb28d0c16857f3ffe5472b104db9c7cd6e1c2d | Make vitouch more simple |
+| 2024-05-05 00:19:33 +0200 | c3d3fde2d2b0e79de4b9cc1415e48cdff137dfac | 💡Sort results by date column when displaying matching journals |
+| 2024-05-05 00:18:30 +0200 | 3a0eb2cda240e1cd616e85d9540f4397dcdfe967 | 🐛 Bugfix attempt related to vitouch on fedora, make sure running same version of echo on all systems |
+| 2024-05-05 00:17:35 +0200 | 398b9eee855873dfa4e2a8972f560d95bdb47955 | 🐛 Bugfix Fault tolerance quick entry + unescaped unicode allows or searching non ascii based transactions like danish letters æ,ø,å, but also unicode in general |
+| 2024-05-05 00:16:30 +0200 | 5c3b7fdfba2f3061bcdf03ae20c4b8ca16bb3330 | 🐛 Bugfix: New private accounts symlink problem |
+| 2024-05-05 00:14:34 +0200 | 710615f39e61e2b8e9785ed795405afb6b6d541d | 💡 New feature: Support import, search and display for currency amounts |
+| 2024-05-01 21:36:59 +0200 | 33074ebf49eb2060558ff47f49d4cee3390decac | unescaping |
+| 2024-05-01 21:34:17 +0200 | 6f78a312b79549708fffa17a96328d94a4a1e4a7 | Improved logger |
+| 2024-05-01 21:33:17 +0200 | 98e1c480be9063e99bea0d6118872f1e0adf32a1 | Improved logger |
+| 2024-05-01 21:25:43 +0200 | 50b2e20a85dcc94329ae1b7231b82db0175defd3 | Escapeing quotes |
+| 2024-05-01 20:49:39 +0200 | 6c392e3385dba3a7cb9b1bcbe0ec01d468257801 | upd8 function |
+| 2024-05-01 20:48:46 +0200 | 4a133817940e8c582cc1f1a67ae77f861002d7db | pdf alias |
+| 2024-05-01 18:59:44 +0200 | 6595047f347ce21e9707bdfe5ff3bd49b74e81b8 | Ekstra file vitouch |
+| 2024-05-01 18:52:15 +0200 | b52c8b9c117ddc739f84a5c57a55d877087ea493 | Translation |
+| 2024-05-01 18:49:26 +0200 | e431f3f1c3c25c3c075acf3ce4a2768f213e6044 | Nonumber for n00bs |
+| 2024-05-01 18:43:23 +0200 | 54ae336312e82563ed576dd407a5d047324a5706 | stuff |
+| 2024-05-01 18:38:38 +0200 | c29d73e68ca943cdd511d5c5043aeaa7e08f0fd5 | tmux stuff |
+| 2024-05-01 18:16:07 +0200 | f3f91f9a2e958e54660a183541be37597a052eef | Show version in ps1 if no tpath |
+| 2024-05-01 15:16:19 +0200 | 346214d702c8ae5c690ebbeab15a96f5879a8787 | statusline stuff |
+| 2024-05-01 14:41:13 +0200 | 57be4bb5ca9c8659e6bee3626df59ccdcaeb5dd2 | Faulty logic rollback |
+| 2024-05-01 14:35:37 +0200 | 0ca1249a8789cdd8670773570731bc2d01308a57 | Sixel stuff, statusline improvements, faultsafe sr |
+| 2024-05-01 14:30:19 +0200 | 13af3fd664e53549be32974c4662ef700b3f4705 | Translation to english |
+| 2024-05-01 14:24:02 +0200 | 517ca2b76d8c4e2c117d43bb35565182dae92ced | Bugfix echo -e to escape newlines correctly on fedora |
+| 2024-04-30 19:18:04 +0200 | c5e6c206d492242e6345d776aa6fbe71d40daf14 | Enter time in new window |
+| 2024-04-30 19:17:46 +0200 | cdd0544f872a7570fb06b4c7c26323d4c7a1e0ae | Quicktrans - no ask period |
+| 2024-04-30 19:17:14 +0200 | 86e95256e743b34c66a5e9a6e9069584e041fc48 | Unicode bugfix |
+| 2024-04-30 19:17:00 +0200 | 78d1496fafa2ccda10f5ae6c84f6dd91014d189f | Periodeafgrænsning - htmlreport for fejlkonto |
+| 2024-04-30 19:16:32 +0200 | 4c9cfe60fa0887f2dd3bfbce15cf2d6f479ff1af | More datepicker options |
+| 2024-04-27 13:06:43 +0200 | 460cae6b60952b3ecd3e271e721ba74e175b2b0d | Very simple progressbar for html report |
+| 2024-04-27 13:05:45 +0200 | 51b0a8fbedf684e2e962e2cbcb847bbd0561868c | Script to export question list to customers |
+| 2024-04-27 13:05:19 +0200 | a138326bd5ec8fe8763486722591eed08fe75123 | Minor bugfix duplicate transaction program |
+| 2024-04-27 13:04:29 +0200 | 204b920cd8db88981703349098d6a3f4d810870a | Custom statuslinestuff + html generates fejlkonto list |
+| 2024-04-26 20:44:22 +0200 | 563d0bb3c97d2a4c6093f061455d5dc59afc9315 | A little readme change |
+| 2024-04-26 20:41:42 +0200 | 197295d32dc4ee7fa584468a18ad59a2969e7fbc | A little readme change |
+| 2024-04-25 13:54:47 +0200 | 1440c9088383507a0e1e0c2a412f89772627f093 | Minor bugfix dateformat |
+| 2024-04-25 13:54:34 +0200 | dae539807f209103fe28fa8b1d94668a73cabc53 | Minor bugfix in transfer equity |
+| 2024-04-25 00:24:38 +0200 | b88cf860be073a831a26914f971edb0971c68e1f | Adding spark |
+| 2024-04-25 00:13:51 +0200 | 8f28782d760c7d39a9348e21e4ed3e2552c37d51 | Quick duplicate existing entry |
+| 2024-04-25 00:13:24 +0200 | feb1c25e410034e048a84035717d79a75e0bb8df | Quick Transaction shortcut |
+| 2024-04-25 00:13:07 +0200 | 7cc699a6b18555c5fc13f44fe830bf1863f8822f | Pivots require colorless data input |
+| 2024-04-25 00:12:45 +0200 | 0b42d52a5cec0a5df9e1fafbe9e4abd9fb866f65 | Reset equity accounts on new accounting period, except reserves, capital and mellemregning |
+| 2024-04-25 00:12:10 +0200 | 9bceb6e4fa2c2fcaf096d1a988818643c580f06d | Warning about omitted future postings - small clenaup to make the loop fit one page |
+| 2024-04-25 00:11:44 +0200 | 25ddcfd08c26716c98571bf80c4d30453916a44a | Translation + bugfix tty instead of stdin to prevent pipe problems |
+| 2024-04-24 20:11:54 +0200 | b9bad31e182054343ddbfb98b45e6750182fcdca | Symbols i names |
+| 2024-04-21 16:04:52 +0200 | ebc1bf543eb89d2995e5e07c9b83071939cf6aec | Getting little help trying to revive the webinterface for php8 |
+| 2024-04-21 01:06:15 +0200 | c8f5f9632202445ebc4a6c06ccb526c97c50e82a | Handling of last symbols |
+| 2024-04-21 01:05:51 +0200 | 368c0dc1acd37e0aa51be78eb9f0d66c3d0b2dcb | Colorizer disabled for htmlreport and a small bugfix |
+| 2024-04-21 01:04:56 +0200 | 2f36d5f2c3edbef9db718d324d0e4572f9c2c993 | Bugfix empty description handling + symbol stuff and colorizer disable support |
+| 2024-04-21 01:04:18 +0200 | 597b92b327a57229a938ed57bf3bf7eed055a9cc | A little fault tolerance |
+| 2024-04-21 01:00:53 +0200 | b3a0cce5c48606642d89a38d7c04226fb5c9a1e5 | Typo |
+| 2024-04-21 01:00:19 +0200 | c0ca213e90b40c01169fd4410c05faaa3a296012 | Logic - dont mess with zero transactions |
+| 2024-04-21 00:59:56 +0200 | 37a697d051dfe6afc2e8f0fdfb132943642cd750 | Trying to revive the webinterface - guess some people like to use the web.... |
+| 2024-04-21 00:59:26 +0200 | 1a30b6f763906e1111aa646b6a1eb5f023d40104 | Ledger hack to print reference |
+| 2024-04-21 00:58:36 +0200 | 96b7613bd7b0443a13e0b92430f4ac98dcb5cf3f | No colors in the account picker |
+| 2024-04-21 00:57:49 +0200 | ac30390b2f4aa2fac8d3121d8e446fac02186c07 | start of making it 256 colors |
+| 2024-04-21 00:57:19 +0200 | e8f9dae2db8e072426ddc355db2b1a5177b0e212 | About utf8 |
+| 2024-04-21 00:55:24 +0200 | f3a34b1f4e6228e544f28a817daea40567048b9c | tmux-fzf & tmux2k theme |
+| 2024-04-21 00:54:56 +0200 | fca3112caeca6f5c6e47d1c53e3b93ac28e65364 | Custom stats and symbols |
+| 2024-04-21 00:54:29 +0200 | 842b7a29befe8c12c246aa4d7418b4154a7fdbcd | Barsel tilføjes til kontoplan |
+| 2024-04-21 00:54:08 +0200 | 187bcbaee2d7e1fb5696e7ad410f0f8303b000da | Lastsym mindre fix, - fjerner color escape codes til renteberegninger |
+| 2024-04-21 00:53:50 +0200 | 3b34d53de610c2768d0f15a093e3b2938fdfd4e5 | Journalviewer fix C-o |
+| 2024-04-21 00:53:13 +0200 | e60e4325940d598c9674827f85b64a1d659695fa | tmux-fzf |
+| 2024-04-21 00:52:25 +0200 | a1bb3ca71025539dec61a6847b8130ae0d6dd328 | tmux2k |
+| 2024-04-11 20:02:15 +0200 | 32bb3478e727d9b75e14c8a5eaac0bd861e129f5 | Unicode stuff |
+| 2024-04-11 20:01:27 +0200 | fecd286297985be4e533c491ff874b472a8f7ec6 | Flytning af lastsym |
+| 2024-04-11 19:58:31 +0200 | 9da36847b74abd06836dc80a55c5414524cfdd1c | diverse unicode stuff + sr fejlrettelse aliases es fil mangler i nye regnskaber |
+| 2024-04-04 16:04:33 +0200 | 6dbcb618910dc929523f5b450b24b62ef125b243 | Translation |
+| 2024-04-04 16:02:44 +0200 | 891bfc2d532e3216e48d3d3aa1d5076a9a78b794 | Fault safe stuff |
+| 2024-04-04 16:01:50 +0200 | 897c3fa9e225db57f75483670a026b512655a255 | Translation |
+| 2024-04-04 15:59:24 +0200 | 41531951551f431a0daceb8257675f9461b11eaa | English translation |
+| 2024-04-04 15:46:48 +0200 | 9b519fe5f95d6cfd620e12421bbc51ad36d78ae3 | Translation to english |
+| 2024-04-04 14:36:34 +0200 | bfa6821530024627a6a41c62b60b2145fc34675d | Translation fix |
+| 2024-04-04 14:34:45 +0200 | 21e54e5d3f01083b6c20a7e4c041f419d62c155c | Linkfixes |
+| 2024-04-04 14:34:18 +0200 | c041974be8a635f6485653ba47df710e2a2dce04 | Linkfixes |
+| 2024-04-04 14:33:54 +0200 | 895ce87b5ede987a16b8b69d1b3eed98ca86485c | Linkfixes |
+| 2024-04-04 14:33:12 +0200 | 26bfc81f977ca046e97a8caa7c87cc86a7c5d130 | Linkfixes |
+| 2024-04-04 14:31:22 +0200 | 470b136d38b57079c8f60fb9190dd6f48b397266 | English translation |
+| 2024-04-04 14:29:01 +0200 | 855dc802707332d62e9575d05380854de2121eeb | Minor adjustments readme |
+| 2024-04-04 14:26:35 +0200 | 82198606b615c819b1a5dddad09b78052f2c7323 | English readme |
+| 2024-03-30 14:25:57 +0100 | 99cb0ce9981dcef7b362c68405a187beda414035 | Logic changed files only show filename, not fullpath |
+| 2024-03-30 14:25:36 +0100 | e20053a74b85112f64e6fe4d47d814ff51408ec2 | Inline notes |
+| 2024-03-30 14:25:24 +0100 | d49821ca6f7d755a9e7c5b4c9438fd9077dae28e | Ansi colors simplification and renaming |
+| 2024-03-30 14:24:50 +0100 | 29f42867f6bbfe7de0cd1c508c35ffd086e2fecf | Video med kommentarer til reports |
+| 2024-03-30 14:24:24 +0100 | 5a9fa4556ee44966d3e8827e3a180b6b255d2e41 | Simplificeret ctrl-o visining af tidligere poster med tekst |
+| 2024-03-29 13:02:24 +0100 | 2fe29d19428fa19a4601978d39256e8c14e33c01 | Inline comments implementeret i colorizer |
+| 2024-03-29 00:36:46 +0100 | 54f243d2cb5a9ab0e828c6716cb0d472bcce52af | Allow users to open a temporary Dropbox Wormhole |
+| 2024-03-28 22:43:37 +0100 | 5beec8fb200dd3da0a7efb465612a8204110c8b2 | Smårettelser til bankimport script |
+| 2024-03-28 22:43:22 +0100 | bf3b671ca3ff948aef4179a1df39f64c9c2bb426 | Lookup account skal også understøtte farver |
+| 2024-03-28 19:31:27 +0100 | 8edf67a0ac485487fccc81d4df90dd6e8b18e0ea | Lidt fejlhåndtering på massupdater |
+| 2024-03-28 19:30:57 +0100 | b70d18e4a5e4f657a5ffc8df251aa971e1d2606a | Lidt fault safe stuff hvis der ikke er tages throwes ej fejl |
+| 2024-03-28 19:30:34 +0100 | 669c3d168be637f992de6fc387134d1374c0e95b | Mulighed for at undlade triming af fzf in/output |
+| 2024-03-28 19:30:04 +0100 | a118b65429c28719524a59e7f52e2e3fa6094888 | Hooker newl up på colorizer |
+| 2024-03-28 19:29:45 +0100 | 994f18a12b5187f432921fcd965b260799190d68 | Balance and account sheet painter added to menu |
+| 2024-03-28 19:29:22 +0100 | 97eaf252ea00e897f1124b109fc9a5b5ad6f394a | Videoguide til farvelægning |
+| 2024-03-28 19:29:07 +0100 | 17ec6ce1ee3a34f7a880cb74feaeca5d6a6d1ee1 | Forbedret color picker |
+| 2024-03-28 19:28:47 +0100 | 86ce69a0127af060775224dd212aaf662b60bfa6 | Mindre rettelse csv import, colorizer script references |
+| 2024-03-28 19:28:26 +0100 | 8ba83c57a2166bd9e3df67e0dcded8ed6adc543a | Colorizer script |
+| 2024-03-26 14:13:13 +0100 | c1d39bb5b2d3d790ff916b07da1d5ea5644412f8 | Alias mapning fixet så den ikke spørger efter samme alias flere gange i samme kørsel |
+| 2024-03-25 14:02:59 +0100 | 6ec8f9885eaf21105ee880eb9c54009ecdff6e0e | Lidt error checking i html rapporter for at undgå fejl i output |
+| 2024-03-25 14:02:38 +0100 | 4704751e1b13efa307d33ebf099276ddd0db6427 | Disable popup menu i nye sessioner |
+| 2024-03-25 14:02:21 +0100 | 93e3111a3d335bba0ab87bff8cfe51b4ff18ae43 | Tillad bruger at skrive mellemrum i regelnavne - erstattes med underscore |
+| 2024-03-25 14:01:56 +0100 | 2cefd14e34a40c1fc8a4c053beeb026f1da5900e | Forbedret sessionsskifter |
+| 2024-03-25 14:01:33 +0100 | f169890d9b817530d8530f04fac89fa4b8985c7d | kør logic efter csv import |
+| 2024-03-23 12:24:07 +0100 | 05f35758b412ed70f68421827643fa8fdefc5d0c | Indsæt uid på Alt-F1 |
+| 2024-03-20 21:56:02 +0100 | e6d824ccd7a7b6e95d18d1b8a341d7941accad92 | Ignorearchives possible cause of deltion problem |
+| 2024-03-20 20:48:46 +0100 | 3379d27c998850b152ada692d1023edaac29d044 | Unison sync script |
+| 2024-03-11 13:08:25 +0100 | a4a6490ea5ab96bc3a036ffdcfdb55f33a6b6b78 | Udkast til comments rapport |
+| 2024-03-11 13:07:51 +0100 | a5c83c4bf8b919a3e5b5f750c19507aabe749244 | Behøver ikke lyd på monitorering |
+| 2024-03-11 13:07:25 +0100 | bfe106be8bcbfbeeacd833aec65fde12b984c771 | Comments tages også med til comments-report |
+| 2024-03-11 13:06:46 +0100 | 50b44a94503d0c64fe21a1799744b37d64de768a | Lad bruger vælge sti ved oprettelse af nye regnskaber |
+| 2024-03-11 13:06:01 +0100 | 81163493ca48f1123d4f58d129a401769700e23a | En lille vim guide i bunden eller i toppen af vim vinduet |
+| 2024-03-06 19:53:26 +0100 | b565a2d1b116c7a74c2b8134a7de08abc9eb9363 | Mindre oversættelse |
+| 2024-03-06 19:53:07 +0100 | 1fb036d377708abd0089768812470b49fb728c23 | Viser nu også forslag |
+| 2024-03-02 16:20:12 +0100 | 227c8480fdbbe1fdd26b68a1d8bda474f4afeb7b | Forslag kobles automatisk på transaktionen |
+| 2024-02-29 21:52:19 +0100 | 3ba8d878170358539bc09ac6e7da9b953251e3e5 | Altid dags dato for tidsregistreringer internt #quickfix |
+| 2024-02-28 09:11:14 +0100 | 0ad29d7623a2085be1a2a4410ecd917eb9964469 | Askdesc gemmer forslag i hash, ikke kontinavne |
+| 2024-02-27 10:39:07 +0100 | 86cee603e3123fa1c01c62ed52d61592aabf88eb | Kontohash rettet til at indeholde alle konti på posteringen |
+| 2024-02-26 20:35:32 +0100 | 1e251a74d176027422afb6e3eccb19e26cebd22a | Data entry - nyttige forslag til hyppige valg - og forøgelse af seneste bilagsnr som forslag |
+| 2024-02-23 12:44:29 +0100 | bd7a32d1e31417f2d6b072109200b7b8bfe9347a | Xauth fejl ignoreres |
+| 2024-02-20 14:34:54 +0100 | ef4ec15bc5ae49d2ddb5cb2f5f5d316dbc91cacc | Bugfix: aliases virker igen i den nye ledger wrapper |
+| 2024-02-14 18:04:43 +0100 | f67dd86bc4f1749091b41ab48d88a18580a23314 | Script til hurtig op eller nedpriortering af sessioner |
+| 2024-02-14 18:04:13 +0100 | 5b8458324108a9d5d05272dd82c74a0d1254fcd9 | Sessioner vises i navnerækkefølge for mere optimal stackbased arbejde |
+| 2024-02-14 18:03:27 +0100 | 40e1c51ea162aa201a5cda2ad0e5677f7aa00074 | Mulighed for hurtig ompriortering af sessioner |
+| 2024-02-14 18:02:57 +0100 | 5844c1d6111674bdb5de0451ab029b603a1fd036 | fzf-baseret menu, ikke optimal |
+| 2024-02-12 18:14:14 +0100 | 4dc0cd83e28aed23d0c132db571a56ce2dae7c29 | Tillad at man taster komma i beløb, omforfater selv til systemformat |
+| 2024-02-12 12:30:39 +0100 | 5495e9de65d87d719f0561f266b367e270ae49a2 | Mindre fejlrettelse i søgefunktion |
+| 2024-02-12 12:30:23 +0100 | 4f9adb857fc52a808317d7e23e3349ab0db386d3 | fjernet debug info |
+| 2024-02-12 10:56:24 +0100 | 75eb0d59cdedf77f669ee4f925347bc999eb95cd | Ny konto virkede ikke #bugfix |
+| 2024-02-12 10:56:00 +0100 | a7027270d9513f2668c7a657b6adfb2ae076aa0e | Notenavne printes uden prefix |
+| 2024-02-09 21:30:15 +0100 | 7ac5d99aca7a5d2641255a0989e12fcc9c2aa885 | Fjerne outdated funktion |
+| 2024-02-09 21:29:45 +0100 | dde0bd44c57415f4d19c8bf6fbb2af562fabfaad | Ved kontoopslag tages konti fra alle perioer med, ikke kun dem der fremkommer for perioden |
+| 2024-02-09 21:29:09 +0100 | 77922e5e27d53c6007805fdfb121b67d395b7ae0 | Påbegyndt newl omskrivning af søgefunktion med fra key.php med diverse forbedringer |
+| 2024-02-09 21:28:25 +0100 | fdd0e77816121e951edf12422e19a81285d720e9 | Åbningssymbol ændret |
+| 2024-01-21 18:45:33 +0100 | 3de5bbca6e7853eecbba2b2e6311716f8bcca545 | lookupaccount skal ikke vises aliases, kun rigtige konti indeholdende : |
+| 2024-01-21 18:45:07 +0100 | bc8d461a3b4d6d3118a4e40a2c88c80f83d083df | Mindre Fejlrettelse |
+| 2024-01-21 04:35:41 +0100 | 50e2fcd095491c807220cb8b1c0f0e650301e07a | Udkast til ny fzf-baseret regnskabsmenu med indtil videre gode og nyttige views |
+| 2024-01-21 04:34:42 +0100 | 5a5687d84e1c0282ab3dfacf789b41c86dd9e83b | Script til hurtig tmux session |
+| 2024-01-21 04:33:43 +0100 | b57bee2f9622673e89c21b0a39f5a8c86ffacec6 | Tilføjet ny regnskabslæser beta i menu |
+| 2024-01-21 04:33:23 +0100 | dce505060d0a59008c90757ad072b04c3469e55d | Brug af unicode symboler til at vise transaktionstyper - kladde eller bogført |
+| 2024-01-21 04:32:52 +0100 | 4601b1f8f78acd9ad4bf8173ee1af29def5a1bbb | 2 nye aliases: bookledger & nmenu |
+| 2024-01-21 04:32:35 +0100 | f11ea6c45155be570df356247633e42218cce4c9 | tla sortering udskilles i seperat funktion for genbrug - tla = top level account |
+| 2024-01-21 04:32:00 +0100 | 026d2467d9269ca00f81ba2581a9842488940a91 | Åbningsposter laves seperat for bedre sporbarhed af sammenhængende poster da de ellers bliver koblet sammen - kobles nu blot sammen med overført resultat |
+| 2024-01-21 04:31:07 +0100 | 59018b7291835da8a6b021692fc59d0ae318b05a | TODO: Fix this temporary hotfix - couldnt lookup the global var for some reason |
+| 2024-01-20 22:39:59 +0100 | 08b8970e7b2e745945b7fe7bcc0ce14deec189fc | Sortering genvejstast ændret, åbne poster rettet typo, bogfør kladdepostering ny entry |
+| 2024-01-20 22:39:09 +0100 | 5f305a9ef690aaa1089185ae4511133500e09530 | Forbedret bogføring visning af antallet af bogførte poster mv |
+| 2024-01-20 22:05:52 +0100 | ba6efed8008cf9fb09682364e05e7dbfdd195915 | Anderledes visning af readonly filer |
+| 2024-01-20 22:05:40 +0100 | 3dd37b042120d8d5c1db70ff2af496c3a9894c50 | Selvom der er blockchain hashtjek af transaktioner skal man stadig ikke kunne redigere bogførte transaktioner - låses nu |
+| 2024-01-16 20:29:09 +0100 | 5953292d1046bea78af8b459045acdc23658b8bc | Yacc bruges til at kompilere tmux |
+| 2024-01-10 12:05:31 +0100 | c0330e7e25a660781d9dfa7d627fc6798b3d28f1 | Forsøger at revive webinterface |
+| 2024-01-10 12:05:04 +0100 | 72356a9c2906e45b15b27891e01991707caea513 | Duplikat fil ændres til link |
+| 2024-01-10 12:04:41 +0100 | f50342c4e65928da24e267dac2ae4be9de96388d | Vis i rapportering om der er tale om budgettterede tal |
+| 2024-01-10 12:03:55 +0100 | b8462fb9004188792ad5582368225e138f851c8b | Mindre rettelse header i double quotes |
+| 2024-01-10 12:03:20 +0100 | 1640240c98b8cb499b7a63929d1082bbf51ad3f3 | Kontomapning - vis hvilken konto det handler om i whiptail dialog |
+| 2024-01-10 12:02:29 +0100 | 0fd91c4f656ff71d918f094a7e1ff009d72bf8d6 | Mindre fejlrettelse - CSV Import - forslagtil kontering |
+| 2024-01-08 10:28:32 +0100 | b412e7933615bf4ee7eef94d375b6ffec7870195 | Session skifter - opretter ny session hvis ikke eksisterer |
+| 2024-01-08 10:28:19 +0100 | e5e2bd79ab5005fdc1b387f56df7e265d326b77b | Default er i år - datepicker |
+| 2024-01-08 10:28:06 +0100 | 2d0d87d815d9e680776738259041ce5c209a3499 | Mindre rettelse til lookup account |
+| 2024-01-06 18:50:08 +0100 | e0a054a6fd88e29189cf9b59dc71ec052d10320e | Periodens resultat i egenkapital skal også med i resultatposteringer |
+| 2024-01-05 09:58:18 +0100 | eabdf03f6b5182f7c9f9316200028c5c453d5d85 | Forsimplet lookup account |
+| 2024-01-05 09:58:03 +0100 | 8dac29c851c98074dc67b1b4d8e483d66a60948c | Errorhandling |
+| 2024-01-05 09:57:09 +0100 | 18a381db5f1009a15013ba2e2173902fd3200a8e | Standard-export deaktivret midlertidigt da det kræver kontomapning - omskrevet fejl funktion |
+| 2024-01-01 23:36:08 +0100 | 08141decefc41410ff2b49006ba970029caa87a2 | Dependencies |
+| 2023-12-30 01:04:22 +0100 | df644ab409b266f5ec69792ede319e9a23806842 | filefilter udskilles til genbrug i andre scripts |
+| 2023-12-30 01:04:03 +0100 | 47dc1524369deed1c3466e72a3e22b97a6cacf48 | Der rundes ned til 2 decimaler i budget |
+| 2023-12-30 01:03:40 +0100 | f3e612f9dee0d25b1092fdeb069672212d4a185d | Forbedret csv indlæsning og standardisering af lookup-account |
+| 2023-12-30 01:02:55 +0100 | a812065b8d8359dedfcf5042e9c13863132e91cd | print_array udskilles til separat fil |
+| 2023-12-30 01:02:30 +0100 | ccb8fcd40dd649f6aaa8667e91de0988527d8091 | Header funktion udskilles til genbrug i andre scripts |
+| 2023-12-30 01:01:14 +0100 | ba51c6c4d1718bef23f68fb50d4c620629149550 | Forbedret csv indlæsningsflow |
+| 2023-12-30 00:59:10 +0100 | 7715e74003f0b0099f1591a3a4a2eeefda989e49 | Der blev efterspurgt musesupport genaktivering #såladgåda |
+| 2023-12-29 13:18:48 +0100 | 77606811ad0b80ce6f2fca575c1a544320d51e38 | Diverse readme stuff |
+| 2023-12-29 13:16:10 +0100 | b2d4df4ccb3efa30f7337b835415b02b9cd75cd7 | Diverse ændringer i README |
+| 2023-12-29 11:10:23 +0100 | a3390087fee8ba6cf5b0549bf074b153e9b46023 | Gøre readme mindre |
+| 2023-12-29 11:08:30 +0100 | 199f9e869c3b92abfe868d950f471ca5d48c4d6c | Formattering |
+| 2023-12-29 11:07:51 +0100 | f01ecf629b3a579698ff83c5c341627fee39ca29 | Mindre typo rettet |
+| 2023-12-29 11:07:03 +0100 | 8bb52f1e7af2041b24eb254685bab87c03801f43 | Lidt om fri software |
+| 2023-12-29 11:05:19 +0100 | b51cef1e7c363ca2921189eac50f3b23afc06c4f | Om software frihed |
+| 2023-12-28 02:11:22 +0100 | fda0b653994f84fbfa912afb9aee3358da5799ec | System update video |
+| 2023-12-28 02:04:27 +0100 | 156483e725aaf45ff83260087d2245d18954361b | Om fremtidens regnskab |
+| 2023-12-28 01:56:46 +0100 | 9c39fdce7714c748edf2f8b623830c7e69d791b9 | Diverse forbedringer til det rullende budget |
+| 2023-12-27 22:57:37 +0100 | 85117759e865e7b709eef713f91ff503ebb1e304 | Lidt formattering |
+| 2023-12-27 22:55:30 +0100 | 0845c9c87790908747897be874226cd7514071ee | Om forecasting / rullende budget |
+| 2023-12-27 22:54:20 +0100 | b67d3be0ff119b2ef1d5b2ec4dabb0a48c987f4c | Rullende budget med gennemsnitstal kan aktiveres fra regnskabsmenu |
+| 2023-12-27 22:53:52 +0100 | c234388799ecee1ad8e0e48307d5992d85dfdeff | Nyt menupunkt: forecasting / rullende budget |
+| 2023-12-27 22:53:23 +0100 | ede3ffb47b104dc9793954268a823f7014a75b70 | Rullende budget alias |
+| 2023-12-27 22:53:12 +0100 | dd6f0bad33f86b3ba4d161eb57c9edfeda70810b | Understøtter budgetfil ved automatiske rullende budgetter |
+| 2023-12-26 20:05:03 +0100 | 9681df171b01139125b3325b33520e601f1a7c5d | Musesupport fjernes, er ikke hjælpsomt |
+| 2023-12-26 18:04:48 +0100 | 8bee110d82bde9bfec903856270a2ff06e91f419 | Om bflov |
+| 2023-12-26 00:07:00 +0100 | f47c0b845f7d4e3aa4a3f141776fd9e7052771fa | Om momskoder og mapning |
+| 2023-12-26 00:05:20 +0100 | 8e16a24b996b151408d6756a895f36624a244703 | Tilføjet flere konti fra Erhvervsstyrelsens standardkontoplan |
+| 2023-12-26 00:05:11 +0100 | b9e16da5efa7d46d52c0064d5d8d047dc71e4389 | Standardkontoplan export |
+| 2023-12-26 00:04:54 +0100 | ce570f250110c48b77c92a8e114612bc094306b8 | Forside + diverse andre ting til skat export |
+| 2023-12-26 00:04:30 +0100 | 91f3d57c12b03e342fd980f3296112e1076cfada | Funktioner udskilles til global kørsel |
+| 2023-12-25 17:02:35 +0100 | e2ddfd36d8bf8108045cfd5a848dcde7b828a461 | Kun numeriske konti tages med, nulkontrol burde afsløre evt. differencer |
+| 2023-12-25 17:02:00 +0100 | d1efd64e3e1e5c1515a955de0fa2f1d990aec085 | iy & iv erstattes med iy-eu, iy-abr samt iv-eu, iv-abr - udenlandske momskoder |
+| 2023-12-25 16:49:01 +0100 | 2f5b470ac146ecb256f8af2f1bdd6f7cc2c847c9 | Gettags udskilles til global funktion |
+| 2023-12-25 14:11:53 +0100 | d29b795d5db76e688f82b2347dce50adb584203b | Forbedret skat export - numerisk kontoplan export 🎄 |
+| 2023-12-25 02:42:02 +0100 | 48b66353c65ce84f505d0583744e8a49c42055c8 | Nu med kontoudtog - trænger til lidt finpudsning |
+| 2023-12-25 02:12:24 +0100 | 6e5f80c456e0082668ce72a9002f5e5c6e6945e8 | Mulighed for eksport af saldobalance der følger erhvervsstyrelsens standardkontoplan - obs tilføjet 2 klasse a konti til kontoplanen mens vi venter på erhvervsstyrelsen |
+| 2023-12-25 02:11:56 +0100 | 93938cb42017664df03b88d49c72a5f1cafb9292 | Ja til alle forslag implementeret samt lidt failsafe stuff |
+| 2023-12-25 02:11:27 +0100 | ccfd425fa1fc783200c1714872926656e899acc8 | Mulighed for kørsel uden periodisering af driftsposter |
+| 2023-12-23 22:48:06 +0100 | 0cc4e4f0ba63ac18411b5473fcb291a2edcfa5a5 | Punktopstilling |
+| 2023-12-23 22:47:05 +0100 | ec9815314968b1cc0dad4f234e5f8a41e08cc90c | Embeddede asciinemavideoer for langsomgt - fjernes |
+| 2023-12-22 01:19:21 +0100 | 456312deb26d60bb7d3906422a5cf2748ab721a8 | Tekster trimmes før sammenligning, samt der gives advis til stderr om poster der matcher over 50% |
+| 2023-12-22 01:18:43 +0100 | a08d1f4ce1b015ed9b7baec9a9c79fb26ed97925 | Aliases fil opdateres nu ved nye stillingstagen, kun nødvendigt 1 gang pr kørsel - samt whiptail warning når matchinb begynder |
+| 2023-12-21 12:30:43 +0100 | b0ecbad1142a057bc52b68bf4f721a08b33e7bf4 | guide bruger i oprettelse af manglen kontoaliases |
+| 2023-12-21 12:29:46 +0100 | aeba0e1a8fd74ce5fae2d0f66bf3d1e1ee3f26cd | Updatealiases alias til opdatering af kontoaliases |
+| 2023-12-21 04:47:49 +0100 | 0415abc04d321c9ae09b80fffc2daf10c1dfb73d | Ved ingen matches, exit loop - mindre fejlrettelse |
+| 2023-12-21 04:47:20 +0100 | 3b06be5a39c76cdf5ba9f27b1da96ff1949878b8 | Efter csv import spørg både efter udligning af åbne poster samt efter forslag til kontering |
+| 2023-12-21 04:42:33 +0100 | 6c0d4f92ac8c54584c0d994cb447569688c2397d | Menufarver vim fikset - samt tilføjet tmux menu til vim - hjælpemenu til nybegyndere |
+| 2023-12-21 04:42:01 +0100 | e03606712d9e690230154357b42b00d363775f2a | Periodresult fjernes fra nyt regnskab, da det er bygget ind i newl. CSV funktion spørger om man ønsker forslag efterfølgende |
+| 2023-12-21 04:41:23 +0100 | faaf9a4708e8ad68eb823590b96f50509cad8767 | Hjælpemenu til vim for nybegyndere |
+| 2023-12-21 04:41:03 +0100 | e20af968a2ff644f8fadbb57df12f41b670af968 | Automatisk forslag af konto udfra posteringstekst |
+| 2023-12-21 04:40:16 +0100 | 40388062f2b9d6b5eedc33107e8ab1c44ad71827 | CSV import tekst sanitizer forbedret |
+| 2023-12-21 04:39:51 +0100 | 557ec82c42695ef51ccac6e91e58b4f8e08614c1 | Flere konti kan nu passes til pivot, før var det kun 1 |
+| 2023-12-21 04:39:37 +0100 | 12c907db071feaa510fce7b11efae04eeab167ee | Restsaldo vises for hver afskrivning i posteringstekst |
+| 2023-12-19 22:52:43 +0100 | 29f75c1ffba4483c47d53f4b1ca95c3e9e140467 | fzf search size |
+| 2023-12-19 01:45:32 +0100 | b8e57230e0e188f71d47b5dd010b769a7eb10b53 | Xml OIOUBL faktura ind |
+| 2023-12-19 01:30:51 +0100 | c0e9fb1b376a9991860cd27ea4403dd4396fa879 | Første udkast til keytables til regnskaber |
+| 2023-12-19 01:30:26 +0100 | a71f16c0190d6879986aed640ae95a5ae275760e | Rewrite funktion implementeret i newl |
+| 2023-12-19 01:30:04 +0100 | d1729f3c83b4a20c071acf94482e344d1d4531bf | Diverse fejldetektion i key.php (som er deprecated) |
+| 2023-12-19 01:29:45 +0100 | 82425e2dcf02cbe1274fd2bb27d5688039088e9b | Fikset problem med flere konti med samme navne i noter, flyttet rewrite funktion |
+| 2023-12-19 00:50:25 +0100 | 9696be96214166c83989c4781d2c320a043256b5 | Ændret konto for periodeafgrænsningsposter |
+| 2023-12-19 00:50:00 +0100 | 5e6d21489a77fafc186d011e51096fcb994bd41a | Omskrivningsfunktion - anonymisering af konti mv til eksterne interessenter |
+| 2023-12-19 00:49:33 +0100 | 1a19030189d1d93a6a5c236e669cbbc9514689c1 | Skriver uddata til stderr fromfor stdout |
+| 2023-12-18 00:06:16 +0100 | b4d79fccf5fc1c20d7b0e99610eb28d4850df8c4 | tags |
+| 2023-12-07 23:09:17 +0100 | a10b21322c04867b23f6806db4eb6e482d0fbc14 | Rette afsnit |
+| 2023-12-07 23:08:30 +0100 | c8b722860377c5733301ab240a02fc0f7cd7bde5 | Mere om hastighed |
+| 2023-12-07 23:08:07 +0100 | b3b2e293624c8d36af3532c187193691d13b28f7 | Udvidet standardkontoplan for virksomheder |
+| 2023-12-07 23:07:23 +0100 | 127d1780273aa9dc899e0b5d377298c3f2c070ef | Logging funktion |
+| 2023-12-07 23:07:10 +0100 | 3d83e15253b2deae1fef00e554c80f0061bc03e5 | Tager den globale kontoplan med i opslag nu |
+| 2023-12-07 22:14:04 +0100 | 8cb6f6d7a08c2a97f2bc0ae2d9110d00a2b0763e | Noget om renter |
+| 2023-12-07 12:33:37 +0100 | 90e4a3aba2f4a5618877f6b2c39e0134d2b55ca7 | Om periodisering |
+| 2023-12-07 02:25:29 +0100 | eb50d53ce954d2dbff285eeb407942b62a911ac0 | Farvetemaer |
+| 2023-12-07 02:23:18 +0100 | 62678f3a45736788330d69e4d1999c094ec2dd3a | Readme opdateret med logning mv |
+| 2023-12-07 02:22:57 +0100 | 50c874d0af454a57e3b0fc83941fc0886c1ed208 | Automatisk logning af kommandoer inde i regnskaber på bruger niveau |
+| 2023-12-07 02:22:11 +0100 | 60eaa6674b0ff02b738527f75c267e4cdeaa4bbd | Deprecated |
+| 2023-12-07 00:55:36 +0100 | 151d04b69c76d62baac8f1dfe3f8c70ea2100398 | Vedr blockchain hashes |
+| 2023-12-07 00:53:33 +0100 | 71ed3975596dea4319955b1f92616cc74dc5dda3 | Flere funktioner |
+| 2023-12-07 00:43:10 +0100 | 82e60f5b32506f84d778b5debb30795a6870f919 | Screenshots rapport |
+| 2023-12-07 00:41:30 +0100 | 9acfa23cfeb50572a5e48db79186e16a432cefc9 | 2 screenshots |
+| 2023-12-07 00:37:51 +0100 | 69d922268f84d9e03a6f17f72aa49e7cdad3fd76 | Mindre kosmetisk rettelse |
+| 2023-12-07 00:35:21 +0100 | d268905fe84e6170c576b2b9a00e3ded3bb08e0d | Simplificering af readme |
+| 2023-12-07 00:30:21 +0100 | 9ffe67ba74b35632465f851ddd363d2ed6fae3d2 | Flyttet lidt rundt på sektionerne |
+| 2023-12-07 00:27:33 +0100 | 6407e5af1ec6f5ba1af89e5740878cab074be3e5 | typo |
+| 2023-12-07 00:26:05 +0100 | 91b598836afc1c87f065d6bceca4436b3e5c688c | Mindre kosmetisk rettelse - linieskift |
+| 2023-12-07 00:25:34 +0100 | 67efb1e2300d9631cd4ce837b937549e8cbbc1d0 | Et linieskift gør det pænere |
+| 2023-12-07 00:25:08 +0100 | c0930f96dd7dc42a7b5ad36a43e5a5a95ba63271 | Vedr eksempler |
+| 2023-12-07 00:21:36 +0100 | 723ba2177981676365c2def8bd7ba777ba03a353 | Eksempler |
+| 2023-12-07 00:17:26 +0100 | 5c7c5b3b8c261a65629cf5244fe0b6564165c75a | Fjerner logo helt |
+| 2023-12-07 00:15:54 +0100 | b8afd202dd524a1768cc3ae47d3e5c21d767c9cf | markdown syntaxfix |
+| 2023-12-07 00:14:25 +0100 | 34ac7b36e2d516008d451f4df7dca20696e535b2 | Centrering ikke mulig - back to normal |
+| 2023-12-07 00:14:10 +0100 | a9c2ad6864d35445647ac773a9a04189823f4c62 | Centrering |
+| 2023-12-07 00:13:47 +0100 | 9982aef8504c3a931f0fa3c78a2aa400a44fdaa4 | centrering |
+| 2023-12-07 00:13:19 +0100 | b4e3098d4beaa7228e01a250de937c4b4518d9d1 | Centrering nyt forsøg github flavored md |
+| 2023-12-07 00:12:53 +0100 | 97fc7a79bb3e0fb0c1b6ac3fcead0b594287f24c | Centrering af billede |
+| 2023-12-07 00:11:59 +0100 | ef88b95c4f14655faf5d4ac2e70c6458581dfe23 | smaller image |
+| 2023-12-07 00:11:21 +0100 | 3078f349fe1e2c57cda1d52cc69fc69b4921a74d | smaller image |
+| 2023-12-07 00:09:21 +0100 | aac20156313b919ecc5ff12c13fcb21ac207e0d7 | resize image |
+| 2023-12-07 00:08:13 +0100 | 115f4f695dadcb016d1c550791c7e0dc27752e02 | resize image |
+| 2023-12-07 00:05:04 +0100 | a968b3706d92dfbd224184dbe59c92d0148a7e63 | img size |
+| 2023-12-07 00:04:15 +0100 | bff616a940d0305f79bebf55bc8b515fa8ef5b8e | img size |
+| 2023-12-07 00:03:19 +0100 | f2b30a1c6e59684d694f514bd69e08cf0679cf1c | readme stuff |
+| 2023-12-06 23:58:27 +0100 | 9a4dc2f8d365b4ea15e2c269696fc4ed7da9b958 | Fjerner git stuff bruges ikke mere |
+| 2023-12-06 23:58:13 +0100 | 4f5542696242256b5a691da3f2aca148405cef7b | Tjek om der er en rewrite fil |
+| 2023-12-06 23:58:02 +0100 | 543ad2e38bd77d73db5341ce5c64648935519562 | fjerne debug stuff |
+| 2023-12-06 23:57:47 +0100 | fc26cb6384e7382e076663d8930ecdad763f76d9 | mindre rettelse |
+| 2023-12-06 23:55:43 +0100 | 746f66a8d0f94f737d665b8a39edf1ab1059b1d3 | flyttet tldr til bottom |
+| 2023-12-06 23:53:31 +0100 | f242f212e9a7859646e9a692575997cabf727bde | vt100 |
+| 2023-12-06 23:46:14 +0100 | 72199b54882757d18916be80b26e1e655316fe7e | typo |
+| 2023-12-06 23:45:08 +0100 | a3d91dae04f75e6687fb7c94142b842b2a1d8eb4 | asciinema++ |
+| 2023-12-06 23:25:38 +0100 | c03d66dd86a86d7de8e52fb74cc5c80dea854de0 | Regel video |
+| 2023-12-06 22:56:45 +0100 | 07d091a3ca33430d00fe3b7983ac2c6b93c18b65 | endnu en asciinema |
+| 2023-12-06 22:49:29 +0100 | 884610bca4a7d4b6773ef880ef848e899c1dd0c5 | Mindre rettelse |
+| 2023-12-06 22:47:14 +0100 | dc699cc8d70d0bc3b63a7b49035079eb865194e9 | Eksempler opdateret |
+| 2023-12-06 22:16:36 +0100 | e4da908b8c4f16710bd0b8af521935c645618aa2 | demo video |
+| 2023-12-06 22:15:32 +0100 | 682c99a75e6b6989495f312b39cd61504cb6671f | test |
+| 2023-12-06 21:14:09 +0100 | eaed450329893cfb894ec95e96db8865f857d42d | Rewrite support - nyttigt til anonymisering af visse regnskabskonti til offentlige regnskaber |
+| 2023-12-06 21:13:51 +0100 | 4e3614679a4fa5ebf92adc5d815cd233bef22c1c | Globalt kontoopslag |
+| 2023-12-06 21:13:33 +0100 | 1d2ae65ce098d72219b076c43b9b544e83f35cca | CSV import understøtter både dansk format og iso |
+| 2023-12-06 21:13:23 +0100 | a70b50478aad50784b885d61041a6294ab430e73 | 2 charts pr side, med indbygget titel |
+| 2023-12-06 15:43:06 +0100 | c65236d75b1f7825ae2e13ed062b16eea522579c | Tillad ikke specialtegn i import, kan ødelægge csv export |
+| 2023-12-06 15:42:33 +0100 | d3054647fdc585ad17a456824fc417589993a1de | Barcharts data sorteres efter størrelse - tjek for tomme værdier i felter |
+| 2023-12-06 15:42:03 +0100 | b68e7e780b9f580ade31bb4d570ca3cf13cff7ef | Piecharts er pæne, men kan ikke i sin natur vise negative værdier, hvorfor der skiftes til barchart |
+| 2023-12-06 11:44:05 +0100 | 39f9e6ff9095e70df3d448ffe12e895c94a46688 | New ledger modules |
+| 2023-12-06 11:43:46 +0100 | 6b7ce0a6918839b7b30e7ed2bb17c26a27103a62 | Chart.js implementering til rapportering |
+| 2023-12-06 11:41:29 +0100 | 4f639f0c818c3836b2d331c3271d8a006ffb7457 | Bogføringsmenu får en opdatering |
+| 2023-12-06 11:41:10 +0100 | 404da8ead241842fd89682073e2078e6b96d5d43 | Understøtter php scripts |
+| 2023-12-06 11:40:52 +0100 | c56f8a5b743ffeb9f6e010a31be13e579eaf77ec | Html rapportering med javascriptbaserede chart.js graphs |
+| 2023-12-06 11:40:24 +0100 | 32810da77161d0d0d8fd8f9bfab87ced5c59ca1d | Åbne poser alias |
+| 2023-12-06 11:40:01 +0100 | ac1b9133fae9abb9fb0cd78c108d4c24f33f63fd | Fjerner jpgraph virker ikke med php8.2 skifter til js version |
+| 2023-12-05 01:18:58 +0100 | 56387627e4522162e17f4e84d9236e8d54b25f46 | sessionsnumre starter fra 1, dobbeltklik for at skifte mellem sessioner |
+| 2023-12-05 01:18:18 +0100 | eac1bed13bcb7adc1df180bbc2e999c8153f468c | Forbedret autoudligning |
+| 2023-12-05 01:17:51 +0100 | 258786d7fbdae3237ae11c35fa56b548ce1b855e | Forbedret autoudligning af kreditorer - virker nu også med dublet udgifter/indtægter uden bilag |
+| 2023-12-05 01:17:26 +0100 | 94253566786366d393ca8c2df2f73d7faaf6adfb | Manglende bilagsapport medtager ej systemposteringer |
+| 2023-12-03 23:09:58 +0100 | ef827ae6eda7dfb5682d9460d9d1539907a84ded | Kundemappe gemmes så man kan bruge den fra det åbne regnskab - med den begræning at man kun kan arbejde med bilag fra 1 mappe af gangen |
+| 2023-11-30 17:19:20 +0100 | 3e9e2534b1d8644ad8f11c9ca8310ad0f323a46b | Renteberegningsscript |
+| 2023-11-30 17:19:06 +0100 | beaed6232ed89321f6ad06c6d5817f85bcd862c1 | Genvej til at skifte pane |
+| 2023-11-30 17:18:46 +0100 | a5993e3234272679ffe44c99ec189aff61c979b5 | Renteberegning, og mindre fejlrettelse i perioder på ll/lll |
+| 2023-11-30 17:18:22 +0100 | bf3ba6b6d603c90e75f5787ee9d960d6f59b7cee | img2pdf bruges til at konvertere billeder til pdf |
+| 2023-11-30 17:17:55 +0100 | e5772a95b9f1ae29b33fec95ed5ccf55b9d032fe | Bilagshåndtering |
+| 2023-11-30 17:17:29 +0100 | 4b414e5bfd9d1edd008e29a3b4bae2df2ac7d99a | Periodeelementer tilføjes til nye transaktioner ved entry. Mulighed for bilagsupload |
+| 2023-11-30 17:16:41 +0100 | 97e69d70c821acf06a6a1978893aa4d75fc8eee5 | Kør bogen efter søgning |
+| 2023-11-30 17:16:22 +0100 | ba34243331b3e6579c9b9d02c7e45a745d638491 | Gamle rente scripts ubrugelige |
+| 2023-11-30 17:15:44 +0100 | 4e5fb3ea144b681c6384d2cfc41da19ecb85d7ff | Tilføjet afskrivninger på anlægsaktiver |
+| 2023-11-29 18:50:53 +0100 | cb5d86d029597b4aaf8aec4dfa53ea357ef7e838 | Composer oprydning dependencies |
+| 2023-11-29 18:50:24 +0100 | 1bcfee47757b1964afa7ba4a9de87ee6425855be | Composer oprydning dependencies |
+| 2023-11-29 12:40:32 +0100 | 6cb71c29495b17b5d98e61ef0b44b002a7201c5a | Mindre fix til vi får føjet tjekmark til listings |
+| 2023-11-29 12:40:13 +0100 | 7ce0601d36cf9d09cd3baf2e6e2e4079b72f31ff | Hstr gøres som default |
+| 2023-11-29 12:39:38 +0100 | e302bc5ea7aba8f0cb0cd133d01067d4efd08ac9 | Udkast til udligning af posteringer mærket med #cirka |
+| 2023-11-29 12:39:25 +0100 | eeb74fd68edda1195ebc9e9165c5da071606e579 | Næste nummer for bilag |
+| 2023-11-29 12:38:55 +0100 | 37242cbe8ec4140578cd17f6080f6e2e2dbe37c9 | Tillader tilknytning af fysiske bilag ved dragdrop - kræver at både klient og server har samme mappestruktur fx via dropbox |
+| 2023-11-29 12:38:34 +0100 | 15718e4da6235525366e9cf9079eb8acd886e3b9 | Mindre fejlrettelse |
+| 2023-11-29 12:38:15 +0100 | 4272a1684b5555ae580f33e51319631f7a0cf9ad | utf8decode er deprecated |
+| 2023-11-26 19:12:07 +0100 | b36b9b16ff4addb1cc471532246832776ee49415 | No reason to cache bash scripts now that ledger is fast |
+| 2023-11-26 19:11:50 +0100 | ad01898a22fedeb5f466356b5325f9aff73588c5 | Relative numbers off |
+| 2023-11-25 18:50:22 +0100 | beee3b19c25ed50c2e8a002f2b77bfb45986616c | Ledger til array via csv output |
+| 2023-11-25 18:49:54 +0100 | 782a19cfb04aed3f337e4a99c82492acec999ab6 | Hvis man afbryder sortering, afbryd program |
+| 2023-11-25 18:49:26 +0100 | 49c74f79792c8df0c7ea6ce37e1de7791e055eaa | Openentries omskrevet til at få data med fra hele bogen via csv export |
+| 2023-11-25 18:48:32 +0100 | 7ac8054522a22d74beb8a6f8ca8b7d4fe7fb09dc | Mulighed for at vælge flere konti samtidig - openentries tager data fra csv så vi får alt med |
+| 2023-11-25 18:48:02 +0100 | 5f0ebe0353806e10b0a14a3a8d857af0dc884b36 | Periodresult er en del af expand(), Periodisering = virtuelle transaktioner indtil videre |
+| 2023-11-25 18:46:55 +0100 | 7be26740de0b5ad3ef52746135a7bffbe764cdb9 | Lidt oprydning og reverse tunnel kommandoer |
+| 2023-11-25 18:46:23 +0100 | 47b3ca9f1b947460211f963baca4aa7ebc833f2c | Addresult = virtuelle transaktioner |
+| 2023-11-21 23:24:06 +0100 | 22f3ad26428f026c4eeb58dbc3d52d05a32378b3 | Flere tips&tricks |
+| 2023-11-21 23:23:47 +0100 | d97999b2c87108fd32f503a7e90ee458dea5fa3a | Automatisk beregning af overført resultat uden bash |
+| 2023-11-21 23:23:16 +0100 | ba1ec91f6423be372028c60c55de3105bec968da | Beregning og bøgføring af periodens resultat nu en del af n4s da ledger bash scripts var for langsomme |
+| 2023-11-21 23:22:51 +0100 | 51013bc527e107d51ec157392324beafb133aebf | Opslag i journaler kræver ej periode |
+| 2023-11-21 23:22:35 +0100 | a9d99782548caf16e9564d00b8187d673c0d5dea | Autoudlign aliases + diverse oprydning |
+| 2023-11-21 20:41:38 +0100 | 5e225fd09d1195664c8a99df5e37d0ed026a2f0b | Hvis man ikke vælger en sag - exit pænt |
+| 2023-11-21 20:41:22 +0100 | a006b1dd29c62c6cb8479b1b136e0312c041ad9a | Mindre fejlrettelse og mulighed for ny konto ved entry |
+| 2023-11-21 20:40:39 +0100 | 86d493e75c178b5a4904ad2661d9132f268c62d4 | Kun unikke konti vises - der var dubletter |
+| 2023-11-21 04:09:08 +0100 | b332220947c1e135a45834f5d43b0e8a7e0ee379 | Hver transaktion i hovedbogen validerer med checksum de foregående transaktioner således at der ikke kan fifles med hovedbogen. |
+| 2023-11-21 03:25:29 +0100 | 98d4c455dbc64487dc0a1b094640d23a7a11022d | Automatisk udligning af debitor og kreditorposter - dog med manuel godkendelse |
+| 2023-11-21 03:24:57 +0100 | 2c3751318af7478095c8600d237bfd96d12cb6e4 | Tilføjet kald til automatisk udligning af debitor-kreditorposter, samt sørger for der kun bliver bogført hvis man bekræfter det |
+| 2023-11-21 03:23:51 +0100 | 407be842a53206021c9b954a7612eb94e4832d35 | Mindre stavefejl |
+| 2023-11-20 23:04:01 +0100 | 7d694c689165d392c728c4d6d9f74274021fa3c6 | old debug stuff |
+| 2023-11-20 22:57:20 +0100 | 95022594ebcf9aba1343c27c7fe16e76ac4050df | Gammel debug snask |
+| 2023-11-20 22:57:00 +0100 | 11ce0152af53f322357b600dae3f6be158944d7e | fjernet debug info |
+| 2023-11-20 22:56:40 +0100 | 8ccdd6747024e63c5d42f994aa43abb5200dac9e | Vinteroprydning gammel snask |
+| 2023-11-20 22:56:26 +0100 | 0030b65860d1fd760a17891444711ead73a2640a | Vis status for åbning til bruger |
+| 2023-11-20 22:56:00 +0100 | 3c56153d2bc2b74de36f635717469b9c28b80575 | Viser status til bruger |
+| 2023-11-20 22:22:23 +0100 | 25ecdf003fe025c9236ca144ec088b62b72d9957 | Nu bruger den hele den kontoplan den har til rådighed |
+| 2023-11-20 22:21:58 +0100 | 9c442749c1c5b1863b196031f6260a4bbabfd400 | Diverse relateret til at åbne regnskaber forbedret med splits |
+| 2023-11-20 21:24:06 +0100 | 221d1fbe9fa3e9f9f6f5c0bfb94f29aad69a8f6a | fzf søgning gøres eksakt |
+| 2023-11-20 21:23:52 +0100 | 9397c3d590c2c67e8886d13193e715890664c476 | Rydder op i menu |
+| 2023-11-20 21:19:41 +0100 | 8f6f061b0af508f93f48b2f2184c621ecd185e93 | Søgning kører i nyt vindue |
+| 2023-11-20 21:19:15 +0100 | cc42a5ecc8c74c4e8d83326ff13a339e46550e72 | Forbedret søgefunktion - søg efter hashtags eller fulltextsearch |
+| 2023-11-20 21:18:51 +0100 | 741a68a04324a644ea9b151029900e337e3cfde5 | Forsøger at køre removeblankpages som backgroundjob |
+| 2023-11-20 21:18:10 +0100 | e20adedef2ba6a532b2529fbe35aa833c325e909 | Table style striped samt naturlig retning på balance hvis man er regnskabskyndig |
+| 2023-11-20 16:42:05 +0100 | aaf3a68a1d7c59185eecc6b114e31d4fc91ed7aa | Ghostcript er påkrævet af removeblankpages.bash |
+| 2023-11-20 12:08:29 +0100 | f7c52851ffb11dbaa97b834975d349b0c8e126de | Der kan bogføres |
+| 2023-11-20 12:07:45 +0100 | 1ad6c08bb537ed4cb910ec746b1cce344acddbee | Åbningskørsel køres i et split-window for bedre hastighed |
+| 2023-11-20 12:07:21 +0100 | 5e0a3bfba505a2a9bb9f21522889ac70b7a925f2 | Fjernet html output fra åbning |
+| 2023-11-20 12:06:51 +0100 | b1fa55f0dfe4fc4c4ae4b029c7ff83b2104d6f75 | Nextnumber - næste transaktionsnummer og cashbook nr |
+| 2023-11-19 17:37:01 +0100 | 9772f738be5ad60deafc93573a6b8da29ea53f0f | Arbejdet videre på ncurses |
+| 2023-11-19 17:36:29 +0100 | 81c9aa79a7a6be7f1226cee32d8d352f6d0f5e30 | Mindre fejl i bookbash rettet |
+| 2023-11-18 16:25:46 +0100 | ec99c206edc7f9ab4c34c61fc08baf88216e31ce | Diverse e-conomic stuff |
+| 2023-11-18 16:25:28 +0100 | 0731ac0cba9655ac7ea89720a80b70cb63ab6b19 | Build filer |
+| 2023-11-18 16:25:04 +0100 | 1cc4ed73dda0651fa64d51f90d5cab9fa0a30581 | Ved sr kør altid .init.bash |
+| 2023-11-18 16:24:22 +0100 | e1a9287f4a919496fbd673a15e8993855c15d382 | Koblet på ncurses ui, samt file metadata tages med i ledger export |
+| 2023-11-18 16:24:00 +0100 | 3a76ef9a3a535bc6b186ccb7e9019c946a8661f7 | Forbedret ncurses interface |
+| 2023-11-18 16:23:30 +0100 | b1fea0e0d47ee8a51970dd5aaf800ec2d9bc20fe | ncurses |
+| 2023-11-14 16:30:43 +0100 | d9fbfb1ec6ab6523182b1aed107160fe2b26a2ba | Ncurses arbejde |
+| 2023-11-14 16:30:04 +0100 | 0063c554e6023ecafee527674f2b7f2bbf114c76 | Ncurses php extension |
+| 2023-11-14 16:29:23 +0100 | 07757d70a952ed6a8966c9daf1652454d5b668ca | Ui alias |
+| 2023-11-14 16:29:10 +0100 | 37b5faca06f1d804cb653b650a564c4d5ab66fc0 | Diverse depedencies |
+| 2023-11-11 15:09:13 +0100 | f6bcadd8b8137a46c951f0faae34d5a597b95fb5 | E-conomic integration |
+| 2023-11-10 13:42:51 +0100 | 2391a539539d0c37fd89db0b2daa29c8353e752c | Tilføjet timestamp - inspireret af oh my bash |
+| 2023-11-08 23:06:52 +0100 | b00502296ee1fc597f3d1e852574e40dce0d3189 | Htmlrapport trækker fra ny ledger-wrapper |
+| 2023-11-08 22:47:02 +0100 | d270e3d806556cb0b1eb9341482792e4a180fb1e | vindues titler tmux |
+| 2023-11-08 22:46:33 +0100 | 3aefb706f6cbff08240e5e2f9d99254ddb80d473 | Visning af transaktioner før indtastning af metadata |
+| 2023-11-08 22:45:13 +0100 | 654f04bc2fdcf879bc2764bb938ff2802d46eb5f | Forbedret notevising |
+| 2023-11-08 22:44:57 +0100 | a71fe762e284d435f66b0554eb768e749acb54b1 | math inkluderes i top |
+| 2023-11-08 22:44:41 +0100 | dd9c8eaa18ae4cf9441c43d108b5e13d8fdafc78 | Disabler farvede vinduer |
+| 2023-11-08 22:44:23 +0100 | 66ec8db76df3d0c015d0a8d9e4fada7a17b6b805 | Normal bg color så der understøttes gennemsigtig terminal |
+| 2023-11-08 22:44:06 +0100 | 8fe2641a15b4fdbe87c49b99a48c89de4a6bcf38 | Fjerner vinduesfarver |
+| 2023-11-06 10:49:25 +0100 | 82d566cae5af582c63782e4f8a15ffbda7b79765 | Newl entry forbedringer |
+| 2023-11-06 10:48:51 +0100 | 71fb2b59f08119ee6c3081b6c0abcbbb1d267be2 | matematisk input tillades i newl |
+| 2023-11-06 10:48:33 +0100 | 6f431f500ee80e87638eac75e2e691cf2095761e | skal ikke køre dp efter sr |
+| 2023-11-05 16:05:44 +0100 | 78ce3534b4e1c4caead312b205a9bc7b353eb228 | fjerner borderes på tables |
+| 2023-11-05 16:05:26 +0100 | 295602fc71047b0cc635399f59aeb9558d20974f | Pivot ny ledger-wrapper |
+| 2023-11-05 16:05:17 +0100 | e76ff4a2f3567247c9485036aed9e320e69507b7 | Diverse |
+| 2023-11-05 16:04:34 +0100 | 77f26acb69a36800199b4f47265aaa93abf14b9e | Ny ledger wrapper |
+| 2023-11-05 16:04:10 +0100 | 42a7e94f94955ad8a6ee0229ff26baa5ea53bd96 | new-window frem for popup til ctrl-o |
+| 2023-11-05 16:03:38 +0100 | bdadfce5119223545c12f4c3bf103e60f34ce80b | Lettere oprydning gamle scripts + newledger wrapper integration til shell |
+| 2023-11-04 17:09:39 +0100 | faa5ab683514b9e157b8b63327307413d17b9c67 | Udkast newl - ny php wrapper til ledger |
+| 2023-11-04 17:09:15 +0100 | b0f9770f50feaae067160db41d2c854182fcb8fd | 997 tilpasses med periode til at køre den givne periode |
+| 2023-11-04 17:08:41 +0100 | 02e90303a4045910f10e548a2953fd4f3f75443f | Ny kommando køres på lookup acc |
+| 2023-11-04 17:08:22 +0100 | c4b77a60641ba44f56cd687755b3eabbf2815f18 | Mindre justeringer |
+| 2023-11-04 17:07:43 +0100 | 4f56ce33817574fe63da40c2beb0380d8d47d6cd | unused git stuff |
+| 2023-11-04 17:06:56 +0100 | c26c127032f9930769a5379c187957d81c892de0 | Fejltjekning - ikke bruge tomme variabler mere i php |
+| 2023-11-04 17:06:37 +0100 | 05b8c17aecc0424d8731aad699986e8973c2a55e | dato funktioner udskilles |
+| 2023-11-04 17:06:17 +0100 | 74e6f42ca112fdf5055ae53808585a279a4a7844 | Oprydning i gl key funktion - lederwrapper |
+| 2023-11-04 17:05:55 +0100 | 63ab11735a377ff393a575f626b7a3ebdff35310 | Expand i særskilt fil så den kan bruges af newl |
+| 2023-11-01 09:59:48 +0100 | 70a5ac74a4420b7d0a8352e5eb0748a0ff0708e2 | 2 nye |
+| 2023-11-01 09:59:12 +0100 | 2a6f77c48cb5b478021c3a06bbd3f19585f5cc04 | Forsøg at fikse ol til kørsel uden opdateret bog |
+| 2023-11-01 09:54:49 +0100 | 37d4995e933d901999230a3b746572aa1d2b4249 | Ændring af tmp mappe for at undgå konflikter |
+| 2023-11-01 09:54:19 +0100 | 875a7bf4c368d52e949e7bb4debc439a94a89794 | Ledger hack nødvendig for korrekt csv export |
+| 2023-11-01 09:52:03 +0100 | 84ab138147ec620e39f9334456e2a8582b57d1c2 | Tmux popup frem for newwindow ved ctrl-o søgning |
+| 2023-11-01 09:47:33 +0100 | f61390789da31075954fd9944350b81a2bd23d8b | Mindre justeringer / oprydning af script |
+| 2023-10-31 11:38:25 +0100 | 1c746f80934bec6ea50d4bafe1ad4399bd7660f3 | Mindre fejlrettelse |
+| 2023-10-30 21:42:28 +0100 | b394342ee4e03df54da5c6eb48fcc49a9bfbf214 | Speedups ledger kørsel |
+| 2023-10-30 21:41:33 +0100 | 2eefce2f44caf6fb7f26c027c94368b12ada4203 | Tager tmux i sin egen mappe |
+| 2023-10-29 20:38:06 +0100 | 87ff4d19e89d61b7a2661e4d60461154d90c1a10 | manual flyttes til bund i menu |
+| 2023-10-29 20:35:19 +0100 | ab5c7104883f0e84e0bdb933a00ffb73b6384d68 | menu stuff |
+| 2023-10-29 20:32:11 +0100 | 859c29b25ac62466f1f86d7ef6efc37856ed0623 | default periode |
+| 2023-10-29 20:19:30 +0100 | e5f55a09ab85894ea1587299bec5e1a30cf8e2f2 | velkomsthilsen |
+| 2023-10-29 20:08:40 +0100 | b3705162520874a37716f7d07a41e4692f2b2610 | Bytter om på menu rækkefølge - regnskab først |
+| 2023-10-29 20:05:35 +0100 | bc58d88dea2a23c0fde177e0ac0e77221b601282 | flytter til n4s-export - fremfor tmp |
+| 2023-10-29 20:01:01 +0100 | 6105bbf6fb01d42c21681580eda4a78f211a9f88 | versionering |
+| 2023-10-29 19:57:44 +0100 | eae4d4bcf4798ccd5f2b1d8cfce72772d77f22b6 | OIOUBL udviklingssager |
+| 2023-10-29 19:57:27 +0100 | 320a61e2834ad6cc5aa4ad683110f675e0a16c0f | composer stuff |
+| 2023-10-29 19:57:15 +0100 | 4744a1d979c222213c96799e88ad47c65d5db945 | fpaste |
+| 2023-10-29 19:55:20 +0100 | 31d78a189e2ed646cf1dac1a0f21137e7914ae86 | dl link |
+| 2023-10-29 19:55:04 +0100 | bc978419f10bce49f6caa2d6acbfdd917f5802f5 | versionering- samt invoice ting og sager |
+| 2023-10-28 20:30:09 +0200 | 6337d9b94bc127b7f6eda07cf323e006aa9a52ed | sanebox stuff fjernes |
+| 2023-10-28 20:29:51 +0200 | 7dcbf5772b8dc96a0f34fb21920b6e0823758264 | rt stuff fjernes |
+| 2023-10-28 20:29:31 +0200 | d3f3d0c0e6749b93e8a487ff12c57fd3891b89ca | Mailstuff fjernes |
+| 2023-10-28 19:51:10 +0200 | 838fc3b757b0edee519ef260f6bebde5f3fc9f97 | Old e-conomic stuff |
+| 2023-10-27 22:54:34 +0200 | 2b35445a4ca3f4c52cc92fe44e371bc85696f140 | Scrapbook scrappes |
+| 2023-10-27 22:15:55 +0200 | 21f72601834117b0fb8a248c32ce5f63c930d0fa | Composer stuff - til ubl invoicing |
+| 2023-10-27 22:15:03 +0200 | 61e4808d2bc1529b70d7563636f9be398519d64b | Aliases oprydning |
+| 2023-10-27 22:12:06 +0200 | 014685820dc300947f106a7777bfe9bd7957820b | Ubl template mv |
+| 2023-10-27 22:07:55 +0200 | aa2c18c433ceadbbdc89ff3e628eaa005afbda3a | Get-func tages ud i separat fil til brug andre steder |
+| 2023-10-27 22:07:12 +0200 | 851d96afabaf2a83b65feedfcc2833395c205d86 | ubl invoice er et composer bibliotek |
+| 2023-10-27 14:23:45 +0200 | ff40f0654d9bc8ce2923816fda4c360c0ffd2bc0 | Diverse composer stuff til oioubl |
+| 2023-10-26 11:55:24 +0200 | e74a9107657df1768272fe3f463b85c6bfd79ea8 | Flyttet installation til separat dokument |
+| 2023-10-26 00:20:30 +0200 | d9b1be0805f8f5ed4d2c0e4c55bd0babf3d71a2a | Automatisk versionering |
+| 2023-10-26 00:17:24 +0200 | ade4e983dbbee0adfbbeaad4d868757944a4f50d | Div |
+| 2023-10-26 00:16:35 +0200 | e9e8e75b4046f755ef63d4ecd7b678b39ae6efe5 | Bulk update, samt straks redigering med visning af fejlbesked af filer hvor der er momskode på likvider/debitorer/kreditorposter |
+| 2023-10-26 00:16:17 +0200 | f6d90f2d803c84177b277f0ebaad2d5b256f5c6a | Markdown stuff vim |
+| 2023-10-26 00:15:52 +0200 | 90f86aa36c5fdebe2fafcc9cc05b87cfd5489da9 | Ændring af vidste du at unicode icon til noget der er i flere fonts |
+| 2023-10-26 00:15:32 +0200 | 843e0ac1340076e2abbd424499a61eb62b5b4a62 | Markdown folding behøver ikke angivelse af filetype som cmdline argument, det er i cfg |
+| 2023-10-25 16:16:26 +0200 | a901f4d1627a5652940e85c2908d1e6d92f2c78d | Mindre justering i layout |
+| 2023-10-25 16:13:43 +0200 | 11e3d1f9d97b3fb3bf2cdac6f1ef86158d3b0293 | Fjerner kodeblokke indentering |
+| 2023-10-25 16:12:35 +0200 | 815e966de11857353317bd34f8c64aaa1b5a57ea | Fjernet automatisk changelog, for meget støj henviser i stedet til activities på github |
+| 2023-10-25 16:05:11 +0200 | 95a563cf904366f2ab80d6ff29b4bfb0b68739b4 | readme stuff |
+| 2023-10-25 15:59:08 +0200 | 25632ec1a8377bd522697a75f51504bd0dcde6dc | Lidt oprydning gamle uaktuelle scripts - samt nyt fzf tema |
+| 2023-10-25 09:29:18 +0200 | 9f071292137d96f02743cfb957d9d975079ac784 | readme stuff |
+| 2023-10-25 09:20:31 +0200 | b85c58d7b4ff30cd687753a0aca5054b8259c41c | readme stuff |
+| 2023-10-25 09:18:51 +0200 | 625c63d5164c8ddc0bdc5dee6bdea3da722910f4 | Changelog |
+| 2023-10-25 09:18:15 +0200 | 38fe20ba2735dafbe804d0bde5a963335afa7023 | Nye bindings til at sætte posteringer ind i thenow |
+| 2023-10-25 09:17:39 +0200 | 8a165cbfd59b4400c5ddf0a58f8b7bdbc15ea1fe | Hvis tomt array til piechart, abort mission |
+| 2023-10-25 09:17:22 +0200 | b4cce158078cace74fdec76196bbc25f58ebe6f4 | Manglende bilag funktion tilføjet og et par andre smårettelser |
+| 2023-10-25 09:17:01 +0200 | 437cfe68caab61213a2a45cc8c92b088cfefac70 | Opdaterer dependencies |
+| 2023-10-25 09:16:36 +0200 | a9da58033227c303603d4c54f1b0d788c5b1fc51 | Manglende bilagsrapport samt google-chrome udskiftes med wkhtmltopdf |
+| 2023-10-25 09:16:17 +0200 | cf4669b793e322202b209b775abc4639e2cc5cff | Nem indtastning i thenow |
+| 2023-10-24 22:08:50 +0200 | f1c8fdbb98bb01e5133b9ca4f8bfe821a62e8de8 | Fjernet duplicate kørsel af pandoc |
+| 2023-10-24 20:44:21 +0200 | 18096a2beaf12c09ddfe83ef077f410997cc3d77 | Nyt dropbox script |
+| 2023-10-24 20:39:13 +0200 | b0e77758e1cd47a8ddb16620ebcbfcc437933f80 | Script til at migrere server |
+| 2023-10-24 20:22:49 +0200 | 77e2f02db5e6d4fbc2e0c65c58558281af99033b | Bugfix - fundet ved opgradering til php8- gør intet, fjernes |
+| 2023-10-24 13:20:14 +0200 | c082d9005c41f636b3ad6c9ca15208bd5dff2a95 | Fjerner done-filter fra vitouch, ikke nødvendigt |
+| 2023-10-24 13:19:58 +0200 | 958cf42d1cd06f47700ac14368aa261f15f08e22 | Forbedring af farveskema |
+| 2023-10-24 13:19:24 +0200 | 14d27e5eeb289ed2fd88686d7d487e8b73a1608b | Fjerner nogle streger som ikke ser så godt ud |
+| 2023-10-24 13:19:02 +0200 | 97b3ef27d77dafa678cf0e79d9fefb985e49e1b7 | Oprydning af menuer og lidt ændring til farveskemaer herunder mere synligt vindueknapper |
+| 2023-10-24 12:48:49 +0200 | 460c9939d0a8829bc01d3c61d5ad4916ba02ccaf | readme stuff |
+| 2023-10-23 21:39:47 +0200 | 5af0bbf0d7034b3ee89bd530dae15dac8665300b | readme stuff |
+| 2023-10-23 21:32:45 +0200 | a66d327f61cf21c3bb013ce9e6f44620355e2180 | readme stuff |
+| 2023-10-23 21:30:28 +0200 | 1a6eedd949bc56bd7a43b3f8e2493b40e83ea405 | readme stuff |
+| 2023-10-23 21:27:52 +0200 | d3f3a042c6c6c95b853a34bf6c4586116ad5d5ca | Manual fjernet som del af denne side |
+| 2023-10-23 21:21:04 +0200 | cab57c78188ca16c68c2b851da134618e264878e | readme stuff |
+| 2023-10-23 21:18:58 +0200 | b044c2aadf9ae60b86cc893ca71bbb5cb4c9491f | readme stuff |
+| 2023-10-23 21:13:52 +0200 | 3153d7c4b36a98bd9c4fa6a7db302191a0a4325b | Ny demo video |
+| 2023-10-23 21:10:03 +0200 | 2dc5c626bf19e47ea37589f88493dfbd0062d0dc | Eksempel video |
+| 2023-10-23 19:40:12 +0200 | 30e585ffcc2aabf525fb7a6add49e9fb5d5fe095 | Et par tips om kontokort |
+| 2023-10-23 16:56:46 +0200 | cf937c526525b4266e7a8709e2c1ddbcfc4d67cb | Farvekoder på statuskoder |
+| 2023-10-23 16:26:35 +0200 | 4727e01779550aa2a893dae535727d5ed27c0599 | Readme |
+| 2023-10-23 16:25:44 +0200 | 30cfb1ba34ffb3be6dc7680febc81ed9823072ad | Readme key selling points |
+| 2023-10-23 16:17:17 +0200 | 7fac363b4c34873e44151abd03a6a514afd39f4c | Status konti saldi opdateres ved l på tmux line |
+| 2023-10-23 12:33:40 +0200 | 6e9f30f1167e83626dfdbc9fa104aba999a64966 | Changelog mv |
+| 2023-10-23 01:53:09 +0200 | 98c52f0c4f2d6eabb89053a88c452a9e0a55ef10 | Truecolors til journaler og vim |
+| 2023-10-22 20:33:28 +0200 | 03d64b174eae2fab3c56b463750d56725ad2ef34 | Diverse |
+| 2023-10-22 20:33:14 +0200 | 1035dda6d52f09e34f549f8c50f60ec83d1375b7 | Nyt periodresult script - simplificeret |
+| 2023-10-22 20:30:25 +0200 | d111d530bd7e3293bfde70c0fc034acfd4f7025b | conduct |
+| 2023-10-22 20:28:36 +0200 | 3f73875e9233399daede155f1dd7f46352a00f21 | Udkast til code of conduct (credit chatgpt) |
+| 2023-10-22 20:26:05 +0200 | 56147bbbf7731a820fdc92361fd0df45b56a466b | README |
+| 2023-10-22 20:23:24 +0200 | 4ea967e67235018120d8e4112bf61eb12e445607 | README |
+| 2023-10-22 20:22:18 +0200 | ca7ab26d05a8d0ecb21327b4bfe5c5ef1e1cdaae | README |
+| 2023-10-22 20:06:26 +0200 | 6f8627b1d3c3eb69eff4c6d0d5a39c3cf3e47970 | README |
+| 2023-10-22 20:05:51 +0200 | b91fe3b399af9d656eb77f1bbb2420fdfc6d7e46 | README |
+| 2023-10-22 20:05:22 +0200 | 2090322705d39d1c1aa4652aedbc3578da4652ca | README |
+| 2023-10-22 20:02:30 +0200 | 5ded9b49fa31853b07a3cec457863cf724fc570a | ændring af readme |
+| 2023-10-22 18:25:56 +0200 | 64883faf1436d6f0dc479f44390f4478217daaf9 | Update issue templates |
+| 2023-10-22 18:22:59 +0200 | 33c99376ac457a689ada4e19819e2371928d3e91 | Contributing |
+| 2023-10-21 15:00:50 +0200 | f006638f8254c75560937dfea28b8aa9e681e457 | Diverse noter |
+| 2023-10-21 01:57:35 +0200 | 7ab99959e77aa8706b621f59c6efb8f2659dc816 | Changelog justering |
+| 2023-10-21 01:54:12 +0200 | 6422b199ee3af64eb7dab06e5192439864053519 | Changelog |
+| 2023-10-21 01:53:55 +0200 | 2521feccddb3c57b5904250dee67998ed4e257f8 | Disabler budgetscript midlertidigt |
+| 2023-10-21 01:53:26 +0200 | 4442bfb385795c5c20415dd46687f99b816d5eb8 | Forbedring - lad ikke program fejle hvis man taster et space ved input af tal |
+| 2023-10-21 01:53:04 +0200 | 8d7c36e3b170c86b386e154397667cc94b3b53d1 | Naturlig retning på perioderegnskab |
+| 2023-10-20 15:10:53 +0200 | 29ae83e69a5f94f2a1e5e33b388421a671cf6883 | Changelog |
+| 2023-10-20 15:10:41 +0200 | 695c9b85026d790a91ad98000399b694be12832b | joo bindings kalender |
+| 2023-10-20 02:58:05 +0200 | ba6474a3fd68f90e7094e8fb0effaf81c2c7b278 | Flere ideer taget med |
+| 2023-10-20 02:37:01 +0200 | cc53a8f799297274610fcb4f1034866f3aa2af8b | Changelog |
+| 2023-10-20 02:35:56 +0200 | a17da8ea85984439f8177d95c55adb73d6b3da5d | N4s-relaterede ideer publiceres løbende |
+| 2023-10-20 02:23:33 +0200 | ce1402d26eedcb18b59250c62e2b80f62d909d46 | Opdateret changelog |
+| 2023-10-20 02:20:49 +0200 | a1f9eea9ec2f6524bb8b33957333fd8a4863d900 | Ny changelog |
+| 2023-10-20 02:13:05 +0200 | eb28bb5fd84cba3c24ebd874e5f3a02f927d91c0 | Changelog |
+| 2023-10-20 02:05:16 +0200 | 99a1717c12bd6e66381f0098896128e788dce4a9 | Datepicker har også altid nu  - tager fra 1970-01-01 og frem til dags dato |
+| 2023-10-20 02:04:59 +0200 | c9cddf09cce19940cf064ec7ac0a7a3a483ea286 | Calcurse - nok en joo ting |
+| 2023-10-19 02:11:47 +0200 | ac7e2fd4a0e68341813b6cf0852645f598772908 | Momsafregningsscript |
+| 2023-10-19 02:11:31 +0200 | e60f998c228c528cc22d1559304f179a70c66ff4 | Fjerner specialtegn som kan messe med csv export |
+| 2023-10-19 02:11:13 +0200 | 3a9cfe10359fc6c7486ee6fa795446bda29e904d | Lagkagediagrammer til rapportering |
+| 2023-10-18 18:23:47 +0200 | fe81dbae04ee9f103d15e093c024f2b9a7efcfe1 | Pie charts forbedret - nu af alle omkostninger |
+| 2023-10-18 18:23:33 +0200 | af097407ef6734f901e39e7cb0999a365fa5ed88 | Ny åbningsfunktion forbedret |
+| 2023-10-18 18:23:17 +0200 | 535e6a6d993527f71fb2c86ebee0b67d3ca98f3c | Nye aliaser |
+| 2023-10-18 12:43:18 +0200 | 4058b3e4be68922b321794d20a22df3a261a0afc | Også resultatdisponering mv |
+| 2023-10-18 11:18:06 +0200 | 6bfd3e7aeb39edca458f846dfe197fb2137f692f | Indtægter og udgifter = Overført resultat |
+| 2023-10-18 00:01:24 +0200 | 815309e9a5d1f59ddebfea74b6f35f16847077b0 | How can i forget it? removed |
+| 2023-10-18 00:00:47 +0200 | 01b3cbc7a41057787d23450536ae5a43954b586b | Dont use pager |
+| 2023-10-18 00:00:32 +0200 | 3e6c7923aec72d3941f0f303ccf7951b7f360bf8 | old stuff cleanup |
+| 2023-10-18 00:00:21 +0200 | a20da668aa3e59c3a62999877dd6ff4136d6df4c | old stuff cleanup |
+| 2023-10-17 23:54:24 +0200 | 2229446bf4285b8b6e50a3c7e03ae8ea79ddc256 | Oprydning gamle linier med git versionering |
+| 2023-10-17 23:42:21 +0200 | 2d02502d9e9bfd202ac94ec56abcdf291573ee23 | Fjerne noget debug info, samt åbne i pager |
+| 2023-10-17 23:38:28 +0200 | b77825dcc44a944c83b346acee0dbd8317e6d94d | Rewrite med CSV output for at omgå ledger-cli fejl der gav dublet output på nogle subaccounts |
+| 2023-10-17 22:42:57 +0200 | bcebf27f49a1351580a32b74f6947664b51057ed | Behøver ikke vise overført resultat ved periodeskift |
+| 2023-10-17 22:40:13 +0200 | a2cc925242d2485f2492a16fa5cdb9ece293bdc4 | Nyt årsafslutningsscript - automatisk ved ændring af periode |
+| 2023-10-17 22:39:33 +0200 | d87db90c0eb9c83028a20128ea44dbaa0e2dc5f6 | Mindre rettelse - script er disablet så nok ikke relevant |
+| 2023-10-17 16:26:52 +0200 | fa1b6be17641b86c0ed6b58cdf280d3b88f2e804 | Stats - rapportering forbedring - piechart udgifter |
+| 2023-10-17 16:26:37 +0200 | 0c4694494eb2ffc4fd209f68350a6effc309c132 | error reporting shorties |
+| 2023-10-17 12:17:28 +0200 | 49513316331362499053c6e9401a1eb4888d47c2 | Bedre historik på markdown filer - på sektionsbasis |
+| 2023-10-16 18:10:52 +0200 | 11cd4e5e92495570adc890ff1984819d4948510e | Short trackable links - measure amount of downloads |
+| 2023-10-16 18:09:57 +0200 | f7628a01cfbf87c96ec3bc7719521f9baf438315 | Søgt at udbedre mosh problematik med tmux |
+| 2023-10-16 18:09:29 +0200 | 5f910a7bc84f18be6a186ebabd73b9d2bb901ad5 | Udvidet kontoplan |
+| 2023-10-16 18:09:02 +0200 | ecb2137cdb64d8c036f929ad204514298ae2a7a0 | Mere læsbart diff-output (korrekt rækkefølge) |
+| 2023-10-15 00:07:59 +0200 | 25f9a97302c01fa579a29d2eff9ae906bc3db0b8 | Instruks rapportering |
+| 2023-10-15 00:05:40 +0200 | 8584e38c66ff2874d6a2a8090f75a219b6fb7379 | linkfix |
+| 2023-10-15 00:04:47 +0200 | 83e17893d6c8881997f94674a3a6d4d2ac3f43af | linkfix |
+| 2023-10-15 00:02:51 +0200 | bae79d9c4a704be43beebf9fc7688903d1f2426c | Ny rapportering eksempel |
+| 2023-10-14 22:35:28 +0200 | d511733ddfb6561b1049f8ea90a4f85512ba95ca | Diverse html rapportering |
+| 2023-10-14 22:04:08 +0200 | 4aa860207f5f92156587aef441e064a468799c38 | Rapportering forbedringer herunder nøgletalsrapport påbegyndt |
+| 2023-10-14 18:03:54 +0200 | c72ac00f993ea49af90dbed03747e58026a51ca7 | Readme stuff |
+| 2023-10-14 17:16:54 +0200 | eb020aab5b75ad2ddbbd4fe26759afb521c84c2e | Om Stuff - 2nd brain |
+| 2023-10-14 17:03:28 +0200 | ae6268779a38851b1d4f9ca08d9ba54bd42697df | Forbedringer til HTML rapportering |
+| 2023-10-14 17:03:12 +0200 | b3d1e6846361ca437c53e901663f79751de96fe6 | Arbejdet videre på 999 |
+| 2023-10-14 17:02:52 +0200 | fe62668edb09742c8cd098ffac4ba46b19d3ca03 | Backup forbedring verbose output fjernet |
+| 2023-10-14 16:54:58 +0200 | 2ed63df5ab3c821fc95eab64bfb8d594532e15ed | Readme stuff |
+| 2023-10-14 16:53:26 +0200 | 1dccbf87e53e72a6cf66a8d8ced4f2952fc9dab2 | Readme stuff |
+| 2023-10-14 16:52:33 +0200 | e3637830d6effd8aa50c82f11f366da6942dfa29 | Billeder |
+| 2023-10-14 16:50:09 +0200 | dca58bff5245e63898e5a793a9c6abc1f072c538 | Win11 screenshots ssh session |
+| 2023-10-14 14:14:37 +0200 | 84b9534b52cb360fd01799894ebaf957516e7d24 | Diverse styling kontokort |
+| 2023-10-14 14:03:02 +0200 | 8bc9bd0c4eda52a774ac6303f8ef4acca3b803bf | Rapporteringer forbedringer |
+| 2023-10-14 14:02:45 +0200 | d2caaf48ed85b44cf50fac9a9d20398fba8221b4 | Advarsel ved momskoder på egenkapital |
+| 2023-10-14 12:28:20 +0200 | 5823668bf628cfd850b360cdb3e23aa9f0f3e2ee | Flere tips & tricks |
+| 2023-10-14 12:28:03 +0200 | 63e4157b564b268f328873eac7107a6710e328e2 | Bedre farve til tips og tricks |
+| 2023-10-14 12:27:50 +0200 | c612340ccbf4db2e4d4a8460a8f80ea24f7dfca3 | Kontokort forbedringer |
+| 2023-10-12 18:03:00 +0200 | 6708cb807ee344a3bd00fff46633a4e4a3ffaef2 | Tips og tricks til systemet |
+| 2023-10-12 17:56:16 +0200 | deb2f6821c35953d6c8841177e8434ad97329b9b | Lidt borgbackup rettelse , samt tilføjet tips og tricks |
+| 2023-10-11 19:09:47 +0200 | 4be2b509f37cca42011d958e564d4ee639265769 | Mere venlig farve til windows pc |
+| 2023-10-11 12:59:57 +0200 | 9ea0f731307a894399502ed2628da5752b3cf3dc | editorconfig unødvendig |
+| 2023-10-11 12:59:14 +0200 | a1e12edac7d1f4de248757fc83f4559f8cfa5c7e | Diverse unødvendigt stuff fra UBL bibliotek fjernet - beholdt LICENS da det er under MIT licens - skulle angiveligt være kompatibelt med GPL Licens |
+| 2023-10-11 12:54:28 +0200 | 6e3c0388404c94e1f89bf10ef5a448e4476e5b52 | Unødvendige periode-aliases - erstattet af Alt-p (dp - periode vælger) |
+| 2023-10-11 12:50:27 +0200 | bfca04cac3588babc08cb7c30e3b820c8dc092df | ændret kontaktoplysning |
+| 2023-10-11 12:49:56 +0200 | fa82319f21d7aa4102321f71589b0b3df5f040a6 | Automatisk backup hver gang man åbner regnskab |
+| 2023-10-11 12:49:12 +0200 | 0b1405e420eb94cfc4342e299e6144ed01ff6ac7 | UBL Faktura klasse |
+| 2023-10-11 09:44:20 +0200 | 6f90262aa4b61fa4f47b867b150017bc5a003609 | Readme stuff |
+| 2023-10-11 09:40:24 +0200 | d69ecaacb99e5d7a442b4df065154ac32a6152db | Flyttet eksempel regnskaber op efter video |
+| 2023-10-10 21:17:56 +0200 | b72ac83b0b7738d5570096200056a4c7bedd93a2 | Readme stuff |
+| 2023-10-10 20:44:37 +0200 | 74f650b0bfa1e772411a990e56284a6c9c4f5723 | Readme stuff |
+| 2023-10-10 20:43:58 +0200 | b4cbcaa28419c09d5c721cc3f54b943331f286ec | Readme stuff |
+| 2023-10-10 20:42:18 +0200 | c4a71cb38447b3d880fb5a57558ecc1c4a3e6628 | readme |
+| 2023-10-10 20:39:09 +0200 | 2cabfa964d85ab646106a155cae5e224b3c6982e | toc |
+| 2023-10-10 20:38:12 +0200 | 3aef28278270270bce3e2c63822e87db31c0c79e | toc |
+| 2023-10-10 20:35:44 +0200 | 5ab9b24f8a56d660af225aca03db28bab0bb4232 | Sort logo fremfor purple |
+| 2023-10-10 20:34:50 +0200 | 990e917e4bbbc5918e32b73f0fbf5ab06f6c35be | more readme changes |
+| 2023-10-10 20:32:16 +0200 | 6ba8ccad90b5ad5ca9763b9e0944cb4516258672 | readme |
+| 2023-10-10 20:29:42 +0200 | 1058f388c4d5969af83505010af77c77b1c19c4c | readme stuff |
+| 2023-10-10 20:27:52 +0200 | c87f8ea55f3dfe2de4462b2f1ea7f1b5c4b3a84a | Readme stufff |
+| 2023-10-10 20:24:11 +0200 | 008aee505ee69fa698b3014645bea6eb9519d237 | Fjernet genveje som er listet i menuen |
+| 2023-10-10 20:15:26 +0200 | 0dc7b97e2b9765cde2dc5700d2f51c9c30d3d9be | Readme stuff |
+| 2023-10-10 20:05:08 +0200 | 63809b065353a5b940b4e40fbfa441e967c3d1fe | update instructions |
+| 2023-10-10 20:00:53 +0200 | b630c7710b4555518a7c5071d394e674cc17f722 | Readme stuff |
+| 2023-10-10 19:46:36 +0200 | f3a1d487b0adf74bc8bde6c1d0f00a90da9b3efe | Readme stuff |
+| 2023-10-10 19:46:19 +0200 | fa6381160eb3d00206caa6bec84d89153ea3160e | Readme stuff |
+| 2023-10-10 19:37:08 +0200 | 5671374224bb1eff3ad63d2314439e3a5b4283ef | Readme stuff |
+| 2023-10-10 19:35:41 +0200 | 493fd563b2c12895da04553b3edd98f023b8e9f9 | Readme stuff |
+| 2023-10-10 19:25:23 +0200 | 04dec4efd79d50ffc96ae1f2757f86d1b5832f8e | Readme stuff |
+| 2023-10-10 19:24:21 +0200 | c8b0788707d7007687a091ec67ab845bf6847148 | Readme stuff |
+| 2023-10-10 19:22:59 +0200 | 593b812b3efe8cba853cb38e2ed4fc876f971be2 | REadme stuff |
+| 2023-10-10 19:20:03 +0200 | 0e3f04c046da74fb9085c37e0561e5863374e326 | codefix |
+| 2023-10-10 19:19:25 +0200 | 4cb81d4c6ce007b591abcffac7841a30929f34ba | codefix |
+| 2023-10-10 19:18:33 +0200 | e4951f398f398e0ed6037f92dcb2f350167afd89 | markdown stuff |
+| 2023-10-10 19:17:51 +0200 | 8e5f3033d3c9e98dd332b69b25c48a86ad1fb729 | div dokumentation |
+| 2023-10-10 19:11:21 +0200 | 7289dcdc165403e7753d55f5425d818192892ff1 | spaces... |
+| 2023-10-10 19:10:03 +0200 | bd0a8ecd4221f126d47d49eef730f83f81153050 | linkfix |
+| 2023-10-10 19:08:42 +0200 | 33a0547493aeb7b16ac85e57c6123832e6a39265 | link |
+| 2023-10-10 19:07:12 +0200 | 398d6d93fcf1843e3aabe9778223f37c9ca7025a | just |
+| 2023-10-10 19:06:22 +0200 | baeed425c5a6a5d5fedb4bd420864b2b52769af6 | Sales pitch |
+| 2023-10-10 19:00:07 +0200 | f644e88949afb9b13ec6fe709815888fa26be6e7 | Div forbedringer til README |
+| 2023-10-10 13:10:56 +0200 | b76a4949728d080971c303ae592f6fd29d030afc | Mindre rettelse |
+| 2023-10-10 13:05:11 +0200 | c44e615863b74abbaeca91e05be927396fe16e0e | Dvierse personlige stats fjernet fra dist-version |
+| 2023-10-08 21:42:24 +0200 | 12f3fe142db1beb8c81e05e14881cd4d0b77d15b | mindre rettelse |
+| 2023-10-08 21:36:58 +0200 | 19b5e1337b607fa6ad7755545d324ebc13a30be2 | Et linieskift |
+| 2023-10-08 21:36:37 +0200 | 24718eb7b45e24f0d3ae121cf98ecb3daa1926e8 | Mindre rettelse video |
+| 2023-10-08 21:35:54 +0200 | e7e473306d2a19d02cce2151a460959ad092784d | Demovideo tilføjet |
+| 2023-10-08 20:40:10 +0200 | 2f477c8201810f8c917295a2a20efcad7d186911 | Keylogger |
+| 2023-10-08 19:36:57 +0200 | 2f6670b146747abcae20f5ebf7f0537cccec3831 | Tilføjet nye konti - samt føjet 999 scrip til nye regnskaber som default |
+| 2023-10-08 19:17:51 +0200 | e36028393fe76938b2a9c99f3467710b4ff5708e | Kontoplan justeringer |
+| 2023-10-08 17:12:37 +0200 | 0f1f0e0e9ab4fe5f228815c7c275f4fde22788f8 | fortunes max 80 tegn samt gerne offensive |
+| 2023-10-08 17:10:34 +0200 | 4039022930fa3eaa6e8bd77d803e7097e3aa094c | Viser fortunes fremfor dosha og omsætningsstatistikker |
+| 2023-10-08 16:42:44 +0200 | 28f8595e954f752d11617acd52b3de2daa6a83ce | Kræv sat sato for at kunne søge |
+| 2023-10-08 11:47:26 +0200 | 089a10ef5193f67ab8c6bc723e401a2b57af27e7 | Datepick går 15 år tilbage fremfor 5 |
+| 2023-10-08 11:04:47 +0200 | 1bfd168d45f754c76ad2526eb96199ebb55c033d | Autoupdate fra git ved start af ny terminal |
+| 2023-10-08 10:56:18 +0200 | 12bab5e55bf27f416d31bce1be8ac2ce62ada13e | Fjerner binary file ncurses stuff |
+| 2023-10-08 10:56:01 +0200 | e1c9f1e4e1c8449677015e7b4f62feddbca1410f | Diverse |
+| 2023-10-06 23:20:08 +0200 | befbccc5bfded0f285a63e06a6a507e7e6ea3a5c | En række temaer |
+| 2023-10-06 23:19:45 +0200 | 865c75d03e1979632f266447f044422b58903b73 | Arbejdet lidt på ncurses - virker stadig ikke |
+| 2023-10-06 23:19:27 +0200 | 1e45e383fde7f817c25e16d085c2f7783b22258a | Nyt default tema |
+| 2023-10-06 23:18:56 +0200 | 37ba9539b26b8db39a6624c555cad77b406f16e7 | Mindre fejlrettelse - nulstillede ikke subsection ved ny sektion |
+| 2023-10-06 21:34:28 +0200 | 05a36b0ea924faa4aff6327119275222cd3b7d77 | bashrc fjernes |
+| 2023-10-06 21:33:25 +0200 | 358ee5d6695bf80eb126e771abd42e1735030bb5 | markdown to logfile format, vitouch difffile tager hensyn til markdown headings og subheadings |
+| 2023-10-06 21:32:32 +0200 | 70cd569910ecaca104de3bbe46e87625ba01dae4 | Forkortelse - første omgang file get contents - snere andre landre funktioner |
+| 2023-10-03 18:13:11 +0200 | 694f661f7aa991ae0ba6bfc6861d130dd8d39ff2 | Info om vbox extension pack |
+| 2023-10-03 18:12:02 +0200 | f0eccaa8391d132611a3a17aba585c589a32f64a | Installationsscript deaktiveres midlertidigt |
+| 2023-10-03 17:53:48 +0200 | 1fc5925c735a4025269f9aa5e0468e32674d909b | Tilføjet logo til readme |
+| 2023-10-03 17:52:16 +0200 | 30bdcc4a1e46da33a502dfcde0548823f8445054 | Grafik |
+| 2023-10-03 17:35:14 +0200 | 47b287d52c89a7532771d595792fe4384d20c17d | Composer stuff |
+| 2023-10-03 17:34:37 +0200 | 64a92beb2d4a3089c1dd55482fe7d44ed89a0d03 | Fjernett vendor - gamle dependencies |
+| 2023-10-03 17:33:51 +0200 | e940ed6f87b9823419ec7963152d4da4fcffdf9c | Mysql no longer required |
+| 2023-10-03 17:32:55 +0200 | 583a3a12793cd258cd5ec98d1e5714a75fedb2c4 | Udkast til markdowndiff vitouch util |
+| 2023-10-02 10:03:02 +0200 | 32a6975bbb26b47b685d746e2ebf355304fa31a4 | chatgpt stuff removed |
+| 2023-10-02 10:01:21 +0200 | 53928e2d604f06512e1ceb656e082cdf42a3b11f | typo - pandoc blev ej kørt i rapportgenerator |
+| 2023-10-02 10:01:00 +0200 | 23de419f795ed5164c07d288209a2204a8c85cb0 | Slår fejlkonto notifikation fra midlertidigt, for den kommer frem selvom saldo er nul |
+| 2023-10-02 10:00:46 +0200 | 26c6e1b05ee904584b75cca96514524864733b57 | Justering til budgetscript |
+| 2023-10-02 10:00:22 +0200 | a16d23e01a1e027810ad6f7d42d0bbd71a8083b8 | Fjerner irrelevant produktsammenligning |
+| 2023-10-02 10:00:04 +0200 | 6f6e8b57505f921a8a264ae94f0b375ab1274f51 | Fjerner debug-info fra html rapportering cmd |
+| 2023-09-30 18:28:54 +0200 | db2c264c0f10809f21a912e20ee25f5ce78bc2f1 | Readme minor stuff |
+| 2023-09-30 18:27:05 +0200 | 89cfb7de9f2ab4400c8eb54247ce2118a2c70702 | Vedr CSV |
+| 2023-09-30 18:09:05 +0200 | ab2ccfc91c5708c929530b7ce80c901e11540b05 | Byttet rækkefølge på kontokort/balance |
+| 2023-09-30 18:06:37 +0200 | 435369772473470d1e67fe1bf04817cc5bf5f99b | Eksempler tilføjet |
+| 2023-09-30 17:45:15 +0200 | 47a2a74281f32eec895bddc190171d5979d3914a | Readme - tilføjet hvad vi ikke kan |
+| 2023-09-30 17:35:35 +0200 | d5808332efbe7535e1930765a3a4d7810b6bc2cc | Justering readme fil med intro booking |
+| 2023-09-30 17:22:26 +0200 | bf04e348ce2188fe089ca3adc82d67935b3609a2 | Mindre rettelse til README |
+| 2023-09-30 17:16:22 +0200 | 91f3e490f7f760fa1886f1d43d79a5ac87e59d22 | Tabel med produktsammenligning var for bred til at kunne vises |
+| 2023-09-30 17:14:07 +0200 | d49292621aa29e8ec2bca6e87d225ee8a7574b90 | TLDR skal også have virtualbox links |
+| 2023-09-30 17:10:46 +0200 | 609b8e56420ec9a0c23cf064720bec47dca630ad | Version 0.1b |
