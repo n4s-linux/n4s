@@ -2321,14 +2321,9 @@ function export_html()
 {
 	global $mm;
 
-	if (empty($mm['filename']))
-	{
-		message($mm, "Can't export the map when it doesn't have a file name yet. Save it first.");
-		return;
-	}
-
-	$file = fopen($mm['filename'].'.html', "w");
-
+	$op = exec("whoami");
+	$fn ="/home/$op/tmp/hmm.html";
+	$file = fopen($fn, "w");
 	if ($file===false)
 	{
 		message($mm, 'ERROR! Could not save the file');
@@ -2378,10 +2373,7 @@ function export_html()
 
 	fclose($file);
 
-	message($mm, 'Exported as '.$mm['filename'].'.html');
-	copy_to_clipboard($mm, $mm['filename'].'.html');
-	$filename = getenv('PWD').'/'.basename($mm['filename']).'.html';
-
+	message($mm, "Exported as $fn");
 	if ($mm['post_export_command']!='')
 	{
 		message($mm, 'Running the "'.$mm['post_export_command'].'" command');
