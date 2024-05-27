@@ -1,9 +1,10 @@
 # About this changelog
-	This changelog is automatically generated on 2024-05-27 21:00.
+	This changelog is automatically generated on 2024-05-27 22:00.
 
 ## 2024-05-27
  * A couple new accounts for the danish standard cahrter
  * Mindmap: Slight modification to html export target
+ * 🐛 Bugfix: AmountCurrency Amount fix
 
 ## 2024-05-26
 
