@@ -42,7 +42,9 @@ $op=exec("whoami");
            foreach ($mappings as $csvheader => $datafield) {
                    $c[$datafield] = $row[$csvheader];
            }
-      $c['Amount'] = str_replace(".","",$c['Amount']);       $c['Amount'] = str_replace(",",".",($c['Amount'])); 	$c['Date'] = str_replace(".","-",$c['Date']); 	$c['Date'] = str_replace("/","-",$c['Date']);
+      $c['Amount'] = str_replace(".","",$c['Amount']);       $c['Amount'] = str_replace(",",".",($c['Amount'])); 
+
+	$c['Date'] = str_replace(".","-",$c['Date']); 	$c['Date'] = str_replace("/","-",$c['Date']);
 if (isset($c['Func'])) 	$curfunc = $c['Func']; else 	$curfunc = "";
 if (isset($c['Account'])) 	$curacc = $c['Account']; else 	$curacc = "";
            $curtrans['Transactions'] = array();
@@ -78,6 +80,9 @@ $curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d H:i"),'Desc'=>'
                          ,'Func'=>$curfunc,'Amount'=> $c['Amount'] * -1)
                    );
 		if (isset($c["Currency"]) && $c["Currency"] != "") $curtrans["Transactions"][0]['Currency'] = $c["Currency"];
+		if (isset($c["AmountCurrency"])) {
+      			$c['AmountCurrency'] = str_replace(".","",$c['AmountCurrency']);       $c['AmountCurrency'] = str_replace(",",".",($c['AmountCurrency'])); 
+		}
 		if (isset($c["AmountCurrency"]) && $c["AmountCurrency"] != "") $curtrans["Transactions"][0]['AmountCurrency'] = number_format($c["AmountCurrency"],2,".","");
 		if (isset($c["Bankfee"]) && $c["Bankfee"] != "") {
 			$c["Bankfee"] = floatval(str_replace(",",".",$c["Bankfee"]));
