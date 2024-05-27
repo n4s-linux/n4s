@@ -20,17 +20,23 @@ $notes = array();
 $notenames = array();
 $notecount = 0;
 $darray = getdata($begin,$end);
+$tla = gettla($darray);
+require_once("/svn/svnroot/Applications/tlasort.php");
+usort($tla,"tlasort");
+if (!file_exists("$tpath/.reportingaccounts"))
+	file_put_contents("$tpath/.reportingaccounts",trim(implode("\n",$tla)));
+$tla = explode("\n",trim(file_get_contents("$tpath/.reportingaccounts")));
+exec_app("vi $tpath/.reportingaccounts");
 $showbudget = (getenv("budget") == 1) ? " (budgetteret )" : "";
 //if (hasfejl($darray)) showfejlkonto();
 echo "<center><h5>Resultatopgørelse $begin - $realend $showbudget</center></h5><br>";
-printsection($darray,"Indtægter",false);
-printsection($darray,"Udgifter",false);
-printsection($darray,"Resultatdisponering",false);
-echo "<meta charset=utf8><p style=\"page-break-after: always;\">&nbsp;</p>";
-echo "<center><h5>Balance $begin - $realend $showbudget</h5></center><br>";
-printsection($darray,"Aktiver",false);
-printsection($darray,"Egenkapital",false);
-printsection($darray,"Passiver",false);
+foreach ($tla as $curtla) {
+	printsection($darray,$curtla,false);
+	if ($curtla == "Aktdfdfiver") {
+		echo "<meta charset=utf8><p style=\"page-break-after: always;\">&nbsp;</p>";
+		echo "<center><h5>Balance $begin - $realend $showbudget</h5></center><br>";
+	}
+}
 if (hasfejl($darray))
 	printsection($darray,"Fejlkonto",false);
 echo "<p style=\"page-break-after: always;\">&nbsp;</p>";
@@ -488,5 +494,12 @@ function getnøgletal($darray)  {
 	
 	echo "</table>";
 	return ob_get_clean();
+}
+function gettla($data) {
+	$tla = array();
+	foreach ($data as $curdata) {
+		if (!in_array(explode(":",$curdata["Konto"])[0],$tla)) array_push($tla,explode(":",$curdata["Konto"])[0]);	
+	}
+	return $tla;
 }
 ?>
