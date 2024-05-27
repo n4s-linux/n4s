@@ -146,6 +146,7 @@ Udgifter:Personaleomkostninger:Feriepengeforpligtelse
 Udgifter:Personaleomkostninger:Personalegoder
 Udgifter:Personaleomkostninger:Jubilæumsgratiale og fratrædelsesgodtgørelse 
 Udgifter:Personaleomkostninger:Bestyrelseshonorar
+Udgifter:Personaleomkostninger:B-honorarer
 Udgifter:Personaleomkostninger:AM Bidragspligtig A-Indkomst
 Udgifter:Personaleomkostninger:AM Bidragsfri A-Indkomst
 Udgifter:Personaleomkostninger:Pensioner
@@ -156,7 +157,7 @@ Udgifter:Personaleomkostninger:Barsel
 Udgifter:Personaleomkostninger:ATP
 Udgifter:Personaleomkostninger:Andre personaleomkostninger
 Udgifter:Personaleomkostninger:Personalegoder 
-Udgifter:Personaleomkostninger:Lønrefusioner
+Udgifter:Personaleomkostninger:Lønrefusioner & Sygedagpenge
 Udgifter:Personaleomkostninger:Udbetalte skattefrie godtgørelser i form af kørepenge og diæter
 Udgifter:Personaleomkostninger:Lønsumsafgift
 Udgifter:Af- og nedskrivninger:Erhvervede immaterielle anlægsaktiver
@@ -178,10 +179,16 @@ Udgifter:Reklame & Markedsføring:Repræsentationsomkostninger, fuld fradragsret
 Udgifter:Reklame & Markedsføring:Andre salgsomkostninger
 Udgifter:Reklame & Markedsføring:Aviser og blade
 Udgifter:Reklame & Markedsføring:Gaver og blomster
-Udgifter:Renteudgifter:Div
-Udgifter:Renteudgifter:Bank
-Udgifter:Renteudgifter:Skattestyrelsen
-Udgifter:Renteudgifter:Mellemregning med anpartshaver
-Udgifter:Renteudgifter:Mellemregning med holding
-Udgifter:Selskabsskat
+Udgifter:Finansiering:Renteudgifter:Bank
+Udgifter:Finansiering:Renteudgifter:Kreditorer & Diverse
+Udgifter:Finansiering:Renteudgifter:Skattestyrelsen
+Udgifter:Finansiering:Renteudgifter:Mellemregning med anpartshaver
+Udgifter:Finansiering:Renteindtægter:Bank
+Udgifter:Finansiering:Renteindtægter:Debitorer & Diverse
+Udgifter:Finansiering:Renteindtægter:Skattestyrelsen
+Udgifter:Finansiering:Valutakursdifferencer
+
+Udgifter:Selskabsskat:Årets skat
+Udgifter:Selskabsskat:Regulering udskudt skat
+
 Udgifter:Udviklingsomkostninger
