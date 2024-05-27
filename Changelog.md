@@ -1,7 +1,9 @@
 # About this changelog
-	This changelog is automatically generated on 2024-05-27 17:00.
+	This changelog is automatically generated on 2024-05-27 18:00.
 
 ## 2024-05-27
+ * A couple new accounts for the danish standard cahrter
+ * Mindmap: Slight modification to html export target
 
 ## 2024-05-26
 
