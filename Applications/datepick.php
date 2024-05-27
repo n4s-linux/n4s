@@ -97,10 +97,14 @@
 	}
 	$op = 	exec("whoami");
 	$bn = basename(getenv("tpath"));
+	$reporting=fzf("Accrued\nMovement","Report with or without accrued balances ?");
+	if ($reporting == "") $reporting = "Accrued";
+	if ($reporting == "Accrued") $accrtxt = "export noend=\n";else $accrtxt = "export noend=1\n";
+	$accrtxt_noexp = str_replace("export ","",$accrtxt);	
 	if (!isset($quiet))
-		file_put_contents("/home/$op/tmp/.datepick_$bn","export LEDGER_BEGIN=$begin\nexport LEDGER_END=$end\n");	
+		file_put_contents("/home/$op/tmp/.datepick_$bn",$accrtxt. "export LEDGER_BEGIN=$begin\nexport LEDGER_END=$end\n");	
 	else
-		file_put_contents("/home/$op/tmp/.datepick_$bn","LEDGER_BEGIN=$begin LEDGER_END=$end\n");	
+		file_put_contents("/home/$op/tmp/.datepick_$bn",$accrtxt_noexp. "LEDGER_BEGIN=$begin LEDGER_END=$end\n");	
 	if (!isset($quiet)) echo set("Ny periode\t\t$begin - $end\n","green");
 ?>
 
