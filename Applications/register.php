@@ -118,11 +118,9 @@ function getaction($selection){
 	return $valg;
 }
 function getdata() {
-	$valg = fzf("Accrued\nActualPeriod\n","CarryOver");
-	if ($valg == "ActualPeriod") $pstr = "noend=1" ; else $pstr="";
 	ob_start();
 	$lh = ledgerhack();
-	$cmd = ("$lh color=none LEDGER_SORT=date,account $pstr php /svn/svnroot/Applications/newl.php --no-pager --no-color csv");
+	$cmd = ("$lh color=none LEDGER_SORT=date,account php /svn/svnroot/Applications/newl.php --no-pager --no-color csv");
 	system($cmd);
 	$data = explode("\n",trim(ob_get_clean()));
 	$t = array();
@@ -166,7 +164,7 @@ function showmatches($accounts,$matches,$t) {
 		$fzf .= "$ca\t💰$nicebal\n";
 	}
 	$fzf = trim($fzf);
-	$acc = fzf($fzf,"Select account that has matches - SPACE to select all","--multi --bind space:select-all -1",true,true,"|sort");
+	$acc = fzf($fzf,"Select account that has matches - SPACE to select all","--multi --bind space:select-all -1",true);
 	if ($acc == "") die("No account(s) selected\n");
 	$accs = explode("\n",$acc);
 	$show = array();
