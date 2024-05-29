@@ -209,7 +209,7 @@ function r() {
 	if [ "$tpath" == "" ]; then
 		sr
 	fi
-	register
+	register $@
 }
 alias autoudlign="php /svn/svnroot/Applications/newl.php openentries"
 alias ui="php /svn/svnroot/Applications/newl.php ui"
