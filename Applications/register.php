@@ -1,12 +1,13 @@
 <?php
+require_once("/svn/svnroot/Applications/readonly.php");
+require_once("/svn/svnroot/Applications/fzf.php");
+require_once("/svn/svnroot/Applications/proc_open.php");
 require_once("/svn/svnroot/Applications/shortacc.php");
 $tpath = getenv("tpath");
 $op = exec("whoami");
 if ($tpath == "") die("register requires tpath\n");
-require_once("/svn/svnroot/Applications/readonly.php");
+while (true){
 $currenttransactions = array();
-require_once("/svn/svnroot/Applications/proc_open.php");
-require_once("/svn/svnroot/Applications/fzf.php");
 $t = getdata();
 $matches = getmatches($t,$argv);
 $accounts = getaccounts($matches);
@@ -17,6 +18,7 @@ if ($action == "") die("No action selected\n");
 if ($action == "View/Edit") edit($selected);
 else if ($action == "Reverse") copytrans($selected,"Reverse");
 else if ($action == "Copy") copytrans($selected,"Copy");
+}
 function copytrans($selected,$mode="Copy") {
 	global $currenttransactions;
 	global $op;
@@ -95,13 +97,6 @@ function edit($selected) {
 		if (!isset($tags["Filename"])) die("File $x has no Filename\n");
 		if (!file_exists($tpath."/".$tags["Filename"])) continue;
 		$vim .= (readonly($tags["Filename"])) ? ":view $tpath/$tags[Filename]\n" : ":e $tpath/$tags[Filename]\n";
-		if (isset($tags["TransID"])) {
-			$vim .= "/Transactions\n/Account\n";
-			for ($i = 0; $i<$tags["TransID"];$i++) {
-				$vim .= "n";
-			}
-			$vim .= "www";
-		}
 		$results .= "\"$tags[Filename]\" ";
 		$cmd = "cp \"$tpath/$tags[Filename]\" \"$tpath/.$tags[Filename].old\"";		system($cmd);
 	}
@@ -198,9 +193,9 @@ function showmatches($accounts,$matches,$t) {
 			$contra = "NA";
 		if (isset($tags["SourceFunc"])) $moms = "[" .$tags["SourceFunc"]."]"; else $moms = "";
 		if (isset($tags["Filename"]) && !readonly($tags["Filename"]))
-			$fzf .= "\033[38;5;16;48;5;226m$i\t$date\t$acc\t$moms\t$contra\t$text\t$pamount\t$pbal\033[0m\n";
+			$fzf .= "\033[38;5;226m$i\t$date\t$acc\t$moms\t$contra\t$text\t$pamount\t$pbal\033[0m\n";
 		else
-			$fzf .= "$i\t$date\t$acc\t$moms\t$contra\t$text\t$pamount\t$pbal\n";
+			$fzf .= "\033[38;5;102m$i\t$date\t$acc\t$moms\t$contra\t$text\t$pamount\t$pbal\033[0m\n";
 	
 		$i++;
 	}
