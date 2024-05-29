@@ -23,8 +23,10 @@ $darray = getdata($begin,$end);
 $tla = gettla($darray);
 require_once("/svn/svnroot/Applications/tlasort.php");
 usort($tla,"tlasort");
-if (!file_exists("$tpath/.reportingaccounts"))
-	file_put_contents("$tpath/.reportingaccounts",trim(implode("\n",$tla)));
+if (!file_exists("$tpath/.reportingaccounts")) {
+	exec_app("ls /svn/svnroot/Libraries/reports/|fzf --header='Pick report'>~/tmp/reportthis");
+	file_put_contents("$tpath/.reportingaccounts",file_get_contents("/svn/svnroot/Libraries/reports/".trim(file_get_contents("/home/$op/tmp/reportthis"))));
+}
 $tla = explode("\n",trim(file_get_contents("$tpath/.reportingaccounts")));
 exec_app("vi $tpath/.reportingaccounts");
 $showbudget = (getenv("budget") == 1) ? " (budgetteret )" : "";
