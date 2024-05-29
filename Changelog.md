@@ -1,5 +1,10 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-05-29 | 5f9c9937ceb3621e3b52e141103a9ee5f078eac6 | 💡 New Feature - Smart bank integration via gocardless - which is free for small businesses 💚💚💚 |
+| 2024-05-29 | a65e8bcd5c0f6586f8e4e04c8ced6080f976af91 | Reporting accounts are customizable |
+| 2024-05-29 | c1cdebfcc2f97bd656da766abfff6d8c2292ec73 | Register program improvements |
+| 2024-05-29 | 74258c0ddc4daabedbbf5de9e5e47183e5cbcbf7 | Replace commas with dots - commas is the danish decimal separator |
+| 2024-05-29 | ff34ff4a66a71919618c8dc86eaafdb240911bef | Register - parse alle arguments to the program |
 | 2024-05-28 | 53522927e459d40f6e08d6fe64f4a64840da5974 | Search should not include day after |
 | 2024-05-28 | e706023e0f8afbf454fc47de52c43a416b5859f2 | CarryOverfunktion implemented in dp(), removing from register |
 | 2024-05-28 | 270dd0592ba929028448ef396f1de30458a91fa1 | Going with past 30 days instead of 90 days for buffer |
