@@ -1,5 +1,5 @@
 <?php
-	require_once("/svn/svnroot/Libraries/gen_uuid.php");
+//	require_once("/svn/svnroot/Libraries/gen_uuid.php");
 	ob_start();
 	system("find /data/regnskaber -name \*.trans -mtime -3");
 	$files = explode("\n",trim(ob_get_clean()));
