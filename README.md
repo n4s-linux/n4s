@@ -47,13 +47,6 @@ That is, you do not need to go in and define rules for simple fee postings, beca
 Find your transactions easily based on the currency amount, not Your base currency... !
 Is available when You import currency code and currency amount on Your transactions.
 
-# Running updates - rolling release
-You don't have to wait years for a new version to be released. You can continuously download patches with improvements to the system.
-Most recent updates, You can also view the [Changelog](Changelog.md) or browse [All commits](https://github.com/n4s-linux/n4s-gratis-regnskab/commits/main/)
-It takes under a minute to update the n4s to the latest version.
-This is how you update the system
-> upd8
-
 # N4S - a free and free accounting and ERP solution for small businesses and individuals
 N4S is more than just an accounting system; it is a powerful ally on your journey to business success. Whether you're an accounting professional, an entrepreneur or a business owner, N4S has the tools you need to gain superior control over your finances and business processes.
 
@@ -161,7 +154,14 @@ Our system supports loading and unloading of CSV files, which is why it is easy 
 * Link to [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (remember to get the Extension Pack too)
 
 
-# Recent updates to the system
+# Running updates - rolling release
+You don't have to wait years for a new version to be released. You can continuously download patches with improvements to the system.
+Most recent updates, You can also view the [Changelog](Changelog.md) or browse [All commits](https://github.com/n4s-linux/n4s-gratis-regnskab/commits/main/)
+It takes under a minute to update the n4s to the latest version.
+This is how you update the system
+> upd8
+
+## Recent updates
 |at|hash|desc|
 |---|---|---|
 | 2024-05-29 | [5f9c9937...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/5f9c9937ceb3621e3b52e141103a9ee5f078eac6) | 💡 New Feature - Smart bank integration via gocardless - which is free for small businesses 💚💚💚 |
