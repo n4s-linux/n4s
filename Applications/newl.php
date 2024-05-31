@@ -147,9 +147,12 @@ require_once("/svn/svnroot/Applications/readonly.php");
 	else if ($nargs[0] != "entry") { // this is where we pass the ledger commands - todo pass them properly even with quotes and stuff, to make it a proper working full wrapper
 		foreach ($nargs as $curarg)
 			$cmd .= " $curarg";
-			if (getenv("color") != "none") $cmd .="|php /svn/svnroot/Applications/colorizer.php";
+			if (getenv("color") != "none" && $argv[1] != "csv") $cmd .="|php /svn/svnroot/Applications/colorizer.php";
 		$lh = ledgerhack();
-		system("$lh;$cmd");
+		if ($argv[1] != "csv" && getenv("color") != "none")
+			system("$lh;$cmd|boxes -d parchment");
+		else	
+			system("$lh;$cmd");
 		if ($undefined_aliascount > 0)fwrite(STDERR,"$undefined_aliascount manglende aliases - skriv 'aliases'\n");
 	}
 	else {
@@ -203,7 +206,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 		$msg = "Saved $f[Filename] 🗸 ";
 		echo "\033[38;5;46m$msg\033[0m\n";
 		system("php /svn/svnroot/Applications/newl.php b >/dev/null");
-		file_put_contents("/home/$op/.lastsym","📝$f[Reference]",FILE_APPEND);
+		file_put_contents("/home/$op/.lastsym","🗸 $f[Filename]",FILE_APPEND);
 	}
 	function askamount($konto,$bal) {
 		require_once("/svn/svnroot/Applications/math.php");
