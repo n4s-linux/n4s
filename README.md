@@ -121,7 +121,7 @@ Our system supports loading and unloading of CSV files, which is why it is easy 
 * VAT codes (i,u,iv-eu,iy-eu,iv-abr,iy-abr,rep)
 * End of year
 * Report generator and transaction explorer (web application and text-based)
-* Import of transactions from CSV or live bank connection
+* Import of transactions from CSV or live bank connection - anyone can connect their bank for free using the Gocardless Service, which is free to use for small businesses 😍
 * Export of transactions to XML and CSV
 * Automatic calculation of interest where you can specify the interest rate on a given account
 * Automatic periodization where you can specify a start and end date for each expense
