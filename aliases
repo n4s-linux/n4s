@@ -724,6 +724,7 @@ if [ "$bn" == "NEW" ]; then
         	if [ ! -f ~/regnskaber/"$bn" ]; then
 			ln -s "$tpath" ~/regnskaber/"$bn"
 		fi
+	fi
 fi
 bn=$(basename "$tpath")
 if [ "$nochange" != "1" ]; then
