@@ -722,7 +722,7 @@ if [ "$bn" == "NEW" ]; then
 		tpath="$newfolder"
 		bn=$(basename "$tpath")
         	if [ ! -f ~/regnskaber/"$bn" ]; then
-			ln -s "$tpath" ~/regnskaber/"$bn"
+			ln -s "$path/$bn" ~/regnskaber/"$bn"
 		fi
 	fi
 fi
