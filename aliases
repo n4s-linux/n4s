@@ -721,9 +721,9 @@ if [ "$bn" == "NEW" ]; then
 		touch "$newfolder/aliases"
 		tpath="$newfolder"
 		bn=$(basename "$tpath")
-        elif [ ! -f ~/regnskaber/"$bn" ]; then
-		ln -s "$tpath" ~/regnskaber/"$bn"
-        fi
+        	if [ ! -f ~/regnskaber/"$bn" ]; then
+			ln -s "$tpath" ~/regnskaber/"$bn"
+		fi
 fi
 bn=$(basename "$tpath")
 if [ "$nochange" != "1" ]; then
