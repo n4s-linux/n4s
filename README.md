@@ -119,7 +119,7 @@ Our system supports loading and unloading of CSV files, which is why it is easy 
 * Automatic Periodization when specifying the period for transactions
 * Automatic depreciation when specifying the lifetime of transactions
 * VAT codes (i,u,iv-eu,iy-eu,iv-abr,iy-abr,rep)
-* End of year
+* No need to close the book at the end of the year, accounting periods are dynamic and are created automatically. You can report across any period in time, no matter what Your accounting Year is.
 * Report generator and transaction explorer (web application and text-based)
 * Import of transactions from CSV or live bank connection - anyone can connect their bank for free using the Gocardless Service, which is free to use for small businesses 😍
 * Export of transactions to XML and CSV
