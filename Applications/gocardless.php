@@ -1,6 +1,7 @@
 <?php
 if (!isset($argv[1])) die("usage: gocardless [getdata/new]\n");
 $op = exec("whoami");
+if ($op != "joo") die();
 require_once("/svn/svnroot/Applications/fzf.php");
 if (!file_exists("/home/$op/.gcl.keys")) {
 	echo "Since this is the first run, please give me Your gocardless details - they will be stored in your home directory\n";
@@ -43,10 +44,11 @@ else if ($argv[1] == "getdata") {
 		foreach ($list["accounts"] as $curacc) {
 			$data = call($atoken,"https://bankaccountdata.gocardless.com/api/v2/accounts/$curacc/transactions/");
 			system("mkdir /home/$op/banktrans/$reqdata[reference] -p");
+			if (!isset($data["transactions"])) continue;
 			foreach ($data["transactions"]["booked"] as $curdata) {
 				$curdata["AccountRef"] = $curacc;
 				$curdata["ReqRef"] = $reqdata["reference"];
-				file_put_contents("/home/$op/banktrans/$reqdata[reference]" . "/" .$curdata["bookingDate"] . "_"  .$curdata["transactionId"] . ".json",json_encode($curdata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+				file_put_contents("/home/$op/banktrans/$reqdata[reference]" . "/" .$curdata["AccountRef"] . "_"  .$curdata["internalTransactionId"] . ".json",json_encode($curdata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 			}
 		}
 	}
