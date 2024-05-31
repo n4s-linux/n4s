@@ -1,5 +1,9 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-05-31 | [1eeb82ef...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/1eeb82ef16ca3833c1cf29baac72caef916e70f4) | Make vim clear on exit |
+| 2024-05-31 | [00160b7a...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/00160b7a614316fca200065925b9eab6e5a16fb9) | Minor bugfix |
+| 2024-05-31 | [9bc012d7...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9bc012d7399cce3a068e2b39873763dcac9b680a) | typo |
+| 2024-05-31 | [035b7810...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/035b781059de667468e20daa49670e12705fa5b2) | Minor bugfix in sr at new account |
 | 2024-05-31 | [3cde7308...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/3cde730849d733c4f3d1b5fa3b9180007683adee) | Readme stuff |
 | 2024-05-31 | [b34c9947...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/b34c9947abaec236784358525719074550819912) | Readme stuff |
 | 2024-05-31 | [fc763581...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/fc76358190f2ca94ceea12aca28feb15d5580147) | Script to load gocardless bank transactions |
