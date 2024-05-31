@@ -1,5 +1,13 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-05-31 | fc76358190f2ca94ceea12aca28feb15d5580147 | Script to load gocardless bank transactions |
+| 2024-05-31 | be08d5a274073e0c6677b8968984cf75f4bd5cf1 | History limit increase for logging |
+| 2024-05-31 | 66a34cc9380e85e4e52174ff1c15f3d1bb4cf400 | Printing reports to terminal improvements |
+| 2024-05-31 | 76d73dc52116e92448576b5dff316cf95de9baf9 | InternalTransaction is the unique identifier combined with the accc uid |
+| 2024-05-31 | 2679d9a539f92f9ed5ed446418de0fd0f44efe18 | Using php built in uid |
+| 2024-05-31 | 06b8b7ba93179ffb49511220172d8bcd5b6aa9a8 | Lastsym for l/ll/lll changed |
+| 2024-05-31 | d8274f264d78507039a256b6abe04c22810c18c2 | Logging and other minor stuff |
+| 2024-05-31 | 53f7e6f9e2279a45bca37a6b8f302df97aabceed | More colors |
 | 2024-05-29 | 5f9c9937ceb3621e3b52e141103a9ee5f078eac6 | 💡 New Feature - Smart bank integration via gocardless - which is free for small businesses 💚💚💚 |
 | 2024-05-29 | a65e8bcd5c0f6586f8e4e04c8ced6080f976af91 | Reporting accounts are customizable |
 | 2024-05-29 | c1cdebfcc2f97bd656da766abfff6d8c2292ec73 | Register program improvements |
