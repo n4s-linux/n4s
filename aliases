@@ -1,3 +1,4 @@
+sessionstart=$(date +"%Y-%m-%dT%T")
 alias journal="color=none l print|vi -"
 function displayaccshortcuts() {
 	echo -e " #[bg=black fg=yellow]💡n4s v$version"
@@ -590,7 +591,7 @@ bn=$(basename "$tpath");
 if [ ! -f  ~/.lastsym ]; then 
 	touch ~/.lastsym 
 fi
-syms=$(cat ~/.lastsym|tail -c95)
+syms=$(tail -n1 ~/.lastsym)
 
 update_title "#[bg=yellow]$cmd #[bg=blue]$LEDGER_BEGIN - $LEDGER_END"
 if [ "$tpath" != "" ]; then
@@ -603,7 +604,7 @@ if [ "$tpath" != "" ]; then
     if [ "$tpath" == "$PWD" ]; then
         if [ "$logging" == "on" ]; then
 		mkdir -p $tpath/.logs/
-            tmux capture-pane -pS - > $tpath/.logs/$(whoami)-$(date +%Y-%m-%dT%H:%M).log 2>/dev/null
+            tmux capture-pane -pS - > $tpath/.logs/$(whoami)-$sessionstart.log 2>/dev/null
         fi
     elif [ "$logging" == "on" ]; then
         export logging=off
@@ -746,8 +747,6 @@ fi
 echo "Opened $(basename "$tpath") OK "
 echo ✌ Opened $tpath 
 echo ✌ Full Log $logging
-shortcuts="✌ Common shortcuts: Menu [Alt-m] - Entry [Alt-e] - Balance [Alt-b] - Register [Alr-]r - Book/validate book hashes [Alt-o]"
-echo  -e "$shortcuts"
 )|boxes -d parchment
 echo
 mkdir -p $tpath/.logs/
