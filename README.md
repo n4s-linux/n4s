@@ -160,3 +160,17 @@ Our system supports loading and unloading of CSV files, which is why it is easy 
 * Link to [Virtualbox OVA appliance](https://drive.google.com/file/d/1i-VhkUzbIyoZOtJRZ0Fz1MS90s0AJE72/view)
 * Link to [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (remember to get the Extension Pack too)
 
+
+# Recent updates to the system
+|at|hash|desc|
+|---|---|---|
+| 2024-05-29 | [5f9c9937ceb3621e3b52e141103a9ee5f078eac6](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/5f9c9937ceb3621e3b52e141103a9ee5f078eac6) | 💡 New Feature - Smart bank integration via gocardless - which is free for small businesses 💚💚💚 |
+| 2024-05-28 | [bbbad819a80564828d8152b16d2114c2130b8a11](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbbad819a80564828d8152b16d2114c2130b8a11) | 💡 New Feature: Manual accounts support debitor/creditor |
+| 2024-05-28 | [0a2ba6aaf531ab1f35a33742c78f16185c0d56c3](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0a2ba6aaf531ab1f35a33742c78f16185c0d56c3) | 💡 New feature - report with/without primo carryover amounts |
+| 2024-05-22 | [49b05f83a2c0261dbbc3425a41b26a77d8cf0931](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/49b05f83a2c0261dbbc3425a41b26a77d8cf0931) | 💡 New Feature: Easier transaction edit and add new transaction |
+| 2024-05-20 | [afd42d28b4a91d3a40b6f46ff460a1e1f04e48aa](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/afd42d28b4a91d3a40b6f46ff460a1e1f04e48aa) | 💡 New Feature: View all transactions when entering a transaction that is an opening |
+| 2024-05-18 | [9018a2203b2b207c73aeecbc2a663ce57708a4e4](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9018a2203b2b207c73aeecbc2a663ce57708a4e4) | 💡 New Feature: Guide that allows to book specific or all transactions, and verify the book later on to see if any of the booked transactions has changed #blockchain |
+| 2024-05-18 | [719bd34233245848122d5f0767a47c5a0d369ae6](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/719bd34233245848122d5f0767a47c5a0d369ae6) | 💡New Feature: Nicer balance with integration to register |
+| 2024-05-17 | [b34c5c0a2dd2df3075c2657b0bf05904b9b0ee5e](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/b34c5c0a2dd2df3075c2657b0bf05904b9b0ee5e) | 💡New Feature: More efficent account entry browser - with edit, copy, reverse function |
+| 2024-05-12 | [a9de901665587e430a97f3d92eccc983050a7220](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a9de901665587e430a97f3d92eccc983050a7220) | 💡 New feature: Scheduled transactions |
+| 2024-05-12 | [d959812705e3bfe8982b4b13b076cd7ab3b7b221](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/d959812705e3bfe8982b4b13b076cd7ab3b7b221) | 💡 New Feature: Automated questionaire based on fejlkonto to customers |
