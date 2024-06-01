@@ -1,5 +1,6 @@
 #!/usr/bin/env php
 <?php
+$op = exec("whoami");
 
 /**
  * h-m-m
@@ -67,6 +68,7 @@ $conf =
 	)
 ;
 
+$mn["arguments"]["filename"] = str_replace("~","/home/$op",$mn["arguments"]["filename"]);
 if (file_exists($conf))
 {
 	$handle = fopen($conf, "r");
