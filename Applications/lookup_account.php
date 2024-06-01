@@ -18,7 +18,7 @@ function lookup_acc($accounts,$bal,$alias = "",$multi = "--multi") {
 		$accountstring = "";
 		while ($accountstring == "") {
 			system("stty sane");
-			echo "\nEnter Manual Account - Full Account string: ";
+			echo "\nEnter Manual Account - Full Account string:\n";
 			$fd = fopen("PHP://Stdin","r");
 			$accountstring = $prefix . trim(explode("\n",fgets($fd))[0]);
 			fclose($fd);
