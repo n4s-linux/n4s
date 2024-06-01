@@ -31,19 +31,21 @@ foreach ($data as $curline) {
 	if (!isset($balances[$ecoaccount."|||".$account]["then"])) $balances[$ecoaccount."|||".$account]["then"] = 0;
 	$balances[$ecoaccount."|||".$account]["then"] += $amount;
 }
-$data = "Kontonr\tKontonavn\tIÅR\nSidsteÅR\n";
+$data = "Kontonr\tKontonavn\tIÅR\tSidsteÅR\n";
 foreach ($balances as $key => $curbalance) {
 	$x = explode("|||",$key);
 	$kontonr = $x[0];
 	$kontonavn = $x[1];
-	if (!isset($curbalance["now"])) $curbalance["now"] = "";
-	if (!isset($curbalance["then"])) $curbalance["then"] = "";
+	if (!isset($curbalance["now"])) $curbalance["now"] = ""; else $curbalance["now"] = round($curbalance["now"],2);
+	if (!isset($curbalance["then"])) $curbalance["then"] = ""; else $curbalance["then"] = round($curbalance["then"],2);
 	$data .= "$kontonr\t$kontonavn\t$curbalance[now]\t$curbalance[then]\n";
 	
 }
 echo "Saving /home/$op/tmp/Letregnskab_$bn.csv\n";
 file_put_contents("/home/$op/tmp/Letregnskab_$bn.csv",$data);
 function ecomap($konto) {
+	if (substr($konto,0,strlen("Aktiver:Omsætningsaktiver:Debitorer")) == "Aktiver:Omsætningsaktiver:Debitorer") return 5600;
+	if (substr($konto,0,strlen("Passiver:Kreditorer")) == "Passiver:Kreditorer") return 6800;
 	$md = cleanFileName($konto);
 	if (file_exists("/data/regnskaber/ecomap/$md")) return trim(file_get_contents("/data/regnskaber/ecomap/$md"));
 	else {
