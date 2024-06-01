@@ -294,6 +294,7 @@ function dp() {
     bn=$(basename "$tpath")
 	php /svn/svnroot/Applications/datepick.php
 	source ~/tmp/.datepick_$bn
+	rm ~/tmp/.datepick_$bn
 	end=$LEDGER_BEGIN
 	lastsym 🕒
 	begin=1900-01-01 
@@ -305,6 +306,7 @@ function dp() {
 function ds() {
 	php /svn/svnroot/Applications/sortpick.php
 	source ~/tmp/.sortpick
+	rm ~/tmp/.sortpick
 }
 function m() {
 	if [ "$tpath" != "" ]; then
