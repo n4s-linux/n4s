@@ -45,7 +45,7 @@ function hmm() {
 fn=$(
 (
 echo NEW
-ls -t */.*.hmm 2>/dev/null)|fzf --header="Chose mindmap")
+ls -t ./.*.hmm 2>/dev/null)|fzf --header="Chose mindmap")
 if [ "$fn" == "" ]; then
 	return
 fi
