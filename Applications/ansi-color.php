@@ -116,6 +116,7 @@ global $ANSI_CODES;
         $color_attrs = explode("+", $color);
         $ansi_str = "";
         foreach ($color_attrs as $attr) {
+	if (isset($ANSI_CODES[$attr]))
             $ansi_str .= "\033[" . $ANSI_CODES[$attr] . "m";
         }
         $ansi_str .= $str . "\033[" . $ANSI_CODES["off"] . "m";
