@@ -139,7 +139,7 @@ if (isset($argv[1]) && $argv[1] == "ledger") {
 		}
 		system($cmd);
 		$time=time();
-		system("cp $path/$cbf $path/curl 2>/dev/null;rm -f $path/$cbf");
+		system("cp $path/$cbf $path/curl 2>/dev/null;rm -f $path/$cbf;rm ~/tmp/loutput_$loutput_uid");
 }
 }
 if (isset($argv[1]) && $argv[1] == "load") {
