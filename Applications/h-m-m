@@ -49,7 +49,7 @@ for ( $i = 1 ; $i < $alen ; $i++ )
 	else
 		$mm['arguments']['filename'] = $argv[$i];
 
-
+	$mn["arguments"]["filename"] = str_relace("~","/home/$op",$mn["arguments"]["filename"]);
 // parsing the config file
 
 $conf =
