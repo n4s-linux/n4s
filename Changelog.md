@@ -1,5 +1,6 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-06-01 | [55f786a1...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/55f786a1ca9db0bf69a340a2f211db6112789982) | Exit balance viewer if no balance |
 | 2024-06-01 | [8d0109e3...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/8d0109e3ef1b3d8484ff776fcba8ed44549f9d22) | Standard report for danish accounts |
 | 2024-06-01 | [561e88d9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/561e88d9c239a228d5d9725a9e4ea5664afae359) | Removal of tmp files when done |
 | 2024-06-01 | [28ea0203...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/28ea0203c0101e87c20fcc23590b89a5e79c33a4) | Remove tmp files when done |
