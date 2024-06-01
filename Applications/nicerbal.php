@@ -87,6 +87,7 @@ function gettlabal($tla) {
 				$total += $currow["Amount"];
 		}
 	}
+	if (!isset($bal)) die("No balance yet, please enter some transactions...\n");
 	foreach ($bal as $acc => $curbal) {
 		$col = getcolor($tla);
 		$rv .= getcolor($tla) . $acc ."\t💰". str_pad(number_format($curbal,2,",","."),15," ",STR_PAD_LEFT) . "\033[0m\n";
