@@ -1,5 +1,11 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-06-01 | [c2f26062...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c2f26062de8c894ecd4d61a3e3783d45be80e6e3) | Minor bugfix mindmap paths |
+| 2024-06-01 | [62882a25...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/62882a25cb5c8cbbcaaecb953a637a7f7ea7fab4) | Mindmap absolute path |
+| 2024-06-01 | [679177c9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/679177c94b806b7eb038d06ad1feb79b7cb7a351) | rollback |
+| 2024-06-01 | [50cf44a5...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/50cf44a52826f685bcea5726d05819d96f28f50f) | Mindmap bugfix |
+| 2024-06-01 | [abb6a06d...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/abb6a06d3b412ff3d5f8a90e35176807475d1612) | Fixing typo in function |
+| 2024-06-01 | [9cb79b2f...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9cb79b2ffcf26a25e23f0cbcf9c667e3186bdba6) | Fixing relative path to absolute |
 | 2024-06-01 | [55f786a1...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/55f786a1ca9db0bf69a340a2f211db6112789982) | Exit balance viewer if no balance |
 | 2024-06-01 | [8d0109e3...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/8d0109e3ef1b3d8484ff776fcba8ed44549f9d22) | Standard report for danish accounts |
 | 2024-06-01 | [561e88d9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/561e88d9c239a228d5d9725a9e4ea5664afae359) | Removal of tmp files when done |
