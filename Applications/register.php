@@ -104,7 +104,7 @@ function edit($selected) {
 		file_put_contents("/home/$op/tmp/register_edit",$vim);
 		exec_app("vim -s /home/$op/tmp/register_edit");
 		exec_app("php /svn/svnroot/Applications/key_arraydiff.php $results");
-		system("rm \"$tpath\"/.*.old");
+		system("rm \"$tpath\"/.*.old;rm ~/tmp/register_edit");
 	}
 }
 function getaction($selection){
