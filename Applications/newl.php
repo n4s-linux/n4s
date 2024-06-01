@@ -47,6 +47,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 	$ledgerdata .= getledgerdata($x);
 	$uid = uniqid();
 	$fn = "/home/$op/tmp/.newl-$uid";
+	$tmpfn = $fn;
 	file_put_contents("$fn",$ledgerdata);
 	$begin = getenv("LEDGER_BEGIN");
 	$end = getenv("LEDGER_END");
@@ -158,6 +159,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 	else {
 		entry();
 	}
+	system ("rm $tmpfn");
 	function entry() {
 		global $tpath;
 		global $op;
