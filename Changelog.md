@@ -1,5 +1,14 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-06-01 | [8d0109e3...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/8d0109e3ef1b3d8484ff776fcba8ed44549f9d22) | Standard report for danish accounts |
+| 2024-06-01 | [561e88d9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/561e88d9c239a228d5d9725a9e4ea5664afae359) | Removal of tmp files when done |
+| 2024-06-01 | [28ea0203...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/28ea0203c0101e87c20fcc23590b89a5e79c33a4) | Remove tmp files when done |
+| 2024-06-01 | [2bf0002f...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/2bf0002f2d2cff40fe5f6c7c12d0cf20dd75cce1) | Remove tmp files when done |
+| 2024-06-01 | [0b4ed01d...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0b4ed01db1e175d64778d580c3b31554354dba8e) | Minor fix when entering manual finance account |
+| 2024-06-01 | [5a668508...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/5a668508c59cda9c43f2c56bf91f99dfb7aa65e9) | Map all debitors and creditors to fixed accounts in economic |
+| 2024-06-01 | [383839d1...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/383839d174a8cf4da4cb29b66b43715646c66b5e) | Remove tmp files when done |
+| 2024-06-01 | [33aafa89...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/33aafa89f75f61ff6d5ad81a6ced8d6ca3de1bd5) | Remove tmp file after done |
+| 2024-06-01 | [415b6410...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/415b64107feb63fb5a7f445722790b9ed243af6f) | No color if color dont exist |
 | 2024-05-31 | [1eeb82ef...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/1eeb82ef16ca3833c1cf29baac72caef916e70f4) | Make vim clear on exit |
 | 2024-05-31 | [00160b7a...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/00160b7a614316fca200065925b9eab6e5a16fb9) | Minor bugfix |
 | 2024-05-31 | [9bc012d7...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9bc012d7399cce3a068e2b39873763dcac9b680a) | typo |
