@@ -11,6 +11,7 @@ function fzf($list,$header = "",$flags = "",$cols = false,$trim = true,$sort="")
 	else
 		$cmd = "cat ~/tmp/fzf.list$sort|column -ts $'\t'|fzf --header=\"$header\" $flags> /home/$op/tmp/fzf";
 	exec_app($cmd);
+	system("rm /home/$op/tmp/list");
 	file_put_contents("/home/$op/tmp/fejl",$cmd);
 	//$d = explode("\n",file_get_contents("/home/$op/tmp/fzf"))[0]; // POTENTIAL BIG PRAWBLEM THIS USED TO WORK
 	$d = file_get_contents("/home/$op/tmp/fzf");
