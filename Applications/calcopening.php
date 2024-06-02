@@ -37,7 +37,7 @@ foreach ($saldo as $konto => $cursaldo) {
 	$cursaldo = number_format($cursaldo,2,".","");
 	$keep= true;
 	if (substr($konto,0,strlen("Egenkapital:")) == "Egenkapital:") {
-		if (stristr("$konto","indberettet") ||stristr($konto,"reserve") || in_array($konto,$kkkeep)) {
+		if (stristr("$konto","indberettet") ||stristr($konto,"reserve") || stristr($konto,"Mellemregning")||in_array($konto,$kkkeep)) {
 			$keep= true;
 		}
 		else
