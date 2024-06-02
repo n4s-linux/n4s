@@ -1,5 +1,11 @@
 <?php
 require_once("/svn/svnroot/Applications/accountheader.php");
+echo "From Account (enter for all): ";
+$fromacc = trim(fgets(STDIN));
+if ($fromacc == "") $fromacc = 0;
+echo "To Account (enter for all): ";
+$toacc = trim(fgets(STDIN));
+if ($toacc== "") $toacc= 9999999;
 $begin = getenv("LEDGER_BEGIN");
 $end = getenv("LEDGER_END");
 $tpath = getenv("tpath");
@@ -15,12 +21,14 @@ $output = ob_get_clean();
 ob_start();
 printheader("Ekstern rapportering");
 echo "<br>";
-saldobalance($newtrans,$stdkto);
 $output .= ob_get_clean();
-ob_start();
-$output.= "<p style=\"page-break-before: always\"></p>";
-kontokort($newtrans,$stdkto);
-$output .= ob_get_clean();
+$output .= saldobalance($newtrans,$stdkto);
+if (getenv("nospecs") != 1){
+	ob_start();
+	kontokort($newtrans,$stdkto);
+	$output.= "<p style=\"page-break-before: always\"></p>";
+	$output .= ob_get_clean();
+}
 $op = exec("whoami");
 file_put_contents("/home/$op/tmp/stdkto.html",$output);
 function kontokort($newtrans,$stdkto) {
@@ -61,12 +69,15 @@ function printheader_ktoplan($header) {
 }
 
 function saldobalance($t,$stdkto) {
-	global $output;
+	$output = "";
 	$output.= "<h1><center>Saldobalance</center></h1>";
+	global $fromacc; global $toacc;
 	global $nulkontrol;
 	$output.= "<table class='table table-striped' width=700>";
 	$curheader="";
 	foreach ($stdkto as $curkto) {
+		if ($curkto[0] < $fromacc || $curkto[0] > $toacc) continue;
+		if ($curkto[0] == 99999) continue;
 		if ($curkto[1] == "Overskrift") $curheader = printheader_ktoplan($curkto);
 		else if ($curkto[1] == "" ) {
 			$p = printaccbal($curkto);
@@ -94,6 +105,7 @@ function saldobalance($t,$stdkto) {
 	$prettynul=number_format($nulkontrol,2,".",",");
 	$output.= "<tr><td>&nbsp;</td><td><b><u>Nulkontrol</u></b></td><td><b><u><p align=right>$prettynul</u></b></p></td></tr>";
 	$output.= "</table>";
+	return $output;
 }
 function printsumbal($curkto,$begin,$end) {
 	ob_start();
@@ -111,12 +123,11 @@ function printsumbal($curkto,$begin,$end) {
 	return ob_get_clean();
 }
 function printaccbal($curkto) {
-	global $output;
 	global $nulkontrol;
-	ob_start();
 	$konto = trim(explode("\t",$curkto[0])[0]);
 	global $newtrans;
 	$bal = 0;
+	$output="";
 	foreach ($newtrans as $curtrans) {
 		if ($curtrans['Account'] == $konto) $bal += $curtrans['Amount'];
 	}
@@ -125,7 +136,7 @@ function printaccbal($curkto) {
 		$pretty = number_format($bal,2,".",",");
 		$output.= "<tr><td>$konto</td><td>$curkto[2]</td><td><p align=right>$pretty</p></td></tr>\n";
 	}
-	return ob_get_clean();
+	return $output;
 }
 function rewritetrans($t) {
 	global $map;
@@ -151,8 +162,9 @@ function changeacc($acc) {
 		file_put_contents("/data/regnskaber/.skatmap.dat",json_encode($map,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		return $map[$acc];
 	}
-	else
+	else {
 		return $map[$acc];
+	}
 }
 function selectaccount($acc) {
 	global $stdkto;
@@ -169,7 +181,7 @@ function selectaccount($acc) {
 }
 function gettransactions() {
 	ob_start();
-	system("skipresult=1 color=none php /svn/svnroot/Applications/newl.php csv");
+	system("color=none php /svn/svnroot/Applications/newl.php csv");
 	$str = ob_get_clean();
 	$x = str_getcsv($str,"\n");
 	foreach ($x as $curx) {
