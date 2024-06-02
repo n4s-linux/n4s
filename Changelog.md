@@ -1,5 +1,11 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-06-02 | [649099e1...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/649099e1fe8764852466308b92b4d3f8a52b2218) | Resultatdisponering accounts and period result new accounts |
+| 2024-06-02 | [9ab832ee...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9ab832eea0f160cc26ea5d6a572aabf70516e269) | Add cards to standard danish chart of accounts |
+| 2024-06-02 | [b2eb08a3...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/b2eb08a3f4ce8f2c009828e69c3e2ef8fe7a9ec8) | Bugfix headers - and filer accounts from standard export |
+| 2024-06-02 | [18dc79dd...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/18dc79dd7fbeeb4f2ae7adf77851600cd2c0b17d) | Boxes causes problems in tmux and mosh |
+| 2024-06-02 | [1a7218ea...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/1a7218ea2a56abcd3e2c18b68e216123efdb6b7a) | Implement LongTime timeperiod |
+| 2024-06-02 | [b0001103...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/b000110358a12734e9fa92c73f7e59589ab627ea) | Always keep mellemregning going |
 | 2024-06-01 | [c2f26062...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c2f26062de8c894ecd4d61a3e3783d45be80e6e3) | Minor bugfix mindmap paths |
 | 2024-06-01 | [62882a25...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/62882a25cb5c8cbbcaaecb953a637a7f7ea7fab4) | Mindmap absolute path |
 | 2024-06-01 | [679177c9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/679177c94b806b7eb038d06ad1feb79b7cb7a351) | rollback |
