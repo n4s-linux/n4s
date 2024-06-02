@@ -186,7 +186,10 @@
 3791,Overskrift,Andre skatter
 3810,,Andre skatter
 3820,Sum 3810-3819,Andre skatter
-4999,Sum 1010-3819,Årets resultat
+4899,Sum 1010-3819,Årets resultat
+4900,Overskrift,Resultatdisponering
+4901,,Periodens resultat
+4999,Sum 4901-4998,Resultatdisponering
 5000,Overskrift,BALANCE
 5001,Overskrift,AKTIVER
 5002,Overskrift,Anlægsaktiver
@@ -405,6 +408,7 @@
 6930,Sum 6810-6929,Andre reserver
 6931,Overskrift,Overført resultat
 6940,,Overført resultat
+6941,,Periodens resultat
 6950,Sum 6940-6949,Overført resultat
 6951,Overskrift,Foreslået udbytte indregnet under egenkapitalen
 6960,,Foreslået udbytte indregnet under egenkapitalen
@@ -484,3 +488,4 @@
 8080,Sum 8070-8079,Periodeafgrænsningsposter
 9950,Sum 7310-8079,Kortfristet gæld
 9999,Sum 6510-8079,PASSIVER I ALT 
+99999,,Skip
