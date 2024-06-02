@@ -151,7 +151,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 			if (getenv("color") != "none" && $argv[1] != "csv") $cmd .="|php /svn/svnroot/Applications/colorizer.php";
 		$lh = ledgerhack();
 		if ($argv[1] != "csv" && getenv("color") != "none")
-			system("$lh;$cmd|boxes -d parchment");
+			system("$lh;$cmd");
 		else	
 			system("$lh;$cmd");
 		if ($undefined_aliascount > 0)fwrite(STDERR,"$undefined_aliascount manglende aliases - skriv 'aliases'\n");
