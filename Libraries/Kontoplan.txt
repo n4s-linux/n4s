@@ -26,6 +26,7 @@ Aktiver:Likvider:Mobilepay
 Aktiver:Likvider:RevolutDKK
 Aktiver:Likvider:Shipmondo
 Aktiver:Likvider:Stripe
+Aktiver:Likvider:Kort
 Aktiver:Mellemregning med holding
 Aktiver:Omsætningsaktiver:Debitorer:Diverse
 Aktiver:Omsætningsaktiver:Igangværende arbejder
