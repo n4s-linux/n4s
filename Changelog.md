@@ -1,5 +1,9 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-06-05 | [c9d4eadc...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c9d4eadc3ae51ed01b39614053b68ca7276f6292) | 💡 New Feature: Pick account from similar transactions in the book |
+| 2024-06-05 | [0a9e1d2c...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0a9e1d2c0e4d2e91a424597fd52b9f3359ea90fb) | Empty files - carriage return syntax fix |
+| 2024-06-05 | [ae6539b2...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ae6539b2352b2e4dbd1438411befc5aecb60eae1) | Shadowaccount for recurring transactions / budget |
+| 2024-06-05 | [195522ad...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/195522ad0faf29f5a526a04c547211cf4e28ce51) | Get remittance data from bank transactions |
 | 2024-06-02 | [649099e1...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/649099e1fe8764852466308b92b4d3f8a52b2218) | Resultatdisponering accounts and period result new accounts |
 | 2024-06-02 | [9ab832ee...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9ab832eea0f160cc26ea5d6a572aabf70516e269) | Add cards to standard danish chart of accounts |
 | 2024-06-02 | [b2eb08a3...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/b2eb08a3f4ce8f2c009828e69c3e2ef8fe7a9ec8) | Bugfix headers - and filer accounts from standard export |
