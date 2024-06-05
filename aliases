@@ -1,3 +1,17 @@
+function srbudget() {
+	if [ "$tpath" == "" ]; then
+		echo "no tpath for srbudget, returning"
+		return
+	fi
+	echo -e "Once\nDaily\nWeekly\nMonthly\nQuarterly\nYearly"|while read p
+	do
+	mkdir -p $tpath/.autoacc/$p
+	done
+	valg=$(ls $tpath/.autoacc|fzf --header="Chose budget period")
+	tpath=$tpath/.autoacc/$valg
+	echo valg=$valg
+	cd $tpath
+}
 sessionstart=$(date +"%Y-%m-%dT%T")
 alias journal="color=none l print|vi -"
 function displayaccshortcuts() {
