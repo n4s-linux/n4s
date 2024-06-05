@@ -49,6 +49,11 @@ foreach ($files as $curfile) {
 	if (!isset($j["remittanceInformationUnstructured"])) {
 		if (isset($j["creditorName"])) $trans["Description"] = $j["creditorName"];
 		else if (isset($j["additionalInformation"])) $trans["Description"] = $j["additionalInformation"];
+		else if (isset($j["remittanceInfo"])) {
+			$text = "";
+			foreach ($j["remittanceInfo"] as $curinfo) $text .= $curinfo;
+			$trans["Description"] = $text;
+		}
 		else $trans["Description"] = "Transfer";
 	}
 	else
