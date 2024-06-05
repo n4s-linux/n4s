@@ -341,7 +341,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 		$begin = getenv("LEDGER_BEGIN");
 		$tpath = getenv("tpath");
 		$fn = "$tpath/.Åbning_$begin.ledger";
-		if (file_exists($fn)) return file_get_contents($fn); else return "; No opening available $fn";
+		if (file_exists($fn)) return file_get_contents($fn); else return "; No opening available $fn\n";
 	}
 	function getledgerdata($x,$book = false,$pretty = false,$currentledger = "") {
 		global $lockthesefiles;
