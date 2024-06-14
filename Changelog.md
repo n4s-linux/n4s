@@ -1,5 +1,6 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-06-14 | [573d8cac...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/573d8cacfff6960a879cff4476bfb0fa4da0ae7a) | 💡 New Feature: Filter transactions based on any text |
 | 2024-06-06 | [9ad954c9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9ad954c926a2faacdb3a3d3675f5f1b6cf77cb76) | Started working on the new model for recurring transactions and future transactions in general |
 | 2024-06-06 | [834af8df...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/834af8df29e2b3a490773696c4a812ca27056705) | Refining cache from 30 to 14 days, and at the same time including only .trans files |
 | 2024-06-05 | [c9d4eadc...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c9d4eadc3ae51ed01b39614053b68ca7276f6292) | 💡 New Feature: Pick account from similar transactions in the book |
