@@ -154,7 +154,16 @@ else if (isset($argv[1]) && ($argv[1] == "search" || $argv[1] == "bulk" )) {
 $resultvim = "";
 $count = 0;
 $sresult = array();
+if (strlen(getenv("LEDGER_FILTER")) > 0) {
+	$filter = getenv("LEDGER_FILTER");
+	fprintf(STDERR,"Filtering data for '$filter' - press Alt-f to set/unset filter\n");
+	sleep(3);
+}
   foreach ($data as $curtrans) {
+	if (strlen("LEDGER_FILTER")) {
+		$json = json_encode($curtrans);
+		if (!stristr($json,getenv("LEDGER_FILTER"))) continue;
+	}
 unset($curtrans["History"]); // dont search in history please
     $j = json_encode($curtrans,JSON_UNESCAPED_UNICODE); // put it into json so we can search in the string
 		if ($j == false) die("having trouble decoding $curtrans[Filename], talk to Jørgen about this\n");
@@ -222,8 +231,13 @@ require_once("sortsearch.php");
 	require_once("fzf.php");
 	if (getenv("justshowall") == "1") 
 		{ $res = array(); $res[0] = "Alle"; }
-	else
-		$res = explode("\n",fzf($fzf,"Vælg søgeresultat","--ansi --multi --exact --height=24",true));
+	else {
+		if (strlen(getenv("LEDGER_FILTER")))
+			$filter = "[" . getenv("LEDGER_FILTER") . "]";
+		else
+			$filter = "";
+		$res = explode("\n",fzf($fzf,"Vælg søgeresultat $filter","--ansi --multi --exact --height=24",true));
+	}
 	if (trim($res[0]) == "Alle") {
 		foreach ($sresult as $curres) {
 			$fn = $curres['Filename'];
