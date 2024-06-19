@@ -44,7 +44,8 @@ require_once("/svn/svnroot/Applications/readonly.php");
 	$x = expand($transactions); //transactions gets data from global environment set in functions
 	require_once("/svn/svnroot/Applications/addresult.php");
 	if (getenv("skipresult") == "") $x = addresult($x);
-	$ledgerdata .= getledgerdata($x);
+	//        function getledgerdata($x,$book = false,$pretty = false,$currentledger = "") {
+	$ledgerdata .= getledgerdata($x,false,false,"",getenv("LEDGER_FILTER"));
 	$uid = uniqid();
 	$fn = "/home/$op/tmp/.newl-$uid";
 	$tmpfn = $fn;
@@ -343,7 +344,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 		$fn = "$tpath/.Åbning_$begin.ledger";
 		if (file_exists($fn)) return file_get_contents($fn); else return "; No opening available $fn\n";
 	}
-	function getledgerdata($x,$book = false,$pretty = false,$currentledger = "") {
+	function getledgerdata($x,$book = false,$pretty = false,$currentledger = "",$filter = "") {
 		global $lockthesefiles;
 		$ledgerdata = $currentledger;
 		$begin =getenv("LEDGER_BEGIN");
@@ -352,7 +353,10 @@ require_once("/svn/svnroot/Applications/readonly.php");
 		if ($book == true) echo set(strtoupper("Starter bogføring af poster [ $begin - $end ]\n\n"),"inverse");
 		if ($book == true && $ledgerdata == "") $ledgerdata = "\n; Dette er hovedbogen. Hver transaktion bekræfter alle transaktioner forinden med deres samlede md5 checksum - det vil sige hvis du ændrer i denne bog bliver checksummen ugyldig og bogen er manipuleret - efter denne besked starter transaktionerne fra Løbenummer 1 og frem\n\n";
 		global $nextnumber;
+		if ($filter != "") fwrite(STDERR,"Filtering data for $filter - press Alt-F to set/unset filter\n");
 		foreach ($x as $c) { // for hver transaktion der skal bogføres
+			$json = json_encode($c);
+			if ($filter != "" && !stristr($json,$filter)) continue;
 			if (strtotime($c['Date'] >= strtotime($end) || strtotime($c['Date']) <= strtotime($begin))) continue; // skip periods we are not in - only book current period
 			if (isset($c['Reference'])) $ref = $c['Reference']; else $ref = "";
 			if (readonly($c["Filename"]))
@@ -461,7 +465,6 @@ require_once("/svn/svnroot/Applications/readonly.php");
 		if ($newtrans == false) {
 			file_put_contents("$tpath/.log",date("Y-m-d H:m") . "Could not json decode $tpath/$file\n",FILE_APPEND);
 			FWRITE(STDERR,set("Error: for at se fejl skriv 'fejl'\n","red"));
-			sleep(2);
 		}
 		if (!isset($newtrans['Reference'])) $newtrans['Reference'] = "";
 		if ($newtrans['Reference'] == "p") $newtrans['Reference'] = file_get_contents("/home/$op/tmp/.curfile");
