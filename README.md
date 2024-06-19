@@ -176,3 +176,6 @@ This is how you update the system
 | 2024-05-18 | [719bd342...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/719bd34233245848122d5f0767a47c5a0d369ae6) | 💡New Feature: Nicer balance with integration to register |
 | 2024-06-05 | [c9d4eadc...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c9d4eadc3ae51ed01b39614053b68ca7276f6292) | 💡 New Feature: Pick account from similar transactions in the book |
 | 2024-06-14 | [573d8cac...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/573d8cacfff6960a879cff4476bfb0fa4da0ae7a) | 💡 New Feature: Filter transactions based on any text |
+| 2024-06-19 | [a42d2374...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a42d2374722228744ff46e49c64f320e812431fc) | 🐛 Bugfix: Fault tolerance if no totals |
+| 2024-06-19 | [ca23d700...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ca23d700adeff1b323e4068f131480dc4f1274e5) | 💡 New feature - filter transactions |
+| 2024-06-19 | [bbf63510...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbf63510f827a523462326556e0eda72663bf1ce) | 💡 New Feature - Preview of consequences before loading CSV data - approve or not |
