@@ -1,5 +1,7 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-06-19 | [2094c3e9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/2094c3e95f41bb92bcc989b1f84cf72847d77aef) | Making the preview more pretty inside glow markdown viewer |
+| 2024-06-19 | [ea95842c...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ea95842c3891bb9066b9a98912f306cd2699f68f) | Who cares about code of conduct, really... |
 | 2024-06-19 | [a42d2374...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a42d2374722228744ff46e49c64f320e812431fc) | 🐛 Bugfix: Fault tolerance if no totals |
 | 2024-06-19 | [4dd0592e...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/4dd0592e2d2587a535d963bc7d5b54f43aa2ef43) | Easier more touch screen friendly shortcut for quick transactions |
 | 2024-06-19 | [ca23d700...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ca23d700adeff1b323e4068f131480dc4f1274e5) | 💡 New feature - filter transactions |
