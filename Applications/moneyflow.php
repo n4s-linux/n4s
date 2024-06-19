@@ -24,6 +24,7 @@ foreach (array("Egenkapital","Indtægter","Udgifter","Aktiver","Passiver","Fejlk
 	$currv= "<h3>$curgroup</h3>";
 	$currv.= "<table style='white-space:nowrap' width=600 class=table>";
 	$currv .= "<td width=550>Konto</td><td width=100><p align=right>Ind/Ud</p></td><td><p align=right>Nulkontrol</p></td></tr>";
+	$ptotal="";
 	foreach ($moneyflow as $key => $val) {
 		if (substr($key,0,strlen($curgroup)) == $curgroup) {
 			$key=str_replace(":","⇒",$key);
