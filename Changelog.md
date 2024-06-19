@@ -1,5 +1,9 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-06-19 | [a42d2374...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a42d2374722228744ff46e49c64f320e812431fc) | 🐛 Bugfix: Fault tolerance if no totals |
+| 2024-06-19 | [4dd0592e...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/4dd0592e2d2587a535d963bc7d5b54f43aa2ef43) | Easier more touch screen friendly shortcut for quick transactions |
+| 2024-06-19 | [ca23d700...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ca23d700adeff1b323e4068f131480dc4f1274e5) | 💡 New feature - filter transactions |
+| 2024-06-19 | [bbf63510...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbf63510f827a523462326556e0eda72663bf1ce) | 💡 New Feature - Preview of consequences before loading CSV data - approve or not |
 | 2024-06-15 | [5900583e...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/5900583ea0929363eb5f3e49cac872850e1d85bb) | Search now respects LEDGER_FILTER |
 | 2024-06-14 | [573d8cac...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/573d8cacfff6960a879cff4476bfb0fa4da0ae7a) | 💡 New Feature: Filter transactions based on any text |
 | 2024-06-06 | [9ad954c9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9ad954c926a2faacdb3a3d3675f5f1b6cf77cb76) | Started working on the new model for recurring transactions and future transactions in general |
