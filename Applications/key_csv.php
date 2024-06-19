@@ -6,13 +6,12 @@ require_once("/svn/svnroot/Applications/lookup_account.php");
 require_once("/svn/svnroot/Applications/oledger/csv_to_array.php");
 if (isset($argv[1]) && $argv[1] == "load") {
 	loadfile();
-	echo "loaded()";sleep(5);
 	die();
 }
 function loadfile() {
-	$path = getenv("tpath");
+	$tpath = getenv("tpath");
   global $accounts;
-  $availablefields =array("Date","Description","Reference","Amount","Account","Func","Comment","Choose","Currency","AmountCurrency","Bankfee");;
+  $availablefields =array("Date","Description","Reference","Amount","Account","Func","Comment","Choose","Currency","AmountCurrency","Bankfee","ContraAcc","ContraFunc");
        array_push($availablefields,"No match");
 $op=exec("whoami");
 	global $argv;
@@ -47,6 +46,10 @@ $op=exec("whoami");
 	$c['Date'] = str_replace(".","-",$c['Date']); 	$c['Date'] = str_replace("/","-",$c['Date']);
 if (isset($c['Func'])) 	$curfunc = $c['Func']; else 	$curfunc = "";
 if (isset($c['Account'])) 	$curacc = $c['Account']; else 	$curacc = "";
+
+if (isset($c["ContraAcc"])) $contraacc = $c["ContraAcc"];
+if (isset($c["ContraFunc"])) $contrafunc = $c["ContraFunc"]; else $contrafunc = "";
+
            $curtrans['Transactions'] = array();
 	$curtrans['Comment'] = "";
          $curtrans['Description'] = clean($c['Description']);
@@ -69,12 +72,12 @@ if (isset($c['Account'])) 	$curacc = $c['Account']; else 	$curacc = "";
 		$curtrans["Reference"] = "";
          if ($curtrans['Reference'] == "")
            $curtrans['Reference'] = 'CSV' . "-" . $curtrans['UID'];
-         $curtrans['Filename'] =  $path . "/" . str_file_filter($c['Description'] . " - " . $curtrans['Date']) . "-$curtrans[UID].trans";
-         $fn = $curtrans['Filename'];
+	system("mkdir -p $tpath/.csvimp");
+         $fn =  $tpath . "/.csvimp/" . str_file_filter($c['Description'] . " - " . $curtrans['Date']) . "-$curtrans[UID].trans";
          $curtrans['Filename'] =  str_file_filter($c['Description'] . " - " . $curtrans['Date']) . "-$curtrans[UID].trans";
 $curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d H:i"),'Desc'=>'Indlæst CSV'));
                  $curtrans['Transactions'] = array(
-                   array('Account'=>$contraacc,'Amount'=> $c['Amount'],'Func'=>''),
+                   array('Account'=>$contraacc,'Amount'=> $c['Amount'],'Func'=>$contrafunc),
                    array('P-Start'=>'','P-End'=>'','Account'=> ($curacc == "") ? 
                          (( $c['Amount'] < 0) ? "Fejlkonto:Uhåndterede kreditorbetalinger" : "Fejlkonto:Uhåndterede debitorbetalinger") : $curacc
                          ,'Func'=>$curfunc,'Amount'=> $c['Amount'] * -1)
@@ -93,10 +96,18 @@ $curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d H:i"),'Desc'=>'
 		}
          file_put_contents($fn,json_encode($curtrans,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n");
          }
-
-         system("LEDGER_END=2099-12-31 LEDGER_BEGIN=1970-01-01 php /svn/svnroot/Applications/newl.php r \"$contraacc\"|tail -n10"); 
-die();
-
+	exec_app("echo '# Balance of postings' >$tpath/.csvimp/.preview");
+	exec_app("color=none tpath=$tpath/.csvimp/ php /svn/svnroot/Applications/newl.php bal --no-total >>$tpath/.csvimp/.preview");
+	exec_app("echo '# Spec of postings' >>$tpath/.csvimp/.preview");
+	exec_app("color=none tpath=$tpath/.csvimp/ php /svn/svnroot/Applications/newl.php register --no-total >>$tpath/.csvimp/.preview");
+	exec_app("vim $tpath/.csvimp/.preview");
+	$valg = fzf("No\nYes","Load the transactions to the account?");
+	if ($valg == "Yes") 
+		system("mv $tpath/.csvimp/*.trans $tpath/");
+	else
+		system("rm $tpath/.csvimp/*.trans");
+	system("rm $tpath/.csvimp/.preview");
+         //system("LEDGER_END=2099-12-31 LEDGER_BEGIN=1970-01-01 php /svn/svnroot/Applications/newl.php r \"$contraacc\"|tail -n10"); 
 }
 function detectDelimiter($csvFile)
 {
