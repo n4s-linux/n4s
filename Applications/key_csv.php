@@ -96,17 +96,18 @@ $curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d H:i"),'Desc'=>'
 		}
          file_put_contents($fn,json_encode($curtrans,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n");
          }
-	exec_app("echo '# Balance of postings' >$tpath/.csvimp/.preview");
-	exec_app("color=none tpath=$tpath/.csvimp/ php /svn/svnroot/Applications/newl.php bal --no-total >>$tpath/.csvimp/.preview");
-	exec_app("echo '# Spec of postings' >>$tpath/.csvimp/.preview");
-	exec_app("color=none tpath=$tpath/.csvimp/ php /svn/svnroot/Applications/newl.php register --no-total >>$tpath/.csvimp/.preview");
-	exec_app("vim $tpath/.csvimp/.preview");
+	exec_app("echo '# Import sneak preview - press q to proceed' >$tpath/.csvimp/.preview.md");
+	exec_app("echo '# Balance of postings' >>$tpath/.csvimp/.preview.md");
+	exec_app("color=none tpath=$tpath/.csvimp/ php /svn/svnroot/Applications/newl.php bal --no-total >>$tpath/.csvimp/.preview.md");
+	exec_app("echo '# Spec of postings' >>$tpath/.csvimp/.preview.md");
+	exec_app("color=none tpath=$tpath/.csvimp/ php /svn/svnroot/Applications/newl.php register --no-total >>$tpath/.csvimp/.preview.md");
+	exec_app("glow -p $tpath/.csvimp/.preview.md");
 	$valg = fzf("No\nYes","Load the transactions to the account?");
 	if ($valg == "Yes") 
 		system("mv $tpath/.csvimp/*.trans $tpath/");
 	else
 		system("rm $tpath/.csvimp/*.trans");
-	system("rm $tpath/.csvimp/.preview");
+	system("rm $tpath/.csvimp/.preview.md");
          //system("LEDGER_END=2099-12-31 LEDGER_BEGIN=1970-01-01 php /svn/svnroot/Applications/newl.php r \"$contraacc\"|tail -n10"); 
 }
 function detectDelimiter($csvFile)
