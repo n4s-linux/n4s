@@ -1,5 +1,10 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-06-23 | [b179f30d...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/b179f30d7bf38e71247d22950826bc1c3d43eb10) | Glow added to dependency - nice markdown viewer |
+| 2024-06-23 | [1de4a294...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/1de4a29410d072daffaabb9e76ef4702a78a469b) | Working on the preview window for the transaction editor |
+| 2024-06-23 | [80a5d64d...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/80a5d64d21ca0814174ced5ad25c6988768853c1) | 💵 Bounty Available for a decent installscript - get in touch if You want to help out |
+| 2024-06-23 | [93af18a2...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/93af18a260990556536bf040f5703de452d7858c) | 💡 New Feature: CSV importer remembers Your preferences and has a better preview including account aliases |
+| 2024-06-23 | [86e25822...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/86e25822bc73f868ab663cca4280848e272da744) | Reference to new vouchers function |
 | 2024-06-19 | [2094c3e9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/2094c3e95f41bb92bcc989b1f84cf72847d77aef) | Making the preview more pretty inside glow markdown viewer |
 | 2024-06-19 | [ea95842c...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ea95842c3891bb9066b9a98912f306cd2699f68f) | Who cares about code of conduct, really... |
 | 2024-06-19 | [a42d2374...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a42d2374722228744ff46e49c64f320e812431fc) | 🐛 Bugfix: Fault tolerance if no totals |
