@@ -1,3 +1,10 @@
+function vouchers() {
+	if [ "$tpath" == "" ]; then
+		echo "no tpath for vouchers, returning"
+		return
+	fi
+	php /svn/svnroot/Applications/getvouchers.php
+}
 function filter() {
 	echo -n "Filter [$LEDGER_FILTER]: ";
 	read f
@@ -353,6 +360,7 @@ bind '"\ea":"adjust\n"' 2>/dev/null
 bind '"\em":"m\n"' 2>/dev/null
 bind '"\eå":"lm\n"' 2>/dev/null
 bind '"\er":"r\n"' 2>/dev/null
+bind '"\ev":"vouchers\n"' 2>/dev/null
 bind '"\eb":"b\n"' 2>/dev/null
 bind '"\ep":"dp\n"' 2>/dev/null
 bind '"\es":"ds\n"' 2>/dev/null
@@ -829,7 +837,6 @@ function sync() {
 
 LEDGER_END=2099-12-31
 LEDGER_BEGIN=1900-01-01
-export DISPLAY=:1
 # HSTR configuration - add this to ~/.bashrc
 alias hh=hstr                    # hh to be alias for hstr
 export HSTR_CONFIG=hicolor       # get more colors
