@@ -164,12 +164,6 @@ This is how you update the system
 ## Recent updates
 |at|hash|desc|
 |---|---|---|
-| 2024-05-29 | [5f9c9937...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/5f9c9937ceb3621e3b52e141103a9ee5f078eac6) | 💡 New Feature - Smart bank integration via gocardless - which is free for small businesses 💚💚💚 |
-| 2024-05-28 | [bbbad819...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbbad819a80564828d8152b16d2114c2130b8a11) | 💡 New Feature: Manual accounts support debitor/creditor |
-| 2024-05-28 | [0a2ba6aa...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0a2ba6aaf531ab1f35a33742c78f16185c0d56c3) | 💡 New feature - report with/without primo carryover amounts |
-| 2024-05-27 | [98d0504b...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/98d0504bfa5eb37dd50be51112b8801b328cbeca) | 🐛 Bugfix: AmountCurrency Amount fix |
-| 2024-05-22 | [a5539fc4...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a5539fc4bd4e78ca8dbc9be40ce8d61c77cadc3b) | 🐛 Bugfix: Error in date format |
-| 2024-05-22 | [49b05f83...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/49b05f83a2c0261dbbc3425a41b26a77d8cf0931) | 💡 New Feature: Easier transaction edit and add new transaction |
 | 2024-05-20 | [afd42d28...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/afd42d28b4a91d3a40b6f46ff460a1e1f04e48aa) | 💡 New Feature: View all transactions when entering a transaction that is an opening |
 | 2024-05-20 | [40375276...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/4037527625dafa55af081dc144db2363875a4f84) | 🐛 Fault tolerance some key numbers will be missing in some accounts |
 | 2024-05-18 | [9018a220...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9018a2203b2b207c73aeecbc2a663ce57708a4e4) | 💡 New Feature: Guide that allows to book specific or all transactions, and verify the book later on to see if any of the booked transactions has changed #blockchain |
@@ -181,3 +175,6 @@ This is how you update the system
 | 2024-06-19 | [bbf63510...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbf63510f827a523462326556e0eda72663bf1ce) | 💡 New Feature - Preview of consequences before loading CSV data - approve or not |
 | 2024-06-23 | [93af18a2...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/93af18a260990556536bf040f5703de452d7858c) | 💡 New Feature: CSV importer remembers Your preferences and has a better preview including account aliases |
 | 2024-06-23 | [a4560ff8...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a4560ff8122c1467f9a600bf6f5164fd2eb5d0a5) | 💡 New Feature: Bilags ssh viewer, and get bilags structured data via Taggun API |
+| 2024-05-29 | [5f9c9937...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/5f9c9937ceb3621e3b52e141103a9ee5f078eac6) | 💡 New Feature - Smart bank integration via gocardless - which is free for small businesses 💚💚💚 |
+| 2024-05-28 | [bbbad819...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbbad819a80564828d8152b16d2114c2130b8a11) | 💡 New Feature: Manual accounts support debitor/creditor |
+| 2024-05-28 | [0a2ba6aa...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0a2ba6aaf531ab1f35a33742c78f16185c0d56c3) | 💡 New feature - report with/without primo carryover amounts |
