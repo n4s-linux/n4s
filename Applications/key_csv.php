@@ -28,7 +28,9 @@ $op=exec("whoami");
        $mappings = array();
 	require_once("/svn/svnroot/Applications/fzf.php");
        foreach ($data['header'] as $header) {
+		$availablefields = getlast($header,$availablefields,$tpath);
 		$mappings[$header] = fzf(implode("\n",$availablefields),"chose what field $header maps to");
+		file_put_contents("$tpath/.lastimp_$header",$mappings[$header]);
 		if ($mappings[$header] == "") die("Aborted the csv import\n");
 		if ($mappings[$header] == "Choose") {
 			echo "Indtast navn på felt du ønsker at indlæse '$header' i: ";
@@ -96,12 +98,16 @@ $curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d H:i"),'Desc'=>'
 		}
          file_put_contents($fn,json_encode($curtrans,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n");
          }
+	$lv = "LEDGER_BEGIN=1900-01-01 LEDGER_END=2099-12-31 ";
 	exec_app("echo '# Import sneak preview - press q to proceed' >$tpath/.csvimp/.preview.md");
 	exec_app("echo '# Balance of postings' >>$tpath/.csvimp/.preview.md");
-	exec_app("color=none tpath=$tpath/.csvimp/ php /svn/svnroot/Applications/newl.php bal --no-total >>$tpath/.csvimp/.preview.md");
+	exec_app("color=none tpath=$tpath/.csvimp/ $lv php /svn/svnroot/Applications/newl.php bal --no-total >>$tpath/.csvimp/.preview.md");
+	exec_app("cp $tpath/aliases $tpath/.csvimp/aliases");
+	exec_app("echo '# Balance of postings - after aliases' >>$tpath/.csvimp/.preview.md");
+	exec_app("color=none tpath=$tpath/.csvimp/ $lv php /svn/svnroot/Applications/newl.php bal --no-total  >>$tpath/.csvimp/.preview.md");
 	exec_app("echo '# Spec of postings' >>$tpath/.csvimp/.preview.md");
-	exec_app("color=none tpath=$tpath/.csvimp/ php /svn/svnroot/Applications/newl.php register --no-total >>$tpath/.csvimp/.preview.md");
-	exec_app("glow -p $tpath/.csvimp/.preview.md");
+	exec_app("color=none tpath=$tpath/.csvimp/ $lv LEDGER_SORT=account,date php /svn/svnroot/Applications/newl.php register>>$tpath/.csvimp/.preview.md");
+	exec_app("vim +':set foldlevel=999' $tpath/.csvimp/.preview.md");
 	$valg = fzf("No\nYes","Load the transactions to the account?");
 	if ($valg == "Yes") 
 		system("mv $tpath/.csvimp/*.trans $tpath/");
@@ -133,5 +139,17 @@ function clean($string) {
 	$string = str_replace(";",":",$string);
 	$string = str_replace("\\","",$string);
    return $string;
+}
+function getlast($header,$fields,$tpath) {
+	//$fn = "$tpath/.lastimp_$header";
+	$lastres = file_get_contents("$tpath/.lastimp_$header");
+	$rv = array();
+	foreach ($fields as $curfield) {
+		if ($curfield == $lastres) continue;
+		if (trim($curfield) == "") continue;
+		else array_push($rv,$curfield);
+	}
+	array_push($rv,$lastres);
+	return array_reverse($rv);
 }
 ?>
