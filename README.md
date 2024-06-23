@@ -179,3 +179,4 @@ This is how you update the system
 | 2024-06-19 | [a42d2374...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a42d2374722228744ff46e49c64f320e812431fc) | 🐛 Bugfix: Fault tolerance if no totals |
 | 2024-06-19 | [ca23d700...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ca23d700adeff1b323e4068f131480dc4f1274e5) | 💡 New feature - filter transactions |
 | 2024-06-19 | [bbf63510...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbf63510f827a523462326556e0eda72663bf1ce) | 💡 New Feature - Preview of consequences before loading CSV data - approve or not |
+| 2024-06-23 | [93af18a2...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/93af18a260990556536bf040f5703de452d7858c) | 💡 New Feature: CSV importer remembers Your preferences and has a better preview including account aliases |
