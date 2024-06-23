@@ -1,5 +1,6 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-06-23 | [457b64c6...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/457b64c6ef30d06832d06e76130332e4231d1fe8) | changelog stuffs 👼 |
 | 2024-06-23 | [a4560ff8...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a4560ff8122c1467f9a600bf6f5164fd2eb5d0a5) | 💡 New Feature: Bilags ssh viewer, and get bilags structured data via Taggun API |
 | 2024-06-23 | [b179f30d...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/b179f30d7bf38e71247d22950826bc1c3d43eb10) | Glow added to dependency - nice markdown viewer |
 | 2024-06-23 | [1de4a294...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/1de4a29410d072daffaabb9e76ef4702a78a469b) | Working on the preview window for the transaction editor |
