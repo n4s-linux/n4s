@@ -3,16 +3,50 @@ $tpath = getenv("tpath");
 $op = exec("whoami");
 require_once("/svn/svnroot/Applications/fzf.php");
 $data = "";
+if (isset($argv[1])&&$argv[1]=="preview") {
+	echo "$argv[1]\n";
+	error_reporting(0);
+	$json = json_decode(file_get_contents("$tpath/$argv[2]"),true);
+	ob_start();
+	echo "<table border=1>";
+	$dsum = 0;
+	$ksum = 0;
+	foreach ($json["Transactions"] as $curtrans) {
+		if ($curtrans["Amount"] < 0) {
+			$debet = "";$kredit=$curtrans["Amount"];
+			$ksum += $kredit;
+		}
+		else {
+			$kredit= "";$debet=$curtrans["Amount"];
+			$dsum += $debet;
+		}
+		echo "<tr><td>$curtrans[Account]</td><td>$debet</td><td>$kredit</td><td>$curtrans[Func]</td>";
+	}
+	echo "<tr><td>Total</td><td><b><u>$dsum</b></u></td><td><b><u>$ksum</b></u></td></td>";
+	echo "</table>";
+	echo "<table border=1>";
+	foreach ($json["History"] as $curtrans) {
+		echo "<tr><td>$curtrans[date]</td><td>$curtrans[op]</td><td>$curtrans[desc]</td>";
+	}
+	echo "</table>";
+	file_put_contents("/home/$op/tmp/.tr_preview.html",ob_get_clean());
+	system("w3m -dump ~/tmp/.tr_preview.html");
+	die();
+}
 while ($line = fgets(STDIN)) {
-	$data .= $line . "\n";
+	$data .= $line;
 }
 $data = trim($data);
 $json = json_decode($data,true);
 if ($json == null) {
 	echo $data;
+	die();
 }
 else {
 	$fzf = "";
+	if (isset($json["Create"])) {
+		$fzf .= "🐧Create🐧\n";
+	}
 	$fzf .= "Reverse numbers\n";
 	$fzf .= "Invert account order\n";
 	if ($json["Transactions"][0]["Amount"] == $json["Transactions"][1]["Amount"] *-1) $fzf .= "Change amount\n";
@@ -38,11 +72,13 @@ else {
 		$i++;
 	}
 	$fzf .= "New Transaction\n";
-	$valg = fzf($fzf,"Select field for changing","--ansi --tac -e",true);
+	$valg = fzf($fzf,"Select field for changing","--ansi --tac -e --preview-window=bottom,35% --preview='tpath=$tpath php /svn/svnroot/Applications/trans_action.php preview $json[Filename]'",true);
 	if ($valg != "") {
 		if ($valg == "Invert account order") {
 			$json["Transactions"] = array_reverse($json["Transactions"]);
 		}
+		else if ($valg == "🐧Create🐧")
+			$json["Create"] = true;
 		else if ($valg == "Accept suggestion(s)") {
 		$i = 0;
 		foreach ($json["Transactions"] as &$curtrans) {
