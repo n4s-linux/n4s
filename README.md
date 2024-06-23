@@ -180,3 +180,4 @@ This is how you update the system
 | 2024-06-19 | [ca23d700...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ca23d700adeff1b323e4068f131480dc4f1274e5) | 💡 New feature - filter transactions |
 | 2024-06-19 | [bbf63510...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbf63510f827a523462326556e0eda72663bf1ce) | 💡 New Feature - Preview of consequences before loading CSV data - approve or not |
 | 2024-06-23 | [93af18a2...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/93af18a260990556536bf040f5703de452d7858c) | 💡 New Feature: CSV importer remembers Your preferences and has a better preview including account aliases |
+| 2024-06-23 | [a4560ff8...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a4560ff8122c1467f9a600bf6f5164fd2eb5d0a5) | 💡 New Feature: Bilags ssh viewer, and get bilags structured data via Taggun API |
