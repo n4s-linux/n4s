@@ -34,6 +34,19 @@ $code = file_get_contents("$lpath/$file");
 		$fns .= "\"$fn\" ";
 		array_push($data['History'],array('op'=>$op,'Date'=>date("Y-m-d H:i"),'Desc'=>"Changed by logic ($file)"));
 		file_put_contents("$fn", json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+		$olddata = $data;
+		$oldbn = basename("$fn");
+		$nf = basename($nf);
+		$i = 0;
+		$fn = "$tpath/.archive/$nf" . "_" . "$i.json";
+		while (file_exists($fn)) { 
+			$i++;
+			$fn = "$tpath/.archive/$nf" . "_" .  "$i.json";                                                                                               
+		}
+		$olddata["History"][] = array("op"=>$op,"Desc"=>"Archived version of transactionfile (logic)","Date"=>date("Y-m-d H:i"));
+		$olddata["TransactionUpdatedWith"] = array("➕"=>$diff,"➖"=>$diff2);
+		file_put_contents($fn,json_encode($olddata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+
     	}
 }
 
