@@ -178,3 +178,4 @@ This is how you update the system
 | 2024-05-29 | [5f9c9937...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/5f9c9937ceb3621e3b52e141103a9ee5f078eac6) | 💡 New Feature - Smart bank integration via gocardless - which is free for small businesses 💚💚💚 |
 | 2024-05-28 | [bbbad819...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbbad819a80564828d8152b16d2114c2130b8a11) | 💡 New Feature: Manual accounts support debitor/creditor |
 | 2024-05-28 | [0a2ba6aa...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0a2ba6aaf531ab1f35a33742c78f16185c0d56c3) | 💡 New feature - report with/without primo carryover amounts |
+| 2024-06-24 | [92fdaa42...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/92fdaa422d2447454690f27e8b00a6e31093f6b1) | 💡 New Feature: eeping archived version of edited transactions for future reference |
