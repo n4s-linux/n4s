@@ -1,5 +1,7 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-06-24 | [32355ec9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/32355ec9b6e861f65810624bef6893ed55977a7b) | Register respecs LEDGER_FILTER |
+| 2024-06-24 | [92fdaa42...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/92fdaa422d2447454690f27e8b00a6e31093f6b1) | 💡 New Feature: eeping archived version of edited transactions for future reference |
 | 2024-06-23 | [457b64c6...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/457b64c6ef30d06832d06e76130332e4231d1fe8) | changelog stuffs 👼 |
 | 2024-06-23 | [a4560ff8...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a4560ff8122c1467f9a600bf6f5164fd2eb5d0a5) | 💡 New Feature: Bilags ssh viewer, and get bilags structured data via Taggun API |
 | 2024-06-23 | [b179f30d...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/b179f30d7bf38e71247d22950826bc1c3d43eb10) | Glow added to dependency - nice markdown viewer |
