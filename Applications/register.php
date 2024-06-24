@@ -120,6 +120,8 @@ function getdata() {
 	$data = explode("\n",trim(ob_get_clean()));
 	$t = array();
 	foreach ($data as $curline) {
+		$json = json_encode($curline);
+		if (strlen(getenv("LEDGER_FILTER")) && !stristr(getenv("LEDGER_FILTER"),$json)) continue;
 		$d = str_getcsv($curline);
 		array_push($t,$d);
 	}
