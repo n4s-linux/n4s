@@ -149,7 +149,7 @@ function rewritetrans($t) {
 		$newt['Bilag'] = $curt[1];
 		$newt['Account'] = trim(explode("\t",changeacc($curt[3]))[0]);
 		$newt['Amount'] = $curt[5];
-		$newt['Tags'] = $curt[7];
+		if (isset($curt[7])) $newt['Tags'] = $curt[7]; else $newt["Tags"] = "";
 		$retval[] = $newt;
 	}
 	return $retval;
