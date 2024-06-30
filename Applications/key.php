@@ -211,6 +211,7 @@ require_once("sortsearch.php");
 		if (count($curres['Transactions']) > 2) $mk = "FLERE";
 		$mk =  str_pad(shortacc($curres['Transactions'][1]['Account']),4," ",STR_PAD_LEFT);		
 		if (count($curres['Transactions']) > 2) $mk = "FLERE";
+		if ($curres['Transactions'][0]['Amount'] == "") $curres['Transactions'][0]['Amount'] = 0;
 		$a = str_pad(number_format($curres['Transactions'][0]['Amount'],2,",","."),10," ",STR_PAD_LEFT);
 		error_reporting(0);
 		$cd1 = ""; $cd2 = ""; //cd = currentydata
