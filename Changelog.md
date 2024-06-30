@@ -1,5 +1,11 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-06-30 | [0aae4680...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0aae46803c87f4116990964231b5ff4a5d52b58f) | Transactions without amount fix |
+| 2024-06-30 | [193739c2...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/193739c28e1feaea597994f6ad6fe01d7e667ee8) | Remove solved and rejected items from the kundejournalz, also make TOC optional |
+| 2024-06-30 | [4976532a...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/4976532aa1dce9e6a3bb83873e7f768ee72cc7ae) | Show aliases on even foot as real accounts on account lookup |
+| 2024-06-30 | [8f881aea...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/8f881aea517fd53b23bc31d8ab546654185332c1) | Skat export - no tags fix |
+| 2024-06-30 | [3b7f80db...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/3b7f80dbb8b87687b6efd2808f5b431f739bd0d8) | Remove escape backslashes from ledger output |
+| 2024-06-30 | [5d7ed666...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/5d7ed666f91a69e12179d0033734aad9e5b57dee) | Get some more bankdata to the trans |
 | 2024-06-24 | [32355ec9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/32355ec9b6e861f65810624bef6893ed55977a7b) | Register respecs LEDGER_FILTER |
 | 2024-06-24 | [92fdaa42...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/92fdaa422d2447454690f27e8b00a6e31093f6b1) | 💡 New Feature: eeping archived version of edited transactions for future reference |
 | 2024-06-23 | [457b64c6...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/457b64c6ef30d06832d06e76130332e4231d1fe8) | changelog stuffs 👼 |
