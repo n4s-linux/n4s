@@ -95,14 +95,12 @@ function vitouch() {
 	cat $tpath/.tags/header "$1" $tpath/.tags/footer > $if
 
 
-
-
 	print=yes	
 	jn=$(echo -e "Nej\nJa"|fzf --header="Vil du printe")
 	if [ "$jn" != "Ja" ]; then
 		print=no
 	fi
-	runpath="$1" php "$if" > "$if.parsed"
+	runpath="$1" php "$if"|grep -v "✔" | grep -v "✕" >"$if.parsed"
 	cp "$if.parsed" "$if"
 	rm "$if.parsed"
 	cp "$if" ~/tmp/if.tmp # 2023-04-05T18:21 joo	can we remove this ? #isitbeingused ?
@@ -126,7 +124,7 @@ function vitouch() {
 	template=/svn/svnroot/Applications/github.html5
 	jn=j
 	if [ "$jn" == "j" ]; then
-		toc=j
+		toc=$(echo -e "Nej\nJa"|fzf --header="TOC")
 		if [ "$toc" == "j" ]; then
 			toc="--toc"
 		else
