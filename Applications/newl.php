@@ -487,6 +487,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 				rundelbilag();
 			}
 		}
+		$newtrans["Description"] = str_replace("\\","",$newtrans["Description"]);
 		$transactions[] = json_decode(rewrite(json_encode($newtrans,JSON_UNESCAPED_UNICODE)),true);
 	}
 function isFile($file) {
