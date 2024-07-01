@@ -15,6 +15,10 @@
                 if (!isset($data[$bn]["Status"]) || $data[$bn]["Status"] != "Locked") unset($data[$bn]);
 		if (isset($data[$bn])) {
 		foreach ($data[$bn]["Transactions"] as $curtrans) {
+			if (!isset($curtrans["TransactionNo"])) {
+				unset($data[$bn]);
+				continue 2;
+			}
 			$tids[$curtrans["TransactionNo"]] = $data[$bn];	
 		}
 		}
