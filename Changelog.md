@@ -1,5 +1,9 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-07-01 | [fd3c19b7...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/fd3c19b78c26d213bc31df11c5810cec6c73d367) | Skip old transaction filez without numbers |
+| 2024-07-01 | [f62d3f61...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/f62d3f618aef79c25449daefacc3f471ddb4e04c) | Fault tolerance - tolerate empty text in openentries script |
+| 2024-07-01 | [c4e2b6ed...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c4e2b6edf0b13b419287892038c06b22865b972c) | Default adjustment date = current end date |
+| 2024-07-01 | [5e222846...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/5e222846e4930ba68fbc01129a360b4dac8c37e9) | Show duties in journal export by default |
 | 2024-06-30 | [0aae4680...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0aae46803c87f4116990964231b5ff4a5d52b58f) | Transactions without amount fix |
 | 2024-06-30 | [193739c2...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/193739c28e1feaea597994f6ad6fe01d7e667ee8) | Remove solved and rejected items from the kundejournalz, also make TOC optional |
 | 2024-06-30 | [4976532a...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/4976532aa1dce9e6a3bb83873e7f768ee72cc7ae) | Show aliases on even foot as real accounts on account lookup |
