@@ -68,7 +68,7 @@ date_default_timezone_set('Europe/Copenhagen');
 		$end = date("Y-m-d",strtotime(getenv("LEDGER_END") . " -1 day"));
 		$begin = date("Y-m-d",strtotime(getenv("LEDGER_BEGIN")));
 		$today=date("Y-m-d");
-		$dato=fzf("$today\n$end\n$begin","Chose date for adjustment");
+		$dato=fzf("$end\n$today\n$begin","Chose date for adjustment");
 		if ($dato == "") die("Cancelled adjustment\n");
 		$data["Date"] = $dato;
 		$data["Description"] = "⚖ Adjustment [$konto - $bal ⇝ $new]";
