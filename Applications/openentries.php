@@ -5,8 +5,7 @@ function findsimilar($trans,$transactions) {
 	$total = 0;
 	$trans["tekst"] = trim($trans["tekst"]);
 	foreach ($transactions as $curtrans) {
-		$curtrans["Description"] = trim($curtrans["Description"]);
-		
+		if (isset($curtrans["Description"])) $curtrans["Description"] = trim($curtrans["Description"]);
   		if (stristr(json_encode($curtrans['Transactions']),"Fejl")) continue; // tager ej fejlkonto med i betragtning
 		$id = gettag($trans,"TransID");
 		error_reporting(0);
