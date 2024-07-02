@@ -1,6 +1,8 @@
 <?php
+	require_once("/svn/svnroot/Applications/proc_open.php");
 	require_once("/svn/svnroot/Applications/fzf.php");
-date_default_timezone_set('Europe/Copenhagen');
+	require_once("/svn/svnroot/Applications/ask.php");
+	date_default_timezone_set('Europe/Copenhagen');
 	$op = exec("whoami");
 	function filebydate($a,$b) {
 		return (($a['Date']) > ($b['Date']));
@@ -51,49 +53,65 @@ date_default_timezone_set('Europe/Copenhagen');
 	if ($valg == "") die("Intet valgt\n");
 	}
 	if (getenv("adjustbalance") == "1") {
-		$cmd = "color=none php /svn/svnroot/Applications/newl.php accounts|fzf --ansi --header=\"Pick Account to adjust\"";
-		ob_start();
-		system("$cmd");
-		$konto = trim(ob_get_clean());
-		if ($konto == "") die("Aborted no account selected to adjust balance for\n");
+		$fzf = "";
+		$balz = getbalz();
+		foreach ($balz as $curacc => $curbal) {
+			$curbal = number_format($curbal,2,".",",");
+			$curbal = str_pad($curbal,20," ",STR_PAD_LEFT);
+			$fzf .= "$curacc\t💵$curbal\n";
+		}
+		$konto = fzf($fzf,"Chose balance to adjust - used TAB to alter multiple accounts","--ansi --multi",true);
+		$konti = explode("\n",trim($konto));
+		if (empty($konti[0])) die("Aborted no account selected to adjust balance for\n");
+		foreach ($konti as $konto) {
+		$konto = trim(explode("💵",$konto)[0]);
 		$tpath = getenv("tpath");
-		echo "tpath=$tpath\n";
-		$bal = getbal($konto,$tpath);
-		echo "Old balance: $bal\n";
-		echo "New balance: ";
-		$new = str_replace(",",".",trim(fgets(STDIN)));
+		$bal = $balz[$konto];
+		echo "Old balance for $konto: $bal\n";
+		echo "New balance for $konto: ";
+		$new = intval(str_replace(",",".",trim(fgets(STDIN))));
+		if ($new == 0) {
+			exec_app("whiptail --msgbox \"Assuming 0 balance for $konto -  if You disagree, please abort mission after this message (Ctrl-C)\" 8 80");
+			$new = 0;
+		}
 		$diff = $new -$bal;
 		echo "Forskel $diff\n";
 		$data = array();
 		$end = date("Y-m-d",strtotime(getenv("LEDGER_END") . " -1 day"));
 		$begin = date("Y-m-d",strtotime(getenv("LEDGER_BEGIN")));
 		$today=date("Y-m-d");
-		$dato=fzf("$end\n$today\n$begin","Chose date for adjustment");
+		$dato=fzf("$end\n$today\n$begin","Chose date for adjustment [$konto] $new - $bal = $diff");
 		if ($dato == "") die("Cancelled adjustment\n");
 		$data["Date"] = $dato;
-		$data["Description"] = "⚖ Adjustment [$konto - $bal ⇝ $new]";
 		$diff = number_format($diff,2,".","");
 		$data["UID"] = substr(uniqid(),0,8);
 		$data["Transactions"][0] = array("Account"=>$konto,"Amount"=>$diff,"Func"=>"");
-		$data["Transactions"][1] = array("Account"=>"Fejlkonto:Adjustments","Amount"=>-$diff,"Func"=>"");
-		echo "Would You like to add a comment: ";
+		require_once("/svn/svnroot/Applications/lookup_account.php");
+		$mk = lookup_acc(null,$diff,"Where to move $diff [$konto] balance to?");
+		if ($mk == "") die("Cancelled adjustment\n");
+		require_once("/svn/svnroot/Applications/get_func.php");
+		$func = get_func($konto,$diff,$diff);
+		$data["Transactions"][1] = array("Account"=>$mk,"Amount"=>-$diff,"Func"=>"$func");
+		echo "\nWould You like to add a comment: ";
 		$comment= trim(fgets(STDIN));
-		if ($comment!="") $data["Description"] = $data["Description"] . " - $comment";
+		$data["Description"] = "⚖ Adjustment [$konto - $bal ⇝ $new] $comment";
 		$data['History'] = array(array('Date'=>date("Y-m-d H:i"),'updatedby'=>exec("whoami"),"Description"=>"Justeret balance '$konto' fra $bal til $new"));
 		$new = 1;
 		$dir = $tpath;
 		$nfn = "";
+		$date = date("Y-m-d");
 		while (true) {
-			$nfn = $dir. "/adj_" . $new .".trans";
+			$nfn = $dir. "/adj_$date" . "_". $new .".trans";
 			if (!file_exists($nfn)) break;
 			$new++;
 		}
 		$data['Filename'] = basename($nfn);
 		$data["Comment"] = "";
 		$data["UID"] = uniqid();
-		$data["Reference"] = "⚖️ ADJ";
+		$data["Reference"] = "⚖️ ADJ [" . askref() . "]";
 		file_put_contents("$nfn",json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		echo "Saved $nfn\n";
+		}
 		die();
 	}
 
@@ -117,7 +135,6 @@ date_default_timezone_set('Europe/Copenhagen');
 	$data['Date'] = date("Y-m-d");
 	unset($data['Fn']);unset($data['Fullfn']);
 	$data['History'] = array(array('Date'=>date("Y-m-d H:i"),'updatedby'=>exec("whoami"),"Description"=>"Duplikeret transaktion"));
-	require_once("/svn/svnroot/Applications/proc_open.php");
 	$data["UID"] = uniqid();
 	if (!isset($data['Comment'])) $data['Comment'] = "";
 	$data["Description"] = "⏲ - " . date("H:i");
@@ -137,5 +154,21 @@ function getbal($konto,$tpath) {
 		if ($csv[3] == $konto) $sum += $csv[5];
 	}
 	return $sum;
+}
+function getbalz() {
+ob_start();
+system("color=none php /svn/svnroot/Applications/newl.php csv");
+$data = ob_get_clean();
+$balz = array();
+$x = explode("\n",trim($data));
+foreach ($x as $curline) {
+	$csv = str_getcsv($curline);
+	$acc = $csv[3];
+	$amount = $csv[5];
+	if (!isset($balz[$acc])) $balz[$acc] = 0;
+	$balz[$acc] += $amount;
+}
+ksort($balz);
+return $balz;
 }
 ?>

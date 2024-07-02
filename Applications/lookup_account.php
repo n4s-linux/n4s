@@ -13,8 +13,9 @@ function lookup_acc($accounts,$bal,$alias = "",$multi = "--multi") {
 	}
 	}
 	$op = exec("whoami");
+	require_once("/svn/svnroot/Applications/proc_open.php");
 	file_put_contents("/home/$op/tmp/aliases.out",$aout);
-	$cmd = ("((cat ~/tmp/aliases.out;updatealiases= noend=1 LEDGER_BEGIN=1900-01-01 LEDGER_END=2099-12-31 color=none noemoji=1 php /svn/svnroot/Applications/newl.php accounts;cat /svn/svnroot/Libraries/Kontoplan.txt|/svn/svnroot/Applications/bookify.bash;cat ~/tmp/aliases.out)|sort|uniq|grep :;echo 🌠MANUAL;echo '🤔Fejlkonto:Ved Ikke')|fzf --ansi --tac --header-first --header=\"$alias\" --scrollbar=* $multi --border --preview-label='Seneste posteringer' --preview-window 50%:bottom  --preview 'LEDGER_PAYEE_WIDTH=20 LEDGER_ACCOUNT_WIDTH=15 updatealiases= color=none php /svn/svnroot/Applications/newl.php register ^\"{}\" |tac'");
+	$cmd = ("((cat ~/tmp/aliases.out;updatealiases= noend=1 LEDGER_BEGIN=1900-01-01 LEDGER_END=2099-12-31 color=none noemoji=1 php /svn/svnroot/Applications/newl.php accounts;cat /svn/svnroot/Libraries/Kontoplan.txt|/svn/svnroot/Applications/bookify.bash;cat ~/tmp/aliases.out)|sort|uniq|grep :;echo 🌠MANUAL;echo '🤔Fejlkonto:Ved Ikke')|fzf --bind 'Alt-e:execute(php /svn/svnroot/Applications/AccGuide.php Edit {} </dev/tty)' --ansi --tac --header-first --header=\"$alias\" --scrollbar=* $multi --border --preview-label='Details' --preview-window 50%:top --preview 'guide=\"{}\" tpath=$path php '/svn/svnroot/Applications/AccGuide.php' {} |tac'");
 	system($cmd);
 	$accountstring = trim(ob_get_clean());
 	$accountstring = str_replace("🔥","",$accountstring);

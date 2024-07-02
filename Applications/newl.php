@@ -1,11 +1,11 @@
 <?php
+require_once("/svn/svnroot/Applications/ask.php");
 require_once("/svn/svnroot/Applications/readonly.php");
 	$tpath = getenv("tpath");
 	$alreadyused = array();
 	require_once("/svn/svnroot/Applications/short.php");
 	$aliases = json_decode(fgc("$tpath/aliases"),true);
 	$lockthesefiles = array();
-	$aliases_warning_displayed = 0;
 	$undefined_aliascount = 0;
 	require_once("/svn/svnroot/Applications/ansi-color.php");
 	require_once("/svn/svnroot/Applications/lookup_account.php");
@@ -148,7 +148,10 @@ require_once("/svn/svnroot/Applications/readonly.php");
 	}
 	else if ($nargs[0] != "entry") { // this is where we pass the ledger commands - todo pass them properly even with quotes and stuff, to make it a proper working full wrapper
 		foreach ($nargs as $curarg) {
-			$curarg = preg_replace('/[[:^print:]]/', '', $curarg);
+			if (strlen(getenv("noemoji"))) {
+				echo "no emojis\n";
+				$curarg = preg_replace('/[[:^print:]]/', '', $curarg);
+			}
 			$cmd .= " $curarg";
 		}
 			if (getenv("color") != "none" && $argv[1] != "csv") $cmd .="|php /svn/svnroot/Applications/colorizer.php";
@@ -157,7 +160,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 			system("$lh;$cmd");
 		else	
 			system("$lh;$cmd");
-		if ($undefined_aliascount > 0)fwrite(STDERR,"$undefined_aliascount manglende aliases - skriv 'aliases'\n");
+		if ($undefined_aliascount > 0)fwrite(STDERR,"$undefined_aliascount manglende aliases 💡skriv aliases💡\n");
 	}
 	else {
 		entry();
@@ -172,7 +175,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 		$f['Transactions'] = array();
 		$bal = -1;
 		$i = 0;
-			$v = "";
+		$v = "";
 		while (round($bal,2) != 0) {
 			if ($bal == -1 ) $bal = 0;
 			require_once("/svn/svnroot/Applications/fzf.php");
@@ -182,10 +185,6 @@ require_once("/svn/svnroot/Applications/readonly.php");
 			if ($konti == "") die("Afbrudt kontering\n");
 			$konti = explode("\n",$konti);
 			foreach ($konti as $konto) {
-				if ($konto == "NY") {
-					echo "Indtast kontostreng: ";
-					$fd = fopen("PHP://stdin","r");$konto = trim(fgets($fd)); fclose($fd);
-				}
 				$belob = round(askamount($konto,$bal), 2);
 				require_once("/svn/svnroot/Applications/get_func.php");
 				$func = get_func($konto,$bal,$belob);
@@ -213,14 +212,6 @@ require_once("/svn/svnroot/Applications/readonly.php");
 		system("php /svn/svnroot/Applications/newl.php b >/dev/null");
 		file_put_contents("/home/$op/.lastsym","🗸 $f[Filename]",FILE_APPEND);
 	}
-	function askamount($konto,$bal) {
-		require_once("/svn/svnroot/Applications/math.php");
-		$bal = $bal *-1;
-		$rv = getstdin("Beløb for $konto ($bal)");
-		$rv = str_replace(",",".",$rv); // tillad komma, bliver blot tolket som punktum der er iso locales default decimalseparator
-		if ($rv == "") $rv = $bal;
-		return evalmath($rv);
-	}
 	function getkontoplan($x) {
 		global $tpath;
 		$r = array();
@@ -246,58 +237,6 @@ require_once("/svn/svnroot/Applications/readonly.php");
 		arsort($x,SORT_STRING);
 		$x = trim(implode("\n",$x));
 		return $x;
-	}
-	function askdesc($hash) {
-		global $tpath;
-		if (file_exists("$tpath/.lastdesc_$hash")) {
-			$curdesc = file_get_contents("$tpath/.lastdesc_$hash");
-		}
-		else $curdesc = "";
-		if ($curdesc != "") {
-			$rv = getstdin("Indtast tekst [$curdesc]");
-			if (trim($rv) == "") $rv = $curdesc;
-		}
-		else
-			$rv = getstdin("Indtast tekst");
-		file_put_contents("$tpath/.lastdesc_$hash",$rv);
-		return $rv;
-	}
-	function askref() {
-		global $tpath;
-		if (file_exists("$tpath/.lastref")) {
-			$curref= intval(trim(file_get_contents("$tpath/.lastref")));
-			if ($curref> 0)  $curref++;
-			else  $curref= "" ;
-		}
-		else $curref= "";
-		if ($curref!= "") {
-			$rv = getstdin("Indtast reference (. for intet bilag) [$curref]");
-		}
-		else
-			$rv = trim(getstdin("Indtast reference"));
-		if ($rv == ".") $rv = "";
-		else if ($rv == "") $rv = $curref;
-		file_put_contents("$tpath/.lastref",$rv);
-		return strval($rv);
-	}
-	function askdate() {
-		global $tpath;
-		if (!file_exists("$tpath/.lastdate"))
-			$curdate =date("Y-m-d");
-		else
-			$curdate = file_get_contents("$tpath/.lastdate");
-		if (stristr($tpath,"igang")) $curdate = date("Y-m-d");
-		$s = getstdin("Indtast dato [$curdate]");
-		$retval = ($s == "") ? $curdate : $s;
-		file_put_contents("$tpath/.lastdate",$retval);
-		return $retval;
-	}
-	function getstdin($prompt) {
-		echo "$prompt: ";
-		$fd = fopen("PHP://stdin","r");
-		$s = trim(fgets($fd));
-		fclose ($fd);
-		return $s;
 	}
 	function scanalias($t) {
 		foreach ($t as $curtrans) {
@@ -394,7 +333,6 @@ require_once("/svn/svnroot/Applications/readonly.php");
 	function missingalias($file,$id) {
 		global $alreadyused;
 		global $undefined_aliascount;
-		global $aliases_warning_displayed;
 		$update = trim(getenv("updatealiases"));
 		$tpath = getenv("tpath");
 		global $aliases;
@@ -407,28 +345,25 @@ require_once("/svn/svnroot/Applications/readonly.php");
 				file_put_contents("$tpath/aliases",json_encode($aliases,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 			}
 			else if (isset($aliases[$d]) && $aliases[$d] != "Mangler") {
+				$oldacc = $filedata['Transactions'][$id]['Account'];
 				$filedata['Transactions'][$id]['Account'] = $aliases[$d];
+				$filedata["History"][] = array("Desc"=>"Remapped $oldacc to $aliases[$d] on T[" . $id."]","Date"=>date("Y-m-d H:i"),"op"=>$op);
 				file_put_contents("$tpath/$file",json_encode($filedata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+				$undefined_aliascount--;
 			}
 		}
 		else {
-			echo "its do or die time\n";
-			require_once("/svn/svnroot/Applications/proc_open.php");
 			$bn = basename("$tpath");
-			if ($aliases_warning_displayed == 0) { exec_app("whiptail --msgbox \"Der mangler at blive defineret nye aliases i $bn ($d)\nDu vil nu blive spurgt hvilken konto de enkelte aliases skal henføres til\" 10 80");$aliases_warning_displayed=1;}
 			if (!isset($alreadyused[$d])) {
 				$x = explode(":",$d);
 				if (isset($x[1]))
 					$konto = $d;
 				else
-					$konto = lookup_acc("",0,"aliaset '$d'","");
+					$konto = lookup_acc("",0,"🦎 Please map the alias '$d' to an actual account","");
 				$alreadyused[$d] = $konto;
 			}
 			else
 				$konto = $alreadyused[$d];
-			//$konto = "Mangler";
-			//getkontoplan_allaccounts($tekst = " - aliases $d peger på");
-			//$konto = lookup_acc("",0,$tekst = " - aliases $d peger på");
 			if ($konto == "") die();
 			$aliases[$d] = $konto;
 			file_put_contents("$tpath/aliases",json_encode($aliases,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
