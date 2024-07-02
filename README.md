@@ -179,3 +179,5 @@ This is how you update the system
 | 2024-05-28 | [bbbad819...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbbad819a80564828d8152b16d2114c2130b8a11) | 💡 New Feature: Manual accounts support debitor/creditor |
 | 2024-05-28 | [0a2ba6aa...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0a2ba6aaf531ab1f35a33742c78f16185c0d56c3) | 💡 New feature - report with/without primo carryover amounts |
 | 2024-06-24 | [92fdaa42...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/92fdaa422d2447454690f27e8b00a6e31093f6b1) | 💡 New Feature: eeping archived version of edited transactions for future reference |
+| 2024-07-02 | [94243d66...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/94243d66ff2f75683ffc023621cd1d60ee0dcc58) | 💡 New Feature: Voucher handling System - Tries and fetch document data via Tagunn API - displays documents in Zathura |
+| 2024-07-02 | [ffc24dd0...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ffc24dd091a66236124cb29b7e943b4a8e5cb6c8) | 💡 New Feature: En (editable) description for each account in the tree |
