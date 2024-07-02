@@ -1,9 +1,9 @@
 {
     "require": {
         "num-num/ubl-invoice": "^1.15",
-        "guzzlehttp/guzzle": "^7.8",
         "lenius/economic-php-client": "^2.0",
         "php-school/cli-menu": "^4.3",
-        "league/climate": "^3.8"
+        "league/climate": "^3.8",
+        "docparser/docparser-php": "^1.1"
     }
 }
