@@ -16,6 +16,7 @@ foreach ($argv as $fn) {
 //if (getenv("missing_vouchers") == 1) exit;
 $count = count($files);
 $i = 0;
+system("mkdir -p $path/.archive");
 foreach ($files as $file) {
 	//echo "logic on file " . $i++ . " / " . $count . "\n";
     $orghash = md5(json_encode($data));
@@ -36,15 +37,14 @@ $code = file_get_contents("$lpath/$file");
 		file_put_contents("$fn", json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 		$olddata = $data;
 		$oldbn = basename("$fn");
-		$nf = basename($nf);
+		$nf = basename($fn);
 		$i = 0;
-		$fn = "$tpath/.archive/$nf" . "_" . "$i.json";
+		$fn = "$path/.archive/$nf" . "_" . "$i.json";
 		while (file_exists($fn)) { 
 			$i++;
-			$fn = "$tpath/.archive/$nf" . "_" .  "$i.json";                                                                                               
+			$fn = "$path/.archive/$nf" . "_" .  "$i.json";                                                                                               
 		}
-		$olddata["History"][] = array("op"=>$op,"Desc"=>"Archived version of transactionfile (logic)","Date"=>date("Y-m-d H:i"));
-		$olddata["TransactionUpdatedWith"] = array("➕"=>$diff,"➖"=>$diff2);
+		$olddata["History"][] = array("op"=>$op,"Desc"=>"Archived version of transactionfile by logic ($file)","Date"=>date("Y-m-d H:i"));
 		file_put_contents($fn,json_encode($olddata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 
     	}
