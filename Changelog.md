@@ -1,5 +1,11 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-07-02 | [71784db9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/71784db9acb0f430fdeaf5ea734b326b0c1fd0dc) | Small script that adds a book to each line |
+| 2024-07-02 | [9dd43da5...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9dd43da56b6bcfc39d251b61744afc23474e42a4) | Different icons for different kinds of accounts |
+| 2024-07-02 | [35675b5c...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/35675b5c52c840982c22d3ddde94ea2871042da3) | Archive function for file edit |
+| 2024-07-02 | [fe55b904...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/fe55b904adbc12e54d156cfee81c6eae9ef7ecbc) | Clear accounts for emojis |
+| 2024-07-02 | [3f6669f1...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/3f6669f1bbbe5dc7686823a54479495b11c1fdd2) | Fault tolerance: Tolerate empty description |
+| 2024-07-02 | [db6224d6...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/db6224d625d5aaeb2f2af9da7a5dcdd4170aee78) | Archive function for editclass |
 | 2024-07-01 | [fd3c19b7...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/fd3c19b78c26d213bc31df11c5810cec6c73d367) | Skip old transaction filez without numbers |
 | 2024-07-01 | [f62d3f61...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/f62d3f618aef79c25449daefacc3f471ddb4e04c) | Fault tolerance - tolerate empty text in openentries script |
 | 2024-07-01 | [c4e2b6ed...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c4e2b6edf0b13b419287892038c06b22865b972c) | Default adjustment date = current end date |
