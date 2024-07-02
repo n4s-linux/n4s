@@ -1,5 +1,10 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-07-02 | [94243d66...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/94243d66ff2f75683ffc023621cd1d60ee0dcc58) | 💡 New Feature: Voucher handling System - Tries and fetch document data via Tagunn API - displays documents in Zathura |
+| 2024-07-02 | [ffc24dd0...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ffc24dd091a66236124cb29b7e943b4a8e5cb6c8) | 💡 New Feature: En (editable) description for each account in the tree |
+| 2024-07-02 | [33ad858d...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/33ad858ddc8216ae1c96f49214c011084fca804e) | some composer stuffz |
+| 2024-07-02 | [d2d9ba03...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/d2d9ba030f5986d85cddd4bb4cb9aef2284d1168) | Cosmetic improvements and misc cleanup |
+| 2024-07-02 | [905be8db...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/905be8db3b913a19672ea7f843c659c3a8984df0) | Description of different danish accounts |
 | 2024-07-02 | [71784db9...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/71784db9acb0f430fdeaf5ea734b326b0c1fd0dc) | Small script that adds a book to each line |
 | 2024-07-02 | [9dd43da5...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9dd43da56b6bcfc39d251b61744afc23474e42a4) | Different icons for different kinds of accounts |
 | 2024-07-02 | [35675b5c...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/35675b5c52c840982c22d3ddde94ea2871042da3) | Archive function for file edit |
