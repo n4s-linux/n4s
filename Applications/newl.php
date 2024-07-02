@@ -147,8 +147,10 @@ require_once("/svn/svnroot/Applications/readonly.php");
 		calcinterest($x);		
 	}
 	else if ($nargs[0] != "entry") { // this is where we pass the ledger commands - todo pass them properly even with quotes and stuff, to make it a proper working full wrapper
-		foreach ($nargs as $curarg)
+		foreach ($nargs as $curarg) {
+			$curarg = preg_replace('/[[:^print:]]/', '', $curarg);
 			$cmd .= " $curarg";
+		}
 			if (getenv("color") != "none" && $argv[1] != "csv") $cmd .="|php /svn/svnroot/Applications/colorizer.php";
 		$lh = ledgerhack();
 		if ($argv[1] != "csv" && getenv("color") != "none")
