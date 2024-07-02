@@ -1,6 +1,7 @@
 <?php
 $home = getenv("HOME");
 $histfile = "$home/.bash_history";
+$tpath = getenv("tpath");
 array_shift($argv);
 $history =array();
 foreach ($argv as $file) {
@@ -11,6 +12,8 @@ foreach ($argv as $file) {
 	if (!isset($argv[0]))
 		die("usage: file1 file2 file3\n");
 	$old = json_decode(file_get_contents($oldfn),true);
+	$orgdarray = $old;
+	$orgdarray["History"][] = array("Desc"=>"Changed transaction manually in editor","Date"=>date("Y-m-d H:i"),"op"=>$op);
 	if ($old == false)
 		die("cannot decode $oldfn\n");
 	$olddata = $old;
@@ -61,7 +64,13 @@ if (!empty($diff)) {
 }
 	if (!empty($diff)) {
 		$darray["History"] = array_merge($darray["History"],$history);
+		$nfn = str_replace(".trans","",basename($file));
+		$uid = date("Y-m-dTHi");
+		$nfn = "$tpath/.archive/$nfn" . "_" . $uid . ".trans";
+		echo "nfn=$nfn\n";
+		system("mkdir -p $tpath/.archive");
 		file_put_contents($file,json_encode($darray,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));	
+		file_put_contents($nfn,json_encode($orgdarray,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));	
 	}
 
 
