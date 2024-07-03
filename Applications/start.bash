@@ -37,7 +37,7 @@ if [ "$argument" == "igangv" ]; then
 		sr igangv
 	fi
 	echo ready to enter transaction
-	php /svn/svnroot/Applications/key.php entry
+	php /svn/svnroot/Applications/newl.php entry
 	export LEDGER_ADD_TIME_TO_PAYEE=1
 	php /svn/svnroot/Applications/key.php ledger b 
 
@@ -70,7 +70,7 @@ elif [ "$argument" == "jootidsbal" ]; then
 	hledger-ui --theme=terminal -T -f $tpath/.hl --watch --depth=4
 elif [ "$argument" == "anyentry" ]; then
 	sr
-	php /svn/svnroot/Applications/newl.php entry
+	LEDGER_BEGIN=$(date +%Y-%m-%d --date="-1 year")	php /svn/svnroot/Applications/newl.php entry
 elif [ "$argument" == "stuffbal" ]; then
 	sr "stuff"
 	1d

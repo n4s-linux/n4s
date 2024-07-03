@@ -1,4 +1,6 @@
 <?php
+$fzf_menu = getenv("fzf_menu");
+require_once("/svn/svnroot/Applications/fzf.php");
 $op = exec("whoami");
 $begin = getenv("LEDGER_BEGIN");
 $end = getenv("LEDGER_END");
@@ -6,17 +8,12 @@ $histfile = getenv("HOME")."/tmp/journal_history";
 system("bash /svn/svnroot/Applications/vthist.bash list|head -n9 > $histfile");
 
 if (!isset($argv[1])) {
-	$menu["Accounting"] = array('key'=>'r','Text'=>'Rapportering...','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Regnskab'");
-	$menu["Journalz (Cases)"] = array('key'=>'c','Text'=>'Journaler (sager)','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php CRM'");
-	$menu["Terminal"] = array('key'=>'T','Text'=>'🖥Terminal','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Terminal'");
-	$menu["Calculator"] = array('key'=>'C','Text'=>'python','cmd'=>"split-window 'ipython3 --no-banner'");
-
-	$menu["Manual"] = array('key'=>'m','Text'=>'Manual','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Manual'");
-	if ($op == "joo") $menu['Ugeoverblik2'] = array('key'=>'E','Text'=>'mail','cmd'=>"new-window 'tpath=/data/regnskaber/regnskabsdeadlines/ LEDGER_BEGIN=1970/1/1 LEDGER_END=2099/12/31 php /svn/svnroot/Applications/key.php ledger r opgaver -S date --account-width=15|less' ");
-	$menu["Session"] = array('key'=>'S','Text'=>'newsession','cmd'=>"display-popup -h 4 -E 'bash /svn/svnroot/Applications/newsesv2.bash");
-	$menu["Mindmap - hmm"] = array('key'=>'S','Text'=>'newsession','cmd'=>"new-window 'bash /svn/svnroot/Applications/start.bash mindmap");
+	$menu["💵 Accounting"] = array('key'=>'r','Text'=>'Rapportering...','cmd'=>"new-window 'fzf_menu=$fzf_menu php /svn/svnroot/Applications/tmux/menu.php Regnskab'");
+	$menu["📑 Journalz"] = array('key'=>'c','Text'=>'Journaler (sager)','cmd'=>"new-window 'fzf_menu=$fzf_menu php /svn/svnroot/Applications/tmux/menu.php CRM'");
+	$menu["🤔 Manual"] = array('key'=>'m','Text'=>'Manual','cmd'=>"new-window 'fzf_menu=$fzf_menu php /svn/svnroot/Applications/tmux/menu.php Manual'");
 }
 else if ($argv[1] == "Vim") {
+	$menu["🤔 Headmenu"] = array('key'=>'H','Text'=>'Manual','cmd'=>"send-keys 'hm' Enter");
 	$menu["Account1"] = array('key'=>'a','Text'=>'Account1','cmd'=>"send-keys \"escape\" gg/Account ENTER wwwå");
 	$menu["Account2"] = array('key'=>'A','Text'=>'Account1','cmd'=>"send-keys \"escape\" gg/Account ENTER n wwwå");
 	$menu["Func1"] = array('key'=>'f','Text'=>'Func1','cmd'=>"send-keys \"escape\" gg/Func ENTER wwli");
@@ -29,6 +26,7 @@ else if ($argv[1] == "Vim") {
 	$menu["Periodisering Slut"] = array('key'=>'P','Text'=>'Pslut','cmd'=>"send-keys \"escape\" gg/P-End ENTER wwwwli");
 }
 else if ($argv[1] == "Kommunikation") {
+	$menu["🤔 Headmenu"] = array('key'=>'H','Text'=>'Manual','cmd'=>"send-keys 'hm' Enter");
 	$menu["Materialeindkaldelse"] = array('key'=>'m','Text'=>'materiale','cmd'=>"new-window 'php /svn/svnroot/Applications/materiale.php'");
 }
 else if ($argv[1] == "Automatisering") {
@@ -63,9 +61,10 @@ else if ($argv[1] == "Bogføring") {
 	$menu["Reconciliation account vs statement"] = array('key'=>'r','Text'=>'forecasting','cmd'=>"send-keys 'reconcile' Enter");
 }
 else if ($argv[1] == "rmenu") {
-	$menu["Bookkeeping"] = array('key'=>'b','Text'=>'Bogføring','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Bogføring' ");
-	$menu["Reporting"] = array('key'=>'e','Text'=>'Regnskab...','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Rapportering'");
-	$menu["Automation"] = array('key'=>'a','Text'=>'Automatisering','cmd'=>"run-shell 'php /svn/svnroot/Applications/tmux/menu.php Automatisering' ");
+	$menu["Bookkeeping"] = array('key'=>'b','Text'=>'Bogføring','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Bogføring' Enter");
+	$menu["Reporting"] = array('key'=>'e','Text'=>'Regnskab...','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Rapportering' Enter");
+	$menu["Automation"] = array('key'=>'a','Text'=>'Automatisering','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Automatisering' Enter");
+	$menu["🤔 Headmenu"] = array('key'=>'H','Text'=>'Manual','cmd'=>"send-keys 'hm' Enter");
 }
 else if ($argv[1] == "Manual" ) {
 	$menu["n4s"] = array('key'=>'t','Text'=>'Tmux - Vinduesystem','cmd'=>"new-window 'tag=README bash /svn/svnroot/Applications/start.bash business'");
@@ -75,7 +74,7 @@ else if ($argv[1] == "Manual" ) {
 }
 else if ($argv[1] == "Terminal" ) {
 	$menu["Åbn Terminal"] = array('key'=>'t','Text'=>'Tag screenshot','cmd'=>"new-window bash /svn/svnroot/Applications/start.bash shell");
-	$menu["Tag Screenshot"] = array('key'=>'s','Text'=>'Tag screenshot','cmd'=>"run-shell 'bash /svn/svnroot/Applications/start.bash screenshot'");
+	$menu["Tag Screenshot"] = array('key'=>'s','Text'=>'Tag screenshot','cmd'=>"new-window 'bash /svn/svnroot/Applications/start.bash screenshot'");
 	$menu["Se Screenshots"] = array('key'=>'S','Text'=>'Tag screenshot','cmd'=>"new-window 'bash /svn/svnroot/Applications/start.bash screenshots'");
 }
 else if ($argv[1] == "Time" ) {
@@ -94,9 +93,9 @@ else if ($argv[1] == "Stats" ) {
 	$menu["Kundestatistik"] = array('key'=>'k','Text'=>'Halvår','cmd'=>"new-window ' bash /svn/svnroot/Applications/stats_kunder.bash'");
 }
 else if ($argv[1] == "Regnskab") {
-	$menu['Open Account'] = array('key'=>'r','Text'=>'Åbn regnskab','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash regnskab');
-	$menu['New Account'] = array('key'=>'n','Text'=>'Åbn regnskab','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash nyregnskab');
-	$menu['Quick Transaction'] = array('key'=>'h','Text'=>'Åbn regnskab','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash anyentry');
+	$menu['📁 Open Account'] = array('key'=>'r','Text'=>'Åbn regnskab','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash regnskab');
+	$menu['💾 New Account'] = array('key'=>'n','Text'=>'Åbn regnskab','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash nyregnskab');
+	$menu['🔥 Quick Transaction'] = array('key'=>'q','Text'=>'Åbn regnskab','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash anyentry');
 }
 
 else if ($argv[1] == "history" ) {
@@ -113,15 +112,31 @@ else if ($argv[1] == "history" ) {
 	}
 }
 else if ($argv[1] == "CRM" ) {
-	$menu['Open Journal'] = array('key'=>'j','Text'=>'Åbn Journal','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash business');
-	$menu["Search"] = array('key'=>'s','Text'=>'Søg','cmd'=>"new-window -n Søgning 'bash /svn/svnroot/Applications/newsearchgrep.bash momskvartal'");
+	$menu['📁 Open / Create'] = array('key'=>'j','Text'=>'Åbn Journal','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash business');
+	$menu["🔍 Search"] = array('key'=>'s','Text'=>'Søg','cmd'=>"new-window -n Søgning 'bash /svn/svnroot/Applications/newsearchgrep.bash momskvartal'");
 
 }
-$cmd = 'tmux display-menu -T "#[align=middle fg=brown]n4s $bn" ';
-foreach ($menu as $key => $ar) {
-	$nice = str_pad($key,20);
-	$cmd .= "\"$nice\" $ar[key] \"$ar[cmd]\" ";
+if (getenv("fzf_menu") == "1") {
+	$fzf = "";
+	$cmdz = array();
+	foreach ($menu as $key => $ar) {
+		$nice = str_pad($key,20);
+		$cmdz[trim($nice)] = $ar["cmd"];
+		$fzf .= "$nice\n";
+	}
+	$version = trim(file_get_contents("/home/$op/tmp/.n4sversion"));
+	$valg = fzf($fzf,"🦎 n4s v$version - MENU🦎",true,"--margin 2% --padding 2% --border=sharp");
+	if ($valg == "")die();
+	$cmd = $cmdz[$valg];
+	system("export fzf_menu=1; tmux $cmd");
 }
-//	fwrite(STDERR,$cmd."\n");
-	system("$cmd");
+else {
+	$cmd = 'tmux display-menu -T "#[align=middle fg=brown]n4s $bn" ';
+	foreach ($menu as $key => $ar) {
+		$nice = str_pad($key,20);
+		$cmd .= "\"$nice\" $ar[key] \"$ar[cmd]\" ";
+	}
+	//	fwrite(STDERR,$cmd."\n");
+		system("$cmd");
+}
 ?>

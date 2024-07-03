@@ -124,8 +124,12 @@ function vitouch() {
 	template=/svn/svnroot/Applications/github.html5
 	jn=j
 	if [ "$jn" == "j" ]; then
-		toc=$(echo -e "Nej\nJa"|fzf --header="TOC")
-		if [ "$toc" == "j" ]; then
+		toc=$(echo -e "No\nYes"|fzf --header="TOC")
+		if [ "$toc" == "" ]; then
+			echo "Aborted mission on toc"
+			exit
+		fi
+		if [ "$toc" == "Yes" ]; then
 			toc="--toc"
 		else
 			toc=""

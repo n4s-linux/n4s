@@ -1,3 +1,4 @@
+alias hm="fzf_menu=1 php /svn/svnroot/Applications/tmux/menu.php"
 function vouchers() {
 	if [ "$tpath" == "" ]; then
 		echo "no tpath for vouchers, returning"
@@ -244,6 +245,7 @@ function lt() {
 }
 alias fp=" python /svn/svnroot/Applications/fpaste/fpaste.py"
 version=$(cd /svn/svnroot/;echo $(git log |wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
+echo $version > ~/tmp/.n4sversion
 export TERM=xterm-256color tmux
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=y
 function h() {
@@ -334,6 +336,7 @@ function ds() {
 	rm ~/tmp/.sortpick
 }
 function m() {
+	export fzf_menu=1
 	if [ "$tpath" != "" ]; then
 		php /svn/svnroot/Applications/tmux/menu.php rmenu
 

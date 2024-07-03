@@ -36,7 +36,7 @@
 			$rv = getstdin("📜 Enter reference (. for empty) [$curref]");
 		}
 		else
-			$rv = trim(getstdin("Indtast reference"));
+			$rv = trim(getstdin("📜 Enter reference"));
 		if ($rv == ".") $rv = "";
 		else if ($rv == "") $rv = $curref;
 		file_put_contents("$tpath/.lastref",$rv);

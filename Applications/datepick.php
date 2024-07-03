@@ -33,7 +33,7 @@
 	$fzf .= date("Y");
 	$valg = fzf($fzf,"vælg periode $datepicktext","--height=12 --tac --exact");
 	if ($valg =="")die();
-	else if ($valg == "Longtime") {$begin = "1900-01-01"; $end=date("Y-m-d",strtotime("tomorrow"));}
+	else if ($valg == "Longtime") {$begin = "1900-01-01"; $end="2099-12-31";}
 	else if ($valg == "MANUAL") {
 		echo "Begin: "; $fd = fopen("PHP://stdin","r");$begin = trim(explode("\n",fgets($fd))[0]);fclose($fd);
 		echo "End: "; $fd = fopen("PHP://stdin","r");$end = trim(fgets($fd));fclose($fd);
