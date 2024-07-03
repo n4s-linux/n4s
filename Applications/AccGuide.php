@@ -1,12 +1,15 @@
 <?php
+$tpath = getenv("tpath");
 require_once("/svn/svnroot/Applications/proc_open.php");
+require_once("/svn/svnroot/Applications/fzf.php");
 $argv[1] = trim($argv[1]);
 if ($argv[1] == "Edit") {
 	$argv[2] = str_replace("'","",$argv[2]);
 	$argv[2] = remove_emoji($argv[2]);
 	if (stristr($argv[2],"=>")) 	$argv[2] = trim(explode("=>",$argv[2])[1]);
-	echo "Editing $argv[2]\n";
-	exec_app("vim \"/svn/svnroot/Libraries/AccGuide/$argv[2].md\"");
+	$valg = fzf("$tpath/.AccGuide\n/svn/svnroot/Libraries/AccGuide","Edit Local or global guide?");
+	if ($valg == "") die("Afbrudt guide");
+	exec_app("vim \"$valg/$argv[2].md\"");
 }
 else {
 	$g = $argv[1];
@@ -14,17 +17,20 @@ else {
 	$g = str_replace("'","",$g);
 	if (stristr($g,"=>")) 	$g = trim(explode("=>",$g)[1]);
 	runledger($g);
-	if (file_exists("/svn/svnroot/Libraries/AccGuide/$g.md")){
-		$str = trim(file_get_contents("/svn/svnroot/Libraries/AccGuide/$g.md"));
-		$x = explode("\n",$str);
-		$i = 0;
-		foreach ($x as $curline) {
-			$i++;
-echo "\033[38;5;196m🕮 \033[38;5;226m § ↣ \033[38;5;46m$i\t\033[38;5;21m$curline\033[0m\n";
+	$possiblepaths = array("$tpath/.AccGuide","/svn/svnroot/Libraries/AccGuide");
+	system("mkdir -p $tpath/.AccGuide");
+	foreach($possiblepaths as $curpath) {
+		if (file_exists("$curpath/$g.md")){
+			$str = trim(file_get_contents("$curpath/$g.md"));
+			$x = explode("\n",$str);
+			$i = 0;
+			$bn = basename(dirname($curpath));
+			foreach ($x as $curline) {
+				$i++;
+	echo "\033[38;5;196m🕮 \033[38;5;226m § $bn ↣ \033[38;5;46m$i\t\033[38;5;21m$curline\033[0m\n";
+			}
 		}
 	}
-	else
-		echo "\033[38;5;23m💡Press Alt-e to edit '$g' description\033[0m\n";
 
 }
 function runledger($g,$p="") {
