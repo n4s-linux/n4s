@@ -1,5 +1,7 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-07-03 | [20005546...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/20005546359a61ee02f97631898740995eaf0a29) | 90 day quick reentry log |
+| 2024-07-03 | [28fa7ceb...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/28fa7ceb1e0e105b7d71ba01982ec1232537082c) | Cosmetics |
 | 2024-07-03 | [96521d64...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/96521d64eac87fda8230bc8ab2ca6486d6d56cb7) | A lot of stuff, mostly cosmetics |
 | 2024-07-03 | [0c2ec1ee...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0c2ec1eed25f33351ec0a9ad64a5641d15805ea5) | Diverse vejledninger til diverse konti |
 | 2024-07-03 | [20b4dc89...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/20b4dc8992441a09ce00f4875b581576a5e77b31) | Some more account guides |
