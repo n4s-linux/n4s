@@ -140,7 +140,7 @@
 	$data["Description"] = "⏲ - " . date("H:i");
 	file_put_contents($nfn,json_encode($data,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
 	exec_app("vi \"$nfn\"");
-	$cmd = ("cmatrix&(find /data/regnskaber ~/regnskaber/ -name \\*.trans -mtime -14 -printf \"%T@|||||%p\\n\" |grep .trans$ > /home/$op/tmp/mkentry.php.list;killall cmatrix)"); //run cache for next time
+	$cmd = ("cmatrix&(find /data/regnskaber ~/regnskaber/ -name \\*.trans -mtime -90 -printf \"%T@|||||%p\\n\" |grep .trans$ > /home/$op/tmp/mkentry.php.list;killall cmatrix)"); //run cache for next time
 	exec_app("$cmd");
 
 function getbal($konto,$tpath) {
