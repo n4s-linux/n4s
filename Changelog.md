@@ -1,5 +1,7 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-07-03 | [20b4dc89...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/20b4dc8992441a09ce00f4875b581576a5e77b31) | Some more account guides |
+| 2024-07-03 | [bc34f38b...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bc34f38b40a3746ba15ce70123af32cc9d042223) | Improvement: Account Guide can be local or global and shows both |
 | 2024-07-02 | [94243d66...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/94243d66ff2f75683ffc023621cd1d60ee0dcc58) | 💡 New Feature: Voucher handling System - Tries and fetch document data via Tagunn API - displays documents in Zathura |
 | 2024-07-02 | [ffc24dd0...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ffc24dd091a66236124cb29b7e943b4a8e5cb6c8) | 💡 New Feature: En (editable) description for each account in the tree |
 | 2024-07-02 | [33ad858d...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/33ad858ddc8216ae1c96f49214c011084fca804e) | some composer stuffz |
