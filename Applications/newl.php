@@ -207,7 +207,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 		$f['Description'] = askdesc(md5($hashkonti));
 		$f['Filename'] = $filename . "_" . filter_filename($f['Description']) . ".trans";
 		file_put_contents("$tpath/$f[Filename]",json_encode($f,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
-		$msg = "Saved $f[Filename] 🗸 ";
+		$msg = "✅ Saved $f[Filename] ... ! ";
 		echo "\033[38;5;46m$msg\033[0m\n";
 		system("php /svn/svnroot/Applications/newl.php b >/dev/null");
 		file_put_contents("/home/$op/.lastsym","🗸 $f[Filename]",FILE_APPEND);
