@@ -61,13 +61,12 @@ else if ($argv[1] == "Bogføring") {
 	$menu["Reconciliation account vs statement"] = array('key'=>'r','Text'=>'forecasting','cmd'=>"send-keys 'reconcile' Enter");
 }
 else if ($argv[1] == "rmenu") {
-	$menu["Bookkeeping"] = array('key'=>'b','Text'=>'Bogføring','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Bogføring' Enter");
-	$menu["Reporting"] = array('key'=>'e','Text'=>'Regnskab...','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Rapportering' Enter");
-	$menu["Automation"] = array('key'=>'a','Text'=>'Automatisering','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Automatisering' Enter");
+	$menu["💰 Bookkeeping"] = array('key'=>'b','Text'=>'Bogføring','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Bogføring' Enter");
+	$menu["📚 Reporting"] = array('key'=>'e','Text'=>'Regnskab...','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Rapportering' Enter");
+	$menu["🤖 Automation"] = array('key'=>'a','Text'=>'Automatisering','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Automatisering' Enter");
 	$menu["🤔 Headmenu"] = array('key'=>'H','Text'=>'Manual','cmd'=>"send-keys 'hm' Enter");
 }
 else if ($argv[1] == "Manual" ) {
-	$menu["n4s"] = array('key'=>'t','Text'=>'Tmux - Vinduesystem','cmd'=>"new-window 'tag=README bash /svn/svnroot/Applications/start.bash business'");
 	$menu["LICENS"] = array('key'=>'l','Text'=>'LICENS','cmd'=>"new-window 'vi /svn/svnroot/LICENSE'");
 	$menu["Vim - Editor"] = array('key'=>'v','Text'=>'Vim - Editor','cmd'=>"new-window 'vimtutor'");
 	$menu["tmux - Vinduesystem"] = array('key'=>'u','Text'=>'Tmux - Vinduesystem','cmd'=>"new-window 'man tmux'");
