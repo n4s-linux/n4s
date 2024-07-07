@@ -101,12 +101,12 @@ $curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d H:i"),'Desc'=>'
 	$lv = "LEDGER_BEGIN=1900-01-01 LEDGER_END=2099-12-31 ";
 	exec_app("echo '# Import sneak preview - press q to proceed' >$tpath/.csvimp/.preview.md");
 	exec_app("echo '# Balance of postings' >>$tpath/.csvimp/.preview.md");
-	exec_app("color=none tpath=$tpath/.csvimp/ $lv php /svn/svnroot/Applications/newl.php bal --no-total >>$tpath/.csvimp/.preview.md");
+	exec_app("color=none tpath=$tpath/.csvimp/ $lv php /svn/svnroot/Applications/newl.php bal -E --no-total >>$tpath/.csvimp/.preview.md");
 	exec_app("cp $tpath/aliases $tpath/.csvimp/aliases");
 	exec_app("echo '# Balance of postings - after aliases' >>$tpath/.csvimp/.preview.md");
-	exec_app("color=none tpath=$tpath/.csvimp/ $lv php /svn/svnroot/Applications/newl.php bal --no-total  >>$tpath/.csvimp/.preview.md");
+	exec_app("color=none tpath=$tpath/.csvimp/ $lv php /svn/svnroot/Applications/newl.php bal -E --no-total  >>$tpath/.csvimp/.preview.md");
 	exec_app("echo '# Spec of postings' >>$tpath/.csvimp/.preview.md");
-	exec_app("color=none tpath=$tpath/.csvimp/ $lv LEDGER_SORT=account,date php /svn/svnroot/Applications/newl.php register>>$tpath/.csvimp/.preview.md");
+	exec_app("color=none tpath=$tpath/.csvimp/ $lv LEDGER_SORT=account,date php /svn/svnroot/Applications/newl.php -E register>>$tpath/.csvimp/.preview.md");
 	exec_app("vim +':set foldlevel=999' $tpath/.csvimp/.preview.md");
 	$valg = fzf("No\nYes","Load the transactions to the account?");
 	if ($valg == "Yes") 
@@ -114,7 +114,6 @@ $curtrans['History'] = array(array('op'=>$op,'Date'=>date("Y-m-d H:i"),'Desc'=>'
 	else
 		system("rm $tpath/.csvimp/*.trans");
 	system("rm $tpath/.csvimp/.preview.md");
-         //system("LEDGER_END=2099-12-31 LEDGER_BEGIN=1970-01-01 php /svn/svnroot/Applications/newl.php r \"$contraacc\"|tail -n10"); 
 }
 function detectDelimiter($csvFile)
 {
