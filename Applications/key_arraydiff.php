@@ -67,7 +67,6 @@ if (!empty($diff)) {
 		$nfn = str_replace(".trans","",basename($file));
 		$uid = date("Y-m-dTHi");
 		$nfn = "$tpath/.archive/$nfn" . "_" . $uid . ".trans";
-		echo "nfn=$nfn\n";
 		system("mkdir -p $tpath/.archive");
 		file_put_contents($file,json_encode($darray,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));	
 		file_put_contents($nfn,json_encode($orgdarray,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));	
