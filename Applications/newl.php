@@ -332,6 +332,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 	}
 	function missingalias($file,$id) {
 		global $alreadyused;
+		global $op;
 		global $undefined_aliascount;
 		$update = trim(getenv("updatealiases"));
 		$tpath = getenv("tpath");
