@@ -1,3 +1,4 @@
+alias bilagsviser="zathura ~/tmp/preview.pdf"
 alias hm="fzf_menu=1 php /svn/svnroot/Applications/tmux/menu.php"
 function vouchers() {
 	if [ "$tpath" == "" ]; then
@@ -484,7 +485,7 @@ function standardkontoplan() {
     end=$LEDGER_BEGIN
     begin=$LEDGER_BEGIN
     php /svn/svnroot/Applications/skatexport.php
-    /svn/svnroot/Libraries/google-chrome --headless ~/tmp/stdkto.html --print-to-pdf=Standard-export-$bn-$begin-$end.pdf 2>/dev/null
+    google-chrome --headless ~/tmp/stdkto.html --print-to-pdf=Standard-export-$bn-$begin-$end.pdf 2>/dev/null
     mv Standard-export-$bn-$begin-$end.pdf ~/n4s-export/
 }
 alias exportaccounts=html2
@@ -498,31 +499,31 @@ function html2() {
 	cd ~/tmp/
 
 echo generating balance
-    /svn/svnroot/Libraries/google-chrome --headless out.html --print-to-pdf=Saldobalance-$bn-$begin-$end.pdf
+    google-chrome --headless out.html --print-to-pdf=Saldobalance-$bn-$begin-$end.pdf
     mv Saldobalance-$bn-$begin-$end.pdf ~/n4s-export
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Saldobalance-$bn-$begin-$end.pdf&)
 
 echo generating kontokort
-    /svn/svnroot/Libraries/google-chrome --headless kontokort.html --print-to-pdf=Kontokort-$bn-$begin-$end.pdf
+    google-chrome --headless kontokort.html --print-to-pdf=Kontokort-$bn-$begin-$end.pdf
 
     mv Kontokort-$bn-$begin-$end.pdf ~/n4s-export
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Kontokort-$bn-$begin-$end.pdf &)
 
 echo generating Nøgletal
-    /svn/svnroot/Libraries/google-chrome --headless nøgletal.html --print-to-pdf=Nøgletal-$bn-$begin-$end.pdf
+    google-chrome --headless nøgletal.html --print-to-pdf=Nøgletal-$bn-$begin-$end.pdf
 
     mv Nøgletal-$bn-$begin-$end.pdf ~/n4s-export
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Nøgletal-$bn-$begin-$end.pdf &)
 
 
 echo generating Stats
-    /svn/svnroot/Libraries/google-chrome --headless statistik.html --print-to-pdf=Lagkagediagrammer-$bn-$begin-$end.pdf
+    google-chrome --headless statistik.html --print-to-pdf=Lagkagediagrammer-$bn-$begin-$end.pdf
     mv Lagkagediagrammer-$bn-$begin-$end.pdf ~/n4s-export
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Lagkagediagrammer-$bn-$begin-$end.pdf &)
 
 
 echo generating Moneyflow
-    /svn/svnroot/Libraries/google-chrome --headless moneyflow.html --print-to-pdf=Pengestrømme-$bn-$begin-$end.pdf
+    google-chrome --headless moneyflow.html --print-to-pdf=Pengestrømme-$bn-$begin-$end.pdf
     mv Pengestrømme-$bn-$begin-$end.pdf ~/n4s-export
 (	/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Pengestrømme-$bn-$begin-$end.pdf &)
 
@@ -530,7 +531,7 @@ echo generating skat export
 standardkontoplan
 
 echo generating manglendebilag
-    /svn/svnroot/Libraries/google-chrome --headless manglendebilag.html --print-to-pdf=Manglendebilag-$bn-$begin-$end.pdf
+    google-chrome --headless manglendebilag.html --print-to-pdf=Manglendebilag-$bn-$begin-$end.pdf
     mv Manglendebilag-$bn-$begin-$end.pdf ~/n4s-export
 	(/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Manglendebilag-$bn-$begin-$end.pdf &)
 

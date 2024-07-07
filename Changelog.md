@@ -1,5 +1,10 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-07-07 | [753eec0e...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/753eec0ee3321496ad03344cb604b4d61275b0b5) | lfs support for chrome |
+| 2024-07-07 | [7705b311...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/7705b3115fca40a192bd3b0cf712ab425e18ac41) | Google Chrome |
+| 2024-07-07 | [c26b5787...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c26b57875e073398ea429c0e90450ffeeffc44f4) | Adding chrome |
+| 2024-07-07 | [a3d417c7...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a3d417c7551ed4b1d63a584c713f02334ac7936d) | Make chrome executable |
+| 2024-07-07 | [234dbaba...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/234dbaba286b1160d60d8b57b7fbd3ef54e95f99) | Working on install script |
 | 2024-07-06 | [3c608a70...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/3c608a70e14ac8b74e23a57b825a8c9de6a604fc) | Cosmetics |
 | 2024-07-03 | [20005546...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/20005546359a61ee02f97631898740995eaf0a29) | 90 day quick reentry log |
 | 2024-07-03 | [28fa7ceb...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/28fa7ceb1e0e105b7d71ba01982ec1232537082c) | Cosmetics |
