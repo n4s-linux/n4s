@@ -41,6 +41,7 @@ else if ($argv[1] == "getdata") {
 		if ($reqdata == null) continue;
 		$id = $reqdata["id"];
 		$list = call($atoken,"https://bankaccountdata.gocardless.com/api/v2/requisitions/$id/");
+		if (!isset($list["account"])) continue;
 		foreach ($list["accounts"] as $curacc) {
 			$data = call($atoken,"https://bankaccountdata.gocardless.com/api/v2/accounts/$curacc/transactions/");
 			system("mkdir /home/$op/banktrans/$reqdata[reference] -p");
@@ -92,6 +93,7 @@ function call($atoken,$url,$params = null) {
 }
 function refreshtokens($tok) {
 	global $op;
+	global $tpath;
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, "https://bankaccountdata.gocardless.com/api/v2/token/refresh/");
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -106,6 +108,10 @@ function refreshtokens($tok) {
 	if ($server_output == false) die("couldnt refresh token\n");
 	$output = json_decode($server_output,true);
 	curl_close($ch);
+	if (!isset($output["access"])) {
+		echo "no access token received for $tpath\n";
+		return null;
+	}
 	$t = $output["access"];
 	return $t;
 
