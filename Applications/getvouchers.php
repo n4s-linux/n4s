@@ -3,9 +3,9 @@
 	$op = exec("whoami");
 	$tpath = getenv("tpath");
 	$ip = exec("ip route get 8.8.8.8 | grep -oP 'src \K[^ ]+'"); // wonder if there is a better way to get an ip - thanks stackoverflowdude
-	$cmd = "ssh -YC $op@$ip zathura ~/tmp/preview.pdf";
+	$cmd = "bilagsviser";
 	$date = date("Y-m-d");
-	if (!file_exists("/home/$op/tmp/.voucherwarning-$op-$date")) {
+	if (!file_exists("/home/$op/tmp/.voucherwarning-$op-$date") && getenv("silent") != "1") {
 		exec_app("whiptail --msgbox 'First off, You need xming installed on a windows client.... once that settled, press enter and let me give you the command' 12 65");
 		exec_app("whiptail --msgbox 'We Recommend You open either a new terminal split or session and keep this running window as the bilags chooser. Once You are finished with the voucher, please press Alt-v do do the next one' 12 65");
 		exec_app("whiptail --msgbox '$cmd' 8 65");
@@ -65,10 +65,15 @@
 	}
 	require_once("/svn/svnroot/Applications/fzf.php");
 	if (trim($list) == "") die("No vouchers\n");
-	$bilag = fzf($list,"Vælg uhåndteret bilag");
-	if ($bilag == "") die("No voucher selected\n");
-	exec_app("cp \"$bilag\" ~/tmp/preview.pdf");
-	exec_app("php /svn/svnroot/Applications/tagun.php \"$bilag\"");
+	if (getenv("silent") != "1") {
+		$bilag = fzf($list,"Vælg uhåndteret bilag");
+		if ($bilag == "") die("No voucher selected\n");
+		exec_app("cp \"$bilag\" ~/tmp/preview.pdf");
+		exec_app("php /svn/svnroot/Applications/tagun.php \"$bilag\"");
+	}
+	else {
+		file_put_contents("$tpath/.unhandledvouchers",count(explode("\n",$list)));
+	}
 
 	
 function getsrc() {
