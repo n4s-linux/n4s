@@ -11,6 +11,7 @@ if (!isset($argv[1])) {
 	$menu["💵 Accounting"] = array('key'=>'r','Text'=>'Rapportering...','cmd'=>"new-window 'fzf_menu=$fzf_menu php /svn/svnroot/Applications/tmux/menu.php Regnskab'");
 	$menu["📑 Journalz"] = array('key'=>'c','Text'=>'Journaler (sager)','cmd'=>"new-window 'fzf_menu=$fzf_menu php /svn/svnroot/Applications/tmux/menu.php CRM'");
 	$menu["🤔 Manual"] = array('key'=>'m','Text'=>'Manual','cmd'=>"new-window 'fzf_menu=$fzf_menu php /svn/svnroot/Applications/tmux/menu.php Manual'");
+	$menu["✅ What to do"] = array('key'=>'m','Text'=>'Manual','cmd'=>"new-window 'php /svn/svnroot/Applications/whatshouldido.php'");
 }
 else if ($argv[1] == "Vim") {
 	$menu["🤔 Headmenu"] = array('key'=>'H','Text'=>'Manual','cmd'=>"send-keys 'hm' Enter");
