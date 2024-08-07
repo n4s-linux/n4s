@@ -181,3 +181,6 @@ This is how you update the system
 | 2024-06-24 | [92fdaa42...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/92fdaa422d2447454690f27e8b00a6e31093f6b1) | 💡 New Feature: eeping archived version of edited transactions for future reference |
 | 2024-07-02 | [94243d66...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/94243d66ff2f75683ffc023621cd1d60ee0dcc58) | 💡 New Feature: Voucher handling System - Tries and fetch document data via Tagunn API - displays documents in Zathura |
 | 2024-07-02 | [ffc24dd0...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ffc24dd091a66236124cb29b7e943b4a8e5cb6c8) | 💡 New Feature: En (editable) description for each account in the tree |
+| 2024-07-07 | [bdb5d083...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bdb5d083ecaeb6e516396185782de6dff2f88e6d) | 💡 New Feature: List of accounts with unhnandled bank transactions and vouchers |
+| 2024-07-07 | [fee62b3f...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/fee62b3f57cc3a5aded550e97abc5aabf95c9a36) | 🐛 Fault tolerance - handle empty accounts |
+| 2024-07-07 | [c1019a50...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c1019a508192024f97bec7b256fd4186dd91f249) | 🐛 Bugfix: Missing references to operator |
