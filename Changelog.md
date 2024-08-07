@@ -1,8 +1,23 @@
 |at|hash|desc|
 |---|---|---|
-| 2024-07-07 | [753eec0e...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/753eec0ee3321496ad03344cb604b4d61275b0b5) | lfs support for chrome |
-| 2024-07-07 | [7705b311...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/7705b3115fca40a192bd3b0cf712ab425e18ac41) | Google Chrome |
-| 2024-07-07 | [c26b5787...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c26b57875e073398ea429c0e90450ffeeffc44f4) | Adding chrome |
+| 2024-07-07 | [bdb5d083...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bdb5d083ecaeb6e516396185782de6dff2f88e6d) | 💡 New Feature: List of accounts with unhnandled bank transactions and vouchers |
+| 2024-07-07 | [86f62587...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/86f62587d643bde9bba95378de7c2cbcc00cf8e7) | Remove debug info |
+| 2024-07-07 | [fee62b3f...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/fee62b3f57cc3a5aded550e97abc5aabf95c9a36) | 🐛 Fault tolerance - handle empty accounts |
+| 2024-07-07 | [520403ac...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/520403ac3b4487b944cdd43911880e397919cf68) | Silent mode to handle new vouchers via cronjob |
+| 2024-07-07 | [9e984ceb...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9e984ceb055c86515021f5c27faa209c2ef68fe0) | New account overview based on hledger pivot |
+| 2024-07-07 | [3e86e998...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/3e86e998535ad4f20a22b8e5ea34c532f583ebdd) | 🚮 Removing old stuffz related to old html reporting |
+| 2024-07-07 | [c1019a50...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c1019a508192024f97bec7b256fd4186dd91f249) | 🐛 Bugfix: Missing references to operator |
+| 2024-07-07 | [36681ad6...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/36681ad6d05d6f30e3fc09045960a58af173ff17) | What to do list based on current accounts unhandled transactions and vouchers |
+| 2024-07-07 | [ef95524f...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ef95524f149dd6f0ce77036eddd0ffba06d05dcb) | 🚮 Byebye old stuffs, not relevant anymore |
+| 2024-07-07 | [418082d5...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/418082d58a7d9e81710a86fbbb8de5f4858dc0da) | 🚮 Saying goodbye to an old ledger model |
+| 2024-07-07 | [7524e8fb...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/7524e8fb7571cafb11f321d957f814701f0a6210) | 🚮 Moving old stuffz |
+| 2024-07-07 | [a3762bd2...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a3762bd2a8ee10d40bfb48fd878e4814ac65ba34) | Remove github stuffz |
+| 2024-07-07 | [a5b258ac...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a5b258ac8465b614f5d5559084d0cc21edda1bcd) | Google chrome is an external app again |
+| 2024-07-07 | [9eef05f5...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9eef05f56141cd6c748cb5955408f0945dcea0ef) | Delete chrome |
+| 2024-07-07 | [117cd6bd...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/117cd6bdb44d0e55bac782f4274e41752dd274e5) | Delete chrome stuff |
+| 2024-07-07 | [225181f2...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/225181f2a67d111193378e4b91a898e36469d738) | lfs support for chrome |
+| 2024-07-07 | [b5eeb180...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/b5eeb180819bdcf5e69cc47bd8a27e2d4c247a86) | Google Chrome |
+| 2024-07-07 | [dda81a24...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/dda81a248ff1c922a2bc5c630ea25a3448abf294) | Adding chrome |
 | 2024-07-07 | [a3d417c7...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a3d417c7551ed4b1d63a584c713f02334ac7936d) | Make chrome executable |
 | 2024-07-07 | [234dbaba...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/234dbaba286b1160d60d8b57b7fbd3ef54e95f99) | Working on install script |
 | 2024-07-06 | [3c608a70...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/3c608a70e14ac8b74e23a57b825a8c9de6a604fc) | Cosmetics |
