@@ -1,5 +1,6 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-08-09 | [bbb6c161...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbb6c1610faa8e3e594a3b4aeb39ffcfb4f1ca5a) | Merge branch 'main' of github.com:n4s-linux/n4s-gratis-regnskab |
 | 2024-07-07 | [bdb5d083...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bdb5d083ecaeb6e516396185782de6dff2f88e6d) | 💡 New Feature: List of accounts with unhnandled bank transactions and vouchers |
 | 2024-07-07 | [86f62587...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/86f62587d643bde9bba95378de7c2cbcc00cf8e7) | Remove debug info |
 | 2024-07-07 | [fee62b3f...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/fee62b3f57cc3a5aded550e97abc5aabf95c9a36) | 🐛 Fault tolerance - handle empty accounts |
@@ -8,6 +9,8 @@
 | 2024-07-07 | [3e86e998...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/3e86e998535ad4f20a22b8e5ea34c532f583ebdd) | 🚮 Removing old stuffz related to old html reporting |
 | 2024-07-07 | [c1019a50...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c1019a508192024f97bec7b256fd4186dd91f249) | 🐛 Bugfix: Missing references to operator |
 | 2024-07-07 | [36681ad6...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/36681ad6d05d6f30e3fc09045960a58af173ff17) | What to do list based on current accounts unhandled transactions and vouchers |
+| 2024-07-07 | [b93cd1f6...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/b93cd1f60b3007869a5089d03e941702a5554c96) | Merge branch 'main' of github.com:n4s-linux/n4s-your-second-accounting-brain |
+| 2024-07-07 | [8d210359...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/8d2103596bb8e4175bcdd32c4760aaf875f33c49) | Install script improvements - a small step for man... |
 | 2024-07-07 | [ef95524f...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ef95524f149dd6f0ce77036eddd0ffba06d05dcb) | 🚮 Byebye old stuffs, not relevant anymore |
 | 2024-07-07 | [418082d5...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/418082d58a7d9e81710a86fbbb8de5f4858dc0da) | 🚮 Saying goodbye to an old ledger model |
 | 2024-07-07 | [7524e8fb...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/7524e8fb7571cafb11f321d957f814701f0a6210) | 🚮 Moving old stuffz |
