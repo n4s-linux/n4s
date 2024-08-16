@@ -1,5 +1,6 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-08-16 | [6c02ecff...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/6c02ecffc5a781ae55e1bd441f7316a7ece2f0d4) | 💡 New Feature: View booked transactions in same window |
 | 2024-08-09 | [bbb6c161...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbb6c1610faa8e3e594a3b4aeb39ffcfb4f1ca5a) | Merge branch 'main' of github.com:n4s-linux/n4s-gratis-regnskab |
 | 2024-07-07 | [bdb5d083...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bdb5d083ecaeb6e516396185782de6dff2f88e6d) | 💡 New Feature: List of accounts with unhnandled bank transactions and vouchers |
 | 2024-07-07 | [86f62587...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/86f62587d643bde9bba95378de7c2cbcc00cf8e7) | Remove debug info |
