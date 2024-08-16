@@ -184,3 +184,4 @@ This is how you update the system
 | 2024-07-07 | [bdb5d083...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bdb5d083ecaeb6e516396185782de6dff2f88e6d) | 💡 New Feature: List of accounts with unhnandled bank transactions and vouchers |
 | 2024-07-07 | [fee62b3f...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/fee62b3f57cc3a5aded550e97abc5aabf95c9a36) | 🐛 Fault tolerance - handle empty accounts |
 | 2024-07-07 | [c1019a50...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c1019a508192024f97bec7b256fd4186dd91f249) | 🐛 Bugfix: Missing references to operator |
+| 2024-08-16 | [6c02ecff...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/6c02ecffc5a781ae55e1bd441f7316a7ece2f0d4) | 💡 New Feature: View booked transactions in same window |
