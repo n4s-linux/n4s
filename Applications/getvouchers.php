@@ -66,7 +66,12 @@
 	require_once("/svn/svnroot/Applications/fzf.php");
 	if (trim($list) == "") die("No vouchers\n");
 	if (getenv("silent") != "1") {
+		$list = "Include Booked\n" . $list;
 		$bilag = fzf($list,"Vælg uhåndteret bilag");
+		if ($bilag == "Include Booked") {
+			exec_app("bash /svn/svnroot/Applications/bilagall.bash");
+			die();
+		}
 		if ($bilag == "") die("No voucher selected\n");
 		exec_app("cp \"$bilag\" ~/tmp/preview.pdf");
 		exec_app("php /svn/svnroot/Applications/tagun.php \"$bilag\"");
@@ -85,7 +90,7 @@ function getsrc() {
 function getnext() {
 	global $tpath;
 	if (!file_exists("$tpath/.nextvoucher")) {
-		file_put_contents("$tpath/.nextvoucher",1);return 1;
+		file_put_contents("$tpath/.nextvoucher",8000);return 8000;
 	}
 	else {
 		$cur = intval(file_get_contents("$tpath/.nextvoucher"));
