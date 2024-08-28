@@ -1,5 +1,7 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-08-28 | [629912bb...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/629912bb1890dabba6f674a220b03e7a7cb16d0d) | 💡 New Feature: Document preview for already booked documents, and convert png/jpg to pdf for preview |
+| 2024-08-28 | [83f89ead...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/83f89ead71c826e58b1c7cff0bb0931b8e91e287) | Bugfix: Correct amount on periodisations |
 | 2024-08-16 | [6c02ecff...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/6c02ecffc5a781ae55e1bd441f7316a7ece2f0d4) | 💡 New Feature: View booked transactions in same window |
 | 2024-08-09 | [bbb6c161...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bbb6c1610faa8e3e594a3b4aeb39ffcfb4f1ca5a) | Merge branch 'main' of github.com:n4s-linux/n4s-gratis-regnskab |
 | 2024-07-07 | [bdb5d083...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bdb5d083ecaeb6e516396185782de6dff2f88e6d) | 💡 New Feature: List of accounts with unhnandled bank transactions and vouchers |
