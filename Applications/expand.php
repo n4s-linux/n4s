@@ -158,7 +158,7 @@ foreach ($darray as $dataarray) {
 			$remainder = 0;
 			$rest = $trans['Amount'];
 			for ($i = 0;$i < $levetid;$i++) {
-				$rest -= $belob;
+				$rest += $belob;
 				$ptrans = $dataarray;
 				unset($ptrans['History']);
 				$ptrans['Description'] .= " ( $i / $levetid måneder rest $rest)";
