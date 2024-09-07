@@ -1,3 +1,13 @@
+alias gs="bash /svn/svnroot/Applications/gitsync.bash"
+function n4shist() {
+	pushd . >/dev/null
+	cd $tpath
+	fil=$(ls -lt *.trans|fzf --ansi| awk '{print $NF}')
+	if [ "$fil" != "" ]; then
+		defaultaction=Redigér defaultsort=Date justshowall=1 ss "$fil"
+	fi
+	popd >/dev/null
+}
 alias bilagsviser="zathura ~/tmp/preview.pdf"
 alias hm="fzf_menu=1 php /svn/svnroot/Applications/tmux/menu.php"
 function vouchers() {
@@ -30,12 +40,13 @@ sessionstart=$(date +"%Y-%m-%dT%T")
 alias journal="color=none l print|vi -"
 function displayaccshortcuts() {
 	echo -e " #[bg=black fg=yellow]💡n4s v$version"
-	echo -e " #[bg=#5480ba]❴F1❵ → Headmenu"
-	echo -e " #[bg=#4e6e6a]❴Alt+e❵→ #[bg=#4e6e6a]Entry"
-	echo -e " #[bg=#5480ba]❴Alt+b❵→ #[bg=#5480ba]Balance"
-	echo -e " #[bg=#4e6e6a]❴Alt+r❵→ #[bg=#4e6e6a]Register"
-	echo -e " #[bg=#5480ba]❴Alt+o❵→ #[bg=#5480ba]Book"
-	echo -e " #[bg=#4e6e6a]❴Alt+m❵→ #[bg=#4e6e6a]Menu"
+	echo -e " #[bg=#5480ba]F1 → Headmenu"
+	echo -e " #[bg=#E1E44C]h→ #[bg=#E1E44C]Hist"
+	echo -e " #[bg=#4e6e6a]e→ #[bg=#4e6e6a]Entry"
+	echo -e " #[bg=#5480ba]b→ #[bg=#5480ba]Balance"
+	echo -e " #[bg=#4e6e6a]r→ #[bg=#4e6e6a]Register"
+	echo -e " #[bg=#5480ba]o→ #[bg=#5480ba]Book"
+	echo -e " #[bg=#4e6e6a]m→ #[bg=#4e6e6a]Menu"
 	echo -e " #[bg=#5480ba]❴Alt+a❵→ #[bg=#5480ba]Adjust balance"
 	echo -e " #[bg=#4e6e6a]❴Alt+x❵→ #[bg=#4e6e6a]Export"
 	echo -e " #[bg=#5480ba]❴Alt+i❵→ #[bg=#5480ba]Pivot"
@@ -360,6 +371,7 @@ function lm() {
 }
 bind '"\ee":"e\n"' 2>/dev/null
 bind '"\ef":"filter\n"' 2>/dev/null
+bind '"\eh":"n4shist\n"' 2>/dev/null
 bind '"\ea":"adjust\n"' 2>/dev/null
 bind '"\em":"m\n"' 2>/dev/null
 bind '"\eå":"lm\n"' 2>/dev/null
@@ -685,6 +697,7 @@ else
 		
 		PS1="\[\e[1;32m\]$(echo $lenv)$time n4sv$version / \W]\$\[\e[0m "
 fi
+# /svn/svnroot/Applications/unison_sync.bash - maybe one day
 }
 PROMPT_COMMAND=prompt_function
 
