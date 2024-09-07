@@ -1,5 +1,9 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-09-07 | [37007250...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/37007250b739ea48997e10c0e66ec67c4b5c9670) | stuff |
+| 2024-09-07 | [a51e5a5f...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a51e5a5fd4a836fdbd0807de46121a0e69e9186a) | Add UID to the files created from the bank |
+| 2024-09-07 | [e1837218...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/e18372185e6ae3039480db4f97e95ff409a474a2) | minor bugfixes for gocardless data |
+| 2024-09-07 | [571c64d7...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/571c64d77864f29f25023a6617c31f34b575f758) | Some menu work and stuff |
 | 2024-08-28 | [629912bb...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/629912bb1890dabba6f674a220b03e7a7cb16d0d) | 💡 New Feature: Document preview for already booked documents, and convert png/jpg to pdf for preview |
 | 2024-08-28 | [83f89ead...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/83f89ead71c826e58b1c7cff0bb0931b8e91e287) | Bugfix: Correct amount on periodisations |
 | 2024-08-16 | [6c02ecff...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/6c02ecffc5a781ae55e1bd441f7316a7ece2f0d4) | 💡 New Feature: View booked transactions in same window |
