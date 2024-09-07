@@ -23,7 +23,7 @@ $atoken = refreshtokens($tokens);
 if ($argv[1] == "new") {
 	$banks = call($atoken, "https://bankaccountdata.gocardless.com/api/v2/institutions/?country=dk");
 	$bank = pickbank($banks);
-	$agreement = call($atoken,"https://bankaccountdata.gocardless.com/api/v2/agreements/enduser/",array('institution_id'=>$bank,'max_historical_days'=>180,'access_valid_for_days'=>90,"access_scope"=>array('balances','details','transactions')));
+	$agreement = call($atoken,"https://bankaccountdata.gocardless.com/api/v2/agreements/enduser/",array('institution_id'=>$bank,'max_historical_days'=>180,'access_valid_for_days'=>180,"access_scope"=>array('balances','details','transactions')));
 	echo "Enter reference for this req: ";
 	$ref = trim(fgets(STDIN));
 	$req = call($atoken,"https://bankaccountdata.gocardless.com/api/v2/requisitions/",array("redirect"=>"https://olsensrevision.dk/tak-for-din-laeseadgang/","institution_id"=>$bank,"reference"=>date("c").$ref,"agreement"=>$agreement["id"],"user_language"=>"DA"));
@@ -41,7 +41,8 @@ else if ($argv[1] == "getdata") {
 		if ($reqdata == null) continue;
 		$id = $reqdata["id"];
 		$list = call($atoken,"https://bankaccountdata.gocardless.com/api/v2/requisitions/$id/");
-		if (!isset($list["account"])) continue;
+		echo "getting $id\n";
+		if (!isset($list["accounts"])) continue;
 		foreach ($list["accounts"] as $curacc) {
 			$data = call($atoken,"https://bankaccountdata.gocardless.com/api/v2/accounts/$curacc/transactions/");
 			system("mkdir /home/$op/banktrans/$reqdata[reference] -p");
@@ -49,6 +50,7 @@ else if ($argv[1] == "getdata") {
 			foreach ($data["transactions"]["booked"] as $curdata) {
 				$curdata["AccountRef"] = $curacc;
 				$curdata["ReqRef"] = $reqdata["reference"];
+				echo json_encode($curdata) . "\n";
 				file_put_contents("/home/$op/banktrans/$reqdata[reference]" . "/" .$curdata["AccountRef"] . "_"  .$curdata["internalTransactionId"] . ".json",json_encode($curdata,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 			}
 		}
@@ -101,6 +103,7 @@ function refreshtokens($tok) {
 	    'Accept: application/json',
 	    'Content-Type: application/json'
 	];
+	print_r($tok);
 	curl_setopt( $ch, CURLOPT_POSTFIELDS, json_encode(array("refresh"=>$tok["refresh"])) );
 	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
@@ -117,7 +120,7 @@ function refreshtokens($tok) {
 
 }
 function gettokens() {
-global $op;
+$op = exec("whoami");
 echo "getting tokens";
 global $payload;
 $ch = curl_init();
@@ -135,6 +138,7 @@ $server_output = curl_exec($ch);
 if ($server_output == false) die("couldnt get token\n");
 $output = json_decode($server_output,true);
 curl_close($ch);
+
 file_put_contents("/home/$op/tokens.json",json_encode($output,JSON_PRETTY_PRINT));
 return $output;
 }
