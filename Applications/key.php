@@ -261,8 +261,14 @@ require_once("sortsearch.php");
 	require_once("/svn/svnroot/Applications/ansi-color.php");
 	system("clear");
 	foreach ($res as $curres) { echo set($curres. "\n","blue_bg");}
-	$action = fzf("Redigér\nÆndr Konto1\nÆndr Konto2\nÆndr Func1\nÆndr Func2\nÆndr reference","Vælg en handling","--height=8");
-	$op = exec("whoami");
+	if (getenv("defaultaction") == "") {
+		$action = fzf("Redigér\nÆndr Konto1\nÆndr Konto2\nÆndr Func1\nÆndr Func2\nÆndr reference","Vælg en handling","--height=8");
+		if ($action == "") die("Aborted without action\n");
+	}
+	else
+		$action = getenv("defaultaction");
+	
+$op = exec("whoami");
 	$vf = "/tmp/vim_$op";
 	file_put_contents($vf,$resultvim);
 	//exec_app("$editor $results");
@@ -556,7 +562,7 @@ $uid = uniqid();
   $data = array();
   foreach ($list as $fn) {
 		if (trim($fn) == "") continue;
-		if (stristr($fn,".tgz")||$fn == "chart_of_account"||$fn == "bin" || $fn == "danløn" || $fn == "comments"||stristr($fn,".php")||stristr($fn,".xbrl")||stristr($fn,".xml")||stristr($fn,".csv")||stristr($fn,"modstridende kopi")||$fn == "vouchers"||$fn == "notes"||$fn == "password"||$fn == "img_tmp"||$fn == "img" ||$fn == "csv"||$fn == "html" ||$fn == "" || $fn == "curl" || stristr($fn,"conflicted copy")||$fn == "log" || $fn == "aliases" || stristr($fn,"logic_") || $fn == "logic" || $fn == "curl_kk.html"|| stristr($fn,".ledger")||$fn=="Forside.html"|| stristr($fn,".bash") || stristr($fn,".sc")) continue;
+		if (stristr($fn,".tgz")||$fn == "chart_of_account"||$fn == "bin" || $fn == "danløn" || $fn == "comments"||substr($fn,-4,4) == "php"||stristr($fn,".xbrl")||stristr($fn,".xml")||stristr($fn,".csv")||stristr($fn,"modstridende kopi")||$fn == "vouchers"||$fn == "notes"||$fn == "password"||$fn == "img_tmp"||$fn == "img" ||$fn == "csv"||$fn == "html" ||$fn == "" || $fn == "curl" || stristr($fn,"conflicted copy")||$fn == "log" || $fn == "aliases" || stristr($fn,"logic_") || $fn == "logic" || $fn == "curl_kk.html"|| stristr($fn,".ledger")||$fn=="Forside.html"|| stristr($fn,".bash") || stristr($fn,".sc")) continue;
 		$newd = json_decode(file_get_contents_cached("$path/$fn",$bn),true);
 		//file_put_contents($fn,json_encode($newd,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		if ($newd == false) {
