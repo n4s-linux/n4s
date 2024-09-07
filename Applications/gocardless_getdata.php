@@ -14,7 +14,7 @@ if (!file_exists("$tpath/.banksrc")) {
 	$bn = basename($tpath);
 	file_put_contents("$tpath/.banksrc",fzf($req,"Pick bank requisition to use for $bn"));
 }
-$banksrc = file_get_contents("$tpath/.banksrc");
+$banksrc = trim(file_get_contents("$tpath/.banksrc"));
 if (!file_exists("$tpath/.bankstartdate")) {
 	echo "Date to start importing from (YYYY-m-dd): ";
 	$date = trim(fgets(STDIN));
@@ -39,6 +39,7 @@ foreach ($files as $curfile) {
 	$trans["Reference"] = "CSV-" . uniqid();
 	$trans["Date"] = $j["bookingDate"];
 	$trans["Comment"] = "";
+	$trans["UID"] = substr(uniqid(),0,8);
 	$trans["Transactions"][0]["Account"] = "🏦".$accref;
 	$trans["Transactions"][0]["Func"] = "";
 	$trans["Transactions"][0]["Amount"] = $j["transactionAmount"]["amount"];
