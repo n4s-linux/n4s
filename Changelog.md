@@ -1,5 +1,15 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-09-09 | [8cf96130...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/8cf96130e03e9ff1f633165aaf91fbef9b74b8a4) | readme stuff |
+| 2024-09-09 | [97e797b4...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/97e797b41beec0bbc0557eda30a2e2195ce6118f) | ة Remove duplicate file |
+| 2024-09-09 | [879fb975...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/879fb97520a74d599e24101fa34bfffb4052966d) | duplicate |
+| 2024-09-09 | [2fbbef60...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/2fbbef60a691f0754dd052523ebfca7bee3bbc11) | ت Remove duplicate image |
+| 2024-09-09 | [1c8d440c...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/1c8d440c6dc588ec531a923b49143b20d4ba31a2) | Duplicate picture |
+| 2024-09-09 | [bd2c7e8b...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/bd2c7e8be3f4f5eda902a1187a844394e19d1ff2) | م Remove tmpfile |
+| 2024-09-09 | [09f0f995...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/09f0f99549d1d22dd2339477375a55502027adee) | . |
+| 2024-09-09 | [675b2afd...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/675b2afdf6931cd732a6fc8c6de966c4a2863db3) | ط Remove old pandoc stuff |
+| 2024-09-09 | [67ef1a19...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/67ef1a1954ce59c33b81bfa5d3fabb8fce61d468) | ا Remove old robot stuff, serverside scripts not used anymore |
+| 2024-09-09 | [3105af4f...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/3105af4f3d2e01981e0b8bc77588ee2c6e1852e5) | ف Deprecated: pom.bash |
 | 2024-09-09 | [37f1e38a...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/37f1e38a8f405583765b56a4cc238c6e9566d89e) | 💡 New Feature: Banned accounts - also bugfix to avoid duplicate suggestions on files |
 | 2024-09-09 | [ec74b891...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ec74b8917952c0a27aa311491095743874f9c03a) | 🐛 Bugfix: Mkentry quicktransaction buffering problem |
 | 2024-09-09 | [dd52d493...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/dd52d4932d7340bfba06db5663482ecdb6adc048) | 🐛 Bugfix: Map suggestiont fault tolerance if no history yet |
