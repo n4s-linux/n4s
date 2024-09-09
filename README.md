@@ -186,3 +186,6 @@ This is how you update the system
 | 2024-07-07 | [c1019a50...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c1019a508192024f97bec7b256fd4186dd91f249) | 🐛 Bugfix: Missing references to operator |
 | 2024-08-16 | [6c02ecff...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/6c02ecffc5a781ae55e1bd441f7316a7ece2f0d4) | 💡 New Feature: View booked transactions in same window |
 | 2024-08-28 | [629912bb...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/629912bb1890dabba6f674a220b03e7a7cb16d0d) | 💡 New Feature: Document preview for already booked documents, and convert png/jpg to pdf for preview |
+| 2024-09-09 | [37f1e38a...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/37f1e38a8f405583765b56a4cc238c6e9566d89e) | 💡 New Feature: Banned accounts - also bugfix to avoid duplicate suggestions on files |
+| 2024-09-09 | [ec74b891...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ec74b8917952c0a27aa311491095743874f9c03a) | 🐛 Bugfix: Mkentry quicktransaction buffering problem |
+| 2024-09-09 | [dd52d493...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/dd52d4932d7340bfba06db5663482ecdb6adc048) | 🐛 Bugfix: Map suggestiont fault tolerance if no history yet |
