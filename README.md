@@ -7,9 +7,6 @@ Which could go unnoticed in a system that is not blockchain based....🤐
 
 But since n4s is based on blockchain verification, it means that any changes to previously booked transations will not go undetected 🕵
 
-Below You will find a short video demonstrating this capability.
-[![Blockchain Based Bookkeeping](/png/demovideoblockchain.png 'Demo Video')](https://www.youtube.com/watch?v=O1ZYebR8oFQ?vq=hd1440)
-
 # The triple bookkeeping - the accounting of the future
 Accounts are typically historical, i.e. they describe things that happened in the past.
 The vision of future accounting is that past, present and future merge.
@@ -135,20 +132,6 @@ Our system supports loading and unloading of CSV files, which is why it is easy 
 * An infinite number of options for different color schemes - there are, for example, several color schemes that are suitable for you to sit in the sun with your laptop and work - you can forget all about that in other systems... !
 * Mapping to the Danish Business Authority's standard chart of accounts for external reporting, including easy entry into Accounting 2.0
 
-# Quick Start videos
-* [Creating Transactions](https://asciinema.org/a/DthEWQufaDutoBqTSw1OVb2EZ)
-* [Opening balance](https://asciinema.org/a/6w68FRWaBXRKdIwLiLjjTt62S)
-* [Loading bank CSV](https://asciinema.org/a/vxOr2DKCrcflhiVhRqABCxkeO)
-* [Export to CSV in n4s ](https://asciinema.org/a/CQ4SHkVD7fPlaGmqi3sJDPzPD)
-* [Pivot tables](https://asciinema.org/a/ZwR90mU1XlTiybn8KMyYfiCQ8)
-* [Automatic posting of transactions with rules](https://asciinema.org/a/ZD047yKvW8laYJ0QvaWuRNKZt)
-* [About Periodization](https://asciinema.org/a/htDblYaKMQuCIsiaRZVSdj3Uw)
-* [Interest calculation on account](https://asciinema.org/a/YBnnVrYtmlftMdbrCkY7P6J6K)
-* [Automatic Forecasting / Budgeting](https://asciinema.org/a/UP7jkTM07x0P4qqhqikwNBf5B)
-* [Updating system to latest version](https://asciinema.org/a/UFD86HqcTk5vXmpJ9slOu4W2I)
-* [How to color your reports in n4s?](https://www.youtube.com/watch?v=Id8-jAB-Q8c)
-* [How to add comments to your reports in n4s?](https://www.youtube.com/watch?v=iqgOCXVCxf0)
-
 # TLDR - Let me download your OVA
 * Link to [Virtualbox OVA appliance](https://drive.google.com/file/d/1i-VhkUzbIyoZOtJRZ0Fz1MS90s0AJE72/view)
 * Link to [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (remember to get the Extension Pack too)
@@ -163,7 +146,7 @@ This is how you update the system
 
 ## Recent updates
 |at|hash|desc|
-|---|---|---|
+|--------------|---|---|
 | 2024-05-20 | [afd42d28...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/afd42d28b4a91d3a40b6f46ff460a1e1f04e48aa) | 💡 New Feature: View all transactions when entering a transaction that is an opening |
 | 2024-05-20 | [40375276...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/4037527625dafa55af081dc144db2363875a4f84) | 🐛 Fault tolerance some key numbers will be missing in some accounts |
 | 2024-05-18 | [9018a220...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9018a2203b2b207c73aeecbc2a663ce57708a4e4) | 💡 New Feature: Guide that allows to book specific or all transactions, and verify the book later on to see if any of the booked transactions has changed #blockchain |
