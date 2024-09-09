@@ -1,9 +1,10 @@
 <?php
+	// refresh(); // uncomment this if having problem with missing cache
+	$op = exec("whoami");
 	require_once("/svn/svnroot/Applications/proc_open.php");
 	require_once("/svn/svnroot/Applications/fzf.php");
 	require_once("/svn/svnroot/Applications/ask.php");
 	date_default_timezone_set('Europe/Copenhagen');
-	$op = exec("whoami");
 	function filebydate($a,$b) {
 		return (($a['Date']) > ($b['Date']));
 	}
@@ -50,7 +51,9 @@
 	$farray[""] = null;
 	$valg = fzf($fzf,"Vælg transaktion at duplikere","--tac",true);
 	$nummer = explode(" ",$valg)[0];
-	if ($valg == "") die("Intet valgt\n");
+	if ($valg == "") {
+		die("Intet valgt\n");
+	}
 	}
 	if (getenv("adjustbalance") == "1") {
 		$fzf = "";
@@ -140,9 +143,13 @@
 	$data["Description"] = "⏲ - " . date("H:i");
 	file_put_contents($nfn,json_encode($data,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
 	exec_app("vi \"$nfn\"");
+	refresh();
+function refresh()  {
+	global $op;
 	$cmd = ("cmatrix&(find /data/regnskaber ~/regnskaber/ -name \\*.trans -mtime -90 -printf \"%T@|||||%p\\n\" |grep .trans$ > /home/$op/tmp/mkentry.php.list;killall cmatrix)"); //run cache for next time
+	file_put_contents("/home/$op/tmp/mkentry.cmd",$cmd);
 	exec_app("$cmd");
-
+}
 function getbal($konto,$tpath) {
 	$tomorrow = date("Y-m-d",strtotime("tomorrow"));
 	echo "Calcumulating balance for $konto...\n";
