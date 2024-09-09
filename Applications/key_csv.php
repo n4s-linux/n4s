@@ -140,8 +140,11 @@ function clean($string) {
    return $string;
 }
 function getlast($header,$fields,$tpath) {
-	//$fn = "$tpath/.lastimp_$header";
-	$lastres = file_get_contents("$tpath/.lastimp_$header");
+	$fn = "$tpath/.lastimp_$header";
+	if (file_exists($fn))
+		$lastres = file_get_contents("$fn");
+	else
+		$lastres = "";
 	$rv = array();
 	foreach ($fields as $curfield) {
 		if ($curfield == $lastres) continue;
