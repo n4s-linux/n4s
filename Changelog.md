@@ -1,5 +1,8 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-09-09 | [37f1e38a...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/37f1e38a8f405583765b56a4cc238c6e9566d89e) | 💡 New Feature: Banned accounts - also bugfix to avoid duplicate suggestions on files |
+| 2024-09-09 | [ec74b891...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ec74b8917952c0a27aa311491095743874f9c03a) | 🐛 Bugfix: Mkentry quicktransaction buffering problem |
+| 2024-09-09 | [dd52d493...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/dd52d4932d7340bfba06db5663482ecdb6adc048) | 🐛 Bugfix: Map suggestiont fault tolerance if no history yet |
 | 2024-09-07 | [37007250...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/37007250b739ea48997e10c0e66ec67c4b5c9670) | stuff |
 | 2024-09-07 | [a51e5a5f...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a51e5a5fd4a836fdbd0807de46121a0e69e9186a) | Add UID to the files created from the bank |
 | 2024-09-07 | [e1837218...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/e18372185e6ae3039480db4f97e95ff409a474a2) | minor bugfixes for gocardless data |
