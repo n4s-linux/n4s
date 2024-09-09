@@ -1,7 +1,8 @@
 <?php
+$tpath = getenv("tpath");
+require_once("/svn/svnroot/Applications/bantrans.php");
 require_once("/svn/svnroot/Applications/ask.php");
 require_once("/svn/svnroot/Applications/readonly.php");
-	$tpath = getenv("tpath");
 	$alreadyused = array();
 	require_once("/svn/svnroot/Applications/short.php");
 	$aliases = json_decode(fgc("$tpath/aliases"),true);
@@ -41,6 +42,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 	}
 	if (!empty($deletebilag)) rundelbilag();
 	scanalias($transactions); // check and fix missing aliases
+	scanbanned($transactions);
 	$x = expand($transactions); //transactions gets data from global environment set in functions
 	require_once("/svn/svnroot/Applications/addresult.php");
 	if (getenv("skipresult") == "") $x = addresult($x);
@@ -81,10 +83,12 @@ require_once("/svn/svnroot/Applications/readonly.php");
 					$data = json_decode(fgc($fn),true);
 					$oldacc = $data["Transactions"][$id]['Account'];
 					$oldvat = $data["Transactions"][$id]['Func'];
-					$data["Transactions"][$id]['AccountSuggestion'] = $similar["Kontoforslag"];
-					$data["Transactions"][$id]['FuncSuggestion'] = $similar["Momsforslag"];
-					array_push($data["History"],array("Date"=>date("Y-m-d H:m"),"op"=>$op,"Description"=>"Forslag til transaktion $id baseret på historik: $similar[Kontoforslag] ($similar[Momsforslag])"));
-					file_put_contents("$tpath/$fn",json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+					if (!isset($data["Transactions"][$id]['AccountSuggestion'])) {
+						$data["Transactions"][$id]['AccountSuggestion'] = $similar["Kontoforslag"];
+						$data["Transactions"][$id]['FuncSuggestion'] = $similar["Momsforslag"];
+						array_push($data["History"],array("Date"=>date("Y-m-d H:m"),"op"=>$op,"Description"=>"Forslag til transaktion $id baseret på historik: $similar[Kontoforslag] ($similar[Momsforslag])"));
+						file_put_contents("$tpath/$fn",json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+					}
 			}
 		}
 		die("Suggestions handled\n");
@@ -205,7 +209,7 @@ require_once("/svn/svnroot/Applications/readonly.php");
 		$f['Date'] = askdate();
 		$f['Reference'] = askref();
 		$f['Description'] = askdesc(md5($hashkonti));
-		$f['Filename'] = $filename . "_" . filter_filename($f['Description']) . ".trans";
+		$f['Filename'] = filter_filename($filename) . "_" . filter_filename($f['Description']) . ".trans";
 		file_put_contents("$tpath/$f[Filename]",json_encode($f,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 		$msg = "✅ Saved $f[Filename] ... ! ";
 		echo "\033[38;5;46m$msg\033[0m\n";
