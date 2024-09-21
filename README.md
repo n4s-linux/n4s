@@ -145,8 +145,8 @@ This is how you update the system
 > upd8
 
 ## Recent updates
-| at         | hash         | desc |
-|------------|--------------|------|
+## Recent updates
+| at&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | hash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | desc |
 | 2024-05-20 | [afd42d28...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/afd42d28b4a91d3a40b6f46ff460a1e1f04e48aa) | 💡 New Feature: View all transactions when entering a transaction that is an opening |
 | 2024-05-20 | [40375276...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/4037527625dafa55af081dc144db2363875a4f84) | 🐛 Fault tolerance some key numbers will be missing in some accounts |
 | 2024-05-18 | [9018a220...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/9018a2203b2b207c73aeecbc2a663ce57708a4e4) | 💡 New Feature: Guide that allows to book specific or all transactions, and verify the book later on to see if any of the booked transactions has changed #blockchain |
