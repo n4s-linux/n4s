@@ -172,3 +172,4 @@ This is how you update the system
 | 2024-09-09 | [37f1e38a...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/37f1e38a8f405583765b56a4cc238c6e9566d89e) | 💡 New Feature: Banned accounts - also bugfix to avoid duplicate suggestions on files |
 | 2024-09-09 | [ec74b891...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ec74b8917952c0a27aa311491095743874f9c03a) | 🐛 Bugfix: Mkentry quicktransaction buffering problem |
 | 2024-09-09 | [dd52d493...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/dd52d4932d7340bfba06db5663482ecdb6adc048) | 🐛 Bugfix: Map suggestiont fault tolerance if no history yet |
+| 2024-09-21 | [ceab6adf...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/ceab6adf8906e12d0a4a28b2c0da7807fd8a2c49) | 💡 New feature: Transplanted lines are stamped with transplant date and src for full history |
