@@ -1,4 +1,4 @@
-echo -n "Hvad vil du søge efter: "
+echo -ne "\e[38;5;208m🔍 \e[1mWhat to search for: \e[0m"
 read soeg
 db=$(ls -1td ~/regnskaber/*/.tags|sed 's/\/\.tags//g'|while read i; do basename "$i"; done|fzf -1 --header="Vælg database")
 tpath=~/regnskaber/$db
