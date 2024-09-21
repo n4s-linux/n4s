@@ -39,18 +39,26 @@ function! Transplant() range
         return
     endif
 
-    call HandleFileSelection($tpath . "/.tags/" . selected_file[0], visual_selected)
+	let current_file = expand('%:p')  " Get the full path of the current file
+	call HandleFileSelection($tpath . "/.tags/" . selected_file[0], visual_selected, current_file)
 endfunction
 
-" HandleFileSelection function
-function! HandleFileSelection(target_file, selected_text)
+function! HandleFileSelection(target_file, selected_text, current_file)
     if len(a:target_file) == 0
         echo "No file selected. Please try again."
         return
     endif
 
-    " Append yanked selection to chosen file
-    call writefile(split(a:selected_text, '\n'), a:target_file, 'a')
+    let edited_text = split(a:selected_text, '\n')  " Split selected text into lines
+    let timestamp = strftime("%Y-%m-%dT%H:%M:%S")
+    let user = substitute(system("whoami"), '\n', '', '')  " Get current user
+
+    " Get just the filename from the full path
+    let source_name = fnamemodify(a:current_file, ':t')  " Get only the filename
+
+    " Append metadata to each line
+    let edited_text = map(edited_text, {_, line -> "🚚 " . line . " " . timestamp . " " . user . " #tp #src" . source_name})
+    call writefile(edited_text, a:target_file, 'a')  " Write to target file
 endfunction
 
 " Key mapping in visual mode
