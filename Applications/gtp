@@ -1,0 +1,45 @@
+#!/bin/bash
+#chatgpt -q -
+source ~/.bashrc # (for the api keys)
+if [ ! -t 0 ]; then
+	echo "Whatever i tell you, please remember, and use it for later analysis of similar ideas" > ~/tmp/gptask
+	echo "Please give me deep insights about the subjects, and please use known hashtags (that i have used before) that are relevant to the case" >> ~/tmp/gptask
+	echo "Please keep Your messages very short, and no empty lines, however no lines with only hashtags - should be relevant insights all the time" >> ~/tmp/gptask
+	echo "Make sure you dont just repeat my points, all i want is your thougts on the subject mentioned" >> ~/tmp/gptask
+	echo "Make sure You output short concise statements that fit into one line" >> ~/tmp/gptask
+	echo "Whatever i say, always try and come up with alternative approaches or ideas" >> ~/tmp/gptask
+	echo "Even if i feed You markdown, respond in plain text - but emojis is allowed, unless something in the text actually tells you to output in markdown !" >> ~/tmp/gptask
+	echo "Whatever language you detect as the main language in the following input after this statement (will mostly be danish for now), make sure that is your output language" >> ~/tmp/gptask
+	while IFS= read -r line; do echo "$line"; done >~/tmp/gptask.query
+		cat ~/tmp/gptask.query
+	cat ~/tmp/gptask ~/tmp/gptask.query|chatgpt -|sed 's/^/\t/'|while read i
+	do
+		if [ "$i" == "" ]; then continue; fi
+		echo -en "\t"
+		echo -n $(date +"%Y-%m-%d %H:%m joo")
+		echo -en "\t"
+		echo -n "#gptsays "
+		echo "$i"
+	done
+else
+	tmux command-prompt -p "What to ask?" "run-shell 'echo %% > ~/tmp/tmux_input.txt'"
+	input=$(cat ~/tmp/tmux_input.txt)
+	echo "Please forget all my preferences, but please remember all my data" > ~/tmp/gptask.query
+	echo "Here is the question, remember to respond in same language as i write:" >> ~/tmp/gptask.query
+	echo "$input" >> ~/tmp/gptask.query
+	tmux command-prompt -p "Stamp output (y/n)" "run-shell 'echo %% > ~/tmp/tmux_input.txt'"
+	input=$(cat ~/tmp/tmux_input.txt)
+	if [ "$input" != "n" ]; then
+		cat ~/tmp/gptask.query|chatgpt -|sed 's/^/\t/'|while read i
+		do
+			if [ "$i" == "" ]; then continue; fi
+			echo -en "\t"
+			echo -n $(date +"%Y-%m-%d %H:%m joo")
+			echo -en "\t"
+			echo -n "#gptsays "
+			echo "$i"
+		done
+	else
+		cat ~/tmp/gptask.query|chatgpt -
+	fi
+fi
