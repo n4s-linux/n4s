@@ -1,5 +1,7 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-09-24 | [473c83cd...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/473c83cdf2aa7657fda8bd04b8058fcbef40fd49) | طِ Cleanup dependencies from old stuffs |
+| 2024-09-24 | [0bea9a0a...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0bea9a0a4d9fea844c34bde4ad8efe688945ab55) | ﻑ Chatgpt Integration into vim buffers |
 | 2024-09-21 | [a067faba...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a067faba0029ec00b8f1c22121f43b1e74d81ec1) | Broader columns |
 | 2024-09-21 | [161b37f4...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/161b37f4c773cd5090dfc2bf5a5d31531203788c) | Broader columns |
 | 2024-09-21 | [4d5a470b...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/4d5a470b70715927563367336be5f9c7888d3ea1) | Broader columns |
