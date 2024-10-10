@@ -1,5 +1,6 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-10-10 | [eff60fa7...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/eff60fa76377a493768188f9529c39dabb5551b9) | Entry buffer expanded from 90 to 180 days for quick repeat transactions |
 | 2024-09-24 | [473c83cd...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/473c83cdf2aa7657fda8bd04b8058fcbef40fd49) | طِ Cleanup dependencies from old stuffs |
 | 2024-09-24 | [0bea9a0a...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0bea9a0a4d9fea844c34bde4ad8efe688945ab55) | ﻑ Chatgpt Integration into vim buffers |
 | 2024-09-21 | [a067faba...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/a067faba0029ec00b8f1c22121f43b1e74d81ec1) | Broader columns |
