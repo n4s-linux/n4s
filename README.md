@@ -1,106 +1,11 @@
-# Blockchain based bookkeeping
-In n4s, when You lock Your transactions, they are protected forever from changes 🛡️
-
-A malicious user may try and alter the book outside the scope of this system.
-
-Which could go unnoticed in a system that is not blockchain based....🤐
-
-But since n4s is based on blockchain verification, it means that any changes to previously booked transations will not go undetected 🕵
-
-# The triple bookkeeping - the accounting of the future
-Accounts are typically historical, i.e. they describe things that happened in the past.
-The vision of future accounting is that past, present and future merge.
-So if you dream of a live account that is not just up to date for the here and now, but with a built-in crystal ball, n4s could be the framework around this.
-
 # A simple and free accounting program
 N4S is a free and open source accounting system, and thus free to use now and forever.
 
-When you do bookeeping in N4S, your accounting becomes a breeze. Once you learn it... !
-
-Whether you have a brand new company, an association or just your household accounts, here you have an accounting program that can support your activities from now on and always.
-
 You can easily build in custom logic to optimize and refine your processes. 
-
-# Velocity
-n4s is faster than other systems on the market. Most operations take place in a split second. Only your processing power and hard disk/ram set the limit to how quickly the system is run, and for most small accounts you won't blink until you get the data you ask for on the screen.
-
-# Possibility of automatic consolidation and allocation between subsidiaries
-n4s can easily be set up to automatically consolidate your accounts below:
-* Automatic transfer of result
-* Automatic reconciliation of interim accounts
-
-# Automatic accounting based on own defined rules *
-in n4s you can define rules yourself for how your new postings are to be accounted for.
-This means you can get rid of manual posting again and again of the same type of items
-eg. IF Text = 'Fee' THEN Account = 'Expenses:Administration:Fees'
-
-# Save time - automatic posting suggestions
-When loading new entries, you can save time because the system itself can make suggestions based on your previous history.
-Even with very little data, you quickly get suggestions for accounting - based on similar_text, which is often referred to as one of the world's best algorithms.
-Many entries with the same text end up in the same place every time - the system even detects when there are deviations and requires great precision to make suggestions
-That is, you do not need to go in and define rules for simple fee postings, because the system automatically detects that they always end up on the same account... !
 
 # Supports any currency 
 Find your transactions easily based on the currency amount, not Your base currency... !
 Is available when You import currency code and currency amount on Your transactions.
-
-# N4S - a free and free accounting and ERP solution for small businesses and individuals
-N4S is more than just an accounting system; it is a powerful ally on your journey to business success. Whether you're an accounting professional, an entrepreneur or a business owner, N4S has the tools you need to gain superior control over your finances and business processes.
-
-**Source Code Access and Customization:**
-Although modern accounting systems have their own advantages, there is still something unique about n4s 🤖. A notable advantage of n4s is the access to the source code 🧩. This allows companies to adapt n4s precisely to their needs 🧰. With access to the source code, companies can make changes, add features and optimize the system according to their unique requirements 🛠️n. This degree of customization gives unprecedented control over the company's accounting system and ensures that it meets their specific needs. Even if you are not a programmer and do not want to invest in using one, you can easily make simple changes by searching the source code, e.g. changing the text of buttons, colors and the like.
-
-**Online Functionality and Collaboration:**
-So while we may miss the days when everything seemed simpler with DOS programs, it is important to recognize that modern technology has brought us many benefits 🌐.
-It's important to note that although the n4s is based on a terminal, don't be fooled by this. N4S is still incredibly functional and designed to be a multi-user system that can work online from anywhere 🌐. The terminal-based approach provides a unique opportunity for collaboration, as multiple users can easily access the system and work together on tasks. This makes it a powerful tool for modern businesses seeking efficiency and collaboration 🤝. Screen sharing is part of the system from the start and does not require separate software.
-
-🚀 *Lightning fast and Universal*: With N4S you can work efficiently on any platform! The technology behind it is known for its incredible speed, which means you can focus on what really matters: driving your business forward.
-
-🤓 *Made for Professionals*: N4s was first developed with accounting professionals in mind and allows you to take control of your finances like never before. You will feel like a real expert when you use this powerful tool.
-
-🤖 *Automated Accounting*: With N4S you can define rules that automate the accounting process. This saves you time and reduces the risk of errors. Let N4S take care of the routine tasks so you can focus on strategic planning. This combined with the fact that the system automatically teaches itself rules based on your previous postings and the bookkeeping thereby becomes less and less time-consuming, without you having to do anything actively, other than using the system.
-
-💼 *Your Data, Your Control*: One of the most compelling features of N4S is that you have full control over your data. You host it on your own server, which means your information is always in your hands. And the best of all? You can do it for as little as $5 a month on Linode!
-
-# 🧑💻 **Learning curve like a Ninjitsu master**
-Many former key operators, aka datanauts, who have now retired, have embraced and embraced this technology with no problems. VT100 technology has proven to be exceptionally easy to learn, even for those with no prior knowledge. Those who have taken the plunge have experienced a transformation and become as fast as ninjas within a short time.
-The advantage of our text-based system is, among other things, that when you know the system you can enter data without looking - you know where you are in the program based on your keystrokes and various outputs from the system.
-
-## Can be run on any operating system without installation
-N4S can be run from a central server and you can connect with the Windows Terminal, OS X terminal Application or similar.
-
-## Examples of remote driving from Windows 11
-
-![Win11 Screenshot2 n4s double bookkeeping](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_2.png?raw=true)
-![Win11 Screenshot3 n4s tax account](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_3.png?raw=true)
-![Win11 Screenshot4 n4s account](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_4.png?raw=true)
-![Win11 Screenshot1 n4s free accounting](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/win11_1.png?raw=true)
-
-## Video demonstrations where demo accounts are posted
-[![n4s demo](demo.gif 'n4s demo')](https://drive.google.com/file/d/1nwrxOqLnyxyygyskKH82jMwOPyTXERfQ/)
-[![n4s demo](https://github.com/n4s-linux/n4s-gratis-regnskab/blob/main/png/demo1.gif 'n4s demo')](https://drive.google.com/file/d/1D7PW7Te92-4RvlXTPedoDU3QIuC-bMNp/view?usp=sharing)
-
-
-# Example of reporting
-Reporting of results & balance at overall account level with associated notes in a neat layout.
-![Example of balance balance in free accounting program n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/main/png/res.png)
-![Example of notes in the free accounting program n4s](https://raw.githubusercontent.com/n4s-linux/n4s-gratis-regnskab/main/png/not.png)
-
-
-[Example account Jensens Murer ApS 2020 (fictitious company)](https://github.com/n4s-linux/n4s-gratis-regnskab/tree/main/examples)
-
-- NOTE - Download the PDF files on your computer for optimal viewing - then notes will also be clickable in the balance
-
-To generate corresponding reporting for your accounts, follow the following instructions in n4s:
-* Set reporting period: type 'dp' or press Alt-p
-* Type 'html'
-* Change company name to front page - write if necessary. comment - save on W
-* The reporting (Balance, account card & key figures) is in ~/tmp which can be found in the file manager Nautilus on the left
-
-# Hassle-free export of your data
-
-N4S not only excels in handling your day-to-day accounting needs, it also allows you to take your data where you need it, effortlessly. Exporting your data from N4S is a breeze, making it available to other online systems, even those with less extensive functionality.
-Our system supports loading and unloading of CSV files, which is why it is easy to migrate to/from another system.
 
 # Features
 * Automatic projection of accounts (forecasting) infinite number of months, so far the future monthly balances are calculated as an average of previous months, so is only useful for stable ongoing operations without seasonal fluctuations, e.g. service companies that sell all year round, or shops with stable turnover (Select budget in menu)
@@ -131,11 +36,6 @@ Our system supports loading and unloading of CSV files, which is why it is easy 
 * Full log of all actions, output from all displayed balances, account cards, etc. with date and time stamp for each user for each account, entry of transactions, etc. - searchable, e.g. useful if you need to trace an amount in the accounts that no longer exists, entering transactions, etc. - searchable, e.g. useful if you need to trace an amount in the accounts that no longer exists
 * An infinite number of options for different color schemes - there are, for example, several color schemes that are suitable for you to sit in the sun with your laptop and work - you can forget all about that in other systems... !
 * Mapping to the Danish Business Authority's standard chart of accounts for external reporting, including easy entry into Accounting 2.0
-
-# TLDR - Let me download your OVA
-* Link to [Virtualbox OVA appliance](https://drive.google.com/file/d/1i-VhkUzbIyoZOtJRZ0Fz1MS90s0AJE72/view)
-* Link to [Virtualbox Multi Platform Download](https://www.virtualbox.org/wiki/Downloads) (remember to get the Extension Pack too)
-
 
 # Running updates - rolling release
 You don't have to wait years for a new version to be released. You can continuously download patches with improvements to the system.
