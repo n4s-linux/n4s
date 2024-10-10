@@ -146,7 +146,7 @@
 	refresh();
 function refresh()  {
 	global $op;
-	$cmd = ("cmatrix&(find /data/regnskaber ~/regnskaber/ -name \\*.trans -mtime -90 -printf \"%T@|||||%p\\n\" |grep .trans$ > /home/$op/tmp/mkentry.php.list;killall cmatrix)"); //run cache for next time
+	$cmd = ("cmatrix&(find /data/regnskaber ~/regnskaber/ -name \\*.trans -mtime -180 -printf \"%T@|||||%p\\n\" |grep .trans$ > /home/$op/tmp/mkentry.php.list;killall cmatrix)"); //run cache for next time
 	file_put_contents("/home/$op/tmp/mkentry.cmd",$cmd);
 	exec_app("$cmd");
 }
