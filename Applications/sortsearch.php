@@ -1,8 +1,11 @@
 <?php
 	function dosorting($arr) {
 		require_once("fzf.php");
-		$sortering = fzf("Date\nDescription\nAmount\nReference\nAccount\nContraAccount\n","Vælg sortering");
-		if ($sortering == "") die("Afbrudt sortering af søgning\n");
+		if (getenv("defaultsort") == "") {
+			$sortering = fzf("Date\nDescription\nAmount\nReference\nAccount\nContraAccount\n","Vælg sortering");
+			if ($sortering == "") die("Afbrudt sortering af søgning\n");
+		}
+		else $sortering = getenv("defaultsort");
 		usort($arr,"sortsearch_$sortering");
 		return $arr;
 	}
