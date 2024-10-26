@@ -1,5 +1,6 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-10-26 | [61d15db2...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/61d15db28d6c234dcd9b401a1b0ca465f49718ff) | Different tools for Uniconta admin |
 | 2024-10-26 | [334c9bda...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/334c9bda8e84b23651422f4a964a46e9eaf4dbd7) | Improved history in transplants |
 | 2024-10-26 | [178a2bf5...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/178a2bf55aa988b92aa65b555b014e1385dd473a) | Unison stuff |
 | 2024-10-26 | [522cf414...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/522cf414fed3377b6488f0e1021495ef825077d6) | More refined markdown export |
