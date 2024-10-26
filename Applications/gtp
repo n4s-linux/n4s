@@ -9,6 +9,7 @@ if [ ! -t 0 ]; then
 	echo "Make sure You output short concise statements that fit into one line" >> ~/tmp/gptask
 	echo "Whatever i say, always try and come up with alternative approaches or ideas" >> ~/tmp/gptask
 	echo "Even if i feed You markdown, respond in plain text - but emojis is allowed, unless something in the text actually tells you to output in markdown !" >> ~/tmp/gptask
+	echo "Whenever a specific question is in the input, make sure to respond thoroughly to that question" >> ~/tmp/gptask
 	echo "Whatever language you detect as the main language in the following input after this statement (will mostly be danish for now), make sure that is your output language" >> ~/tmp/gptask
 	while IFS= read -r line; do echo "$line"; done >~/tmp/gptask.query
 		cat ~/tmp/gptask.query
@@ -16,7 +17,7 @@ if [ ! -t 0 ]; then
 	do
 		if [ "$i" == "" ]; then continue; fi
 		echo -en "\t"
-		echo -n $(date +"%Y-%m-%d %H:%m joo")
+		echo -n $(date +"%Y-%m-%d %H:%M joo")
 		echo -en "\t"
 		echo -n "#gptsays "
 		echo "$i"
@@ -34,7 +35,7 @@ else
 		do
 			if [ "$i" == "" ]; then continue; fi
 			echo -en "\t"
-			echo -n $(date +"%Y-%m-%d %H:%m joo")
+			echo -n $(date +"%Y-%m-%d %H:%M joo")
 			echo -en "\t"
 			echo -n "#gptsays "
 			echo "$i"
