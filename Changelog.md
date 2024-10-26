@@ -1,5 +1,15 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-10-26 | [178a2bf5...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/178a2bf55aa988b92aa65b555b014e1385dd473a) | Unison stuff |
+| 2024-10-26 | [522cf414...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/522cf414fed3377b6488f0e1021495ef825077d6) | More refined markdown export |
+| 2024-10-26 | [5d1409a4...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/5d1409a431fe298a0a67074958ab8cd5d43daf17) | mkentry stuff |
+| 2024-10-26 | [8d171bdb...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/8d171bdb9ca69e77ccb055d38437f756b321fcc1) | Improvement on tlasort i hope |
+| 2024-10-26 | [e7d75d4d...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/e7d75d4dc02a79b240bf7887313866e596c0daf5) | sortsearch improvement - i think |
+| 2024-10-26 | [dd29b60f...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/dd29b60f5218e99396c227ab342e272b7beabc38) | rt stuff |
+| 2024-10-26 | [c6bd1963...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c6bd1963d9222cb3abfbe83d2e304b1bd41d947d) | RT Stuffs |
+| 2024-10-26 | [faf04f2b...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/faf04f2bcb0681ba0f69ab2e23ea1ef0bf98d037) | Default color set |
+| 2024-10-26 | [c1c91fbc...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c1c91fbc6fbe07742acb613ce24cde0db56fd1fe) | Automated periodic questionariere based on account 9900 to Uniconta Customers |
+| 2024-10-26 | [c22471eb...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/c22471ebcddbd1f5d55fde6e4340042bf390a8ca) | Chatgpt integration improvements |
 | 2024-10-10 | [eff60fa7...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/eff60fa76377a493768188f9529c39dabb5551b9) | Entry buffer expanded from 90 to 180 days for quick repeat transactions |
 | 2024-09-24 | [473c83cd...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/473c83cdf2aa7657fda8bd04b8058fcbef40fd49) | طِ Cleanup dependencies from old stuffs |
 | 2024-09-24 | [0bea9a0a...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/0bea9a0a4d9fea844c34bde4ad8efe688945ab55) | ﻑ Chatgpt Integration into vim buffers |
