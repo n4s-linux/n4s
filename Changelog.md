@@ -1,5 +1,6 @@
 |at|hash|desc|
 |---|---|---|
+| 2024-10-26 | [334c9bda...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/334c9bda8e84b23651422f4a964a46e9eaf4dbd7) | Improved history in transplants |
 | 2024-10-26 | [178a2bf5...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/178a2bf55aa988b92aa65b555b014e1385dd473a) | Unison stuff |
 | 2024-10-26 | [522cf414...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/522cf414fed3377b6488f0e1021495ef825077d6) | More refined markdown export |
 | 2024-10-26 | [5d1409a4...](https://github.com/n4s-linux/n4s-your-second-accounting-brain/commit/5d1409a431fe298a0a67074958ab8cd5d43daf17) | mkentry stuff |
