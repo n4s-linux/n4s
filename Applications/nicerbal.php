@@ -66,6 +66,7 @@ function getcolor($tla) {
 	if ($tla == "Egenkapital") return "\033[38;5;231;48;5;22m";
 	if ($tla == "Passiver") return "\033[38;5;234;48;5;91m";
 	if ($tla == "Fejlkonto") return "\033[38;5;16;48;5;196m";
+	return "\033[38;5;16;48;5;250m";
 	
 }
 function gettlabal($tla) {
