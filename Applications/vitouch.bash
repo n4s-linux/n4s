@@ -99,8 +99,14 @@ function vitouch() {
 	jn=$(echo -e "Nej\nJa"|fzf --header="Vil du printe")
 	if [ "$jn" != "Ja" ]; then
 		print=no
+	else
+		printtype=$(echo -e "All\nUnresolved"|fzf --header="Only completed")
+		if [ "$printtype" == "Unresolved" ]; then
+		runpath="$1" php "$if"|grep -v "✔" | grep -v "✕" >"$if.parsed"
+		else
+		runpath="$1" php "$if" >"$if.parsed"
+		fi
 	fi
-	runpath="$1" php "$if"|grep -v "✔" | grep -v "✕" >"$if.parsed"
 	cp "$if.parsed" "$if"
 	rm "$if.parsed"
 	cp "$if" ~/tmp/if.tmp # 2023-04-05T18:21 joo	can we remove this ? #isitbeingused ?
