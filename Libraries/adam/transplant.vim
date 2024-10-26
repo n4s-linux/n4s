@@ -57,7 +57,7 @@ function! HandleFileSelection(target_file, selected_text, current_file)
     let source_name = fnamemodify(a:current_file, ':t')  " Get only the filename
 
     " Append metadata to each line
-    let edited_text = map(edited_text, {_, line -> "🚚 " . line . " " . timestamp . " " . user . " #tp #src" . source_name})
+    let edited_text = map(edited_text, {_, line -> line . " " . timestamp . " " . user . "#🚚 #tp #src #" . source_name})
     call writefile(edited_text, a:target_file, 'a')  " Write to target file
 endfunction
 
