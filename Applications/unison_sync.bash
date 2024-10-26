@@ -1,17 +1,28 @@
 #!/bin/bash
-exit
-lastsync="$tpath"/.lastsync_$(whoami)
-UNISON_SERVER=139.177.183.125
+bn=$(basename "$tpath")
 if [ "$tpath" == "" ]; then
 	exit
 fi
-if [ ! -L "$tpath" ] && [ ! -d "$tpath"] ; then
+lastsync=~/tmp/lastsync_$bn
+if [ "justrun" == "" ]; then
+	if [ -f $lastsync ]; then
+		if [ -n "$(find $lastsync -mmin -1 2>/dev/null)" ]; then
+			exit
+		else
+		  echo "File has not been modified in the last 1 minutes."
+		fi
+	fi
+fi
+
+UNISON_SERVER=localhost
+if [ "$tpath" == "" ]; then
 	exit
 fi
-#unison stuff_test/ ssh://unison@$UNISON_SERVER/stuff_test -batch
 bn=$(basename "$tpath")
 pushd . >/dev/null
 cd "$tpath"
 echo -n "🔄🔄🔄 Synkroniserer... "
-unison . ssh://unison@unison/"$bn" -silent -batch && date +%s > $lastsync && echo ✔✔✔ || echo cant sync
+unison $tpath ssh://rsync@localhost/"$bn" -silent -auto -batch -prefer newer >/dev/null
+touch $lastsync
+echo "...";
 popd >/dev/null
