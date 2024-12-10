@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+	if (isset($_POST["username"])) {
+		$_SESSION["username"] = $_POST["username"];
+		$_SESSION["password"] = $_POST["password"];
+	}
+	else {
+		echo "<form action=ucreconcile.php method=POST>User<br><input type=text name=username><br>Pass<br><input type=password name=password><br><input type=submit value=Login></form>";
+		die();
+	}
+}
 require_once("/svn/svnroot/Applications/uc_odata.php");
+$username = $_SESSION["username"];
+$password = $_SESSION["password"];
 ?>
 <!-- Place the first <script> tag in your HTML's <head> -->
 <script src="https://cdn.tiny.cloud/1/ouol0ye5m8ykepfo20seshwer5npng06hjzxt9by41oyimyl/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
@@ -58,7 +71,7 @@ foreach ($_POST as $curpost => $curval) {
 	}
 	usort($r,"sortbyreconcile");
 $i = 0;
-echo "<h3>Afstemningsliste</h3><table border=1 class='table table-striped'>";
+echo "<h3>Afstemningsliste</h3><table border=5 class='table table-striped'>";
 	$edithash = $_GET["edit"];
 	foreach ($r as $curr) {
 		$hash = md5($curr["Client"] . $curr["Account"]);
@@ -106,7 +119,7 @@ echo "<h3>Afstemningsliste</h3><table border=1 class='table table-striped'>";
 </script>
 <?php
 die();
-	echo "<table class=table>";
+	echo "<table class='table table-striped'>";
 	foreach ($r as $curr) {
 		if ($curr["Account"] >= 4999) continue;
 		$t = relativeTime(strtotime($curr["Reconciled"]));	
