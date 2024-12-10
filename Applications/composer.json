@@ -5,6 +5,10 @@
         "benjaminhoegh/parsedown-toc": "^1.4",
         "kunalvarma05/dropbox-php-sdk": "^0.4.2",
         "league/commonmark": "^2.4",
-        "cebe/markdown": "~1.2.0"
+        "cebe/markdown": "~1.2.0",
+        "phpmailer/phpmailer": "^6.9",
+        "dompdf/dompdf": "^3.0",
+        "setasign/fpdi": "^2.6",
+        "setasign/fpdf": "^1.8"
     }
 }
