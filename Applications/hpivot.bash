@@ -7,7 +7,9 @@ if [ "$retning" == "lodret" ]; then
 else
 	cmd="register"
 fi
-depth=$(echo -e "2\n3\n4\n1\n"|fzf)
+if [ "$depth" == "" ]; then
+	depth=$(echo -e "2\n3\n4\n1\n"|fzf)
+fi
 
 if [ "$period" == "" ]; then
 	period=$(echo -e "monthly\nquarterly\nyearly\nweekly\ndaily"|fzf)
@@ -16,14 +18,13 @@ fi
 #read account
 account="$@"
 if [ "$period" == "monthly" ]; then
-	php /svn/svnroot/Applications/newl.php print |hledger --depth=$depth -f /dev/stdin $cmd $@ --monthly  
+	php /svn/svnroot/Applications/newl.php print |hledger --depth=$depth -f /dev/stdin $cmd $@ --monthly  --sort-amount 
 elif [ "$period" == "quarterly" ]; then
-php /svn/svnroot/Applications/newl.php print |hledger --depth=$depth -f /dev/stdin $cmd $@ --quarterly  
+php /svn/svnroot/Applications/newl.php print |hledger --depth=$depth -f /dev/stdin $cmd $@ --quarterly  --sort-amount 
 	elif [ "$period" == "yearly" ]; then
-php /svn/svnroot/Applications/newl.php print |hledger  --depth=$depth -f /dev/stdin $cmd $@ --yearly  
-
+php /svn/svnroot/Applications/newl.php print |hledger  --depth=$depth -f /dev/stdin $cmd $@ --yearly  --sort-amount 
 	elif [ "$period" == "weekly" ]; then
-php /svn/svnroot/Applications/newl.php print |hledger --depth=$depth -f /dev/stdin $cmd $@ --weekly 
+php /svn/svnroot/Applications/newl.php print |hledger --depth=$depth -f /dev/stdin $cmd $@ --weekly  --sort-amount 
 	elif [ "$period" == "daily" ]; then
-php /svn/svnroot/Applications/newl.php print |hledger  --depth=$depth -f /dev/stdin $cmd $@ --daily 
+php /svn/svnroot/Applications/newl.php print |hledger  --depth=$depth -f /dev/stdin $cmd $@ --daily --sort-amount 
 fi
