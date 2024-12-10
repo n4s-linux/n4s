@@ -8,13 +8,15 @@ $histfile = getenv("HOME")."/tmp/journal_history";
 system("bash /svn/svnroot/Applications/vthist.bash list|head -n9 > $histfile");
 
 if (!isset($argv[1])) {
-	$menu["💵 Accounting"] = array('key'=>'r','Text'=>'Rapportering...','cmd'=>"new-window 'fzf_menu=$fzf_menu php /svn/svnroot/Applications/tmux/menu.php Regnskab'");
-	$menu["📑 Journalz"] = array('key'=>'c','Text'=>'Journaler (sager)','cmd'=>"new-window 'fzf_menu=$fzf_menu php /svn/svnroot/Applications/tmux/menu.php CRM'");
-	$menu["🤔 Manual"] = array('key'=>'m','Text'=>'Manual','cmd'=>"new-window 'fzf_menu=$fzf_menu php /svn/svnroot/Applications/tmux/menu.php Manual'");
-	$menu["✅ What to do"] = array('key'=>'m','Text'=>'Manual','cmd'=>"new-window 'php /svn/svnroot/Applications/whatshouldido.php'");
+	$menu["Accounting"] = array('key'=>'r','Text'=>'Rapportering...','cmd'=>"new-window 'fzf_menu=$fzf_menu php /svn/svnroot/Applications/tmux/menu.php Regnskab'");
+	$menu["Journalz"] = array('key'=>'c','Text'=>'Journaler (sager)','cmd'=>"new-window 'fzf_menu=$fzf_menu php /svn/svnroot/Applications/tmux/menu.php CRM'");
+	$menu["Manual"] = array('key'=>'m','Text'=>'Manual','cmd'=>"new-window 'fzf_menu=$fzf_menu php /svn/svnroot/Applications/tmux/menu.php Manual'");
+	if ($op == "joo") {
+		$menu["Timereport"] = array('key'=>'t','Text'=>'TR...','cmd'=>"new-window 'fzf_menu=$fzf_menu  bash /svn/svnroot/Applications/timereport.bash'");
+	}
 }
 else if ($argv[1] == "Vim") {
-	$menu["🤔 Headmenu"] = array('key'=>'H','Text'=>'Manual','cmd'=>"send-keys 'hm' Enter");
+	$menu["Headmenu"] = array('key'=>'H','Text'=>'Manual','cmd'=>"send-keys 'hm' Enter");
 	$menu["Account1"] = array('key'=>'a','Text'=>'Account1','cmd'=>"send-keys \"escape\" gg/Account ENTER wwwå");
 	$menu["Account2"] = array('key'=>'A','Text'=>'Account1','cmd'=>"send-keys \"escape\" gg/Account ENTER n wwwå");
 	$menu["Func1"] = array('key'=>'f','Text'=>'Func1','cmd'=>"send-keys \"escape\" gg/Func ENTER wwli");
@@ -62,10 +64,10 @@ else if ($argv[1] == "Bogføring") {
 	$menu["Reconciliation account vs statement"] = array('key'=>'r','Text'=>'forecasting','cmd'=>"send-keys 'reconcile' Enter");
 }
 else if ($argv[1] == "rmenu") {
-	$menu["💰 Bookkeeping"] = array('key'=>'b','Text'=>'Bogføring','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Bogføring' Enter");
-	$menu["📚 Reporting"] = array('key'=>'e','Text'=>'Regnskab...','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Rapportering' Enter");
-	$menu["🤖 Automation"] = array('key'=>'a','Text'=>'Automatisering','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Automatisering' Enter");
-	$menu["🤔 Headmenu"] = array('key'=>'H','Text'=>'Manual','cmd'=>"send-keys 'hm' Enter");
+	$menu["Bookkeeping"] = array('key'=>'b','Text'=>'Bogføring','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Bogføring' Enter");
+	$menu["Reporting"] = array('key'=>'e','Text'=>'Regnskab...','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Rapportering' Enter");
+	$menu["Automation"] = array('key'=>'a','Text'=>'Automatisering','cmd'=>"send-keys 'php /svn/svnroot/Applications/tmux/menu.php Automatisering' Enter");
+	$menu["Headmenu"] = array('key'=>'H','Text'=>'Manual','cmd'=>"send-keys 'hm' Enter");
 }
 else if ($argv[1] == "Manual" ) {
 	$menu["LICENS"] = array('key'=>'l','Text'=>'LICENS','cmd'=>"new-window 'vi /svn/svnroot/LICENSE'");
@@ -93,9 +95,9 @@ else if ($argv[1] == "Stats" ) {
 	$menu["Kundestatistik"] = array('key'=>'k','Text'=>'Halvår','cmd'=>"new-window ' bash /svn/svnroot/Applications/stats_kunder.bash'");
 }
 else if ($argv[1] == "Regnskab") {
-	$menu['📁 Open Account'] = array('key'=>'r','Text'=>'Åbn regnskab','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash regnskab');
-	$menu['💾 New Account'] = array('key'=>'n','Text'=>'Åbn regnskab','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash nyregnskab');
-	$menu['🔥 Quick Transaction'] = array('key'=>'q','Text'=>'Åbn regnskab','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash anyentry');
+	$menu['Open Account'] = array('key'=>'r','Text'=>'Åbn regnskab','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash regnskab');
+	$menu['New Account'] = array('key'=>'n','Text'=>'Åbn regnskab','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash nyregnskab');
+	$menu['Quick Transaction'] = array('key'=>'q','Text'=>'Åbn regnskab','cmd'=>'new-window bash /svn/svnroot/Applications/start.bash anyentry');
 }
 
 else if ($argv[1] == "history" ) {
