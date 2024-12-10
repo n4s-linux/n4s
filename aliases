@@ -79,7 +79,7 @@ else
 	cat ~/tmp/newfeatures|shuf -n1
 fi
 }
-newfeatures load
+# newfeatures load
 function hmm() {
 fn=$(
 (
@@ -258,7 +258,8 @@ function lt() {
 alias fp=" python /svn/svnroot/Applications/fpaste/fpaste.py"
 version=$(cd /svn/svnroot/;echo $(git log |wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
 echo $version > ~/tmp/.n4sversion
-export TERM=xterm-256color tmux
+#export TERM=xterm-256color tmux
+export TERM=screen-256color
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=y
 function h() {
 l r $@|head
@@ -389,7 +390,8 @@ shopt -s histappend
 mkdir -p ~/tmp/ /svn/svnroot/tmp/
 LEDGER_DEPTH=5
 function ti() {
-	time=$(date +"%H:%m")
+	return ""
+	# time=$(date +"%H:%m")
 	#tmux set -g status-right "#[fg=white]# $time: $1"
 }
 function ww() {
@@ -548,7 +550,7 @@ echo generating manglendebilag
 	(/svn/svnroot/Applications/removeblankpages.bash ~/n4s-export/Manglendebilag-$bn-$begin-$end.pdf &)
 
 	echo generating nyfejl
-	tmux new-window "LEDGER_BEGIN=$LEDGER_BEGIN LEDGER_END=$LEDGER_END tpath=$tpath php /svn/svnroot/Applications/nyfejl.php"
+	tmux split-window "LEDGER_BEGIN=$LEDGER_BEGIN LEDGER_END=$LEDGER_END tpath=$tpath php /svn/svnroot/Applications/nyfejl.php"
 
 	popd 2>/dev/null > /dev/null
 	echo "Please look for Your reports in ~/n4s-export"
@@ -631,6 +633,7 @@ function getcolor() {
 	fi
 }
 prompt_function () {
+return
 cmd=$(fc -ln -0)
 bn=$(basename "$tpath");
 if [ ! -f  ~/.lastsym ]; then 
@@ -672,17 +675,17 @@ BPWD="$(basename "$PWD")"
 	else
 		custom="$custom 🐃#didyouknow You can customize this line with custom data in ~/.customtmux🐃"
 	fi
-	tmux set -g status-format[1] "#[fg=#71c242,bg=#0d2f9e]🐃$tips🐃" 2>/dev/null
-	tmux set -g status 4 2>/dev/null; tmux set -g status-format[2] "#[fg=black,bg=#594a18] $custom" 2>/dev/null
+	#tmux set -g status-format[1] "#[fg=#71c242,bg=#0d2f9e]🐃$tips🐃" 2>/dev/null
+	#tmux set -g status 4 2>/dev/null; tmux set -g status-format[2] "#[fg=black,bg=#594a18] $custom" 2>/dev/null
 	hist=$(history|tail -n10|sort --rev|while read i; do echo -n " $i"; done)
 	if [ "$tpath"] != "" ]; then
 		hist=$(displayaccshortcuts)
 	fi
-	tmux set -g status 4 2>/dev/null; tmux set -g status-format[3] "#[fg=black,bg=blue]$hist" 2>/dev/null
+	#tmux set -g status 4 2>/dev/null; tmux set -g status-format[3] "#[fg=black,bg=blue]$hist" 2>/dev/null
 
 	#last=$(grep -h ✔ /data/regnskaber/transactions_crm/.tags/*.diff|grep "\["|grep "\]"|sort|tail -n1)
     last=$(newfeatures)
-	tmux set -g status 5 2>/dev/null; tmux set -g status-format[4] "#[fg=black,bg=yellow]#whatschanged 🍃 $last" 2>/dev/null
+	#tmux set -g status 5 2>/dev/null; tmux set -g status-format[4] "#[fg=black,bg=yellow]#whatschanged 🍃 $last" 2>/dev/null
 	pushd . >/dev/null
 	cd "$tpath"
 	popd >/dev/null
@@ -699,7 +702,7 @@ else
 fi
 # /svn/svnroot/Applications/unison_sync.bash - maybe one day
 }
-PROMPT_COMMAND=prompt_function
+#PROMPT_COMMAND=prompt_function
 
 if [[ -z $SVNROOT ]];then
     export SVNROOT=/svn/svnroot # default
@@ -742,7 +745,7 @@ function scrips() {
 		done
 }
 function sr() {
-lastsym 🖫
+#lastsym 🖫
 pushd . >/dev/null
 if [ -z "$1" ] ; then
 	valg=$((echo NEW;ls -t ~/regnskaber)|fzf --no-mouse --cycle)
@@ -775,6 +778,7 @@ fi
 bn=$(basename "$tpath")
 if [ "$nochange" != "1" ]; then
 	tmux rename-window "$bn" 
+	bash /svn/svnroot/Applications/tmux/savewindow.bash
 fi
 cd $tpath
 if [ ! -f "curl" ]; then touch curl; fi
@@ -862,7 +866,7 @@ export HISTCONTROL=ignorespace   # leading space hides commands from history
 export HISTFILESIZE=10000        # increase history file size (default is 500)
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
 # ensure synchronization between bash memory and history file
-export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
+# export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 # if this is interactive shell, then bind hstr to Ctrl-r (for Vi mode check doc)
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
@@ -870,5 +874,5 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 alias tmux='tmux -2'
 
 
-TERM=tmux-256color COLORTERM=24bit
+#TERM=tmux-256color COLORTERM=24bit
 mkdir -p ~/n4s-export
