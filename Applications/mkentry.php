@@ -1,6 +1,6 @@
 <?php
-	// refresh(); // uncomment this if having problem with missing cache
 	$op = exec("whoami");
+	// refresh(); // uncomment this if having problem with missing cache
 	require_once("/svn/svnroot/Applications/proc_open.php");
 	require_once("/svn/svnroot/Applications/fzf.php");
 	require_once("/svn/svnroot/Applications/ask.php");
@@ -148,7 +148,7 @@ function refresh()  {
 	global $op;
 	$cmd = ("cmatrix&(find /data/regnskaber ~/regnskaber/ -name \\*.trans -mtime -180 -printf \"%T@|||||%p\\n\" |grep .trans$ > /home/$op/tmp/mkentry.php.list;killall cmatrix)"); //run cache for next time
 	file_put_contents("/home/$op/tmp/mkentry.cmd",$cmd);
-	exec_app("$cmd");
+	system("$cmd");
 }
 function getbal($konto,$tpath) {
 	$tomorrow = date("Y-m-d",strtotime("tomorrow"));
