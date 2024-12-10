@@ -4,6 +4,8 @@
         "lenius/economic-php-client": "^2.0",
         "php-school/cli-menu": "^4.3",
         "league/climate": "^3.8",
-        "docparser/docparser-php": "^1.1"
+        "docparser/docparser-php": "^1.1",
+        "phpseclib/phpseclib": "~1.0",
+        "symfony/yaml": "^7.1"
     }
 }
