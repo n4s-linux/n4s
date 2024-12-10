@@ -36,7 +36,7 @@ foreach ($ask as $mail => $t) {
 		$i++;
 		$hash = md5(json_encode($curt));
 		$date = date("Y-m-d",strtotime($curt["Date"]));
-		if (strtotime($date) < strtotime("2024-09-01")) continue;
+		if (strtotime($date) < strtotime("2024-09-01")) continue; // skip old bilag from before we moved
 		if (file_exists("/var/www/$hash")) $firstasked = date("Y-m-d",filemtime("/var/www/$hash")); else $firstasked="Nej";
 		if ($curt["HasVoucher"] == 1) $harbilag = "✔"; else $harbilag = "⁒";
 		$html .= "<tr>";
