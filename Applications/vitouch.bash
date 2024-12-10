@@ -19,7 +19,7 @@ update_title "vitouch"
 start=$(date +%s)
 mkdir -p ~/tmp
 source /svn/svnroot/Applications/difffile.bash
-tmux set-option status-right "#[fg=black,bg=white] %Y-%d-%m #[fg=colour233,bg=colour8] $1 $2 $3 $hjerter"
+# tmux set-option status-right "#[fg=black,bg=white] %Y-%d-%m #[fg=colour233,bg=colour8] $1 $2 $3"
 function getbg() {
 	if [[ "$tpath" == *"crm"* ]]; then
 	echo "red"
@@ -39,11 +39,12 @@ function vitouch() {
 	fi
 	
 	if [ "$notitle" == "" ]; then
-		shortbn="${bn:0:4}" #credits #chatgpt
+		shortbn=$bn
 		bg=$(getbg $shortbn)
 		tmux rename-window "$shortbn"
 	fi
 	bnt="$(basename "$tpath")"
+	/svn/svnroot/Applications/tmux/lastact.bash
 	lockfile="$tpath/.tags/.$bn"".lock"
 	if  [ -f "$lockfile" ]; then
 		openedby=$(cat "$lockfile")
