@@ -104,7 +104,16 @@ nmap <F10> i<C-R>=strftime("%Y-%m-%dT%H:%M\t")<CR><Esc>
 
 nmap <F9> i<C-R>=strftime("%Y-%m-%d")<CR><Esc>
 imap <F10> <C-R>=strftime("%Y-%m-%dT%H:%M\t")<CR>
+imap <F10> <C-R>=strftime("%Y-%m-%dT%H:%M")." ".substitute(system('whoami'), '\n', '', '')."\t#".substitute(system('cat ~/tmp/.activesession 2>/dev/null'), '\n', '', '')<CR>
+imap <F10> <C-R>=exists('*filereadable') && filereadable(expand('~/tmp/.activesession')) && !empty(system('cat ~/tmp/.activesession 2>/dev/null')) ?
+            \ printf("%s %s\t%s", strftime("%Y-%m-%dT%H:%M"), $USER, substitute(system('cat ~/tmp/.activesession 2>/dev/null'), '\n', '', '')) :
+            \ printf("%s %s\t", strftime("%Y-%m-%dT%H:%M"), $USER)<CR>
+imap <F10> <C-R>=expand('%:p') =~ '/stuff/.tags' && filereadable(expand('~/tmp/.activesession')) && !empty(system('cat ~/tmp/.activesession 2>/dev/null')) ?
+            \ printf("%s %s\t#%s ", strftime("%Y-%m-%dT%H:%M"), $USER, substitute(system('cat ~/tmp/.activesession 2>/dev/null'), '\n', '', '')) :
+            \ printf("%s %s\t", strftime("%Y-%m-%dT%H:%M"), $USER)<CR>
+" imap <F10> <C-R>=strftime("%Y-%m-%dT%H:%M")." ".substitute(system('whoami'), '\n', '', '')."\t#"<cr>
 imap <F10> <C-R>=printf("%s %s\t", strftime("%Y-%m-%dT%H:%M"), $USER)<CR>
+
 imap <F9> <C-R>=strftime("%Y-%m-%d")<CR>
 
 
@@ -245,8 +254,8 @@ nnoremap <C-s> :'<,'>w !awk '{ sum += $1 } END { print sum }'
 
 
 :set laststatus=2
-set statusline=%!StatusLine()
-set statusline=hejsa
+" set statusline=%!StatusLine()
+" set statusline=hejsa
 function! StatusLine()
     if &ft == 'help'
         let l:status = "%#error#[HELP]%*"
@@ -333,14 +342,6 @@ if has("persistent_undo")
 	let &undodir=target_path
 	       set undofile
 endif
-
-let g:runtimer = 0
-func MyHandler(timer)
-	let g:runtimer += 1
-	echo g:runtimer / 60 . "min"
-endfunc
-let timer = timer_start(50000,'MyHandler',
-			\ {'repeat': -1 })
 
 function! MarkdownLevel()
     if getline(v:lnum) =~ '^# .*$'
@@ -580,13 +581,6 @@ let g:HelpMeItems = [
     \ ]
 nnoremap ? :HelpMe<CR>
 autocmd BufReadPost * if &readonly | setlocal nomodifiable | endif
-" Define a function to set the statusline color and content based on file mode and locked status
-function! UpdateStatusLine()
-        hi StatusLine guifg=#eaf03e guibg=black
-        let &statusline='🔥 CMD[Esc] 🬅  ✎[e]dit 🬅 🔍Find[/] 🬅 Save[W] 🬅 Quit[Q] 🬅  [u]ndo  🬅 [r]edo 🬅 Ins/App/Nl [iao] 🬅 TS[F10]'
-endfunction
-
-" Define a function to check if the buffer is locked
 function! IsLocked()
     " Loop through each line in the buffer
     for i in range(1, line('$'))
@@ -600,14 +594,25 @@ function! IsLocked()
     return ""
 endfunction
 
-" Automatically call the function when the buffer or window is entered
-autocmd BufEnter,BufWinEnter * call UpdateStatusLine()
-
-" Automatically call the function when the buffer is changed
-autocmd BufEnter,BufWinEnter,BufWritePost * call UpdateStatusLine()
-
-" Set the statusline formatting initially
-call UpdateStatusLine()
 nnoremap e :% !php /svn/svnroot/Applications/trans_action.php<CR>:redraw!<CR>
 
 au VimLeave * :!clear
+vnoremap æ :!bash /svn/svnroot/Applications/gtp<CR>
+nnoremap æ :r !bash /svn/svnroot/Applications/gtp<CR>
+set wrap
+autocmd VimEnter * call StartSaveWindowTimer()
+
+" Function to run the script once on Vim startup and every 1 minutes thereafter
+function! StartSaveWindowTimer()
+    " Run the script immediately at Vim start
+
+silent! call system('TPATH=' . shellescape($TPATH) . ' bash /svn/svnroot/Applications/tmux/savewindow.bash > /dev/null 2>&1')
+    
+    " Set a timer to run the script every 1 minutes (300000 ms)
+    let g:save_window_timer = timer_start(1000, 'RunSaveWindowScript', {'repeat': -1})
+endfunction
+
+" Function to call the script for the timer
+function! RunSaveWindowScript(timer)
+silent! call system('TPATH=' . shellescape($TPATH) . ' bash /svn/svnroot/Applications/tmux/savewindow.bash > /dev/null 2>&1')
+endfunction
