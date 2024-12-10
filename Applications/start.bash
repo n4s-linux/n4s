@@ -157,7 +157,9 @@ elif [ "$argument" == "code" ]; then
 		fn="$2"
 	fi
 	bn=$(basename "$fn")
-	bn=${bn:0:5}
+	tmux rename-window "code:$bn";
+ bash /svn/svnroot/Applications/tmux/lastact.bash
+	 bash /svn/svnroot/Applications/tmux/savewindow.bash
 	vim "$fn" -c "set ft=md"
 	echo "$fn" > ~/tmp/.editcode
 elif [ "$argument" == "shell" ]; then
