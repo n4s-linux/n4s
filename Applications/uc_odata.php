@@ -5,8 +5,7 @@ function getData($entityName,$filter = "",$url='https://odata.uniconta.com/api/E
 	global $firmaid;
 	$hash = md5($firmaid.$entityName.$filter);
 	$cf = "/var/www/uc/_$hash";
-	if (file_exists($cf) && filemtime($cf) > strtotime("-1 minutes")) {
-		echo "cached result $entityName\n";
+	if (file_exists($cf) && filemtime($cf) > strtotime("-5 minutes")) {
 		return json_decode(file_get_contents($cf),true);
 	}
 	global $username;global $password;
