@@ -1,0 +1,169 @@
+Assets:Fixed Assets:Goodwill:Book Value at Beginning of Year
+Assets:Fixed Assets:Goodwill:Additions During the Year
+Assets:Fixed Assets:Goodwill:Disposals During the Year
+Assets:Fixed Assets:Goodwill:Other Value Adjustments
+Assets:Fixed Assets:Goodwill:Depreciation and Impairment for the Year
+Assets:Fixed Assets:Goodwill:Reversal of Depreciation and Impairment
+Assets:Fixed Assets:Intangible Assets:Value at Beginning of Year
+Assets:Fixed Assets:Intangible Assets:Additions
+Assets:Fixed Assets:Intangible Assets:Disposals
+Assets:Fixed Assets:Intangible Assets:Value Adjustments
+Assets:Fixed Assets:Intangible Assets:Depreciation and Impairment
+Assets:Fixed Assets:Other Fixtures, Tools, and Equipment:Value at Beginning of Year
+Assets:Fixed Assets:Other Fixtures, Tools, and Equipment:Additions
+Assets:Fixed Assets:Other Fixtures, Tools, and Equipment:Disposals
+Assets:Fixed Assets:Other Fixtures, Tools, and Equipment:Value Adjustments
+Assets:Fixed Assets:Other Fixtures, Tools, and Equipment:Depreciation and Impairment
+Assets:Fixed Assets:Fittings:Beginning Value
+Assets:Fixed Assets:Fittings:Additions
+Assets:Prepaid Expenses:Miscellaneous
+Assets:Cash:Bambora
+Assets:Cash:Bank
+Assets:Cash:Cash Register
+Assets:Cash:LunarBank
+Assets:Cash:MobilePay
+Assets:Cash:Revolut DKK
+Assets:Cash:Shipmondo
+Assets:Cash:Stripe
+Assets:Cash:Card
+Assets:Current Accounts with Holding
+Assets:Current Assets:Debtors:Miscellaneous
+Assets:Current Assets:Work in Progress
+Assets:Current Assets:Inventory
+Assets:Prepaid Income
+Assets:Tax Receivable
+Assets:Development
+Equity:Retained Earnings
+Equity:Current Account Balances
+Equity:Other Allocations
+Equity:Contributions for the Year
+Equity:Withdrawals for the Year
+Equity:Premium
+Equity:Profit for the Period
+Equity:Development Reserve
+Equity:Share Capital
+Equity:Beginning Balance
+Income:Sales of Goods and Services
+Income:Sales of Goods Abroad, EU
+Income:Sales of Goods Abroad, Non-EU
+Income:Sales of Services Abroad, EU
+Income:Sales of Services Abroad, Non-EU
+Income:Adjustment of Work in Progress
+Income:Value Adjustments of Investment Properties
+Income:Other Operating Income:Profit from Sale of Intangible Fixed Assets
+Income:Other Operating Income:Profit from Sale of Tangible Fixed Assets
+Income:Other Operating Income:Profit from Sale of Financial Fixed Assets
+Income:Other Operating Income:Other Miscellaneous Operating Income
+Liabilities:Employees:A-tax
+Liabilities:Employees:ATP
+Liabilities:Employees:Vacation Pay
+Liabilities:Employees:Salaries
+Liabilities:Tax Authorities
+Liabilities:Creditors:Miscellaneous
+Liabilities:Current Accounts with Shareholders
+Liabilities:Current Accounts with Holding
+Liabilities:VAT:Purchase VAT
+Liabilities:VAT:Purchase VAT:IV
+Liabilities:VAT:Purchase VAT:IY
+Liabilities:VAT:VAT on Goods Purchased Abroad
+Liabilities:VAT:VAT on Services Purchased Abroad
+Liabilities:VAT:VAT Settlement
+Liabilities:VAT:Beginning Balance
+Liabilities:VAT:Sales VAT
+Liabilities:Tax Account
+Liabilities:Corporate Tax Payable
+Liabilities:Accrued Expenses:Auditor Fees
+Liabilities:Accrued Expenses:Miscellaneous
+Expenses:Vehicle Costs:Weight Tax
+Expenses:Vehicle Costs:Fuel
+Expenses:Vehicle Costs:Insurance
+Expenses:Administration:Minor Purchases Below Tax Threshold for Small Assets
+Expenses:Administration:Minor Purchases Above Tax Threshold for Small Assets
+Expenses:Administration:Subcontractors
+Expenses:Administration:Research and Development Costs
+Expenses:Administration:Other Production Costs
+Expenses:Administration:Realized Losses on Receivables from Sales and Services
+Expenses:Administration:Adjustment of Impairment on Receivables from Sales and Services
+Expenses:Administration:Adjustment of Receivables from Affiliated and Associated Companies
+Expenses:Administration:IT Equipment
+Expenses:Administration:Tax-Free Travel and Transportation Allowances
+Expenses:Administration:Canteen Expenses
+Expenses:Administration:Membership Fees
+Expenses:Administration:Professional Literature
+Expenses:Administration:Postage and Fees
+Expenses:Administration:Telephone and Internet (Business Only)
+Expenses:Administration:Telephone and Internet (Partly Private)
+Expenses:Administration:Web Hosting
+Expenses:Administration:Office Supplies
+Expenses:Administration:Rental and Operational Leasing Expenses (Excl. Rent)
+Expenses:Administration:Travel Expenses
+Expenses:Administration:Temporary Assistance
+Expenses:Administration:Consultant Fees
+Expenses:Administration:Course Fees
+Expenses:Administration:Leasing Costs for Passenger Cars
+Expenses:Administration:Operating Costs for Passenger Cars
+Expenses:Administration:Operating Costs for Vans
+Expenses:Administration:Parking Expenses
+Expenses:Administration:Car Expenses at Government Rates
+Expenses:Administration:Company Car
+Expenses:Administration:Workers’ Compensation Insurance
+Expenses:Administration:Public Fees and Fines
+Expenses:Administration:Audit and Accounting Assistance
+Expenses:Administration:Legal Assistance
+Expenses:Administration:Other Advisory Fees
+Expenses:Administration:Non-Deductible Advisory Fees
+Expenses:Administration:Administrative and Management Fees
+Expenses:Administration:Rounding & Cash Differences
+Expenses:Administration:Other External Expenses
+Expenses:Direct Costs:Purchase of Goods
+Expenses:Direct Costs:Purchase of Goods Abroad, EU
+Expenses:Direct Costs:Purchase of Goods Abroad, Non-EU
+Expenses:Direct Costs:Purchase of Services
+Expenses:Direct Costs:Purchase of Services Abroad, EU
+Expenses:Direct Costs:Purchase of Services Abroad, Non-EU
+Expenses:Direct Costs:Inventory Adjustment for Raw Materials and Supplies
+Expenses:Direct Costs:Impairment on Inventory
+Expenses:Extraordinary Items
+Expenses:Property Costs:Rent, Excl. Electricity, Water, and Heating
+Expenses:Property Costs:Electricity
+Expenses:Property Costs:Electricity Tax
+Expenses:Property Costs:Water
+Expenses:Property Costs:Heating
+Expenses:Property Costs:Water Tax
+Expenses:Property Costs:Oil and Gas Cylinder Tax
+Expenses:Property Costs:Coal Tax
+Expenses:Property Costs:Natural and Town Gas Tax
+Expenses:Property Costs:CO2 Tax
+Expenses:Property Costs:Other Taxes
+Expenses:Property Costs:Cleaning and Waste Management
+Expenses:Property Costs:Repairs and Maintenance
+Expenses:Property Costs:Repairs and Maintenance, Tax-Deductible Building 1
+Expenses:Property Costs:Insurance
+Expenses:Property Costs:Property Taxes
+Expenses:Property Costs:Other Property Costs
+Expenses:Personnel Costs:Salaries
+Expenses:Personnel Costs:Vacation Pay Liabilities
+Expenses:Personnel Costs:Employee Benefits
+Expenses:Personnel Costs:Anniversary and Severance Benefits
+Expenses:Personnel Costs:Board Fees
+Expenses:Personnel Costs:Other Fees
+Expenses:Personnel Costs:A-Income Subject to AM Contribution
+Expenses:Personnel Costs:A-Income Exempt from AM Contribution
+Expenses:Personnel Costs:Pensions
+Expenses:Personnel Costs:Compensation for Pension Obligations
+Expenses:Personnel Costs:Social Security Costs
+Expenses:Personnel Costs:AER & AUB Contributions
+Expenses:Personnel Costs:Maternity Leave
+Expenses:Personnel Costs:ATP
+Expenses:Personnel Costs:Other Personnel Costs
+Expenses:Personnel Costs:Employee Benefits
+Expenses:Personnel Costs:Salary Reimbursements & Sick Pay
+Expenses:Personnel Costs:Tax-Free Allowances in the Form of Mileage and Per Diem
+Expenses:Personnel Costs:Payroll Tax
+Expenses:Depreciation and Impairment:Acquired Intangible Fixed Assets
+Expenses:Depreciation and Impairment:Goodwill
+Expenses:Depreciation and Impairment:Land and Buildings
+Expenses:Depreciation and Impairment:Production Facilities and Machinery
+Expenses:Depreciation and Impairment:Leasehold Improvements
+Expenses:Depreciation and Impairment:Other Fixtures, Tools, and Equipment
+Expenses:Depreciation and Impairment
