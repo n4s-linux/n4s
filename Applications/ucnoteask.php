@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+echo "<pre>";
 require_once("/svn/svnroot/Applications/uc_odata.php");
 ?>
 <?php
@@ -8,7 +9,6 @@ $ids = array();
 $inbox = array();
 global $firmaid;
 $ask = array();
-echo "<pre>";
 $scan = array();
 $names = array();
 foreach ($companies as $cc) {
@@ -22,11 +22,13 @@ foreach ($companies as $cc) {
 		$ids[$cc["Email"]] = $cc["PrimaryKeyId"];
 	}
 }
-print_r($ask);die();
 foreach ($ask as $mail => $entries) {
 	foreach ($entries as $curentry) {
-		if ($curentry["KeyStr"] != 9900) continue;
 		$hash = md5(json_encode($curentry));
+		if (file_exists("/var/www/notes_$mail.json")) $notefile = json_decode(file_get_contents("/var/www/notes_$mail.json"),true); else $notefile = array();
+		if (!isset($notefile[$hash])) $notefile[$hash] = $curentry;
+		file_put_contents("/var/www/notes_$mail.json",json_encode($notefile,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+		if ($curentry["KeyStr"] != 9900) continue;
 		if (file_exists("/var/www/ask_$hash")) continue;
 		$text = $curentry["Text"];
 		$text = preg_replace('/\bhttps?:\/\/[^\s]+/', '<a href="$0">Link</a>', $text);
@@ -39,7 +41,7 @@ foreach ($ask as $mail => $entries) {
 		$ucid = $ids[$mail];
 		$html .= "<i>I Uniconta App'en skal du ved første kørsel indtaste dit Unikke ID som er $ucid</i><br>";
 		$html .= "<br><br><b>Med venlig hilsen</b><br>Olsens Revision ApS";
-		mail("$mail", "Spørgsmål til dit regnskab", "$html", "MIME-Version: 1.0\r\nContent-type: text/html; charset=UTF-8\r\nFrom: n4s@0lsen.com\r\nReply-To: joo@0lsen.com\r\nBcc: joo@0lsen.com"); 
+		mail("$mail", "Spørgsmål til dit regnskab", "$html", "MIME-Version: 1.0\r\nContent-type: text/html; charset=UTF-8\r\nFrom: n4s@0lsen.com\r\nReply-To: joo@0lsen.com\r\nCc: joo@0lsen.com"); 
 		touch("/var/www/ask_$hash");
 	}
 }
