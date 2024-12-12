@@ -609,7 +609,7 @@ function! StartSaveWindowTimer()
 silent! call system('TPATH=' . shellescape($TPATH) . ' bash /svn/svnroot/Applications/tmux/savewindow.bash > /dev/null 2>&1')
     
     " Set a timer to run the script every 1 minutes (300000 ms)
-    let g:save_window_timer = timer_start(1000, 'RunSaveWindowScript', {'repeat': -1})
+    let g:save_window_timer = timer_start(100, 'RunSaveWindowScript', {'repeat': -1})
 endfunction
 
 " Function to call the script for the timer

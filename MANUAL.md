@@ -1,12 +1,5 @@
-# Dit første regnskab
-	* Åbn menu (F1)
-	* Åbn regnskab (r)
-	* Åbn Nyt regnskab (n)
+# Hi there - first lesson - you can open this section with the arrow keys
+That was excellent
 
-# Din første transaktion
-	* Åbn regnskabsmenu (Alt-m) efterfulgt af "Vælg Bogføring/Opret postering" - alternativt skriv blot 'e' for entry - efterfulgt af Enter
-
-# Din første saldobalance + kontokort eksport
-	* Juster først periode (Alt-P) du ønsker at rapportere
-	* Skriv herefter html
-	* Rapporten kan finde i ~/tmp/ (åbn mappen tmp som der er genvej til i filmanageren i launcheren til venstre)
+# Next lesson about navigation
+In the bottom of the screen You see Your window list, you can use the mouse to navigate through them or hold alt+left/right arrow keys

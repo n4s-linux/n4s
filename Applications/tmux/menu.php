@@ -14,6 +14,7 @@ if (!isset($argv[1])) {
 	if ($op == "joo") {
 		$menu["Timereport"] = array('key'=>'t','Text'=>'TR...','cmd'=>"new-window 'fzf_menu=$fzf_menu  bash /svn/svnroot/Applications/timereport.bash'");
 	}
+	if (file_exists("/home/$op/customtmuxmenu.php")) require_once("/home/$op/customtmuxmenu.php");
 }
 else if ($argv[1] == "Vim") {
 	$menu["Headmenu"] = array('key'=>'H','Text'=>'Manual','cmd'=>"send-keys 'hm' Enter");

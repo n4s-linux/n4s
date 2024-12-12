@@ -12,4 +12,4 @@ else
 fi
 
 # Output the truncated title
-echo "#$truncated_title"
+echo "$truncated_title"

@@ -259,7 +259,7 @@ alias fp=" python /svn/svnroot/Applications/fpaste/fpaste.py"
 version=$(cd /svn/svnroot/;echo $(git log |wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
 echo $version > ~/tmp/.n4sversion
 #export TERM=xterm-256color tmux
-export TERM=screen-256color
+export TERM=xterm-256color
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=y
 function h() {
 l r $@|head

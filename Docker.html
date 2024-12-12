@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n4s Accounting Solution - Get Started</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .flag {
+            width: 30px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">n4s Accounting Solution</a>
+            <div class="ms-auto">
+                <img src="https://flagcdn.com/w40/gb.png" alt="English" class="flag" id="lang-en" title="English">
+                <img src="https://flagcdn.com/w40/dk.png" alt="Dansk" class="flag" id="lang-da" title="Dansk">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4" id="header-title">Get Started with n4s</h1>
+        <p class="lead text-center" id="header-subtitle">Select your operating system for step-by-step instructions.</p>
+
+        <ul class="nav nav-tabs" id="osTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="windows-tab" data-bs-toggle="tab" data-bs-target="#windows" type="button" role="tab" aria-controls="windows" aria-selected="true">Windows</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="mac-tab" data-bs-toggle="tab" data-bs-target="#mac" type="button" role="tab" aria-controls="mac" aria-selected="false">macOS</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="linux-tab" data-bs-toggle="tab" data-bs-target="#linux" type="button" role="tab" aria-controls="linux" aria-selected="false">Linux</button>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-4">
+            <!-- Windows Guide -->
+            <div class="tab-pane fade show active" id="windows" role="tabpanel" aria-labelledby="windows-tab">
+                <h4 id="windows-title">Guide for Windows</h4>
+                <ol id="windows-steps">
+                    <li>Download and install Docker Desktop from <a href="https://www.docker.com/products/docker-desktop/" target="_blank">Docker Desktop for Windows</a>.</li>
+                    <li>Start Docker Desktop and ensure it's running properly.</li>
+                    <li>Open a PowerShell terminal and pull the n4s Docker image:
+                        <pre><code>docker pull n4s/accounting</code></pre>
+                    </li>
+                    <li>Run the container:
+                        <pre><code>docker run -it --name n4s-container n4s/accounting</code></pre>
+                    </li>
+                    <li>Interact with the solution in the terminal.</li>
+                </ol>
+            </div>
+
+            <!-- macOS Guide -->
+            <div class="tab-pane fade" id="mac" role="tabpanel" aria-labelledby="mac-tab">
+                <h4 id="mac-title">Guide for macOS</h4>
+                <ol id="mac-steps">
+                    <li>Download and install Docker Desktop from <a href="https://www.docker.com/products/docker-desktop/" target="_blank">Docker Desktop for macOS</a>.</li>
+                    <li>Start Docker Desktop and ensure it's running properly.</li>
+                    <li>Open Terminal and pull the n4s Docker image:
+                        <pre><code>docker pull n4s/accounting</code></pre>
+                    </li>
+                    <li>Run the container:
+                        <pre><code>docker run -it --name n4s-container n4s/accounting</code></pre>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Linux Guide -->
+            <div class="tab-pane fade" id="linux" role="tabpanel" aria-labelledby="linux-tab">
+                <h4 id="linux-title">Guide for Linux</h4>
+                <ol id="linux-steps">
+                    <li>Install Docker by running:
+                        <pre><code>sudo apt update && sudo apt install -y docker.io</code></pre>
+                    </li>
+                    <li>Start the Docker service:
+                        <pre><code>sudo systemctl start docker</code></pre>
+                    </li>
+                    <li>Check that Docker is running:
+                        <pre><code>docker --version</code></pre>
+                    </li>
+                    <li>Pull the n4s Docker image:
+                        <pre><code>docker pull n4s/accounting</code></pre>
+                    </li>
+                    <li>Run the container:
+                        <pre><code>docker run -it --name n4s-container n4s/accounting</code></pre>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 n4s Accounting Solution. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                headerTitle: "Get Started with n4s",
+                headerSubtitle: "Select your operating system for step-by-step instructions.",
+                windowsTitle: "Guide for Windows",
+                macTitle: "Guide for macOS",
+                linuxTitle: "Guide for Linux",
+                windowsSteps: [
+                    "Download and install Docker Desktop from <a href='https://www.docker.com/products/docker-desktop/' target='_blank'>Docker Desktop for Windows</a>.",
+                    "Start Docker Desktop and ensure it's running properly.",
+                    "Open a PowerShell terminal and pull the n4s Docker image:<pre><code>docker pull n4s/accounting</code></pre>",
+                    "Run the container:<pre><code>docker run -it --name n4s-container n4s/accounting</code></pre>",
+                    "Interact with the solution in the terminal."
+                ],
+                macSteps: [
+                    "Download and install Docker Desktop from <a href='https://www.docker.com/products/docker-desktop/' target='_blank'>Docker Desktop for macOS</a>.",
+                    "Start Docker Desktop and ensure it's running properly.",
+                    "Open Terminal and pull the n4s Docker image:<pre><code>docker pull n4s/accounting</code></pre>",
+                    "Run the container:<pre><code>docker run -it --name n4s-container n4s/accounting</code></pre>"
+                ],
+                linuxSteps: [
+                    "Install Docker by running:<pre><code>sudo apt update && sudo apt install -y docker.io</code></pre>",
+                    "Start the Docker service:<pre><code>sudo systemctl start docker</code></pre>",
+                    "Check that Docker is running:<pre><code>docker --version</code></pre>",
+                    "Pull the n4s Docker image:<pre><code>docker pull n4s/accounting</code></pre>",
+                    "Run the container:<pre><code>docker run -it --name n4s-container n4s/accounting</code></pre>"
+                ]
+            },
+            da: {
+                headerTitle: "Kom godt i gang med n4s",
+                headerSubtitle: "Vælg dit operativsystem for trin-for-trin vejledning.",
+                windowsTitle: "Guide til Windows",
+                macTitle: "Guide til macOS",
+                linuxTitle: "Guide til Linux",
+                windowsSteps: [
+                    "Download og installer Docker Desktop fra <a href='https://www.docker.com/products/docker-desktop/' target='_blank'>Docker Desktop til Windows</a>.",
+                    "Start Docker Desktop og sørg for, at det kører korrekt.",
+                    "Åbn en PowerShell-terminal og hent n4s Docker-billedet:<pre><code>docker pull n4s/accounting</code></pre>",
+                    "Kør containeren:<pre><code>docker run -it --name n4s-container n4s/accounting</code></pre>",
+                    "Interagér med løsningen i terminalen."
+                ],
+                macSteps: [
+                    "Download og installer Docker Desktop fra <a href='https://www.docker.com/products/docker-desktop/' target='_blank'>Docker Desktop til macOS</a>.",
+                    "Start Docker Desktop og sørg for, at det kører korrekt.",
+                    "Åbn Terminal og hent n4s Docker-billedet:<pre><code>docker pull n4s/accounting</code></pre>",
+                    "Kør containeren:<pre><code>docker run -it --name n4s-container n4s/accounting</code></pre>"
+                ],
+                linuxSteps: [
+                    "Installér Docker ved at køre:<pre><code>sudo apt update && sudo apt install -y docker.io</code></pre>",
+                    "Start Docker-tjenesten:<pre><code>sudo systemctl start docker</code></pre>",
+                    "Kontrollér, at Docker kører:<pre><code>docker --version</code></pre>",
+                    "Hent n4s Docker-billedet:<pre><code>docker pull n4s/accounting</code></pre>",
+                    "Kør containeren:<pre><code>docker run -it --name n4s-container n4s/accounting</code></pre>"
+                ]
+            }
+        };
+
+        document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+        document.getElementById('lang-da').addEventListener('click', () => setLanguage('da'));
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+
+            document.getElementById('header-title').innerText = t.headerTitle;
+            document.getElementById('header-subtitle').innerText = t.headerSubtitle;
+
+            document.getElementById('windows-title').innerText = t.windowsTitle;
+            document.getElementById('mac-title').innerText = t.macTitle;
+            document.getElementById('linux-title').innerText = t.linuxTitle;
+
+            updateSteps('windows', t.windowsSteps);
+            updateSteps('mac', t.macSteps);
+            updateSteps('linux', t.linuxSteps);
+        }
+
+        function updateSteps(os, steps) {
+            const list = document.getElementById(`${os}-steps`);
+            list.innerHTML = steps.map(step => `<li>${step}</li>`).join('');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

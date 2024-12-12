@@ -1,5 +1,6 @@
 <?php
 	$op = exec("whoami");
+	refresh();
 	// refresh(); // uncomment this if having problem with missing cache
 	require_once("/svn/svnroot/Applications/proc_open.php");
 	require_once("/svn/svnroot/Applications/fzf.php");
@@ -11,9 +12,10 @@
 
 	if (getenv("adjustbalance") != "1") {
 		ob_start();
-		system("gum input --header 'Søg efter'");
-		$search = trim(ob_get_clean());
-		if ($search == "") die();
+		// system("gum input --header 'Søg efter'");
+		// $search = trim(ob_get_clean());
+		//if ($search == "") die();
+		$search = "";
 	$filez = explode("\n",trim(file_get_contents("/home/$op/tmp/mkentry.php.list")));
 	foreach ($filez as $curfile) {
 		$sortfilez[] = array('Date' => explode("|||||",$curfile)[0],		'Fn' => explode("|||||",$curfile)[1]);
@@ -24,17 +26,26 @@
 	$farray = array();
 	$i = 0;
 	$fzf = "";
+	$cache = array();
+	if (file_exists("/home/$op/tmp/.cachelist")) $cache = json_decode(file_get_contents("/home/$op/tmp/.cachelist"),true);
 	foreach ($filez as $key => $file) {
 		$d['fullfn'] = $file;
 		$d['fn'] = basename($file);
 		if (!file_exists($file)) 
 			continue;
-		$data = json_decode(file_get_contents($file),true);
+		if (isset($cache[$file])) {
+			$data = $cache[$file];
+		}
+		else {
+			$data = json_decode(file_get_contents($file),true);
+			$cache[$file] = $data;
+			// moved this out of the loop file_put_contents("/home/$op/tmp/.cachelist",json_encode($cache));
+		}
 		$data["UID"] = substr(uniqid(),0,8);
 		if (!isset($data["Description"])) $data["Description"] = "";
 		if (!isset($data["Transactions"][0]) || !isset($data["Transactions"][0]['Account'])) continue;
 		if (!isset($data["Transactions"][1]) || !isset($data["Transactions"][1]['Account'])) continue;
-		if (!stristr(json_encode($data,JSON_UNESCAPED_UNICODE),$search)) continue;
+		//if (!stristr(json_encode($data,JSON_UNESCAPED_UNICODE),$search)) continue;
 		$d['data'] = $data;
 		$farray[$i] = $d;
 		$farray[$i]['Fn'] = basename($file);
@@ -48,8 +59,9 @@
 		$fzf .= $data['Transactions'][1]['Account'] . "\t$dir\n";
 		$i++;
 	}
+	file_put_contents("/home/$op/tmp/.cachelist",json_encode($cache));
 	$farray[""] = null;
-	$valg = fzf($fzf,"Vælg transaktion at duplikere","--tac",true);
+	$valg = fzf($fzf,"Vælg transaktion at duplikere","--tac --tiebreak=index --no-sort -e",true);
 	$nummer = explode(" ",$valg)[0];
 	if ($valg == "") {
 		die("Intet valgt\n");
@@ -146,7 +158,7 @@
 	refresh();
 function refresh()  {
 	global $op;
-	$cmd = ("cmatrix&(find /data/regnskaber ~/regnskaber/ -name \\*.trans -mtime -180 -printf \"%T@|||||%p\\n\" |grep .trans$ > /home/$op/tmp/mkentry.php.list;killall cmatrix)"); //run cache for next time
+	$cmd = ("cmatrix&(find /data/regnskaber ~/regnskaber/ -name \\*.trans -mtime -90 -printf \"%T@|||||%p\\n\"|grep -v vimtime > /home/$op/tmp/mkentry.php.list;killall cmatrix)"); //run cache for next time
 	file_put_contents("/home/$op/tmp/mkentry.cmd",$cmd);
 	system("$cmd");
 }
