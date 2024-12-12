@@ -12,6 +12,54 @@ REM Define the file paths
 set FILE1=%TARGET_DIR%\ac14.conf
 set FILE2=%TARGET_DIR%\ac14.exe
 
+REM Check if a reboot is required
+reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\RebootRequired" >nul 2>&1
+if not errorlevel 1 (
+    echo [ERROR] A system reboot is required. Please reboot your system and rerun this script.
+    pause
+    exit /b 1
+)
+
+REM Check if Docker is installed
+docker --version >nul 2>&1
+if errorlevel 1 (
+    echo [INFO] Docker is not installed. Installing Docker Desktop...
+
+    REM Download Docker Desktop Installer
+    set DOCKER_INSTALLER_URL=https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe
+    set INSTALLER_PATH=%TEMP%\DockerDesktopInstaller.exe
+
+    echo [INFO] Downloading Docker Desktop Installer...
+    bitsadmin /transfer DockerDesktopInstaller /priority high "%DOCKER_INSTALLER_URL%" "%INSTALLER_PATH%"
+    if errorlevel 1 (
+        echo [ERROR] Failed to download Docker Desktop Installer. Please check your internet connection.
+        pause
+        exit /b 1
+    )
+
+    REM Run the installer silently
+    echo [INFO] Running Docker Desktop Installer silently...
+    "%INSTALLER_PATH%" install --quiet --accept-license
+    if errorlevel 1 (
+        echo [ERROR] Failed to install Docker Desktop. Please try installing it manually.
+        pause
+        exit /b 1
+    )
+
+    REM Cleanup installer
+    echo [INFO] Cleaning up installer...
+    del "%INSTALLER_PATH%"
+
+    REM Check if a reboot is required after installation
+    reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\RebootRequired" >nul 2>&1
+    if not errorlevel 1 (
+        echo [INFO] Docker Desktop has been installed successfully, but a reboot is required.
+        echo [INFO] Please reboot your system and rerun this script.
+        pause
+        exit /b 1
+    )
+)
+
 REM Create the target directory if it doesn't exist
 if not exist "%TARGET_DIR%" (
     mkdir "%TARGET_DIR%"
@@ -41,14 +89,6 @@ REM Relaunch in fullscreen if not already in fullscreen mode
 if "%1" neq "fullscreen" (
     start "" "%FILE2%" --config-file "%FILE1%" --title "n4s" -e "%~f0" fullscreen
     exit /b
-)
-
-REM Check if Docker is installed
-docker --version >nul 2>&1
-if errorlevel 1 (
-    echo [INFO] Docker is not installed. Please install Docker Desktop and rerun this script.
-    pause
-    exit /b 1
 )
 
 REM Set up Docker containers and image
