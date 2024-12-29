@@ -5,5 +5,5 @@ function exitprg() {
 }
 cat /svn/svnroot/Libraries/Dependencies_debian.txt|while read i
 do
-apt-get y "$i" || exitprg "couldnt install $i"
+apt-get -y install "$i" || exitprg "couldnt install $i"
 done
