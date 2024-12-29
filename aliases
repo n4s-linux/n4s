@@ -256,8 +256,8 @@ function lt() {
  vi $(realpath $tpath/.lasttrans )
 }
 alias fp=" python /svn/svnroot/Applications/fpaste/fpaste.py"
-version=$(cd /svn/svnroot/;echo $(git log |wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
-echo $version > ~/tmp/.n4sversion
+#version=$(cd /svn/svnroot/;echo $(git log |wc -l)/1000|bc -l|perl -pe 's/ ^0+ | 0+$ //xg')
+#echo $version > ~/tmp/.n4sversion
 #export TERM=xterm-256color tmux
 export TERM=xterm-256color
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=y
@@ -633,6 +633,7 @@ function getcolor() {
 	fi
 }
 prompt_function () {
+touch ~/tmp/.lastvim
 return
 cmd=$(fc -ln -0)
 bn=$(basename "$tpath");
@@ -702,7 +703,7 @@ else
 fi
 # /svn/svnroot/Applications/unison_sync.bash - maybe one day
 }
-#PROMPT_COMMAND=prompt_function
+PROMPT_COMMAND=prompt_function
 
 if [[ -z $SVNROOT ]];then
     export SVNROOT=/svn/svnroot # default
@@ -876,3 +877,95 @@ alias tmux='tmux -2'
 
 #TERM=tmux-256color COLORTERM=24bit
 mkdir -p ~/n4s-export
+
+export HISTTIMEFORMAT="%s "
+export HISTSIZE=10000           # Number of commands to keep in history
+export HISTFILESIZE=20000       # Size of the history file
+shopt -s histappend             # Append history to the file
+PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"  # Sync history
+
+# Bind to a custom keybinding (e.g., Ctrl+G)
+set -o emacs
+
+bind '"\C-r": "\C-a hstr_fzf \C-j"'
+hstr_fzf() {
+
+    # Fetch and process history for unique commands with ISO timestamps
+
+    history | tac | awk '
+
+    {
+
+        # Extract command number, timestamp, and command
+
+        cmd_num = $1;
+
+        timestamp = $2;
+
+        $1 = ""; $2 = ""; sub(/^ */, "");
+
+        cmd = $0;
+
+
+
+        # Skip invalid timestamps
+
+        if (timestamp ~ /^[0-9]+$/) {
+
+            # Update the last run timestamp and count for this command
+
+            if (cmd_counts[cmd]++) {
+
+                # Command exists, update the last timestamp
+
+                if (timestamp > last_timestamps[cmd]) {
+
+                    last_timestamps[cmd] = timestamp;
+
+                }
+
+            } else {
+
+                # New command, initialize data
+
+                last_timestamps[cmd] = timestamp;
+
+            }
+
+        }
+
+    }
+
+
+
+    END {
+
+        # Prepare and sort commands by last execution time
+
+        for (cmd in cmd_counts) {
+
+            # Convert Unix timestamp to ISO format
+
+            cmd_time = strftime("%Y-%m-%d %H:%M:%S", last_timestamps[cmd]);
+
+
+
+            # Print the formatted output for sorting
+
+            printf "%s\t⟪%d⟫\t%s\n", cmd_time, cmd_counts[cmd], cmd;
+
+        }
+
+    }' | sort -r | column -t -s$'\t' | \
+
+    fzf --reverse --prompt="Command History: " | \
+
+    awk '{for (i=3; i<=NF; i++) printf $i " "; print ""}' | \
+
+    sed 's/⟪[0-9]*⟫//g' | \
+
+    xargs -I {} tmux send-keys "{}" C-m
+
+}
+
+
