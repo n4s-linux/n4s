@@ -1,8 +1,9 @@
 #!/bin/bash
 
 function exitprg() {
-    echo "Error @ Dependencies: $1"
-    exit 1
+	d=$(date)
+	d=$(echo -ne "$d\t")
+    echo "$d error @ Dependencies: $1" >> ~/root/install.log
 }
 
 # Read words from the file
