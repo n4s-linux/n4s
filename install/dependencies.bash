@@ -3,7 +3,7 @@
 function exitprg() {
 	d=$(date)
 	d=$(echo -ne "$d\t")
-    echo "$d error @ Dependencies: $1" >> ~/root/install.log
+    echo "$d error @ Dependencies: $1" >> /root/install.log
 }
 
 # Read words from the file
